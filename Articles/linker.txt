@@ -1,0 +1,9 @@
+http://cbc.simula.no/pub/software.html
+http://www.uio.no/studier/emner/matnat/math/MAT-INF4130/index.html
+http://www.uio.no/studier/program/anvendt-matematikk-mekanikk-master/studieretninger/computational/oppbygging/
+
+#C intro til paralellprog
+http://www.codingunit.com/category/c-tutorials
+#PDF C
+http://www.uio.no/studier/emner/matnat/ifi/INF3331/h15/lectures/10_introduction_to_c-beamer.pdf
+
