@@ -1,0 +1,109 @@
+\documentclass[a4paper,norsk]{article}
+\usepackage{preamble}
+
+\begin{document}
+\maketitle
+
+\section*{Abstract}
+Consider a tube filled with a newtonian viscous fluid initially at rest. Upon applying a pressuregradient, a
+pressuredriven flow will occur known as Hagen–Poiseuille flow. Limiting ourselves to steady state case,
+we will derive an analytical solution for this problem. Our goal is to validate the Oasis software,
+a high-performance Navier-Stokes solver based on the opensoure Fenics software. The solver is based on the finite element method and
+implemented in python.
+
+\section*{Navier-Stokes Equation}
+Let the velocity vector components be defined as $\textbf{v} = (v_r, v_\theta, v_z)$
+The balance of momentum within the fluid introduces the famous Navier-Stokes eqations. By assuming
+that fluid fluid is incompressible, we get the Navier-Stokes eqations as
+
+\begin{align}
+\frac{\partial \textbf{v}}{\partial t} + \textbf{v} \cdot \nabla \textbf{v} &=
+-\frac{\nabla p}{\rho} + \frac{\mu}{\rho} \nabla^2 \textbf{v} \\
+\nabla \cdot \textbf{v} &= 0
+\end{align}
+
+Limiting ourselves to the steady-state case of a fully developed fluid, following component equations.
+
+\begin{align}
+r &: \hspace{1cm} v_r\frac{\partial v_r}{\partial r} - \frac{v_\theta^2}{r} + v_z\frac{\partial v_r}{\partial z}
+= -\frac{1}{\rho} \frac{\partial p}{\partial r} + \frac{\mu}{\rho}( \frac{\partial^2 v_r}{\partial r^2} +
+\frac{1}{r} \frac{\partial v_r}{\partial r} + \frac{\partial^2 v_r}{\partial z^2} - \frac{v_r}{r^2} ) \\
+\theta &: \hspace{1cm} v_r\frac{\partial v_\theta}{\partial r} + v_z\frac{\partial v_\theta}{\partial z} +
+\frac{1}{r}v_\theta v_r = \frac{\mu}{\rho} (\frac{\partial^2 v_\theta}{\partial r^2} +
+\frac{1}{r} \frac{\partial v_\theta}{\partial r} + \frac{\partial^2 v_\theta}{\partial z^2} -
+\frac{v_\theta}{r^2} ) \\
+z &: \hspace{1cm} v_r \frac{\partial v_z}{\partial r} + \frac{\partial v_z}{\partial z} =
+\frac{1}{\rho} \frac{\partial p}{\partial z} + \frac{\mu}{\rho} (\frac{\partial^2 v_z}{\partial r^2} +
+\frac{1}{r} \frac{\partial v_z}{\partial r} + \frac{\partial^2 v_z}{\partial z^2}
+)
+\end{align}
+
+nevn senere hva som kan fjernes i teori
+
+
+
+
+\section*{Laminar flow}
+We will further simplify the Navier-Stokes equations by specifying certain conditions for the fluid flow.
+We will for simplicity look at a constructed test case for a straight tube with constant diameter, with a
+fully developed laminar flow. From this we can conclude that we have a fluid flow with the property of constant axial velocity, and no radial
+or angular velocity. Further we will assume that the fluid is driven by a pressure gradient parallel to the axial direction.
+As a result we have the following conditions.
+\begin{align}
+\frac{\partial \textit{v}}{\partial t} = 0 \\
+\textit{v} \cdot \nabla(\textit{v} ) = 0 \\
+v_r = v_\theta = 0
+\end{align}
+
+Now lets imagine extracting a ring-shaped control volume from the fluid flow and assess the forces acting on this volume.
+Let this control volume have thickness \textit{dr} and width \textit{dx}.
+SETT INN BILDE
+Due to the balance of momentum the following forces must balance each other. As observed the only acting forces are the pressure and
+viscous forces, denoted as \textit{p} and \textit{$\tau$}
+
+\begin{align}
+2\pi r P_x dr - 2\pi r P_{x+\delta x}dr + 2\pi r dx \tau_{r} - 2\pi r dx \tau_{r+\delta r} = 0 \hspace{2mm}* (\frac{1}{ 2\pi dr dx}) \\
+r \frac{P_{x + \delta x} - P_x}{ dx} + \frac{r (\tau_{r + \delta r} - \tau_r)}{dr} = 0
+\end{align}
+
+In the limit dr, dx $\rightarrow$ 0, we get the following equation
+
+\begin{align}
+r \frac{d P}{d x} + \frac{ d(r \tau)}{d r} = 0
+\end{align}
+
+Now by replacing $\tau$ with $-\mu \frac{\d u}{d x}$ where the constant $\mu$ denotes the dynamic viscosity. Now, this means that
+choice of x or r, the relation (10) must be fulfilled. Hence we must conclude that $\frac{d P}{d x}$ must be some constant. This constant
+can be derived by changing our control volume with a slice at any point in the tube. Using the same relations it can be shown that
+
+\begin{align}
+\frac{d P}{d x} = \frac{-2 \tau_W}{R}
+\end{align}
+Where $\tau_W$ denotes the wall shear stress.
+
+We now solve the second order differential equation(10), using double integration
+\begin{align}
+u(r) = \frac{1}{4 \mu} \frac{dP}{dx} + C_1 ln(r) + C_2
+\end{align}
+To remove the non-physical consequence of $\lim_{r \to 0} ln(r) \rightarrow \infty$, we choose $C_1 = 0$. By using our
+second condition $u(R) = 0$ where R denotes the tube of the radius, the final analytical result yields
+
+\begin{align}
+u(r) = - \frac{1}{4 \mu}\frac{d P}{d x} \big(R^2 -  r^2 \big)
+\end{align}
+
+\section*{Setting up the problem}
+Using Oasis, we can choose between two sets of solver methods, coupled and fracstep. \textbf{Coupled} is a steady-state
+solver solving
+
+
+For the computation we have to construct a mesh to do our calculations upon. In this problem we will use
+Gmsh, a free 3D finite element grid generator. The problem will be solved on a tube with radius = 1 and length
+z = 3.
+
+
+\section{Computation}
+
+
+
+\end{document}
