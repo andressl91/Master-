@@ -1,5 +1,9 @@
 \documentclass[a4paper,norsk]{article}
+\usepackage{graphicx}
+\usepackage{sidecap}
+\usepackage{wrapfig}
 \usepackage{preamble}
+
 
 \begin{document}
 \maketitle
@@ -43,17 +47,40 @@ nevn senere hva som kan fjernes i teori
 
 
 
-\section*{Laminar flow}
+\section*{On Laminar flow}
+The following calculations is based on a flow regime said to be laminar. This kind of flow is recognized by smoothed streamlines, to the
+opposite of turbulent flow characterized by fluctuations in the velocity profile. These flow regimes are bound by the dimensionless
+Reynolds number discovered Osborne Reynolds as the relation between inertial and viscous forces.
+
+\begin{align}
+Re = \frac{\rho U D}{\mu} = \frac{UD}{\nu}
+\end{align}
+Where $\nu$ denotes the kinematic viscosity, while \textit{U} and \textit{D} is some characteristic velocity and lenght. In our case \textit{U} will be
+average velocity and U and D is the diameter of the pipe. We define the Reynolds number at which the flow becomes fully turbulent as
+the critical Reynolds number. For flow inside a pipe, the most common accepted value for the critical Reynolds number is
+
+Re = 2300.
+
 We will further simplify the Navier-Stokes equations by specifying certain conditions for the fluid flow.
 We will for simplicity look at a constructed test case for a straight tube with constant diameter, with a
 fully developed laminar flow. From this we can conclude that we have a fluid flow with the property of constant axial velocity, and no radial
-or angular velocity. Further we will assume that the fluid is driven by a pressure gradient parallel to the axial direction.
-As a result we have the following conditions.
+or angular velocity. Further we will assume that the fluid is driven by a pressure gradient parallel to the axial direction. \\
+For the boundaries we will assume noslip condition at the circumference of the tube, and dirichlet boundary conditions for the pressure
+at the inflow and outflow regions. For the velocity we use "do-nothing" conditions at the inflow and outflow of the domain.\\
+
+Let $\Omega$ be our computational domain, and let $\partial \Omega$ denote the boundaries of the domain.
+Our conditions then can be defined as
 \begin{align}
+\text{In } \Omega \\ \\
 \frac{\partial \textit{v}}{\partial t} = 0 \\
-\textit{v} \cdot \nabla(\textit{v} ) = 0 \\
-v_r = v_\theta = 0
+\textit{v} \cdot \nabla v ) = 0 \\
+v_r = v_\theta = 0 \\ \\
+\text{In } \partial \Omega \\ \\
+\text{\textit{v}} = 0 \in \Gamma_N \\
+P = A \text{SJEKK GOD NOTASJON}
 \end{align}
+
+TEGNING PROBLEM
 
 Now lets imagine extracting a ring-shaped control volume from the fluid flow and assess the forces acting on this volume.
 Let this control volume have thickness \textit{dr} and width \textit{dx}.
@@ -72,7 +99,7 @@ In the limit dr, dx $\rightarrow$ 0, we get the following equation
 r \frac{d P}{d x} + \frac{ d(r \tau)}{d r} = 0
 \end{align}
 
-Now by replacing $\tau$ with $-\mu \frac{\d u}{d x}$ where the constant $\mu$ denotes the dynamic viscosity. Now, this means that
+Now by replacing $\tau$ with $-\mu \frac{d u}{d x}$ where the constant $\mu$ denotes the dynamic viscosity. Now, this means that
 choice of x or r, the relation (10) must be fulfilled. Hence we must conclude that $\frac{d P}{d x}$ must be some constant. This constant
 can be derived by changing our control volume with a slice at any point in the tube. Using the same relations it can be shown that
 
@@ -85,25 +112,70 @@ We now solve the second order differential equation(10), using double integratio
 \begin{align}
 u(r) = \frac{1}{4 \mu} \frac{dP}{dx} + C_1 ln(r) + C_2
 \end{align}
-To remove the non-physical consequence of $\lim_{r \to 0} ln(r) \rightarrow \infty$, we choose $C_1 = 0$. By using our
+
+To remove the non-physical consequence of $\lim_{r \to 0} ln r \rightarrow \infty$
+for the velocity update, we choose C1 = 0. By using our
 second condition $u(R) = 0$ where R denotes the tube of the radius, the final analytical result yields
 
 \begin{align}
 u(r) = - \frac{1}{4 \mu}\frac{d P}{d x} \big(R^2 -  r^2 \big)
 \end{align}
 
+For scaling of the numerical experiments the
+
 \section*{Setting up the problem}
 Using Oasis, we can choose between two sets of solver methods, coupled and fracstep. \textbf{Coupled} is a steady-state
-solver solving
+solver, while fracstep is a fractional step solver for solving the Navier-Stokes equations which we will use.
+Further specification of the schemes of solver can be specified for the fracstep module,
+but for our case we will choose the IPCN ABCN method which stands for
+Incremental Pressure Correction Scheme, using second order Crank-Nicolson in time and Adams-Bashforth
+projection to calculate the convecting velocity. KILDE TIL DETTE??
 
+For validation, we will construct a 2D and 3D case for the poiseuille flow and compare the
+numerical calculations against our analytical results. Both the coupled and fracstep modules will be implemented.
+For the computation we have to construct a mesh to do our calculations upon. In these problems we will use
+Gmsh, a free 3D finite element grid generator for the 3D case, and FEniCS own mesh module for the 2D case.
 
-For the computation we have to construct a mesh to do our calculations upon. In this problem we will use
-Gmsh, a free 3D finite element grid generator. The problem will be solved on a tube with radius = 1 and length
-z = 3.
+KILDE: Mikael sin side
 
+\subsection*{Imlementing 2D pipe}
 
-\section{Computation}
+\begin{wrapfigure}{l}{0.5\textwidth}
+  \vspace{-20pt}
+  \begin{center}
+    \includegraphics[width=0.48\textwidth]{mesh16.png}
+  \end{center}
+  \vspace{-20pt}
+\end{wrapfigure}
+\text{}
+\\ \\ Computational domain $\Omega = [0,1]^2$ \\
+Inflow Condition \hspace{2mm} $P_{in} = 1$ \\
+Outflow Condition \hspace{2mm} $P_{out} = 0$ \\
+$\nu = 1/8$ \\ \\ \\ \\ \\ \\ \\
+For the coupled solver, our goal is to approximate the fully analytical steady-state flow in 2D.
+In the case for the fracstep solver, we will try to imitate the calculations from  (Logg, 2012),
+where the numerical calculations are compared to the analytical axial velocity v(1, 0.5) at time $T = 0.5$ shown as.
+\begin{align*}
+u_x(1, 0.5, t) = 1 - \sum_{N=1,3,..}^{\infty} \frac{32}{\pi^3n^3}
+e^{-\frac{\pi^2 n^2}{8}}(-1)^\frac{(n-1)}{2} \\
+u_x(1, 0.5, 0.5) \approx 0.44321183655681595
+\end{align*}
 
+\newpage
+\subsection*{Imlementing 3D pipe}
+Computational domain $\Omega = [0,1]^2$ \\ \\ \\
+Inflow Condition \hspace{2mm} $P_{in} = 1$ \\ \\ \\
+Outflow Condition \hspace{2mm} $P_{out} = 0$ \\ \\
 
+\begin{figure}[h!]
+    \includegraphics[scale=0.5]{tube.png}
+  \caption{A gull}
+\end{figure}
+For the 3D case aswell, we have the analytical solution for the fully steady-state flow. Here we will
+for both coupled and fracstep measure the error for the steady-state case.
+
+\newpage
+\section*{Results}
+\subsection*{Imlementing 2D pipe}
 
 \end{document}
