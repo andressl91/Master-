@@ -1,4 +1,5 @@
 from dolfin import *
+
 import matplotlib.pyplot as plt
 
 set_log_active(False)
@@ -8,26 +9,46 @@ set_log_active(False)
 def NS(N, dt, T):
     tic()
 
-    mesh = RectangleMesh(Point(-1, -1), Point(1, 1), N, N)
+    mesh = BoxMesh(Point(-pi, -pi, -pi), Point(pi, pi, pi), N, N, N)
+
+    def near(x, y, tol=1e-12):
+        return bool(abs(x-y) < tol)
 
     class PeriodicDomain(SubDomain):
 
         def inside(self, x, on_boundary):
-            # return True if on left or bottom boundary AND NOT on one of the two corners (0, 2) and (2, 0)
-            return bool((near(x[0], -1) or near(x[1], -1)) and
-                  (not ((near(x[0], -1) and near(x[1], 1)) or
-                        (near(x[0], 1) and near(x[1], -1)))) and on_boundary)
+            return bool((near(x[0], -pi) or near(x[1], -pi) or near(x[2], -pi)) and
+                    (not (near(x[0], pi) or near(x[1], pi) or near(x[2], pi))) and on_boundary)
 
         def map(self, x, y):
-            if near(x[0], 1) and near(x[1], 1):
-                y[0] = x[0] - 2.0
-                y[1] = x[1] - 2.0
-            elif near(x[0], 1):
-                y[0] = x[0] - 2.0
-                y[1] = x[1]
-            else:
+            if near(x[0], pi) and near(x[1], pi) and near(x[2], pi):
+                y[0] = x[0] - 2.0*pi
+                y[1] = x[1] - 2.0*pi
+                y[2] = x[2] - 2.0*pi
+            elif near(x[0], pi) and near(x[1], pi):
+                y[0] = x[0] - 2.0*pi
+                y[1] = x[1] - 2.0*pi
+                y[2] = x[2]
+            elif near(x[1], pi) and near(x[2], pi):
                 y[0] = x[0]
-                y[1] = x[1] - 2.0
+                y[1] = x[1] - 2.0*pi
+                y[2] = x[2] - 2.0*pi
+            elif near(x[1], pi):
+                y[0] = x[0]
+                y[1] = x[1] - 2.0*pi
+                y[2] = x[2]
+            elif near(x[0], pi) and near(x[2], pi):
+                y[0] = x[0] - 2.0*pi
+                y[1] = x[1]
+                y[2] = x[2] - 2.0*pi
+            elif near(x[0], pi):
+                y[0] = x[0] - 2.0*pi
+                y[1] = x[1]
+                y[2] = x[2]
+            else: # near(x[2], pi):
+                y[0] = x[0]
+                y[1] = x[1]
+                y[2] = x[2] - 2.0*pi
 
     constrained_domain = PeriodicDomain()
     test = PeriodicDomain()
@@ -46,12 +67,13 @@ def NS(N, dt, T):
     # Set parameter values
     dt = dt
     T = T
-    nu = 0.01
+    nu = 0.005
 
     # Define time-dependent pressure boundary condition
-    p_e = Expression("-0.25*(cos(2*pi*x[0]) + cos(2*pi*x[1]))*exp(-4*t*nu*pi*pi )", nu=nu, t=0.0)
-    u_e = Expression(("-cos(pi*x[0])*sin(pi*x[1])*exp(-2*t*nu*pi*pi)",\
-                    "cos(pi*x[1])*sin(pi*x[0])*exp(-2*t*nu*pi*pi)"), nu=nu, t=0)
+    p_e = Expression('1./16.*(cos(2*x[0])+cos(2*x[1]))*(cos(2*x[2])+2)')
+    u_e = Expression(('sin(x[0])*cos(x[1])*cos(x[2])', \
+            '-cos(x[0])*sin(x[1])*cos(x[2])', \
+            '0'))
 
     #p_e = interpolate(p_e, Q)
 
@@ -67,7 +89,7 @@ def NS(N, dt, T):
 
     # Define coefficients
     k = Constant(dt)
-    f = Constant((0, 0))
+    f = Constant((0, 0, 0))
 
     # Tentative velocity step
     F1 = (1/k)*inner(u - u0, v)*dx + inner(grad(u0)*u0, v)*dx + \
@@ -132,60 +154,12 @@ def NS(N, dt, T):
         print "t =", t
     print "END TIMELOOP"
 
-    p_e.t = t
-    u_e.t = t
-
     degree = V.dim() #DOF Degrees of freedom
-    L2_u= errornorm(u_e, u0, norm_type='l2', degree_rise=3)
-    #L2_p = errornorm(p_e, p1, norm_type='l2', degree_rise=3)
-
-    Kinetic = 0.5*L2_u*L2_u
-    K.append(Kinetic)
-
-    #print 0.5*norm(u0, 'l2')**2
-    V1 = VectorFunctionSpace(mesh, 'Lagrange', 3)
-    #print norm(interpolate(u_e, V1), 'l2')**2
-    error.append(L2_u); dof.append(degree)
     time.append(toc())
-
-    print L2_u
-    s1 = str(L2_u);
-    s = s1
-    filename = "./2D_vel"
-    with open(filename, "a") as myfile:
-        myfile.write("%s \n" % s)
-
+    plot(u0, interactive=True)
 
 error = []; dof = []; K = []; time = []
-#N = [4*i for i in range(5, 7)]
 N = [10]
 
 for i in N:
-    NS(i, dt=0.001, T=0.5)
-
-
-"""
-import numpy as np
-
-plt.figure(1)
-plt.title('Test')
-plt.xlabel('Degrees of freeodom')
-plt.ylabel('Errors')
-plt.xlim([10**2,10**6])
-plt.ylim([10**-7, 10**-1])
-plt.loglog(dof, K, '-r')
-
-plt.figure(2)
-#plt.subplot(222)
-plt.title('T')
-plt.xlabel('Degrees of freeodom')
-plt.ylabel('CPU Time')
-plt.plot(dof, time, '-b')
-
-plt.show()
-
-print "K VALUES", K
-print "ERROR AND DOF", error, dof
-print "TIME VALUES", time
-print "N VALUES", N
-"""
+    NS(i, dt=0.01, T=0.2)
