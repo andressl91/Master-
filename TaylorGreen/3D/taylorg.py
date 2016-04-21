@@ -5,23 +5,19 @@ import matplotlib.pyplot as plt
 set_log_active(False)
 
 # Load mesh fdefault
-def NS(N, dt, T):
+def NS(N, dt, T, L):
     tic()
-    L = 1
     mesh = BoxMesh(Point(-pi*L, -pi*L, -pi*L), Point(pi*L, pi*L, pi*L), N, N, N)
 
     def near(x, y, tol=1e-12):
         return bool(abs(x-y) < tol)
 
     class PeriodicDomain(SubDomain):
-
         def inside(self, x, on_boundary):
-            L = 1
             return bool((near(x[0], -pi*L) or near(x[1], -pi*L) or near(x[2], -pi*L)) and
                     (not (near(x[0], pi*L) or near(x[1], pi*L) or near(x[2], pi*L))) and on_boundary)
 
         def map(self, x, y):
-            L = 0.001524
             if near(x[0], pi*L) and near(x[1], pi*L) and near(x[2], pi*L):
                 y[0] = x[0] - 2.0*pi*L
                 y[1] = x[1] - 2.0*pi*L
@@ -68,8 +64,8 @@ def NS(N, dt, T):
     # Set parameter values
     dt = dt
     T = T
-    nu = 0.005
 
+    nu = 0.005
     # Define time-dependent pressure boundary condition
     p_e = Expression('1./16.*(cos(2*x[0])+cos(2*x[1]))*(cos(2*x[2])+2)', degree=3)
     u_e = Expression(('sin(x[0]/L)*cos(x[1]/L)*cos(x[2]/L)', \
@@ -120,30 +116,30 @@ def NS(N, dt, T):
     t_star.append(0)
     E_k.append(assemble(0.5*dot(u0, u0)*dx) / (2*pi)**3)
     if MPI.rank(mpi_comm_world()) == 0:
+        print "Reynolds number %.2f " % float(1.*L/nu)
         print "STARTING TIME LOOP"
     while t < T:
         time.append(t)
         # Compute tentative velocity step
         begin("Computing tentative velocity")
         b1 = assemble(L1)
-        #[bc.apply(A1, b1) for bc in bcu]
-        solve(A1, u1.vector(), b1, "gmres", "ilu")
+        #solve(A1, u1.vector(), b1, "gmres", "ilu")
+        solve(A1, u1.vector(), b1, "gmres", "default")
         #solve(A1, u1.vector(), b1, "cg", "hypre_amg")
         end()
 
         # Pressure correction
         begin("Computing pressure correction")
         b2 = assemble(L2)
-        #[bc.apply(A2, b2) for bc in bcp]
-        #solve(A2, p1.vector(), b2, "gmres", "amg")
-        solve(A2, p1.vector(), b2, "cg", "petsc_amg")
+        solve(A2, p1.vector(), b2, "gmres", "amg") #cg
+        #solve(A2, p1.vector(), b2, "cg", "hypre_amg") #cg
         end()
 
         # Velocity correction
         begin("Computing velocity correction")
         b3 = assemble(L3)
-        #[bc.apply(A3, b3) for bc in bcu]
-        solve(A3, u1.vector(), b3, "gmres", "ilu")
+        #solve(A3, u1.vector(), b3, "gmres", "ilu")
+        solve(A3, u1.vector(), b3, "gmres", "default")
         #solve(A3, u1.vector(), b3, "cg", "hypre_amg")
         end()
 
@@ -160,6 +156,7 @@ def NS(N, dt, T):
         E_k.append(assemble(0.5*dot(u1, u1)*dx) / (2*pi)**3)
         u0.assign(u1)
         t += dt
+
         if MPI.rank(mpi_comm_world()) == 0:
             print "t =", t
             print "END TIMELOOP"
@@ -172,13 +169,15 @@ error = []; dof = []; K = []; time_calc = []
 E_k = []; time = [0]; t_star = []
 N = [10]
 
+#Watch nu
 for i in N:
-    NS(i, dt=0.0001, T=0.05)
+    NS(i, dt=0.1, T = 20., L = 1.)
 if MPI.rank(mpi_comm_world()) == 0:
+
     print time_calc
-    #plt.figure(1)
-    #plt.plot(t_star, E_k)
-    #plt.show()
+    plt.figure(1)
+    plt.plot(t_star, E_k)
+    plt.show()
     np.savetxt('E_k.txt', E_k, delimiter=',')
     np.savetxt('t_star.txt', t_star, delimiter=',')
 
