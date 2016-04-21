@@ -1,5 +1,5 @@
 from dolfin import *
-
+import numpy as np
 import matplotlib.pyplot as plt
 
 set_log_active(False)
@@ -8,8 +8,8 @@ set_log_active(False)
 
 def NS(N, dt, T):
     tic()
-
-    mesh = BoxMesh(Point(-pi, -pi, -pi), Point(pi, pi, pi), N, N, N)
+    L = 0.001524
+    mesh = BoxMesh(Point(-pi*L, -pi*L, -pi*L), Point(pi*L, pi*L, pi*L), N, N, N)
 
     def near(x, y, tol=1e-12):
         return bool(abs(x-y) < tol)
@@ -17,38 +17,40 @@ def NS(N, dt, T):
     class PeriodicDomain(SubDomain):
 
         def inside(self, x, on_boundary):
-            return bool((near(x[0], -pi) or near(x[1], -pi) or near(x[2], -pi)) and
-                    (not (near(x[0], pi) or near(x[1], pi) or near(x[2], pi))) and on_boundary)
+            L = 0.001524
+            return bool((near(x[0], -pi*L) or near(x[1], -pi*L) or near(x[2], -pi*L)) and
+                    (not (near(x[0], pi*L) or near(x[1], pi*L) or near(x[2], pi*L))) and on_boundary)
 
         def map(self, x, y):
-            if near(x[0], pi) and near(x[1], pi) and near(x[2], pi):
-                y[0] = x[0] - 2.0*pi
-                y[1] = x[1] - 2.0*pi
-                y[2] = x[2] - 2.0*pi
-            elif near(x[0], pi) and near(x[1], pi):
-                y[0] = x[0] - 2.0*pi
-                y[1] = x[1] - 2.0*pi
+            L = 0.001524
+            if near(x[0], pi*L) and near(x[1], pi*L) and near(x[2], pi*L):
+                y[0] = x[0] - 2.0*pi*L
+                y[1] = x[1] - 2.0*pi*L
+                y[2] = x[2] - 2.0*pi*L
+            elif near(x[0], pi*L) and near(x[1], pi*L):
+                y[0] = x[0] - 2.0*pi*L
+                y[1] = x[1] - 2.0*pi*L
                 y[2] = x[2]
-            elif near(x[1], pi) and near(x[2], pi):
+            elif near(x[1], pi*L) and near(x[2], pi*L):
                 y[0] = x[0]
-                y[1] = x[1] - 2.0*pi
-                y[2] = x[2] - 2.0*pi
-            elif near(x[1], pi):
+                y[1] = x[1] - 2.0*pi*L
+                y[2] = x[2] - 2.0*pi*L
+            elif near(x[1], pi*L):
                 y[0] = x[0]
-                y[1] = x[1] - 2.0*pi
+                y[1] = x[1] - 2.0*pi*L
                 y[2] = x[2]
-            elif near(x[0], pi) and near(x[2], pi):
-                y[0] = x[0] - 2.0*pi
+            elif near(x[0], pi*L) and near(x[2], pi*L):
+                y[0] = x[0] - 2.0*pi*L
                 y[1] = x[1]
-                y[2] = x[2] - 2.0*pi
-            elif near(x[0], pi):
-                y[0] = x[0] - 2.0*pi
+                y[2] = x[2] - 2.0*pi*L
+            elif near(x[0], pi*L):
+                y[0] = x[0] - 2.0*pi*L
                 y[1] = x[1]
                 y[2] = x[2]
             else: # near(x[2], pi):
                 y[0] = x[0]
                 y[1] = x[1]
-                y[2] = x[2] - 2.0*pi
+                y[2] = x[2] - 2.0*pi*L
 
     constrained_domain = PeriodicDomain()
     test = PeriodicDomain()
@@ -71,9 +73,9 @@ def NS(N, dt, T):
 
     # Define time-dependent pressure boundary condition
     p_e = Expression('1./16.*(cos(2*x[0])+cos(2*x[1]))*(cos(2*x[2])+2)')
-    u_e = Expression(('sin(x[0])*cos(x[1])*cos(x[2])', \
-            '-cos(x[0])*sin(x[1])*cos(x[2])', \
-            '0'))
+    u_e = Expression(('sin(x[0]/L)*cos(x[1]/L)*cos(x[2]/L)', \
+            '-cos(x[0]/L)*sin(x[1]/L)*cos(x[2]/L)', \
+            '0'), L = L)
 
     #p_e = interpolate(p_e, Q)
 
@@ -116,14 +118,18 @@ def NS(N, dt, T):
 
     # Time-stepping
     t = dt
-    print "STARTING TIME LOOP"
+    t_star.append(0)
+    E_k.append(assemble(0.5*dot(u0, u0)*dx) / (2*pi)**3)
+    if MPI.rank(mpi_comm_world()) == 0:
+        print "STARTING TIME LOOP"
     while t < T:
-
+        time.append(t)
         # Compute tentative velocity step
         begin("Computing tentative velocity")
         b1 = assemble(L1)
         #[bc.apply(A1, b1) for bc in bcu]
-        solve(A1, u1.vector(), b1, "gmres", "default")
+        #solve(A1, u1.vector(), b1, "gmres", "default")
+        solve(A1, u1.vector(), b1, "gmres")
         end()
 
         # Pressure correction
@@ -131,6 +137,7 @@ def NS(N, dt, T):
         b2 = assemble(L2)
         #[bc.apply(A2, b2) for bc in bcp]
         solve(A2, p1.vector(), b2, "gmres", "amg")
+        #solve(A2, p1.vector(), b2)
         end()
 
         # Velocity correction
@@ -138,6 +145,7 @@ def NS(N, dt, T):
         b3 = assemble(L3)
         #[bc.apply(A3, b3) for bc in bcu]
         solve(A3, u1.vector(), b3, "gmres", "default")
+        #solve(A3, u1.vector(), b3)
         end()
 
         # Plot solution
@@ -149,17 +157,31 @@ def NS(N, dt, T):
         #pfile << p1
 
         # Move to next time step
+        t_star.append(t/L)
+        E_k.append(assemble(0.5*dot(u1, u1)*dx) / (2*pi)**3)
         u0.assign(u1)
         t += dt
-        print "t =", t
-    print "END TIMELOOP"
+        if MPI.rank(mpi_comm_world()) == 0:
+            print "t =", t
+            print "END TIMELOOP"
 
     degree = V.dim() #DOF Degrees of freedom
-    time.append(toc())
-    plot(u0, interactive=True)
+    time_calc.append(toc())
+    #plot(u0, interactive=True)
 
-error = []; dof = []; K = []; time = []
+error = []; dof = []; K = []; time_calc = []
+E_k = []; time = [0]; t_star = []
 N = [10]
 
 for i in N:
-    NS(i, dt=0.01, T=0.2)
+    NS(i, dt=0.001, T=0.05)
+if MPI.rank(mpi_comm_world()) == 0:
+    print time_calc
+    #plt.figure(1)
+    #plt.plot(t_star, E_k)
+    #plt.show()
+    np.savetxt('E_k.txt', E_k, delimiter=',')
+    np.savetxt('t_star.txt', t_star, delimiter=',')
+
+#T = np.loadtxt('test.txt')
+#print T
