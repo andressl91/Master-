@@ -4,11 +4,10 @@ import matplotlib.pyplot as plt
 
 set_log_active(False)
 
-# Load mesh from file
-
+# Load mesh fdefault
 def NS(N, dt, T):
     tic()
-    L = 0.001524
+    L = 1
     mesh = BoxMesh(Point(-pi*L, -pi*L, -pi*L), Point(pi*L, pi*L, pi*L), N, N, N)
 
     def near(x, y, tol=1e-12):
@@ -17,7 +16,7 @@ def NS(N, dt, T):
     class PeriodicDomain(SubDomain):
 
         def inside(self, x, on_boundary):
-            L = 0.001524
+            L = 1
             return bool((near(x[0], -pi*L) or near(x[1], -pi*L) or near(x[2], -pi*L)) and
                     (not (near(x[0], pi*L) or near(x[1], pi*L) or near(x[2], pi*L))) and on_boundary)
 
@@ -72,10 +71,10 @@ def NS(N, dt, T):
     nu = 0.005
 
     # Define time-dependent pressure boundary condition
-    p_e = Expression('1./16.*(cos(2*x[0])+cos(2*x[1]))*(cos(2*x[2])+2)')
+    p_e = Expression('1./16.*(cos(2*x[0])+cos(2*x[1]))*(cos(2*x[2])+2)', degree=3)
     u_e = Expression(('sin(x[0]/L)*cos(x[1]/L)*cos(x[2]/L)', \
             '-cos(x[0]/L)*sin(x[1]/L)*cos(x[2]/L)', \
-            '0'), L = L)
+            '0'), L = L, degree=3)
 
     #p_e = interpolate(p_e, Q)
 
@@ -113,8 +112,8 @@ def NS(N, dt, T):
     A3 = assemble(a3)
 
     # Create files for storing solution
-    ufile = File("velocity/velocity.pvd")
-    pfile = File("pressure/pressure.pvd")
+    #ufile = File("velocity/velocity.pvd")
+    #pfile = File("pressure/pressure.pvd")
 
     # Time-stepping
     t = dt
@@ -128,24 +127,24 @@ def NS(N, dt, T):
         begin("Computing tentative velocity")
         b1 = assemble(L1)
         #[bc.apply(A1, b1) for bc in bcu]
-        #solve(A1, u1.vector(), b1, "gmres", "default")
-        solve(A1, u1.vector(), b1, "gmres")
+        solve(A1, u1.vector(), b1, "gmres", "ilu")
+        #solve(A1, u1.vector(), b1, "cg", "hypre_amg")
         end()
 
         # Pressure correction
         begin("Computing pressure correction")
         b2 = assemble(L2)
         #[bc.apply(A2, b2) for bc in bcp]
-        solve(A2, p1.vector(), b2, "gmres", "amg")
-        #solve(A2, p1.vector(), b2)
+        #solve(A2, p1.vector(), b2, "gmres", "amg")
+        solve(A2, p1.vector(), b2, "cg", "petsc_amg")
         end()
 
         # Velocity correction
         begin("Computing velocity correction")
         b3 = assemble(L3)
         #[bc.apply(A3, b3) for bc in bcu]
-        solve(A3, u1.vector(), b3, "gmres", "default")
-        #solve(A3, u1.vector(), b3)
+        solve(A3, u1.vector(), b3, "gmres", "ilu")
+        #solve(A3, u1.vector(), b3, "cg", "hypre_amg")
         end()
 
         # Plot solution
@@ -174,7 +173,7 @@ E_k = []; time = [0]; t_star = []
 N = [10]
 
 for i in N:
-    NS(i, dt=0.001, T=0.05)
+    NS(i, dt=0.0001, T=0.05)
 if MPI.rank(mpi_comm_world()) == 0:
     print time_calc
     #plt.figure(1)
