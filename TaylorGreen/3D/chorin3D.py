@@ -103,9 +103,8 @@ def NS(N, dt, T, L, nu):
     L3 = inner(u1, v)*dx - k*inner(grad(p1), v)*dx
 
     # Assemble matrices
-    A1 = assemble(a1)
-    A2 = assemble(a2)
-    A3 = assemble(a3)
+    A1 = assemble(a1); A2 = assemble(a2); A3 = assemble(a3)
+    b1 = None; b2 = None; b3 = None
 
     # Create files for storing solution
     #ufile = File("velocity/velocity.pvd")
@@ -115,33 +114,35 @@ def NS(N, dt, T, L, nu):
     t = dt
     t_star.append(0)
     E_k.append(assemble(0.5*dot(u0, u0)*dx) / (2*pi)**3)
-    if MPI.rank(mpi_comm_world()) == 0:
-        print "Reynolds number %.2f " % float(1.*L/nu)
-        print "STARTING TIME LOOP"
+
     while t < T:
+        if MPI.rank(mpi_comm_world()) == 0:
+            print "Iterating for time %.4g" % t
         time.append(t)
         # Compute tentative velocity step
         begin("Computing tentative velocity")
-        b1 = assemble(L1)
-        #solve(A1, u1.vector(), b1, "gmres", "ilu")
-        solve(A1, u1.vector(), b1, "gmres", "default")
-        #solve(A1, u1.vector(), b1, "cg", "hypre_amg")
+        b1 = assemble(L1, tensor=b1)
+        pc = PETScPreconditioner("jacobi")
+        sol = PETScKrylovSolver("bicgstab", pc)
+        sol.solve(A1, u1.vector(), b1)
+        #b1 = assemble(L1)
+        #solve(A1, u1.vector(), b1, "bicgstab", "hypre_euclid")
         end()
 
         # Pressure correction
         begin("Computing pressure correction")
-        b2 = assemble(L2)
-        solve(A2, p1.vector(), b2, "gmres", "amg") #cg
-        #solve(A2, p1.vector(), b2, "cg", "hypre_amg") #cg
+        b2 = assemble(L2, tensor=b2)
+        solve(A2, p1.vector(), b2, "gmres", "hypre_amg") #cg
         end()
 
         # Velocity correction
         begin("Computing velocity correction")
-        b3 = assemble(L3)
-        #solve(A3, u1.vector(), b3, "gmres", "ilu")
-        solve(A3, u1.vector(), b3, "bicg
-        stab", "default")
-        #solve(A3, u1.vector(), b3, "cg", "hypre_amg")
+        b3 = assemble(L3, tensor=b3)
+        pc2 = PETScPreconditioner("jacobi")
+        sol2 = PETScKrylovSolver("bicgstab", pc2)
+        sol2.solve(A3, u1.vector(), b3)
+        #b3 = assemble(L3)
+        #solve(A3, u1.vector(), b3, "cg", "hypre_euclid")
         end()
 
         # Plot solution
@@ -158,9 +159,6 @@ def NS(N, dt, T, L, nu):
         u0.assign(u1)
         t += dt
 
-        if MPI.rank(mpi_comm_world()) == 0:
-            print "t =", t
-            print "END TIMELOOP"
 
     degree = V.dim() #DOF Degrees of freedom
     time_calc.append(toc())
@@ -168,10 +166,10 @@ def NS(N, dt, T, L, nu):
 
 error = []; dof = []; K = []; time_calc = []
 E_k = []; time = [0]; t_star = []
-N = [12];
-L = 1; nu = 0.001; dt=0.01
+N = [10];
+L = 1.; nu = 0.01; dt=0.01
 Re = L*1./nu
-
+print "Reynolds number %.1f" % Re
 #Watch nu
 for i in N:
     NS(i, dt=dt, T = 10, L = L, nu = nu)

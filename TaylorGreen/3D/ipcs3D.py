@@ -73,7 +73,7 @@ def ipcs(N, dt, T, L, rho, mu):
 
 
     # Define time-dependent pressure boundary condition
-    p_e = Expression('1./16.*(cos(2*x[0]/L)+cos(2*x[1]/L))*(cos(2*x[2]/L)+2)', degree=3)
+    p_e = Expression('1./16.*(cos(2*x[0]/L)+cos(2*x[1]/L))*(cos(2*x[2]/L)+2)', L = L, degree=3)
     u_e = Expression(('sin(x[0]/L)*cos(x[1]/L)*cos(x[2]/L)', '-cos(x[0]/L)*sin(x[1]/L)*cos(x[2]/L)', '0'),\
 	L = L, degree=3)
 
@@ -130,9 +130,9 @@ def ipcs(N, dt, T, L, rho, mu):
 
         begin("Solving Velocity star")
         b1 = assemble(L1, tensor=b1)
-        [bc.apply(A1, b1) for bc in bcu]
-        #solve(A1, u1.vector(), b1, "cg", "hypre_amg")
-        solve(A1, u1.vector(), b1, "gmres", "hypre_amg")
+        pc = PETScPreconditioner("jacobi")
+        sol = PETScKrylovSolver("bicgstab", pc)
+        sol.solve(A1, u1.vector(), b1)
         end()
 
         begin("Pressure CORRECTION")
@@ -144,9 +144,9 @@ def ipcs(N, dt, T, L, rho, mu):
 
         begin("Velocity CORRECTION")
         b3 = assemble(L3, tensor=b3)
-        [bc.apply(A3, b3) for bc in bcu]
-        #solve(A3, u1.vector(), b3, "cg", "hypre_amg")
-        solve(A3, u1.vector(), b3, "gmres", "hypre_amg")
+        pc2 = PETScPreconditioner("jacobi")
+        sol2 = PETScKrylovSolver("bicgstab", pc2)
+        sol2.solve(A1, u1.vector(), b3)
         end()
 
         t_star.append(t/L)
@@ -168,7 +168,7 @@ def ipcs(N, dt, T, L, rho, mu):
 
 set_log_active(False)
 N = [10]
-rho = 1000.; mu = 1.; T= 10.; dt = 0.001; L = 1.
+rho = 1000.; mu = 1.; T= 10.; dt = 0.01; L = 1.
 h = []; E = []; E_k = []; t_star = []; time_calc = []
 for n in N:
     ipcs(N = n, dt = dt, T = T, L = L,rho = rho, mu = mu)
