@@ -146,7 +146,7 @@ def ipcs(N, dt, T, L, rho, mu):
         b3 = assemble(L3, tensor=b3)
         pc2 = PETScPreconditioner("jacobi")
         sol2 = PETScKrylovSolver("bicgstab", pc2)
-        sol2.solve(A1, u1.vector(), b3)
+        sol2.solve(A3, u1.vector(), b3)
         end()
 
         t_star.append(t/L)
@@ -168,25 +168,32 @@ def ipcs(N, dt, T, L, rho, mu):
 
 set_log_active(False)
 N = [10]
-rho = 1000.; mu = 1.; T= 10.; dt = 0.01; L = 1.
+rho = 1000.; mu = 1.; T= 10.; dt = 0.01; L = 1.; nu = mu/rho
+Re = L*1./nu
 h = []; E = []; E_k = []; t_star = []; time_calc = []
 for n in N:
     ipcs(N = n, dt = dt, T = T, L = L,rho = rho, mu = mu)
 
 
 if MPI.rank(mpi_comm_world()) == 0:
-	print N
-	print E
-	print time_calc
-	Re = (L*rho/mu)
+	np.savetxt('ipcsdata/E_k.txt', E_k, delimiter=',')
+	np.savetxt('ipcsdata/t_star.txt', t_star, delimiter=',')
 	plt.figure(1)
 	plt.title("Plot of Kinetic Energy in the domain Re = %.1f" % Re)
 	plt.xlabel('Time t* (t/L),  dt = %.2f' % dt)
 	plt.ylabel('E_k')
 	plt.plot(t_star, E_k)
-	plt.show()
-	np.savetxt('E_k.txt', E_k, delimiter=',')
-	np.savetxt('t_star.txt', t_star, delimiter=',')
+	plt.savefig('plots/IPCS_Ek.png')
+	
+	E_k = np.asarray(E_k); t_star = np.asarray(t_star)
+	E_t = (E_k[1:] - E_k[:-1])/dt
+	plt.figure(2)
+	plt.title("Plot of Dissipation in the domain")
+	plt.xlabel('Time t* (t/L)')
+	plt.ylabel(' dE_k/dt')
+	plt.plot(t_star[:-1], E_t)
+	plt.savefig('plots/IPCS_dissipation.png')
+	#plt.show()
 
 
 	"""

@@ -2,10 +2,9 @@ from dolfin import *
 import numpy as np
 import matplotlib.pyplot as plt
 
-set_log_active(False)
 
 # Load mesh fdefault
-def NS(N, dt, T, L, nu):
+def chorin(N, dt, T, L, nu):
     tic()
     mesh = BoxMesh(Point(-pi*L, -pi*L, -pi*L), Point(pi*L, pi*L, pi*L), N, N, N)
 
@@ -164,26 +163,36 @@ def NS(N, dt, T, L, nu):
     time_calc.append(toc())
     #plot(u0, interactive=True)
 
+set_log_active(False)
 error = []; dof = []; K = []; time_calc = []
 E_k = []; time = [0]; t_star = []
-N = [10];
-L = 1.; nu = 0.01; dt=0.01
+N = [32];
+L = 1.; nu = 0.001; dt=0.01
 Re = L*1./nu
 print "Reynolds number %.1f" % Re
 #Watch nu
 for i in N:
-    NS(i, dt=dt, T = 10, L = L, nu = nu)
+    chorin(i, dt=dt, T = 10, L = L, nu = nu)
 if MPI.rank(mpi_comm_world()) == 0:
+	np.savetxt('chorindata/E_k.txt', E_k, delimiter=',')
+	np.savetxt('chorindata/t_star.txt', t_star, delimiter=',')
+	plt.figure(1)
+	plt.title("Plot of Kinetic Energy in the domain Re = %.1f" % Re)
+	plt.xlabel('Time t* (t/L),  dt = %.2f' % dt)
+	plt.ylabel('E_k')
+	plt.plot(t_star, E_k)
+	plt.savefig('plots/Chorin_Ek.png')
+	
+	E_k = np.asarray(E_k); t_star = np.asarray(t_star)
+	E_t = (E_k[1:] - E_k[:-1])/dt
+	plt.figure(2)
+	plt.title("Plot of Dissipation in the domain")
+	plt.xlabel('Time t* (t/L)')
+	plt.ylabel(' dE_k/dt')
+	plt.plot(t_star[:-1], E_t)
+	plt.savefig('plots/Chorin_dissipation.png')
+	#plt.show()
 
-    print time_calc
-    plt.figure(1)
-    plt.title("Plot of Kinetic Energy in the domain Re = %.1f" % Re)
-    plt.xlabel('Time t* (t/L),  dt = %.2f' % dt)
-    plt.ylabel('E_k')
-    plt.plot(t_star, E_k)
-    plt.show()
-    np.savetxt('E_k.txt', E_k, delimiter=',')
-    np.savetxt('t_star.txt', t_star, delimiter=',')
 
 #T = np.loadtxt('test.txt')
 #print T
