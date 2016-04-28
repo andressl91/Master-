@@ -60,6 +60,12 @@ def ipcs(N, dt, T, rho, mu):
     T = T
 
     f =Constant((0,0)) #BODYFORCE
+    
+    nos = DomainBoundary()    
+    boundaries = FacetFunction("size_t", mesh)
+    boundaries.set_all(0)
+    nos.mark(boundaries, 1)
+    ds = Measure("ds", subdomain_data=boundaries)
 
     #plot(boundaries, interactive=True)
 

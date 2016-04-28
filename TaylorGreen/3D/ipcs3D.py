@@ -90,7 +90,14 @@ def ipcs(N, dt, T, L, rho, mu):
     bcp = []
 
     f =Constant((0,0,0)) #BODYFORCE
-
+    
+    nos = DomainBoundary()
+    
+    boundaries = FacetFunction("size_t", mesh)
+    boundaries.set_all(0)
+    nos.mark(boundaries, 1)
+    ds = Measure("ds", subdomain_data=boundaries)
+    
     #plot(boundaries, interactive=True)
 
     def sigma (u_o, p_o):
@@ -104,7 +111,7 @@ def ipcs(N, dt, T, L, rho, mu):
     #STEP 1: TENTATIVE VELOCITY
     F = inner(rho*1./dt*(u - u0), v)*dx + dot(rho*dot(u0, nabla_grad(u0)), v)*dx \
     + inner( sigma(0.5*(u + u0), p0), eps(v) )*dx \
-    - mu*dot(dot(grad(0.5*(u + u0)), n), v)*ds(3) + dot(p0*n ,v)*ds(3)- inner(f,v)*dx
+    - mu*dot(dot(grad(0.5*(u + u0)), n), v)*ds(1) + dot(p0*n ,v)*ds(1)- inner(f,v)*dx
 
     a1 = lhs(F)
     L1 = rhs(F)
@@ -168,7 +175,7 @@ def ipcs(N, dt, T, L, rho, mu):
 
 set_log_active(False)
 N = [10]
-rho = 1000.; mu = 1.; T= 10.; dt = 0.01; L = 1.; nu = mu/rho
+rho = 1000.; mu = 1.; T= 1.; dt = 0.1; L = 1.; nu = mu/rho
 Re = L*1./nu
 h = []; E = []; E_k = []; t_star = []; time_calc = []
 for n in N:
