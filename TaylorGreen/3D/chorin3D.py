@@ -167,17 +167,17 @@ set_log_active(False)
 error = []; dof = []; K = []; time_calc = []
 E_k = []; time = [0]; t_star = []
 N = [32];
-L = 1.; nu = 0.001; dt=0.01
+L = 1.; nu = 0.001; dt=0.001; T = 20.
 Re = L*1./nu
 print "Reynolds number %.1f" % Re
 #Watch nu
 for i in N:
-    chorin(i, dt=dt, T = 10, L = L, nu = nu)
+    chorin(i, dt=dt, T = T, L = L, nu = nu)
 if MPI.rank(mpi_comm_world()) == 0:
 	np.savetxt('chorindata/E_k.txt', E_k, delimiter=',')
 	np.savetxt('chorindata/t_star.txt', t_star, delimiter=',')
 	plt.figure(1)
-	plt.title("Plot of Kinetic Energy in the domain Re = %.1f" % Re)
+	plt.title("Plot of Kinetic Energy, Time %.1f, Re = %.1f" % (T, Re))
 	plt.xlabel('Time t* (t/L),  dt = %.2f' % dt)
 	plt.ylabel('E_k')
 	plt.plot(t_star, E_k)
@@ -186,7 +186,7 @@ if MPI.rank(mpi_comm_world()) == 0:
 	E_k = np.asarray(E_k); t_star = np.asarray(t_star)
 	E_t = (E_k[1:] - E_k[:-1])/dt
 	plt.figure(2)
-	plt.title("Plot of Dissipation in the domain")
+	plt.title("Plot of Dissipation")
 	plt.xlabel('Time t* (t/L)')
 	plt.ylabel(' dE_k/dt')
 	plt.plot(t_star[:-1], E_t)

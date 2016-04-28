@@ -174,8 +174,8 @@ def ipcs(N, dt, T, L, rho, mu):
 
 
 set_log_active(False)
-N = [10]
-rho = 1000.; mu = 1.; T= 1.; dt = 0.1; L = 1.; nu = mu/rho
+N = [32]
+rho = 1000.; mu = 1.; T= 20.; dt = 0.001; L = 1.; nu = mu/rho
 Re = L*1./nu
 h = []; E = []; E_k = []; t_star = []; time_calc = []
 for n in N:
@@ -186,7 +186,7 @@ if MPI.rank(mpi_comm_world()) == 0:
 	np.savetxt('ipcsdata/E_k.txt', E_k, delimiter=',')
 	np.savetxt('ipcsdata/t_star.txt', t_star, delimiter=',')
 	plt.figure(1)
-	plt.title("Plot of Kinetic Energy in the domain Re = %.1f" % Re)
+	plt.title("Plot of Kinetic Energy, Time %.1f, Re = %.1f" % (T, Re))
 	plt.xlabel('Time t* (t/L),  dt = %.2f' % dt)
 	plt.ylabel('E_k')
 	plt.plot(t_star, E_k)
