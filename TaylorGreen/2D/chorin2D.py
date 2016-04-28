@@ -1,11 +1,12 @@
 from dolfin import *
 import matplotlib.pyplot as plt
+from tabulate import tabulate
 
 set_log_active(False)
 
 # Load mesh from file
 
-def NS(N, dt, T, nu, solver):
+def chorin(N, dt, T, nu):
     tic()
 
     mesh = RectangleMesh(Point(-1, -1), Point(1, 1), N, N)
@@ -59,7 +60,6 @@ def NS(N, dt, T, nu, solver):
     # Create functions
     p_start = interpolate(p_e, Q)
     u0 = interpolate(u_e, V)
-    #plot(p_start, interactive=True)
     u1 = Function(V)
     p1 = Function(Q)
 
@@ -74,14 +74,8 @@ def NS(N, dt, T, nu, solver):
     L1 = rhs(F1)
 
     # Pressure update
-    if solver == "Chorin":
-        a2 = inner(grad(p), grad(q))*dx
-        L2 = -(1/k)*div(u1)*q*dx
-
-    else:
-        #STEP 2:PRESSURE CORRECTION
-        a2 = dot(dt*grad(p), grad(q))*dx
-        L2 = dot(dt*grad(p_0), grad(q))*dx - rho*div(u_1)*q*dx
+    a2 = inner(grad(p), grad(q))*dx
+    L2 = -(1/k)*div(u1)*q*dx
 
     # Velocity update
     a3 = inner(u, v)*dx
@@ -93,18 +87,15 @@ def NS(N, dt, T, nu, solver):
     A3 = assemble(a3)
 
     # Create files for storing solution
-    ufile = File("velocity/velocity.pvd")
-    pfile = File("pressure/pressure.pvd")
+    #ufile = File("velocity/velocity.pvd")
+    #pfile = File("pressure/pressure.pvd")
 
     # Time-stepping
     t = dt
-    if MPI.rank(mpi_comm_world()) == 0:
-        L = 1
-        print "Reynolds number %.2f " % float(1.*L/nu)
-        print "STARTING TIME LOOP"
+
     tstep = 0
     while t < T:
-        print "Time step %.3f" % t
+        #print "Time step %.3f" % t
         # Compute tentative velocity step
         begin("Computing tentative velocity")
         b1 = assemble(L1)
@@ -138,6 +129,7 @@ def NS(N, dt, T, nu, solver):
         u0.assign(u1)
         tstep += 1
         t += dt
+        """
         print round(t % 0.1)
         if tstep % 1 == 0:
                 u_e.t = t
@@ -146,42 +138,61 @@ def NS(N, dt, T, nu, solver):
                 #print "DT IS %.2f" % t
                 print "Error L2 norm is %.5f " % L2_u
                 continue
+        """
 
+    te = toc()
+    time.append(te)
 
-    print "END TIMELOOP"
     p_e.t = t
     u_e.t = t
 
-    degree = V.dim() #DOF Degrees of freedom
+    #degree = V.dim() #DOF Degrees of freedom
     L2_u= errornorm(u_e, u0, norm_type='l2', degree_rise=3)
     #L2_p = errornorm(p_e, p1, norm_type='l2', degree_rise=3)
+    #VERYFY PRINTOUT
+    print "L2 norm %.4f for N = %d and dt = %.2f, comp_time %.4f" % (L2_u, N, dt, te)
+    E.append(L2_u);
 
-    Kinetic = 0.5*L2_u*L2_u
-    K.append(Kinetic)
-
-    #print 0.5*norm(u0, 'l2')**2
-    V1 = VectorFunctionSpace(mesh, 'Lagrange', 3)
-    #print norm(interpolate(u_e, V1), 'l2')**2
-    error.append(L2_u); dof.append(degree)
-    time.append(toc())
-
-    print "TOTAL TIME USAGE %.3f" % time[0]
-    print "Error L2 norm % .3f" % L2_u
-
+    """
     s1 = str(L2_u);
     s = s1
     filename = "./2D_vel"
     with open(filename, "a") as myfile:
         myfile.write("%s \n" % s)
+    """
 
-
+"""
 error = []; dof = []; K = []; time = []
 #N = [4*i for i in range(5, 7)]
 N = [20]
 
 for i in N:
     NS(i, dt=0.01, T=1., nu = 0.01, solver="Chorin")
+"""
+set_log_active(False)
 
+#N = [2**i for i in range(3,7)]
+N = [8 ,16, 32]
+Time = [0.1, 0.01, 0.001]
+h = []; E = []; time = []
+
+rho = 500.; mu = 1.; nu = mu/rho
+
+if MPI.rank(mpi_comm_world()) == 0:
+    print "Reynolds number %.2f" % (2./nu)
+    for t in Time:
+        for n in N:
+            chorin(N = n, dt = t, T = 1., nu=nu)
+
+    table = []
+    for i in range(len(N)):
+        li = []
+        li.append(str(N[i]))
+        for t in range(len(Time)):
+            li.append(E[len(N)*t + i])
+            li.append(time[len(N)*t + i])
+        table.append(li)
+    print tabulate(table, headers=['N', "dt = 0.1", "Runtime", "dt = 0.01", "Runtime", "dt = 0.001", "runtime"])
 
 
 """

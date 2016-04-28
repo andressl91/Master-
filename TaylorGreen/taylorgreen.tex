@@ -19,8 +19,8 @@ p(x,y,t) = -0.25(cos(2\pi x) + cos(2 \pi y) ) e^{-4 t \nu \pi^2}
 \end{align}
 
 
-For the 3D case we will consider the kinetic energy $E_k$ and kinetic energy dissipation rate $\epsilon$  for the system. These quantities are 
-explored thoroughly by other authors, and will be used as comparison. The initial field set up in the 3D Taylor-Green vortex is defined as 
+For the 3D case we will consider the kinetic energy $E_k$ and kinetic energy dissipation rate $\epsilon$  for the system. These quantities are
+explored thoroughly by other authors, and will be used as comparison. The initial field set up in the 3D Taylor-Green vortex is defined as
 
 \begin{align}
 u(x,y,z) = ( V_{0}sin(\frac{x}{L}) cos(\frac{y}{L}) cos(\frac{z}{L}), \hspace{2mm}-V_{0}cos(\frac{x}{L})sin(\frac{y}{L})cos(\frac{z}{L}), \hspace{2mm} 0 )\\
@@ -44,7 +44,7 @@ time explore Chorins method, and the incremental pressure correction scheme (\te
 
 We will use the FEniCS project, a open-source PDE solver using the finite element method approach.
 As verification of our schemes, the known analytical solution for the 2D Taylor-Green Vortex will be used as comparison.
-Finally we will move on to the 3D Taylor-Green vortex, using ... as reference. 
+Finally we will move on to the 3D Taylor-Green vortex, using ... as reference.
 
 The Reynolds number, discovered Osborne Reynolds as the relation between inertial and viscous forces, is defined
 as
@@ -83,6 +83,15 @@ for the domain $\Omega$
 
 \section*{Results}
 2D case Oasis Runtime: 3.8886 \\
+
+\begin{lstlisting}
+N    dt = 0.1    Runtime    dt = 0.01    Runtime    dt = 0.001    Runtime
+
+8   0.539835    0.164657   0.180778     0.519237   0.178371       4.76148
+16   2.04897    0.179117   0.0183534    1.0009     0.0184022      9.40705
+32   0.104095    0.400865   0.00130196   2.85381    0.0012364     53.0239
+64   0.0210904   1.26767    0.00484368  10.0555     0.000161193  160.618
+\end{lstlisting}
 
 Chorin own implementation 7.039
 

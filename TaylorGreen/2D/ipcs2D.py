@@ -1,7 +1,9 @@
 from dolfin import *
 import numpy as np
+from tabulate import tabulate
 
 def ipcs(N, dt, T, rho, mu):
+    tic()
     mesh = RectangleMesh(Point(-1, -1), Point(1, 1), N, N)
 
     class PeriodicDomain(SubDomain):
@@ -27,8 +29,6 @@ def ipcs(N, dt, T, rho, mu):
     test = PeriodicDomain()
 
     nu = mu/rho
-    if MPI.rank(mpi_comm_world()) == 0:
-        print "Reynolds number %.2f" % (2./nu)
 
     # Define function spaces (P2-P1)
     V = VectorFunctionSpace(mesh, "CG", 2, constrained_domain = test)
@@ -102,7 +102,7 @@ def ipcs(N, dt, T, rho, mu):
         b1 = assemble(L1, tensor=b1)
         [bc.apply(A1, b1) for bc in bcu]
         #solve(A1, u1.vector(), b1, "cg", "hypre_amg")
-        solve(A1, u1.vector(), b1, "gmres", "hypre_amg")
+        solve(A1, u1.vector(), b1, "gmres", "default")
         end()
 
         begin("Pressure CORRECTION")
@@ -116,7 +116,7 @@ def ipcs(N, dt, T, rho, mu):
         b3 = assemble(L3, tensor=b3)
         [bc.apply(A3, b3) for bc in bcu]
         #solve(A3, u1.vector(), b3, "cg", "hypre_amg")
-        solve(A3, u1.vector(), b3, "gmres", "hypre_amg")
+        solve(A3, u1.vector(), b3, "gmres", "default")
         end()
 
 
@@ -126,6 +126,7 @@ def ipcs(N, dt, T, rho, mu):
         t += dt
 
     #plot(u0, interactive=True)
+    time.append(toc())
     p_e.t = t
     u_e.t = t
     V1 = VectorFunctionSpace(mesh, "CG", 3, constrained_domain = test)
@@ -134,22 +135,43 @@ def ipcs(N, dt, T, rho, mu):
     #plot(p0, interactive = True)
     #plot(p_e, interactive = True)
     L2_u = errornorm(u_e, u0, norm_type='l2')
-    L2_p = errornorm(p_e, p1, norm_type='l2', degree_rise=3)
-    #print "L2 norm velocity %.3f " % L2_u
-    #print "L2 norm pressure %.3f " % L2_p
+    #VERYFY PRINTOUT
+    #print "L2 norm %.4f for N = %d and dt = %.2f, comp_time %.4f" % (L2_u, N, dt, te)
+    #L2_p = errornorm(p_e, p1, norm_type='l2', degree_rise=3)
     h.append(mesh.hmin())
     E.append(L2_u)
 
 
 set_log_active(False)
-N = [2**i for i in range(3,7)]
-N = [8 ,16, 32, 64, 74, 84]
-#N = [25, 30, 35, 40, 45, 50, 55]
-h = []; E = []
-for n in N:
-    ipcs(N = n, dt = 0.005, T = 1, rho = 500., mu = 1.)
+
+#N = [2**i for i in range(3,7)]
+N = [8 ,16, 32, 64]
+Time = [0.1, 0.01, 0.001]
+h = []; E = []; time = []
+
+rho = 500.; mu = 1.; nu = mu/rho
+
+if MPI.rank(mpi_comm_world()) == 0:
+    print "Reynolds number %.2f" % (2./nu)
+    for t in Time:
+        for n in N:
+            ipcs(N = n, dt = t, T = 1, rho = rho, mu = mu)
+
+    table = []
+    for i in range(len(N)):
+        li = []
+        li.append(str(N[i]))
+        for t in range(len(Time)):
+            li.append(E[len(N)*t + i])
+            #EASY TO ADD CONVERGENCE RATE, USE COMMENTED CODE
+            li.append(time[len(N)*t + i])
+        table.append(li)
+    print tabulate(table, headers=['N', "dt = 0.1", "Runtime", "dt = 0.01", "Runtime", "dt = 0.001", "Runtime"])
 
 
+
+
+"""
 if MPI.rank(mpi_comm_world()) == 0:
     print N
     print E
@@ -158,3 +180,4 @@ if MPI.rank(mpi_comm_world()) == 0:
         #print h[i],h[i+1]
         r = np.log(E[i]-E[i+1])/np.log(h[i]-h[i+1] )
         print r
+"""
