@@ -1,5 +1,5 @@
 import os
-
+#LAGRANGE MULTIP
 file_vel = "2D_vel"
 file = open(file_vel, "w"); file.seek(0)
 file.truncate(); file.close

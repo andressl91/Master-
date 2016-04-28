@@ -5,7 +5,7 @@ set_log_active(False)
 
 # Load mesh from file
 
-def NS(N, dt, T, nu):
+def NS(N, dt, T, nu, solver):
     tic()
 
     mesh = RectangleMesh(Point(-1, -1), Point(1, 1), N, N)
@@ -55,9 +55,6 @@ def NS(N, dt, T, nu):
     #p_e = interpolate(p_e, Q)
 
 
-    # Define boundary conditions
-    bcu = []
-    bcp = []
 
     # Create functions
     p_start = interpolate(p_e, Q)
@@ -77,8 +74,14 @@ def NS(N, dt, T, nu):
     L1 = rhs(F1)
 
     # Pressure update
-    a2 = inner(grad(p), grad(q))*dx
-    L2 = -(1/k)*div(u1)*q*dx
+    if solver == "Chorin":
+        a2 = inner(grad(p), grad(q))*dx
+        L2 = -(1/k)*div(u1)*q*dx
+
+    else:
+        #STEP 2:PRESSURE CORRECTION
+        a2 = dot(dt*grad(p), grad(q))*dx
+        L2 = dot(dt*grad(p_0), grad(q))*dx - rho*div(u_1)*q*dx
 
     # Velocity update
     a3 = inner(u, v)*dx
@@ -177,7 +180,7 @@ error = []; dof = []; K = []; time = []
 N = [20]
 
 for i in N:
-    NS(i, dt=0.01, T=1., nu = 0.01)
+    NS(i, dt=0.01, T=1., nu = 0.01, solver="Chorin")
 
 
 

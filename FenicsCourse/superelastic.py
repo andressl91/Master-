@@ -2,6 +2,7 @@ from dolfin import *
 import numpy as np
 
 mesh = Mesh("lego_beam.xml")
+plot(mesh, interactive=True)
 V = VectorFunctionSpace(mesh, 'Lagrange', 1)
 #u = TrialFunction(V) #SOLVING NEWTON REQUIRE Function
 u = Function(V)
