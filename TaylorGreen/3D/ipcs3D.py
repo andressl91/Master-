@@ -52,7 +52,7 @@ def ipcs(N, dt, T, L, rho, mu):
     test = PeriodicDomain()
 
 
-    nu = mu/rho
+    nu = Constant(mu/rho)
     if MPI.rank(mpi_comm_world()) == 0:
         print "Reynolds number %.2f" % (L/nu)
 
@@ -73,10 +73,9 @@ def ipcs(N, dt, T, L, rho, mu):
 
 
     # Define time-dependent pressure boundary condition
-    p_e = Expression('1./16.*(cos(2*x[0])+cos(2*x[1]))*(cos(2*x[2])+2)', degree=3)
-    u_e = Expression(('sin(x[0]/L)*cos(x[1]/L)*cos(x[2]/L)', \
-            '-cos(x[0]/L)*sin(x[1]/L)*cos(x[2]/L)', \
-            '0'), L = L, degree=3)
+    p_e = Expression('1./16.*(cos(2*x[0]/L)+cos(2*x[1]/L))*(cos(2*x[2]/L)+2)', degree=3)
+    u_e = Expression(('sin(x[0]/L)*cos(x[1]/L)*cos(x[2]/L)', '-cos(x[0]/L)*sin(x[1]/L)*cos(x[2]/L)', '0'),\
+	L = L, degree=3)
 
     #Create Functions
     #p_e = interpolate(p_e, Q)
@@ -140,7 +139,7 @@ def ipcs(N, dt, T, L, rho, mu):
         b2 = assemble(L2, tensor=b2)
         [bc.apply(A2, b2) for bc in bcp]
         solve(A2, p1.vector(), b2, "gmres", "amg")
-        #solve(A2, p1.vector(), b2, "cg", "hypre_amg")
+        #solve(A2, p1.vector(), b2, "minres", "amg")
         end()
 
         begin("Velocity CORRECTION")
@@ -159,42 +158,41 @@ def ipcs(N, dt, T, L, rho, mu):
         t += dt
 
     #plot(u0, interactive=True)
-    p_e.t = t; u_e.t = t
+    #p_e.t = t; u_e.t = t
     #V1 = VectorFunctionSpace(mesh, "CG", 3, constrained_domain = test)
-    u_e = interpolate(u_e, V); p_e = interpolate(p_e, Q)
+    #u_e = interpolate(u_e, V); p_e = interpolate(p_e, Q)
     #plot(p0, interactive = True); plot(p_e, interactive = True)
-    L2_u = errornorm(u_e, u0, norm_type='l2')
-    L2_p = errornorm(p_e, p1, norm_type='l2', degree_rise=3)
-    h.append(mesh.hmin())
-    E.append(L2_u)
+
     time_calc.append(toc())
 
 
 set_log_active(False)
 N = [10]
+rho = 1000.; mu = 1.; T= 10.; dt = 0.001; L = 1.
 h = []; E = []; E_k = []; t_star = []; time_calc = []
 for n in N:
-    ipcs(N = n, dt = 0.1, T = 1, L = 1,rho = 200., mu = 1.)
+    ipcs(N = n, dt = dt, T = T, L = L,rho = rho, mu = mu)
 
 
 if MPI.rank(mpi_comm_world()) == 0:
-    print N
-    print E
-    print time_calc
-    plt.figure(1)
-    plt.title("Plot of Kinetic Energy in the domain Re = %.1f" % Re)
-    plt.xlabel('Time t* (t/L),  dt = %.2f' % dt)
-    plt.ylabel('E_k')
-    plt.plot(t_star, E_k)
-    plt.show()
-    np.savetxt('E_k.txt', E_k, delimiter=',')
-    np.savetxt('t_star.txt', t_star, delimiter=',')
+	print N
+	print E
+	print time_calc
+	Re = (L*rho/mu)
+	plt.figure(1)
+	plt.title("Plot of Kinetic Energy in the domain Re = %.1f" % Re)
+	plt.xlabel('Time t* (t/L),  dt = %.2f' % dt)
+	plt.ylabel('E_k')
+	plt.plot(t_star, E_k)
+	plt.show()
+	np.savetxt('E_k.txt', E_k, delimiter=',')
+	np.savetxt('t_star.txt', t_star, delimiter=',')
 
 
-    """
-    for i in range(len(E)-1):
-        #print E[i],E[i+1]
-        #print h[i],h[i+1]
-        r = np.log(E[i]-E[i+1])/np.log(h[i]-h[i+1] )
-        print r
-    """
+	"""
+	for i in range(len(E)-1):
+		#print E[i],E[i+1]
+		#print h[i],h[i+1]
+		r = np.log(E[i]-E[i+1])/np.log(h[i]-h[i+1] )
+		print r
+	"""
