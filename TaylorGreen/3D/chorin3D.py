@@ -1,10 +1,9 @@
 from dolfin import *
 import numpy as np
 import matplotlib.pyplot as plt
-
-
+import time
 # Load mesh fdefault
-def chorin(N, dt, T, L, nu):
+def chorin(N, dt, T, L, nu, save):
     tic()
     mesh = BoxMesh(Point(-pi*L, -pi*L, -pi*L), Point(pi*L, pi*L, pi*L), N, N, N)
 
@@ -80,6 +79,7 @@ def chorin(N, dt, T, L, nu):
 
     # Create functions
     u0 = interpolate(u_e, V)
+    p0 = interpolate(p_e, Q)
     u1 = Function(V)
     p1 = Function(Q)
 
@@ -113,7 +113,7 @@ def chorin(N, dt, T, L, nu):
     t = dt
     t_star.append(0)
     E_k.append(assemble(0.5*dot(u0, u0)*dx) / (2*pi)**3)
-
+    count = 0; save = save; kin = np.zeros(1)
     while t < T:
         if MPI.rank(mpi_comm_world()) == 0:
             print "Iterating for time %.4g" % t
@@ -144,18 +144,20 @@ def chorin(N, dt, T, L, nu):
         #solve(A3, u1.vector(), b3, "cg", "hypre_euclid")
         end()
 
-        # Plot solution
-        #plot(p1, title="Pressure", rescale=True)
-        #plot(u1, title="Velocity", rescale=True)
+        if (count % save == 0 or count % save == 1):
+            kinetic = assemble(0.5*dot(u1, u1)*dx) / (2*pi)**3
+            if (count % save == 0):
+                kin[0] = kinetic
+            else :#(count % save == 1):
+                print "Total kinetic energy %.4f " % kinetic
+                t_star.append(t/L)
+                E_k.append(kinetic)
+                diss = (kinetic-kin[0])/dt
+                dkdt.append(diss)
 
-        # Save to file
-        #ufile << u1
-        #pfile << p1
-
-        # Move to next time step
-        t_star.append(t/L)
-        E_k.append(assemble(0.5*dot(u1, u1)*dx) / (2.*pi*L)**3)
+        count += 1
         u0.assign(u1)
+        p0.assign(p1)
         t += dt
 
 
@@ -166,32 +168,37 @@ def chorin(N, dt, T, L, nu):
 set_log_active(False)
 error = []; dof = []; K = []; time_calc = []
 E_k = []; time = [0]; t_star = []
-N = [32];
+N = [32]; dkdt = [];
 L = 1.; nu = 0.001; dt=0.001; T = 20.
 Re = L*1./nu
 print "Reynolds number %.1f" % Re
 #Watch nu
 for i in N:
-    chorin(i, dt=dt, T = T, L = L, nu = nu)
+    chorin(i, dt=dt, T = T, L = L, nu = nu, save = 100)
 if MPI.rank(mpi_comm_world()) == 0:
-	np.savetxt('chorindata/E_k.txt', E_k, delimiter=',')
-	np.savetxt('chorindata/t_star.txt', t_star, delimiter=',')
-	plt.figure(1)
-	plt.title("Plot of Kinetic Energy, Time %.1f, Re = %.1f" % (T, Re))
-	plt.xlabel('Time t* (t/L),  dt = %.2f' % dt)
-	plt.ylabel('E_k')
-	plt.plot(t_star, E_k)
-	plt.savefig('plots/Chorin_Ek.png')
-	
-	E_k = np.asarray(E_k); t_star = np.asarray(t_star)
-	E_t = (E_k[1:] - E_k[:-1])/dt
-	plt.figure(2)
-	plt.title("Plot of Dissipation")
-	plt.xlabel('Time t* (t/L)')
-	plt.ylabel(' dE_k/dt')
-	plt.plot(t_star[:-1], E_t)
-	plt.savefig('plots/Chorin_dissipation.png')
-	#plt.show()
+    import time, os
+    clock = time.strftime("%H:%M:%S")
+    os.system("mkdir chorindata/"+clock)
+    np.savetxt('chorindata/' + clock + '/dkdt.txt', dkdt, delimiter=',')
+    np.savetxt('chorindata/' + clock + '/E_k.txt', E_k, delimiter=',')
+    np.savetxt('chorindata/' + clock + '/t_star.txt', t_star, delimiter=',')
+
+    plt.figure(1)
+    plt.title("Kinetic Energy, Time %.1f, Re = %.1f" % (T, Re))
+    plt.xlabel('Time t* (t/L),  dt = %.2f' % dt)
+    plt.ylabel('E_k')
+    plt.plot(t_star, E_k)
+    plt.savefig('plots/Chorin_Ek.png')
+
+    E_k = np.asarray(E_k); t_star = np.asarray(t_star)
+    E_t = (E_k[1:] - E_k[:-1])/dt
+    plt.figure(2)
+    plt.title("Dissipation Time %.1f, Re = %.1f" % (T, Re))
+    plt.xlabel('Time t* (t/L),  dt = %.2f' % dt)
+    plt.ylabel('dE_k/dt')
+    plt.plot(t_star[:-1], E_t)
+    plt.savefig('plots/Chorin_dissipation.png')
+    plt.show()
 
 
 #T = np.loadtxt('test.txt')

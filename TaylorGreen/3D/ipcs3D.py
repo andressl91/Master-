@@ -1,11 +1,11 @@
 from dolfin import *
 import numpy as np
 import matplotlib.pyplot as plt
-
+import time
 set_log_active(False)
 
 # Load mesh fdefault
-def ipcs(N, dt, T, L, rho, mu):
+def ipcs(N, dt, T, L, rho, mu, save):
 
     tic()
     mesh = BoxMesh(Point(-pi*L, -pi*L, -pi*L), Point(pi*L, pi*L, pi*L), N, N, N)
@@ -90,14 +90,14 @@ def ipcs(N, dt, T, L, rho, mu):
     bcp = []
 
     f =Constant((0,0,0)) #BODYFORCE
-    
+
     nos = DomainBoundary()
-    
+
     boundaries = FacetFunction("size_t", mesh)
     boundaries.set_all(0)
     nos.mark(boundaries, 1)
     ds = Measure("ds", subdomain_data=boundaries)
-    
+
     #plot(boundaries, interactive=True)
 
     def sigma (u_o, p_o):
@@ -131,6 +131,7 @@ def ipcs(N, dt, T, L, rho, mu):
     t = dt
     progress = Progress("Time-Stepping")
     #plot(u0, interactive=True)
+    count = 0; save = save; kin = np.zeros(1)
     while(t < T):
         if MPI.rank(mpi_comm_world()) == 0:
             print "Iterating for time %.4g" % t
@@ -156,12 +157,20 @@ def ipcs(N, dt, T, L, rho, mu):
         sol2.solve(A3, u1.vector(), b3)
         end()
 
-        t_star.append(t/L)
-        E_k.append(assemble(0.5*dot(u1, u1)*dx) / (2.*pi*L)**3)
+        if (count % save == 0 or count % save == 1):
+            kinetic = assemble(0.5*dot(u1, u1)*dx) / (2*pi)**3
+            if (count % save == 0):
+                kin[0] = kinetic
+            else :#(count % save == 1):
+                print "Total kinetic energy %.4f " % kinetic
+                t_star.append(t/L)
+                E_k.append(kinetic)
+                diss = (kinetic-kin[0])/dt
+                dkdt.append(diss)
 
         u0.assign(u1)
         p0.assign(p1)
-
+        count += 1
         t += dt
 
     #plot(u0, interactive=True)
@@ -177,36 +186,41 @@ set_log_active(False)
 N = [32]
 rho = 1000.; mu = 1.; T= 20.; dt = 0.001; L = 1.; nu = mu/rho
 Re = L*1./nu
-h = []; E = []; E_k = []; t_star = []; time_calc = []
+h = []; E = []; E_k = []; t_star = []; time_calc = []; dkdt = []
 for n in N:
-    ipcs(N = n, dt = dt, T = T, L = L,rho = rho, mu = mu)
+    ipcs(N = n, dt = dt, T = T, L = L,rho = rho, mu = mu, save = 100)
 
 
 if MPI.rank(mpi_comm_world()) == 0:
-	np.savetxt('ipcsdata/E_k.txt', E_k, delimiter=',')
-	np.savetxt('ipcsdata/t_star.txt', t_star, delimiter=',')
-	plt.figure(1)
-	plt.title("Plot of Kinetic Energy, Time %.1f, Re = %.1f" % (T, Re))
-	plt.xlabel('Time t* (t/L),  dt = %.2f' % dt)
-	plt.ylabel('E_k')
-	plt.plot(t_star, E_k)
-	plt.savefig('plots/IPCS_Ek.png')
-	
-	E_k = np.asarray(E_k); t_star = np.asarray(t_star)
-	E_t = (E_k[1:] - E_k[:-1])/dt
-	plt.figure(2)
-	plt.title("Plot of Dissipation in the domain")
-	plt.xlabel('Time t* (t/L)')
-	plt.ylabel(' dE_k/dt')
-	plt.plot(t_star[:-1], E_t)
-	plt.savefig('plots/IPCS_dissipation.png')
-	#plt.show()
+    import time, os
+    clock = time.strftime("%H:%M:%S")
+    os.system("mkdir ipcsdata/" + clock)
+    np.savetxt('ipcsdata/' + clock + '/dkdt.txt'  , dkdt, delimiter=',')
+    np.savetxt('ipcsdata/' + clock + '/E_k.txt'   , E_k, delimiter=',')
+    np.savetxt('ipcsdata/' + clock + '/t_star.txt', t_star, delimiter=',')
+
+    plt.figure(1)
+    plt.title("Kinetic Energy, Time %.1f, Re = %.1f" % (T, Re))
+    plt.xlabel('Time t* (t/L),  dt = %.2f' % dt)
+    plt.ylabel('E_k')
+    plt.plot(t_star, E_k)
+    plt.savefig('plots/IPCS_Ek.png')
+
+    E_k = np.asarray(E_k); t_star = np.asarray(t_star)
+    E_t = (E_k[1:] - E_k[:-1])/dt
+    plt.figure(2)
+    plt.title("Dissipation Time %.1f, Re = %.1f" % (T, Re))
+    plt.xlabel('Time t* (t/L),  dt = %.2f' % dt)
+    plt.ylabel(' dE_k/dt')
+    plt.plot(t_star[:-1], E_t)
+    plt.savefig('plots/IPCS_dissipation.png')
+    #plt.show()
 
 
-	"""
-	for i in range(len(E)-1):
-		#print E[i],E[i+1]
-		#print h[i],h[i+1]
-		r = np.log(E[i]-E[i+1])/np.log(h[i]-h[i+1] )
-		print r
-	"""
+    """
+    for i in range(len(E)-1):
+    	#print E[i],E[i+1]
+    	#print h[i],h[i+1]
+    	r = np.log(E[i]-E[i+1])/np.log(h[i]-h[i+1] )
+    	print r
+    """
