@@ -5,7 +5,7 @@ import time
 set_log_active(False)
 
 # Load mesh fdefault
-def ipcs(N, dt, T, L, rho, mu, save):
+def ipcs(N, dt, T, L, rho, mu, save_step):
 
     tic()
     mesh = BoxMesh(Point(-pi*L, -pi*L, -pi*L), Point(pi*L, pi*L, pi*L), N, N, N)
@@ -128,10 +128,11 @@ def ipcs(N, dt, T, L, rho, mu, save):
     A1 = assemble(a1); A2 = assemble(a2); A3 = assemble(a3)
     b1 = None; b2 = None; b3 = None
 
-    t = dt
+    #t = dt
+    t = 0
     progress = Progress("Time-Stepping")
     #plot(u0, interactive=True)
-    count = 0; save = save; kin = np.zeros(1)
+    count = 0; kin = np.zeros(1)
     while(t < T):
         if MPI.rank(mpi_comm_world()) == 0:
             print "Iterating for time %.4g" % t
@@ -157,9 +158,10 @@ def ipcs(N, dt, T, L, rho, mu, save):
         sol2.solve(A3, u1.vector(), b3)
         end()
 
-        if (count % save == 0 or count % save == 1):
+        if (count % save_step == 0 or count % save_step == 1):
             kinetic = assemble(0.5*dot(u1, u1)*dx) / (2*pi)**3
-            if (count % save == 0):
+            print "Loop kick at %.5f" % (count*dt)
+            if (count % save_step == 0):
                 kin[0] = kinetic
             else :#(count % save == 1):
                 print "Total kinetic energy %.4f " % kinetic
@@ -183,21 +185,22 @@ def ipcs(N, dt, T, L, rho, mu, save):
 
 
 set_log_active(False)
-N = [32]
-rho = 1000.; mu = 1.; T= 20.; dt = 0.001; L = 1.; nu = mu/rho
+N = [8]
+rho = 1000.; mu = 1.; T= 0.001; dt = 0.0001; L = 1.; nu = mu/rho
 Re = L*1./nu
 h = []; E = []; E_k = []; t_star = []; time_calc = []; dkdt = []
 for n in N:
-    ipcs(N = n, dt = dt, T = T, L = L,rho = rho, mu = mu, save = 100)
+    ipcs(N = n, dt = dt, T = T, L = L,rho = rho, mu = mu, save_step = 100)
 
 
 if MPI.rank(mpi_comm_world()) == 0:
     import time, os
     clock = time.strftime("%H:%M:%S")
-    os.system("mkdir ipcsdata/" + clock)
-    np.savetxt('ipcsdata/' + clock + '/dkdt.txt'  , dkdt, delimiter=',')
-    np.savetxt('ipcsdata/' + clock + '/E_k.txt'   , E_k, delimiter=',')
-    np.savetxt('ipcsdata/' + clock + '/t_star.txt', t_star, delimiter=',')
+    s = "N_" + str(N[0]) + "_Re_"+str(Re) + "_"
+    os.system("mkdir ipcsdata/" + s + clock)
+    np.savetxt('ipcsdata/' + s + clock + '/dkdt.txt'  , dkdt, delimiter=',')
+    np.savetxt('ipcsdata/' + s + clock + '/E_k.txt'   , E_k, delimiter=',')
+    np.savetxt('ipcsdata/' + s + clock + '/t_star.txt', t_star, delimiter=',')
 
     plt.figure(1)
     plt.title("Kinetic Energy, Time %.1f, Re = %.1f" % (T, Re))
