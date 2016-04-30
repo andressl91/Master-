@@ -170,8 +170,8 @@ def chorin(N, dt, T, L, nu, save_step):
 set_log_active(False)
 error = []; dof = []; K = []; time_calc = []
 E_k = []; time = [0]; t_star = []
-N = [8]; dkdt = [];
-L = 1.; nu = 0.002; dt=0.0001; T = 0.0012
+N = [32]; dkdt = [];
+L = 1.; nu = 0.002; dt=0.0001; T = 20.
 Re = L*1./nu
 print "Reynolds number %.1f" % Re
 #Watch nu

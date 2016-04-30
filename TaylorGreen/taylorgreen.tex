@@ -1,11 +1,15 @@
 \documentclass[a4paper,norsk]{article}
 \usepackage{preamble}
 
+
+\usepackage{color, colortbl}
+\definecolor{LightCyan}{rgb}{0.88,1,1}
+
+
 \begin{document}
 \maketitle
 \section*{Taylor-Green Vortex}
 
-\section*{Abstract}
 
 \section*{Physical problem}
 The Taylor-Green vortex is a unsteady flow were we observe the flow of a decaying
@@ -82,30 +86,47 @@ for the domain $\Omega$
 
 
 \section*{Results}
-2D case Oasis Runtime: 3.8886 \\
+Experiments run for Time $T = 1$ for different choices of dt and N
 
-\begin{lstlisting}
-N    dt = 0.1    Runtime    dt = 0.01    Runtime    dt = 0.001    Runtime
+\textit{IPCS}
+\begin{table}[ht]
+\centering
+\begin{tabular}{c|ccccccc}
+\hline
+\rowcolor{LightCyan}
+N  &  $L_2$ dt = 0.1 & Runtime & $L_2$ dt = 0.01 & Runtime  & $L_2$ dt = 0.001  & Runtime\\
+\hline
+8 & 0.539835 & 0.164657 & 0.180778 & 0.519237 & 0.178371 & 4.76148 \\ \hline
+\rowcolor{LightCyan}
+16  & 2.04897  & 0.179117 &0.0183534&  1.0009 & 0.0184022 & 9.40705 \\ \hline
+32 & 0.104095  & 0.400865 & 0.00130196 & 2.85381 & 0.0012364 & 53.0239 \\ \hline
+\rowcolor{LightCyan}
+64 &  0.0210904 &  1.26767 & 0.00484368 &10.0555  & 0.000161193 & 160.618\\
+\hline
+\end{tabular}
+\end{table}
 
-8   0.539835    0.164657   0.180778     0.519237   0.178371       4.76148
-16   2.04897    0.179117   0.0183534    1.0009     0.0184022      9.40705
-32   0.104095    0.400865   0.00130196   2.85381    0.0012364     53.0239
-64   0.0210904   1.26767    0.00484368  10.0555     0.000161193  160.618
-\end{lstlisting}
+\textit{Chorin}
 
-Chorin own implementation 7.039
+\begin{table}[ht]
+\centering
+\begin{tabular}{c|ccccccc}
+\hline
+\rowcolor{LightCyan}
+N  &  $L_2$ dt = 0.1 & Runtime & $L_2$ dt = 0.01 & Runtime  & $L_2$ dt = 0.001  & Runtime\\
+\hline
+8 & 0.654093 & 0.201539 & 0.211455 &  0.629664 & 0.201475 & 10.4995 \\ \hline
+\rowcolor{LightCyan}
+16 & 2.27771 & 0.210293 & 0.0313178 &  1.26293 &  0.0291696 & 13.9263 \\ \hline
+32 &0.0292565 & 0.467796 & 0.00295871 & 3.65225  & 0.00227202 & 34.2121 \\ \hline
+\rowcolor{LightCyan}
+64 & 0.00442714 & 2.0286 & 0.000501743 & 11.3782 & 0.000206419 & 139.626 \\
+\hline
+\end{tabular}
+\end{table}
 
-\begin{figure}[h!]
-	\centering
-	\caption*{Kinetic Energy}
-	\includegraphics[scale=0.6]{3D/Et.png}
-\end{figure}
 
-\begin{figure}[h!]
-	\centering
-	\caption*{Dissipation Energy}
-	\includegraphics[scale=0.6]{3D/dissi.png}
-\end{figure}
+
 
 \section*{Setting up 3D problem}
 The computational domain is defined as a cube with sides of length $2 \pi L$, $-\pi L \leq x,y,z \leq \pi L$

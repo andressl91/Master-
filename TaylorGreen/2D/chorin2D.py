@@ -172,7 +172,7 @@ for i in N:
 set_log_active(False)
 
 #N = [2**i for i in range(3,7)]
-N = [8 ,16, 32]
+N = [8, 16, 32, 64]
 Time = [0.1, 0.01, 0.001]
 h = []; E = []; time = []
 
