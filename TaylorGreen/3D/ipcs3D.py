@@ -185,12 +185,12 @@ def ipcs(N, dt, T, L, rho, mu, save_step):
 
 
 set_log_active(False)
-N = [8]
+N = [32]
 rho = 1000.; mu = 1.; T= 0.001; dt = 0.0001; L = 1.; nu = mu/rho
 Re = L*1./nu
 h = []; E = []; E_k = []; t_star = []; time_calc = []; dkdt = []
 for n in N:
-    ipcs(N = n, dt = dt, T = T, L = L,rho = rho, mu = mu, save_step = 100)
+    ipcs(N = n, dt = dt, T = T, L = L,rho = rho, mu = mu, save_step = 1000)
 
 
 if MPI.rank(mpi_comm_world()) == 0:

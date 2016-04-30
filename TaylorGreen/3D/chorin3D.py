@@ -176,7 +176,7 @@ Re = L*1./nu
 print "Reynolds number %.1f" % Re
 #Watch nu
 for i in N:
-    chorin(i, dt=dt, T = T, L = L, nu = nu, save_step = 10)
+    chorin(i, dt=dt, T = T, L = L, nu = nu, save_step = 1000)
 if MPI.rank(mpi_comm_world()) == 0:
     import time, os
     clock = time.strftime("%H:%M:%S")
