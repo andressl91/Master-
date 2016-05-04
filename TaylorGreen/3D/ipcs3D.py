@@ -120,7 +120,7 @@ def ipcs(N, dt, T, L, rho, mu, save_step):
     a2 = dot(dt*grad(p), grad(q))*dx
     L2 = dot(dt*grad(p0), grad(q))*dx - rho*div(u1)*q*dx
 
-    #STEP 3: VELOCITY CORRECTION
+
     a3 = dot(rho*u, v)*dx
     L3 = dot(rho*u1, v)*dx + dot(dt*grad(p0-p1), v)*dx
 
@@ -154,7 +154,7 @@ def ipcs(N, dt, T, L, rho, mu, save_step):
         begin("Velocity CORRECTION")
         b3 = assemble(L3, tensor=b3)
         pc2 = PETScPreconditioner("jacobi")
-        sol2 = PETScKrylovSolver("bicgstab", pc2)
+        sol2 = PETScKrylovSolver("cg", pc2)
         sol2.solve(A3, u1.vector(), b3)
         end()
 
@@ -185,8 +185,8 @@ def ipcs(N, dt, T, L, rho, mu, save_step):
 
 
 set_log_active(False)
-N = [32]
-rho = 1000.; mu = 1.; T= 0.001; dt = 0.0001; L = 1.; nu = mu/rho
+N = [10]
+rho = 1000.; mu = 1.; T= 20.; dt = 0.001; L = 1.; nu = mu/rho
 Re = L*1./nu
 h = []; E = []; E_k = []; t_star = []; time_calc = []; dkdt = []
 for n in N:
