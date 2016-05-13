@@ -1,21 +1,44 @@
-import os
+import numpy as np
+import matplotlib.pyplot as plt
 
-os.system("python chorin3D.py")
-os.system("python ipcs3D.py")
-#32, Re = 1000, dt = 0.001 REFERENCE
-#20 30, Oasis, egne lsere, Choring, IPCS
+#Chorin
+chorin_Ek = np.loadtxt('./chorindata/N32_Re1000_dt1E-3/E_k.txt', delimiter=',')
+chorin_dkdt = np.loadtxt('./chorindata/N32_Re1000_dt1E-3/dkdt.txt', delimiter=',')
+t_star = np.loadtxt('./chorindata/N32_Re1000_dt1E-3/t_star.txt', delimiter=',')
 
-#Spectral DNS, MIKAEM github
-#kUN FOR VISSE CASER! Bruk til aa
-#sammenligne resultater
+#IPCS
+#~/Desktop/Master-/TaylorGreen/3D/ipcsdata/N_32_Re_1000/E_k.txt
+ipcs_Ek = np.loadtxt("./ipcsdata/N_32_Re_1000/E_k.txt", delimiter=',')
+ipcs_dkdt =  np.loadtxt("./ipcsdata/N_32_Re_1000/dkdt.txt", delimiter=',')
 
-#PYTHON SETUP PY.INSTALL
-#FIL KAN KJORE TG!
+#OASIS P1 vel
+oasis_Ek = np.loadtxt("./oasisdata/N32_Re1000_VelP1/Ek.txt")
+oasis_dkdt = np.loadtxt("./oasisdata/N32_Re1000_VelP1/dkdt.txt")
 
+#OASIS P2 vel
+oasis_Ek2 = np.loadtxt("./oasisdata/N32_Re1000_VelP2/Ek.txt")
+oasis_dkdt2 = np.loadtxt("./oasisdata/N32_Re1000_VelP2/dkdt.txt")
 
-#plt.figure(2)
-#plt.plot((t_star, E_k))
+plt.figure(3)
+plt.plot(t_star[:100], chorin_Ek[:100], label='Chorin')
+plt.plot(t_star[:100], ipcs_Ek[:100], label='IPCS')
+plt.plot(t_star[:100], oasis_Ek[:100], label='Oasis IPCS_ABCN P1')
+plt.plot(t_star[:100], oasis_Ek2[:100], label='Oasis IPCS_ABCN P2')
+plt.xlabel("Time t_star = t/L")
+plt.ylabel("Kinetic Energy E_k")
+plt.legend(loc=3)
+plt.savefig("plots/Compare_kin.png")
 
-#TIL NESTE GANG
-#32**3 Re = 1000
-#REferansedata
+plt.figure(4)
+#plt.title("Abs.Value Dissipation Compare \n N=32, Re = 1000 \n")
+plt.plot(t_star[:100], -chorin_dkdt[:100], label='Chorin')
+plt.plot(t_star[:100], -ipcs_dkdt[:100], label='IPCS')
+plt.plot(t_star[:100], -oasis_dkdt[:100], label='Oasis IPCS_ABCN P1')
+plt.plot(t_star[:100], -oasis_dkdt2[:100], label='Oasis IPCS_ABCN P2')
+plt.xlabel("Time t_star = t/L")
+plt.ylabel("Dissipation Energy E_k")
+plt.axis([0, 10, 0, 0.017])
+plt.legend(loc=2)
+plt.savefig("plots/Compare_diss.png")
+
+plt.show()
