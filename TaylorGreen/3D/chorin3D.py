@@ -139,7 +139,7 @@ def chorin(N, dt, T, L, nu, save_step):
         begin("Computing velocity correction")
         b3 = assemble(L3, tensor=b3)
         pc2 = PETScPreconditioner("jacobi")
-        sol2 = PETScKrylovSolver("cg", pc2)
+        sol2 = PETScKrylovSolver("bicgstab", pc2)
         sol2.solve(A3, u1.vector(), b3)
         #b3 = assemble(L3)
         #solve(A3, u1.vector(), b3, "cg", "hypre_euclid")
