@@ -79,8 +79,8 @@ def ipcs(N, dt, T, L, rho, mu, save_step):
 
     #Create Functions
     #p_e = interpolate(p_e, Q)
-    u0 = interpolate(u_e, V)
-    p0 = interpolate(p_e, Q)
+    u0 = project(u_e, V, solver_type = "bicgstab")
+    p0 = project(p_e, Q, solver_type ="gmres")
 
     u1 = Function(V)
     p1 = Function(Q)
@@ -154,7 +154,7 @@ def ipcs(N, dt, T, L, rho, mu, save_step):
         begin("Velocity CORRECTION")
         b3 = assemble(L3, tensor=b3)
         pc2 = PETScPreconditioner("jacobi")
-        sol2 = PETScKrylovSolver("cg", pc2)
+        sol2 = PETScKrylovSolver("bicgstab", pc2)
         sol2.solve(A3, u1.vector(), b3)
         end()
 
@@ -185,22 +185,22 @@ def ipcs(N, dt, T, L, rho, mu, save_step):
 
 
 set_log_active(False)
-N = [10]
-rho = 1000.; mu = 1.; T= 20.; dt = 0.001; L = 1.; nu = mu/rho
+N = [32]
+rho = 1000.; mu = 1.; T= 10.0; dt = 0.001; L = 1.; nu = mu/rho
 Re = L*1./nu
 h = []; E = []; E_k = []; t_star = []; time_calc = []; dkdt = []
 for n in N:
-    ipcs(N = n, dt = dt, T = T, L = L,rho = rho, mu = mu, save_step = 1000)
+    ipcs(N = n, dt = dt, T = T, L = L,rho = rho, mu = mu, save_step = 10)
 
 
 if MPI.rank(mpi_comm_world()) == 0:
     import time, os
     clock = time.strftime("%H:%M:%S")
     s = "N_" + str(N[0]) + "_Re_"+str(Re) + "_"
-    os.system("mkdir ipcsdata/" + s + clock)
-    np.savetxt('ipcsdata/' + s + clock + '/dkdt.txt'  , dkdt, delimiter=',')
-    np.savetxt('ipcsdata/' + s + clock + '/E_k.txt'   , E_k, delimiter=',')
-    np.savetxt('ipcsdata/' + s + clock + '/t_star.txt', t_star, delimiter=',')
+    os.system("mkdir ipcsdata/" + s + "T_" + str(T))
+    np.savetxt('ipcsdata/' + s + "T_" + str(T) + '/dkdt.txt'  , dkdt, delimiter=',')
+    np.savetxt('ipcsdata/' + s + "T_" + str(T) + '/E_k.txt'   , E_k, delimiter=',')
+    np.savetxt('ipcsdata/' + s + "T_" + str(T) + '/t_star.txt', t_star, delimiter=',')
 
     plt.figure(1)
     plt.title("Kinetic Energy, Time %.1f, Re = %.1f" % (T, Re))
