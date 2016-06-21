@@ -185,8 +185,8 @@ def ipcs(N, dt, T, L, rho, mu, save_step):
 
 
 set_log_active(False)
-N = [32]
-rho = 1000.; mu = 1.; T= 10.0; dt = 0.001; L = 1.; nu = mu/rho
+N = [10]
+rho = 100.; mu = 1.; T= 0.01; dt = 0.001; L = 1.; nu = mu/rho
 Re = L*1./nu
 h = []; E = []; E_k = []; t_star = []; time_calc = []; dkdt = []
 for n in N:
@@ -196,11 +196,11 @@ for n in N:
 if MPI.rank(mpi_comm_world()) == 0:
     import time, os
     clock = time.strftime("%H:%M:%S")
-    s = "N_" + str(N[0]) + "_Re_"+str(Re) + "_"
-    os.system("mkdir ipcsdata/" + s + "T_" + str(T))
-    np.savetxt('ipcsdata/' + s + "T_" + str(T) + '/dkdt.txt'  , dkdt, delimiter=',')
-    np.savetxt('ipcsdata/' + s + "T_" + str(T) + '/E_k.txt'   , E_k, delimiter=',')
-    np.savetxt('ipcsdata/' + s + "T_" + str(T) + '/t_star.txt', t_star, delimiter=',')
+    s = "N=" + str(N[0]) + "_Re="+str(Re) + "_T=" + str(T) + "_dt=" + str(dt)
+    os.system("mkdir ipcsdata/" + s )
+    np.savetxt('ipcsdata/' + s + '/dkdt.txt'  , dkdt, delimiter=',')
+    np.savetxt('ipcsdata/'+ s +  '/E_k.txt'   , E_k, delimiter=',')
+    np.savetxt('ipcsdata/'+ s + '/t_star.txt', t_star, delimiter=',')
 
     plt.figure(1)
     plt.title("Kinetic Energy, Time %.1f, Re = %.1f" % (T, Re))

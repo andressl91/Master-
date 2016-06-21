@@ -170,8 +170,8 @@ def chorin(N, dt, T, L, nu, save_step):
 set_log_active(False)
 error = []; dof = []; K = []; time_calc = []
 E_k = []; time = [0]; t_star = []
-N = [32]; dkdt = [];
-L = 1.; nu = 0.001; dt=0.001; T = 20.
+N = [10]; dkdt = [];
+L = 1.; nu = 0.01; dt=0.001; T = 0.01
 Re = L*1./nu
 print "Reynolds number %.1f" % Re
 #Watch nu
@@ -180,11 +180,12 @@ for i in N:
 if MPI.rank(mpi_comm_world()) == 0:
     import time, os
     clock = time.strftime("%H:%M:%S")
-    s = "N_" + str(N[0]) + "_Re_"+str(Re) + "_"
-    os.system("mkdir chorindata/"+s+clock)
-    np.savetxt('chorindata/' +s+ clock + '/dkdt.txt', dkdt, delimiter=',')
-    np.savetxt('chorindata/'+s + clock + '/E_k.txt', E_k, delimiter=',')
-    np.savetxt('chorindata/'+s+ clock + '/t_star.txt', t_star, delimiter=',')
+    s = "N=" + str(N[0]) + "_Re="+str(Re) + "_T=" + str(T) + "_dt=" + str(dt)
+
+    os.system("mkdir chorindata/" + s)
+    np.savetxt('chorindata/'  + s + '/dkdt.txt', dkdt, delimiter=',')
+    np.savetxt('chorindata/' + s + '/E_k.txt', E_k, delimiter=',')
+    np.savetxt('chorindata/' + s +'/t_star.txt', t_star, delimiter=',')
 
     plt.figure(1)
     plt.title("Kinetic Energy, Time %.1f, Re = %.1f" % (T, Re))
