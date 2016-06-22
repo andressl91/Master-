@@ -185,14 +185,15 @@ def ipcs(N, dt, T, L, rho, mu, save_step):
 
 
 set_log_active(False)
-N = [10]
-rho = 100.0; mu = 1.; T= 10.0; dt = 0.0001; L = 1.; nu = mu/rho
+N = [32]
+rho = 1600.0; mu = 1.; T= 10.0; dt = 0.0001; L = 1.; nu = mu/rho
 Re = L*1./nu
 h = []; E = []; E_k = []; t_star = []; time_calc = []; dkdt = []
 for n in N:
     ipcs(N = n, dt = dt, T = T, L = L,rho = rho, mu = mu, save_step = 100)
 
 #TEST
+#PROBLEM RUNNING SAME FILE ON ENKidu, even for 1 thread
 if MPI.rank(mpi_comm_world()) == 0:
     import time, os
     clock = time.strftime("%H:%M:%S")
