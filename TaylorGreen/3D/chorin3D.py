@@ -170,13 +170,13 @@ def chorin(N, dt, T, L, nu, save_step):
 set_log_active(False)
 error = []; dof = []; K = []; time_calc = []
 E_k = []; time = [0]; t_star = []
-N = [10]; dkdt = [];
-L = 1.; nu = 0.001; dt=0.001; T = 10.0
+N = [32]; dkdt = [];
+L = 1.; nu = 0.000625; dt=0.0001; T = 10.0
 Re = L*1./nu
 print "Reynolds number %.1f" % Re
 #Watch nu
 for i in N:
-    chorin(i, dt=dt, T = T, L = L, nu = nu, save_step = 1000)
+    chorin(i, dt=dt, T = T, L = L, nu = nu, save_step = 100)
 if MPI.rank(mpi_comm_world()) == 0:
     import time, os
     clock = time.strftime("%H:%M:%S")

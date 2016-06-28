@@ -185,8 +185,8 @@ def ipcs(N, dt, T, L, rho, mu, save_step):
 
 
 set_log_active(False)
-N = [10]
-rho = 100.0; mu = 1.; T= 10.0; dt = 0.0001; L = 1.; nu = mu/rho
+N = [32]
+rho = 1600.0; mu = 1.; T= 10.0; dt = 0.0001; L = 1.; nu = mu/rho
 Re = L*1./nu
 h = []; E = []; E_k = []; t_star = []; time_calc = []; dkdt = []
 for n in N:
