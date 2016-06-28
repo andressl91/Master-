@@ -147,14 +147,14 @@ def ipcs(N, dt, T, L, rho, mu, save_step):
         begin("Pressure CORRECTION")
         b2 = assemble(L2, tensor=b2)
         [bc.apply(A2, b2) for bc in bcp]
-        solve(A2, p1.vector(), b2, "gmres", "amg")
+        solve(A2, p1.vector(), b2, "gmres", "hypre_amg")
         #solve(A2, p1.vector(), b2, "minres", "amg")
         end()
 
         begin("Velocity CORRECTION")
         b3 = assemble(L3, tensor=b3)
         pc2 = PETScPreconditioner("jacobi")
-        sol2 = PETScKrylovSolver("cg", pc2)
+        sol2 = PETScKrylovSolver("bicgstab", pc2)
         sol2.solve(A3, u1.vector(), b3)
         end()
 
