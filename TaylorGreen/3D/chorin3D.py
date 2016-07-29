@@ -82,14 +82,14 @@ def chorin(N, dt, T, L, nu, save_step):
     p0 = interpolate(p_e, Q)
     u1 = Function(V)
     p1 = Function(Q)
-    u_cn = (u0+u1)/2
+
     # Define coefficients
     k = Constant(dt)
     f = Constant((0, 0, 0))
 
     # Tentative velocity step
-    F1 = (1/k)*inner(u - u0, v)*dx + inner(grad(u_cn)*u_cn, v)*dx + \
-         nu*inner(grad(u_cn), grad(v))*dx - inner(f, v)*dx
+    F1 = (1/k)*inner(u - u0, v)*dx + inner(grad(u0)*u0, v)*dx + \
+         nu*inner(grad(u), grad(v))*dx - inner(f, v)*dx
     a1 = lhs(F1)
     L1 = rhs(F1)
 
@@ -170,29 +170,29 @@ def chorin(N, dt, T, L, nu, save_step):
 set_log_active(False)
 error = []; dof = []; K = []; time_calc = []
 E_k = []; time = [0]; t_star = []
-N = [32]; dkdt = [];
-L = 1.; nu = 0.001; dt=0.05; T = 10.
+N = [10]; dkdt = [];
+L = 1.; nu = 0.001; dt=0.001; T = 10.0
 Re = L*1./nu
 print "Reynolds number %.1f" % Re
 #Watch nu
 for i in N:
-    chorin(i, dt=dt, T = T, L = L, nu = nu, save_step = 2)
+    chorin(i, dt=dt, T = T, L = L, nu = nu, save_step = 1000)
 if MPI.rank(mpi_comm_world()) == 0:
     import time, os
     clock = time.strftime("%H:%M:%S")
-    """
-    s = "N_" + str(N[0]) + "_Re_"+str(Re) + "_"
-    os.system("mkdir chorindata/"+s+clock)
-    np.savetxt('chorindata/' +s+ clock + '/dkdt.txt', dkdt, delimiter=',')
-    np.savetxt('chorindata/'+s + clock + '/E_k.txt', E_k, delimiter=',')
-    np.savetxt('chorindata/'+s+ clock + '/t_star.txt', t_star, delimiter=',')
-    """
+    s = "N=" + str(N[0]) + "_Re="+str(Re) + "_T=" + str(T) + "_dt=" + str(dt)
+
+    os.system("mkdir chorindata/" + s)
+    np.savetxt('chorindata/'  + s + '/dkdt.txt', dkdt, delimiter=',')
+    np.savetxt('chorindata/' + s + '/E_k.txt', E_k, delimiter=',')
+    np.savetxt('chorindata/' + s +'/t_star.txt', t_star, delimiter=',')
+
     plt.figure(1)
     plt.title("Kinetic Energy, Time %.1f, Re = %.1f" % (T, Re))
     plt.xlabel('Time t* (t/L),  dt = %.4f' % dt)
     plt.ylabel('E_k')
     plt.plot(t_star, E_k)
-    #plt.savefig('plots/Chorin_Ek.png')
+    plt.savefig('plots/Chorin_Ek.png')
 
     E_k = np.asarray(E_k); t_star = np.asarray(t_star)
     E_t = (E_k[1:] - E_k[:-1])/dt
@@ -201,8 +201,8 @@ if MPI.rank(mpi_comm_world()) == 0:
     plt.xlabel('Time t* (t/L),  dt = %.4f' % dt)
     plt.ylabel('dE_k/dt')
     plt.plot(t_star[:-1], E_t)
-    #plt.savefig('plots/Chorin_dissipation.png')
-    plt.show()
+    plt.savefig('plots/Chorin_dissipation.png')
+    #plt.show()
 
 
 #T = np.loadtxt('test.txt')

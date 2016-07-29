@@ -1,0 +1,8 @@
+TAYLOR-GREEN EXPERIMENT
+    Re = 1000 
+N = 32
+T = 10
+dt = 0.01
+solver = ipcs
+save_step 1
+Runtime = 3556.598251 

@@ -59,6 +59,7 @@ Where $\nu$ denotes the kinematic viscosity, while $U_{0}$ and \textit{D} is som
 
 We define the kinetic energy as $E_k = \frac{1}{2}||u||^2_{L^2}$, and the kinetic energy dissipation rate $\epsilon = \frac{-d E_k}{dt}$
 
+\newpage
 \section*{Setting up 2D problem}
 
 For the 2D case, the computational domain is set as $\Omega \in [-1, 1]^2$. Further on we will set
@@ -70,7 +71,8 @@ Physical Quantity              & Value  \\
 Reynolds Number, Re & 1000   \\
 Characteristic length, L           & 2     \\
 Characteristic velocity, $V_{0}$   & 1     \\
-Time step $\Delta t$ 			   & 0.001 \\
+Space discretization, N & [8, 16, 32, 64] \\
+Time step $\Delta t$ 			   & [0.1, 0.01, 0.001] \\
 End time, T 					   & 1.0
 \end{tabular}
 
@@ -96,12 +98,12 @@ Experiments run for Time $T = 1$ for different choices of dt and N
 \rowcolor{LightCyan}
 N  &  $L_2$ dt = 0.1 & Runtime & $L_2$ dt = 0.01 & Runtime  & $L_2$ dt = 0.001  & Runtime\\
 \hline
-8 & 0.539835 & 0.164657 & 0.180778 & 0.519237 & 0.178371 & 4.76148 \\ \hline
+8  & 0.721623  & 0.410195 & 0.180146    & 0.652783 & 0.178604    & 3.73357 \\ \hline
 \rowcolor{LightCyan}
-16  & 2.04897  & 0.179117 &0.0183534&  1.0009 & 0.0184022 & 9.40705 \\ \hline
-32 & 0.104095  & 0.400865 & 0.00130196 & 2.85381 & 0.0012364 & 53.0239 \\ \hline
+16 & 5.34035   & 0.171748 & 0.0184505   & 0.871824 & 0.0184569   & 6.47402 \\ \hline
+32 & 0.321217  & 0.361791 & 0.00122458  & 1.90135  & 0.00122848  & 17.9395 \\ \hline
 \rowcolor{LightCyan}
-64 &  0.0210904 &  1.26767 & 0.00484368 &10.0555  & 0.000161193 & 160.618\\
+64 & 0.0046837 & 1.11411  & 0.000913817 & 6.26709  & 0.000103177 & 62.2844 \\
 \hline
 \end{tabular}
 \end{table}
@@ -115,21 +117,20 @@ N  &  $L_2$ dt = 0.1 & Runtime & $L_2$ dt = 0.01 & Runtime  & $L_2$ dt = 0.001  
 \rowcolor{LightCyan}
 N  &  $L_2$ dt = 0.1 & Runtime & $L_2$ dt = 0.01 & Runtime  & $L_2$ dt = 0.001  & Runtime\\
 \hline
-8 & 0.654093 & 0.201539 & 0.211455 &  0.629664 & 0.201475 & 10.4995 \\ \hline
+8  & 0.840517   & 1.382    & 0.210405    & 0.382298 & 0.201774    & 3.26483 \\ \hline
 \rowcolor{LightCyan}
-16 & 2.27771 & 0.210293 & 0.0313178 &  1.26293 &  0.0291696 & 13.9263 \\ \hline
-32 &0.0292565 & 0.467796 & 0.00295871 & 3.65225  & 0.00227202 & 34.2121 \\ \hline
+16 & 4.81879    & 0.173606 & 0.0314729   & 0.698007 & 0.0292556   & 6.25138 \\ \hline
+32 & 0.0543076  & 0.342292 & 0.00307992  & 1.78643  & 0.00226862  & 16.8787 \\ \hline
 \rowcolor{LightCyan}
-64 & 0.00442714 & 2.0286 & 0.000501743 & 11.3782 & 0.000206419 & 139.626 \\
+64 & 0.00329629 & 1.16073  & 0.000444121 & 6.02408  & 0.000178841 & 71.846 \\ 
 \hline
 \end{tabular}
 \end{table}
 
-
-
-
+\newpage
 \section*{Setting up 3D problem}
-The computational domain is defined as a cube with sides of length $2 \pi L$, $-\pi L \leq x,y,z \leq \pi L$
+The computational domain is defined as a cube with sides of length $2 \pi L$, $-\pi L \leq x,y,z \leq \pi L$. We set our 
+physical quantities as follows. 
 
 \begin{tabular}{l*{6}{c}r}
 Physical Quantity              & Value  \\
@@ -138,7 +139,57 @@ Reynolds Number, Re & 1000   \\
 Characteristic length, L           & 1     \\
 Characteristic velocity, $V_{0}$   & 1     \\
 Time step $\Delta t$ 			   & 0.001 \\
-End time, T 					   & 1.0
+End time, T 					   & 10.0
 \end{tabular}
+Further exploration in the coarseness of the discretization in space and time will be investigated aswell.
+
+\newpage
+\section*{Results and Comments}
+\begin{table}[h!]
+\centering
+\begin{tabular}{c|ccc}
+\hline
+\rowcolor{LightCyan}
+Solver  &  Chorin & IPCS & Oasis\\
+\hline
+Computer & Abel    & Abel & Enkidu    \\ \hline
+\rowcolor{LightCyan}
+Simulaton hours & 11.14  & 9.30 & INFO  \\ \hline
+Cores & 3 & 3  & 1  \\ \hline
+\rowcolor{LightCyan}
+Elements &P2-P1 & P2-P1 & P2-P1 \\ \hline
+DOF V & 786432 & 786432 & INFO \\ \hline
+\rowcolor{LightCyan}
+DOF P & 32768 &  32768 & INFO \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{figure}[h!]
+	\centering
+	%\includegraphics[scale=0.5]{results/plots/Ek_dt001.png}
+    \includegraphics[scale=0.5]{results/plots/dkdt_dt001.png}
+\end{figure}
+
+Our numerical computations yields some interesting results. Tracking the energy dissipation towards the distinctive top at $t \approx 5.8 s$, we observe a small deviation in the IPCS solver in the time domain $t = [4, 5]$. Apart from this this time domain, the solvers match the Oasis computations rather good. Continuing downhill after the distinctive top, the solvers deviate from another at $t = \approx 6 s$. We observe that the initial vortexes at this points gets highly turbulent as the energy within the fluid is driven into smaller vortices. According to the Oasis solver, it seems that my implementations are not able to "catch" all of the fluctuations within the fluid.
+\\ \\
+\newpage
+\begin{figure}[h!]
+	\centering
+	\caption*{Chorin comparison of dt = [0.01, 0.001]}
+	%\includegraphics[scale=0.37]{results/plots/chorin_comp.png}
+    \includegraphics[scale=0.5]{results/plots/chorin_comp2.png}
+\end{figure}
+\begin{figure}[h!]
+	\centering
+	\caption*{IPCS comparison of dt = [0.01, 0.001]}
+    %\includegraphics[scale=0.34]{results/plots/ipcs_comp.png}
+    \includegraphics[scale=0.5]{results/plots/ipcs_comp2.png}
+\end{figure}
+
+Moving on to comparing coarseness of the time discretization, we compared $dt = 0.01, 0.1$ for both solvers. The case of
+$dt = 0.1$ diverged after fairly few steps for both solvers. Due to the high Reynolds number chosen for this case, the solvers can't intercept all the fluctuations within the fluid for such a large choice of dt. For the $dt = 0.01$ experiment, we observe that the data cling on the finer discretization in time $dt = 0.001$ fairly well upon reaching the distinctive top in the energy dissipation plot. Here both solvers seems to overestimate the dissipation peak. before falling in with the finer discretization towards the separation point from the Oasis solver at $t \approx 6$, which we mentioned in the main experiment. 
+\newpage
+For the coarseness of the space discretization, comparisons between $N = 16, 32, 64$ where tried out. For the $N = 16$ case, the numerical calculations also diverged.....Venter på data
 
 \end{document}

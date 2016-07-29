@@ -1,0 +1,7 @@
+TAYLOR-GREEN EXPERIMENT
+    Re = 1000 
+N = 32
+T = 10
+dt = 0.001
+solver = chorin
+Runtime = 40129.207634 

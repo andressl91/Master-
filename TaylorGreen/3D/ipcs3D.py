@@ -79,8 +79,8 @@ def ipcs(N, dt, T, L, rho, mu, save_step):
 
     #Create Functions
     #p_e = interpolate(p_e, Q)
-    u0 = interpolate(u_e, V)
-    p0 = interpolate(p_e, Q)
+    u0 = project(u_e, V, solver_type = "bicgstab")
+    p0 = project(p_e, Q, solver_type ="gmres")
 
     u1 = Function(V)
     p1 = Function(Q)
@@ -147,7 +147,7 @@ def ipcs(N, dt, T, L, rho, mu, save_step):
         begin("Pressure CORRECTION")
         b2 = assemble(L2, tensor=b2)
         [bc.apply(A2, b2) for bc in bcp]
-        solve(A2, p1.vector(), b2, "gmres", "hypre_amg")
+        solve(A2, p1.vector(), b2, "gmres", "amg")
         #solve(A2, p1.vector(), b2, "minres", "amg")
         end()
 
@@ -185,22 +185,23 @@ def ipcs(N, dt, T, L, rho, mu, save_step):
 
 
 set_log_active(False)
-N = [10]
-rho = 1000.; mu = 1.; T= 20.; dt = 0.001; L = 1.; nu = mu/rho
+N = [32]
+rho = 1600.0; mu = 1.; T= 10.0; dt = 0.0001; L = 1.; nu = mu/rho
 Re = L*1./nu
 h = []; E = []; E_k = []; t_star = []; time_calc = []; dkdt = []
 for n in N:
-    ipcs(N = n, dt = dt, T = T, L = L,rho = rho, mu = mu, save_step = 1000)
+    ipcs(N = n, dt = dt, T = T, L = L,rho = rho, mu = mu, save_step = 100)
 
-
+#TEST
+#PROBLEM RUNNING SAME FILE ON ENKidu, even for 1 thread
 if MPI.rank(mpi_comm_world()) == 0:
     import time, os
     clock = time.strftime("%H:%M:%S")
-    s = "N_" + str(N[0]) + "_Re_"+str(Re) + "_"
-    os.system("mkdir ipcsdata/" + s + clock)
-    np.savetxt('ipcsdata/' + s + clock + '/dkdt.txt'  , dkdt, delimiter=',')
-    np.savetxt('ipcsdata/' + s + clock + '/E_k.txt'   , E_k, delimiter=',')
-    np.savetxt('ipcsdata/' + s + clock + '/t_star.txt', t_star, delimiter=',')
+    s = "N=" + str(N[0]) + "_Re="+str(Re) + "_T=" + str(T) + "_dt=" + str(dt)
+    os.system("mkdir ipcsdata/" + s )
+    np.savetxt('ipcsdata/' + s + '/dkdt.txt'  , dkdt, delimiter=',')
+    np.savetxt('ipcsdata/'+ s +  '/E_k.txt'   , E_k, delimiter=',')
+    np.savetxt('ipcsdata/'+ s + '/t_star.txt', t_star, delimiter=',')
 
     plt.figure(1)
     plt.title("Kinetic Energy, Time %.1f, Re = %.1f" % (T, Re))
