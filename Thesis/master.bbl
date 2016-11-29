@@ -1,8 +1,15 @@
 \begin{thebibliography}{1}
 
-\bibitem{test}
-Michel Goossens, Frank Mittlebach, and Alexander Samarin.
-\newblock {\em The Latex Companion}.
-\newblock Addison-Wesley, Reading, Massachusetts, 1993.
+\bibitem{dunne2006adaptive}
+Thomas Dunne and Rolf Rannacher.
+\newblock Adaptive finite element approximation of fluid-structure interaction
+  based on an eulerian variational formulation.
+\newblock In {\em Fluid-structure interaction}, pages 110--145. Springer, 2006.
+
+\bibitem{richter2013fully}
+Thomas Richter.
+\newblock A fully eulerian formulation for fluid--structure-interaction
+  problems.
+\newblock {\em Journal of Computational Physics}, 233:227--240, 2013.
 
 \end{thebibliography}

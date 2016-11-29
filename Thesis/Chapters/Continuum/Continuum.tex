@@ -27,13 +27,25 @@ and the \textit{deformation velocity}
 \hat{v}(\ha{x},t) = d_t x(\ha{x},t) = d_t \hat{u}(\ha{x},t) 
 \end{align}
 
-Such a description of tracking each particle $\ha{x} \in \ha{V}$ is often denoted the \textit{Lagrangian Framework}. Such a framework is a natural choice of describing structure mechanics such as describing
+Such a description of tracking each particle $\ha{x} \in \ha{V}$ is often denoted the \textit{Lagrangian Framework} and is a natural choice of describing structure mechanics such as describing
 the deformation of a steel beam under pressure.  
  
 \subsection*{Eulerian}
 Considering a flow of fluid particles in a river, a \textit{Lagrangian} description of the particles would be tidious as the number of particles entring and leaving the domain quickly rise to a immense number. 
-Instead consider defining a view-point $V$ fixed in time, and monitor every fluid particle passing coordinate x as time elapses. 
+Instead consider defining a view-point $V$ fixed in time, and monitor every fluid particle passing the coordinate $x \in V(t)$ as time elapses. Such a description is defined as the \textit{Eulerian framework.} 
+It is important to mention that the we are not interested in which particle is occupying a certain point in our domain, but only its properties. Such a description falls natural for describing fluid dynamics. \\
 We can describe the particles occupying the \textit{current configuration} $V(t)$ for some time $t \geq t_0$ 
 \begin{align*}
 x = \ha{x} + \hat{u}(\ha{x}, t)	
 \end{align*}
+Since our domain is fixed can define the deformation for a particle 
+occupying position $x = x(\ha{x},t)$ as
+\begin{align*}
+\textbf{u}(x, t) = \hat{u}(\ha{x}, t) = x - \ha{x}	\\
+\end{align*}
+and its velocity
+\begin{align*}
+\textbf{v}(x,t) = \partial_t u(x,t) = \partial_t \hat{u}(\ha{x},t) = \hat{v}(\ha{x},t)
+\end{align*}
+
+\subsection{Deformation and deformation gradients next}

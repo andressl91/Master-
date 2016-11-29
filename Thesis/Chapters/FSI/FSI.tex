@@ -1,14 +1,27 @@
 \section*{Fluid Structure Interaction}
 From the consepts of continuum mechanics we often expand our thoery by observing to mediums interacting with eachother as they
-are act upon by forces. In this thesis we will look at how to mediums of fluid and structural properties interact. We will let our computational domain $\Omega$ in the \textit{reference configuration} be partitioned in a fluid domain $\hat{\Omega_f}$ and a 
-structure domain $\hat{\Omega_s}$ such that
+are act upon by forces. In this thesis we will look at how to mediums of fluid and structural properties interact. We will let our computational domain $\Omega$ in the \textit{reference configuration} be partitioned in a fluid domain $\hat{\Omega_f}$ and a structure domain $\hat{\Omega_s}$ such that
 $\Omega = \hat{\Omega_f} \cup \hat{\Omega_s}$. Furhter we define the interface $\hat{\Gamma}$ as the intersection between these domains such that $\Gamma_i = \hat{\partial \Omega_f} \cap \hat{\partial \Omega_s}$ \newline \newline
 
-\subsection{Fully Eulerian concept}
-In contrast to the Lagrangian description of the structure, we no longer follow an individual partical $x(x_0, t)$ from its initial state. We keep our view-point of the structure domain $\Omega_s$ fixed, and observe as the continuum $\Omega_s(t)$ moves in time. This means that for some point $x \in \Omega_s(t)$ will be occupied by different particles $\hat{x}$ in time.
+\subsection*{ALE}
 
+\subsection*{Lagrangian descritpion of St. Venant Kirchhoff material}
+
+\subsection*{Fully Eulerian concept}
+In this section we will focus on the fully Eulerian formulation approach of FSI. The equations are based on the conservation of mass and momentum within the fluid and structure.  
 We will let $\textbf{v}_s$ denote the solid velocity and $\textbf{u}_s$ the solid displacement in the Eulerian formulation of the structure. We define the mapping $\hat{x} = T_s(x,t) = x - \textbf{u}(x,t)$ of an Eulerian coordinate of particle $x \in \Omega(t)_s$ back to its coordinate in the \textit{reference configuration} $x \in \Omega(t_0)_s$. \newline \newline INSERT FIGURE \newline 
 
-Let $\textbf{F} = \nabla T = I - \nabla \textbf{u}$ be defined as the displacement gradient and further let 
-$J = \text{det}\textbf{F}$, be its determinant.
+\subsection*{Fluid}
+We assume an incrompressible Newtonian fluid, described by the usual Navier-Stokes equations. We define the fluid density as $\rho_f$ and fluid viscosity $\nu_f$ to be constant in time. Our phsyical unknowns
+fluid velocity $v_f$ and pressure $p_f$ both live in the time-dependent fluid domain  $\hat{\Omega}_f(t)$. Let any Dirichlet boundariy conditions be defined as $v_f^D$, $p_f^D$ on the boundaries
+of  $\hat{\Omega}_f(t)$, and let $g_1$ denote the neumann conditions of $\sigma_f \cdot n$ defined on the boundaries of $\hat{\Omega}_f(t)$.
+
+\subsection*{Structure}
+For the structure we use the Vernant-Kirchhoff(STVK) model of deformation of solids. We usually describe the material elasticity by two parameters, Lames coefficients $\lambda_s$ and $\mu_s$ or the Poisson ratio $\nu_s$
+and the Young modulus $E_s$ \cite{dunne2006adaptive}. INSERT RELATIONS \\ \\
+
+As mentioned in the continuum chapter, describing deformation falls naturally in the category of the Lagrangian formulation. So we have in 
+
+\subsection*{Eulerian descritpion of St. Venant Kirchhoff material}
+see \cite{richter2013fully}
 
