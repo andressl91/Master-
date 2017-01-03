@@ -1,4 +1,4 @@
-\section*{Continuum Mechanics}
+\chapter{Continuum Mechanics}
 When studying the dynamics of a mediums with fluid or structure properties under the influence of forces, we need in some sense a good description of how these forces act and alter the system itself.
 
 Any medium on a microscopic scale is built up of a structure of atoms, meaning we can observe "empty spaces " between each atom or discontinuities in the medium. Discribing any phsycial phenomen on larger scales in such a way are tedious and most often out of bounds due to the high number of particles. Instead we consider the medium to be continously distributed throughout the entire reagion it occupies. Hence we want to study some phsyical properties of the complete volume and not down on atomic scale. 
@@ -6,15 +6,15 @@ Any medium on a microscopic scale is built up of a structure of atoms, meaning w
 We consider the medium with continuum properties. By a continuum we mean a volume $V(t) \subset \mathbb{R}^3$ 
 consiting of particles, which we observe for some properties. One property of interest could be the veloctity $\textbf{v}(x,t)$ for some point $x \in V(t)$ in time $t \in (0, T]$, which would mean the average velocity of the particles occupying this point \textit{x} at time \textit{t}  
 
-\subsection*{Coordinate system, a matter of perspective}
+\section{Coordinate system, a matter of perspective}
 We assume that our medium is continiously distributed throughout its own volume, and we start our observation of this medium
 at som time $t_0$. As this choice is arbitary, we often choose to observe a medium in a stress free initial state. We call this state $V(t_0)$ of the medium as the \textit{reference configuration}. We let $V(t)$ for 
 $t \geq t_0$ denote the \textit{current configuration}. \\ \\
 
-\subsection*{Lagrangian}
+\subsection{Lagrangian}
 As the medium is act upon by forces, one of the main properties of interest is the deformation. Let \^{x} be a particle in the reference cofiguration $\ha{x} \in \ha{V}$. 
 Further let x(\^x, t) be the new location of a particle \^x for time t such that $x \in V(t)$. We assume that no two particles $\ha{x}_a, \ha{x}_b \in \ha{V}$ occupy the same location for some time $V(t)$.
-Hence the map $\ha{T}(\ha{x}, t) = x(\ha{x}, t)$ maps a particle \ha{x} from the \textit{reference configuration} $\hat{V}$ to the  \textit{current configuration} $V(t)$
+Hence the map $\ha{T}(\ha{x}, t) = x(\ha{x}, t)$ maps a particle \ha{x} from the \textit{reference configuration} $\ha{V}$ to the  \textit{current configuration} $V(t)$
 Assuming that the path for some \^{x} is continious in time, we can define the inverse mapping $\ha{T}^{-1}(x, t) = \ha{x}(x, t)$, which maps $x(\ha{x}, t)$ back to its initial location at time $t = t_0$. \\
 
 We now have enough background to define the \textit{deformation} 
@@ -30,7 +30,7 @@ and the \textit{deformation velocity}
 Such a description of tracking each particle $\ha{x} \in \ha{V}$ is often denoted the \textit{Lagrangian Framework} and is a natural choice of describing structure mechanics such as describing
 the deformation of a steel beam under pressure.  
  
-\subsection*{Eulerian}
+\subsection{Eulerian}
 Considering a flow of fluid particles in a river, a \textit{Lagrangian} description of the particles would be tidious as the number of particles entring and leaving the domain quickly rise to a immense number. 
 Instead consider defining a view-point $V$ fixed in time, and monitor every fluid particle passing the coordinate $x \in V(t)$ as time elapses. Such a description is defined as the \textit{Eulerian framework.} 
 It is important to mention that the we are not interested in which particle is occupying a certain point in our domain, but only its properties. Such a description falls natural for describing fluid dynamics. \\
@@ -48,4 +48,20 @@ and its velocity
 \textbf{v}(x,t) = \partial_t u(x,t) = \partial_t \hat{u}(\ha{x},t) = \hat{v}(\ha{x},t)
 \end{align*}
 
-\subsection{Deformation and deformation gradients next}
+\subsection{Deformation gradients}
+When studying continuum mechanics we observe continious mediums as they are deformed over time. These deformations
+results in relative changes of positions due to external and internal forces acting.. These relative changes of postition is called
+\textit{strain}, and is the primary property that causes \textit{stress} within a medium of interest \cite{Richter2016}. We define stress as the internal forces that particles within a continuous material exert on each other. \\
+
+The equations of mechanics can be derived with respect to either a deformed or undeformend configuration of our medium of interest. The choice of refering our equations to the current or reference configuration is indifferent from a theoretical point of view. In practice however this choice can have a severe impact on our strategy of solution methods and physical of modelling.   \cite{Wriggers2006}. We will therefore define the strain measures for both configurations of our medium.  
+
+\begin{defn}
+Deformation gradient. 
+\begin{align}
+\textbf{F} = I + \nabla \hat{u} 
+\end{align} 
+\end{defn}
+SKRIV OM HVILKEN gradient man bruker, er det i current eller reference ??? 
+
+
+

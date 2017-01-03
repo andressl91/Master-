@@ -1,0 +1,2 @@
+\select@language {norsk}
+\contentsline {subsection}{\numberline {0.0.1}Deformation and deformation gradients next}{2}{subsection.0.0.1}
