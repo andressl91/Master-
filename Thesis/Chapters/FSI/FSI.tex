@@ -1,15 +1,15 @@
 \chapter{Fluid Structure Interaction}
+
+\section{Litterature within FSI}
+\subsection{Coupled and decoupled approaches}
+
 From the consepts of continuum mechanics we often expand our thoery by observing to mediums interacting with eachother as they
 are act upon by forces. In this thesis we will look at how to mediums of fluid and structural properties interact. We will let our computational domain $\Omega$ in the \textit{reference configuration} be partitioned in a fluid domain $\hat{\Omega_f}$ and a structure domain $\hat{\Omega_s}$ such that
 $\Omega = \hat{\Omega_f} \cup \hat{\Omega_s}$. Furhter we define the interface $\hat{\Gamma}$ as the intersection between these domains such that $\Gamma_i = \hat{\partial \Omega_f} \cap \hat{\partial \Omega_s}$ \newline \newline
 
+\section{Monolithic Approach}
+\section{Mention Eulerian ??}
 \section{ALE}
-
-\subsection{Lagrangian descritpion of St. Venant Kirchhoff material}
-
-\subsection{Fully Eulerian concept}
-In this section we will focus on the fully Eulerian formulation approach of FSI. The equations are based on the conservation of mass and momentum within the fluid and structure.  
-We will let $\textbf{v}_s$ denote the solid velocity and $\textbf{u}_s$ the solid displacement in the Eulerian formulation of the structure. We define the mapping $\hat{x} = T_s(x,t) = x - \textbf{u}(x,t)$ of an Eulerian coordinate of particle $x \in \Omega(t)_s$ back to its coordinate in the \textit{reference configuration} $x \in \Omega(t_0)_s$. \newline \newline INSERT FIGURE \newline 
 
 \subsection{Fluid}
 We assume an incrompressible Newtonian fluid, described by the usual Navier-Stokes equations. We define the fluid density as $\rho_f$ and fluid viscosity $\nu_f$ to be constant in time. Our phsyical unknowns
@@ -22,6 +22,6 @@ and the Young modulus $E_s$ \cite{Dunne2006a}. INSERT RELATIONS \\ \\
 
 As mentioned in the continuum chapter, describing deformation falls naturally in the category of the Lagrangian formulation. So we have in 
 
-\subsection{Eulerian descritpion of St. Venant Kirchhoff material}
-see \cite{Richter2013}
+\section{Decoupled Approach}
+\section{Projecton semi-implicit scheme}
 

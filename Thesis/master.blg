@@ -5,45 +5,45 @@ The style file: plain.bst
 Database file #1: ./Cite/Mastercites.bib
 Warning--empty journal in Richter2016
 Warning--empty publisher in Wriggers2006
-You've used 4 entries,
+You've used 2 entries,
             2118 wiz_defined-function locations,
-            521 strings with 4518 characters,
-and the built_in function-call counts, 1059 in all, are:
-= -- 104
-> -- 34
+            507 strings with 4169 characters,
+and the built_in function-call counts, 439 in all, are:
+= -- 37
+> -- 14
 < -- 0
-+ -- 14
-- -- 10
-* -- 62
-:= -- 188
-add.period$ -- 12
-call.type$ -- 4
-change.case$ -- 16
++ -- 6
+- -- 4
+* -- 20
+:= -- 84
+add.period$ -- 6
+call.type$ -- 2
+change.case$ -- 7
 chr.to.int$ -- 0
-cite$ -- 6
-duplicate$ -- 44
-empty$ -- 92
-format.name$ -- 10
-if$ -- 213
+cite$ -- 4
+duplicate$ -- 22
+empty$ -- 40
+format.name$ -- 4
+if$ -- 86
 int.to.chr$ -- 0
-int.to.str$ -- 4
-missing$ -- 5
-newline$ -- 23
-num.names$ -- 8
-pop$ -- 20
+int.to.str$ -- 2
+missing$ -- 3
+newline$ -- 13
+num.names$ -- 4
+pop$ -- 15
 preamble$ -- 1
-purify$ -- 13
+purify$ -- 6
 quote$ -- 0
-skip$ -- 28
+skip$ -- 13
 stack$ -- 0
-substring$ -- 70
-swap$ -- 3
+substring$ -- 10
+swap$ -- 1
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 14
+type$ -- 6
 warning$ -- 2
-while$ -- 12
-width$ -- 5
-write$ -- 42
+while$ -- 4
+width$ -- 3
+write$ -- 20
 (There were 2 warnings)

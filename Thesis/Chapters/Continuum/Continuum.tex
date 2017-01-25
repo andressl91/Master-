@@ -6,7 +6,7 @@ Any medium on a microscopic scale is built up of a structure of atoms, meaning w
 We consider the medium with continuum properties. By a continuum we mean a volume $V(t) \subset \mathbb{R}^3$ 
 consiting of particles, which we observe for some properties. One property of interest could be the veloctity $\textbf{v}(x,t)$ for some point $x \in V(t)$ in time $t \in (0, T]$, which would mean the average velocity of the particles occupying this point \textit{x} at time \textit{t}  
 
-\section{Coordinate system, a matter of perspective}
+\section{Coordinate system}
 We assume that our medium is continiously distributed throughout its own volume, and we start our observation of this medium
 at som time $t_0$. As this choice is arbitary, we often choose to observe a medium in a stress free initial state. We call this state $V(t_0)$ of the medium as the \textit{reference configuration}. We let $V(t)$ for 
 $t \geq t_0$ denote the \textit{current configuration}. \\ \\
@@ -27,9 +27,7 @@ and the \textit{deformation velocity}
 \hat{v}(\ha{x},t) = d_t x(\ha{x},t) = d_t \hat{u}(\ha{x},t) 
 \end{align}
 
-Such a description of tracking each particle $\ha{x} \in \ha{V}$ is often denoted the \textit{Lagrangian Framework} and is a natural choice of describing structure mechanics such as describing
-the deformation of a steel beam under pressure.  
- 
+Such a description of tracking each particle $\ha{x} \in \ha{V}$ is often denoted the \textit{Lagrangian Framework} and is a natural choice of describing structure mechanics.
 \subsection{Eulerian}
 Considering a flow of fluid particles in a river, a \textit{Lagrangian} description of the particles would be tidious as the number of particles entring and leaving the domain quickly rise to a immense number. 
 Instead consider defining a view-point $V$ fixed in time, and monitor every fluid particle passing the coordinate $x \in V(t)$ as time elapses. Such a description is defined as the \textit{Eulerian framework.} 
@@ -48,7 +46,7 @@ and its velocity
 \textbf{v}(x,t) = \partial_t u(x,t) = \partial_t \hat{u}(\ha{x},t) = \hat{v}(\ha{x},t)
 \end{align*}
 
-\subsection{Deformation gradients}
+\section{Deformation gradients}
 When studying continuum mechanics we observe continious mediums as they are deformed over time. These deformations
 results in relative changes of positions due to external and internal forces acting.. These relative changes of postition is called
 \textit{strain}, and is the primary property that causes \textit{stress} within a medium of interest \cite{Richter2016}. We define stress as the internal forces that particles within a continuous material exert on each other. \\
@@ -58,32 +56,105 @@ The equations of mechanics can be derived with respect to either a deformed or u
 \begin{defn}
 Deformation gradient. 
 \begin{align}
-\textbf{F} = I + \hat{\nabla} \hat{u} 
+\hat{F} = I + \hat{\nabla} \hat{u} 
 \end{align} 
 \end{defn}
 
 Mind that deformation gradient of $\ha{u}$ is which respect to the reference configuration. 
-Another important measure is the \textit{determinant of the deformation gradient} defined \textit{J}, which denotes the local change of volume of our domain.
+From the assumption that no two particles $\ha{x}_a, \ha{x}_b \in \ha{V}$ occupy the same location for some time $V(t)$, the presented transformation must be linear. As a consequence from the invertible matrix theorem found in linear algebra, the linear operator \textbf{F} cannot be a singuar.  
+We define the  \textit{determinant of the deformation gradient} as \textit{J}, which denotes the local change of volume of our domain. 
 
 \begin{defn}
 Determinant of the deformation gradient
 \begin{align}
-|V(t)| = \int_{\ha{V}} \text{\ha{J} } dx
+J = det(\hat{F}) = det( I + \hat{\nabla} \hat{u} ) \neq 0
 \end{align} 
 \end{defn}
 
-\subsection{Measures of Strain}
-As mentioned earlier the the equations describing forces on our domain can be derived in accordinance with the current or
-reference configuration. With this in mind, different measures of strain can be derived accordning to which configuration we are 
-interested in. We will first introduce the right \textit{Cauchy-Green} tensor \textbf{C}, which is one of the most used strain measures \cite{Wriggers2006}. \\ Uttrykk 1.3 fra Godboka, LAG TEGNING \\ 
 
-Again let $\ha{x}, \ha{y} \in \ha{V}$ be two points in our referemce configuration and let $\ha{a} = \ha{y} - \ha{x}$ denote the
-length of the line bewtween these two points. As our domain undergoes deformation let 
-$x = \ha{x} + \hat{u}( \ha{x} )  $ and $x = \ha{y} + \hat{u}( \ha{y} )  $ be the position of our points in the current configuration, and let $a = y - x$ be our new line segment. Then my 1.3 we have that 
+By the assumption that the medium can't be selfpenetrated, we must limit  J to be greater than 0 \cite{Wriggers2006}
 
+
+\section{Transformations}
+The deformation gradient and the determinant of the deformation gradient are central properties transforming line, area and volume elements between the reference and current configurations.   We have
 \begin{align*}
-a = y  - x = \hat{F}(\ha{x})\ha{a}
+&\text{Line element} \hspace{6mm}\int_{V(t)} dx = \int_{\ha{V}} \hat{F} d\ha{x} \\
+&\text{Area element} \hspace{6mm}\int_{V(t)} \textbf{n } da = \int_{\ha{V}} J\hat{F}^{-T} \textbf{n} \hspace{2mm} d\ha{x} \\
+&\text{Volume element} \hspace{2mm} \int_{V(t)} dx = \int_{\ha{V}} \ha{J } \hspace{2mm} d\ha{x}
 \end{align*}
 
+From this transformations of vectors and tensors between our configurations can be derived. 
+FIKS DOMENE/HVOR ER DE NOE DEFINERT
+\begin{defn}
+Let $\hat{P} (\ha{x}) = P (x)$  be a scalar  field. 
+\begin{align}
+\hat{\nabla}P = \hat{F}^{T} \nabla P
+\end{align} 
+\end{defn}
+
+\begin{defn}
+Let $\hat{W} (\ha{x}) = W (x)$  be a vector  field. 
+\begin{align}
+\hat{\nabla}W = \nabla W \hat{F} 
+\end{align} 
+\end{defn}
+
+Due to the property of $\ha{J}$ the inverse linear operator $\hat{F}^{-1}$ is defined, hence the transformation from the current to the reference configuration is trivial.
+
+For a thoroughly derivation see \cite{Wriggers2006}, \cite{Richter2016}.
+
+
+
+\section{Measures of Strain}
+The equations describing forces on our domain can be derived in accordinance with the current or
+reference configuration. With this in mind, different measures of strain can be derived accordning to which configuration we are 
+interested in. We will here by \cite{Richter2016} show the most common measures of strain. We will first introduce the right \textit{Cauchy-Green} tensor \textbf{C}, which is one of the most used strain measures \cite{Wriggers2006}. \\ Uttrykk 1.3 fra Godboka, LAG TEGNING \\ 
+
+Let $\ha{x}, \ha{y} \in \ha{V}$ be two points in our referemce configuration and let $\ha{a} = \ha{y} - \ha{x}$ denote the
+length of the line bewtween these two points. As our domain undergoes deformation let 
+$x = \ha{x} + \hat{u}( \ha{x} ) $ and $x = \ha{y} + \hat{u}( \ha{y} )  $ be the position of our points in the current configuration, and let $a = y - x$ be our new line segment. By \cite{Richter2016} we have by first order Taylor expansion
+
+\begin{align*}
+&y - x = \ha{y} + \hat{u}(\ha{y}) - \ha{x} - \hat{u}(\ha{x}) = \
+\ha{y} - \ha{x} + \hat{\nabla}\ha{u}(\ha{x}) (\ha{y} - \ha{x}) 
++ \mathcal{O}(|\ha{y} - \ha{x} |^2) \\
+&\frac{y - x}{|\ha{y} - \ha{x}|} = [I + \hat{\nabla}\hat{u}(\ha{x} ]  
+\frac{\ha{y} - \ha{x}}{|\ha{y} - \ha{x}|} + \mathcal{O}(|\ha{y} - \ha{x} |) 
+\end{align*}
+
+This detour from \cite{Richter2016}  we have that 
+\begin{align*}
+a = y - x = \hat{F}(\ha{x})\ha{a} +  \mathcal{O}(|\ha{a} |^2) \\
+|a| = \sqrt{ (\hat{F}\ha{a},\hat{F}\ha{a})+ \mathcal{O} (|\ha{a}^3|)  } = 
+ \sqrt{ (\ha{a}^T, \hat{F}^T\hat{F}\ha{a})} + \mathcal{O} (|\ha{a}^2|)  
+\end{align*}
+
+We let $\ha{C} = \ha{F}^T \ha{F}$ denote the right \textit{Cauchy-Green tensor}. We would like to remark some properties
+
+\begin{itemize}
+\item The right Cauchy-Green tensor refers to the reference configuration
+\item It measures the squared scaled length of a linesegment $\ha{y} - \ha{x}$
+\item The tensor is symmetric and positive definie
+\begin{align*}
+(\hat{C}\ha{a}, \ha{a}) = (\hat{F}\ha{a}, \hat{F}\ha{a}  ) = ||\hat{F} \ha{a} ||^2  \geq 0 \hspace{2mm} \forall \ha{x} \neq 0
+\end{align*}
+\end{itemize} 
+
+By observation the Cauchy-Green tensor is not zero at the reference configuration 
+\begin{align*}
+\ha{C} =  \ha{F}^T \ha{F} = (I + \hat{\nabla} \ha{u})^T (I + \hat{\nabla} \ha{u}) = 1
+\end{align*}
+
+Hence it is convenient to introduce a tensor which is zero at the reference configuration. We define the \textit{Grenn-Lagrange strain tensor} 
+$\hat{E} = \frac{1}{2} $
+\section{Conservationlaws}
+\subsection{Conservation of continuum}
+\subsection{Conservation of momentum}
+
+\section{The fluid}
+
+\section{The solid}
+
+\subsection{Material models, St. Venant Kirchhoff materia, incomp neo-Hookean materiall}
 
 

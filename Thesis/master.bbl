@@ -1,17 +1,5 @@
 \begin{thebibliography}{1}
 
-\bibitem{Dunne2006a}
-Thomas Dunne and Rolf Rannacher.
-\newblock {Adaptive Finite Element Approximation of Fluid-Structure Interaction
-  Based on an Eulerian Variational Formulation}.
-\newblock {\em Fluid-Structure Interaction}, 53:110--145, 2006.
-
-\bibitem{Richter2013}
-Thomas Richter.
-\newblock {A Fully Eulerian formulation for fluid – structure-interaction
-  problems}.
-\newblock {\em Journal of Computational Physics}, 233:227--240, 2013.
-
 \bibitem{Richter2016}
 Thomas Richter.
 \newblock {Fluid Structure Interactions}.
