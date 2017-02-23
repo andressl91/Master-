@@ -1,6 +1,40 @@
 \chapter{Verification and Validation}
+During the last decade, the amount of reaserch regarding simulations of physical problems has grown vast. Even though computers have changed our ways of solving real world problems, thrusting blindly numbers generated from a computer code has proven to be naive. It doesn't take a lot of coding experience before one realizes the many things that can brake down and produce unwanted and even suprisingly unexpected results. 
+With this in mind, computer scientists and engineers need some common ground to check if a computer code works as expected. And it is here the framework of verification and validation plays and important role. \\
 
-\section{Taylor Green}
+For scientists exploring physical phenomena,systems of partial differential equations (PDE´s) are often encountered. For their application it is important that these equations are implemented and solved numerically the right way.  Therefore insurence of right implemention is crucial. \\
 
+ An elegant and simple definition found throughout the litterature of verification and validation framwork, used  by Roache \cite{Roache}, states \textit{verification} as "solving the equations right", and  \textit{validiation} as "solving the right equations". As "solving the equations right" is rather vaguely, a measurement is needed. We will in this thesis use the more detailed  description in \cite{Roache}.
+
+\begin{quote}
+The code author defines precisely what continuum partial differential equations and continuum boundary conditions are being solved, and convincingly demonstrates that they are solved correctly, i.e., usually with some order of accuracy, and always consistently, so that as some measure of discretization (e.g. the mesh increments) $\nabla \rightarrow 0$, the code produces a solution to the continuum equations; this is Verification.
+\begin{flushright}
+\textit{--- Roache, P.J.}
+\end{flushright}
+\end{quote}
+ 
+
+Roach \cite{Roache2002},  further distinguish between the verification of \textit{code} and \textit{calculation}. Verification of code is seen as achieving the expected order of accuracy of the implementation, while verification of calculation is the measure of error against a known solution. \\
+
+In this thesis, code verification using the Method of Manufactured Solutions (MMS) will be used.  A thorough report regarding code verification using  MMS can be found in \cite{Biggs}.
+
+
+\section{Verification of Code}
+As mentioned, partial differential equations (PDE) are often the main interest when solving problems of physical nature.
+Let a  partial differential equation of interest be on the form
+\begin{align*}
+\textbf{L}(\textbf{u}) = \textbf{f}
+\end{align*}
+Here \textbf{L} is a differential operator, \textbf{u} is variable the of interest, and \textbf{f} is some sourceterm.
+
+In MMS, one first manufactures a \textbf{u}, which is differentiated with \textbf{L} which yields a sourceterm  \textbf{f}. The beauty of such an approach as mentioned by Roache \cite{Roache2002}, is that our exact solution can be constructed with physical reasoning. As such, code verificaion is purly a mathematical exercise where we are only interested if we are solving our equation right. (Gjentagelse, improve!! )Even though the method of MMS a certain freedom, certain guidelines are presented in \cite{Biggs}. These are but not limited to
+
+\begin{itemize}
+\item To ensure theoretical order-of-accuracy, the manufactured solution should be constructed of polynomials, exponential or trigonometric functions to construct smooth solutions.
+\item The solution should be utilized by every term in the PDE of interest, such that no term yields zero.
+(få frem at en løsning må velges slik at ingen differentials blir 0
+\item Certain degree to be able to calculate expected order of convergence (Få frem at må ha "grad nok" til å kunne regne convergencerate) 
+\end{itemize}
+
+                                                                                                                                                   
 \section{Turek flag}
-

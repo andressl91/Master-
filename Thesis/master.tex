@@ -1,26 +1,26 @@
 \documentclass[a4paper,norsk]{book}
 \usepackage{preamble}
 \setlength\parindent{0pt}
-
-\begin{document}
-	
+\begin{document}	
 \maketitle
 \tableofcontents
 
 %\input{./Chapters/introduction/introduction}
 %\newpage
-\input{./Chapters/Continuum/Continuum}
+%\input{./Chapters/Continuum/Continuum}
 %\newpage
 %\input{./Chapters/fem/fem}
 %\newpage
 %\input{./Chapters/FSI/FSI}
 %\newpage
-%\input{./Chapters/verification/verival}
+\input{./Chapters/verification/verival}
 %\newpage
 %\input{./Chapters/application/application}
 
 
 \bibliographystyle{plain}
-\bibliography{./Cite/Mastercites}
-
+\bibliography{./Cite/Books,./Cite/ALECoupled,./Cite/Decoupled,./Cite/NavierStokes,./Cite/Verification,./Cite/EulerianFormulation}
+%\addbibresource{./Cite/Books.bib}
+%\addbibresource{./Cite/Mastercites}
+%\bibliography{./Cite/Mastercites}
 \end{document}

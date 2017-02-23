@@ -2,48 +2,50 @@ This is BibTeX, Version 0.99d (TeX Live 2016)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: master.aux
 The style file: plain.bst
-Database file #1: ./Cite/Mastercites.bib
-Warning--empty journal in Richter2016
-Warning--empty publisher in Wriggers2006
-You've used 2 entries,
+Database file #1: ./Cite/Books.bib
+Database file #2: ./Cite/ALECoupled.bib
+Database file #3: ./Cite/Decoupled.bib
+Database file #4: ./Cite/NavierStokes.bib
+Database file #5: ./Cite/Verification.bib
+Database file #6: ./Cite/EulerianFormulation.bib
+You've used 3 entries,
             2118 wiz_defined-function locations,
-            507 strings with 4169 characters,
-and the built_in function-call counts, 439 in all, are:
-= -- 37
-> -- 14
+            523 strings with 4558 characters,
+and the built_in function-call counts, 697 in all, are:
+= -- 65
+> -- 27
 < -- 0
-+ -- 6
-- -- 4
-* -- 20
-:= -- 84
-add.period$ -- 6
-call.type$ -- 2
-change.case$ -- 7
++ -- 11
+- -- 8
+* -- 36
+:= -- 135
+add.period$ -- 9
+call.type$ -- 3
+change.case$ -- 13
 chr.to.int$ -- 0
-cite$ -- 4
-duplicate$ -- 22
-empty$ -- 40
-format.name$ -- 4
-if$ -- 86
+cite$ -- 3
+duplicate$ -- 31
+empty$ -- 59
+format.name$ -- 8
+if$ -- 140
 int.to.chr$ -- 0
-int.to.str$ -- 2
+int.to.str$ -- 3
 missing$ -- 3
-newline$ -- 13
-num.names$ -- 4
-pop$ -- 15
+newline$ -- 18
+num.names$ -- 6
+pop$ -- 14
 preamble$ -- 1
-purify$ -- 6
+purify$ -- 10
 quote$ -- 0
-skip$ -- 13
+skip$ -- 19
 stack$ -- 0
-substring$ -- 10
-swap$ -- 1
+substring$ -- 18
+swap$ -- 2
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 6
-warning$ -- 2
-while$ -- 4
-width$ -- 3
-write$ -- 20
-(There were 2 warnings)
+type$ -- 10
+warning$ -- 0
+while$ -- 7
+width$ -- 4
+write$ -- 34
