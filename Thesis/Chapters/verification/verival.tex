@@ -12,7 +12,7 @@ The code author defines precisely what continuum partial differential equations 
 \end{quote}
  
 
-Roach \cite{Roache2002},  further distinguish between the verification of \textit{code} and \textit{calculation}. Verification of code is seen as achieving the expected order of accuracy of the implementation, while verification of calculation is the measure of error against a known solution.
+Roach \cite{Roache2002},  further distinguish between the verification of \textit{code} and \textit{calculation}. Verification of code is seen as achieving the expected order of accuracy of the implementation, while verification of calculation is the measure of error against a known solution. Of these .. has proven to 
 
 The goal of this chapter is to verify our implementations using the method of manufactured solution  (MMS).
 
@@ -26,13 +26,14 @@ Let a  partial differential equation of interest be on the form
 \newpage
 Here \textbf{L} is a differential operator, \textbf{u} is variable the of interest, and \textbf{f} is some sourceterm.
 
-In the method of manufactured solution, one first manufactures a \textbf{u}, which is differentiated with \textbf{L} which yields a sourceterm  \textbf{f}. \\ The beauty of such an approach as mentioned by Roache \cite{Roache2002}, is that our exact solution can be constructed with physical reasoning. As such, code verificaion is purly a mathematical exercise where we are only interested if we are solving our equation right. These sentral ideas have existed for some time, but the  concept of combining manufactured exact solution in in partnership with refinement studies of of computational mesh was absent.  One of the earliest was Steinberg and Roache \cite{Steinberg1985} using these principles deliberately to estimate order of convergence\\
+In the method of manufactured solution, one first manufactures a \textbf{u}, which is differentiated with \textbf{L} which yields a sourceterm  \textbf{f}. The sourceterm \textbf{f} with respect to the selected solution \textbf{u} is then used as input in the implementation, yielding a numerical solution. Verification of code and calculation is then performed on the numerical solution against the manifactured solution \textbf{u}.  \\ 
 
-Throughout the literature there exist several approaches of code verification, but in the resent years verification using the Method of Manufactured Solutions has been favoured. 
-To deeply verify the robustness of the method of manufactured solution,  a report regarding code verification using this approach was published by Salari and Knupp \cite{Biggs}. This thorough work applied the method for both compressible and incompressible time-dependent Navier-Stokes equation. To prove its robustness the authers  delibritary implemented  code errors in a Navier-Stokes solver presented in the report. In total 21 blind testcases where implemented, where different approaches of verifcation frameworks was tested. 
-Of these 10 coding mistakes that reduces the observed order-of-accuracy was implemented. Here the method of manufactured solution captured all of them.
+The beauty of such an approach as mentioned by Roache \cite{Roache2002}, is that our exact solution can be constructed without any physical reasoning. As such, code verificaion is purly a mathematical exercise were we are only interested if we are solving our equation right. These sentral ideas have existed for some time, but the  concept of combining manufactured exact solution in in partnership with refinement studies of of computational mesh has been absent.  One of the earliest was Steinberg and Roache \cite{Steinberg1985} using these principles deliberately for \textit{verification of code} ( estimate order of convergence)\\
 
-Even though the method of MMS a certain freedom, certain guidelines are presented in \cite{Biggs}. These are but not limited to
+To deeply verify the robustness of the method of manufactured solution,  a report regarding code verification using this approach was published by Salari and Knupp \cite{Biggs}. This thorough work applied the method for both compressible and incompressible time-dependent Navier-Stokes equation. To prove its robustness the authors  delibritary implemented  code errors in a Navier-Stokes solver presented in the report. In total 21 blind testcases where implemented, where different approaches of verifcation frameworks were tested. 
+Of these 10 coding mistakes that reduces the observed order-of-accuracy was implemented. Here the method of manufactured solution captured all of them. \\
+
+Even though the method of MMS a certain freedom in the construction of a manufactured solution, certain guidelines have been proposed  (\cite{Steinberg1985}, \cite{Biggs}, \cite{Roache2002} ). These are but not limited to
 
 \begin{itemize}
 \item To ensure theoretical order-of-accuracy, the manufactured solution should be constructed of polynomials, exponential or trigonometric functions to construct smooth solutions.

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.12.9)  1 MAR 2017 13:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.12.9)  1 MAR 2017 13:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1080,6 +1080,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 29--30
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 31--32
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 33--35
+
+ []
+
 ) (./master.bbl [6])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 26.
  [7
@@ -1100,7 +1110,7 @@ Here is how much of TeX's memory you used:
  15547 multiletter control sequences out of 15000+600000
  21809 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 44i,11n,45p,821b,385s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,11n,45p,709b,385s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 }{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}<
 /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></u
@@ -1113,10 +1123,10 @@ texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/te
 xlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texl
 ive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texliv
 e/2016/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb>
-Output written on master.pdf (7 pages, 139032 bytes).
+Output written on master.pdf (7 pages, 139314 bytes).
 PDF statistics:
- 115 PDF objects out of 1000 (max. 8388607)
- 95 compressed objects within 1 object stream
+ 117 PDF objects out of 1000 (max. 8388607)
+ 97 compressed objects within 1 object stream
  17 named destinations out of 1000 (max. 500000)
  25 words of extra memory for PDF output out of 10000 (max. 10000000)
 
