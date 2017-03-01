@@ -8,44 +8,44 @@ Database file #3: ./Cite/Decoupled.bib
 Database file #4: ./Cite/NavierStokes.bib
 Database file #5: ./Cite/Verification.bib
 Database file #6: ./Cite/EulerianFormulation.bib
-You've used 3 entries,
+You've used 4 entries,
             2118 wiz_defined-function locations,
-            523 strings with 4558 characters,
-and the built_in function-call counts, 697 in all, are:
-= -- 65
-> -- 27
+            531 strings with 4726 characters,
+and the built_in function-call counts, 1030 in all, are:
+= -- 100
+> -- 40
 < -- 0
-+ -- 11
-- -- 8
-* -- 36
-:= -- 135
-add.period$ -- 9
-call.type$ -- 3
-change.case$ -- 13
++ -- 16
+- -- 12
+* -- 62
+:= -- 190
+add.period$ -- 12
+call.type$ -- 4
+change.case$ -- 18
 chr.to.int$ -- 0
-cite$ -- 3
-duplicate$ -- 31
-empty$ -- 59
-format.name$ -- 8
-if$ -- 140
+cite$ -- 4
+duplicate$ -- 42
+empty$ -- 86
+format.name$ -- 12
+if$ -- 208
 int.to.chr$ -- 0
-int.to.str$ -- 3
-missing$ -- 3
-newline$ -- 18
-num.names$ -- 6
-pop$ -- 14
+int.to.str$ -- 4
+missing$ -- 4
+newline$ -- 23
+num.names$ -- 8
+pop$ -- 17
 preamble$ -- 1
-purify$ -- 10
+purify$ -- 14
 quote$ -- 0
-skip$ -- 19
+skip$ -- 27
 stack$ -- 0
-substring$ -- 18
-swap$ -- 2
+substring$ -- 48
+swap$ -- 3
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 10
+type$ -- 14
 warning$ -- 0
-while$ -- 7
-width$ -- 4
-write$ -- 34
+while$ -- 11
+width$ -- 5
+write$ -- 45

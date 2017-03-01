@@ -17,4 +17,9 @@ Kambiz Salari and Patrick Knupp.
 \newblock {Code Verification by the Method of Manufactured Solution.}
 \newblock Technical report, Sandia National Laboratories, 2000.
 
+\bibitem{Steinberg1985}
+Stanly Steinberg and Patrick~J. Roache.
+\newblock {Symbolic manipulation and computational fluid dynamics}.
+\newblock {\em Journal of Computational Physics}, 57(2):251--284, 1985.
+
 \end{thebibliography}
