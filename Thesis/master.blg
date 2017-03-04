@@ -8,44 +8,46 @@ Database file #3: ./Cite/Decoupled.bib
 Database file #4: ./Cite/NavierStokes.bib
 Database file #5: ./Cite/Verification.bib
 Database file #6: ./Cite/EulerianFormulation.bib
-You've used 4 entries,
+Warning--empty journal in Project2016
+You've used 5 entries,
             2118 wiz_defined-function locations,
-            531 strings with 4726 characters,
-and the built_in function-call counts, 1030 in all, are:
-= -- 100
-> -- 40
+            536 strings with 4810 characters,
+and the built_in function-call counts, 1233 in all, are:
+= -- 119
+> -- 47
 < -- 0
-+ -- 16
-- -- 12
-* -- 62
-:= -- 190
-add.period$ -- 12
-call.type$ -- 4
-change.case$ -- 18
++ -- 19
+- -- 14
+* -- 70
+:= -- 228
+add.period$ -- 15
+call.type$ -- 5
+change.case$ -- 22
 chr.to.int$ -- 0
-cite$ -- 4
-duplicate$ -- 42
-empty$ -- 86
-format.name$ -- 12
-if$ -- 208
+cite$ -- 6
+duplicate$ -- 52
+empty$ -- 103
+format.name$ -- 14
+if$ -- 248
 int.to.chr$ -- 0
-int.to.str$ -- 4
-missing$ -- 4
-newline$ -- 23
-num.names$ -- 8
-pop$ -- 17
+int.to.str$ -- 5
+missing$ -- 5
+newline$ -- 28
+num.names$ -- 10
+pop$ -- 23
 preamble$ -- 1
-purify$ -- 14
+purify$ -- 17
 quote$ -- 0
-skip$ -- 27
+skip$ -- 34
 stack$ -- 0
-substring$ -- 48
+substring$ -- 53
 swap$ -- 3
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 14
-warning$ -- 0
-while$ -- 11
-width$ -- 5
-write$ -- 45
+type$ -- 18
+warning$ -- 1
+while$ -- 13
+width$ -- 6
+write$ -- 54
+(There was 1 warning)

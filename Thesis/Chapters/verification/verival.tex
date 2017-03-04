@@ -30,10 +30,26 @@ In the method of manufactured solution, one first manufactures a \textbf{u}, whi
 
 The beauty of such an approach as mentioned by Roache \cite{Roache2002}, is that our exact solution can be constructed without any physical reasoning. As such, code verificaion is purly a mathematical exercise were we are only interested if we are solving our equation right. These sentral ideas have existed for some time, but the  concept of combining manufactured exact solution in in partnership with refinement studies of of computational mesh has been absent.  One of the earliest was Steinberg and Roache \cite{Steinberg1985} using these principles deliberately for \textit{verification of code} ( estimate order of convergence)\\
 
-To deeply verify the robustness of the method of manufactured solution,  a report regarding code verification using this approach was published by Salari and Knupp \cite{Biggs}. This thorough work applied the method for both compressible and incompressible time-dependent Navier-Stokes equation. To prove its robustness the authors  delibritary implemented  code errors in a Navier-Stokes solver presented in the report. In total 21 blind testcases where implemented, where different approaches of verifcation frameworks were tested. 
+To deeply verify the robustness of the method of manufactured solution,  a report regarding code verification using this approach was published by Salari and Knupp \cite{Biggs}. This thorough work applied the method for both compressible and incompressible time-dependent Navier-Stokes equation. To prove its robustness the authors  delibritary implemented  code errors in a verified Navier-Stokes solver by MMS presented in the report. In total 21 blind testcases where implemented, where different approaches of verifcation frameworks were tested. 
 Of these 10 coding mistakes that reduces the observed order-of-accuracy was implemented. Here the method of manufactured solution captured all of them. \\
 
-Even though the method of MMS a certain freedom in the construction of a manufactured solution, certain guidelines have been proposed  (\cite{Steinberg1985}, \cite{Biggs}, \cite{Roache2002} ). These are but not limited to
+For the purpose of verification of calculation we need to calculate the error of our numerical simulation. Let $\mathbf{u}_h$ denote our numerical solution and $\mathbf{u}$ be our exact solution. By letting $|| \cdot || $ be the  $L^2$ norm, we define the error as
+
+\begin{align*}
+E = ||\mathbf{u} - \mathbf{u}_h  ||
+\end{align*}
+
+Assuming our computational mesh is constructed by equilateral triangles, and that our simulations are solved with a constant timestep, the total error contribution from the temporal and spatial 
+discretized PDE can be written as
+
+\begin{align*}
+E = A \delta x^l + B \delta t^k
+\end{align*}
+
+
+Where A and B are constants, and l and k denote the expected convergencerate... FYLL INN REF FRA ANNET KAP OM EXPECTED CONVERGENCERATE \\. In order to evalute properties of either the spatial or temporal discretization, we must reduce the numerical error contribution of the discretization not of interest. Say we would like to evaluate the convergencerate of the spatial discretization, then the temporal error must be reduced in order to not poute.. 
+
+Even though the method of MMS a certain freedom in the construction of a manufactured solution, certain guidelines have been proposed  (\cite{Steinberg1985}, \cite{Biggs}, \cite{Roache2002} ). 
 
 \begin{itemize}
 \item To ensure theoretical order-of-accuracy, the manufactured solution should be constructed of polynomials, exponential or trigonometric functions to construct smooth solutions.
@@ -42,6 +58,28 @@ Even though the method of MMS a certain freedom in the construction of a manufac
 \item Certain degree to be able to calculate expected order of convergence (Få frem at må ha "grad nok" til å kunne regne convergencerate) 
 \end{itemize}
 
+Fluid structure interaction consists of several buildingblocks of fluid and structure equations describing forces exerted from one another. With this in mind a verification of the full FSI code can be tedious as implementation errors yielding non-desired results can be hard to find. We will therefore provide verification of each buildingblock until we reach the total system of equations. \\
+
+For construction of the sourceterm \textbf{f} the Unified Form Language (UFL) \cite{Project2016} provided in FEniCS Project will be used. UFL provides a simple yet powerfull method of declaration for finite element forms. An example will be provided in the Fluid Problem section. 
+
+\subsection{Fluid Problem}
+Recall from Chapter ??? the ALE formulation of the Navier Stokes equation. 
+\begin{align*}
+\rho_f \ha{J}\pder{\hat{u}}{t} + \ha{J} \hat{F}^{-1} (\hat{u} - \hat{w})\cdot \nabla \hat{u} 
+- \nabla \cdot \ha{J} \sigma \hat{F}^{-T} = f
+\end{align*}
+
+\begin{lstlisting}[style=python]
+f = rho*diff(u_vec, t_) + rho*dot(grad(u_vec), (u_vec - w_vec)) - div(sigma_f(p_c, u_vec, mu))
+\end{lstlisting}
+
+We will on the basis of the presented guidelines define the manufactured solution.
+
+\begin{align*}
+u = sin(x + y + t)^2 \\
+v = cos(x + y +  t)^2 \\
+p = cos(x + y + t)
+\end{align*}
 
 
                                                                                                                                                    
