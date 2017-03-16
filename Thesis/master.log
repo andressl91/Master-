@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.12.9)  16 MAR 2017 15:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.12.9)  16 MAR 2017 21:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1087,17 +1087,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 50--53
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--84
+Underfull \hbox (badness 10000) in paragraph at lines 78--79
 
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 104--107
+Underfull \hbox (badness 10000) in paragraph at lines 119--124
 
  []
 
 [7]
-Overfull \hbox (14.4194pt too wide) in paragraph at lines 153--153
+Overfull \hbox (14.4194pt too wide) in paragraph at lines 152--152
 []\T1/cmr/bx/n/12 Material mo-dels, St. Ven-ant Kirch-hoff ma-te-ria, in-comp n
 eo-Hookean
  []
@@ -1112,43 +1112,42 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 28.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 28.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 28.
 Package rerunfilecheck Info: File `master.out' has not changed.
-(rerunfilecheck)             Checksum: D3C2FC0A479EBB214DCEBB7CEB500CE8;913.
+(rerunfilecheck)             Checksum: BFF2D75C6E23F105765320CE4346AABC;924.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 28.
  ) 
 Here is how much of TeX's memory you used:
- 12280 strings out of 493014
- 177701 string characters out of 6133351
+ 12277 strings out of 493014
+ 177666 string characters out of 6133351
  289307 words of memory out of 5000000
- 15572 multiletter control sequences out of 15000+600000
- 23512 words of font info for 60 fonts, out of 8000000 for 9000
+ 15570 multiletter control sequences out of 15000+600000
+ 23177 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 44i,12n,45p,581b,415s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
-}{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}<
-/usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></
-usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></u
-sr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
-r/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/
-local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/lo
-cal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loca
-l/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/t
-exlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/te
-xlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texl
-ive/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/
-texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/te
-xlive/2016/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texl
-ive/2016/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texliv
-e/2016/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/local/texlive/
-2016/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/20
-16/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2016
-/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2016/t
-exmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2016/tex
-mf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2016/texmf
--dist/fonts/type1/public/cm-super/sfti1000.pfb>
-Output written on master.pdf (9 pages, 242890 bytes).
+ 44i,12n,45p,581b,437s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
+</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><
+/usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></
+usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></u
+sr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr
+/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/l
+ocal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loc
+al/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/
+texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/t
+exlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/tex
+live/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local
+/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/t
+exlive/2016/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/tex
+live/2016/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texli
+ve/2016/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/local/texlive
+/2016/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2
+016/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/201
+6/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2016/
+texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2016/te
+xmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2016/texm
+f-dist/fonts/type1/public/cm-super/sfti1000.pfb>
+Output written on master.pdf (9 pages, 243090 bytes).
 PDF statistics:
- 224 PDF objects out of 1000 (max. 8388607)
- 191 compressed objects within 2 object streams
+ 221 PDF objects out of 1000 (max. 8388607)
+ 188 compressed objects within 2 object streams
  35 named destinations out of 1000 (max. 500000)
  105 words of extra memory for PDF output out of 10000 (max. 10000000)
 

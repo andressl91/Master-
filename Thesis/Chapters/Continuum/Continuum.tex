@@ -5,6 +5,8 @@ Any medium on a microscopic scale is built up of a structure of atoms, meaning w
 
 We consider the medium with continuum properties. By a continuum we mean a volume $V(t) \subset \mathbb{R}^3$ 
 consiting of particles, which we observe for some properties. One property of interest could be the veloctity $\textbf{v}(x,t)$ for some point $x \in V(t)$ in time $t \in (0, T]$, which would mean the average velocity of the particles occupying this point \textit{x} at time \textit{t}  
+The intension of this chapter is not to give a 
+thorough introduction of continuum mechanics, but rather present key concepts needed for the evaluation of fluid-strucutre interaction.  
 
 \section{Coordinate system}
 We assume that our medium is continiously distributed throughout its own volume, and we start our observation of this medium
@@ -74,6 +76,46 @@ J = det(\hat{F}) = det( I + \hat{\nabla} \hat{u} ) \neq 0
 
 By the assumption that the medium can't be selfpenetrated, we must limit  J to be greater than 0 \cite{Wriggers2006}
 
+\section{Measures of Strain and Stress}
+The equations describing forces on our domain can be derived in accordinance with the current or reference configuration. With this in mind, different measures of strain can be derived accordning to which configuration we are interested in. We will here by \cite{Richter2016} show the most common measures of strain. We will first introduce the right \textit{Cauchy-Green} tensor \textbf{C}, which is one of the most used strain measures \cite{Wriggers2006}. \\ Uttrykk 1.3 fra Godboka, LAG TEGNING \\ 
+
+Let $\ha{x}, \ha{y} \in \ha{V}$ be two points in our referemce configuration and let $\ha{a} = \ha{y} - \ha{x}$ denote the
+length of the line bewtween these two points. As our domain undergoes deformation let 
+$x = \ha{x} + \hat{u}( \ha{x} ) $ and $x = \ha{y} + \hat{u}( \ha{y} )  $ be the position of our points in the current configuration, and let $a = y - x$ be our new line segment. By \cite{Richter2016} we have by first order Taylor expansion
+
+\begin{align*}
+&y - x = \ha{y} + \hat{u}(\ha{y}) - \ha{x} - \hat{u}(\ha{x}) = \
+\ha{y} - \ha{x} + \hat{\nabla}\ha{u}(\ha{x}) (\ha{y} - \ha{x}) 
++ \mathcal{O}(|\ha{y} - \ha{x} |^2) \\
+&\frac{y - x}{|\ha{y} - \ha{x}|} = [I + \hat{\nabla}\hat{u}(\ha{x} ]  
+\frac{\ha{y} - \ha{x}}{|\ha{y} - \ha{x}|} + \mathcal{O}(|\ha{y} - \ha{x} |) 
+\end{align*}
+
+This detour from \cite{Richter2016}  we have that 
+\begin{align*}
+&a = y - x = \hat{F}(\ha{x})\ha{a} +  \mathcal{O}(|\ha{a} |^2) \\
+&|a| = \sqrt{ (\hat{F}\ha{a},\hat{F}\ha{a})+ \mathcal{O} (|\ha{a}^3|)  } = 
+ \sqrt{ (\ha{a}^T, \hat{F}^T\hat{F}\ha{a})} + \mathcal{O} (|\ha{a}^2|)  
+\end{align*}
+
+We let $\ha{C} = \ha{F}^T \ha{F}$ denote the right \textit{Cauchy-Green tensor}.
+By observation the Cauchy-Green tensor is not zero at the reference configuration 
+\begin{align*}
+\ha{C} =  \ha{F}^T \ha{F} = (I + \hat{\nabla} \ha{u})^T (I + \hat{\nabla} \ha{u}) = 1
+\end{align*}
+
+Hence it is convenient to introduce a tensor which is zero at the reference configuration. We define the \textit{Grenn-Lagrange strain tensor}, which arises from the squard rate of change of the linesegment \ha{a} and \textit{a}. By using the definition of the Cauchy-Green tensor we have the relation
+\begin{align*}
+&\frac{1}{2}(|a|^2 + |\ha{a}|^2) = \frac{1}{2}(\ha{a}^T\hat{C}\ha{a}
+ -\ha{a}^T \ha{a} ) + \mathcal{O}(|\ha{a}^3| = 
+ \ha{a}^T \big(\frac{1}{2} (\hat{F}^T \hat{F} - I) \big) \ha{a} 
+ + \mathcal{O}(\ha{a}^3) \\
+&\hat{E} = \frac{1}{2}(\hat{C} - I)
+\end{align*}
+
+Both the \textit{right Cauchy-Green tensor} $\hat{C}$ and the \textit{Green-Lagrange} $\hat{E}$ are refered to the Lagrangian coordinate system, hence the \textit{reference configuration}. \\
+Strain itself is nothing else than the measurement of linesegments under derformation. Therefore strain alone is purley an observation, and it is not dependent on the material of interest. but one expects that a material undergoing strain, will give for forces within the material. \\
+
 
 \section{Transformations of conservation laws}
 To be clear later, transformation of conservation principles from Eulerian coordinates to other coordinate systems are essential for deriving the equations of fluid-structure interaction. These conservation laws often has some spatial or temporal derivaties, and the essence is how to we transform these operators between our coordinate systems. \\
@@ -100,48 +142,7 @@ Let f be a function $f : V(t) \rightarrow \mathbb{R}$. Then the temporal transfo
 \end{lemma}
 
 SKRIV OM REMARK 3 I FSI DELEN OM FLUID/STRUCTURE PROB
-\section{Measures of Strain}
-The equations describing forces on our domain can be derived in accordinance with the current or
-reference configuration. With this in mind, different measures of strain can be derived accordning to which configuration we are 
-interested in. We will here by \cite{Richter2016} show the most common measures of strain. We will first introduce the right \textit{Cauchy-Green} tensor \textbf{C}, which is one of the most used strain measures \cite{Wriggers2006}. \\ Uttrykk 1.3 fra Godboka, LAG TEGNING \\ 
 
-Let $\ha{x}, \ha{y} \in \ha{V}$ be two points in our referemce configuration and let $\ha{a} = \ha{y} - \ha{x}$ denote the
-length of the line bewtween these two points. As our domain undergoes deformation let 
-$x = \ha{x} + \hat{u}( \ha{x} ) $ and $x = \ha{y} + \hat{u}( \ha{y} )  $ be the position of our points in the current configuration, and let $a = y - x$ be our new line segment. By \cite{Richter2016} we have by first order Taylor expansion
-
-\begin{align*}
-&y - x = \ha{y} + \hat{u}(\ha{y}) - \ha{x} - \hat{u}(\ha{x}) = \
-\ha{y} - \ha{x} + \hat{\nabla}\ha{u}(\ha{x}) (\ha{y} - \ha{x}) 
-+ \mathcal{O}(|\ha{y} - \ha{x} |^2) \\
-&\frac{y - x}{|\ha{y} - \ha{x}|} = [I + \hat{\nabla}\hat{u}(\ha{x} ]  
-\frac{\ha{y} - \ha{x}}{|\ha{y} - \ha{x}|} + \mathcal{O}(|\ha{y} - \ha{x} |) 
-\end{align*}
-
-This detour from \cite{Richter2016}  we have that 
-\begin{align*}
-a = y - x = \hat{F}(\ha{x})\ha{a} +  \mathcal{O}(|\ha{a} |^2) \\
-|a| = \sqrt{ (\hat{F}\ha{a},\hat{F}\ha{a})+ \mathcal{O} (|\ha{a}^3|)  } = 
- \sqrt{ (\ha{a}^T, \hat{F}^T\hat{F}\ha{a})} + \mathcal{O} (|\ha{a}^2|)  
-\end{align*}
-
-We let $\ha{C} = \ha{F}^T \ha{F}$ denote the right \textit{Cauchy-Green tensor}. We would like to remark some properties
-
-\begin{itemize}
-\item The right Cauchy-Green tensor refers to the reference configuration
-\item It measures the squared scaled length of a linesegment $\ha{y} - \ha{x}$
-\item The tensor is symmetric and positive definie
-\begin{align*}
-(\hat{C}\ha{a}, \ha{a}) = (\hat{F}\ha{a}, \hat{F}\ha{a}  ) = ||\hat{F} \ha{a} ||^2  \geq 0 \hspace{2mm} \forall \ha{x} \neq 0
-\end{align*}
-\end{itemize} 
-
-By observation the Cauchy-Green tensor is not zero at the reference configuration 
-\begin{align*}
-\ha{C} =  \ha{F}^T \ha{F} = (I + \hat{\nabla} \ha{u})^T (I + \hat{\nabla} \ha{u}) = 1
-\end{align*}
-
-Hence it is convenient to introduce a tensor which is zero at the reference configuration. We define the \textit{Grenn-Lagrange strain tensor} 
-$\hat{E} = \frac{1}{2}(\hat{C} - I) $ FORTSETT SIDE 6 GODBOKA
 \section{Conservationlaws}
 \subsection{Conservation of continuum}
 \subsection{Conservation of momentum}
