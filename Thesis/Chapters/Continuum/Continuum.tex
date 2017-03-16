@@ -19,12 +19,12 @@ Assuming that the path for some \^{x} is continious in time, we can define the i
 
 We now have enough background to define the \textit{deformation} 
 \begin{align}
-\hat{u}(\ha{x},t) = x(\ha{x},t) - \ha{x} 
+\ha{T}(\ha{x}, t) = \hat{u}(\ha{x},t) = x(\ha{x},t) - \ha{x} 
 \end{align}
 
 and the \textit{deformation velocity}
 \begin{align}
-\hat{v}(\ha{x},t) = d_t x(\ha{x},t) = d_t \hat{u}(\ha{x},t) 
+\pder{\ha{T}(\ha{x}, t)}{t} = \hat{v}(\ha{x},t) = d_t x(\ha{x},t) = d_t \hat{u}(\ha{x},t) 
 \end{align}
 
 Such a description of tracking each particle $\ha{x} \in \ha{V}$ is often denoted the \textit{Lagrangian Framework} and is a natural choice of describing structure mechanics.
@@ -60,7 +60,7 @@ Deformation gradient.
 \end{align} 
 \end{defn}
 
-Mind that deformation gradient of $\ha{u}$ is which respect to the reference configuration. 
+Mind that deformation gradient of $\hat{u}$ is which respect to the reference configuration. 
 From the assumption that no two particles $\ha{x}_a, \ha{x}_b \in \ha{V}$ occupy the same location for some time $V(t)$, the presented transformation must be linear. As a consequence from the invertible matrix theorem found in linear algebra, the linear operator \textbf{F} cannot be a singuar.  
 We define the  \textit{determinant of the deformation gradient} as \textit{J}, which denotes the local change of volume of our domain. 
 
@@ -75,36 +75,31 @@ J = det(\hat{F}) = det( I + \hat{\nabla} \hat{u} ) \neq 0
 By the assumption that the medium can't be selfpenetrated, we must limit  J to be greater than 0 \cite{Wriggers2006}
 
 
-\section{Transformations}
-The deformation gradient and the determinant of the deformation gradient are central properties transforming line, area and volume elements between the reference and current configurations.   We have
+\section{Transformations of conservation laws}
+To be clear later, transformation of conservation principles from Eulerian coordinates to other coordinate systems are essential for deriving the equations of fluid-structure interaction. These conservation laws often has some spatial or temporal derivaties, and the essence is how to we transform these operators between our coordinate systems. \\
+With this in mind, we will derive these transformations with the help of a new arbitary fixed reference system \ha{W}. We will throughout this subsection follow the ideas and approaches found in \cite{Richter2016}. Further we denote its deformation gradient as $\hat{F}_w$ and its determinant $\ha{J}_w$. Then the invertibale mapping $\ha{T}_w : \ha{W} \rightarrow V(t)$ exists. \\
+For $\ha{V} = \ha{W}$, $\ha{W}$, simply denotes the familiar Lagrangian description.
+In the case $\ha{V} \neq \ha{W}$, $\ha{W}$ have no direct physical meaning.  Hence it is important to notice that the physical velocity $\pder{\ha{V}}{t} \hat{v}$ and the velocity of arbitary domain $\pder{\ha{W}_w}{t}$ doesn't neseccary coincide. This observation is essential, as we will soon see. \\
+We will first consider the transformation of spatial derivatives from $V(t)$ to $\ha{W}$ \\
+
+\begin{lemma}
+Let f be a function $f : V(t) \rightarrow \mathbb{R}$ and $\mathbf{w} \rightarrow \mathbb{R}^d$ be a vectorfield. Then the spatial transformation
+from from $V(t)$ to $\ha{W}$ is defined as
 \begin{align*}
-&\text{Line element} \hspace{6mm}\int_{V(t)} dx = \int_{\ha{V}} \hat{F} d\ha{x} \\
-&\text{Area element} \hspace{6mm}\int_{V(t)} \textbf{n } da = \int_{\ha{V}} J\hat{F}^{-T} \textbf{n} \hspace{2mm} d\ha{x} \\
-&\text{Volume element} \hspace{2mm} \int_{V(t)} dx = \int_{\ha{V}} \ha{J } \hspace{2mm} d\ha{x}
-\end{align*}
+\nabla f = \hat{F}_W^{-T} \hat{\nabla} \ha{f}, \hspace{2mm} 
+\nabla \mathbf{w} =  \hat{\nabla} \ha{f} \hat{F}_W^{-1}
+\end{align*} 
+\end{lemma}
 
-From this transformations of vectors and tensors between our configurations can be derived. 
-FIKS DOMENE/HVOR ER DE NOE DEFINERT
-\begin{defn}
-Let $\hat{P} (\ha{x}) = P (x)$  be a scalar  field. 
-\begin{align}
-\hat{\nabla}P = \hat{F}^{T} \nabla P
-\end{align} 
-\end{defn}
+\begin{lemma}
+Let f be a function $f : V(t) \rightarrow \mathbb{R}$. Then the temporal transformation from from $V(t)$ to $\ha{W}$ is defined as
+\begin{align*}
+\pder{f}{t} = \pder{\ha{f}}{t} - (\hat{F}_W^{-1} \hat{v} \cdot \hat{\nabla}) \ha{f}
++ \hat{F}_W^{-T} \hat{\nabla} \ha{f} \cdot \hat{v}
+\end{align*} 
+\end{lemma}
 
-\begin{defn}
-Let $\hat{W} (\ha{x}) = W (x)$  be a vector  field. 
-\begin{align}
-\hat{\nabla}W = \nabla W \hat{F} 
-\end{align} 
-\end{defn}
-
-Due to the property of $\ha{J}$ the inverse linear operator $\hat{F}^{-1}$ is defined, hence the transformation from the current to the reference configuration is trivial.
-
-For a thoroughly derivation see \cite{Wriggers2006}, \cite{Richter2016}.
-
-
-
+SKRIV OM REMARK 3 I FSI DELEN OM FLUID/STRUCTURE PROB
 \section{Measures of Strain}
 The equations describing forces on our domain can be derived in accordinance with the current or
 reference configuration. With this in mind, different measures of strain can be derived accordning to which configuration we are 
