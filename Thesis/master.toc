@@ -1,6 +1,17 @@
 \select@language {norsk}
-\contentsline {chapter}{\numberline {1}Fluid Structure Interaction}{5}{chapter.1}
-\contentsline {section}{\numberline {1.1}Litterature within FSI}{5}{section.1.1}
-\contentsline {subsection}{\numberline {1.1.1}Coupled and decoupled approaches}{5}{subsection.1.1.1}
-\contentsline {subsection}{\numberline {1.1.2}Fluid}{5}{subsection.1.1.2}
-\contentsline {subsection}{\numberline {1.1.3}Structure}{5}{subsection.1.1.3}
+\contentsline {chapter}{\numberline {1}Continuum Mechanics}{5}{chapter.1}
+\contentsline {section}{\numberline {1.1}Coordinate system}{5}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}Lagrangian}{5}{subsection.1.1.1}
+\contentsline {subsection}{\numberline {1.1.2}Eulerian}{6}{subsection.1.1.2}
+\contentsline {section}{\numberline {1.2}Deformation gradients}{6}{section.1.2}
+\contentsline {section}{\numberline {1.3}Measures of Strain and Stress}{7}{section.1.3}
+\contentsline {section}{\numberline {1.4}Transformations of conservation laws}{7}{section.1.4}
+\contentsline {section}{\numberline {1.5}Conservationlaws}{8}{section.1.5}
+\contentsline {subsection}{\numberline {1.5.1}Conservation of continuum}{8}{subsection.1.5.1}
+\contentsline {subsection}{\numberline {1.5.2}Conservation of momentum}{8}{subsection.1.5.2}
+\contentsline {section}{\numberline {1.6}The fluid}{8}{section.1.6}
+\contentsline {section}{\numberline {1.7}The solid}{8}{section.1.7}
+\contentsline {subsection}{\numberline {1.7.1}Material models, St. Venant Kirchhoff materia, incomp neo-Hookean materiall}{8}{subsection.1.7.1}
+\contentsline {chapter}{\numberline {2}Fluid Structure Interaction}{9}{chapter.2}
+\contentsline {subsection}{\numberline {2.0.1}Fully Eulerian}{9}{subsection.2.0.1}
+\contentsline {subsection}{\numberline {2.0.2}Arbitary Lagrangian Eulerian}{9}{subsection.2.0.2}

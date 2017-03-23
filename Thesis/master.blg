@@ -8,44 +8,58 @@ Database file #3: ./Cite/Decoupled.bib
 Database file #4: ./Cite/NavierStokes.bib
 Database file #5: ./Cite/Verification.bib
 Database file #6: ./Cite/EulerianFormulation.bib
-You've used 1 entry,
+Repeated entry---line 64 of file ./Cite/EulerianFormulation.bib
+ : @article{Richter2010a
+ :                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 94 of file ./Cite/EulerianFormulation.bib
+ : @article{Frei2016
+ :                  ,
+I'm skipping whatever remains of this entry
+Warning--empty journal in Donea2004
+Warning--there's a number but no volume in Donea2004
+Warning--there's a number but no volume in Dunne2006
+Warning--empty journal in Richter2016
+Warning--empty publisher in Wriggers2006
+You've used 8 entries,
             2118 wiz_defined-function locations,
-            510 strings with 4303 characters,
-and the built_in function-call counts, 348 in all, are:
-= -- 35
-> -- 13
+            557 strings with 5358 characters,
+and the built_in function-call counts, 2437 in all, are:
+= -- 245
+> -- 95
 < -- 0
-+ -- 5
-- -- 4
-* -- 25
-:= -- 64
-add.period$ -- 3
-call.type$ -- 1
-change.case$ -- 5
++ -- 38
+- -- 30
+* -- 174
+:= -- 418
+add.period$ -- 24
+call.type$ -- 8
+change.case$ -- 38
 chr.to.int$ -- 0
-cite$ -- 1
-duplicate$ -- 11
-empty$ -- 27
-format.name$ -- 4
-if$ -- 68
+cite$ -- 13
+duplicate$ -- 88
+empty$ -- 198
+format.name$ -- 30
+if$ -- 489
 int.to.chr$ -- 0
-int.to.str$ -- 1
-missing$ -- 1
-newline$ -- 8
-num.names$ -- 2
-pop$ -- 3
+int.to.str$ -- 8
+missing$ -- 9
+newline$ -- 43
+num.names$ -- 16
+pop$ -- 38
 preamble$ -- 1
-purify$ -- 4
+purify$ -- 31
 quote$ -- 0
-skip$ -- 8
+skip$ -- 53
 stack$ -- 0
-substring$ -- 30
-swap$ -- 1
+substring$ -- 187
+swap$ -- 6
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 4
-warning$ -- 0
-while$ -- 4
-width$ -- 2
-write$ -- 13
+type$ -- 30
+warning$ -- 5
+while$ -- 28
+width$ -- 9
+write$ -- 85
+(There were 2 error messages)

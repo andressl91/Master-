@@ -148,8 +148,16 @@ SKRIV OM REMARK 3 I FSI DELEN OM FLUID/STRUCTURE PROB
 \subsection{Conservation of momentum}
 
 \section{The fluid}
+We assume an incrompressible Newtonian fluid, described by the usual Navier-Stokes equations. We define the fluid density as $\rho_f$ and fluid viscosity $\nu_f$ to be constant in time. Our phsyical unknowns
+fluid velocity $v_f$ and pressure $p_f$ both live in the time-dependent fluid domain  $\hat{\Omega}_f(t)$. Let any Dirichlet boundariy conditions be defined as $v_f^D$, $p_f^D$ on the boundaries
+of  $\hat{\Omega}_f(t)$, and let $g_1$ denote the neumann conditions of $\sigma_f \cdot n$ defined on the boundaries of $\hat{\Omega}_f(t)$.
+
 
 \section{The solid}
+For the structure we use the Vernant-Kirchhoff(STVK) model of deformation of solids. We usually describe the material elasticity by two parameters, Lames coefficients $\lambda_s$ and $\mu_s$ or the Poisson ratio $\nu_s$
+and the Young modulus $E_s$ \cite{Dunne2006a}. INSERT RELATIONS \\ \\
+
+
 
 \subsection{Material models, St. Venant Kirchhoff materia, incomp neo-Hookean materiall}
 
