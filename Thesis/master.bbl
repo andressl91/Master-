@@ -1,13 +1,9 @@
 \begin{thebibliography}{1}
 
-\bibitem{Richter2016}
-Thomas Richter.
-\newblock {Fluid Structure Interactions}.
-\newblock 2016.
-
-\bibitem{Wriggers2006}
-P.~Wriggers.
-\newblock {\em {Computational contact mechanics, second ed., Springer}}.
-\newblock 2006.
+\bibitem{Dunne2006a}
+Thomas Dunne and Rolf Rannacher.
+\newblock {Adaptive Finite Element Approximation of Fluid-Structure Interaction
+  Based on an Eulerian Variational Formulation}.
+\newblock {\em Fluid-Structure Interaction}, 53:110--145, 2006.
 
 \end{thebibliography}

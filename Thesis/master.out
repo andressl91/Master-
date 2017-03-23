@@ -1,13 +1,5 @@
-\BOOKMARK [0][-]{chapter.1}{Continuum Mechanics}{}% 1
-\BOOKMARK [1][-]{section.1.1}{Coordinate system}{chapter.1}% 2
-\BOOKMARK [2][-]{subsection.1.1.1}{Lagrangian}{section.1.1}% 3
-\BOOKMARK [2][-]{subsection.1.1.2}{Eulerian}{section.1.1}% 4
-\BOOKMARK [1][-]{section.1.2}{Deformation gradients}{chapter.1}% 5
-\BOOKMARK [1][-]{section.1.3}{Measures of Strain and Stress}{chapter.1}% 6
-\BOOKMARK [1][-]{section.1.4}{Transformations of conservation laws}{chapter.1}% 7
-\BOOKMARK [1][-]{section.1.5}{Conservationlaws}{chapter.1}% 8
-\BOOKMARK [2][-]{subsection.1.5.1}{Conservation of continuum}{section.1.5}% 9
-\BOOKMARK [2][-]{subsection.1.5.2}{Conservation of momentum}{section.1.5}% 10
-\BOOKMARK [1][-]{section.1.6}{The fluid}{chapter.1}% 11
-\BOOKMARK [1][-]{section.1.7}{The solid}{chapter.1}% 12
-\BOOKMARK [2][-]{subsection.1.7.1}{Material models, St. Venant Kirchhoff materia, incomp neo-Hookean materiall}{section.1.7}% 13
+\BOOKMARK [0][-]{chapter.1}{Fluid Structure Interaction}{}% 1
+\BOOKMARK [1][-]{section.1.1}{Litterature within FSI}{chapter.1}% 2
+\BOOKMARK [2][-]{subsection.1.1.1}{Coupled and decoupled approaches}{section.1.1}% 3
+\BOOKMARK [2][-]{subsection.1.1.2}{Fluid}{section.1.1}% 4
+\BOOKMARK [2][-]{subsection.1.1.3}{Structure}{section.1.1}% 5

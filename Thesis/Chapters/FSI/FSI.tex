@@ -3,13 +3,12 @@
 \section{Litterature within FSI}
 \subsection{Coupled and decoupled approaches}
 
-From the consepts of continuum mechanics we often expand our thoery by observing to mediums interacting with eachother as they
-are act upon by forces. In this thesis we will look at how to mediums of fluid and structural properties interact. We will let our computational domain $\Omega$ in the \textit{reference configuration} be partitioned in a fluid domain $\hat{\Omega_f}$ and a structure domain $\hat{\Omega_s}$ such that
-$\Omega = \hat{\Omega_f} \cup \hat{\Omega_s}$. Furhter we define the interface $\hat{\Gamma}$ as the intersection between these domains such that $\Gamma_i = \hat{\partial \Omega_f} \cap \hat{\partial \Omega_s}$ \newline \newline
+The consepts of Fluid-structure interaction are often introduced in several engineering feelds, for example biomechanics and hydrodynamics. As we will see throughout this chapter, one of the main challenges of this field that our governing equation describing fluid and solids are defined on different coordinate systems. Recall from chapter ?, that the solid equations are often described in the \textit{Lagrangian coordiante system}, while the fluid equations are on the contrary described in the \textit{Eularian coordinate system}. 
 
-\section{Monolithic Approach}
-\section{Mention Eulerian ??}
-\section{ALE}
+We define $\Omega$ in the \textit{reference configuration} be partitioned in a fluid domain $\hat{\Omega_f}$ and a structure domain $\hat{\Omega_s}$ such that
+$\Omega = \hat{\Omega_f} \cup \hat{\Omega_s}$. Furhter we define the interface $\hat{\Gamma}$ as the intersection between these domains such that $\Gamma_i = \hat{\partial \Omega_f} \cap \hat{\partial \Omega_s}$.  As the total system is exerted by external forces, the interface $\hat{\Gamma}$ must fulfill the physical equilibrium of forces given by the two domains. Therefore, is is critical that the transmition of forces from the two domains are fulfilled in a consistent way. Therefore a natural dilemma arises at the domain $\Omega$ undergoes deformation over time. If the natural coordinate system are used for $\hat{\Omega_f}$ and $\hat{\Omega_s}$, the domains doesn't match and the interface $\hat{\Gamma}$ doesn't have a general description for both domains. As such only one of the domains can be described in its natural coordinate system, while the other domain needs to be defined in some transformed coordinate system. 
+
+As such, several approaches to handle this has been proposed throughout the last decade. (Kilde Fernandez).  
 
 \subsection{Fluid}
 We assume an incrompressible Newtonian fluid, described by the usual Navier-Stokes equations. We define the fluid density as $\rho_f$ and fluid viscosity $\nu_f$ to be constant in time. Our phsyical unknowns
@@ -21,7 +20,4 @@ For the structure we use the Vernant-Kirchhoff(STVK) model of deformation of sol
 and the Young modulus $E_s$ \cite{Dunne2006a}. INSERT RELATIONS \\ \\
 
 As mentioned in the continuum chapter, describing deformation falls naturally in the category of the Lagrangian formulation. So we have in 
-
-\section{Decoupled Approach}
-\section{Projecton semi-implicit scheme}
 

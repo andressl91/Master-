@@ -8,47 +8,44 @@ Database file #3: ./Cite/Decoupled.bib
 Database file #4: ./Cite/NavierStokes.bib
 Database file #5: ./Cite/Verification.bib
 Database file #6: ./Cite/EulerianFormulation.bib
-Warning--empty journal in Richter2016
-Warning--empty publisher in Wriggers2006
-You've used 2 entries,
+You've used 1 entry,
             2118 wiz_defined-function locations,
-            512 strings with 4260 characters,
-and the built_in function-call counts, 439 in all, are:
-= -- 37
-> -- 14
+            510 strings with 4303 characters,
+and the built_in function-call counts, 348 in all, are:
+= -- 35
+> -- 13
 < -- 0
-+ -- 6
++ -- 5
 - -- 4
-* -- 20
-:= -- 84
-add.period$ -- 6
-call.type$ -- 2
-change.case$ -- 7
+* -- 25
+:= -- 64
+add.period$ -- 3
+call.type$ -- 1
+change.case$ -- 5
 chr.to.int$ -- 0
-cite$ -- 4
-duplicate$ -- 22
-empty$ -- 40
+cite$ -- 1
+duplicate$ -- 11
+empty$ -- 27
 format.name$ -- 4
-if$ -- 86
+if$ -- 68
 int.to.chr$ -- 0
-int.to.str$ -- 2
-missing$ -- 3
-newline$ -- 13
-num.names$ -- 4
-pop$ -- 15
+int.to.str$ -- 1
+missing$ -- 1
+newline$ -- 8
+num.names$ -- 2
+pop$ -- 3
 preamble$ -- 1
-purify$ -- 6
+purify$ -- 4
 quote$ -- 0
-skip$ -- 13
+skip$ -- 8
 stack$ -- 0
-substring$ -- 10
+substring$ -- 30
 swap$ -- 1
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 6
-warning$ -- 2
+type$ -- 4
+warning$ -- 0
 while$ -- 4
-width$ -- 3
-write$ -- 20
-(There were 2 warnings)
+width$ -- 2
+write$ -- 13
