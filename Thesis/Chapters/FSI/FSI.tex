@@ -16,14 +16,57 @@ Initially one of the \textit{interface-capturing } methods, the \textit{fully Eu
 This method keeps the fluid in its \textit{Eulerian coordinates}, and such can be seen as the natural counterpart of the ALE method \cite{Wick2013}. First proposed by , \cite{Dunne2006}.
 
 \subsection{Arbitary Lagrangian Eulerian}
-The ALE method was initially developed to combine the strengths of the \textit{Lagranngian} and \textit{Eulerian} coordinate systems. As pointed out in chapter 2, the \textit{Lagrangian} description is useful for tracking particles as they are act upon by forces. Hence its main contribution is the ability to track interfaces and materials with hist
-  choose to keep the structure in its \textit{Lagrangian coordinate system}, and to transform the fluid domain into an artificial coordinate system similar to the \textit{Lagrangian coordinate system}. It is however important to note that there is no natural displacement in the fluid domain, hence this domain has no directly physical meaning \cite{Richter2010a}, \cite{Donea2004}. 
+MEANTION ALE CAN  BEHAVE EITHER EULERIAN AND LAGRANGIAN
+The ALE method was initially developed to combine the strengths of the \textit{Lagranngian} and \textit{Eulerian} coordinate systems. As pointed out in chapter 2, the \textit{Lagrangian} description is useful for tracking particles as they are act upon by forces. Hence its main contribution is the ability to track interfaces and materials with history dependent properties.
+In the ALE method one choose to keep the structure in its \textit{Lagrangian coordinate system}, while transforming the fluid domain into an artificial coordinate system similar to the \textit{Lagrangian coordinate system}. It is however important to note that there is no natural displacement in the fluid domain, hence this domain has no directly physical meaning \cite{Richter2010a}, \cite{Donea2004}. 
  
-With this in mind, we will derive these transformations with the help of a new arbitary fixed reference system \ha{W}, following the ideas and approaches found in \cite{Richter2016}. Further we denote its deformation gradient as $\hat{F}_w$ and its determinant $\ha{J}_w$. Then the invertibale mapping $\ha{T}_w : \ha{W} \rightarrow V(t)$ exists. \\
-For $\ha{V} = \ha{W}$, $\ha{W}$, simply denotes the familiar Lagrangian description.
-In the case $\ha{V} \neq \ha{W}$, $\ha{W}$ as pointed out earlier have no direct physical meaning.  Hence it is important to notice that the physical velocity $\pder{\ha{V}}{t} \hat{v}$ and the velocity of arbitary domain $\pder{\ha{W}_w}{t}$ doesn't neseccary coincide. This observation is essential, as we will soon see. \\
-We will first consider the transformation of spatial derivatives from $V(t)$ to $\ha{W}$ \\
+With this in mind, we will derive these transformations with the help of a new arbitary fixed reference system \ha{W}, following the ideas and approaches found in \cite{Richter2016}. Further we denote its deformation gradient as $\hat{F}_w$ and its determinant $\ha{J}_w$. Following the ideas from chapter 2, we introduce the invertibale mapping $\ha{T}_w : \ha{W} \rightarrow V(t)$ , with the scalar $\ha{f}(\ha{x}_W, t) = f(x,t) $ and vector $\hat{w}(\ha{x}_W, t) = \mathbf{w}(x,t) $ counterparts.\\ 
+For $\ha{V} = \ha{W}$, $\ha{W}$ simply denotes the familiar Lagrangian description.
+In the case $\ha{V} \neq \ha{W}$, $\ha{W}$ as pointed out earlier have no direct physical meaning.  Hence it is important to notice that the physical velocity $\hat{v}$ and the velocity of arbitary domain $\pder{\ha{W}_w}{t}$ doesn't neseccary coincide. This observation is essential, as we will soon see. \\
 
+We will first define the transformation of spatial and temporal derivatives from $V(t)$ to $\ha{W}$ found in \cite{Richter2016}\\
+
+\begin{defn}
+Transformation of scalar spatial derivatives \\
+\textit{Let f be a scalar function such that} $f: V(t) \rightarrow \mathbb{R}$, \textit{then} 
+\begin{align}
+\nabla f = \hat{F}_W^{-T} \hat{\nabla}\ha{f}
+\end{align} 
+\end{defn}
+
+\begin{defn}
+Transformation of vector spatial derivatives \\
+\textit{Let \textbf{w} be a vector field such that} $\mathbf{w} V(t) \rightarrow \mathbb{R}^d$, \textit{then} 
+\begin{align}
+\nabla \mathbf{w} = \hat{\nabla}\hat{w} \hat{F}_W^{-1} 
+\end{align} 
+\end{defn}
+
+\begin{defn}
+Transformation of scalar temporal derivatives \\
+\textit{Let f be a scalar function such that} $f: V(t) \rightarrow \mathbb{R}$, \textit{then} 
+\begin{align}
+\pder{f}{t} = \pder{\ha{f} }{t} - (\hat{F}_W^{-1} \pder{\ha{T}_W}{t} \cdot \hat{\nabla}) \ha{f}
+\end{align} 
+\end{defn}
+
+In addition we need a consistent way to transform the induced stresses in the \textit{Eulerian} coordinate system to $\ha{W}$. Hence we introduce the \textit{Piloa transformation}, found in most introductional courses in structure mechanics (ORANGE BOOK).
+\\
+\begin{defn}
+T \\
+\textit{Let \textbf{w} be a vector field such that} $\mathbf{w} V(t) \rightarrow \mathbb{R}^d$, \textit{then the Piola transformation of w is defined by} 
+\begin{align}
+\mathbf{w} = \ha{J}_W \hat{F}^{-1}_W \hat{w}
+\end{align} 
+\end{defn}
+
+We now have the necessary tools to transform the conservation principles introduced in the fluid problem in chapter 2. Recall the Navier-Stokes equation defined in the \textit{Eulerian coordinate system} V(t).
+\begin{align*}
+&\rho \pder{\mathbf{v}}{t} + \rho \mathbf{v} \cdot \nabla \mathbf{v} =
+\nabla \cdot \sigma + \rho \mathbf{f} \\
+&\nabla \cdot \mathbf{v} = 0
+\end{align*}
+Using our newly introduced transformations of derivatives we map the equation to the arbitrary reference system $\ha{W}$.
 
 \subsection*{Strong and weak coupling }
 One of the major aspects of Fluid-structure interaction is the coupling of the fluid and solid equations.  As the total system is exerted by external forces, the interface $\hat{\Gamma}$ must fulfill the physical equilibrium of forces given by the two domains. Therefore, is is critical that the transmition of forces from the two domains are fulfilled in a consistent way.

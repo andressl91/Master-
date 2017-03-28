@@ -64,6 +64,18 @@
   showstringspaces={false}
 }
 
+
+% Custom colors
+\usepackage{color}
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+
+\usepackage{listings}
+
+\renewcommand{\lstlistingname}{Algorithm}% Listing -> Algorithm
+\renewcommand{\lstlistlistingname}{List of \lstlistingname s}
+
 \lstdefinestyle{python}
 {
   %frame=shadowbox,
@@ -76,13 +88,7 @@
   stringstyle=\color{red},
   showstringspaces={false}
 }
-  % numbers=left,                     # Numbered lines
-  % numbersep=5pt,                    # Dist from num to code
-  % numberstyle=\small,%\color{mygray},
-  % identifierstyle=\color{green}%,
-  % backgroundcolor=\color{},
-  % emph={MyClass,__init__},          % Custom highlighting
-  % emphstyle=\ttb\color{deepred}}    % Custom highlighting style
+
 
 % Custom commands
 \newcommand{\pder}[2]{\frac{\partial #1}{\partial #2}}
