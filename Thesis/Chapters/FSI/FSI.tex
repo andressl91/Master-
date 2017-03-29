@@ -26,39 +26,41 @@ In the case $\ha{V} \neq \ha{W}$, $\ha{W}$ as pointed out earlier have no direct
 
 We will first define the transformation of spatial and temporal derivatives from $V(t)$ to $\ha{W}$ found in \cite{Richter2016}\\
 
-\begin{defn}
+\begin{lem}
 Transformation of scalar spatial derivatives \\
 \textit{Let f be a scalar function such that} $f: V(t) \rightarrow \mathbb{R}$, \textit{then} 
 \begin{align}
 \nabla f = \hat{F}_W^{-T} \hat{\nabla}\ha{f}
 \end{align} 
-\end{defn}
+\end{lem}
 
-\begin{defn}
+\begin{lem}
 Transformation of vector spatial derivatives \\
-\textit{Let \textbf{w} be a vector field such that} $\mathbf{w} V(t) \rightarrow \mathbb{R}^d$, \textit{then} 
+\textit{Let \textbf{w} be a vector field such that} $\mathbf{w}: V(t) \rightarrow \mathbb{R}^d$, \textit{then} 
 \begin{align}
 \nabla \mathbf{w} = \hat{\nabla}\hat{w} \hat{F}_W^{-1} 
 \end{align} 
-\end{defn}
+\end{lem}
 
-\begin{defn}
+\begin{lem}
 Transformation of scalar temporal derivatives \\
 \textit{Let f be a scalar function such that} $f: V(t) \rightarrow \mathbb{R}$, \textit{then} 
 \begin{align}
 \pder{f}{t} = \pder{\ha{f} }{t} - (\hat{F}_W^{-1} \pder{\ha{T}_W}{t} \cdot \hat{\nabla}) \ha{f}
 \end{align} 
-\end{defn}
+\end{lem}
 
 In addition we need a consistent way to transform the induced stresses in the \textit{Eulerian} coordinate system to $\ha{W}$. Hence we introduce the \textit{Piloa transformation}, found in most introductional courses in structure mechanics (ORANGE BOOK).
 \\
-\begin{defn}
+\begin{lem}
 T \\
-\textit{Let \textbf{w} be a vector field such that} $\mathbf{w} V(t) \rightarrow \mathbb{R}^d$, \textit{then the Piola transformation of w is defined by} 
+\textit{Let \textbf{w} be a vector field such that} $\mathbf{w}: V(t) \rightarrow \mathbb{R}^d$, \textit{then the Piola transformation of w is defined by} 
 \begin{align}
 \mathbf{w} = \ha{J}_W \hat{F}^{-1}_W \hat{w}
 \end{align} 
-\end{defn}
+\end{lem}
+
+The Piola transformation can be further extended to transform tensors, see \cite{Richter2016}, Orange book. This results is essential as it allows us to transform surface forces induced by the \textit{Cauchy stress tensor} on our arbitrary coordinate system $\ha{W}$. Lemma 1.4 brings us to \textit{the first Piola Kirchhoff stress tensor} $\hat{P} = \ha{J}_W \hat{\sigma}\hat{F}_W^{-T}$, mentioned in chapter 2. 
 
 We now have the necessary tools to transform the conservation principles introduced in the fluid problem in chapter 2. Recall the Navier-Stokes equation defined in the \textit{Eulerian coordinate system} V(t).
 \begin{align*}
@@ -66,7 +68,45 @@ We now have the necessary tools to transform the conservation principles introdu
 \nabla \cdot \sigma + \rho \mathbf{f} \\
 &\nabla \cdot \mathbf{v} = 0
 \end{align*}
-Using our newly introduced transformations of derivatives we map the equation to the arbitrary reference system $\ha{W}$.
+Using our newly introduced transformations of derivatives we map the equation to the arbitrary reference system $\ha{W}$. We will first consider the transformation of the\textit{material derivative}. By 
+\begin{align*}
+\frac{d \mathbf{v}}{dt}(x,t) = \pder{\mathbf{v}}{t}(x,t) + \nabla \mathbf{v}(x,t) \cdot \pder{x}{t} \\
+\frac{d \mathbf{v}}{dt}(x,t) = \pder{\mathbf{v}}{t}(x,t) + \nabla \mathbf{v}(x,t) \cdot \mathbf{v}
+\end{align*}
+Note $\pder{x}{t}$ is the velocity of particles and not the transformation velocity $\pder{\ha{T}_W}{t}$. By lemma(1.1, 1.2, 1.3) we have  
+
+\begin{align*}
+\frac{d \mathbf{v}}{dt}(x,t) = 
+\pder{\hat{v}}{t}(x,t) - (\hat{F}_W^{-1}\pder{\ha{T}_W}{t} \cdot \hat{\nabla})\hat{v}
++ \hat{F}_W^{-T}\hat{\nabla}\hat{v} \cdot \hat{v} \\
+\mathbf{v} \cdot \nabla \mathbf{v} = \nabla \mathbf{v} \mathbf{v} = 
+\hat{\nabla}\hat{v}\hat{F}_W^{-1}\hat{v} = (\hat{F}_W^{-1}\hat{v} \cdot \hat{\nabla})\hat{v} \hspace{4mm} \textit{FINN KILDE}
+\end{align*}
+
+These results can be used to show that
+
+\begin{align*}
+\pder{\mathbf{v}}{t} + \mathbf{v} \cdot \nabla \mathbf{v} =
+\pder{\hat{v}}{t} + (\hat{F}_W^{-1}(\hat{v} - \pder{\ha{T}_W}{t}) \cdot \hat{\nabla}) \hat{v}
+\end{align*}
+
+By applying \textit{the first Piola Kirchhoff stress tensor} directly we transform the surface stress by 
+
+\begin{align*}
+\nabla \cdot \sigma = \nabla \cdot (\ha{J}_W \hat{\sigma}\hat{F}_W^{-T})
+\end{align*}
+In general, $\sigma$ is presumed on the form of a Newtonian fluid.
+However special care must be taken, as $\sigma \neq \hat{\sigma}$ due to spatial derivatives within the tensor. Hence 
+\begin{align*}
+\sigma = -p I + \mu_f(\nabla \mathbf{v} + (\nabla \mathbf{v})^T \\
+\hat{\sigma} = -\ha{p} I + \mu_f(\hat{\nabla}\hat{v}\hat{F}_W^{-1} +\hat{F}_W^{-T}\hat{\nabla}\hat{v}^T )
+\end{align*} 
+
+For the conservation of continuum we apply the \textit{Piola Transformation} such that
+
+\begin{align*}
+\nabla \cdot \mathbf{v} = \nabla \cdot (\ha{J} \hat{F}_W^{-1} \hat{v})
+\end{align*}
 
 \subsection*{Strong and weak coupling }
 One of the major aspects of Fluid-structure interaction is the coupling of the fluid and solid equations.  As the total system is exerted by external forces, the interface $\hat{\Gamma}$ must fulfill the physical equilibrium of forces given by the two domains. Therefore, is is critical that the transmition of forces from the two domains are fulfilled in a consistent way.

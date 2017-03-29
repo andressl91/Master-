@@ -114,50 +114,31 @@ Hence it is convenient to introduce a tensor which is zero at the reference conf
 \end{align*}
 
 Both the \textit{right Cauchy-Green tensor} $\hat{C}$ and the \textit{Green-Lagrange} $\hat{E}$ are refered to the Lagrangian coordinate system, hence the \textit{reference configuration}. \\
-Strain itself is nothing else than the measurement of linesegments under derformation. Therefore strain alone is purley an observation, and it is not dependent on the material of interest. but one expects that a material undergoing strain, will give for forces within the material. \\
+Strain itself is nothing else than the measurement of line segments under deformation. Therefore strain alone is purely an observation, and it is not dependent on the material of interest. but one expects that a material undergoing strain, will give for forces within the material. \\
 
-
-\section{Transformations of conservation laws}
-To be clear later, transformation of conservation principles from Eulerian coordinates to other coordinate systems are essential for deriving the equations of fluid-structure interaction. These conservation laws often has some spatial or temporal derivaties, and the essence is how to we transform these operators between our coordinate systems. \\
-With this in mind, we will derive these transformations with the help of a new arbitary fixed reference system \ha{W}. We will throughout this subsection follow the ideas and approaches found in \cite{Richter2016}. Further we denote its deformation gradient as $\hat{F}_w$ and its determinant $\ha{J}_w$. Then the invertibale mapping $\ha{T}_w : \ha{W} \rightarrow V(t)$ exists. \\
-For $\ha{V} = \ha{W}$, $\ha{W}$, simply denotes the familiar Lagrangian description.
-In the case $\ha{V} \neq \ha{W}$, $\ha{W}$ have no direct physical meaning.  Hence it is important to notice that the physical velocity $\pder{\ha{V}}{t} \hat{v}$ and the velocity of arbitary domain $\pder{\ha{W}_w}{t}$ doesn't neseccary coincide. This observation is essential, as we will soon see. \\
-We will first consider the transformation of spatial derivatives from $V(t)$ to $\ha{W}$ \\
-
-\begin{lemma}
-Let f be a function $f : V(t) \rightarrow \mathbb{R}$ and $\mathbf{w} \rightarrow \mathbb{R}^d$ be a vectorfield. Then the spatial transformation
-from from $V(t)$ to $\ha{W}$ is defined as
-\begin{align*}
-\nabla f = \hat{F}_W^{-T} \hat{\nabla} \ha{f}, \hspace{2mm} 
-\nabla \mathbf{w} =  \hat{\nabla} \ha{f} \hat{F}_W^{-1}
-\end{align*} 
-\end{lemma}
-
-\begin{lemma}
-Let f be a function $f : V(t) \rightarrow \mathbb{R}$. Then the temporal transformation from from $V(t)$ to $\ha{W}$ is defined as
-\begin{align*}
-\pder{f}{t} = \pder{\ha{f}}{t} - (\hat{F}_W^{-1} \hat{v} \cdot \hat{\nabla}) \ha{f}
-+ \hat{F}_W^{-T} \hat{\nabla} \ha{f} \cdot \hat{v}
-\end{align*} 
-\end{lemma}
-
-SKRIV OM REMARK 3 I FSI DELEN OM FLUID/STRUCTURE PROB
-
-\section{Conservationlaws}
-\subsection{Conservation of continuum}
-\subsection{Conservation of momentum}
 
 \section{The fluid}
-We assume an incrompressible Newtonian fluid, described by the usual Navier-Stokes equations. We define the fluid density as $\rho_f$ and fluid viscosity $\nu_f$ to be constant in time. Our phsyical unknowns
+We will throughout this thesis consider incompressible fluids described by Navier-Stokes equations. We define the fluid density as $\rho_f$ and fluid viscosity $\nu_f$ to be constant in time. Our phsyical unknowns
 fluid velocity $v_f$ and pressure $p_f$ both live in the time-dependent fluid domain  $\hat{\Omega}_f(t)$. Let any Dirichlet boundariy conditions be defined as $v_f^D$, $p_f^D$ on the boundaries
 of  $\hat{\Omega}_f(t)$, and let $g_1$ denote the neumann conditions of $\sigma_f \cdot n$ defined on the boundaries of $\hat{\Omega}_f(t)$.
 
+\begin{equat}
+\textit{Navier-Stokes equation}
+\begin{align}
+&\rho \pder{\mathbf{v}_f}{t} + \rho \mathbf{v}_f \cdot \nabla \mathbf{v}_f =
+\nabla \cdot \sigma + \rho \mathbf{f}_f \\
+&\nabla \cdot \mathbf{v}_f = 0
+\end{align} 
+\end{equat}
+
+Assuming a newtonian fluid the \textit{Cauchy stress sensor} $\sigma$ is on the form \newline $\sigma = -p_f I + \mu_f (\nabla \mathbf{v}_f + (\nabla \mathbf{v}_f)^T$
 
 \section{The solid}
 For the structure we use the Vernant-Kirchhoff(STVK) model of deformation of solids. We usually describe the material elasticity by two parameters, Lames coefficients $\lambda_s$ and $\mu_s$ or the Poisson ratio $\nu_s$
 and the Young modulus $E_s$ \cite{Dunne2006a}. INSERT RELATIONS \\ \\
 
-
+\subsection{Conservation of continuum}
+\subsection{Conservation of momentum}
 
 \subsection{Material models, St. Venant Kirchhoff materia, incomp neo-Hookean materiall}
 
