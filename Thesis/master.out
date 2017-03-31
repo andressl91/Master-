@@ -9,3 +9,6 @@
 \BOOKMARK [2][-]{subsection.1.5.1}{Conservation of continuum}{section.1.5}% 9
 \BOOKMARK [2][-]{subsection.1.5.2}{Conservation of momentum}{section.1.5}% 10
 \BOOKMARK [2][-]{subsection.1.5.3}{Material models, St. Venant Kirchhoff materia, incomp neo-Hookean materiall}{section.1.5}% 11
+\BOOKMARK [0][-]{chapter.2}{Fluid Structure Interaction}{}% 12
+\BOOKMARK [1][-]{subsection.2.0.1}{Fully Eulerian}{chapter.2}% 13
+\BOOKMARK [2][-]{subsection.2.0.2}{Arbitary Lagrangian Eulerian}{subsection.2.0.1}% 14
