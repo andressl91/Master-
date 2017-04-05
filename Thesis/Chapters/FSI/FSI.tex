@@ -1,10 +1,25 @@
 \chapter{Fluid Structure Interaction}
 
 
-The consepts of Fluid-structure interaction are often introduced in several engineering feelds, for example biomechanics and hydrodynamics. As we will see throughout this chapter, one of the main challenges of this field that our governing equation describing fluid and solids are defined on different coordinate systems. Recall from chapter ?, that the solid equations are often described in the \textit{Lagrangian coordiante system}, while the fluid equations are on the contrary described in the \textit{Eularian coordinate system}. 
+The consepts of Fluid-structure interaction are often introduced in several engineering feelds, for example biomechanics and hydrodynamics. As we will see throughout this chapter, one of the main challenges of this field that our governing equation describing fluid and solids are defined on different coordinate systems. 
 
 We define $\Omega$ in the \textit{reference configuration} be partitioned in a fluid domain $\hat{\Omega_f}$ and a structure domain $\hat{\Omega_s}$ such that
-$\Omega = \hat{\Omega_f} \cup \hat{\Omega_s}$. Furhter we define the interface $\hat{\Gamma}$ as the intersection between these domains such that $\Gamma_i = \hat{\partial \Omega_f} \cap \hat{\partial \Omega_s}$.  A natural dilemma arises as the domain $\Omega$ undergoes deformation over time. If the natural coordinate system are used for $\hat{\Omega_f}$ and $\hat{\Omega_s}$, the domains doesn't match and the interface $\hat{\Gamma}$ doesn't have a general description for both domains. As such only one of the domains can be described in its natural coordinate system, while the other domain needs to be defined in some transformed coordinate system. \\ \\
+$\Omega = \hat{\Omega_f} \cup \hat{\Omega_s}$. Furhter we define the interface $\hat{\Gamma}$ as the intersection between these domains such that $\Gamma_i = \hat{\partial \Omega_f} \cap \hat{\partial \Omega_s}$. 
+The fluid-structure interaction problem is then defined by the fluid and solid equations, and the transmittion of the \textit{kinematic} and \textit{dynamic} conditions on the interface $\hat{\Gamma}$. 
+
+\begin{align}
+\mathbf{v}_f = \mathbf{v}_s \\
+\mathbf{\sigma}_f \cdot \mathbf{n} = \mathbf{\sigma}_s \cdot \mathbf{n}
+\end{align}
+
+ A natural dilemma arises as the domain $\Omega$ undergoes deformation over time. Recall from chapter ?, that the solid equations are often described in the \textit{Lagrangian coordiante system}, while the fluid equations are on the contrary described in the \textit{Eularian coordinate system}. If the natural coordinate system are used for $\hat{\Omega_f}$ and $\hat{\Omega_s}$, the domains doesn't match and the interface $\hat{\Gamma}$ doesn't have a general description for both domains. As such only one of the domains can be described in its natural coordinate system, while the other domain needs to be defined in some transformed coordinate system. \\ \\
+
+Fluid-structure interaction problems are formally divided into the \textit{monolithic} and \textit{partitioned} frameworks.  In the monolithic framework all equations and interfaceconditions are solved simultaneously. If the \textit{kinematic} (1.1) and \textit{dynamic}(1.2) conditions are satisfied exactly at each timestep, the method denoted as a \textit{strongly coupled} which is typically for a monolithic approach. However this strong coupling yields contributes to a stronger nonlinear behaviour of the whole system \cite{Wick}. There are several nonlinear solution strategies for the monolithic approach..
+
+In the \textit{partitioned} framework one solves the equations of fluid and structure subsequently. The stregth of such an approach is the wast range of optimized solvers developed for both the fluid and solid. However one major problem is that the interface conditions are not naturally met, and as such certain subiterations is required to achieve these. 
+
+ Further the monolithic framework provides less modular software since the implementation often \textit{ad hoc} for a certain monolithic approach.  
+\\
 
 The scope of FSI methods can formally be divided into \textit{interface-tracking} and \textit{interface-capturing } methods.\cite{Frei2016}. In the \textit{interface-tracking} litterature, the \textit{arbitary Lagrangian-Eulerian} formilation is dominant approach \cite{Richter2010a}, \cite{Frei2016}. In this approach the structure is given in its natural \textit{Lagrangian coordinate system}, while the fluid is transformed into an artificial \textit{Lagrangian} coordinate system. From this approach tracking of the interface $\hat{\Gamma}$ is more trivial, as it is fixed on a \textit{reference system} and can be tracked by mappings defined in Chapter 2. 
 
