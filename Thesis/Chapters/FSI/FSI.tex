@@ -21,14 +21,13 @@ In the \textit{partitioned} framework one solves the equations of fluid and stru
  Further the monolithic framework provides less modular software since the implementation often \textit{ad hoc} for a certain monolithic approach.  
 \\
 
-The scope of FSI methods can formally be divided into \textit{interface-tracking} and \textit{interface-capturing } methods.\cite{Frei2016}. In the \textit{interface-tracking} litterature, the \textit{arbitary Lagrangian-Eulerian} formilation is dominant approach \cite{Richter2010a}, \cite{Frei2016}. In this approach the structure is given in its natural \textit{Lagrangian coordinate system}, while the fluid is transformed into an artificial \textit{Lagrangian} coordinate system. From this approach tracking of the interface $\hat{\Gamma}$ is more trivial, as it is fixed on a \textit{reference system} and can be tracked by mappings defined in Chapter 2. 
+The scope of FSI methods can formally be divided into \textit{interface-tracking} and \textit{interface-capturing } methods.\cite{Frei2016}. In the \textit{Interface-tracking} method, the mesh moves to accommodate for the movement of the structure as it deformes the spatial domain occupied by the fluid. As such the mesh itself "tracks" the fluid-structure interface as the domain undergoes deformation. Such an approach is feasable as it allows for better control of mesh resolution near the interface, which in turn yeilds better control of this critical area. Among the  \textit{Interface-tracking} methods, the \textit{arbitary Lagrangian-Eulerian} formulation is the most well-known approach \cite{Richter2010a}, \cite{Frei2016}. In this approach the structure is given in its natural \textit{Lagrangian coordinate system}, while the fluid is transformed into an artificial \textit{Lagrangian} coordinate system. From this approach tracking of the interface $\hat{\Gamma}$ is more trivial, as it is fixed on a \textit{reference system} and can be tracked by mappings defined in Chapter 2. \\ \\ß
 
-While \textit{interface-capturing } are also defined on a fixed mesh, the interface  $\hat{\Gamma}$ is now moving over the mesh element. Hence by its name, the inteface must be tracked as it is moving in time. 
-
-Initially one of the \textit{interface-capturing } methods, the \textit{fully Eulerian apporach } was considered, but implementation of tracking the interface in time was proven unsuccessful. Therefore ALE approach was finally chosen for this thesis. As such both the \textit{fully Eulerian} and \textit{ALE} consepts, strengths and weaknesses will be introduced following sub-chapters. \\
+In \textit{interface-capturing} methods one distinguish the fluid and solid domains by some phase variable over a fixed mesh. As such one captures the interface  $\hat{\Gamma}$ as it´s moving over the mesh element. This method is often emplyed in simulations of multiphase-flow. This ideas was extended in \cite{Dunne2006a} were the authors proposed to transform the lagrangian formulated structure equations in an eulerian formulation, solving the system of equations in a fully eulerian formulation. 
+This approach was considered in this thesis, but implementation of tracking the interface in time was proven unsuccessful. Therefore ALE approach was finally chosen for this thesis. As such both the \textit{fully Eulerian} and \textit{ALE} consepts, strengths and weaknesses will be introduced following sub-chapters. \\
 
 \subsection{Fully Eulerian}
-This method keeps the fluid in its \textit{Eulerian coordinates}, and such can be seen as the natural counterpart of the ALE method \cite{Wick2013}. First proposed by , \cite{Dunne2006}.
+This method keeps the fluid in its \textit{Eulerian coordinates}, and such can be seen as the natural counterpart of the ALE method \cite{Wick2013}. First proposed by , \cite{Dunne2006}. One motivation of such and approach is the handling of large-deformation, as the transformation to eulerian coordinates are purley natural.
 
 \subsection{Arbitary Lagrangian Eulerian}
 MEANTION ALE CAN  BEHAVE EITHER EULERIAN AND LAGRANGIAN
@@ -123,6 +122,27 @@ For the conservation of continuum we apply the \textit{Piola Transformation} suc
 \nabla \cdot \mathbf{v} = \nabla \cdot (\ha{J} \hat{F}_W^{-1} \hat{v})
 \end{align*}
 
+\subsection*{Fluid mesh movement}
+In the ALE framwork one of the most limiting factors is the degeneration of the mesh due to large deformations. Even the most advanced ALE formulated schemes reaches a limit when only re-meshing is nesecarry \cite{Wall12006}. Consequently the choice of an appropiate mesh moving teqnuice is essential to preserve a feasable mesh quality for the simulation of fluid flow. Let the total domain deformation $\ha{T}(\ha{x}, t)$ be divided into the solid and fluid deformation $T_s$, $T_f$, were the fluid deformation is mapped to the arbiatry fixed reference system $\ha{W}$ presented in the last subsection.  
+Then the ALE map $T_f$ on the form 
+\begin{align*}
+\ha{T}_f(\ha{x}, t) = \hat{x} + \hat{u}_f(\hat{x}, t)
+\end{align*}
+is constructed such that $\hat{u}_f$ is an extension of the solid deformation $\hat{u}_s$ from the interface to the fluid domain. The construction of such extensions often involves solving some auxiliary problem on a partial differential equation form.  Several extentions have been proposed throuhout the litteratur, and for an overview the reader is refered to \cite{MM2016}, and the reference therein. In this thesis the \textit{Laplacian}, \textit{pseudo-elasticity} and \textit{biharmonic} extensions will be considered. \\
+
+The main motivation for a \textit{Laplacian} smoothing is due to its simplicity and due to its property 
+of bounding the interior displacements to the boundary values. 
+
+\begin{align*}
+&- \hat{\nabla} \cdot (\alpha^q \hat{u}) = 0 \\
+&\hat{u}_f = \hat{u}_s \hspace{2mm} \text{on} \hspace{2mm}  \Gamma \\
+&\hat{u}_f = 0 \hspace{2mm} \text{on} \hspace{2mm} \partial \Omega_f / \Gamma
+\end{align*}
+
+Where $\alpha$ is a variable diffusion parameter, often raised to some power q,  to presevere good quality mesh resolution. The form of this paramter is often problem specific,  This is because selective treatment of the elements may vary from different mesh deformation problems. The best outcomeis to  In \cite{Jasak2006}, the authors reviewed several distance based options, where $\alpha$ was some function of the distance to the closest moving boundary.  while in \cite{Stein}
+
+However as pointed out by \cite{Hsu}, one of the main disadvantages of using the linear Laplace equation is that the equation solves the mesh deformation components independently of one another. Say one have deformation only in the x-coordinate direction, the interior mesh points will only be moved along this deformation. Such a behaviour restricts the use to the Laplace equation of mesh extrapolation purposes. 
+
 \subsection*{Strong and weak coupling }
-One of the major aspects of Fluid-structure interaction is the coupling of the fluid and solid equations.  As the total system is exerted by external forces, the interface $\hat{\Gamma}$ must fulfill the physical equilibrium of forces given by the two domains. Therefore, is is critical that the transmition of forces from the two domains are fulfilled in a consistent way.
+One of the major aspects of Fluid-structure interaction is the coupling of the fluid and solid equations.  As the total system is exerted by external forces, the interface $\hat{\Gamma}$ must fulfill the physical equilibrium of forces given by the two domains. Therefore, is is critical that the transmition of forces from the two domains are fulfilled in a consistent way. 
 
