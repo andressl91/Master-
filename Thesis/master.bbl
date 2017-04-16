@@ -1,4 +1,9 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{Biedron}
+Robert~T Biedron and Elizabeth~M Lee-Rausch.
+\newblock {Rotor Airloads Prediction Using Unstructured Meshes and Loose
+  CFD/CSD Coupling}.
 
 \bibitem{Donea2004}
 J~Donea, A~Huerta, J.-Ph Ponthot, and A~Rodr{\'{i}}guez-Ferran.
@@ -18,6 +23,20 @@ Thomas Dunne and Rolf Rannacher.
   Based on an Eulerian Variational Formulation}.
 \newblock {\em Fluid-Structure Interaction}, 53:110--145, 2006.
 
+\bibitem{Dwight}
+Richard~P Dwight.
+\newblock {Robust Mesh Deformation using the Linear Elasticity Equations}.
+
+\bibitem{Hsu}
+Su-Yuen Hsu, Chau-Lyan Chang, and Jamshid Samareh.
+\newblock {A Simplified Mesh Deformation Method Using Commercial Structural
+  Analysis Software}.
+
+\bibitem{Jasak2006}
+Hrvoje Jasak and {\v{Z}}eljko Tukovi{\'{c}}.
+\newblock {Automatic mesh motion for the unstructured Finite Volume Method}.
+\newblock {\em Transactions of Famena}, 30(2):1--20, 2006.
+
 \bibitem{MM2016}
 Selim MM and Koomullil RP.
 \newblock {Mesh Deformation Approaches – A Survey}.
@@ -28,6 +47,18 @@ Thomas Richter.
 \newblock {Fluid Structure Interactions}.
 \newblock 2016.
 
+\bibitem{Stein}
+K~Stein, T~Tezduyar, and R~Benney.
+\newblock {Mesh Moving Techniques for Fluid-Structure Interactions With Large
+  Displacements}.
+
+\bibitem{Tezduyar1992}
+T~E Tezduyar, M~Behr, S~Mittal, and A~A Johnson.
+\newblock {COMPUTATION OF UNSTEADY INCOMPRESSIBLE FLOWS WITH THE STABILIZED
+  FINITE ELEMENT METHODS: SPACE-TIME FORMULATIONS, ITERATIVE STRATEGIES AND
+  MASSIVELY PARALLEL IMPLEMENTATIONSt}.
+\newblock {\em New Methods in Transient Analysis ASME}, 246(143), 1992.
+
 \bibitem{Wall12006}
 Wolfgang~A. Wall, Axel {, Gerstenberger}, Peter {, Gamnitzer}, Christiane {,
   F{\"{o}}rster}, and Ekkehard {, Ramm}.
@@ -35,6 +66,12 @@ Wolfgang~A. Wall, Axel {, Gerstenberger}, Peter {, Gamnitzer}, Christiane {,
   Methods and New Fixed Grid Approaches}.
 \newblock In {\em Fluid-Structure Interaction: Modelling, Simulation,
   Optimisation}, pages 195----232. Springer Berlin Heidelberg, 2006.
+
+\bibitem{Wicka}
+Thomas Wick.
+\newblock {\em {Adaptive Finite Element Simulation of Fluid-Structure
+  Interaction with Application to Heart-Valve}}.
+\newblock PhD thesis, Heidelberg.
 
 \bibitem{Wick}
 Thomas Wick.
