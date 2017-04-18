@@ -12,20 +12,22 @@ The fluid-structure interaction problem is then defined by the fluid and solid e
 \mathbf{\sigma}_f \cdot \mathbf{n} = \mathbf{\sigma}_s \cdot \mathbf{n}
 \end{align}
 
- A natural dilemma arises as the domain $\Omega$ undergoes deformation over time. Recall from chapter ?, that the solid equations are often described in the \textit{Lagrangian coordiante system}, while the fluid equations are on the contrary described in the \textit{Eularian coordinate system}. If the natural coordinate system are used for $\hat{\Omega_f}$ and $\hat{\Omega_s}$, the domains doesn't match and the interface $\hat{\Gamma}$ doesn't have a general description for both domains. As such only one of the domains can be described in its natural coordinate system, while the other domain needs to be defined in some transformed coordinate system. \\ \\
+ A natural dilemma arises as the domain $\Omega$ undergoes deformation over time. Recall from chapter ?, that the solid equations are often described in the \textit{Lagrangian coordinate system}, while the fluid equations are on the contrary described in the \textit{Eularian coordinate system}. If the natural coordinate system are used for $\hat{\Omega_f}$ and $\hat{\Omega_s}$, the domains doesn't match and the interface $\hat{\Gamma}$ doesn't have a general description for both domains. As such only one of the domains can be described in its natural coordinate system, while the other domain needs to be defined in some transformed coordinate system. \\ \\
 
 Fluid-structure interaction problems are formally divided into the \textit{monolithic} and \textit{partitioned} frameworks.  In the monolithic framework all equations and interfaceconditions are solved simultaneously. If the \textit{kinematic} (1.1) and \textit{dynamic}(1.2) conditions are satisfied exactly at each timestep, the method denoted as a \textit{strongly coupled} which is typically for a monolithic approach. However this strong coupling yields contributes to a stronger nonlinear behaviour of the whole system \cite{Wick}. There are several nonlinear solution strategies for the monolithic approach..
+Further the monolithic framework provides less modular software since the implementation often \textit{ad hoc} for a certain monolithic approach. 
 
-In the \textit{partitioned} framework one solves the equations of fluid and structure subsequently. The stregth of such an approach is the wast range of optimized solvers developed for both the fluid and solid. However one major problem is that the interface conditions are not naturally met, and as such certain subiterations is required to achieve these. 
+In the \textit{partitioned} framework one solves the equations of fluid and structure subsequently. The strength of such an approach is the wast range of optimized solvers developed for both the fluid and solid. However one major problem is that the interface conditions are not naturally met, and as such certain sub-iterations is required to achieve these. 
 
- Further the monolithic framework provides less modular software since the implementation often \textit{ad hoc} for a certain monolithic approach.  
-\\
+Independent of framework, one of the major aspects of Fluid-structure interaction is the coupling of the fluid and solid equations through (1.1) and (1.2) .  As the total system is exerted by external forces, the interface $\hat{\Gamma}$ must fulfill the physical equilibrium of forces given by the two domains. Therefore, it is critical that the transmission of forces from the two domains are fulfilled in a consistent way. However as the interface conditions are not naturally met such as in a \textit{partitioned} approach, we one must distinguish between \textit{strongly} and \textit{weakly} coupled schemes. \textit{Partitioned} solvers often enforce a weakly coupled schemes, meaning (1.1) and (1.2) are not strictly enforced in the calculation. Such an approach is often sufficient for some fields such as computations within aeroelasticity \cite{Fernandez2009}. However by sub-iterations at each time step, these conditions can be enforced with high accuracy.
+When these conditions are met exactly, we define the scheme as \textit{strongly} coupled.  
 
-The scope of FSI methods can formally be divided into \textit{interface-tracking} and \textit{interface-capturing } methods.\cite{Frei2016}. In the \textit{Interface-tracking} method, the mesh moves to accommodate for the movement of the structure as it deformes the spatial domain occupied by the fluid. As such the mesh itself "tracks" the fluid-structure interface as the domain undergoes deformation. Such an approach is feasable as it allows for better control of mesh resolution near the interface, which in turn yeilds better control of this critical area. Among the  \textit{Interface-tracking} methods, the \textit{arbitary Lagrangian-Eulerian} formulation is the most well-known approach \cite{Richter2010a}, \cite{Frei2016}. In this approach the structure is given in its natural \textit{Lagrangian coordinate system}, while the fluid is transformed into an artificial \textit{Lagrangian} coordinate system. From this approach tracking of the interface $\hat{\Gamma}$ is more trivial, as it is fixed on a \textit{reference system} and can be tracked by mappings defined in Chapter 2. \\ \\ß
+The scope of FSI methods can formally be divided into \textit{interface-tracking} and \textit{interface-capturing } methods.\cite{Frei2016}. In the \textit{Interface-tracking} method, the mesh moves to accommodate for the movement of the structure as it deformes the spatial domain occupied by the fluid. As such the mesh itself "tracks" the fluid-structure interface as the domain undergoes deformation. Such an approach is feasable as it allows for better control of mesh resolution near the interface, which in turn yeilds better control of this critical area. Among the  \textit{Interface-tracking} methods, the \textit{arbitary Lagrangian-Eulerian} formulation is the most well-known approach \cite{Richter2010a}, \cite{Frei2016}. In this approach the structure is given in its natural \textit{Lagrangian coordinate system}, while the fluid is transformed into an artificial \textit{Lagrangian} coordinate system. From this approach tracking of the interface $\hat{\Gamma}$ is more trivial, as it is fixed on a \textit{reference system} and can be tracked by mappings defined in Chapter 2. \\ \\
 
 In \textit{interface-capturing} methods one distinguish the fluid and solid domains by some phase variable over a fixed mesh. As such one captures the interface  $\hat{\Gamma}$ as it´s moving over the mesh element. This method is often emplyed in simulations of multiphase-flow. This ideas was extended in \cite{Dunne2006a} were the authors proposed to transform the lagrangian formulated structure equations in an eulerian formulation, solving the system of equations in a fully eulerian formulation. 
 This approach was considered in this thesis, but implementation of tracking the interface in time was proven unsuccessful. Therefore ALE approach was finally chosen for this thesis. As such both the \textit{fully Eulerian} and \textit{ALE} consepts, strengths and weaknesses will be introduced following sub-chapters. \\
 
+ 
 \subsection{Fully Eulerian}
 This method keeps the fluid in its \textit{Eulerian coordinates}, and such can be seen as the natural counterpart of the ALE method \cite{Wick2013}. First proposed by , \cite{Dunne2006}. One motivation of such and approach is the handling of large-deformation, as the transformation to eulerian coordinates are purley natural.
 
@@ -138,12 +140,16 @@ of bounding the interior displacements to the boundary values.
 \begin{align*}
 &- \hat{\nabla} \cdot (\alpha^q \hat{\nabla} \hat{u}) = 0 \\
 &\hat{u}_f = \hat{u}_s \hspace{2mm} \text{on} \hspace{2mm}  \Gamma \\
-&\hat{u}_f = 0 \hspace{2mm} \text{on} \hspace{2mm} \partial \Omega_f / \Gamma
+&\hat{u}_f = 0 \hspace{2mm} \text{on} \hspace{2mm} \partial \hat{\Omega}_f / \Gamma 
 \end{align*}
 
-Most favourable, the largest mesh deformation occuring should be confined to the interal part of the mesh as it causes the least distortion \cite{Jasak2006}. Therefore the introduced diffusion parameter $\alpha$, often raised to some power q, is introduced to manipulate this behaviour. The form of this paramter is often problem specific,  as selective treatment of the elements may vary from different mesh deformation problems. In \cite{Jasak2006}, the authors reviewed several distance based options, where $\alpha$ was some function of the distance to the closest moving boundary. A jacobian based method was introduced in \cite{Stein}.
+Most favourable, the largest mesh deformation occuring should be confined to the interal part of the mesh as it causes the least distortion \cite{Jasak2006}. Therefore the introduced diffusion parameter $\alpha$, often raised to some power q, is introduced to manipulate this behaviour. The form of this paramter is often problem specific,  as selective treatment of the elements may vary from different mesh deformation problems. A jacobian based method was introduced in \cite{Stein}. In \cite{Jasak2006}, the authors reviewed several distance based options, where $\alpha$ was some function of the distance to the closest moving boundary. This method was adopted in this thesis on the form
 
-However as pointed out by \cite{Hsu}, one of the main disadvantages of using the linear Laplace equation is that the equation solves the mesh deformation components independently of one another. Say one have deformation only in the x-coordinate direction, the interior mesh points will only be moved along this deformation. Such a behaviour restricts the use to the Laplace equation of mesh extrapolation purposes. 
+\begin{align*}
+\alpha(x) = \frac{1}{x^q}  \hspace{4mm} q = -1
+\end{align*}
+
+However as pointed out by \cite{Hsu}, one of the main disadvantages of using the linear Laplace equation is that the equation solves the mesh deformation components independently of one another. Say one have deformation only in the x-coordinate direction, the interior mesh points will only be moved along this deformation. Such a behaviour restricts the use to the Laplace equation of mesh extrapolation purposes.
 
 \subsubsection*{Linear elastic model}
 Considering a linear elastic model for mesh moving was first introduced in \cite{Tezduyar1992}.  
@@ -170,10 +176,32 @@ The authors of \cite{Biedron} used this property and also argued that the Young'
 
 \subsubsection*{Biharmonic model}
 
+Using a biharmonic mesh deformation model provides further freedom in terms of boundary conditions for the operator \cite{Wick}, \cite{Helenbrook2003}. 
+The biharmonic model is defined as 
+\begin{align*}
+\hat{\nabla}^2 \ha{u} = 0 \hspace{4mm} \text{on} \hspace{2mm} \hat{\Omega}_f 
+\end{align*}
+By introducing a second variable on the form $\ha{w} = - \hat{\nabla} \ha{u}$, we get the following system defined by 
+\begin{align*}
+&\hat{w} = -\hat{\nabla}^2\hat{u} \\
+&- \hat{\nabla} \hat{w} = 0
+\end{align*}
+
+For the boundary conditions two types has been proposed in \cite{Wicka}. Let 
+$\hat{u}_f$ be decomposed by the components $\hat{u}_f = (\ha{u}_f^{(1)}. \ha{u}_f^{(2)})$. Then we have
+
+\begin{align*}
+&\textbf{Type 1} \hspace{4mm} \ha{u}_f^{(k)} = \pder{\ha{u}_f^{(k)}}{n} = 0 \hspace{4mm} \partial \hat{\Omega}_f / \Gamma \hspace{2mm} \text{for} \hspace{1mm} k = 1, 2 \\
+&\textbf{Type 2} \hspace{4mm} \ha{u}_f^{(1)} = \pder{\ha{u}_f^{(1)}}{n} = 0 
+\hspace{2mm} \text{and} \hspace{2mm} \ha{w}_f^{(1)} = \pder{\ha{w}_f^{(1)}}{n} = 0 \hspace{4mm} \text{on} \hspace{1mm} \hat{\Omega}_f^{in} \cup \hat{\Omega}_f^{out} \\ 
+&\hspace{17mm}  \ha{u}_f^{(2)} = \pder{\ha{u}_f^{(2)}}{n} = 0 
+\hspace{2mm} \text{and} \hspace{2mm} \ha{w}_f^{(2)} = \pder{\ha{w}_f^{(2)}}{n} = 0 \hspace{4mm} \text{on} \hspace{1mm}  \hat{\Omega}_f^{wall}
+\end{align*}
+
+The main motivation for second type of boundary condition is for a rectangular domain where the coordinate axes match the Cartesian coordinate system \cite{Wicka}. In such a configuration, the mesh movement is only constrained in the perpendicular direction of the fluid boundary, leading to mesh movement in the tangential direction. This special case reduces the effect of distortion of the cells.  
+
 \subsubsection*{Comparison}
 
 
 
-\subsection*{Strong and weak coupling }
-One of the major aspects of Fluid-structure interaction is the coupling of the fluid and solid equations.  As the total system is exerted by external forces, the interface $\hat{\Gamma}$ must fulfill the physical equilibrium of forces given by the two domains. Therefore, is is critical that the transmition of forces from the two domains are fulfilled in a consistent way. A brief report of suggestions given throughout the litterature is given \cite{MM2016}.
 
