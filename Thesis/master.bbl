@@ -27,6 +27,17 @@ Thomas Dunne and Rolf Rannacher.
 Richard~P Dwight.
 \newblock {Robust Mesh Deformation using the Linear Elasticity Equations}.
 
+\bibitem{Fernandez2009}
+Miguel~A Fern{\'{a}}ndez and Jean-Fr{\'{e}}d{\'{e}}ric Gerbeau.
+\newblock {Algorithms for fluid-structure interaction problems}.
+\newblock 2009.
+
+\bibitem{Helenbrook2003}
+Brian~T. Helenbrook.
+\newblock {Mesh deformation using the biharmonic operator}.
+\newblock {\em International Journal for Numerical Methods in Engineering},
+  2003.
+
 \bibitem{Hsu}
 Su-Yuen Hsu, Chau-Lyan Chang, and Jamshid Samareh.
 \newblock {A Simplified Mesh Deformation Method Using Commercial Structural
@@ -36,6 +47,12 @@ Su-Yuen Hsu, Chau-Lyan Chang, and Jamshid Samareh.
 Hrvoje Jasak and {\v{Z}}eljko Tukovi{\'{c}}.
 \newblock {Automatic mesh motion for the unstructured Finite Volume Method}.
 \newblock {\em Transactions of Famena}, 30(2):1--20, 2006.
+
+\bibitem{Meleshko1997}
+V~V Meleshko.
+\newblock {Bending of an Elastic Rectangular Clamped Plate: Exact Versus
+  'Engineering' Solutions}.
+\newblock {\em Journal of Elasticity}, 48(1):1--50, 1997.
 
 \bibitem{MM2016}
 Selim MM and Koomullil RP.

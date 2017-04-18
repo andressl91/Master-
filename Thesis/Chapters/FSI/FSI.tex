@@ -130,12 +130,11 @@ Then the ALE map $T_f$ on the form
 \begin{align*}
 \ha{T}_f(\ha{x}, t) = \hat{x} + \hat{u}_f(\hat{x}, t)
 \end{align*}
-is constructed such that $\hat{u}_f$ is an extension of the solid deformation $\hat{u}_s$ from the interface to the fluid domain. The construction of such extensions often involves solving some auxiliary problem on a partial differential equation form.  Several extentions have been proposed throuhout the litteratur, and for an overview the reader is refered to \cite{MM2016}, and the reference therein. In this thesis the \textit{Laplacian}, \textit{pseudo-elasticity} and \textit{biharmonic} extensions will be considered. \\
+is constructed such that $\hat{u}_f$ is an extension of the solid deformation $\hat{u}_s$ from the interface to the fluid domain. Several extentions have been proposed throuhout the litteratur, and for an overview the reader is refered to \cite{MM2016}, and the reference therein. The construction of such extensions often involves solving some auxiliary problem on a partial differential equation(PDE) form, mainly of second-order. The \textit{Laplacian} and \textit{pseudo-elasticity} extentions are examples, which will be considered in this thesis. These extensions are beneficial in terms of simplicity and computational efficiency, but comes with a cost of user mesh customization. One often want to ensure a desired mesh position and some regularity of mesh spacing on the boundary, but it is impossible for second order extensions to specify both \cite{Helenbrook2003}. Therefore the author of \cite{Helenbrook2003}, proposes a fourth-order PDE, the \textit{biharmonic} extensions, to improve the regularity of the mesh deformation. \\
 
 \subsubsection*{Laplacian model}
 
-The main motivation for a \textit{Laplacian} smoothing is due to its simplicity and due to its property 
-of bounding the interior displacements to the boundary values. 
+The main motivation for a \textit{Laplacian} smoothing is due to its simplicity and due to its property of bounding the interior displacements to the boundary values. 
 
 \begin{align*}
 &- \hat{\nabla} \cdot (\alpha^q \hat{\nabla} \hat{u}) = 0 \\
@@ -149,7 +148,7 @@ Most favourable, the largest mesh deformation occuring should be confined to the
 \alpha(x) = \frac{1}{x^q}  \hspace{4mm} q = -1
 \end{align*}
 
-However as pointed out by \cite{Hsu}, one of the main disadvantages of using the linear Laplace equation is that the equation solves the mesh deformation components independently of one another. Say one have deformation only in the x-coordinate direction, the interior mesh points will only be moved along this deformation. Such a behaviour restricts the use to the Laplace equation of mesh extrapolation purposes.
+However as pointed out by \cite{Hsu}, one of the main disadvantages of using the linear Laplace equation is that the equation solves the mesh deformation components independently of one another. Say one have deformation only in the x-coordinate direction, the interior mesh points will only be moved along this deformation. Such a behavior restricts the use to the Laplace equation of mesh extrapolation purposes.
 
 \subsubsection*{Linear elastic model}
 Considering a linear elastic model for mesh moving was first introduced in \cite{Tezduyar1992}.  
@@ -169,15 +168,13 @@ Where Lamé constants $\lambda$ and $\nu$ are given as
 One of the main motivations for introducing such a model is the manipulation of Young's modulus $E$, and the poisson´s ration $\nu$. Recall that Young's modulus is the measurement of the a materials stiffness, while the poission's ratio describe the materials stretching in the transverse direction under extension in the axial direction. Manipulating these parameters one can influence the mesh deformation,
 however the choice of these parameters have proven not to be consistent,  and to be dependent of the given problem.  \\
 
-In \cite{Wicka} the author proposed a negative possion ratio, which makes the model mimic an auxetic material. Such materials becomes thinner in the perpendicular direction when they are submitted to compression, and this proparty is feasable for mesh under deformation. 
+In \cite{Wicka} the author proposed a negative possion ratio, which makes the model mimic an auxetic material. Such materials becomes thinner in the perpendicular direction when they are submitted to compression, and this property is feasible for mesh under deformation. 
 
 One of the most common approach is to set $\nu$ as a constant in the range $\nu \in [0, 0.5)$ and let $E$ be the inverse of the distance of an interior node to the nearest boundary surface \cite{MM2016}. 
-The authors of \cite{Biedron} used this property and also argued that the Young's modulus also could be chosen as the inversely proportional to the cell volume. They also pointed out that both approaches would give the desired result that the small cells around the solid surface would modelled rigid, moving with the surface of the solid as it undergoes deformation. On the other hand cells further away will deform to counter the effects close to the solid surface.
+The authors of \cite{Biedron} used this property and also argued that the Young's modulus also could be chosen as the inversely proportional to the cell volume. They also pointed out that both approaches would give the desired result that the small cells around the solid surface would modeled rigid, moving with the surface of the solid as it undergoes deformation. On the other hand cells further away will deform to counter the effects close to the solid surface.
 
 \subsubsection*{Biharmonic model}
-
-Using a biharmonic mesh deformation model provides further freedom in terms of boundary conditions for the operator \cite{Wick}, \cite{Helenbrook2003}. 
-The biharmonic model is defined as 
+Using a biharmonic mesh deformation model provides further freedom in terms of boundary conditions, and the reader is encoured to consult \cite{Helenbrook2003} for a deeper review. We will in combination with \cite{Wicka} present two main approaches the biharmonic model is defined as 
 \begin{align*}
 \hat{\nabla}^2 \ha{u} = 0 \hspace{4mm} \text{on} \hspace{2mm} \hat{\Omega}_f 
 \end{align*}
@@ -186,6 +183,8 @@ By introducing a second variable on the form $\ha{w} = - \hat{\nabla} \ha{u}$, w
 &\hat{w} = -\hat{\nabla}^2\hat{u} \\
 &- \hat{\nabla} \hat{w} = 0
 \end{align*}
+
+This model is defined in a mixed formulation, and as such the prize for quality and control of mesh deformation comes with the cost of more computational demanding problem. 
 
 For the boundary conditions two types has been proposed in \cite{Wicka}. Let 
 $\hat{u}_f$ be decomposed by the components $\hat{u}_f = (\ha{u}_f^{(1)}. \ha{u}_f^{(2)})$. Then we have
@@ -198,9 +197,12 @@ $\hat{u}_f$ be decomposed by the components $\hat{u}_f = (\ha{u}_f^{(1)}. \ha{u}
 \hspace{2mm} \text{and} \hspace{2mm} \ha{w}_f^{(2)} = \pder{\ha{w}_f^{(2)}}{n} = 0 \hspace{4mm} \text{on} \hspace{1mm}  \hat{\Omega}_f^{wall}
 \end{align*}
 
+With the first type of boundary condition the model can interpreted as the bending of a thin plate, clamped along its boundaries. The form of this problem has been known since 1811, and its derivation has been connected with names like  French scientists Lagrange, Sophie Germain, Navier and Poisson \cite{Meleshko1997}.  
+
 The main motivation for second type of boundary condition is for a rectangular domain where the coordinate axes match the Cartesian coordinate system \cite{Wicka}. In such a configuration, the mesh movement is only constrained in the perpendicular direction of the fluid boundary, leading to mesh movement in the tangential direction. This special case reduces the effect of distortion of the cells.  
 
 \subsubsection*{Comparison}
+Three different approaches for handling mesh deformation within the fluid domain has been presented. We will in chapter ? compare the different approaches and their effect in numerical studies. Stay tuned!
 
 
 

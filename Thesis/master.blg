@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2016)
+This is BibTeX, Version 0.99d (TeX Live 2015)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: master.aux
 The style file: plain.bst
@@ -9,6 +9,10 @@ Database file #4: ./Cite/NavierStokes.bib
 Database file #5: ./Cite/Verification.bib
 Database file #6: ./Cite/EulerianFormulation.bib
 Database file #7: ./Cite/Meshupdate.bib
+Repeated entry---line 101 of file ./Cite/Meshupdate.bib
+ : @article{Wick
+ :              ,
+I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "Frei2016"
 Warning--I didn't find a database entry for "Richter2010a"
 Warning--empty journal in Biedron
@@ -18,6 +22,7 @@ Warning--there's a number but no volume in Donea2004
 Warning--there's a number but no volume in Dunne2006
 Warning--empty journal in Dwight
 Warning--empty year in Dwight
+Warning--empty journal in Fernandez2009
 Warning--empty journal in Hsu
 Warning--empty year in Hsu
 Warning--empty journal in Richter2016
@@ -26,45 +31,45 @@ Warning--empty year in Stein
 Warning--empty year in Wicka
 Warning--empty journal in Wick
 Warning--empty year in Wick
-You've used 15 entries,
+You've used 18 entries,
             2118 wiz_defined-function locations,
-            594 strings with 6625 characters,
-and the built_in function-call counts, 4311 in all, are:
-= -- 415
-> -- 204
+            614 strings with 7108 characters,
+and the built_in function-call counts, 5024 in all, are:
+= -- 486
+> -- 231
 < -- 1
-+ -- 81
-- -- 66
-* -- 300
-:= -- 755
-add.period$ -- 41
-call.type$ -- 15
-change.case$ -- 77
++ -- 92
+- -- 74
+* -- 339
+:= -- 884
+add.period$ -- 50
+call.type$ -- 18
+change.case$ -- 90
 chr.to.int$ -- 0
-cite$ -- 30
-duplicate$ -- 168
-empty$ -- 321
-format.name$ -- 66
-if$ -- 856
+cite$ -- 34
+duplicate$ -- 199
+empty$ -- 379
+format.name$ -- 74
+if$ -- 999
 int.to.chr$ -- 0
-int.to.str$ -- 15
-missing$ -- 14
-newline$ -- 73
-num.names$ -- 30
-pop$ -- 94
+int.to.str$ -- 18
+missing$ -- 17
+newline$ -- 88
+num.names$ -- 36
+pop$ -- 107
 preamble$ -- 1
-purify$ -- 63
+purify$ -- 73
 quote$ -- 0
-skip$ -- 110
+skip$ -- 132
 stack$ -- 0
-substring$ -- 218
-swap$ -- 17
+substring$ -- 249
+swap$ -- 19
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 60
-warning$ -- 15
-while$ -- 43
-width$ -- 17
-write$ -- 144
-(There were 17 warnings)
+type$ -- 72
+warning$ -- 16
+while$ -- 51
+width$ -- 20
+write$ -- 174
+(There was 1 error message)
