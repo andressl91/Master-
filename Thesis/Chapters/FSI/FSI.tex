@@ -1,11 +1,11 @@
 \chapter{Fluid Structure Interaction}
 
 
-The consepts of Fluid-structure interaction are often introduced in several engineering feelds, for example biomechanics and hydrodynamics. As we will see throughout this chapter, one of the main challenges of this field that our governing equation describing fluid and solids are defined on different coordinate systems. 
+The concepts of Fluid-structure interaction are often introduced in several engineering fields, for example bio mechanics and hydrodynamics. As we will see throughout this chapter, one of the main challenges of this field that our governing equation describing fluid and solids are defined on different coordinate systems. 
 
 We define $\Omega$ in the \textit{reference configuration} be partitioned in a fluid domain $\hat{\Omega_f}$ and a structure domain $\hat{\Omega_s}$ such that
-$\Omega = \hat{\Omega_f} \cup \hat{\Omega_s}$. Furhter we define the interface $\hat{\Gamma}$ as the intersection between these domains such that $\Gamma_i = \hat{\partial \Omega_f} \cap \hat{\partial \Omega_s}$. 
-The fluid-structure interaction problem is then defined by the fluid and solid equations, and the transmittion of the \textit{kinematic} and \textit{dynamic} conditions on the interface $\hat{\Gamma}$. 
+$\Omega = \hat{\Omega_f} \cup \hat{\Omega_s}$. Further we define the interface $\hat{\Gamma}$ as the intersection between these domains such that $\Gamma_i = \hat{\partial \Omega_f} \cap \hat{\partial \Omega_s}$. 
+The fluid-structure interaction problem is then defined by the fluid and solid equations, and the transmission of the \textit{kinematic} and \textit{dynamic} conditions on the interface $\hat{\Gamma}$. 
 
 \begin{align}
 \mathbf{v}_f = \mathbf{v}_s \\
@@ -24,12 +24,12 @@ When these conditions are met exactly, we define the scheme as \textit{strongly}
 
 The scope of FSI methods can formally be divided into \textit{interface-tracking} and \textit{interface-capturing } methods.\cite{Frei2016}. In the \textit{Interface-tracking} method, the mesh moves to accommodate for the movement of the structure as it deformes the spatial domain occupied by the fluid. As such the mesh itself "tracks" the fluid-structure interface as the domain undergoes deformation. Such an approach is feasable as it allows for better control of mesh resolution near the interface, which in turn yeilds better control of this critical area. Among the  \textit{Interface-tracking} methods, the \textit{arbitary Lagrangian-Eulerian} formulation is the most well-known approach \cite{Richter2010a}, \cite{Frei2016}. In this approach the structure is given in its natural \textit{Lagrangian coordinate system}, while the fluid is transformed into an artificial \textit{Lagrangian} coordinate system. From this approach tracking of the interface $\hat{\Gamma}$ is more trivial, as it is fixed on a \textit{reference system} and can be tracked by mappings defined in Chapter 2. \\ \\
 
-In \textit{interface-capturing} methods one distinguish the fluid and solid domains by some phase variable over a fixed mesh. As such one captures the interface  $\hat{\Gamma}$ as it´s moving over the mesh element. This method is often emplyed in simulations of multiphase-flow. This ideas was extended in \cite{Dunne2006a} were the authors proposed to transform the lagrangian formulated structure equations in an eulerian formulation, solving the system of equations in a fully eulerian formulation. 
-This approach was considered in this thesis, but implementation of tracking the interface in time was proven unsuccessful. Therefore ALE approach was finally chosen for this thesis. As such both the \textit{fully Eulerian} and \textit{ALE} consepts, strengths and weaknesses will be introduced following sub-chapters. \\
+In \textit{interface-capturing} methods one distinguish the fluid and solid domains by some phase variable over a fixed mesh. As such one captures the interface  $\hat{\Gamma}$ as it´s moving over the mesh element. This method is often emplyed in simulations of multiphase-flow. This ideas was extended in \cite{Dunne2006a} were the authors proposed to transform the Lagrangian formulated structure equations in an Eulerian formulation, solving the system of equations in a fully Eulerian formulation. 
+This approach was considered in this thesis, but implementation of tracking the interface in time was proven unsuccessful. Therefore ALE approach was finally chosen for this thesis. As such both the \textit{fully Eulerian} and \textit{ALE} concepts, strengths and weaknesses will be introduced following sub-chapters. \\
 
  
 \subsection{Fully Eulerian}
-This method keeps the fluid in its \textit{Eulerian coordinates}, and such can be seen as the natural counterpart of the ALE method \cite{Wick2013}. First proposed by , \cite{Dunne2006}. One motivation of such and approach is the handling of large-deformation, as the transformation to eulerian coordinates are purley natural.
+This method keeps the fluid in its \textit{Eulerian coordinates}, and such can be seen as the natural counterpart of the ALE method \cite{Wick2013}. First proposed by , \cite{Dunne2006}. One motivation of such and approach is the handling of large-deformation, as the transformation to eulerian coordinates are purely natural.
 
 \subsection{Arbitary Lagrangian Eulerian}
 MEANTION ALE CAN  BEHAVE EITHER EULERIAN AND LAGRANGIAN
@@ -38,7 +38,7 @@ In the ALE method one choose to keep the structure in its \textit{Lagrangian coo
  
 With this in mind, we will derive these transformations with the help of a new arbitary fixed reference system \ha{W}, following the ideas and approaches found in \cite{Richter2016}. Further we denote its deformation gradient as $\hat{F}_w$ and its determinant $\ha{J}_w$. Following the ideas from chapter 2, we introduce the invertibale mapping $\ha{T}_w : \ha{W} \rightarrow V(t)$ , with the scalar $\ha{f}(\ha{x}_W, t) = f(x,t) $ and vector $\hat{w}(\ha{x}_W, t) = \mathbf{w}(x,t) $ counterparts.\\ 
 For $\ha{V} = \ha{W}$, $\ha{W}$ simply denotes the familiar Lagrangian description.
-In the case $\ha{V} \neq \ha{W}$, $\ha{W}$ as pointed out earlier have no direct physical meaning.  Hence it is important to notice that the physical velocity $\hat{v}$ and the velocity of arbitary domain $\pder{\ha{W}_w}{t}$ doesn't neseccary coincide. This observation is essential, as we will soon see. \\
+In the case $\ha{V} \neq \ha{W}$, $\ha{W}$ as pointed out earlier have no direct physical meaning.  Hence it is important to notice that the physical velocity $\hat{v}$ and the velocity of arbitrary domain $\pder{\ha{W}_w}{t}$ doesn't necessary coincide. This observation is essential, as we will soon see. \\
 
 We will first define the transformation of spatial and temporal derivatives from $V(t)$ to $\ha{W}$ found in \cite{Richter2016}\\
 
@@ -66,7 +66,7 @@ Transformation of scalar temporal derivatives \\
 \end{align} 
 \end{lem}
 
-In addition we need a consistent way to transform the induced stresses in the \textit{Eulerian} coordinate system to $\ha{W}$. Hence we introduce the \textit{Piloa transformation}, found in most introductional courses in structure mechanics (ORANGE BOOK).
+In addition we need a consistent way to transform the induced stresses in the \textit{Eulerian} coordinate system to $\ha{W}$. Hence we introduce the \textit{Piloa transformation}, found in most introduction courses in structure mechanics (ORANGE BOOK).
 \\
 \begin{lem}
 T \\
@@ -125,7 +125,7 @@ For the conservation of continuum we apply the \textit{Piola Transformation} suc
 \end{align*}
 
 \subsection*{Fluid mesh movement}
-In the ALE framwork one of the most limiting factors is the degeneration of the mesh due to large deformations. Even the most advanced ALE formulated schemes reaches a limit when only re-meshing is nesecarry \cite{Wall12006}. Consequently the choice of an appropiate mesh moving teqnuice is essential to preserve a feasable mesh quality for the simulation of fluid flow. Let the total domain deformation $\ha{T}(\ha{x}, t)$ be divided into the solid and fluid deformation $T_s$, $T_f$, were the fluid deformation is mapped to the arbiatry fixed reference system $\ha{W}$ presented in the last subsection.  
+In the ALE framwork one of the most limiting factors is the degeneration of the mesh due to large deformations. Even the most advanced ALE formulated schemes reaches a limit when only re-meshing is nesecarry \cite{Wall12006}. Consequently the choice of an appropriate mesh moving technique is essential to preserve a feasible mesh quality for the simulation of fluid flow. Let the total domain deformation $\ha{T}(\ha{x}, t)$ be divided into the solid and fluid deformation $T_s$, $T_f$, were the fluid deformation is mapped to the arbitrary fixed reference system $\ha{W}$ presented in the last subsection.  
 Then the ALE map $T_f$ on the form 
 \begin{align*}
 \ha{T}_f(\ha{x}, t) = \hat{x} + \hat{u}_f(\hat{x}, t)

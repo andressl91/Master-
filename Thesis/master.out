@@ -1,3 +1,8 @@
-\BOOKMARK [0][-]{chapter.1}{Fluid Structure Interaction}{}% 1
-\BOOKMARK [1][-]{subsection.1.0.1}{Fully Eulerian}{chapter.1}% 2
-\BOOKMARK [2][-]{subsection.1.0.2}{Arbitary Lagrangian Eulerian}{subsection.1.0.1}% 3
+\BOOKMARK [0][-]{chapter.1}{Implementation of Fluid Structure Interaction}{}% 1
+\BOOKMARK [1][-]{section.1.1}{FEniCS}{chapter.1}% 2
+\BOOKMARK [2][-]{subsection.1.1.1}{DOLFIN}{section.1.1}% 3
+\BOOKMARK [1][-]{section.1.2}{Implementation}{chapter.1}% 4
+\BOOKMARK [2][-]{subsection.1.2.1}{Variational Form}{section.1.2}% 5
+\BOOKMARK [1][-]{section.1.3}{Optimization of Newtonsolver}{chapter.1}% 6
+\BOOKMARK [1][-]{section.1.4}{Consistent methods}{chapter.1}% 7
+\BOOKMARK [1][-]{section.1.5}{Non-consisten methods}{chapter.1}% 8
