@@ -13,11 +13,41 @@ The second environment regards the purely structure implementation, regarding be
 The fluid-structure interaction validation benchmark is divided into three different problems with increasing difficulty, posing different challenges to the implementation. 
 Each problem alters the fluid and solid parameters to provoke different behavior of the system.
 
-INSERT TABLE HERE
-
+\begin{table}[h]
+\centering
+\caption{Benchmark environment}
+\label{my-label}
+\begin{tabular}{ |p{3cm}||p{3cm}|p{3cm}|p{3cm}|  }
+ \hline
+ \multicolumn{4}{|c|}{Solid parameters} \\
+ \hline
+ parameter              & FSI1 & FSI2 & FSI3 \\
+ \hline
+ $\rho^s [10^{3} \frac{kg}{m^3}]$ & 1    & 10   & 1    \\
+$\nu^s$ & 0.4  & 0.4  & 0.4  \\
+$\mu^s  [10^{6}\frac{kg}{ms^2}]$  & 0.5  & 0.5  & 2.0  \\
+ \hline
+ \multicolumn{4}{|c|}{Fluid parameters} \\
+ \hline
+$\rho^f [10^{3}\frac{kg}{m^3}]$ & 1    & 1    & 1    \\
+$\nu^f  [10^{-3}\frac{m^2}{s}]$  & 1    & 1    & 1    \\
+U                      & 0.2  & 1    & 2    \\
+parameter              & FSI1 & FSI2 & FSI3 \\
+Re                     & 20   & 100  & 200 \\
+\hline
+\end{tabular}
+\end{table}
 
 
 \subsection{FSI1}
+The first environment yields a steady state solution for the system. It is meant as a basic implementation test as it applies small deformations to the system. Therefore is provides a test for the solving procedure, but doesn't excess large constrain of choice of mesh extrapolation operator. 
+
+\subsection{FSI2}
+The second environment results in a periodic solution. It proved to be one of the most demanding tests due to its large deformation, leading to the risk of entangled mesh cells. As such this raised the need for a high quality extrapolation of the solid deformation.
+\\
+\subsection{FSI3}    
+The final environment does not induce deformation to the extent of the FSI2 benchmark. However a critical phase in the transition to the periodic solution was discovered, where the pressure oscillation induces a large deformation to the system. 
 
 
 \section{Mesh movement}
+The final enviroment 
