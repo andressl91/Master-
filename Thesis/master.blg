@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2015)
+This is BibTeX, Version 0.99d (TeX Live 2016)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: master.aux
 The style file: plain.bst
@@ -9,7 +9,7 @@ Database file #4: ./Cite/NavierStokes.bib
 Database file #5: ./Cite/Verification.bib
 Database file #6: ./Cite/EulerianFormulation.bib
 Database file #7: ./Cite/Meshupdate.bib
-Repeated entry---line 101 of file ./Cite/Meshupdate.bib
+Repeated entry---line 18 of file ./Cite/Meshupdate.bib
  : @article{Wick
  :              ,
 I'm skipping whatever remains of this entry

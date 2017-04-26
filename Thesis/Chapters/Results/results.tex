@@ -5,13 +5,30 @@ In this chapter the main calculations of the proposed theories and will be prese
 \section{Verification}
 
 \section{Validation}
-For verification purposes the numerical benchmark presented in .. has been chosen for this thesis. This benchmark as been widely accepted throughout the fluid-structure interaction community as a rigidly validation benchmark. This is mainly due to its diversity of tests included, challenging all the main components of a FSI solver. \\
+For verification purposes the numerical benchmark presented in \cite{Hron2006} has been chosen for this thesis. This benchmark as been widely accepted throughout the fluid-structure interaction community as a rigidly validation benchmark. This is mainly due to its diversity of tests included, challenging all the main components of a FSI solver. \\
 The benchmark is divided into three main testenvironments.
 In the first environment the purely fluid solver is tested for a range of different inflow parameters. \\
 The second environment regards the purely structure implementation, regarding bending of the elastic flag. We will in this thesis consider the final environment, testing the total system in terms of a fluid-structure interaction problem. The others have been tested and proved to be an essential part of the development of the solver, but will be for brevity not reported. \\ \\
 
 The fluid-structure interaction validation benchmark is divided into three different problems with increasing difficulty, posing different challenges to the implementation. 
 Each problem alters the fluid and solid parameters to provoke different behavior of the system.
+
+\begin{figure}
+  \caption{Domain configuration}
+  \centering
+    \includegraphics[scale=0.5]{./Fig/turekflag.png}
+\end{figure}
+
+Several quantites for comparion is presented in \cite{Hron2006} for validation purposes. We will report
+\begin{itemize}
+\item The position of point A(t) as the strucutre undergoes deformation.
+\item Drag and lift forces exerted on of the whole interior geometry in contact with the fluid, consisting of the rigid circle and the elastic beam. 
+\begin{align*}
+(F_D, F_L) = \int_{\Gamma} \mathbf{\sigma} \cdot \mathbf{n} dS
+\end{align*}
+Where \textbf{n} is the unit normal vector, pointing into the fluid domain. 
+\end{itemize}
+The amplitude and mean values for the time dependent properties are calculated from the last period of oscillations, together with the period. 
 
 \begin{table}[h]
 \centering
@@ -47,6 +64,23 @@ The second environment results in a periodic solution. It proved to be one of th
 \\
 \subsection{FSI3}    
 The final environment does not induce deformation to the extent of the FSI2 benchmark. However a critical phase in the transition to the periodic solution was discovered, where the pressure oscillation induces a large deformation to the system. 
+
+\begin{table}[]
+\centering
+\caption{FSI 3}
+\label{my-label}
+\begin{tabular}{lllll}
+ \hline
+Test & x-comp A          & y-comp A             & drag                   & lift                 \\
+ \hline
+bc1 &                   &                      & 442.9 +/ 17.26         & 2.83 +- 148.8        \\
+ \hline
+bc2 &                   &                      & 442.8 +/ 17.44         & 3.06 +-147.9         \\
+ \hline
+Ref & 2.69  2.53  &   1.48  34.38 5.3   & 457. 22.66 10.9 & 2.22 149.78 5.3 \\
+ \hline
+\end{tabular}
+\end{table}
 
 
 \section{Mesh movement}
