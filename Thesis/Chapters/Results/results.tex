@@ -59,13 +59,46 @@ Re                     & 20   & 100  & 200 \\
 \subsection{FSI1}
 The first environment yields a steady state solution for the system. It is meant as a basic implementation test as it applies small deformations to the system. Therefore is provides a test for the solving procedure, but doesn't excess large constrain of choice of mesh extrapolation operator. 
 
+\begin{table}[h!]
+\centering
+\caption{FSI 1}
+\label{my-label}
+\begin{tabular}{ |p{2.5cm}||p{1cm}|p{1cm}|p{2.3cm}|p{2.3cm}|p{1.2cm}|p{1.2cm}|}
+ \hline
+  \multicolumn{7}{|c|}{$\Delta t = 0.5$} \\
+   \hline
+ Model & nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
+ \hline
+Biharmonic bc2 & 1 &1 & 0.0228  &  0.7740  & 14.17280  &  0.7614 \\
+ \hline
+Biharmonic bc1 & 1 &1 & 0.0228 &   0.7737  & 14.17281 &  0.7612  \\
+ \hline
+Elastic        & 1 &1 & 0.0227  &  0.7960  & 14.17283 &  0.7607  \\
+ \hline
+Laplace        & 1 &1 & 0.0227  &  0.7958  & 14.17285 &  0.7607   \\
+ \hline
+  \multicolumn{7}{|c|}{$\Delta t = 0.1$} \\
+   \hline
+ Model & nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
+ \hline
+Biharmonic bc2 & 1 &1 & 0.0228 &  0.7743  & 14.17279 & 0.76162  \\
+ \hline
+Biharmonic bc1 & 1 &1 & 0.0228  &  0.7739 & 14.17280 & 0.76142 \\
+ \hline
+Elastic       & 1 &1 & 0.0228  &  0.7962  & 14.17281 & 0.76092 \\
+ \hline
+Laplace        & 1 &1 & 0.0228  & 0.7961  & 14.17284 & 0.76090 \\
+\hline
+\end{tabular}
+\end{table}
+
 \subsection{FSI2}
 The second environment results in a periodic solution. It proved to be one of the most demanding tests due to its large deformation, leading to the risk of entangled mesh cells. As such this raised the need for a high quality extrapolation of the solid deformation.
 \\
 \subsection{FSI3}    
 The final environment does not induce deformation to the extent of the FSI2 benchmark. However a critical phase in the transition to the periodic solution was discovered, where the pressure oscillation induces a large deformation to the system. 
 
-\begin{table}[]
+\begin{table}[h!]
 \centering
 \caption{FSI 3}
 \label{my-label}

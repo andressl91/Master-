@@ -21,9 +21,28 @@
 \@writefile{toc}{\select@language{norsk}}
 \@writefile{lof}{\select@language{norsk}}
 \@writefile{lot}{\select@language{norsk}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {1}Continuum Mechanics}{5}{chapter.1}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{toc}{\contentsline {section}{\numberline {1.1}Coordinate system}{5}{section.1.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1.1}Lagrangian}{5}{subsection.1.1.1}}
+\citation{Richter2016}
+\citation{Wriggers2006}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1.2}Eulerian}{6}{subsection.1.1.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.2}Deformation gradients}{6}{section.1.2}}
+\citation{Wriggers2006}
+\citation{Richter2016}
+\citation{Wriggers2006}
+\citation{Richter2016}
+\citation{Richter2016}
+\citation{Richter2016}
+\@writefile{toc}{\contentsline {section}{\numberline {1.3}Measures of Strain and Stress}{7}{section.1.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.4}Governing Equations}{8}{section.1.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.4.1}Fluid}{8}{subsection.1.4.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.4.2}The solid}{8}{subsection.1.4.2}}
 \citation{Wick}
 \citation{Fernandez2009}
-\@writefile{toc}{\contentsline {chapter}{\numberline {1}Fluid Structure Interaction}{5}{chapter.1}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {2}Fluid Structure Interaction}{11}{chapter.2}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \citation{Frei2016}
@@ -36,8 +55,8 @@
 \citation{Donea2004}
 \citation{Richter2016}
 \citation{Richter2016}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.0.1}Fully Eulerian}{6}{subsection.1.0.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.0.2}Arbitary Lagrangian Eulerian}{6}{subsection.1.0.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.0.1}Fully Eulerian}{12}{subsection.2.0.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.0.2}Arbitary Lagrangian Eulerian formulation}{12}{subsection.2.0.2}}
 \citation{Richter2016}
 \citation{Wall12006}
 \citation{MM2016}
@@ -57,12 +76,61 @@
 \citation{Wicka}
 \citation{Meleshko1997}
 \citation{Wicka}
-\bibstyle{plain}
-\bibdata{./Cite/Books,./Cite/ALECoupled,./Cite/Decoupled,./Cite/NavierStokes,./Cite/Verification,./Cite/EulerianFormulation,./Cite/Meshupdate}
-\@writefile{toc}{\contentsline {chapter}{\numberline {2}Application}{11}{chapter.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.1}Discretization of the FSI problem}{17}{section.2.1}}
+\citation{Roache}
+\citation{Roache}
+\citation{Roache2002}
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Verification and Validation}{19}{chapter.3}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {2.1}Numericnerding eller applik ?}{11}{section.2.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}Verification of Code}{19}{section.3.1}}
+\citation{Roache2002}
+\citation{Steinberg1985}
+\citation{Biggs}
+\citation{Steinberg1985}
+\citation{Biggs}
+\citation{Roache2002}
+\citation{Project2016}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}Fluid Problem}{21}{subsection.3.1.1}}
+\newlabel{DescriptiveLabel}{{3.1}{21}{Descriptive Caption Text}{lstlisting.3.1}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {3.1}Descriptive Caption Text}{21}{lstlisting.3.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}Validation of Code}{22}{section.3.2}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Implementation of Fluid Structure Interaction}{23}{chapter.4}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}FEniCS}{23}{section.4.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}DOLFIN}{23}{subsection.4.1.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Implementation}{24}{section.4.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Variational Form}{24}{subsection.4.2.1}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.1}thetaCN.py}{24}{lstlisting.4.1}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.2}newtonsolver.py}{25}{lstlisting.4.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Optimization of Newtonsolver}{25}{section.4.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}Consistent methods}{26}{section.4.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.1}Jacobi buffering}{26}{subsection.4.4.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.5}Non-consisten methods}{26}{section.4.5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.1}Reuse of Jacobian}{26}{subsection.4.5.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.2}Quadrature reduce}{26}{subsection.4.5.2}}
+\citation{Hron2006}
+\citation{Hron2006}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Numerical Results}{27}{chapter.5}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Verification}{27}{section.5.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Validation}{27}{section.5.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Domain configuration\relax }}{27}{figure.caption.6}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces Benchmark environment\relax }}{28}{table.caption.7}}
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{my-label}{{5.1}{28}{Benchmark environment\relax }{table.caption.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}FSI1}{28}{subsection.5.2.1}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.2}{\ignorespaces FSI 1\relax }}{28}{table.caption.8}}
+\newlabel{my-label}{{5.2}{28}{FSI 1\relax }{table.caption.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2}FSI2}{28}{subsection.5.2.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.3}FSI3}{29}{subsection.5.2.3}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.3}{\ignorespaces FSI 3\relax }}{29}{table.caption.9}}
+\newlabel{my-label}{{5.3}{29}{FSI 3\relax }{table.caption.9}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}Mesh movement}{29}{section.5.3}}
+\bibstyle{plain}
+\bibdata{./Cite/Books,./Cite/ALECoupled,./Cite/Decoupled,./Cite/NavierStokes,./Cite/Verification,./Cite/EulerianFormulation,./Cite/Meshupdate}
 \bibcite{Biedron}{1}
 \bibcite{Donea2004}{2}
 \bibcite{Dunne2006}{3}
@@ -70,21 +138,14 @@
 \bibcite{Dwight}{5}
 \bibcite{Fernandez2009}{6}
 \bibcite{Helenbrook2003}{7}
-\bibcite{Hron2006}{8}
-\bibcite{Hsu}{9}
-\bibcite{Jasak2006}{10}
-\bibcite{Meleshko1997}{11}
-\bibcite{MM2016}{12}
-\bibcite{Project2016}{13}
-\bibcite{Richter2016}{14}
-\bibcite{Roache2002}{15}
-\bibcite{Roache}{16}
-\bibcite{Biggs}{17}
-\bibcite{Stein}{18}
-\bibcite{Steinberg1985}{19}
-\bibcite{Tezduyar1992}{20}
-\bibcite{Wall12006}{21}
-\bibcite{Wicka}{22}
-\bibcite{Wick}{23}
-\bibcite{Wick2013}{24}
-\bibcite{Wriggers2006}{25}
+\bibcite{Hsu}{8}
+\bibcite{Jasak2006}{9}
+\bibcite{Meleshko1997}{10}
+\bibcite{MM2016}{11}
+\bibcite{Richter2016}{12}
+\bibcite{Stein}{13}
+\bibcite{Tezduyar1992}{14}
+\bibcite{Wall12006}{15}
+\bibcite{Wicka}{16}
+\bibcite{Wick}{17}
+\bibcite{Wick2013}{18}

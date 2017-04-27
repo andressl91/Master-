@@ -136,29 +136,83 @@ and the \textit{Euler-Almansi} strain tensor
 It is important to note that strain itself is nothing else than the measurement of line segments under deformation. Therefore strain alone is purely an observation, and it is not dependent on the material of interest. However one expects that a material undergoing strain, will give  forces within the material due to neighboring material interacting with one another. Therefore one derive materialspecific models to describe how a certain material will react to a certain amount of strain.\\
 These strain measures are used to define models for \textit{stress}, which is responsible for the deformation in materials (cite holzapfel). The dimention of stress is force per unit area.
 
-\section{The fluid}
-We will throughout this thesis consider incompressible fluids described by Navier-Stokes equations. We define the fluid density as $\rho_f$ and fluid viscosity $\nu_f$ to be constant in time. Our phsyical unknowns
-fluid velocity $v_f$ and pressure $p_f$ both live in the time-dependent fluid domain  $\hat{\Omega}_f(t)$. Let any Dirichlet boundariy conditions be defined as $v_f^D$, $p_f^D$ on the boundaries
-of  $\hat{\Omega}_f(t)$, and let $g_1$ denote the neumann conditions of $\sigma_f \cdot n$ defined on the boundaries of $\hat{\Omega}_f(t)$.
+\section{Governing Equations}
+The fully Fluid-structure interaction problem is based on equations of balance laws, with auxiliary kinematic, dynamic and material relations. In this section, assumptions regarding these relations will be described briefly. A deeper review of the full FSI problem will be considered in the next chapter. 
+
+\subsection{Fluid}
+We will throughout this thesis consider in-compressible fluids described by Navier-Stokes equations. We define the fluid density as $\rho_f$ and fluid viscosity $\nu_f$ to be constant in time. Our phsyical unknowns
+fluid velocity $v_f$ and pressure $p_f$ both live in the time-dependent fluid domain  $\hat{\Omega}_f(t)$, with an eulerian configuration. Together with the equations of momentum and continuum, the Navier-Stokes equation is defined as,
 
 \begin{equat}
 \textit{Navier-Stokes equation}
 \begin{align}
 &\rho \pder{\mathbf{v}_f}{t} + \rho \mathbf{v}_f \cdot \nabla \mathbf{v}_f =
-\nabla \cdot \sigma + \rho \mathbf{f}_f \\
-&\nabla \cdot \mathbf{v}_f = 0
+\nabla \cdot \sigma + \rho \mathbf{f}_f \hspace{4mm} \text{in} \hspace{2mm} \Omega_f \\
+&\nabla \cdot \mathbf{v}_f = 0 \hspace{4mm} \text{in} \hspace{2mm} \Omega_f 
 \end{align} 
 \end{equat}
+where $\mathbf{f}_s$ is some body force. 
+Assuming a newtonian fluid the \textit{Cauchy stress sensor} $\sigma$ takes the form \newline $\sigma = -p_f I + \mu_f (\nabla \mathbf{v}_f + (\nabla \mathbf{v}_f)^T$.
 
-Assuming a newtonian fluid the \textit{Cauchy stress sensor} $\sigma$ takes the form \newline $\sigma = -p_f I + \mu_f (\nabla \mathbf{v}_f + (\nabla \mathbf{v}_f)^T$
+Additional appropriate boundary conditions are supplemented to the equation for a given problem. The first type of of boundary conditions are Dirichlet boundary conditions, 
+\begin{align}
+\mathbf{v}_f = \mathbf{v}_f^D 
+\hspace{4mm} \text{on} \hspace{2mm} \Gamma_f^D \subset \partial \Omega_f 
+\end{align}
+The second type of boundary condition are Neumann boundary conditions
+\begin{align}
+\sigma_f \cdot \mathbf{n} = \mathbf{g} 
+\hspace{4mm} \text{on} \hspace{2mm} \Gamma_f^N \subset \partial \Omega_f 
+\end{align}
 
-\section{The solid}
-For the structure we use the Vernant-Kirchhoff(STVK) model of deformation of solids. We usually describe the material elasticity by two parameters, Lames coefficients $\lambda_s$ and $\mu_s$ or the Poisson ratio $\nu_s$
-and the Young modulus $E_s$ \cite{Dunne2006a}. INSERT RELATIONS \\ \\
+\subsection{The solid}
+For the structure we use the Vernant-Kirchhoff(STVK) model of deformation of solids, defined in a Lagrangian coordinate system. The solid is often characterized by the Possion ratio and Young modulus. Lamè coefficients  $\lambda_s$ and $\mu_s$ are then given by the relation.
+\begin{align*}
+&E_y = \frac{ \mu_s ( \lambda_s + 2 \mu_s) }{ ( \lambda_s + \mu_s ) } 
+\hspace{5mm} \nu_s = \frac{\lambda_s}{2(\lambda_s + \mu_s)} \\
+&\lambda_s = \frac{\nu E_y}{(1 + \nu_s)(1 - 2\nu_s)} \hspace{4mm} \mu_s = \frac{E_y}{2(1 + \nu_s)} \\
+\end{align*}
+\\
+Our phsyical unknowns
+solid velocity $v_s$ and deformation $u_s$ is our physical unknowns defined in a  time-dependent solid domain  $\hat{\Omega}_s(t)$.
+The balance of solid momentum is given by
 
-\subsection{Conservation of continuum}
-\subsection{Conservation of momentum}
+\begin{equat}
+\textit{Solid momentum}
+\begin{align}
+\rho_s \pder{\mathbf{v}_s}{t} = \nabla \cdot \mathbf{T} + \rho_s \mathbf{f}_s
+\hspace{4mm} \text{in} \hspace{2mm} \Omega_s
+\end{align}
+\end{equat}
 
-\subsection{Material models, St. Venant Kirchhoff materia, incomp neo-Hookean materiall}
+
+
+where $\mathbf{f}_s$ is some body force, and $\mathbf{T}$ is the first \textit{Piola-Kirchhoff} stress tensor. The relation 
+\begin{align}
+\mathbf{T} = \mathbf{F} \mathbf{S}
+\end{align}
+connects the first \textit{Piola-Kirchhoff} to the second \textit{Piola-Kirchhoff} tensor. The material is chosen to be isotropic, hence \textbf{S} is on the form
+\begin{align*}
+&\mathbf{S} = \lambda_s tr(\mathbf{E}) + 2 \mu_s \mathbf{E} \\
+&E = \frac{1}{2}(\mathbf{F}^T \mathbf{F} - \mathbf{I})
+\end{align*} 
+Since the solid deformation is a quantity of interest a kinematic condition must be defined for the system of the form
+\begin{align}
+\pder{\mathbf{v}_s}{t} = \mathbf{u_s} \hspace{4mm} \text{in} \hspace{2mm} \Omega_s
+\end{align} 
+One might ask the motivation of such an approach as the Lagrangian system could let us define the problem 
+\begin{align}
+\rho_s \ppder{\mathbf{u}_s}{t} = \nabla \cdot \mathbf{T} + \rho_s \mathbf{f}_s
+\hspace{4mm} \text{in} \hspace{2mm} \Omega_s
+\end{align}
+directly solving for the main quantity of interest namely deformation. However solving for $\mathbf{v}_s$ is more convenient, as it lets us handle constraints for the fluid-structure interaction problem easier. As for the fluid problem we define Dirichlet and Neumann boundary conditions on the form
+
+\begin{align*}
+\mathbf{v}_s = \mathbf{v}_s^D 
+\hspace{4mm} \text{on} \hspace{2mm} \Gamma_s^D \subset \partial \Omega_s  \\
+\sigma_s \cdot \mathbf{n} = \mathbf{g}  
+\hspace{4mm} \text{on} \hspace{2mm} \Gamma_s^N \subset \partial \Omega_s 
+\end{align*}
+
 
 

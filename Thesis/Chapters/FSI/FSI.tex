@@ -31,7 +31,7 @@ This approach was considered in this thesis, but implementation of tracking the 
 \subsection{Fully Eulerian}
 This method keeps the fluid in its \textit{Eulerian coordinates}, and such can be seen as the natural counterpart of the ALE method \cite{Wick2013}. First proposed by , \cite{Dunne2006}. One motivation of such and approach is the handling of large-deformation, as the transformation to eulerian coordinates are purely natural.
 
-\subsection{Arbitary Lagrangian Eulerian}
+\subsection{Arbitary Lagrangian Eulerian formulation}
 MEANTION ALE CAN  BEHAVE EITHER EULERIAN AND LAGRANGIAN
 The ALE method was initially developed to combine the strengths of the \textit{Lagranngian} and \textit{Eulerian} coordinate systems. As pointed out in chapter 2, the \textit{Lagrangian} description is useful for tracking particles as they are act upon by forces. Hence its main contribution is the ability to track interfaces and materials with history dependent properties.
 In the ALE method one choose to keep the structure in its \textit{Lagrangian coordinate system}, while transforming the fluid domain into an artificial coordinate system similar to the \textit{Lagrangian coordinate system}. It is however important to note that there is no natural displacement in the fluid domain, hence this domain has no directly physical meaning \cite{Richter2010a}, \cite{Donea2004}. 
@@ -124,6 +124,25 @@ For the conservation of continuum we apply the \textit{Piola Transformation} suc
 \nabla \cdot \mathbf{v} = \nabla \cdot (\ha{J} \hat{F}_W^{-1} \hat{v})
 \end{align*}
 
+With the introduced mapping identities we have the necessary tools to derive a full fluid-structure interaction problem defined of a fixed domain. Since the structure already is defined in its natural Lagrangian coordinate system, no further derivations are needed for defining the total problem.
+
+\begin{equat}
+\textit{ALE problem on a fixed domain}
+\begin{align}
+\ha{J} \pder{\hat{v}}{t} + \ha{J} (\hat{F}_W^{-1}(\hat{v} - \pder{\ha{T}_W}{t}) \cdot \hat{\nabla}) \hat{v}
+= \nabla \cdot (\ha{J}_W \hat{\sigma}\hat{F}_W^{-T}) + \rho_f \ha{J} \mathbf{f}_f
+\hspace{4mm} \text{in} \hspace{2mm} \Omega_f \\
+\nabla \cdot (\ha{J} \hat{F}_W^{-1} \hat{v}) \hspace{4mm} \text{in} \hspace{2mm} \Omega_f \\
+\rho_s \pder{\hat{v}_s}{t} = \nabla \cdot \mathbf{F}\mathbf{S} + \rho_s \mathbf{f}_s
+\hspace{4mm} \text{in} \hspace{2mm} \Omega_s \\
+\pder{\hat{v}_s}{t} = \hat{u}_s \hspace{4mm} \text{in} \hspace{2mm} \Omega_s \\
+\hat{v}_s = \hat{v}_f \hspace{4mm} \text{on} \hspace{2mm} \Gamma_i \\
+\ha{J}_W \hat{\sigma}\hat{F}_W^{-T} \cdot \mathbf{n} = 
+\mathbf{F}\mathbf{S} \cdot \mathbf{n}  \hspace{4mm} \text{on} \hspace{2mm} \Gamma_i 
+\end{align}
+\end{equat}
+
+
 \subsection*{Fluid mesh movement}
 In the ALE framwork one of the most limiting factors is the degeneration of the mesh due to large deformations. Even the most advanced ALE formulated schemes reaches a limit when only re-meshing is nesecarry \cite{Wall12006}. Consequently the choice of an appropriate mesh moving technique is essential to preserve a feasible mesh quality for the simulation of fluid flow. Let the total domain deformation $\ha{T}(\ha{x}, t)$ be divided into the solid and fluid deformation $T_s$, $T_f$, were the fluid deformation is mapped to the arbitrary fixed reference system $\ha{W}$ presented in the last subsection.  
 Then the ALE map $T_f$ on the form 
@@ -201,8 +220,10 @@ With the first type of boundary condition the model can interpreted as the bendi
 
 The main motivation for second type of boundary condition is for a rectangular domain where the coordinate axes match the Cartesian coordinate system \cite{Wicka}. In such a configuration, the mesh movement is only constrained in the perpendicular direction of the fluid boundary, leading to mesh movement in the tangential direction. This special case reduces the effect of distortion of the cells.  
 
-\subsubsection*{Comparison}
-Three different approaches for handling mesh deformation within the fluid domain has been presented. We will in chapter ? compare the different approaches and their effect in numerical studies. Stay tuned!
+\newpage
+\section{Discretization of the FSI problem}
+
+
 
 
 
