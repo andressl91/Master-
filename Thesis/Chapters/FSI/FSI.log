@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.19)  1 MAY 2017 17:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.12.9)  1 MAY 2017 20:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **FSI.tex
 (./FSI.tex
-LaTeX2e <2016/02/01>
-Babel <3.9n> and hyphenation patterns for 80 languages loaded.
+LaTeX2e <2016/03/31>
+Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
 ! Undefined control sequence.
 l.1 \chapter
             {Fluid Structure Interaction}
@@ -5965,8 +5965,7 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-[1{/mn/sarpanitu/modules/packages/texlive/2015-uio/uio-texmf/texmf-var/fonts/ma
-p/pdftex/updmap/pdftex.map}]
+[1{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 
 ! LaTeX Error: Missing \begin{document}.
 
@@ -17515,6 +17514,644 @@ Missing character: There is no b in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no m in font nullfont!
+Missing character: There is no S in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no F in font nullfont!
+Missing character: There is no S in font nullfont!
+Missing character: There is no I in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no F in font nullfont!
+Missing character: There is no E in font nullfont!
+Missing character: There is no M in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no F in font nullfont!
+Missing character: There is no V in font nullfont!
+Missing character: There is no M in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no I in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no I in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no v in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no O in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no v in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no . in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 224--227
+[]
+ []
+
+! Undefined control sequence.
+l.228 \subsection
+                 {Finite Element method}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.228 \subsection{F
+                   inite Element method}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no F in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no E in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no L in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+! Undefined control sequence.
+l.229 Let the domain $\hat{\Omega} \subset \mathbb
+                                                  {R}^d \ (d = 1, 2, 3) $  b...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no b in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no E in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no . in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 228--230
+[]
+ []
+
+
+Overfull \hbox (17.77774pt too wide) in paragraph at lines 228--230
+[] \OMS/cmsy/m/n/10 ^^Z
+ []
+
+
+Overfull \hbox (31.9823pt too wide) in paragraph at lines 228--230
+\OML/cmm/m/it/10 R[] \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 d \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (27.77777pt too wide) in paragraph at lines 228--230
+\OT1/cmr/m/n/10 1\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 2\OML/cmm/m/it/10 ; \OT1/cm
+r/m/n/10 3)$
+ []
+
+! Undefined control sequence.
+l.231 \subsection
+                 {Variational Formulation}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.231 \subsection{V
+                   ariational Formulation}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no V in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no F in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
 Missing character: There is no W in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no t in font nullfont!
@@ -17788,14 +18425,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.226 \begin{align*}
+l.233 \begin{align*}
                     
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 ! Misplaced alignment tab character &.
-l.227 &
+l.234 &
        \hat{\sigma}_{\text{mesh}} = \alpha \hat{\nabla}\bat{u} \hspace{2mm} ...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -17807,13 +18444,13 @@ might try typing `S' now just to see what is salvageable.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.227 &\hat
+l.234 &\hat
            {\sigma}_{\text{mesh}} = \alpha \hat{\nabla}\bat{u} \hspace{2mm} ...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 ! Undefined control sequence.
-l.227 &\hat{\sigma}_{\text
+l.234 &\hat{\sigma}_{\text
                           {mesh}} = \alpha \hat{\nabla}\bat{u} \hspace{2mm} ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -17822,7 +18459,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.227 ...}_{\text{mesh}} = \alpha \hat{\nabla}\bat
+l.234 ...}_{\text{mesh}} = \alpha \hat{\nabla}\bat
                                                   {u} \hspace{2mm} \text{Lap...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -17831,7 +18468,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.227 ...ha \hat{\nabla}\bat{u} \hspace{2mm} \text
+l.234 ...ha \hat{\nabla}\bat{u} \hspace{2mm} \text
                                                   {Laplace} \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -17842,7 +18479,7 @@ and I'll forget about whatever was undefined.
 ! Misplaced alignment tab character &.
 <recently read> &
                  
-l.228 &
+l.235 &
        \hat{\sigma}_{\text{mesh}} =  \lambda Tr(\epsilon(u)) I + 2 \mu \epsi...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -17852,7 +18489,7 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 ! Undefined control sequence.
-l.228 &\hat{\sigma}_{\text
+l.235 &\hat{\sigma}_{\text
                           {mesh}} =  \lambda Tr(\epsilon(u)) I + 2 \mu \epsi...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -17861,7 +18498,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.228 ... I + 2 \mu \epsilon(u) \hspace{2mm} \text
+l.235 ... I + 2 \mu \epsilon(u) \hspace{2mm} \text
                                                   {Linear Elasticity}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -17876,7 +18513,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.229 \end{align*}
+l.236 \end{align*}
                   
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -17885,7 +18522,7 @@ or  <return>  to continue without it.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.229 \end{align*}
+l.236 \end{align*}
                   
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -18088,33 +18725,33 @@ Missing character: There is no d in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 224--232
+Overfull \hbox (20.0pt too wide) in paragraph at lines 231--239
 []
  []
 
 
-Overfull \hbox (36.11594pt too wide) in paragraph at lines 224--232
+Overfull \hbox (36.11594pt too wide) in paragraph at lines 231--239
 [] \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (60.75551pt too wide) in paragraph at lines 224--232
+Overfull \hbox (60.75551pt too wide) in paragraph at lines 231--239
 \OML/cmm/m/it/10 []u [][] 
  []
 
 
-Overfull \hbox (36.11594pt too wide) in paragraph at lines 224--232
+Overfull \hbox (36.11594pt too wide) in paragraph at lines 231--239
 [] \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (56.15294pt too wide) in paragraph at lines 224--232
+Overfull \hbox (56.15294pt too wide) in paragraph at lines 231--239
 \OML/cmm/m/it/10 ^^UTr\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^O\OT1/cmr/m/n/10 (\OM
 L/cmm/m/it/10 u\OT1/cmr/m/n/10 ))\OML/cmm/m/it/10 I \OT1/cmr/m/n/10 +
  []
 
 
-Overfull \hbox (110.07594pt too wide) in paragraph at lines 224--232
+Overfull \hbox (110.07594pt too wide) in paragraph at lines 231--239
 \OT1/cmr/m/n/10 2\OML/cmm/m/it/10 ^^V^^O\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 u\OT1
 /cmr/m/n/10 ) []$
  []
@@ -18126,7 +18763,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.233 \begin{prob}
+l.240 \begin{prob}
                   
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -18139,7 +18776,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.235 ...at{v}_s, \bat{v}_f, \ha{p}_f $ such that}
+l.242 ...at{v}_s, \bat{v}_f, \ha{p}_f $ such that}
                                                   
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -18147,7 +18784,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Undefined control sequence.
 <recently read> \bat 
                      
-l.235 ...at{v}_s, \bat{v}_f, \ha{p}_f $ such that}
+l.242 ...at{v}_s, \bat{v}_f, \ha{p}_f $ such that}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18158,7 +18795,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> ...oving model. Find $\bat {u}_s, \bat 
                                                   {u}_f, \bat {v}_s, \bat {v...
-l.235 ...at{v}_s, \bat{v}_f, \ha{p}_f $ such that}
+l.242 ...at{v}_s, \bat{v}_f, \ha{p}_f $ such that}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18169,7 +18806,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> ... Find $\bat {u}_s, \bat {u}_f, \bat 
                                                   {v}_s, \bat {v}_f, \ha {p}...
-l.235 ...at{v}_s, \bat{v}_f, \ha{p}_f $ such that}
+l.242 ...at{v}_s, \bat{v}_f, \ha{p}_f $ such that}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18180,7 +18817,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> ...{u}_s, \bat {u}_f, \bat {v}_s, \bat 
                                                   {v}_f, \ha {p}_f $ such that
-l.235 ...at{v}_s, \bat{v}_f, \ha{p}_f $ such that}
+l.242 ...at{v}_s, \bat{v}_f, \ha{p}_f $ such that}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18191,7 +18828,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> ... {u}_f, \bat {v}_s, \bat {v}_f, \ha 
                                                   {p}_f $ such that
-l.235 ...at{v}_s, \bat{v}_f, \ha{p}_f $ such that}
+l.242 ...at{v}_s, \bat{v}_f, \ha{p}_f $ such that}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18206,14 +18843,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.236 \begin{align*}
+l.243 \begin{align*}
                     
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 ! Undefined control sequence.
-l.237 \big(\ha
+l.244 \big(\ha
               {J} \pder{\bat{v}}{t}, \ \gat{\psi}^u \big)_{\hat{\Omega}_f} +
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18223,7 +18860,7 @@ and I'll forget about whatever was undefined.
 
 Missing character: There is no J in font nullfont!
 ! Undefined control sequence.
-l.237 \big(\ha{J} \pder
+l.244 \big(\ha{J} \pder
                        {\bat{v}}{t}, \ \gat{\psi}^u \big)_{\hat{\Omega}_f} +
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18232,7 +18869,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.237 \big(\ha{J} \pder{\bat
+l.244 \big(\ha{J} \pder{\bat
                             {v}}{t}, \ \gat{\psi}^u \big)_{\hat{\Omega}_f} +
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18244,7 +18881,7 @@ Missing character: There is no v in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no , in font nullfont!
 ! Undefined control sequence.
-l.237 \big(\ha{J} \pder{\bat{v}}{t}, \ \gat
+l.244 \big(\ha{J} \pder{\bat{v}}{t}, \ \gat
                                            {\psi}^u \big)_{\hat{\Omega}_f} +
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18255,13 +18892,13 @@ and I'll forget about whatever was undefined.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.237 \big(\ha{J} \pder{\bat{v}}{t}, \ \gat{\psi
+l.244 \big(\ha{J} \pder{\bat{v}}{t}, \ \gat{\psi
                                                 }^u \big)_{\hat{\Omega}_f} +
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 ! Extra }, or forgotten $.
-l.237 \big(\ha{J} \pder{\bat{v}}{t}, \ \gat{\psi}
+l.244 \big(\ha{J} \pder{\bat{v}}{t}, \ \gat{\psi}
                                                  ^u \big)_{\hat{\Omega}_f} +
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -18270,7 +18907,7 @@ the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
 ! Undefined control sequence.
-l.238 \femf
+l.245 \femf
            {\ha{J} (\hat{F}_W^{-1}(\bat{v} - \pder{\ha{T}_W}{t}) \cdot \hat{...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18279,7 +18916,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.238 \femf{\ha
+l.245 \femf{\ha
                {J} (\hat{F}_W^{-1}(\bat{v} - \pder{\ha{T}_W}{t}) \cdot \hat{...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18288,7 +18925,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.238 \femf{\ha{J} (\hat{F}_W^{-1}(\bat
+l.245 \femf{\ha{J} (\hat{F}_W^{-1}(\bat
                                        {v} - \pder{\ha{T}_W}{t}) \cdot \hat{...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18297,7 +18934,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.238 \femf{\ha{J} (\hat{F}_W^{-1}(\bat{v} - \pder
+l.245 \femf{\ha{J} (\hat{F}_W^{-1}(\bat{v} - \pder
                                                   {\ha{T}_W}{t}) \cdot \hat{...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18306,7 +18943,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.238 ...ha{J} (\hat{F}_W^{-1}(\bat{v} - \pder{\ha
+l.245 ...ha{J} (\hat{F}_W^{-1}(\bat{v} - \pder{\ha
                                                   {T}_W}{t}) \cdot \hat{\nab...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18315,7 +18952,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.238 ...er{\ha{T}_W}{t}) \cdot \hat{\nabla}) \bat
+l.245 ...er{\ha{T}_W}{t}) \cdot \hat{\nabla}) \bat
                                                   {v}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18324,7 +18961,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.239 {\gat
+l.246 {\gat
            {\psi}^u}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18333,7 +18970,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.240 + \femi
+l.247 + \femi
              {\ha{J}_W \hat{\sigma}\hat{F}_W^{-T} \bat{n}_f}{\gat{\psi}^u}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18342,7 +18979,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.240 + \femi{\ha
+l.247 + \femi{\ha
                  {J}_W \hat{\sigma}\hat{F}_W^{-T} \bat{n}_f}{\gat{\psi}^u}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18351,7 +18988,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.240 ...{\ha{J}_W \hat{\sigma}\hat{F}_W^{-T} \bat
+l.247 ...{\ha{J}_W \hat{\sigma}\hat{F}_W^{-T} \bat
                                                   {n}_f}{\gat{\psi}^u}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18360,7 +18997,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.240 ...hat{\sigma}\hat{F}_W^{-T} \bat{n}_f}{\gat
+l.247 ...hat{\sigma}\hat{F}_W^{-T} \bat{n}_f}{\gat
                                                   {\psi}^u}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18369,7 +19006,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.241 - \femf
+l.248 - \femf
              {\ha{J}_W \hat{\sigma}\hat{F}_W^{-T}}{\hat{\nabla}\gat{\psi}^u} -
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18378,7 +19015,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.241 - \femf{\ha
+l.248 - \femf{\ha
                  {J}_W \hat{\sigma}\hat{F}_W^{-T}}{\hat{\nabla}\gat{\psi}^u} -
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18387,7 +19024,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.241 ...t{\sigma}\hat{F}_W^{-T}}{\hat{\nabla}\gat
+l.248 ...t{\sigma}\hat{F}_W^{-T}}{\hat{\nabla}\gat
                                                   {\psi}^u} -
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18396,7 +19033,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.242 \femf
+l.249 \femf
            {\rho_f \ha{J} \mathbf{f}_f}{{\gat{\psi}^u}} = 0 \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18405,7 +19042,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.242 \femf{\rho_f \ha
+l.249 \femf{\rho_f \ha
                       {J} \mathbf{f}_f}{{\gat{\psi}^u}} = 0 \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18414,7 +19051,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.242 \femf{\rho_f \ha{J} \mathbf{f}_f}{{\gat
+l.249 \femf{\rho_f \ha{J} \mathbf{f}_f}{{\gat
                                              {\psi}^u}} = 0 \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18425,7 +19062,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <recently read> \fems 
                       
-l.243 \fems
+l.250 \fems
            {\rho_s \pder{\bat{v}_s}{t}}{\gat{\psi}^u} + \femi{\bat{F}\bat{S}...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18434,7 +19071,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.243 \fems{\rho_s \pder
+l.250 \fems{\rho_s \pder
                         {\bat{v}_s}{t}}{\gat{\psi}^u} + \femi{\bat{F}\bat{S}...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18443,7 +19080,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.243 \fems{\rho_s \pder{\bat
+l.250 \fems{\rho_s \pder{\bat
                              {v}_s}{t}}{\gat{\psi}^u} + \femi{\bat{F}\bat{S}...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18452,7 +19089,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.243 \fems{\rho_s \pder{\bat{v}_s}{t}}{\gat
+l.250 \fems{\rho_s \pder{\bat{v}_s}{t}}{\gat
                                             {\psi}^u} + \femi{\bat{F}\bat{S}...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18461,7 +19098,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.243 ...pder{\bat{v}_s}{t}}{\gat{\psi}^u} + \femi
+l.250 ...pder{\bat{v}_s}{t}}{\gat{\psi}^u} + \femi
                                                   {\bat{F}\bat{S}\bat{n}_f}{...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18470,7 +19107,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.243 ...\bat{v}_s}{t}}{\gat{\psi}^u} + \femi{\bat
+l.250 ...\bat{v}_s}{t}}{\gat{\psi}^u} + \femi{\bat
                                                   {F}\bat{S}\bat{n}_f}{\gat{...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18479,7 +19116,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.243 ..._s}{t}}{\gat{\psi}^u} + \femi{\bat{F}\bat
+l.250 ..._s}{t}}{\gat{\psi}^u} + \femi{\bat{F}\bat
                                                   {S}\bat{n}_f}{\gat{\psi}^u}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18488,7 +19125,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.243 ...{\gat{\psi}^u} + \femi{\bat{F}\bat{S}\bat
+l.250 ...{\gat{\psi}^u} + \femi{\bat{F}\bat{S}\bat
                                                   {n}_f}{\gat{\psi}^u}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18497,7 +19134,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.243 ...^u} + \femi{\bat{F}\bat{S}\bat{n}_f}{\gat
+l.250 ...^u} + \femi{\bat{F}\bat{S}\bat{n}_f}{\gat
                                                   {\psi}^u}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18506,7 +19143,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.244 - \fems
+l.251 - \fems
              {\bat{F}\bat{S}}{\nabla \gat{\psi}^u} - \fems{\rho_s \bat{f}_s}...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18515,7 +19152,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.244 - \fems{\bat
+l.251 - \fems{\bat
                   {F}\bat{S}}{\nabla \gat{\psi}^u} - \fems{\rho_s \bat{f}_s}...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18524,7 +19161,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.244 - \fems{\bat{F}\bat
+l.251 - \fems{\bat{F}\bat
                          {S}}{\nabla \gat{\psi}^u} - \fems{\rho_s \bat{f}_s}...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18533,7 +19170,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.244 - \fems{\bat{F}\bat{S}}{\nabla \gat
+l.251 - \fems{\bat{F}\bat{S}}{\nabla \gat
                                          {\psi}^u} - \fems{\rho_s \bat{f}_s}...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18542,7 +19179,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.244 ...t{F}\bat{S}}{\nabla \gat{\psi}^u} - \fems
+l.251 ...t{F}\bat{S}}{\nabla \gat{\psi}^u} - \fems
                                                   {\rho_s \bat{f}_s}{\gat{\p...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18551,7 +19188,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.244 ...{\nabla \gat{\psi}^u} - \fems{\rho_s \bat
+l.251 ...{\nabla \gat{\psi}^u} - \fems{\rho_s \bat
                                                   {f}_s}{\gat{\psi}^u} = 0 \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18560,7 +19197,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.244 ...t{\psi}^u} - \fems{\rho_s \bat{f}_s}{\gat
+l.251 ...t{\psi}^u} - \fems{\rho_s \bat{f}_s}{\gat
                                                   {\psi}^u} = 0 \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18571,7 +19208,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <recently read> \fems 
                       
-l.245 \fems
+l.252 \fems
            {\pder{\bat{v}_s - \bat{u}_s}{t}}{\gat{\psi}^v}  = 0\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18580,7 +19217,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.245 \fems{\pder
+l.252 \fems{\pder
                  {\bat{v}_s - \bat{u}_s}{t}}{\gat{\psi}^v}  = 0\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18589,7 +19226,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.245 \fems{\pder{\bat
+l.252 \fems{\pder{\bat
                       {v}_s - \bat{u}_s}{t}}{\gat{\psi}^v}  = 0\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18598,7 +19235,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.245 \fems{\pder{\bat{v}_s - \bat
+l.252 \fems{\pder{\bat{v}_s - \bat
                                   {u}_s}{t}}{\gat{\psi}^v}  = 0\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18607,7 +19244,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.245 \fems{\pder{\bat{v}_s - \bat{u}_s}{t}}{\gat
+l.252 \fems{\pder{\bat{v}_s - \bat{u}_s}{t}}{\gat
                                                  {\psi}^v}  = 0\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18618,7 +19255,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <recently read> \femf 
                       
-l.246 \femf
+l.253 \femf
            {\nabla \cdot (\ha{J} \hat{F}_W^{-1} \bat{v})}{\gat{\psi}^p} = 0 \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18627,7 +19264,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.246 \femf{\nabla \cdot (\ha
+l.253 \femf{\nabla \cdot (\ha
                              {J} \hat{F}_W^{-1} \bat{v})}{\gat{\psi}^p} = 0 \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18636,7 +19273,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.246 ...{\nabla \cdot (\ha{J} \hat{F}_W^{-1} \bat
+l.253 ...{\nabla \cdot (\ha{J} \hat{F}_W^{-1} \bat
                                                   {v})}{\gat{\psi}^p} = 0 \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18645,7 +19282,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.246 ...dot (\ha{J} \hat{F}_W^{-1} \bat{v})}{\gat
+l.253 ...dot (\ha{J} \hat{F}_W^{-1} \bat{v})}{\gat
                                                   {\psi}^p} = 0 \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18656,7 +19293,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <recently read> \femf 
                       
-l.247 \femf
+l.254 \femf
            {\hat{\sigma}_{\text{mesh}}}{\hat{\nabla}\gat{\psi}^u} = 0
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18665,7 +19302,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.247 \femf{\hat{\sigma}_{\text
+l.254 \femf{\hat{\sigma}_{\text
                                {mesh}}}{\hat{\nabla}\gat{\psi}^u} = 0
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18674,7 +19311,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.247 ...t{\sigma}_{\text{mesh}}}{\hat{\nabla}\gat
+l.254 ...t{\sigma}_{\text{mesh}}}{\hat{\nabla}\gat
                                                   {\psi}^u} = 0
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18689,7 +19326,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.248 \end{align*}
+l.255 \end{align*}
                   
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -18698,7 +19335,7 @@ or  <return>  to continue without it.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.248 \end{align*}
+l.255 \end{align*}
                   
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -18709,7 +19346,7 @@ my insertion and my current dilemma will both disappear.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.248 \end{align*}
+l.255 \end{align*}
                   
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -18724,214 +19361,214 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.249 \end{prob}
+l.256 \end{prob}
                 
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Overfull \hbox (54.49977pt too wide) in paragraph at lines 235--250
+Overfull \hbox (54.49977pt too wide) in paragraph at lines 242--257
 []\OT1/cmr/m/it/10 Coupled
  []
 
 
-Overfull \hbox (19.4221pt too wide) in paragraph at lines 235--250
+Overfull \hbox (19.4221pt too wide) in paragraph at lines 242--257
 \OT1/cmr/m/it/10 fluid
  []
 
 
-Overfull \hbox (25.17203pt too wide) in paragraph at lines 235--250
+Overfull \hbox (25.17203pt too wide) in paragraph at lines 242--257
 \OT1/cmr/m/it/10 struc-
  []
 
 
-Overfull \hbox (16.9943pt too wide) in paragraph at lines 235--250
+Overfull \hbox (16.9943pt too wide) in paragraph at lines 242--257
 \OT1/cmr/m/it/10 ture
  []
 
 
-Overfull \hbox (12.26659pt too wide) in paragraph at lines 235--250
+Overfull \hbox (12.26659pt too wide) in paragraph at lines 242--257
 \OT1/cmr/m/it/10 in-
  []
 
 
-Overfull \hbox (15.71652pt too wide) in paragraph at lines 235--250
+Overfull \hbox (15.71652pt too wide) in paragraph at lines 242--257
 \OT1/cmr/m/it/10 ter-
  []
 
 
-Overfull \hbox (13.28879pt too wide) in paragraph at lines 235--250
+Overfull \hbox (13.28879pt too wide) in paragraph at lines 242--257
 \OT1/cmr/m/it/10 ac-
  []
 
 
-Overfull \hbox (17.12212pt too wide) in paragraph at lines 235--250
+Overfull \hbox (17.12212pt too wide) in paragraph at lines 242--257
 \OT1/cmr/m/it/10 tion
  []
 
 
-Overfull \hbox (22.10538pt too wide) in paragraph at lines 235--250
+Overfull \hbox (22.10538pt too wide) in paragraph at lines 242--257
 \OT1/cmr/m/it/10 prob-
  []
 
 
-Overfull \hbox (15.33324pt too wide) in paragraph at lines 235--250
+Overfull \hbox (15.33324pt too wide) in paragraph at lines 242--257
 \OT1/cmr/m/it/10 lem
  []
 
 
-Overfull \hbox (12.39436pt too wide) in paragraph at lines 235--250
+Overfull \hbox (12.39436pt too wide) in paragraph at lines 242--257
 \OT1/cmr/m/it/10 for
  []
 
 
-Overfull \hbox (29.13313pt too wide) in paragraph at lines 235--250
+Overfull \hbox (29.13313pt too wide) in paragraph at lines 242--257
 \OT1/cmr/m/it/10 laplace
  []
 
 
-Overfull \hbox (15.84436pt too wide) in paragraph at lines 235--250
+Overfull \hbox (15.84436pt too wide) in paragraph at lines 242--257
 \OT1/cmr/m/it/10 and
  []
 
 
-Overfull \hbox (19.9332pt too wide) in paragraph at lines 235--250
+Overfull \hbox (19.9332pt too wide) in paragraph at lines 242--257
 \OT1/cmr/m/it/10 elas-
  []
 
 
-Overfull \hbox (10.9888pt too wide) in paragraph at lines 235--250
+Overfull \hbox (10.9888pt too wide) in paragraph at lines 242--257
 \OT1/cmr/m/it/10 tic
  []
 
 
-Overfull \hbox (21.97765pt too wide) in paragraph at lines 235--250
+Overfull \hbox (21.97765pt too wide) in paragraph at lines 242--257
 \OT1/cmr/m/it/10 mesh
  []
 
 
-Overfull \hbox (21.46652pt too wide) in paragraph at lines 235--250
+Overfull \hbox (21.46652pt too wide) in paragraph at lines 242--257
 \OT1/cmr/m/it/10 mov-
  []
 
 
-Overfull \hbox (13.2888pt too wide) in paragraph at lines 235--250
+Overfull \hbox (13.2888pt too wide) in paragraph at lines 242--257
 \OT1/cmr/m/it/10 ing
  []
 
 
-Overfull \hbox (28.11093pt too wide) in paragraph at lines 235--250
+Overfull \hbox (28.11093pt too wide) in paragraph at lines 242--257
 \OT1/cmr/m/it/10 model.
  []
 
 
-Overfull \hbox (20.32765pt too wide) in paragraph at lines 235--250
+Overfull \hbox (20.32765pt too wide) in paragraph at lines 242--257
 \OT1/cmr/m/it/10 Find
  []
 
 
-Overfull \hbox (68.0534pt too wide) in paragraph at lines 235--250
+Overfull \hbox (68.0534pt too wide) in paragraph at lines 242--257
 \OML/cmm/m/it/10 u[]; u[]; v[]; v[]; p[]$
  []
 
 
-Overfull \hbox (19.16655pt too wide) in paragraph at lines 235--250
+Overfull \hbox (19.16655pt too wide) in paragraph at lines 242--257
 \OT1/cmr/m/it/10 such
  []
 
 
-Overfull \hbox (16.86655pt too wide) in paragraph at lines 235--250
+Overfull \hbox (16.86655pt too wide) in paragraph at lines 242--257
 \OT1/cmr/m/it/10 that
  []
 
 
-Overfull \hbox (4.58336pt too wide) in paragraph at lines 235--250
+Overfull \hbox (4.58336pt too wide) in paragraph at lines 242--257
 []
  []
 
 
-Overfull \hbox (35.18073pt too wide) in paragraph at lines 235--250
+Overfull \hbox (35.18073pt too wide) in paragraph at lines 242--257
 \OML/cmm/m/it/10  [][][] \OT1/cmr/m/n/10 +
  []
 
 
-Overfull \hbox (117.23845pt too wide) in paragraph at lines 235--250
+Overfull \hbox (117.23845pt too wide) in paragraph at lines 242--257
 [][] \OT1/cmr/m/n/10 +
  []
 
 
-Overfull \hbox (72.1494pt too wide) in paragraph at lines 235--250
+Overfull \hbox (72.1494pt too wide) in paragraph at lines 242--257
 [][] \OMS/cmsy/m/n/10 ^^@
  []
 
 
-Overfull \hbox (69.29633pt too wide) in paragraph at lines 235--250
+Overfull \hbox (69.29633pt too wide) in paragraph at lines 242--257
 [][] \OMS/cmsy/m/n/10 ^^@
  []
 
 
-Overfull \hbox (48.2154pt too wide) in paragraph at lines 235--250
+Overfull \hbox (48.2154pt too wide) in paragraph at lines 242--257
 [][] \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 235--250
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 242--257
 \OT1/cmr/m/n/10 0[] 
  []
 
 
-Overfull \hbox (42.0557pt too wide) in paragraph at lines 235--250
+Overfull \hbox (42.0557pt too wide) in paragraph at lines 242--257
 [][] \OT1/cmr/m/n/10 +
  []
 
 
-Overfull \hbox (45.59276pt too wide) in paragraph at lines 235--250
+Overfull \hbox (45.59276pt too wide) in paragraph at lines 242--257
 [][] \OMS/cmsy/m/n/10 ^^@
  []
 
 
-Overfull \hbox (42.73969pt too wide) in paragraph at lines 235--250
+Overfull \hbox (42.73969pt too wide) in paragraph at lines 242--257
 [][] \OMS/cmsy/m/n/10 ^^@
  []
 
 
-Overfull \hbox (41.27092pt too wide) in paragraph at lines 235--250
+Overfull \hbox (41.27092pt too wide) in paragraph at lines 242--257
 [][] \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 235--250
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 242--257
 \OT1/cmr/m/n/10 0[] 
  []
 
 
-Overfull \hbox (57.1331pt too wide) in paragraph at lines 235--250
+Overfull \hbox (57.1331pt too wide) in paragraph at lines 242--257
 [][] \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 235--250
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 242--257
 \OT1/cmr/m/n/10 0[] 
  []
 
 
-Overfull \hbox (75.65239pt too wide) in paragraph at lines 235--250
+Overfull \hbox (75.65239pt too wide) in paragraph at lines 242--257
 [][] \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 235--250
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 242--257
 \OT1/cmr/m/n/10 0[] 
  []
 
 
-Overfull \hbox (56.55005pt too wide) in paragraph at lines 235--250
+Overfull \hbox (56.55005pt too wide) in paragraph at lines 242--257
 [][] \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 235--250
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 242--257
 \OT1/cmr/m/n/10 0$
  []
 
@@ -18942,7 +19579,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.251 \begin{prob}
+l.258 \begin{prob}
                   
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -18955,7 +19592,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.253 ...at{v}_s, \bat{v}_f, \ha{p}_f $ such that}
+l.260 ...at{v}_s, \bat{v}_f, \ha{p}_f $ such that}
                                                   
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -18963,7 +19600,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Undefined control sequence.
 <recently read> \bat 
                      
-l.253 ...at{v}_s, \bat{v}_f, \ha{p}_f $ such that}
+l.260 ...at{v}_s, \bat{v}_f, \ha{p}_f $ such that}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18974,7 +19611,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> ...oving model. Find $\bat {u}_s, \bat 
                                                   {u}_f, \bat {v}_s, \bat {v...
-l.253 ...at{v}_s, \bat{v}_f, \ha{p}_f $ such that}
+l.260 ...at{v}_s, \bat{v}_f, \ha{p}_f $ such that}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18985,7 +19622,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> ... Find $\bat {u}_s, \bat {u}_f, \bat 
                                                   {v}_s, \bat {v}_f, \ha {p}...
-l.253 ...at{v}_s, \bat{v}_f, \ha{p}_f $ such that}
+l.260 ...at{v}_s, \bat{v}_f, \ha{p}_f $ such that}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -18996,7 +19633,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> ...{u}_s, \bat {u}_f, \bat {v}_s, \bat 
                                                   {v}_f, \ha {p}_f $ such that
-l.253 ...at{v}_s, \bat{v}_f, \ha{p}_f $ such that}
+l.260 ...at{v}_s, \bat{v}_f, \ha{p}_f $ such that}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19007,7 +19644,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> ... {u}_f, \bat {v}_s, \bat {v}_f, \ha 
                                                   {p}_f $ such that
-l.253 ...at{v}_s, \bat{v}_f, \ha{p}_f $ such that}
+l.260 ...at{v}_s, \bat{v}_f, \ha{p}_f $ such that}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19022,14 +19659,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.254 \begin{align*}
+l.261 \begin{align*}
                     
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 ! Undefined control sequence.
-l.255 \big(\ha
+l.262 \big(\ha
               {J} \pder{\bat{v}}{t}, \ \gat{\psi}^u \big)_{\hat{\Omega}_f} +
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19039,7 +19676,7 @@ and I'll forget about whatever was undefined.
 
 Missing character: There is no J in font nullfont!
 ! Undefined control sequence.
-l.255 \big(\ha{J} \pder
+l.262 \big(\ha{J} \pder
                        {\bat{v}}{t}, \ \gat{\psi}^u \big)_{\hat{\Omega}_f} +
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19048,7 +19685,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.255 \big(\ha{J} \pder{\bat
+l.262 \big(\ha{J} \pder{\bat
                             {v}}{t}, \ \gat{\psi}^u \big)_{\hat{\Omega}_f} +
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19060,7 +19697,7 @@ Missing character: There is no v in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no , in font nullfont!
 ! Undefined control sequence.
-l.255 \big(\ha{J} \pder{\bat{v}}{t}, \ \gat
+l.262 \big(\ha{J} \pder{\bat{v}}{t}, \ \gat
                                            {\psi}^u \big)_{\hat{\Omega}_f} +
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19071,13 +19708,13 @@ and I'll forget about whatever was undefined.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.255 \big(\ha{J} \pder{\bat{v}}{t}, \ \gat{\psi
+l.262 \big(\ha{J} \pder{\bat{v}}{t}, \ \gat{\psi
                                                 }^u \big)_{\hat{\Omega}_f} +
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 ! Extra }, or forgotten $.
-l.255 \big(\ha{J} \pder{\bat{v}}{t}, \ \gat{\psi}
+l.262 \big(\ha{J} \pder{\bat{v}}{t}, \ \gat{\psi}
                                                  ^u \big)_{\hat{\Omega}_f} +
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -19086,7 +19723,7 @@ the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
 ! Undefined control sequence.
-l.256 \femf
+l.263 \femf
            {\ha{J} (\hat{F}_W^{-1}(\bat{v} - \pder{\ha{T}_W}{t}) \cdot \hat{...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19095,7 +19732,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.256 \femf{\ha
+l.263 \femf{\ha
                {J} (\hat{F}_W^{-1}(\bat{v} - \pder{\ha{T}_W}{t}) \cdot \hat{...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19104,7 +19741,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.256 \femf{\ha{J} (\hat{F}_W^{-1}(\bat
+l.263 \femf{\ha{J} (\hat{F}_W^{-1}(\bat
                                        {v} - \pder{\ha{T}_W}{t}) \cdot \hat{...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19113,7 +19750,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.256 \femf{\ha{J} (\hat{F}_W^{-1}(\bat{v} - \pder
+l.263 \femf{\ha{J} (\hat{F}_W^{-1}(\bat{v} - \pder
                                                   {\ha{T}_W}{t}) \cdot \hat{...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19122,7 +19759,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.256 ...ha{J} (\hat{F}_W^{-1}(\bat{v} - \pder{\ha
+l.263 ...ha{J} (\hat{F}_W^{-1}(\bat{v} - \pder{\ha
                                                   {T}_W}{t}) \cdot \hat{\nab...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19131,7 +19768,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.256 ...er{\ha{T}_W}{t}) \cdot \hat{\nabla}) \bat
+l.263 ...er{\ha{T}_W}{t}) \cdot \hat{\nabla}) \bat
                                                   {v}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19140,7 +19777,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.257 {\gat
+l.264 {\gat
            {\psi}^u}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19149,7 +19786,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.258 + \femi
+l.265 + \femi
              {\ha{J}_W \hat{\sigma}\hat{F}_W^{-T} \bat{n}_f}{\gat{\psi}^u}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19158,7 +19795,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.258 + \femi{\ha
+l.265 + \femi{\ha
                  {J}_W \hat{\sigma}\hat{F}_W^{-T} \bat{n}_f}{\gat{\psi}^u}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19167,7 +19804,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.258 ...{\ha{J}_W \hat{\sigma}\hat{F}_W^{-T} \bat
+l.265 ...{\ha{J}_W \hat{\sigma}\hat{F}_W^{-T} \bat
                                                   {n}_f}{\gat{\psi}^u}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19176,7 +19813,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.258 ...hat{\sigma}\hat{F}_W^{-T} \bat{n}_f}{\gat
+l.265 ...hat{\sigma}\hat{F}_W^{-T} \bat{n}_f}{\gat
                                                   {\psi}^u}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19185,7 +19822,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.259 - \femf
+l.266 - \femf
              {\ha{J}_W \hat{\sigma}\hat{F}_W^{-T}}{\hat{\nabla}\gat{\psi}^u} -
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19194,7 +19831,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.259 - \femf{\ha
+l.266 - \femf{\ha
                  {J}_W \hat{\sigma}\hat{F}_W^{-T}}{\hat{\nabla}\gat{\psi}^u} -
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19203,7 +19840,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.259 ...t{\sigma}\hat{F}_W^{-T}}{\hat{\nabla}\gat
+l.266 ...t{\sigma}\hat{F}_W^{-T}}{\hat{\nabla}\gat
                                                   {\psi}^u} -
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19212,7 +19849,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.260 \femf
+l.267 \femf
            {\rho_f \ha{J} \mathbf{f}_f}{{\gat{\psi}^u}} = 0 \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19221,7 +19858,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.260 \femf{\rho_f \ha
+l.267 \femf{\rho_f \ha
                       {J} \mathbf{f}_f}{{\gat{\psi}^u}} = 0 \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19230,7 +19867,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.260 \femf{\rho_f \ha{J} \mathbf{f}_f}{{\gat
+l.267 \femf{\rho_f \ha{J} \mathbf{f}_f}{{\gat
                                              {\psi}^u}} = 0 \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19241,7 +19878,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <recently read> \fems 
                       
-l.261 \fems
+l.268 \fems
            {\rho_s \pder{\bat{v}_s}{t}}{\gat{\psi}^u} + \femi{\bat{F}\bat{S}...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19250,7 +19887,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.261 \fems{\rho_s \pder
+l.268 \fems{\rho_s \pder
                         {\bat{v}_s}{t}}{\gat{\psi}^u} + \femi{\bat{F}\bat{S}...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19259,7 +19896,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.261 \fems{\rho_s \pder{\bat
+l.268 \fems{\rho_s \pder{\bat
                              {v}_s}{t}}{\gat{\psi}^u} + \femi{\bat{F}\bat{S}...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19268,7 +19905,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.261 \fems{\rho_s \pder{\bat{v}_s}{t}}{\gat
+l.268 \fems{\rho_s \pder{\bat{v}_s}{t}}{\gat
                                             {\psi}^u} + \femi{\bat{F}\bat{S}...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19277,7 +19914,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.261 ...pder{\bat{v}_s}{t}}{\gat{\psi}^u} + \femi
+l.268 ...pder{\bat{v}_s}{t}}{\gat{\psi}^u} + \femi
                                                   {\bat{F}\bat{S}\bat{n}_f}{...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19286,7 +19923,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.261 ...\bat{v}_s}{t}}{\gat{\psi}^u} + \femi{\bat
+l.268 ...\bat{v}_s}{t}}{\gat{\psi}^u} + \femi{\bat
                                                   {F}\bat{S}\bat{n}_f}{\gat{...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19295,7 +19932,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.261 ..._s}{t}}{\gat{\psi}^u} + \femi{\bat{F}\bat
+l.268 ..._s}{t}}{\gat{\psi}^u} + \femi{\bat{F}\bat
                                                   {S}\bat{n}_f}{\gat{\psi}^u}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19304,7 +19941,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.261 ...{\gat{\psi}^u} + \femi{\bat{F}\bat{S}\bat
+l.268 ...{\gat{\psi}^u} + \femi{\bat{F}\bat{S}\bat
                                                   {n}_f}{\gat{\psi}^u}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19313,7 +19950,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.261 ...^u} + \femi{\bat{F}\bat{S}\bat{n}_f}{\gat
+l.268 ...^u} + \femi{\bat{F}\bat{S}\bat{n}_f}{\gat
                                                   {\psi}^u}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19322,7 +19959,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.262 - \fems
+l.269 - \fems
              {\bat{F}\bat{S}}{\nabla \gat{\psi}^u} - \fems{\rho_s \bat{f}_s}...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19331,7 +19968,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.262 - \fems{\bat
+l.269 - \fems{\bat
                   {F}\bat{S}}{\nabla \gat{\psi}^u} - \fems{\rho_s \bat{f}_s}...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19340,7 +19977,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.262 - \fems{\bat{F}\bat
+l.269 - \fems{\bat{F}\bat
                          {S}}{\nabla \gat{\psi}^u} - \fems{\rho_s \bat{f}_s}...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19349,7 +19986,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.262 - \fems{\bat{F}\bat{S}}{\nabla \gat
+l.269 - \fems{\bat{F}\bat{S}}{\nabla \gat
                                          {\psi}^u} - \fems{\rho_s \bat{f}_s}...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19358,7 +19995,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.262 ...t{F}\bat{S}}{\nabla \gat{\psi}^u} - \fems
+l.269 ...t{F}\bat{S}}{\nabla \gat{\psi}^u} - \fems
                                                   {\rho_s \bat{f}_s}{\gat{\p...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19367,7 +20004,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.262 ...{\nabla \gat{\psi}^u} - \fems{\rho_s \bat
+l.269 ...{\nabla \gat{\psi}^u} - \fems{\rho_s \bat
                                                   {f}_s}{\gat{\psi}^u} = 0 \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19376,7 +20013,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.262 ...t{\psi}^u} - \fems{\rho_s \bat{f}_s}{\gat
+l.269 ...t{\psi}^u} - \fems{\rho_s \bat{f}_s}{\gat
                                                   {\psi}^u} = 0 \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19387,7 +20024,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <recently read> \fems 
                       
-l.263 \fems
+l.270 \fems
            {\pder{\bat{v}_s - \bat{u}_s}{t}}{\gat{\psi}^v}  = 0\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19396,7 +20033,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.263 \fems{\pder
+l.270 \fems{\pder
                  {\bat{v}_s - \bat{u}_s}{t}}{\gat{\psi}^v}  = 0\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19405,7 +20042,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.263 \fems{\pder{\bat
+l.270 \fems{\pder{\bat
                       {v}_s - \bat{u}_s}{t}}{\gat{\psi}^v}  = 0\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19414,7 +20051,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.263 \fems{\pder{\bat{v}_s - \bat
+l.270 \fems{\pder{\bat{v}_s - \bat
                                   {u}_s}{t}}{\gat{\psi}^v}  = 0\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19423,7 +20060,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.263 \fems{\pder{\bat{v}_s - \bat{u}_s}{t}}{\gat
+l.270 \fems{\pder{\bat{v}_s - \bat{u}_s}{t}}{\gat
                                                  {\psi}^v}  = 0\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19434,7 +20071,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <recently read> \femf 
                       
-l.264 \femf
+l.271 \femf
            {\nabla \cdot (\ha{J} \hat{F}_W^{-1} \bat{v})}{\gat{\psi}^p} = 0 \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19443,7 +20080,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.264 \femf{\nabla \cdot (\ha
+l.271 \femf{\nabla \cdot (\ha
                              {J} \hat{F}_W^{-1} \bat{v})}{\gat{\psi}^p} = 0 \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19452,7 +20089,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.264 ...{\nabla \cdot (\ha{J} \hat{F}_W^{-1} \bat
+l.271 ...{\nabla \cdot (\ha{J} \hat{F}_W^{-1} \bat
                                                   {v})}{\gat{\psi}^p} = 0 \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19461,7 +20098,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.264 ...dot (\ha{J} \hat{F}_W^{-1} \bat{v})}{\gat
+l.271 ...dot (\ha{J} \hat{F}_W^{-1} \bat{v})}{\gat
                                                   {\psi}^p} = 0 \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19472,7 +20109,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <recently read> \femf 
                       
-l.265 \femf
+l.272 \femf
            {\hat{\nabla}\bat{u}}{\hat{\nabla}\gat{\psi}^{\eta}} -
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19481,7 +20118,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.265 \femf{\hat{\nabla}\bat
+l.272 \femf{\hat{\nabla}\bat
                             {u}}{\hat{\nabla}\gat{\psi}^{\eta}} -
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19490,7 +20127,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.265 \femf{\hat{\nabla}\bat{u}}{\hat{\nabla}\gat
+l.272 \femf{\hat{\nabla}\bat{u}}{\hat{\nabla}\gat
                                                  {\psi}^{\eta}} -
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19499,7 +20136,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.266 \femf
+l.273 \femf
            {\bat{w}}{\hat{\nabla}\gat{\psi}^u} = 0 \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19508,7 +20145,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.266 \femf{\bat
+l.273 \femf{\bat
                 {w}}{\hat{\nabla}\gat{\psi}^u} = 0 \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19517,7 +20154,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.266 \femf{\bat{w}}{\hat{\nabla}\gat
+l.273 \femf{\bat{w}}{\hat{\nabla}\gat
                                      {\psi}^u} = 0 \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19528,7 +20165,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <recently read> \femf 
                       
-l.267 \femf
+l.274 \femf
            {\hat{\nabla}\bat{w}}{\hat{\nabla}\gat{\psi}^{v}} = 0
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19537,7 +20174,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.267 \femf{\hat{\nabla}\bat
+l.274 \femf{\hat{\nabla}\bat
                             {w}}{\hat{\nabla}\gat{\psi}^{v}} = 0
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19546,7 +20183,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.267 \femf{\hat{\nabla}\bat{w}}{\hat{\nabla}\gat
+l.274 \femf{\hat{\nabla}\bat{w}}{\hat{\nabla}\gat
                                                  {\psi}^{v}} = 0
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19561,7 +20198,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.268 \end{align*}
+l.275 \end{align*}
                   
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -19570,7 +20207,7 @@ or  <return>  to continue without it.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.268 \end{align*}
+l.275 \end{align*}
                   
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -19581,7 +20218,7 @@ my insertion and my current dilemma will both disappear.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.268 \end{align*}
+l.275 \end{align*}
                   
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -19590,7 +20227,7 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 ! Undefined control sequence.
-l.269 \text
+l.276 \text
            {for the first type of boundary conditions introduced. }
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19651,224 +20288,224 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.270 \end{prob}
+l.277 \end{prob}
                 
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Overfull \hbox (54.49977pt too wide) in paragraph at lines 253--271
+Overfull \hbox (54.49977pt too wide) in paragraph at lines 260--278
 []\OT1/cmr/m/it/10 Coupled
  []
 
 
-Overfull \hbox (19.4221pt too wide) in paragraph at lines 253--271
+Overfull \hbox (19.4221pt too wide) in paragraph at lines 260--278
 \OT1/cmr/m/it/10 fluid
  []
 
 
-Overfull \hbox (25.17203pt too wide) in paragraph at lines 253--271
+Overfull \hbox (25.17203pt too wide) in paragraph at lines 260--278
 \OT1/cmr/m/it/10 struc-
  []
 
 
-Overfull \hbox (16.9943pt too wide) in paragraph at lines 253--271
+Overfull \hbox (16.9943pt too wide) in paragraph at lines 260--278
 \OT1/cmr/m/it/10 ture
  []
 
 
-Overfull \hbox (12.26659pt too wide) in paragraph at lines 253--271
+Overfull \hbox (12.26659pt too wide) in paragraph at lines 260--278
 \OT1/cmr/m/it/10 in-
  []
 
 
-Overfull \hbox (15.71652pt too wide) in paragraph at lines 253--271
+Overfull \hbox (15.71652pt too wide) in paragraph at lines 260--278
 \OT1/cmr/m/it/10 ter-
  []
 
 
-Overfull \hbox (13.28879pt too wide) in paragraph at lines 253--271
+Overfull \hbox (13.28879pt too wide) in paragraph at lines 260--278
 \OT1/cmr/m/it/10 ac-
  []
 
 
-Overfull \hbox (17.12212pt too wide) in paragraph at lines 253--271
+Overfull \hbox (17.12212pt too wide) in paragraph at lines 260--278
 \OT1/cmr/m/it/10 tion
  []
 
 
-Overfull \hbox (22.10538pt too wide) in paragraph at lines 253--271
+Overfull \hbox (22.10538pt too wide) in paragraph at lines 260--278
 \OT1/cmr/m/it/10 prob-
  []
 
 
-Overfull \hbox (15.33324pt too wide) in paragraph at lines 253--271
+Overfull \hbox (15.33324pt too wide) in paragraph at lines 260--278
 \OT1/cmr/m/it/10 lem
  []
 
 
-Overfull \hbox (12.39436pt too wide) in paragraph at lines 253--271
+Overfull \hbox (12.39436pt too wide) in paragraph at lines 260--278
 \OT1/cmr/m/it/10 for
  []
 
 
-Overfull \hbox (11.24435pt too wide) in paragraph at lines 253--271
+Overfull \hbox (11.24435pt too wide) in paragraph at lines 260--278
 \OT1/cmr/m/it/10 bi-
  []
 
 
-Overfull \hbox (18.01654pt too wide) in paragraph at lines 253--271
+Overfull \hbox (18.01654pt too wide) in paragraph at lines 260--278
 \OT1/cmr/m/it/10 har-
  []
 
 
-Overfull \hbox (26.57762pt too wide) in paragraph at lines 253--271
+Overfull \hbox (26.57762pt too wide) in paragraph at lines 260--278
 \OT1/cmr/m/it/10 monic
  []
 
 
-Overfull \hbox (21.97765pt too wide) in paragraph at lines 253--271
+Overfull \hbox (21.97765pt too wide) in paragraph at lines 260--278
 \OT1/cmr/m/it/10 mesh
  []
 
 
-Overfull \hbox (21.46652pt too wide) in paragraph at lines 253--271
+Overfull \hbox (21.46652pt too wide) in paragraph at lines 260--278
 \OT1/cmr/m/it/10 mov-
  []
 
 
-Overfull \hbox (13.2888pt too wide) in paragraph at lines 253--271
+Overfull \hbox (13.2888pt too wide) in paragraph at lines 260--278
 \OT1/cmr/m/it/10 ing
  []
 
 
-Overfull \hbox (28.11093pt too wide) in paragraph at lines 253--271
+Overfull \hbox (28.11093pt too wide) in paragraph at lines 260--278
 \OT1/cmr/m/it/10 model.
  []
 
 
-Overfull \hbox (20.32765pt too wide) in paragraph at lines 253--271
+Overfull \hbox (20.32765pt too wide) in paragraph at lines 260--278
 \OT1/cmr/m/it/10 Find
  []
 
 
-Overfull \hbox (68.0534pt too wide) in paragraph at lines 253--271
+Overfull \hbox (68.0534pt too wide) in paragraph at lines 260--278
 \OML/cmm/m/it/10 u[]; u[]; v[]; v[]; p[]$
  []
 
 
-Overfull \hbox (19.16655pt too wide) in paragraph at lines 253--271
+Overfull \hbox (19.16655pt too wide) in paragraph at lines 260--278
 \OT1/cmr/m/it/10 such
  []
 
 
-Overfull \hbox (16.86655pt too wide) in paragraph at lines 253--271
+Overfull \hbox (16.86655pt too wide) in paragraph at lines 260--278
 \OT1/cmr/m/it/10 that
  []
 
 
-Overfull \hbox (4.58336pt too wide) in paragraph at lines 253--271
+Overfull \hbox (4.58336pt too wide) in paragraph at lines 260--278
 []
  []
 
 
-Overfull \hbox (35.18073pt too wide) in paragraph at lines 253--271
+Overfull \hbox (35.18073pt too wide) in paragraph at lines 260--278
 \OML/cmm/m/it/10  [][][] \OT1/cmr/m/n/10 +
  []
 
 
-Overfull \hbox (117.23845pt too wide) in paragraph at lines 253--271
+Overfull \hbox (117.23845pt too wide) in paragraph at lines 260--278
 [][] \OT1/cmr/m/n/10 +
  []
 
 
-Overfull \hbox (72.1494pt too wide) in paragraph at lines 253--271
+Overfull \hbox (72.1494pt too wide) in paragraph at lines 260--278
 [][] \OMS/cmsy/m/n/10 ^^@
  []
 
 
-Overfull \hbox (69.29633pt too wide) in paragraph at lines 253--271
+Overfull \hbox (69.29633pt too wide) in paragraph at lines 260--278
 [][] \OMS/cmsy/m/n/10 ^^@
  []
 
 
-Overfull \hbox (48.2154pt too wide) in paragraph at lines 253--271
+Overfull \hbox (48.2154pt too wide) in paragraph at lines 260--278
 [][] \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 253--271
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 260--278
 \OT1/cmr/m/n/10 0[] 
  []
 
 
-Overfull \hbox (42.0557pt too wide) in paragraph at lines 253--271
+Overfull \hbox (42.0557pt too wide) in paragraph at lines 260--278
 [][] \OT1/cmr/m/n/10 +
  []
 
 
-Overfull \hbox (45.59276pt too wide) in paragraph at lines 253--271
+Overfull \hbox (45.59276pt too wide) in paragraph at lines 260--278
 [][] \OMS/cmsy/m/n/10 ^^@
  []
 
 
-Overfull \hbox (42.73969pt too wide) in paragraph at lines 253--271
+Overfull \hbox (42.73969pt too wide) in paragraph at lines 260--278
 [][] \OMS/cmsy/m/n/10 ^^@
  []
 
 
-Overfull \hbox (41.27092pt too wide) in paragraph at lines 253--271
+Overfull \hbox (41.27092pt too wide) in paragraph at lines 260--278
 [][] \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 253--271
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 260--278
 \OT1/cmr/m/n/10 0[] 
  []
 
 
-Overfull \hbox (57.1331pt too wide) in paragraph at lines 253--271
+Overfull \hbox (57.1331pt too wide) in paragraph at lines 260--278
 [][] \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 253--271
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 260--278
 \OT1/cmr/m/n/10 0[] 
  []
 
 
-Overfull \hbox (75.65239pt too wide) in paragraph at lines 253--271
+Overfull \hbox (75.65239pt too wide) in paragraph at lines 260--278
 [][] \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 253--271
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 260--278
 \OT1/cmr/m/n/10 0[] 
  []
 
 
-Overfull \hbox (41.91313pt too wide) in paragraph at lines 253--271
+Overfull \hbox (41.91313pt too wide) in paragraph at lines 260--278
 [][] \OMS/cmsy/m/n/10 ^^@
  []
 
 
-Overfull \hbox (38.41788pt too wide) in paragraph at lines 253--271
+Overfull \hbox (38.41788pt too wide) in paragraph at lines 260--278
 \OML/cmm/m/it/10 w[] \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 253--271
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 260--278
 \OT1/cmr/m/n/10 0[] 
  []
 
 
-Overfull \hbox (46.27437pt too wide) in paragraph at lines 253--271
+Overfull \hbox (46.27437pt too wide) in paragraph at lines 260--278
 [][] \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 253--271
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 260--278
 \OT1/cmr/m/n/10 0$
  []
 
@@ -19879,7 +20516,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.272 B
+l.279 B
        oth problems introduced must handle the \textit{kinematic} and \texti...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -20107,14 +20744,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.274 \begin{align*}
+l.281 \begin{align*}
                     
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 ! Undefined control sequence.
-l.275  \femf
+l.282  \femf
             {\ha{J}_W \hat{\sigma}\hat{F}_W^{-T} \bat{n}_f}{\gat{\psi}^u} =
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -20123,7 +20760,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.275  \femf{\ha
+l.282  \femf{\ha
                 {J}_W \hat{\sigma}\hat{F}_W^{-T} \bat{n}_f}{\gat{\psi}^u} =
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -20135,13 +20772,13 @@ Missing character: There is no J in font nullfont!
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.275  \femf{\ha{J}_
+l.282  \femf{\ha{J}_
                     W \hat{\sigma}\hat{F}_W^{-T} \bat{n}_f}{\gat{\psi}^u} =
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 ! Undefined control sequence.
-l.275 ...{\ha{J}_W \hat{\sigma}\hat{F}_W^{-T} \bat
+l.282 ...{\ha{J}_W \hat{\sigma}\hat{F}_W^{-T} \bat
                                                   {n}_f}{\gat{\psi}^u} =
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -20150,7 +20787,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Extra }, or forgotten $.
-l.275 ...}_W \hat{\sigma}\hat{F}_W^{-T} \bat{n}_f}
+l.282 ...}_W \hat{\sigma}\hat{F}_W^{-T} \bat{n}_f}
                                                   {\gat{\psi}^u} =
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -20159,7 +20796,7 @@ the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
 ! Undefined control sequence.
-l.275 ...hat{\sigma}\hat{F}_W^{-T} \bat{n}_f}{\gat
+l.282 ...hat{\sigma}\hat{F}_W^{-T} \bat{n}_f}{\gat
                                                   {\psi}^u} =
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -20168,7 +20805,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.276   \fems
+l.283   \fems
              {\bat{F}\bat{S} \bat{n}_s}{\gat{\psi}^u}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -20177,7 +20814,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.276   \fems{\bat
+l.283   \fems{\bat
                   {F}\bat{S} \bat{n}_s}{\gat{\psi}^u}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -20186,7 +20823,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.276   \fems{\bat{F}\bat
+l.283   \fems{\bat{F}\bat
                          {S} \bat{n}_s}{\gat{\psi}^u}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -20195,7 +20832,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.276   \fems{\bat{F}\bat{S} \bat
+l.283   \fems{\bat{F}\bat{S} \bat
                                  {n}_s}{\gat{\psi}^u}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -20204,7 +20841,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.276   \fems{\bat{F}\bat{S} \bat{n}_s}{\gat
+l.283   \fems{\bat{F}\bat{S} \bat{n}_s}{\gat
                                             {\psi}^u}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -20219,7 +20856,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.277 \end{align*}
+l.284 \end{align*}
                   
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -20228,7 +20865,7 @@ or  <return>  to continue without it.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.277 \end{align*}
+l.284 \end{align*}
                   
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -20239,7 +20876,7 @@ my insertion and my current dilemma will both disappear.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.277 \end{align*}
+l.284 \end{align*}
                   
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -20338,7 +20975,7 @@ Missing character: There is no [ in font nullfont!
 ! Undefined control sequence.
 <write> ...: Citation `\@citeb ' on page \thepage 
                                                   \space undefined\on@line .
-l.278 ...m the variational formulation \cite{Wick}
+l.285 ...m the variational formulation \cite{Wick}
                                                   , and it becomes an implic...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -20347,7 +20984,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Citation `Wick' on page  undefined on input line 278.
+LaTeX Warning: Citation `Wick' on page  undefined on input line 285.
 
 Missing character: There is no ] in font nullfont!
 Missing character: There is no , in font nullfont!
@@ -20396,57 +21033,57 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no m in font nullfont!
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 272--279
+Overfull \hbox (20.0pt too wide) in paragraph at lines 279--286
 []
  []
 
 
-Overfull \hbox (21.4665pt too wide) in paragraph at lines 272--279
+Overfull \hbox (21.4665pt too wide) in paragraph at lines 279--286
 \OT1/cmr/m/it/10 kine-
  []
 
 
-Overfull \hbox (24.27762pt too wide) in paragraph at lines 272--279
+Overfull \hbox (24.27762pt too wide) in paragraph at lines 279--286
 \OT1/cmr/m/it/10 matic
  []
 
 
-Overfull \hbox (13.54434pt too wide) in paragraph at lines 272--279
+Overfull \hbox (13.54434pt too wide) in paragraph at lines 279--286
 \OT1/cmr/m/it/10 dy-
  []
 
 
-Overfull \hbox (26.57762pt too wide) in paragraph at lines 272--279
+Overfull \hbox (26.57762pt too wide) in paragraph at lines 279--286
 \OT1/cmr/m/it/10 namic
  []
 
 
-Overfull \hbox (21.4665pt too wide) in paragraph at lines 272--279
+Overfull \hbox (21.4665pt too wide) in paragraph at lines 279--286
 \OT1/cmr/m/it/10 kine-
  []
 
 
-Overfull \hbox (24.27762pt too wide) in paragraph at lines 272--279
+Overfull \hbox (24.27762pt too wide) in paragraph at lines 279--286
 \OT1/cmr/m/it/10 matic
  []
 
 
-Overfull \hbox (9.5793pt too wide) in paragraph at lines 272--279
+Overfull \hbox (9.5793pt too wide) in paragraph at lines 279--286
 []$
  []
 
 
-Overfull \hbox (69.38197pt too wide) in paragraph at lines 272--279
+Overfull \hbox (69.38197pt too wide) in paragraph at lines 279--286
 [][][]\OML/cmm/m/it/10 n[][] \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (36.9052pt too wide) in paragraph at lines 272--279
+Overfull \hbox (36.9052pt too wide) in paragraph at lines 279--286
 [][]$
  []
 
 
-Overfull \hbox (5.43053pt too wide) in paragraph at lines 272--279
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 279--286
 []
  []
 
@@ -20458,10 +21095,10 @@ Overfull \hbox (5.43053pt too wide) in paragraph at lines 272--279
 
  
 Here is how much of TeX's memory you used:
- 55 strings out of 493033
- 554 string characters out of 6121489
- 70492 words of memory out of 5000000
- 3684 multiletter control sequences out of 15000+600000
+ 55 strings out of 493014
+ 554 string characters out of 6133351
+ 70601 words of memory out of 5000000
+ 3691 multiletter control sequences out of 15000+600000
  5272 words of font info for 19 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  18i,6n,21p,1126b,113s stack positions out of 5000i,500n,10000p,200000b,80000s
