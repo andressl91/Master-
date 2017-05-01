@@ -1,24 +1,29 @@
-\documentclass[a4paper,norsk]{book}
+%\documentclass[a4paper,]{book}
+\documentclass[a4paper, twoside,openright ,titlepage, 12pt]{book}
+\usepackage[english]{babel}
 \usepackage{preamble}
+\usepackage[MEK,60]{masterfrontpage}
 \setlength\parindent{0pt}
-\begin{document}	
+\begin{document}
+\masterfrontpage	
 \maketitle
+
+\pagenumbering{roman}
 \tableofcontents
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{lemma}[theorem]{Lemma}
-
+\pagenumbering{arabic}
 %\input{./Chapters/introduction/introduction}
-\newpage
-\input{./Chapters/Continuum/Continuum}
-\newpage
-\input{./Chapters/FSI/FSI}
-\newpage
-\input{./Chapters/verification/verival}
-\newpage
+%\newpage
+%\input{./Chapters/Continuum/Continuum}
+%\newpage
+%\input{./Chapters/FSI/FSI}
 \input{./Chapters/Implementation/implementation}
 \newpage
-\input{./Chapters/Results/results}
-\newpage
+%\input{./Chapters/verification/verival}
+%\newpage
+%\input{./Chapters/Results/results}
+%\newpage
 
 %\input{./Chapters/application/application}
 

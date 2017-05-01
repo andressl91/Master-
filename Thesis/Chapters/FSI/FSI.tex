@@ -174,8 +174,8 @@ Considering a linear elastic model for mesh moving was first introduced in \cite
 Both \cite{Dwight}
 \begin{align*}
 &\nabla \cdot \sigma = 0 \\
-&\sigma = \lambda Tr(\epsilon) I + 2 \mu \epsilon \\
-&\epsilon = \frac{1}{2}(\nabla u + \nabla u^T
+&\sigma = \lambda Tr(\epsilon(u)) I + 2 \mu \epsilon(u) \\
+&\epsilon(u) = \frac{1}{2}(\nabla u + \nabla  u^T)
 \end{align*}
 
 Where Lamé constants $\lambda$ and $\nu$ are given as
@@ -222,7 +222,60 @@ The main motivation for second type of boundary condition is for a rectangular d
 
 \newpage
 \section{Discretization of the FSI problem}
+With the primaries set, we can finally define the discretization of the monolithic coupled fluid-structure interaction problem. For full transparency, variation formulation of all previous suggested mesh motion models will be shown. For brevity, the laplacian and linear elastic model will be shorted such that 
+\begin{align*}
+&\hat{\sigma}_{\text{mesh}} = \alpha \hat{\nabla}\bat{u} \hspace{2mm} \text{Laplace} \\
+&\hat{\sigma}_{\text{mesh}} =  \lambda Tr(\epsilon(u)) I + 2 \mu \epsilon(u) \hspace{2mm} \text{Linear Elasticity} 
+\end{align*}
+Further, only the biharmonic model for the first type of boundary condition will be introduced as the second boundary condition is on a similar form.
+  By the concepts of the Finite-element method, the weak variation problem yields.
 
+\begin{prob}
+\textit{Coupled fluid structure interaction problem for laplace and elastic mesh moving model.
+Find $\bat{u}_s, \bat{u}_f, \bat{v}_s, \bat{v}_f, \ha{p}_f $ such that}
+\begin{align*}
+\big(\ha{J} \pder{\bat{v}}{t}, \ \gat{\psi}^u \big)_{\hat{\Omega}_f} +
+\femf{\ha{J} (\hat{F}_W^{-1}(\bat{v} - \pder{\ha{T}_W}{t}) \cdot \hat{\nabla}) \bat{v}}
+{\gat{\psi}^u}
++ \femi{\ha{J}_W \hat{\sigma}\hat{F}_W^{-T} \bat{n}_f}{\gat{\psi}^u} 
+- \femf{\ha{J}_W \hat{\sigma}\hat{F}_W^{-T}}{\hat{\nabla}\gat{\psi}^u} -
+\femf{\rho_f \ha{J} \mathbf{f}_f}{{\gat{\psi}^u}} = 0 \\
+\fems{\rho_s \pder{\bat{v}_s}{t}}{\gat{\psi}^u} + \femi{\bat{F}\bat{S}\bat{n}_f}{\gat{\psi}^u}
+- \fems{\bat{F}\bat{S}}{\nabla \gat{\psi}^u} - \fems{\rho_s \bat{f}_s}{\gat{\psi}^u} = 0 \\
+\fems{\pder{\bat{v}_s - \bat{u}_s}{t}}{\gat{\psi}^v}  = 0\\
+\femf{\nabla \cdot (\ha{J} \hat{F}_W^{-1} \bat{v})}{\gat{\psi}^p} = 0 \\
+\femf{\hat{\sigma}_{\text{mesh}}}{\hat{\nabla}\gat{\psi}^u} = 0
+\end{align*} 
+\end{prob}
+
+\begin{prob}
+\textit{Coupled fluid structure interaction problem for biharmonic mesh moving model.
+Find $\bat{u}_s, \bat{u}_f, \bat{v}_s, \bat{v}_f, \ha{p}_f $ such that}
+\begin{align*}
+\big(\ha{J} \pder{\bat{v}}{t}, \ \gat{\psi}^u \big)_{\hat{\Omega}_f} +
+\femf{\ha{J} (\hat{F}_W^{-1}(\bat{v} - \pder{\ha{T}_W}{t}) \cdot \hat{\nabla}) \bat{v}}
+{\gat{\psi}^u}
++ \femi{\ha{J}_W \hat{\sigma}\hat{F}_W^{-T} \bat{n}_f}{\gat{\psi}^u} 
+- \femf{\ha{J}_W \hat{\sigma}\hat{F}_W^{-T}}{\hat{\nabla}\gat{\psi}^u} -
+\femf{\rho_f \ha{J} \mathbf{f}_f}{{\gat{\psi}^u}} = 0 \\
+\fems{\rho_s \pder{\bat{v}_s}{t}}{\gat{\psi}^u} + \femi{\bat{F}\bat{S}\bat{n}_f}{\gat{\psi}^u}
+- \fems{\bat{F}\bat{S}}{\nabla \gat{\psi}^u} - \fems{\rho_s \bat{f}_s}{\gat{\psi}^u} = 0 \\
+\fems{\pder{\bat{v}_s - \bat{u}_s}{t}}{\gat{\psi}^v}  = 0\\
+\femf{\nabla \cdot (\ha{J} \hat{F}_W^{-1} \bat{v})}{\gat{\psi}^p} = 0 \\
+\femf{\hat{\nabla}\bat{u}}{\hat{\nabla}\gat{\psi}^{\eta}} - 
+\femf{\bat{w}}{\hat{\nabla}\gat{\psi}^u} = 0 \\
+\femf{\hat{\nabla}\bat{w}}{\hat{\nabla}\gat{\psi}^{v}} = 0
+\end{align*}
+\text{for the first type of boundary conditions introduced. } 
+\end{prob}
+
+Both problems introduced must handle the \textit{kinematic} and \textit{dynamic} boundary conditions in a consistent way. By a continuous velocity field on the whole domain, the \textit{kinematic} condition is strongly enforces on the interface $\hat{\Gamma}_i$
+The continuity of normal stresses on the interface are defined as
+\begin{align*}
+ \femf{\ha{J}_W \hat{\sigma}\hat{F}_W^{-T} \bat{n}_f}{\gat{\psi}^u} = 
+  \fems{\bat{F}\bat{S} \bat{n}_s}{\gat{\psi}^u}
+\end{align*}
+This condition is weakly imposed by omitting the boundary integral from the variational formulation \cite{Wick}, and it becomes an implicit condition for the system. \\
 
 
 

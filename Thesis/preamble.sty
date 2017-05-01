@@ -13,6 +13,7 @@
 \usepackage{listings}
 \usepackage{color}
 \usepackage[margin=1.2in]{geometry}
+\usepackage{bm}
 
 %\usepackage[hidelinks]{hyperref} % make links black
 \usepackage{hyperref}
@@ -36,8 +37,8 @@
 \fancyhead[L]{\emph{}}
 
 \renewcommand{\vec}[1]{\mathbf{#1}}    % vektorer i bf fremfor pil
-\let\oldhat\hat
-\renewcommand{\hat}[1]{\oldhat{\mathbf{#1}}} % enhetsvektorer i bf med hatt
+%\let\oldhat\hat
+%\renewcommand{\hat}[1]{\oldhat{\mathbf{#1}}} % enhetsvektorer i bf med hatt
 
 \definecolor{keywords}{RGB}{50,50,250}
 \definecolor{comments}{RGB}{190,70,20} % Orange
@@ -139,13 +140,19 @@ showstringspaces=false
 \newcommand{\ti}[1]{\tilde{#1}}
 \newcommand{\md}{\;\mathrm{d}}
 \newcommand{\ha}[1]{\text{\^{#1}}}
+\newcommand{\gat}[1]{\hat{\bm{#1}}}
+\newcommand{\femf}[2]{\big(#1, \ {#2} \big)_{\hat{\Omega}_f}}
+\newcommand{\fems}[2]{\big(#1, \ {#2} \big)_{\hat{\Omega}_s}}
+\newcommand{\femi}[2]{\big(#1, \ {#2} \big)_{\hat{\Gamma}_i}}
+\newcommand{\bat}[1]{\hat{\mathbf{#1}}}
+
 
 \title{
-	{Thesis Title}\\
-	{\large Institution Name}\\
+	{Fluid structure interaction}\\
+	{}\\
 }
-\author{Author Name}
-\date{Day Month Year}
+\author{Andreas Strøm Slyngstad}
+\date{01 01 01}
 
 \usepackage{amsmath,amsfonts,amssymb,amsthm,epsfig,epstopdf,titling,url,array}
 \theoremstyle{definition}
@@ -154,3 +161,4 @@ showstringspaces=false
 \newtheorem{conj}{Conjecture}[section]
 \newtheorem{exmp}{Example}[section]
 \newtheorem{equat}{Equation}[section]
+\newtheorem{prob}{Problem}[chapter]
