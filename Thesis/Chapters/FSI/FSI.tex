@@ -126,7 +126,7 @@ For the conservation of continuum we apply the \textit{Piola Transformation} suc
 
 With the introduced mapping identities we have the necessary tools to derive a full fluid-structure interaction problem defined of a fixed domain. Since the structure already is defined in its natural Lagrangian coordinate system, no further derivations are needed for defining the total problem.
 
-\begin{prob}
+\begin{equat}
 \textit{ALE problem on a fixed domain}
 \begin{align}
 \ha{J} \pder{\hat{v}}{t} + \ha{J} (\hat{F}_W^{-1}(\hat{v} - \pder{\ha{T}_W}{t}) \cdot \hat{\nabla}) \hat{v}
@@ -140,7 +140,7 @@ With the introduced mapping identities we have the necessary tools to derive a f
 \ha{J}_W \hat{\sigma}\hat{F}_W^{-T} \cdot \mathbf{n} = 
 \mathbf{F}\mathbf{S} \cdot \mathbf{n}  \hspace{4mm} \text{on} \hspace{2mm} \Gamma_i 
 \end{align}
-\end{prob}
+\end{equat}
 
 
 \subsection*{Fluid mesh movement}
@@ -222,45 +222,10 @@ The main motivation for second type of boundary condition is for a rectangular d
 
 \newpage
 \section{Discretization of the FSI problem}
-Say something general of FSI discretization.. FEM, FVM, ...
-In this thesis, the finite element method will be used to discretize the coupled fluid-structure interaction problem. It is beyound of scope  of this thesis, to thorough dive into the analysis of the finite element method regarding fluid-structure interaction problems. Only the basics of the method, which is nesecarry in order to define a foundation for problem solving will be introduced. 
-
-\subsection{Finite Element method}
-Let the domain $\Omega(t) \subset \mathbb{R}^d \ (d = 1, 2, 3) $  be a time dependent domain discretized a by finite number of d-dimentional simplexes.  Each simplex is denoted as a finite element, and the union of these elements forms a mesh. Further, let the domain be divided by two time dependent subdomains $\Omega_f$ and $\Omega_s$, with the interface $\Gamma = \partial \Omega_f \cap \partial \Omega_s$. The initial configuration $\Omega(t), t = 0 $ is defined as $\hat{\Omega}$, defined in the same manner as the time-dependent domain. $\hat{\Omega}$ is  known as the \textit{reference configuration}, and hat symbol will refer any property or variable to this domain unless specified. The outer boundary is set by $\partial \hat{\Omega}$ , with $\partial \hat{\Omega}^D$ and $\partial \hat{\Omega}^N$ as the Dirichelt and Neumann boundaries respectively. \\ \\
-
-The family of Lagrangian finite elements are chosen, with the function space notation,
-\begin{align*}
-\hat{V}_{\Omega} := H^1(\Omega) \hspace{4mm} 
-\hat{V}_{\Omega}^0 := H_0^1(\Omega)  
-\end{align*}
-where $H^n$ is the Hilbert space of degree n. \\
-Let Problem 2.1 denote the strong formulation. By the introduction of appropiate trial and test spaces of our variables of interest, the weak formulation can be deduced by multiplying the strong form with a test function and taking integration by parts over the domain.  This reduces the differential equation of interest down to a system of linear equations. (skriv bedre..) \\
-The velocity variable is continous through the solid and fluid domain
-\begin{align*}
-\hat{V}_{\Omega, \gat{v}} := \gat{v} \in H_0^1(\Omega), \hspace{2mm} 
-\gat{v}_f = \gat{v}_s \ \text{on} \ \hat{\Gamma}_i \\
-\hat{V}_{\Omega, \gat{\psi}} := \gat{\psi}^u \in H_0^1(\Omega), \hspace{2mm} 
-\gat{v}_f = \gat{v}_s \ \text{on} \ \hat{\Gamma}_i 
-\end{align*}
-For the deformation, and the artificial deformation in the fluid domain let
-\begin{align*}
-\hat{V}_{\Omega, \gat{v}} := \gat{u} \in H_0^1(\Omega), \hspace{2mm} 
-\gat{u}_f = \gat{u}_s \ \text{on} \ \hat{\Gamma}_i \\
-\hat{V}_{\Omega, \gat{\psi}} := \gat{\psi}^v \in H_0^1(\Omega), \hspace{2mm} 
-\gat{\psi}_f^v = \gat{\psi}_s^v \ \text{on} \ \hat{\Gamma}_i 
-\end{align*}
-
-For simplification of notation the inner product is defined as
-\begin{align*}
-\int_{\Omega} \gat{v} \ \gat{\psi} \ dx = (\gat{v}, \ \gat{\psi})_{\Omega}
-\end{align*}
- 
-
-\subsection{Variational Formulation}
 With the primaries set, we can finally define the discretization of the monolithic coupled fluid-structure interaction problem. For full transparency, variation formulation of all previous suggested mesh motion models will be shown. For brevity, the laplacian and linear elastic model will be shorted such that 
 \begin{align*}
-&\hat{\sigma}_{\text{mesh}} = \alpha \nabla \mathbf{u} \hspace{2mm} \text{Laplace} \\
-&\hat{\sigma}_{\text{mesh}} =  \lambda Tr(\epsilon(\mathbf{u})) I + 2 \mu \epsilon(\mathbf{u}) \hspace{2mm} \text{Linear Elasticity} 
+&\hat{\sigma}_{\text{mesh}} = \alpha \hat{\nabla}\bat{u} \hspace{2mm} \text{Laplace} \\
+&\hat{\sigma}_{\text{mesh}} =  \lambda Tr(\epsilon(u)) I + 2 \mu \epsilon(u) \hspace{2mm} \text{Linear Elasticity} 
 \end{align*}
 Further, only the biharmonic model for the first type of boundary condition will be introduced as the second boundary condition is on a similar form.
   By the concepts of the Finite-element method, the weak variation problem yields.
@@ -270,8 +235,9 @@ Further, only the biharmonic model for the first type of boundary condition will
 Find $\bat{u}_s, \bat{u}_f, \bat{v}_s, \bat{v}_f, \ha{p}_f $ such that}
 \begin{align*}
 \big(\ha{J} \pder{\bat{v}}{t}, \ \gat{\psi}^u \big)_{\hat{\Omega}_f} +
-\femf{\ha{J} (\hat{F}_W^{-1}(\bat{v} - \pder{\ha{T}_W}{t}) \cdot \hat{\nabla}) \bat{v}}{\gat{\psi}^u}
-+ \femi{\ha{J}_W \hat{\sigma}\hat{F}_W^{-T} \bat{n}_f}{\gat{\psi}^u} \\
+\femf{\ha{J} (\hat{F}_W^{-1}(\bat{v} - \pder{\ha{T}_W}{t}) \cdot \hat{\nabla}) \bat{v}}
+{\gat{\psi}^u}
++ \femi{\ha{J}_W \hat{\sigma}\hat{F}_W^{-T} \bat{n}_f}{\gat{\psi}^u} 
 - \femf{\ha{J}_W \hat{\sigma}\hat{F}_W^{-T}}{\hat{\nabla}\gat{\psi}^u} -
 \femf{\rho_f \ha{J} \mathbf{f}_f}{{\gat{\psi}^u}} = 0 \\
 \fems{\rho_s \pder{\bat{v}_s}{t}}{\gat{\psi}^u} + \femi{\bat{F}\bat{S}\bat{n}_f}{\gat{\psi}^u}
@@ -289,7 +255,7 @@ Find $\bat{u}_s, \bat{u}_f, \bat{v}_s, \bat{v}_f, \ha{p}_f $ such that}
 \big(\ha{J} \pder{\bat{v}}{t}, \ \gat{\psi}^u \big)_{\hat{\Omega}_f} +
 \femf{\ha{J} (\hat{F}_W^{-1}(\bat{v} - \pder{\ha{T}_W}{t}) \cdot \hat{\nabla}) \bat{v}}
 {\gat{\psi}^u}
-+ \femi{\ha{J}_W \hat{\sigma}\hat{F}_W^{-T} \bat{n}_f}{\gat{\psi}^u} \\
++ \femi{\ha{J}_W \hat{\sigma}\hat{F}_W^{-T} \bat{n}_f}{\gat{\psi}^u} 
 - \femf{\ha{J}_W \hat{\sigma}\hat{F}_W^{-T}}{\hat{\nabla}\gat{\psi}^u} -
 \femf{\rho_f \ha{J} \mathbf{f}_f}{{\gat{\psi}^u}} = 0 \\
 \fems{\rho_s \pder{\bat{v}_s}{t}}{\gat{\psi}^u} + \femi{\bat{F}\bat{S}\bat{n}_f}{\gat{\psi}^u}
