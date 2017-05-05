@@ -165,37 +165,41 @@ The second type of boundary condition are Neumann boundary conditions
 \hspace{4mm} \text{on} \hspace{2mm} \Gamma_f^N \subset \partial \Omega_f 
 \end{align}
 
+\newpage
 \subsection{The solid}
-For the structure we use the Vernant-Kirchhoff(STVK) model of deformation of solids, defined in a Lagrangian coordinate system. The solid is often characterized by the Possion ratio and Young modulus. Lamè coefficients  $\lambda_s$ and $\mu_s$ are then given by the relation.
-\begin{align*}
-&E_y = \frac{ \mu_s ( \lambda_s + 2 \mu_s) }{ ( \lambda_s + \mu_s ) } 
-\hspace{5mm} \nu_s = \frac{\lambda_s}{2(\lambda_s + \mu_s)} \\
-&\lambda_s = \frac{\nu E_y}{(1 + \nu_s)(1 - 2\nu_s)} \hspace{4mm} \mu_s = \frac{E_y}{2(1 + \nu_s)} \\
-\end{align*}
-\\
-Our phsyical unknowns
-solid velocity $v_s$ and deformation $u_s$ is our physical unknowns defined in a  time-dependent solid domain  $\hat{\Omega}_s(t)$.
-The balance of solid momentum is given by
-
+The governing equations for the solid mechanics are given by the blalance law,
 \begin{equat}
 \textit{Solid momentum}
 \begin{align}
-\rho_s \pder{\mathbf{v}_s}{t} = \nabla \cdot \mathbf{T} + \rho_s \mathbf{f}_s
-\hspace{4mm} \text{in} \hspace{2mm} \Omega_s
+\rho_s \pder{\mathbf{v}_s}{t} = \nabla \cdot \bat{T} + \rho_s \mathbf{f}_s
+\hspace{4mm} \text{in} \hspace{2mm} \hat{\Omega}_s
 \end{align}
 \end{equat}
+defined in a Lagrangian coordinate system, with respect to an initial reference configuration $\hat{\Omega}_s$. The structure configuration is given by the displacement $\bat{u}_s$, with the relation
+ $\pder{\bat{v}}{t} = \bat{u}_s$ to the solid velocity. The density of the structure is given by $\rho_s$, and $\bat{f}_s$ express any exterior body forces acting. The tensor $\bat{T}$ denotes the first Piola-Kirchhoff stress tensor, with the relation $\bat{T}  = \bat{J} \sigma_s \bat{F}^{-T}$ to the cauchy stress tensor. By definition the cauchy stress tensor is symmetric, however the first Piola-Kirchhoff tensor does not exhibit this property. As constitute equations often assumes this behaviour of symmetry, the second Piola-Kirchhoff tensor $\bat{S}_s$ is convenient as it is symmetric.  It is given by the relation to the firt Piola-Kirchhoff stress tensor by, 
+ 
+ \begin{align*}
+ \bat{S}_s = \bat{F}^{-T} \bat{T} = \hat{J} \bat{F}^{-1} \sigma_s \bat{F}^{-T}
+ \end{align*}
+ 
+According to the material of interest, several material models exist to model the induced stress given by material deformation. Most famous is Hooke's law, describing a linear relation between strain and stress, limited to a small-deformation regime. As we may no longer be in the range of small-deformation approximation were a linear-elastic material can be used, a consitent way to describe large deformations is needed. As such, for describing large deformation it is widley common to use a stress-strain relation based of the introduced Green Lagrangian strain tensor $\bat{E}$ and the second Piola-Kirchhoff stress tensor $\bat{S}$ \cite{Razzaq2010}. Therefore the material is assumed to follow a hyperelastic model, specifically the Vernant-Kirchhoff(STVK) model. Though STVK can handle large deformations, it is limited of the calculation of large strain \cite{Razzaq2010}. However since the deformations considered in this thesis are small, it will remain our primary choice of strain-stress relation.  STVK describes materials of compressible nature,  but is should be mentioned that for large deformation models describing incompressible materials can be considered. Specially the Incompressible Neo-Hooke (INH) model is considered in several publications, sharing the same hyperelastic properties as the STVK model. As both models handles large deformations, the INH is superior compared to STVK in the sense that it is valid for large strains aswell \cite{Razzaq2010}. \newpage
+The STVK is one of the simplest hyperelastic model, as it only extend the famous Hooke's law into a non-linear regime by,
 
-
-
-where $\mathbf{f}_s$ is some body force, and $\mathbf{T}$ is the first \textit{Piola-Kirchhoff} stress tensor. The relation 
-\begin{align}
-\mathbf{T} = \mathbf{F} \mathbf{S}
-\end{align}
-connects the first \textit{Piola-Kirchhoff} to the second \textit{Piola-Kirchhoff} tensor. The material is chosen to be isotropic, hence \textbf{S} is on the form
 \begin{align*}
-&\mathbf{S} = \lambda_s tr(\mathbf{E}) + 2 \mu_s \mathbf{E} \\
-&E = \frac{1}{2}(\mathbf{F}^T \mathbf{F} - \mathbf{I})
+\sigma_s = \frac{1}{\hat{J}} \bat{F}(\lambda_s(Tr(\bat{E}) I + 2 \mu \bat{E})\bat{F}^{-T} \hspace{4mm}
+\bat{S}_s = \lambda_s(Tr(\bat{E}) I + 2 \mu \bat{E} \\
+\bat{E} = \frac{1}{2}(\bat{C} - I ) \hspace{4mm} \bat{C} = \bat{F}\bat{F}^{-T}
 \end{align*} 
+ where $\bat{C}$ is the right Cauchy-Green strain tensor mention in the last subchapter. 
+  
+ The solid is often characterized by the Possion ratio and Young modulus. Lamè coefficients  $\lambda_s$ and $\mu_s$ are then given by the relation.
+
+\begin{align*}
+&E_y = \frac{ \mu_s ( \lambda_s + 2 \mu_s) }{ ( \lambda_s + \mu_s ) } 
+\hspace{5mm} \nu_s = \frac{\lambda_s}{2(\lambda_s + \mu_s)} \\
+&\lambda_s = \frac{\nu E_y}{(1 + \nu_s)(1 - 2\nu_s)} \hspace{4mm} \mu_s = \frac{E_y}{2(1 + \nu_s)} 
+\end{align*}
+
 Since the solid deformation is a quantity of interest a kinematic condition must be defined for the system of the form
 \begin{align}
 \pder{\mathbf{v}_s}{t} = \mathbf{u_s} \hspace{4mm} \text{in} \hspace{2mm} \Omega_s

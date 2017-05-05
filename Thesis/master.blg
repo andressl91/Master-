@@ -9,67 +9,47 @@ Database file #4: ./Cite/NavierStokes.bib
 Database file #5: ./Cite/Verification.bib
 Database file #6: ./Cite/EulerianFormulation.bib
 Database file #7: ./Cite/Meshupdate.bib
-Repeated entry---line 18 of file ./Cite/Meshupdate.bib
- : @article{Wick
- :              ,
-I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "Frei2016"
-Warning--I didn't find a database entry for "Richter2010a"
-Warning--empty journal in Biedron
-Warning--empty year in Biedron
-Warning--empty journal in Donea2004
-Warning--there's a number but no volume in Donea2004
-Warning--there's a number but no volume in Dunne2006
-Warning--empty journal in Dwight
-Warning--empty year in Dwight
-Warning--empty journal in Fernandez2009
-Warning--empty journal in Hsu
-Warning--empty year in Hsu
 Warning--empty journal in Richter2016
-Warning--empty journal in Stein
-Warning--empty year in Stein
-Warning--empty year in Wicka
-Warning--empty journal in Wick
-Warning--empty year in Wick
-You've used 18 entries,
+Warning--empty publisher in Wriggers2006
+You've used 3 entries,
             2118 wiz_defined-function locations,
-            614 strings with 7108 characters,
-and the built_in function-call counts, 5024 in all, are:
-= -- 486
-> -- 231
-< -- 1
-+ -- 92
-- -- 74
-* -- 339
-:= -- 884
-add.period$ -- 50
-call.type$ -- 18
-change.case$ -- 90
+            520 strings with 4595 characters,
+and the built_in function-call counts, 984 in all, are:
+= -- 86
+> -- 62
+< -- 0
++ -- 25
+- -- 22
+* -- 72
+:= -- 181
+add.period$ -- 9
+call.type$ -- 3
+change.case$ -- 19
 chr.to.int$ -- 0
-cite$ -- 34
-duplicate$ -- 199
-empty$ -- 379
-format.name$ -- 74
-if$ -- 999
+cite$ -- 5
+duplicate$ -- 33
+empty$ -- 66
+format.name$ -- 22
+if$ -- 188
 int.to.chr$ -- 0
-int.to.str$ -- 18
-missing$ -- 17
-newline$ -- 88
-num.names$ -- 36
-pop$ -- 107
+int.to.str$ -- 3
+missing$ -- 4
+newline$ -- 18
+num.names$ -- 6
+pop$ -- 25
 preamble$ -- 1
-purify$ -- 73
+purify$ -- 17
 quote$ -- 0
-skip$ -- 132
+skip$ -- 20
 stack$ -- 0
-substring$ -- 249
-swap$ -- 19
-text.length$ -- 1
+substring$ -- 40
+swap$ -- 2
+text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 72
-warning$ -- 16
-while$ -- 51
-width$ -- 20
-write$ -- 174
-(There was 1 error message)
+type$ -- 10
+warning$ -- 2
+while$ -- 8
+width$ -- 4
+write$ -- 31
+(There were 2 warnings)
