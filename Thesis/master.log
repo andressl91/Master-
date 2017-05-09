@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.12.9)  9 MAY 2017 14:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.12.9)  9 MAY 2017 14:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1262,7 +1262,20 @@ File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
 \MFPtexty=\skip71
 \MFPtextlength=\skip72
 \MFPapollonx=\skip73
-) (./master.aux)
+) (./master.aux
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.24 <
+      <<<<<< HEAD
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+)
 \openout1 = `master.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
@@ -1281,8 +1294,7 @@ LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 7.
 LaTeX Font Info:    ... okay on input line 7.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 7.
 LaTeX Font Info:    ... okay on input line 7.
-
-(/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+ (/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count156
 \scratchdimen=\dimen199
@@ -1363,7 +1375,30 @@ LaTeX Info: Redefining \nameref on input line 7.
 \openout4 = `master.out'.
 
  ABD: EveryShipout initializing macros
-<masterfrontpage-images/masterfrontpage-background.pdf, id=43, 614.295pt x 845.
+Overfull \hbox (0.45404pt too wide) in paragraph at lines 1--8
+[]\T1/cmr/m/n/12 <<<<<<< HEAD ======= >>>>>>> 5e47855c01074dc45986e8ac56ddf338b
+f1f792c <<<<<<<
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[1{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[2
+
+]
+<masterfrontpage-images/masterfrontpage-background.pdf, id=96, 614.295pt x 845.
 0471pt>
 File: masterfrontpage-images/masterfrontpage-background.pdf Graphic file (type 
 pdf)
@@ -1372,7 +1407,7 @@ Package pdftex.def Info: masterfrontpage-images/masterfrontpage-background.pdf
 used on input line 8.
 (pdftex.def)             Requested size: 614.29349pt x 845.04504pt.
 
-<masterfrontpage-images/masterfrontpage-apollon.pdf, id=44, 142.5325pt x 142.53
+<masterfrontpage-images/masterfrontpage-apollon.pdf, id=97, 142.5325pt x 142.53
 25pt>
 File: masterfrontpage-images/masterfrontpage-apollon.pdf Graphic file (type pdf
 )
@@ -1381,7 +1416,7 @@ Package pdftex.def Info: masterfrontpage-images/masterfrontpage-apollon.pdf use
 d on input line 8.
 (pdftex.def)             Requested size: 76.82243pt x 76.82285pt.
 
-<masterfrontpage-images/masterfrontpage-logo-eng.pdf, id=45, 630.355pt x 74.277
+<masterfrontpage-images/masterfrontpage-logo-eng.pdf, id=98, 630.355pt x 74.277
 5pt>
 File: masterfrontpage-images/masterfrontpage-logo-eng.pdf Graphic file (type pd
 f)
@@ -1437,15 +1472,17 @@ If that doesn't work, type  X <return>  to quit.
 
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <17> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 8.
-[1
-
-
-{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./maste
-rfrontpage-images/masterfrontpage-background.pdf> <./masterfrontpage-images/mas
-terfrontpage-apollon.pdf> <./masterfrontpage-images/masterfrontpage-logo-eng.pd
-f>]
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.8 \masterfrontpage
+                     [1 <./masterfrontpage-images/masterfrontpage-background.pd
+f> <./masterfrontpage-images/masterfrontpage-apollon.pdf> <./masterfrontpage-im
+ages/masterfrontpage-logo-eng.pdf>]
 LaTeX Font Info:    Try loading font information for T1+lmr on input line 8.
- (/usr/local/texlive/2016/texmf-dist/tex/latex/lm/t1lmr.fd
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Try loading font information for U+msa on input line 8.
@@ -1457,7 +1494,12 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 8.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [2
+)pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.8 \masterfrontpage
+                     [2
 
 ]
 
@@ -1480,17 +1522,43 @@ been already used, duplicate ignored
 l.9 \maketitle
                [1
 
-] (./master.toc)
+] (./master.toc
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.3 ...rline {1}Continuum Mechanics}{3}{chapter.1}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.13 ...Fluid Structure Interaction}{3}{chapter.1}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+)
 \tf@toc=\write5
 \openout5 = `master.toc'.
 
 \c@theorem=\count164
- (./Chapters/Continuum/Continuum.texpdfTeX warning (ext4): destination with the
- same identifier (name{page.1}) has been already used, duplicate ignored
+ (./Chapters/Implementation/implementation.texpdfTeX warning (ext4): destinatio
+n with the same identifier (name{page.1}) has been already used, duplicate igno
+red
 <to be read again> 
                    \relax 
 l.1 \chapter
-            {Continuum Mechanics} [1
+            {Implementation of Fluid Structure Interaction} [1
 
 ]
 
@@ -1504,21 +1572,54 @@ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.1 \chapter
-            {Continuum Mechanics} [2
+            {Implementation of Fluid Structure Interaction} [2
 
 ]
 Chapter 1.
 
-Underfull \hbox (badness 10000) in paragraph at lines 12--16
+Underfull \hbox (badness 10000) in paragraph at lines 3--9
 
  []
 
 
-Underfull \vbox (badness 1371) has occurred while \output is active []
+LaTeX Warning: Citation `Formaggia2004' on page 3 undefined on input line 10.
+
+
+LaTeX Warning: Citation `Formaggia2004' on page 3 undefined on input line 10.
+
+
+LaTeX Warning: Citation `Formaggia1991' on page 3 undefined on input line 10.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--11
+
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 12.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\theta' on input line 12.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 12.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [3]
-Underfull \hbox (badness 10000) in paragraph at lines 60--63
+Overfull \hbox (83.9595pt too wide) in paragraph at lines 29--33
+\T1/cmr/m/n/12 com-po-nents and tech-nolo-gies used for this the-sis. >>>>>>> 5
+e47855c01074dc45986e8ac56ddf338bf1f792c 
+ []
 
+
+Overfull \hbox (14.76018pt too wide) in paragraph at lines 35--36
+\T1/cmr/m/n/12 ment en-vi-ron-ment for solv-ing par-tial dif-fer-en-tial equa-t
+ions (https://fenicsproject.org/).
  []
 
 
@@ -1528,17 +1629,15 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 88--89
-
- []
-
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[5]
+[5] (/usr/local/texlive/2016/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -1553,13 +1652,27 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [7]
+Underfull \hbox (badness 10000) in paragraph at lines 134--135
+
+ []
+
+
+Underfull \vbox (badness 3471) has occurred while \output is active []
+
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[8])
+[8]
+Overfull \hbox (4.52342pt too wide) in paragraph at lines 147--148
+\T1/cmr/m/n/12 the Ja-co-bian for the lin-ear sys-tem was pro-posed. In other w
+ords, the LU-factorization
+ []
+
+)
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -1581,24 +1694,45 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 33.
  (./master.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 33.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 33.
-Package rerunfilecheck Info: File `master.out' has not changed.
-(rerunfilecheck)             Checksum: 1EF725137494F13FFC8EB7B01339E044;568.
+
+
+Package rerunfilecheck Warning: File `master.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `master.out':
+(rerunfilecheck)             Before: 0C2A168F11158AFED7C42154445007C3;1460
+(rerunfilecheck)             After:  5FB4303CC0B92E39F90B0DC4B4EB87D1;822.
+
+LaTeX Warning: There were undefined references.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 33.
  ) 
 Here is how much of TeX's memory you used:
- 22271 strings out of 493014
- 395569 string characters out of 6133351
- 470366 words of memory out of 5000000
- 25303 multiletter control sequences out of 15000+600000
- 47441 words of font info for 93 fonts, out of 8000000 for 9000
+ 22938 strings out of 493014
+ 402388 string characters out of 6133351
+ 718615 words of memory out of 5000000
+ 25916 multiletter control sequences out of 15000+600000
+ 48687 words of font info for 101 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,12n,56p,1605b,514s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
-{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/te
-xlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2016/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf
--dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2016/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2016/texmf-di
+ 62i,12n,56p,807b,2086s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{subsection.1.4.2} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.1.4.1} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.1.1.2} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.1.1.1} has been referenced but does not 
+exist, replaced by a fixed one
+
+{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/
+usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/u
+sr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texli
+ve/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2016/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dis
 t/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2016/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2016/texmf-dist/f
@@ -1608,17 +1742,19 @@ type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2016/texmf-dist/fonts/typ
 e1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type
 1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/
 public/lm/lmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/l
-mri10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/symbo
-ls/msbm10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/s
-fbx1200.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfr
-m1200.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1
-728.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfti120
-0.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><
-/usr/local/texlive/2016/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on master.pdf (14 pages, 317236 bytes).
+mri10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfbx1
+200.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm060
+0.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1200.
+pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pf
+b></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
+</usr/local/texlive/2016/texmf-dist/fonts/type1/public/txfonts/t1xbtt.pfb></usr
+/local/texlive/2016/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></usr/local
+/texlive/2016/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texliv
+e/2016/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
+Output written on master.pdf (16 pages, 319529 bytes).
 PDF statistics:
- 252 PDF objects out of 1000 (max. 8388607)
- 210 compressed objects within 3 object streams
- 43 named destinations out of 1000 (max. 500000)
- 100 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 356 PDF objects out of 1000 (max. 8388607)
+ 311 compressed objects within 4 object streams
+ 93 named destinations out of 1000 (max. 500000)
+ 196 words of extra memory for PDF output out of 10000 (max. 10000000)
 
