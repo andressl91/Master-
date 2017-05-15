@@ -1,43 +1,23 @@
-\chapter{Discretization of Fluid Structure Interaction}
+\chapter{Time discretization of ALE-Framework}
 
-The aim of this chapter is to present some of the main challenges regarding discretization of a general monolithic fluid-structure interaction(FSI) problem, using the ALE-framework. The general FSI problem consist of coupling the fluid and solid governing equations together with the interface conditions. Even separately, the discretization of fluid and structure problems impose rather difficult issues due to their non-linear nature. However, their long-time existence within research community makes them well known problems and a vast number of rigorous approaches and commercial  software exist to solve them individually. When solving the fluid and structure simultaneously however, the overall problem gets more complex due to the overall dependency of the two sub-problems and their interaction to one another. The most common approach to couple the governing equations is the ALE-framework. 
+The aim of this chapter is to present some of the main challenges regarding discretization of a general monolithic fluid-structure interaction(FSI) problem, using the ALE-framework. The general FSI problem consist of coupling the fluid and solid governing equations together with the interface conditions. Even separately, the discretization of fluid and structure problems impose rather difficult issues due to their non-linear nature. However, their long-time existence within research community makes them well known problems and a vast number of rigorous approaches and commercial  software exist to solve them individually. When solving the fluid and structure simultaneously however, the overall problem gets more complex due to the overall dependency of the two sub-problems and their interaction to one another. 
 
-The main goal of the ALE-framework is to map the fluid problem from an Eulerian reference system to a Lagrangian reference system. However the ALE-framework impose two main constrains to the overall system. 
-
-Firstly, the choice of extrapolation method of the structure velocity is essential to ensure consistent fluid computations. Since one often choose a model which is familiar(simple to solve), the extrapolation problem itself is not the problem. The main issue is the produced mesh deformation produced for a given model. Therefore the problem is not the discretization, but the ability to produce a good mesh without overlapping cells. Therefor it is not a issue for the computation itself, but which the foundadtion for which the fluid problem is solved on. It will not be discussed in this chapter..  
-
-Second, the ALE-framework introduces the domain-velocity term to the convection term in the fluid problem. 
-
-
-Compared to the other mentioned non-linear effects, this
-contribution is fairly new and its effect on fluid-structure interaction schemes are
-not fully understood. The stability of the overall time-stepping have proven to be
-affected by the ALE advection term, which is difficult to control [(formaggia).]. To what extent
-is this unclear, but several effort by [?], based on [?] have investigated the stability
-of the ALE formulation with first and second-order time schemes.
-
-This chapter will focus on the mentioned introduced problems
-by the monolithic ALE method. A brief description will be given for the most central
-components and technologies used for this thesis. »»»> 5e47855c01074dc45986e8ac56ddf338bf1f792c
-Chatsamtalen er avsluttet
-Skriv en melding ...
-
-
-\section{Implementation of a one-step $\theta$ scheme} 
-The implementation of FSI problem requires some perception, due to the ALE-
-convection term. By including spatial and temporal differential operators 
-depending non-linearly on one another, the implementation is not directly intu-
-itive. As mention in CITE(on time discretization of fluid-structure interaction),
-the discretization of terms were space and time are coupled are based on other
-types of equations... Les kilgen HT06a. Videre, se på diskretisering av ale termed
-i paper.
-
-                 
+In this chapter we will focus on time-stepping schemes for solving the monolithic FSI problem, using the ALE-framework.   One of the main challenges is the additional non-linearty intruduced by the domain-velocity term in the fluid problem. 
 \begin{prob}
 \textit{ALE term}\begin{align*}
 \ha{J} (\hat{F}_W^{-1}(\bat{v} - \pder{\ha{T}_W}{t}) \cdot \hat{\nabla}) \bat{v}
 \end{align*} 
 \end{prob}
+Closer inspection of the convection term reviels spatial and temporal differential operators depending non-linearly on one another. Within computational science, these operators appear separated. Therefore the discretization of a general time-stepping scheme  is not directly intuitive.
+It has been reported in [] [], that the stability of higher-order time stepping schemes is affected by the ALE-convection term. To what extent is this unclear, but several effort by [?], based on [?] have investigated the stability of the ALE formulation with first and second-order time schemes. \\
+Though only the fluid problem will be discussed, it must be emphasized that the discretization of the solid problem is of great importance. Several studies exists for the individual solid problem, but a deeper analysis considering a fluid-structure interaction setting is abvient from the FSI litterature CITE(on time dic, richter) 
+
+
+
+
+\section{Implementation of a one-step $\theta$ scheme} 
+
+
 
 
 \begin{prob}
@@ -58,7 +38,7 @@ Find $\bat{u}_s, \bat{u}_f, \bat{v}_s, \bat{v}_f, \ha{p}_f $ such that}
 \end{align*} 
 \end{prob}
 
-
+A brief description will be given for the most central components and technologies used for this thesis. 
 \section{FEniCS}
 The main component of this thesis is the FEniCS project, an open-source finite element environment for solving partial differential equations (https://fenicsproject.org/). Using a combination of high-level Python and C++ interfaces, mathematical models can be implemented compactly and efficiently. FEniCS consists of several sub-modules and we will give a brief overview of the most central components used during implementation and computation.
 
