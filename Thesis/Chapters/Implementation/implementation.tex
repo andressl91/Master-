@@ -8,7 +8,7 @@ In this chapter we will focus on time-stepping schemes for solving the monolithi
 \ha{J} (\hat{F}_W^{-1}(\bat{v} - \pder{\ha{T}_W}{t}) \cdot \hat{\nabla}) \bat{v}
 \end{align*} 
 \end{prob}
-Closer inspection of the convection term reviels spatial and temporal differential operators depending non-linearly on one another. Within computational science, these operators appear separated. Therefore the discretization of a general time-stepping scheme  is not directly intuitive.
+Closer inspection of the convection term reviels spatial and temporal differential operators depending non-linearly on one another. Within computational science, these operators often appear separated. Therefore the discretization of a general time-stepping scheme  is not directly intuitive.
 It has been reported in [] [], that the stability of higher-order time stepping schemes is affected by the ALE-convection term. To what extent is this unclear, but several effort by [?], based on [?] have investigated the stability of the ALE formulation with first and second-order time schemes. \\
 Though only the fluid problem will be discussed, it must be emphasized that the discretization of the solid problem is of great importance. Several studies exists for the individual solid problem, but a deeper analysis considering a fluid-structure interaction setting is abvient from the FSI litterature CITE(on time dic, richter) 
 
@@ -16,9 +16,47 @@ Though only the fluid problem will be discussed, it must be emphasized that the 
 
 
 \section{Implementation of a one-step $\theta$ scheme} 
+Since space-time coupled terms are rather uncommon, the approaches suggested is based on the experience with similar equations such as the Navier-Stokes equations. From the thorough work in CITE simo, we adopt the notaion given for discretizing of a general time stepping algorith for the Navier-Stokes equation.
+
+\begin{align*}
+\frac{1}{\Delta}(\mathbf{u}^{n+1} - \mathbf{u}^{n}) + 
+B(\mathbf{u}^{*})\mathbf{u}^{n+\alpha}
+- \nu \nabla^2 \mathbf{u}^{n + \alpha} = - \nabla p + \mathbf{u}^{n+\alpha} \\
+\nabla \cdot \mathbf{u}^{n+\alpha} = 0 
+\end{align*} 
+Here $\mathbf{u}^{n+\alpha}$ is an "intermediate" velocity defined by,
+\begin{align*}
+\mathbf{u}^{n+\alpha} = \alpha\mathbf{u}^{n+1} + (1 - \alpha)\mathbf{u}^{n} 
+\hspace{4mm} \alpha \in [0, 1]
+\end{align*}
+while $\mathbf{u}^{*}$ is on the form
 
 
+Notice what choices of v and alpha gives linear and nonlinear ...
+And what is proven to be of second order. CN considered in wick, we will propose the alternative of which is adam-bashfort. The AB is of interest as it produces a linear second order scheme, which .. unconditional stability. Cite nav-paper!
 
+Preliminary work regarding discretization of higher-order time stepping schemes for fluid structure interaction can be found in cite WIck papers. Here CN is considered...1 Following the ideas of Rick, whricter, a second order scheme based on the Cranck-Nicholson yields two possibilities.
+
+\begin{discr}
+\textit{Crank–Nicolson secant method}
+\begin{align*}
+\Big[\frac{\ha{J}(\bat{u}^{n}) \bat{\nabla} \bat{v}^{n} \bat{F}_W^{-1}}{2} 
++ \frac{\ha{J}(\bat{u}^{n-1}) \bat{\nabla} \bat{}v^{n-1} \bat{F}_W^{-1}}{2} \Big] 
+\frac{\bat{u}^{n} - \bat{u}^{n-1}}{k}
+\end{align*} 
+\end{discr}
+
+\begin{discr}
+\textit{Crank–Nicolson midpoint-tangent method}
+\begin{align*}
+\Big[\frac{\ha{J}(\bat{u}_{cn}) \bat{\nabla} \bat{v}_{cn} \bat{F}_W^{-1}}{2} \Big] 
+\frac{\bat{u}^{n} - \bat{u}^{n-1}}{k} \hspace{4mm}
+\bat{u}_{cn} = \frac{\bat{u}^{n} + \bat{u}^{n-1}}{2} \hspace{2mm}
+\bat{v}_{cn} = \frac{\bat{v}^{n} + \bat{v}^{n-1}}{2}
+\end{align*} 
+\end{discr}
+
+Investigations regarding temporal stability was done regarding the validation benchmark found in CITE turek. The numerical experiments showed very similar performance, and significant differences of temporal accuracy was not reported. 
 
 \begin{prob}
 \textit{One-step $\theta$-scheme for laplace and elastic mesh moving model.

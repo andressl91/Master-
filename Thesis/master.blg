@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2016)
+This is BibTeX, Version 0.99d (TeX Live 2015)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: master.aux
 The style file: plain.bst
@@ -13,47 +13,69 @@ Repeated entry---line 41 of file ./Cite/EulerianFormulation.bib
  :                      ,
 I'm skipping whatever remains of this entry
 Database file #7: ./Cite/Meshupdate.bib
+Repeated entry---line 96 of file ./Cite/Meshupdate.bib
+ : @article{Wick
+ :              ,
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "Frei2016"
+Warning--I didn't find a database entry for "Richter2010a"
+Warning--empty journal in Biedron
+Warning--empty year in Biedron
+Warning--empty journal in Donea2004
+Warning--there's a number but no volume in Donea2004
+Warning--there's a number but no volume in Dunne2006
+Warning--empty journal in Dwight
+Warning--empty year in Dwight
+Warning--empty journal in Fernandez2009
+Warning--empty journal in Hsu
+Warning--empty year in Hsu
+Warning--empty journal in Project2016
 Warning--empty journal in Richter2016
+Warning--empty journal in Stein
+Warning--empty year in Stein
+Warning--empty year in Wicka
+Warning--empty journal in Wick
+Warning--empty year in Wick
 Warning--empty publisher in Wriggers2006
-You've used 5 entries,
+You've used 28 entries,
             2118 wiz_defined-function locations,
-            536 strings with 4927 characters,
-and the built_in function-call counts, 1609 in all, are:
-= -- 153
-> -- 82
-< -- 0
-+ -- 33
-- -- 28
-* -- 117
-:= -- 285
-add.period$ -- 15
-call.type$ -- 5
-change.case$ -- 28
+            681 strings with 8750 characters,
+and the built_in function-call counts, 8033 in all, are:
+= -- 781
+> -- 372
+< -- 1
++ -- 148
+- -- 120
+* -- 551
+:= -- 1406
+add.period$ -- 80
+call.type$ -- 28
+change.case$ -- 142
 chr.to.int$ -- 0
-cite$ -- 7
-duplicate$ -- 55
-empty$ -- 119
-format.name$ -- 28
-if$ -- 316
+cite$ -- 46
+duplicate$ -- 307
+empty$ -- 614
+format.name$ -- 120
+if$ -- 1605
 int.to.chr$ -- 0
-int.to.str$ -- 5
-missing$ -- 6
-newline$ -- 28
-num.names$ -- 10
-pop$ -- 30
+int.to.str$ -- 28
+missing$ -- 28
+newline$ -- 138
+num.names$ -- 56
+pop$ -- 158
 preamble$ -- 1
-purify$ -- 24
+purify$ -- 116
 quote$ -- 0
-skip$ -- 35
+skip$ -- 203
 stack$ -- 0
-substring$ -- 100
-swap$ -- 4
-text.length$ -- 0
+substring$ -- 439
+swap$ -- 27
+text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 18
-warning$ -- 2
-while$ -- 16
-width$ -- 6
-write$ -- 53
-(There was 1 error message)
+type$ -- 108
+warning$ -- 18
+while$ -- 82
+width$ -- 30
+write$ -- 279
+(There were 2 error messages)
