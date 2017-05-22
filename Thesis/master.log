@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.12.9)  18 MAY 2017 18:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.12.9)  22 MAY 2017 15:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1263,17 +1263,7 @@ File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
 \MFPtexty=\skip71
 \MFPtextlength=\skip72
 \MFPapollonx=\skip73
-) (./master.aux
-
-LaTeX Warning: Label `my-label' multiply defined.
-
-
-LaTeX Warning: Label `my-label' multiply defined.
-
-
-LaTeX Warning: Label `my-label' multiply defined.
-
-)
+) (./master.aux)
 \openout1 = `master.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
@@ -1292,7 +1282,8 @@ LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 7.
 LaTeX Font Info:    ... okay on input line 7.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 7.
 LaTeX Font Info:    ... okay on input line 7.
- (/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+
+(/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count157
 \scratchdimen=\dimen199
@@ -1392,12 +1383,13 @@ er.toc)
 
 \c@theorem=\count165
 
-(./Chapters/Results/results.texpdfTeX warning (ext4): destination with the same
- identifier (name{page.1}) has been already used, duplicate ignored
+(./Chapters/Implementation/implementation.texpdfTeX warning (ext4): destination
+ with the same identifier (name{page.1}) has been already used, duplicate ignor
+ed
 <to be read again> 
                    \relax 
 l.1 \chapter
-            {Numerical Results} [1
+            {Time discretization of ALE-Framework} [1
 
 ]
 
@@ -1411,131 +1403,30 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 ]
 Chapter 1.
 
-Underfull \hbox (badness 10000) in paragraph at lines 8--12
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 18.
 
- []
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\theta' on input line 18.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8--12
-
- []
-
-<./Fig/turekflag.png, id=59, 890.32625pt x 340.27126pt>
-File: ./Fig/turekflag.png Graphic file (type png)
-
-<use ./Fig/turekflag.png>
-Package pdftex.def Info: ./Fig/turekflag.png used on input line 19.
-(pdftex.def)             Requested size: 445.16203pt x 170.13521pt.
-
-Overfull \hbox (21.1017pt too wide) in paragraph at lines 19--20
- [][] 
- []
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 18.
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 65--67
-
- []
-
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[4 <./Fig/turekflag.png>]
-Underfull \hbox (badness 1142) in paragraph at lines 77--77
-[]|\T1/cmr/m/n/12 uy of A [x
+[4]
+Overfull \hbox (14.76018pt too wide) in paragraph at lines 88--89
+\T1/cmr/m/n/12 ment en-vi-ron-ment for solv-ing par-tial dif-fer-en-tial equa-t
+ions (https://fenicsproject.org/).
  []
 
-
-Underfull \hbox (badness 1142) in paragraph at lines 85--85
-[]|\T1/cmr/m/n/12 uy of A [x
- []
-
-
-Underfull \hbox (badness 1142) in paragraph at lines 92--92
-[]|\T1/cmr/m/n/12 uy of A [x
- []
-
-
-Underfull \hbox (badness 1142) in paragraph at lines 107--107
-[]|\T1/cmr/m/n/12 uy of A [x
- []
-
-
-Underfull \hbox (badness 1142) in paragraph at lines 114--114
-[]|\T1/cmr/m/n/12 uy of A [x
- []
-
-
-Underfull \hbox (badness 1142) in paragraph at lines 119--119
-[]|\T1/cmr/m/n/12 uy of A [x
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 121--121
-[]|\T1/cmr/m/n/12 --2.18 +/-
- []
-
-
-Underfull \hbox (badness 1142) in paragraph at lines 133--133
-[]|\T1/cmr/m/n/12 ux of A [x
- []
-
-
-Underfull \hbox (badness 1142) in paragraph at lines 133--133
-[]|\T1/cmr/m/n/12 uy of A [x
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 135--135
-[]|\T1/cmr/m/n/12 -1.74 +/-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 136--136
-[]|\T1/cmr/m/n/12 -2.39 +/-
- []
-
-
-Underfull \hbox (badness 1142) in paragraph at lines 140--140
-[]|\T1/cmr/m/n/12 ux of A [x
- []
-
-
-Underfull \hbox (badness 1142) in paragraph at lines 140--140
-[]|\T1/cmr/m/n/12 uy of A [x
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 141--141
-[]|\T1/cmr/m/n/12 -3.39 +/-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 142--142
-[]|\T1/cmr/m/n/12 -4.70 +/-
- []
-
-
-Underfull \hbox (badness 1142) in paragraph at lines 146--146
-[]|\T1/cmr/m/n/12 ux of A [x
- []
-
-
-Underfull \hbox (badness 1142) in paragraph at lines 146--146
-[]|\T1/cmr/m/n/12 uy of A [x
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 148--148
-[]|\T1/cmr/m/n/12 -2.17+/-
- []
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-) (./master.bbl
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -1549,7 +1440,51 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[6]) [7
+[6] (/usr/local/texlive/2016/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[7]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 187--188
+
+ []
+
+
+Underfull \vbox (badness 3471) has occurred while \output is active []
+
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[9]
+Overfull \hbox (4.52342pt too wide) in paragraph at lines 200--201
+\T1/cmr/m/n/12 the Ja-co-bian for the lin-ear sys-tem was pro-posed. In other w
+ords, the LU-factorization
+ []
+
+) (./master.bbl
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[10]) [11
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 32.
@@ -1558,40 +1493,41 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 32.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 32.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 32.
 Package rerunfilecheck Info: File `master.out' has not changed.
-(rerunfilecheck)             Checksum: E7FA67B5EB11AA863B5B069944B7CD64;396.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
+(rerunfilecheck)             Checksum: C9EA616425904CF6F29AF9CC7D084282;813.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 32.
  ) 
 Here is how much of TeX's memory you used:
- 22094 strings out of 493014
- 391762 string characters out of 6133351
- 482406 words of memory out of 5000000
- 25170 multiletter control sequences out of 15000+600000
- 25023 words of font info for 74 fonts, out of 8000000 for 9000
+ 22780 strings out of 493014
+ 398638 string characters out of 6133351
+ 718457 words of memory out of 5000000
+ 25785 multiletter control sequences out of 15000+600000
+ 30392 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,13n,56p,426b,411s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,14n,56p,882b,2086s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<
 /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></
 usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></u
 sr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></us
-r/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/
-local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/lo
-cal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local
-/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/te
-xlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/tex
-live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texli
-ve/2016/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive
-/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2
-016/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/201
-6/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on master.pdf (8 pages, 162728 bytes).
+r/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/
+local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/lo
+cal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/lo
+cal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loca
+l/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/t
+exlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/te
+xlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texl
+ive/2016/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texliv
+e/2016/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/
+2016/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/20
+16/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2016
+/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2016/t
+exmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2016/tex
+mf-dist/fonts/type1/public/txfonts/t1xbtt.pfb></usr/local/texlive/2016/texmf-di
+st/fonts/type1/public/txfonts/t1xtt.pfb>
+Output written on master.pdf (12 pages, 240017 bytes).
 PDF statistics:
- 153 PDF objects out of 1000 (max. 8388607)
- 127 compressed objects within 2 object streams
- 23 named destinations out of 1000 (max. 500000)
- 74 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 283 PDF objects out of 1000 (max. 8388607)
+ 248 compressed objects within 3 object streams
+ 88 named destinations out of 1000 (max. 500000)
+ 109 words of extra memory for PDF output out of 10000 (max. 10000000)
 

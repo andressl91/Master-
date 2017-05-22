@@ -16,7 +16,7 @@ Though only the fluid problem will be discussed, it must be emphasized that the 
 
 
 \section{Implementation of a one-step $\theta$ scheme} 
-Since space-time coupled terms are rather uncommon, the approaches suggested is based on the experience with similar equations such as the Navier-Stokes equations. From the thorough work in CITE simo, we adopt the notaion given for discretizing of a general time stepping algorith for the Navier-Stokes equation.
+Since space-time coupled terms are rather uncommon, the approaches suggested is based on the experience with similar equations such as the Navier-Stokes equations. Following \cite{Simo1994},  a general time stepping algorithm for the coupled Navier-Stokes equation can be written as
 
 \begin{align*}
 \frac{1}{\Delta}(\mathbf{u}^{n+1} - \mathbf{u}^{n}) + 
@@ -31,11 +31,20 @@ Here $\mathbf{u}^{n+\alpha}$ is an "intermediate" velocity defined by,
 \end{align*}
 while $\mathbf{u}^{*}$ is on the form
 
+\begin{align*}
+\mathbf{u}^{*} =   \mathbf{u}^{n+ \vartheta} =
+\begin{cases} 
+   &\vartheta \mathbf{u}^{n+1} + (1 - \vartheta)\mathbf{u}^{n} \hspace{4mm} \vartheta \geq 0 \\ 
+   &\vartheta \mathbf{u}^{n-1} + (1 - \vartheta)\mathbf{u}^{n} \hspace{4mm} \vartheta \leq 0
+   \end{cases}
+\end{align*}
 
-Notice what choices of v and alpha gives linear and nonlinear ...
-And what is proven to be of second order. CN considered in wick, we will propose the alternative of which is adam-bashfort. The AB is of interest as it produces a linear second order scheme, which .. unconditional stability. Cite nav-paper!
+For specific choices of $\alpha$ and $\vartheta$, classical time-stepping schemes are obtained such as the  first-order backward-Euler scheme ( $\alpha = 1$ , $\vartheta = 0$),and the second-order Crank-Nicholson scheme ($\alpha = \frac{1}{2}$,  $\vartheta = \frac{1}{2}$). The latter is of primary interest due to its 
+long-time 
+Preliminary work regarding discretization and numerical analysis of higher-order time stepping schemes for fluid structure interaction can be found in cite WIck papers. Here CN is considered...1 Following the ideas of Rick, whricter, a second order scheme based on the Cranck-Nicholson yields two possibilities.
 
-Preliminary work regarding discretization of higher-order time stepping schemes for fluid structure interaction can be found in cite WIck papers. Here CN is considered...1 Following the ideas of Rick, whricter, a second order scheme based on the Cranck-Nicholson yields two possibilities.
+
+
 
 \begin{discr}
 \textit{Crank–Nicolson secant method}

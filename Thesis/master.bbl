@@ -1,9 +1,10 @@
 \begin{thebibliography}{1}
 
-\bibitem{Hron2006}
-Jaroslav Hron and Stefan Turek.
-\newblock {Proposal for numerical benchmarking of fluid-structure interaction
-  between an elastic object and laminar incompressible flow}.
-\newblock {\em Fluid-Structure Interaction}, 53:371--385, 2006.
+\bibitem{Simo1994}
+J.C. Simo and F.~Armero.
+\newblock {Unconditional stability and long-term behavior of transient
+  algorithms for the incompressible Navier-Stokes and Euler equations}.
+\newblock {\em Computer Methods in Applied Mechanics and Engineering},
+  111(1-2):111--154, jan 1994.
 
 \end{thebibliography}
