@@ -10,7 +10,7 @@ In this chapter we will focus on time-stepping schemes for solving the monolithi
 \end{prob}
 Closer inspection of the convection term reviels spatial and temporal differential operators depending non-linearly on one another. Within computational science, these operators often appear separated. Therefore the discretization of a general time-stepping scheme  is not directly intuitive.
 It has been reported in [] [], that the stability of higher-order time stepping schemes is affected by the ALE-convection term. To what extent is this unclear, but several effort by [?], based on [?] have investigated the stability of the ALE formulation with first and second-order time schemes. \\
-Though only the fluid problem will be discussed, it must be emphasized that the discretization of the solid problem is of great importance. Several studies exists for the individual solid problem, but a deeper analysis considering a fluid-structure interaction setting is abvient from the FSI litterature CITE(on time dic, richter) 
+Though only the fluid problem will be discussed, it must be emphasized that the discretization of the solid problem is of great importance. Several studies exists for the individual solid problem, but a deeper analysis considering a fluid-structure interaction setting is abvient from the FSI litterature \cite{Richter2015}.                                                                                                                                                                                                                       
 
 
 
@@ -39,12 +39,8 @@ while $\mathbf{u}^{*}$ is on the form
    \end{cases}
 \end{align*}
 
-For specific choices of $\alpha$ and $\vartheta$, classical time-stepping schemes are obtained such as the  first-order backward-Euler scheme ( $\alpha = 1$ , $\vartheta = 0$),and the second-order Crank-Nicholson scheme ($\alpha = \frac{1}{2}$,  $\vartheta = \frac{1}{2}$). The latter is of primary interest due to its 
-long-time 
-Preliminary work regarding discretization and numerical analysis of higher-order time stepping schemes for fluid structure interaction can be found in cite WIck papers. Here CN is considered...1 Following the ideas of Rick, whricter, a second order scheme based on the Cranck-Nicholson yields two possibilities.
-
-
-
+For specific choices of $\alpha$ and $\vartheta$, classical time-stepping schemes are obtained such as the  first-order backward-Euler scheme ( $\alpha = 1$ , $\vartheta = 0$),and the second-order Crank-Nicholson scheme ($\alpha = \frac{1}{2}$,  $\vartheta = \frac{1}{2}$). The Crank-Nicholson scheme is of primary interest due to its energy-conservation property of the structure and its second order. It is known that the Crank-Nicolson scheme can suffer from unstabilities for long-term simulations \cite{Wick2013a}.
+Following the ideas of Rick, whricter, a second order scheme based on the Cranck-Nicholson yields two possibilities.
 
 \begin{discr}
 \textit{Crank–Nicolson secant method}
@@ -65,7 +61,14 @@ Preliminary work regarding discretization and numerical analysis of higher-order
 \end{align*} 
 \end{discr}
 
-Investigations regarding temporal stability was done regarding the validation benchmark found in CITE turek. The numerical experiments showed very similar performance, and significant differences of temporal accuracy was not reported. 
+Preliminary work regarding discretization and numerical analysis of Crank-Nicholson time stepping schemes for fluid structure interaction can be found in cite WIck papers. Two main properties of interest of higher-order methods have proven to be the stability of long-time simulation, and obtaining the expected physics for the problem of interest.
+
+The authors of \cite{Richter2015}, investigated temporal stability of the Crank-Nicolson scheme for the validation benchmark found in \cite{Hron2006}.  
+The critera for the numerical experiements was to obatin a stable solution in the time interval [0, 10] minutes, by temporal and spatial refinement studies. The fully monolithic FSI problem discretized with second-order Crank-Nicolson, proved to give general stability problems for long-term simulation. The numerical experiments showed very similar performance for Discretization 1.1 and 1.2 , and significant differences of temporal accuracy was not found. \\
+Two options to increase stability found in the litterature, are the \textit{shifted Crank-Nicolson} \cite{Richter2015}, \cite{Wicka}, \cite{Wick2013a},   and the \textit{frac-step method}. Both of these methods are defined as A-stable time-stepping schemes meaning..  In this thesis the shifted Crank-Nocolson scheme will be considered, to cope with the stability issues presented. \\
+The shifted Crank-Nicolson scheme introduce further stability to the overall system, by shifting the $\theta$ paramter slightly to the implicit side. If the shift is dependent of the time-step size, the scheme will be of second order \cite{Richter2015}.
+
+SE SECTION 5.3 I DOKTORGRAD! VIKTIG VIKTIG FÅ MED
 
 \begin{prob}
 \textit{One-step $\theta$-scheme for laplace and elastic mesh moving model.
