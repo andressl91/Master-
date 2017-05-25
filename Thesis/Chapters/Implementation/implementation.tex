@@ -1,29 +1,46 @@
 \chapter{Time discretization of the ALE-method}
 
-The aim of this chapter is to present some of the main challenges regarding discretization of a general monolithic fluid-structure interaction(FSI) problem, using the ALE-framework. The general FSI problem consist of coupling the fluid and solid governing equations together with the interface conditions. Even separately, the discretization of fluid and structure problems impose rather difficult issues due to their non-linear nature. However, their long-time existence within research community makes them well known problems and a vast number of rigorous approaches and commercial  software exist to solve them individually. When solving the fluid and structure simultaneously however, the overall problem gets more complex due to the overall dependency of the two sub-problems and their interaction to one another. 
+The aim of this chapter is to present some of the main challenges regarding discretization of a general monolithic fluid-structure interaction(FSI) problem, using the ALE-framework. Even separately, the discretization of fluid and structure problems impose rather difficult issues due to their non-linear nature. However, their long-time existence within research community makes them well known problems and a vast number of rigorous approaches and commercial  software exist to solve them individually. When solving the fluid and structure simultaneously however, the overall problem gets more complex due to the overall dependency of the two sub-problems and their interaction to one another. 
 
-In this chapter we will focus on time-stepping schemes for solving the monolithic FSI problem, using the ALE-framework.   One of the main challenges is the additional non-linearty intruduced by the domain-velocity term in the fluid problem. 
+One of the main challenges is the additional non-linearty intruduced by the domain-velocity term in the fluid problem. 
 \begin{prob}
 \textit{ALE term}\begin{align*}
 \ha{J} (\hat{F}_W^{-1}(\bat{v} - \pder{\ha{T}_W}{t}) \cdot \hat{\nabla}) \bat{v}
 \end{align*} 
 \end{prob}
-Closer inspection of the convection term reviels spatial and temporal differential operators depending non-linearly on one another. Within computational science, these operators often appear separated. Therefore the discretization of a general time-stepping scheme  is not directly intuitive.
-It has been reported in [] [], that the stability of higher-order time stepping schemes is affected by the ALE-convection term. To what extent is this unclear, but several effort by [?], based on [?] have investigated the stability of the ALE formulation with first and second-order time schemes. \\
+Closer inspection of the convection term reviels spatial and temporal differential operators depending non-linearly on one another. Within computational science, these operators often appear separated. Therefore the discretization of a general time-stepping scheme  is not directly intuitive, and often based on the experience of similar equations such as the Navier-Stokes equations. In this thesis, time-stepping schemes of second order will be considered.
+It has been reported in [] [], that the stability of first and second-order time stepping schemes are affected by the ALE-convection term, but to what extent remains unclear.\\
 Though only the fluid problem will be discussed, it must be emphasized that the discretization of the solid problem is of great importance. Several studies exists for the individual solid problem, but a deeper analysis considering a fluid-structure interaction setting is abvient from the FSI litterature \cite{Richter2015}.                                                                                                                                                                                                                       
 
 
 
 
 \section{Implementation of a one-step $\theta$ scheme} 
-Since space-time coupled terms are rather uncommon, the approaches suggested is based on the experience with similar equations such as the Navier-Stokes equations. Following \cite{Simo1994},  a general time stepping algorithm for the coupled Navier-Stokes equation can be written as
+For both the fluid problem and the structure problem, we will base our implementation of a $\theta$-scheme.  A $\theta$-scheme is favourable, making implementation of classical time-steppings schemes simple. For the structure problem,  $\theta$-scheme takes the form
 
+\begin{prob}
+\begin{align*}
+\rho_s \pder{\bat{v}_s}{t} 
+- \theta \nabla \cdot \bat{F}\bat{S}   - (1 - \theta) \nabla \cdot \bat{F}\bat{S}  
+- \theta \rho_s \bat{f}_s 
+- (1 - \theta) \rho_s \bat{f}_s = 0 \\
+\pder{\bat{v}_s}{t} - \theta \bat{u}_s - (1 - \theta)\bat{u}_s  = 0&\\
+\end{align*} 
+\end{prob}
+
+For $\theta \in [0, 1]$ classical time-stepping schemes are obtained such as the first-order forward Euler scheme $\theta = 0$, backward-Euler scheme$\theta = 1$, and the second-order Crank-Nicholson scheme $\theta = \frac{1}{2}$.  \\
+
+Studying the fluid problem, it is initially simpler to consider the Navier-Stokes equation in an Eulerian formulation rather the ALE-formulation Following \cite{Simo1994}, a general time stepping algorithm for the coupled Navier-Stokes equation can be written as
+
+\begin{prob}
 \begin{align*}
 \frac{1}{\Delta}(\mathbf{u}^{n+1} - \mathbf{u}^{n}) + 
 B(\mathbf{u}^{*})\mathbf{u}^{n+\alpha}
 - \nu \nabla^2 \mathbf{u}^{n + \alpha} = - \nabla p + \mathbf{u}^{n+\alpha} \\
 \nabla \cdot \mathbf{u}^{n+\alpha} = 0 
 \end{align*} 
+\end{prob}
+
 Here $\mathbf{u}^{n+\alpha}$ is an "intermediate" velocity defined by,
 \begin{align*}
 \mathbf{u}^{n+\alpha} = \alpha\mathbf{u}^{n+1} + (1 - \alpha)\mathbf{u}^{n} 
@@ -38,8 +55,13 @@ while $\mathbf{u}^{*}$ is on the form
    &\vartheta \mathbf{u}^{n-1} + (1 - \vartheta)\mathbf{u}^{n} \hspace{4mm} \vartheta \leq 0
    \end{cases}
 \end{align*}
+At first glance, defining an additional parameter $\vartheta$ for the fluid problem seems unessecary. A general mid-point rule by  $\alpha = \vartheta = \frac{1}{2}$, a second order scheme in time would easily be acchieved. However, in \cite{Simo1994} an additional second order scheme is obtained by choosing e $\alpha = \frac{1}{2}$,  $\vartheta =-1$, where  $\mathbf{u}^{*}$ is approximated with an Adam-Bashforth linear method. Making the initial fluid problem linear while maintaining second order convergence is an important result, which have not yet been investigated thorough in litterature of fluid-structure interaction. One reason for this may be that the ALE fluid problem will remain non-linear due to the ALE-mapping.
 
-For specific choices of $\alpha$ and $\vartheta$, classical time-stepping schemes are obtained such as the  first-order backward-Euler scheme ( $\alpha = 1$ , $\vartheta = 0$),and the second-order Crank-Nicholson scheme ($\alpha = \frac{1}{2}$,  $\vartheta = \frac{1}{2}$). By letting $\alpha = \vartheta \hspace{2mm} \alpha, \vartheta \in [0, 1] $, a practical $\theta$ scheme is produced on the form
+ 
+For the structure problem, the Crank-Nicholson is of main interest due to energy preservation properties and second order convergence. \\
+
+
+In light of By letting $\alpha = \vartheta \hspace{2mm} \alpha, \vartheta \in [0, 1] $ for the fluid problem, and generalising the consepts in an ALE context, we derive the one-stepl $\theta$ scheme found in \cite{Wicka}.
 
 \begin{prob}
 \textit{One-step $\theta$-scheme for laplace and elastic mesh moving model.
@@ -67,8 +89,7 @@ Find $\bat{u}_s, \bat{u}_f, \bat{v}_s, \bat{v}_f, \ha{p}_f $ such that}
 \end{align*} 
 \end{prob}
 
-
-SE SECTION 5.3 I DOKTORGRAD! VIKTIG VIKTIG FÅ MED
+Deeper analysis in  \cite{Wicka}, specify to important properties of the one-step $theta$ scheme. Firstly, it is unconditionally stable regardless of time step for the interval $\theta = [\frac{1}{2}, 1]$
 
 \subsection{Temporal stability}
 
