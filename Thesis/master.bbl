@@ -1,10 +1,35 @@
 \begin{thebibliography}{1}
 
-\bibitem{Simo1994}
-J.C. Simo and F.~Armero.
-\newblock {Unconditional stability and long-term behavior of transient
-  algorithms for the incompressible Navier-Stokes and Euler equations}.
+\bibitem{Razzaq2010}
+M~Razzaq, Stefan Turek, Jaroslav Hron, J~F Acker, F~Weichert, I~Grunwald,
+  C~Roth, M~Wagner, and B~Romeike.
+\newblock {Numerical simulation and benchmarking of fluid-structure interaction
+  with application to Hemodynamics}.
+\newblock {\em Fundamental Trends in Fluid-Structure Interaction}, 1:171--199,
+  2010.
+
+\bibitem{Richter2010c}
+T.~Richter and T.~Wick.
+\newblock {Finite elements for fluid-structure interaction in ALE and fully
+  Eulerian coordinates}.
 \newblock {\em Computer Methods in Applied Mechanics and Engineering},
-  111(1-2):111--154, jan 1994.
+  199(41-44):2633--2642, 2010.
+
+\bibitem{Richter2016}
+Thomas Richter.
+\newblock {Fluid Structure Interactions}.
+\newblock 2016.
+
+\bibitem{Wick2013}
+Thomas Wick.
+\newblock {Fully Eulerian fluid-structure interaction for time-dependent
+  problems}.
+\newblock {\em Computer Methods in Applied Mechanics and Engineering},
+  255:14--26, 2013.
+
+\bibitem{Wriggers2006}
+P.~Wriggers.
+\newblock {\em {Computational contact mechanics, second ed., Springer}}.
+\newblock 2006.
 
 \end{thebibliography}
