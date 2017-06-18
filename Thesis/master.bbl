@@ -1,35 +1,54 @@
 \begin{thebibliography}{1}
 
-\bibitem{Razzaq2010}
-M~Razzaq, Stefan Turek, Jaroslav Hron, J~F Acker, F~Weichert, I~Grunwald,
-  C~Roth, M~Wagner, and B~Romeike.
-\newblock {Numerical simulation and benchmarking of fluid-structure interaction
-  with application to Hemodynamics}.
-\newblock {\em Fundamental Trends in Fluid-Structure Interaction}, 1:171--199,
-  2010.
+\bibitem{Geuzaine}
+Philippe Geuzaine.
+\newblock {Numerical Simulations of Fluid-Structure Interaction Problems using
+  MpCCI}.
+\newblock (1):1--5.
 
-\bibitem{Richter2010c}
-T.~Richter and T.~Wick.
-\newblock {Finite elements for fluid-structure interaction in ALE and fully
-  Eulerian coordinates}.
+\bibitem{Hron2006}
+Jaroslav Hron and Stefan Turek.
+\newblock {Proposal for numerical benchmarking of fluid-structure interaction
+  between an elastic object and laminar incompressible flow}.
+\newblock {\em Fluid-Structure Interaction}, 53:371--385, 2006.
+
+\bibitem{Richter2015}
+Thomas Richter and Thomas Wick.
+\newblock {On Time Discretizations of Fluid-Structure Interactions}.
+\newblock pages 377--400. 2015.
+
+\bibitem{Simo1994}
+J.C. Simo and F.~Armero.
+\newblock {Unconditional stability and long-term behavior of transient
+  algorithms for the incompressible Navier-Stokes and Euler equations}.
 \newblock {\em Computer Methods in Applied Mechanics and Engineering},
-  199(41-44):2633--2642, 2010.
+  111(1-2):111--154, jan 1994.
 
-\bibitem{Richter2016}
-Thomas Richter.
-\newblock {Fluid Structure Interactions}.
-\newblock 2016.
+\bibitem{Wick2013a}
+T.~Wick.
+\newblock {Stability Estimates and Numerical Comparison of Second Order
+  Time-Stepping Schemes for Fluid-Structure Interactions}.
+\newblock In {\em Numerical Mathematics and Advanced Applications 2011}, pages
+  625--632. Springer Berlin Heidelberg, Berlin, Heidelberg, 2013.
 
-\bibitem{Wick2013}
+\bibitem{Wicka}
 Thomas Wick.
-\newblock {Fully Eulerian fluid-structure interaction for time-dependent
-  problems}.
-\newblock {\em Computer Methods in Applied Mechanics and Engineering},
-  255:14--26, 2013.
+\newblock {\em {Adaptive Finite Element Simulation of Fluid-Structure
+  Interaction with Application to Heart-Valve}}.
+\newblock PhD thesis, Heidelberg.
 
-\bibitem{Wriggers2006}
-P.~Wriggers.
-\newblock {\em {Computational contact mechanics, second ed., Springer}}.
-\newblock 2006.
+\bibitem{Wolf2007}
+Klaus Wolf, Schloss Birlinghoven, Code~Coupling Interface, Open~Programming
+  Interface, and Distributed Simulation.
+\newblock {Mpcci – the Generl Code Coupling Interface}.
+\newblock {\em 6. LS-DYNA Anwenderforum, Frankenthal 2007 IT}, pages 1--8,
+  2007.
+
+\bibitem{Zhang2003}
+Hou Zhang, Xiaoli Zhang, Shanhong Ji, Yanhu Guo, Gustavo Ledezma, Nagi
+  Elabbasi, and Hugues DeCougny.
+\newblock {Recent development of fluid-structure interaction capabilities in
+  the ADINA system}.
+\newblock {\em Computers and Structures}, 81(8-11):1071--1085, 2003.
 
 \end{thebibliography}
