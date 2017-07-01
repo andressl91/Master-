@@ -6,7 +6,8 @@ In this chapter the main calculations of the proposed theories and will be prese
 
 \section{Validation of a One-step $\theta$ scheme}
 The numerical benchmark presented in \cite{Hron2006} has been chosen for validation of the \textit{One-step $\theta$} scheme presented in chapter. The benchmark has been widely accepted throughout the fluid-structure interaction community as a rigid validation benchmark. This is mainly due to the diversity of tests included, challenging all the main components of a fluid-structure interaction scheme. \\
-The computational domain is based on the \textit{von Kármán vortex street}, where a cylinder is intentionally placed off center in a pipe. This configuration initiates a periodic shedding of vortices, as some fluid moves past the cylinder. In \cite{Hron2006}, an elastic flag is placed behind the cylinder. \\
+
+The computational domain is based on the \textit{von Kármán vortex street} se (cite), where a cylinder is intentionally placed off center in a pipe. This configuration initiates a periodic shedding of vortices, as some fluid moves past the cylinder. In \cite{Hron2006}, an elastic flag is placed behind the cylinder. \\
 
 \begin{figure}
   \centering
@@ -14,28 +15,14 @@ The computational domain is based on the \textit{von Kármán vortex street}, wh
       \caption{Computational domain of the validation benchmark}
 \end{figure}
 \newpage
+
+
 The benchmark is divided into three main test environments.
-In the first environment the fluid solver is tested for a range of different inflow parameters. \\
-The second environment regards the structure implementation, regarding bending of the elastic flag. In this thesis the third and final environment will be evaluated, testing a full fluid-structure interaction problem.
+In the first environment the fluid solver is tested. \\
+The second environment regards the structure implementation, regarding bending of the elastic flag. The third environment the full fluid-structure interaction problem.
+The main test environments are further divided into three different problems with increasing difficulty, posing different challenges to the implementation.
 
-
-
-\
-The others have been tested and proved to be an essential part of the development of the solver, but will for brevity not be reported. \\ \\
-
-The fluid-structure interaction validation benchmark is divided into three different problems with increasing difficulty, posing different challenges to the implementation.
-Each problem alters the fluid and solid parameters to provoke different behavior of the system.
-
-\subsection{Boundary and Initial Conditions}
-A parabolic velocity profile on the form,
-\begin{align*}
-v_f(0, y) = 1.5 U\frac{(H -y)y}{(\frac{H}{2})^2}
-\end{align*}
-is set on the left channel inflow. H is the height of the channel, while the parameter U is set differently to each problem to induce different flow profiles. \
-At the right channel outflow, the pressure is set to $p = 0$. \
-No-slip boundary conditions are enforced on the channel walls, and on the whole inner geometry consisting of the circle and the elastic flag. A
-
-Several quantites for comparion is presented in \cite{Hron2006} for validation purposes. We will report
+ Several quantites for comparion is presented in \cite{Hron2006} for validation purposes. We will report
 \begin{itemize}
 \item The position of point A(t) as the strucutre undergoes deformation.
 \item Drag and lift forces exerted on of the whole interior geometry in contact with the fluid, consisting of the rigid circle and the elastic beam.
@@ -46,7 +33,39 @@ Several quantites for comparion is presented in \cite{Hron2006} for validation p
 
 The amplitude and mean values for the time dependent properties are calculated from the last period of oscillations, together with the period.
 
-\begin{table}[h]
+ In the following section, an overview of each environment togheter with  the numerical results be presented.  with comparison to \cite{Hron2006} and .. 
+ 
+ 
+\subsection{Validation of fluid solver}
+The first validation 
+
+\subsection{Validation of solid solver}
+The first validation 
+
+
+
+\newpage
+\subsection{Validation of fluid structure interaction solver}
+The validation of the FSI solver constist of three sub-cases which will be referred to FSI1, FS2 and FSI3. For all sub-cases
+a parabolic velocity profile on the form,
+\begin{align*}
+v_f(0, y) = 1.5 U\frac{(H -y)y}{(\frac{H}{2})^2}
+\end{align*}
+is set on the left channel inflow. H is the height of the channel, while the parameter U is set differently to each problem to induce different flow profiles. \
+At the right channel outflow, the pressure is set to $p = 0$. \
+No-slip boundary conditions for the fluid are enforced on the channel walls, and on the circle of the inner geometry. 
+The structure deformation and velocity is set to zero on the left side of the flag, where the flag is ancored to the circle. On the fluid-structure interface $\Gamma$, we enfore the kinematic and dynamic boundary condition
+\begin{align}
+\mathbf{v}_f = \mathbf{v}_s \\
+\mathbf{\sigma}_f \cdot \mathbf{n} = \mathbf{\sigma}_s \cdot \mathbf{n}
+\end{align}
+From chapter ?,  (1.1) is enforced strongly due to the continious velocity field, while (1.2) is enforced weakly by omtitting form the weak formulation by.
+
+
+Apart from the accuracy of the reported values, the purpose of the fsi validation can be divided into two parts. Firstly, it is of great importance to ensure that the overall coupling of the fluid-structure interaction problem are executed correctly. Second, a good choice of mesh extrapolation modle is essential to ensure mesh entanglement in the fluid mesh. 
+
+
+\begin{table}[h!]
 \centering
 \caption{Benchmark environment}
 \label{my-label}
@@ -71,16 +90,99 @@ Re                     & 20   & 100  & 200 \\
 \end{tabular}
 \end{table}
 
+\newpage
+\subsubsection{FSI1}
+The first environment yields a steady state solution for the system, inducing small deformations to the elastic flag. This environment is exelent to ensure the overall coupling of the FSI-problem is exectuted properly. In Tabel 1, simulations with different mesh extrapolation operators are presented.
 
-\subsection{FSI1}
-The first environment yields a steady state solution for the system, inducing small deformations to the elastic flag. However, due to the small deformations of order $10^{-6}$, FSI1 doesn't provide a rigorous test of the choice of mesh extrapolation model. In our studies, the mesh extrapolation model was omitted, still obtaining reasonable results. This proves that the FSI validation case can be misguiding, in terms of validating the mesh extrapolation model.
+\begin{table}[h!]
+\centering
+\caption{FSI 1 Results}
+\label{FSI1 Results}
+\begin{tabular}{ |p{1cm}||p{1cm}|p{2.5cm}|p{2.5cm}|p{2.7cm}|p{2.7cm}|p{1.2cm}|}
+ \hline
+  \multicolumn{6}{|c|}{Laplace} \\
+   \hline
+nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
+ \hline
+ 2474    & 21249  &       0.0226 &       0.8200 & 14.061 & 0.7542 \\
+ 7307    & 63365  &       0.0227 &       0.7760 & 14.111 & 0.7517 \\
+ 11556   & 99810  &       0.0226 &      0.8220 & 14.201 & 0.7609 \\
+  \hline 
+ REF     & REF    &       0.0227      &       0.8209      & 14.295  & 0.7638   \\
+ \hline
+\end{tabular}
+\begin{tabular}{ |p{1cm}||p{1cm}|p{2.5cm}|p{2.5cm}|p{2.7cm}|p{2.7cm}|p{1.2cm}|}
+ \hline
+  \multicolumn{6}{|c|}{Linear Elastic} \\
+   \hline
+nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
+ \hline
+ 2474    & 21249  &       0.0226 &       0.8198 & 14.061 & 0.7541 \\
+ 7307    & 63365  &       0.0227 &       0.7762 & 14.111 & 0.751  \\
+ 11556   & 99810  &       0.0226  &       0.8222 & 14.201 & 0.7609 \\
+  \hline 
+ REF     & REF    &       0.0227      &       0.8209      & 14.295  & 0.7638   \\
+ \hline
+\end{tabular}
+\begin{tabular}{ |p{1cm}||p{1cm}|p{2.5cm}|p{2.5cm}|p{2.7cm}|p{2.7cm}|p{1.2cm}|}
+ \hline
+  \multicolumn{6}{|c|}{Biharmonic bc1} \\
+   \hline
+nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
+ \hline
+ 2474    & 21249  &       0.0226 &       0.8200 & 14.061 & 0.7541 \\
+ 7307    & 63365  &       0.0227  &       0.7761 & 14.111 & 0.7517 \\
+ 11556   & 99810  &       0.0227  &       0.8017 & 14.205 & 0.9248 \\
+  \hline 
+ REF     & REF    &       0.0227      &       0.8209      & 14.295  & 0.7638   \\
+ \hline
+\end{tabular}
+\begin{tabular}{ |p{1cm}||p{1cm}|p{2.5cm}|p{2.5cm}|p{2.7cm}|p{2.7cm}|p{1.2cm}|}
+ \hline
+  \multicolumn{6}{|c|}{Biharmonic bc2} \\
+   \hline
+nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
+ \hline
+ 2474    & 21249  &       0.0226 &       0.8200 & 14.061 & 0.7543 \\
+ 7307    & 63365  &       0.0227 &       0.7761 & 14.111 & 0.7518 \\
+ 11556   & 99810  &       0.0227 &       0.8020 & 14.205 & 0.9249  \\
+  \hline 
+ REF     & REF    &       0.0227      &       0.8209      & 14.295  & 0.7638   \\
+ \hline
+\end{tabular}
+\end{table}
 
 
-\subsection{FSI2}
-The second environment results in a periodic solution. The inflow parameter .
-It proved to be one of the most demanding tests due to its large deformation, leading to the risk of entangled mesh cells. Therefore a high quality extrapolation of the solid deformation into the fluid is needed.
+\begin{table}[h!]
+\centering
+\caption{FSI 1 - No extrapolation}
+\label{FSI1- No extrapolation}
+\begin{tabular}{ |p{1cm}||p{1cm}|p{2.5cm}|p{2.5cm}|p{2.7cm}|p{2.7cm}|p{1.2cm}|}
+ \hline
+  \multicolumn{6}{|c|}{No extrapolation} \\
+   \hline
+nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
+ \hline
+ 2474    & 21249  &       0.0224 &       0.9008 & 14.064 & 0.7713 \\
+ 7307    & 63365  &       0.0226  &       0.8221 & 14.117 & 0.7660 \\
+ 11556   & 99810  &       0.0225 &       0.8787 & 14.212 & 0.7837 \\
+  \hline 
+ REF     & REF    &       0.0227      &       0.8209      & 14.295  & 0.7638   \\
+ \hline
+\end{tabular}
 
-\subsection{FSI3}
+\end{table}
+
+
+However, due to the small deformations of order $10^{-6}$, FSI1 doesn't provide a rigorous test of the chosen mesh extrapolation model. By omitting mesh extrapolation from the variatonal formulation,  reasonable results are still obtained. This proves that the FSI-1 validation case can be misguiding, in terms of choice of mesh extrapolation model is not essential. 
+
+
+\newpage \newpage
+\subsubsection{FSI2}
+The second environment results in a periodic solution, where the elastic flag oscilates behind the sylinder. 
+The FSI2 case proved to be one of the most demanding tests, due to the large deformation of the elastic flag. leading to the risk of entangled mesh cells. Therefore a high quality extrapolation of the solid deformation into the fluid is needed.
+
+\subsubsection{FSI3}
 The final environment does not induce deformation to the extent of the FSI2 benchmark. However a critical phase in the transition to the periodic solution was discovered, where the pressure oscillation induces a large deformation to the system.
 
 \begin{table}[h!]
