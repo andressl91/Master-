@@ -1,15 +1,16 @@
 \chapter{Numerical Results}
 
-In this chapter the main calculations of the proposed theories and will be presented.
+In this chapter the numerical results for this thesis will be presented. The first and section chapters conserns the verification and validation of the \textit{One-step $\theta$} scheme respectivly. In the third and final chapter, different speed-up strategies are presented and compared
 
 \section{Verification}
+
 
 \section{Validation of a One-step $\theta$ scheme}
 The numerical benchmark presented in \cite{Hron2006} has been chosen for validation of the \textit{One-step $\theta$} scheme presented in chapter. The benchmark has been widely accepted throughout the fluid-structure interaction community as a rigid validation benchmark. This is mainly due to the diversity of tests included, challenging all the main components of a fluid-structure interaction scheme. \\
 
 The computational domain is based on the \textit{von Kármán vortex street} se (cite), where a cylinder is intentionally placed off center in a pipe. This configuration initiates a periodic shedding of vortices, as some fluid moves past the cylinder. In \cite{Hron2006}, an elastic flag is placed behind the cylinder. \\
 
-\begin{figure}
+\begin{figure}[h!]
   \centering
     \includegraphics[scale=0.5]{./Fig/turekflag.png}
       \caption{Computational domain of the validation benchmark}
@@ -20,25 +21,116 @@ The computational domain is based on the \textit{von Kármán vortex street} se 
 The benchmark is divided into three main test environments.
 In the first environment the fluid solver is tested. \\
 The second environment regards the structure implementation, regarding bending of the elastic flag. The third environment the full fluid-structure interaction problem.
-The main test environments are further divided into three different problems with increasing difficulty, posing different challenges to the implementation.
+The test environments are further divided into three different problems with increasing difficulty, posing different challenges to the implementation.
 
- Several quantites for comparion is presented in \cite{Hron2006} for validation purposes. We will report
+ Several quantites for comparion is presented in \cite{Hron2006} for validation purposes. The evaluation of these quantities are considered for fully developed flow, 
+
 \begin{itemize}
-\item The position of point A(t) as the strucutre undergoes deformation.
+\item The position (x,y) of point A(t) as the elastic flag undergoes deformation.
 \item Drag and lift forces exerted on of the whole interior geometry in contact with the fluid, consisting of the rigid circle and the elastic beam.
 \begin{align*}
 (F_D, F_L) = \int_{\Gamma} \mathbf{\sigma} \cdot \mathbf{n} dS
 \end{align*}
 \end{itemize}
 
-The amplitude and mean values for the time dependent properties are calculated from the last period of oscillations, together with the period.
-
- In the following section, an overview of each environment togheter with  the numerical results be presented.  with comparison to \cite{Hron2006} and .. 
+The flowing environments and their sub-problems presents both steady state and periodic solutions. For the steady state solutions, the quantity of interest will be calculated for the last timestep. For the periodic solutions, the amplitude and mean values for the time dependent properties are calculated from the last period of oscillations. In\cite{Hron2006}, details such as  finite-element spaces and newton iteration critera are not reported. Therefore, the following numerical results have been a process of trial and error. In the following section, an overview of each environment togheter with  the numerical results be presented.  with comparison to \cite{Hron2006} and .. 
  
- 
-\subsection{Validation of fluid solver}
-The first validation 
+ \newpage
+\subsection{Validation of fluid solver} 
+The first test environment conserns the fluid dynamics part of the total FSI problem, to ensure the solver can handle flows in low Reynold-numbers regime.  The validation of the fluid solver is divided into the three sub-cases CFD1, CFD2 and CFD3.While  CFD1 and CFD2 yields steady state solutions, CFD3 is a periodic solution.
 
+%\begin{figure}[h!]
+  %\centering
+    %\includegraphics[scale=0.3]{./Fig/cfd1mesh.png}
+      %\caption{Computational domain of channel flow with rigid inner geometry. }
+%\end{figure}
+
+\begin{table}[h!]
+\centering
+\caption{Benchmark environment}
+\label{my-label}
+\begin{tabular}{ |p{3cm}||p{2cm}|p{2cm}|p{2cm}|  }
+ \hline
+ \multicolumn{4}{|c|}{Fluid parameters} \\
+ \hline
+ parameter              & CFD 1 & CFD 2 & CFD 3 \\
+ \hline
+$\rho^f [10^{3}\frac{kg}{m^3}]$ & 1    & 1    & 1    \\
+$\nu^f  [10^{-3}\frac{m^2}{s}]$  & 1    & 1    & 1    \\
+U                      & 0.2  & 1    & 2    \\
+Re                     & 20   & 100  & 200 \\
+\hline
+\end{tabular}
+\end{table}
+
+A parabolic velocity profile on the form,
+\begin{align*}
+v_f(0, y) = 1.5 U\frac{(H -y)y}{(\frac{H}{2})^2}
+\end{align*}
+is set on the left channel inflow. H is the height of the channel, while the parameter U is set differently to each problem to induce different flow profiles. \
+
+At the right channel outflow, the pressure is set to $p = 0$. \
+No-slip boundary conditions for the fluid are enforced on the channel walls, and on the inner geometry consisting of the circle and the elastic flag. 
+The validation is based on the evaluation of drag and lift forces on the inner geometry for each sub-case.  with comparison to \cite{Hron2006}. The following tables presents the numerical results for each sub-case. 
+
+
+\begin{table}[h!]
+\centering
+\caption{CFD 1 Results}
+\label{CFD 1 Results}
+\begin{tabular}{ |p{1cm}||p{2.7cm}|p{2.5cm}|p{2.5cm}|}
+\hline
+nel & ndof & Drag  & Lift \\
+\hline
+ 1438    & 6881   (P2-P1) & 13.60 & 1.0899 \\
+ 2899    & 13648 (P2-P1)& 14.05 & 1.1261 \\
+ 7501    & 34657 (P2-P1) & 14.17   & 1.109 \\
+ 19365   & 88520 (P2-P1) & 14.20 & 1.119 \\
+  \hline
+  \multicolumn{2}{|c|}{Reference}  & 14.29   & 1.119\\
+   \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\caption{CFD 2 Results}
+\label{CFD-2 Results}
+\begin{tabular}{ |p{1cm}||p{2.7cm}|p{2.5cm}|p{2.5cm}|}
+\hline
+nel & ndof & Drag  & Lift \\
+\hline
+ 1438    & 6881  (P2-P1) & 126.0 &  8.62 \\
+ 2899    & 13648  (P2-P1)& 131.8 & 10.89  \\
+ 7501    & 34657  (P2-P1)& 135.1 & 10.48  \\
+ 19365   & 88520 (P2-P1) & 135.7 &10.55  \\
+  \hline
+  \multicolumn{2}{|c|}{Reference}  & 136.7  & 10.53\\
+   \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\caption{CFD 3 Results}
+\label{CFD-3 Results}
+\begin{tabular}{ |p{1cm}||p{2.7cm}|p{2.9cm}|p{2.9cm}|}
+\hline
+nel & ndof & Drag  & Lift \\
+\hline
+ 1438    & 6881 (P3-P2)  & 414.86  $\pm$ 5.63 & -7.46 $\pm$  444.07 \\
+ 2899    & 13648 (P3-P2) & 432.86 $\pm$  5.50 & -9.69  $\pm$ 431.29 \\
+ 7501    & 34657 (P3-P2) &                        &                         \\
+ 19365   & 88520 (P3-P2) &                        &                         \\
+  \hline
+  \multicolumn{2}{|c|}{Reference}  & 439.45 $\pm$ 5.6183  &  -11.893 $\pm$437.81\\
+   \hline
+\end{tabular}
+\end{table}
+
+
+
+\newpage
 \subsection{Validation of solid solver}
 The first validation 
 
@@ -62,6 +154,8 @@ The structure deformation and velocity is set to zero on the left side of the fl
 From chapter ?,  (1.1) is enforced strongly due to the continious velocity field, while (1.2) is enforced weakly by omtitting form the weak formulation by.
 
 
+
+The main purpose of the validation of the fluid solver twofold: 
 Apart from the accuracy of the reported values, the purpose of the fsi validation can be divided into two parts. Firstly, it is of great importance to ensure that the overall coupling of the fluid-structure interaction problem are executed correctly. Second, a good choice of mesh extrapolation modle is essential to ensure mesh entanglement in the fluid mesh. 
 
 
