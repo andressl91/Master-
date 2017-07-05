@@ -6,6 +6,6 @@
 \contentsline {subsection}{\numberline {1.2.2}Validation of solid solver}{6}{subsection.1.2.2}
 \contentsline {subsection}{\numberline {1.2.3}Validation of fluid structure interaction solver}{7}{subsection.1.2.3}
 \contentsline {subsubsection}{FSI1}{8}{section*.9}
-\contentsline {subsubsection}{FSI2}{10}{section*.12}
+\contentsline {subsubsection}{FSI2}{9}{section*.12}
 \contentsline {subsubsection}{FSI3}{10}{section*.13}
 \contentsline {section}{\numberline {1.3}Mesh movement}{13}{section.1.3}
