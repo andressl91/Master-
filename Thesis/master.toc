@@ -2,10 +2,17 @@
 \contentsline {chapter}{\numberline {1}Numerical Results}{3}{chapter.1}
 \contentsline {section}{\numberline {1.1}Verification}{3}{section.1.1}
 \contentsline {section}{\numberline {1.2}Validation of a One-step $\theta $ scheme}{3}{section.1.2}
-\contentsline {subsection}{\numberline {1.2.1}Validation of fluid solver}{5}{subsection.1.2.1}
-\contentsline {subsection}{\numberline {1.2.2}Validation of solid solver}{6}{subsection.1.2.2}
-\contentsline {subsection}{\numberline {1.2.3}Validation of fluid structure interaction solver}{7}{subsection.1.2.3}
-\contentsline {subsubsection}{FSI1}{8}{section*.9}
-\contentsline {subsubsection}{FSI2}{9}{section*.12}
-\contentsline {subsubsection}{FSI3}{10}{section*.13}
-\contentsline {section}{\numberline {1.3}Mesh movement}{13}{section.1.3}
+\contentsline {subsection}{\numberline {1.2.1}Validation of fluid solver}{6}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {1.2.2}Discussion of results}{8}{subsection.1.2.2}
+\contentsline {subsection}{\numberline {1.2.3}Validation of solid solver}{10}{subsection.1.2.3}
+\contentsline {subsection}{\numberline {1.2.4}Validation of fluid structure interaction solver}{11}{subsection.1.2.4}
+\contentsline {subsubsection}{FSI1}{12}{section*.10}
+\contentsline {subsubsection}{FSI2}{13}{section*.13}
+\contentsline {subsubsection}{FSI3}{13}{section*.14}
+\contentsline {subsection}{\numberline {1.2.5}Discussion of results}{16}{subsection.1.2.5}
+\contentsline {section}{\numberline {1.3}Optimization of Newtonsolver}{17}{section.1.3}
+\contentsline {section}{\numberline {1.4}Consistent methods}{18}{section.1.4}
+\contentsline {subsection}{\numberline {1.4.1}Jacobi buffering}{18}{subsection.1.4.1}
+\contentsline {section}{\numberline {1.5}Non-consisten methods}{18}{section.1.5}
+\contentsline {subsection}{\numberline {1.5.1}Reuse of Jacobian}{18}{subsection.1.5.1}
+\contentsline {subsection}{\numberline {1.5.2}Quadrature reduce}{18}{subsection.1.5.2}

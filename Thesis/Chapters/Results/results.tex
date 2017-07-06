@@ -42,14 +42,16 @@ from the maximum and minimum value of the quantity of interest from the last per
 
  In \cite{Hron2006}, all steady state solutions seems to be calulated by solving a steady state equation such as the stokes equation for the fluid problem. The assumtion is based on simulation paramters regarding time-step are only reported for the periodic solutions. In this thesis all problems in \cite{Hron2006},will be calculated by time integration. The main motivation is based upon that any given numerical errors regarding time integration will be intercepted at an earlier stage for a simpler problem. 
 
-In\cite{Hron2006}, details such as  finite-element spaces and newton iteration critera are not reported. Therefore, the following numerical results have been a process of trial and error. In the following section, an overview of each environment togheter with  the numer
-ical results be presented. 
+In \cite{Hron2006}, details such as  finite-element spaces and newton iteration critera are not reported. Therefore, the following numerical results have been a process of trial and error. In the following section, an overview of each environment togheter with  the numerical results will be presented. A formal discussion of the results are given at the end of each simulation environment 
+
+ Since the first two simulation environmens are presented mainly in support of the third and final environment, they where not reported in OTHER CITE. Therefore results in the first two subsections  will be compared with \cite{Hron2006}, while the third will consider both \cite{Hron2006} and OTHER CITE.
+
  \newpage
 \subsection{Validation of fluid solver}
 The first test environment conserns the fluid dynamics part of the total FSI problem, to ensure the solver can handle flows in low Reynold-numbers regime. Two approaches for the validation are given in \cite{Hron2006}. The first approach consideres setup as a fluid-structure interaction problem, by setting the elastic flag close to rigid given by the structure paramters. Second, the flag can be set fully rigid and considered a purly flow problem.  Hence, the fluid variation formulation can be reduced to
 
 
-Find $\bat{v}_f, \ha{p}_f $ such that}
+Find $\bat{v}_f, \ha{p}_f $ such that
 \begin{align*}
  \big( \pder{\bat{v}}{t}, \ \gat{\psi}^u \big)_{\hat{\Omega}_f} +
 \femf{(\bat{v} \cdot \hat{\nabla}) \bat{v}}{\gat{\psi}^u}
@@ -98,23 +100,26 @@ At the right channel outflow, the pressure is set to $p = 0$. \
 No-slip boundary conditions for the fluid are enforced on the channel walls, and on the inner geometry consisting of the circle and the elastic flag.
 The validation is based on the evaluation of drag and lift forces on the inner geometry for each sub-case.  with comparison to \cite{Hron2006}. The following tables presents the numerical results for each sub-case.
 
+\newpage
 
 \begin{table}[h!]
 \centering
 \caption{CFD 1 Results}
 \label{CFD 1 Results}
-\begin{tabular}{ |p{1cm}||p{2.7cm}|p{2.5cm}|p{2.5cm}|}
+\begin{tabular}{ |p{1cm}||p{2.7cm}|p{3.3cm}|p{3.3cm}|}
 \hline
-  \multicolumn{4}{|c|}{$\Delta t = 0.05 \hspace{2mm} \theta = 1.0$} \\
+  \multicolumn{4}{|c|}{$\Delta t = 0.1 \hspace{2mm} \theta = 1.0$} \\
 \hline
 nel & ndof & Drag  & Lift \\
 \hline
- 1438    & 6881   (P2-P1) & 13.60 & 1.0899 \\
- 2899    & 13648 (P2-P1)& 14.05 & 1.1261 \\
- 7501    & 34657 (P2-P1) & 14.17   & 1.109 \\
- 19365   & 88520 (P2-P1) & 14.20 & 1.119 \\
+ 1438    & 6881   & 13.60 & 1.089  \\
+ 2899    & 13648  & 14.05 & 1.126 \\
+ 7501    & 34657  & 14.17   & 1.109 \\
+ 19365   & 88520  & 14.20 & 1.119 \\
   \hline
   \multicolumn{2}{|c|}{Reference}  & 14.29   & 1.119\\
+   \hline
+    \multicolumn{2}{|c|}{Error}  & 0.006 \%   & 0.00 \%\\
    \hline
 \end{tabular}
 \end{table}
@@ -123,7 +128,7 @@ nel & ndof & Drag  & Lift \\
 \centering
 \caption{CFD-2}
 \label{CFD-2 Results}
-\begin{tabular}{ |p{1cm}||p{2.7cm}|p{2.9cm}|p{3cm}|}
+\begin{tabular}{ |p{1cm}||p{2.7cm}|p{3.3cm}|p{3.3cm}|}
  \hline
   \multicolumn{4}{|c|}{$\Delta t = 0.01 \hspace{2mm} \theta = 1.0$} \\
    \hline
@@ -134,59 +139,83 @@ nel & ndof & Drag  & Lift \\
  7501    & 34657 (P2-P1) & 135.1 & 10.48  \\
  19365   & 88520(P2-P1)  & 135.7 & 10.55  \\
  \hline
-  \multicolumn{4}{|c|}{$\Delta t = 0.005 \theta = 1.0$} \\
+  \multicolumn{2}{|c|}{Reference}  & 136.7   & 10.53\\
    \hline
-nel & ndof & Drag  & Lift \\
-\hline
- 1438    & 6881  (P2-P1) & 126.0 &  8.62 \\
- 2899    & 13648  (P2-P1)& 131.8 & 10.89  \\
- 7501    & 34657  (P2-P1)& 135.1 & 10.48  \\
- 19365   & 88520 (P2-P1) & 135.7 &10.55  \\
-  \hline
-  \multicolumn{2}{|c|}{Reference}  & 136.7  & 10.53\\
+    \multicolumn{2}{|c|}{Error}  & 0.007 \%   & 0.001 \%\\
    \hline
 \end{tabular}
 \end{table}
+
+\begin{figure}[h!]
+  \centering
+    \includegraphics[scale=0.2]{./Fig/cfd3.png}
+      \caption{CFD-3, flow visualization of velocity time t = 9s}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+    \includegraphics[scale=0.5]{./Fig/cfd3_liftdrag.png}
+      \caption{CFD-3, lift and drag forces at time t = [9, 9.6]}
+\end{figure}
 
 
 \begin{table}[h!]
 \centering
 \caption{CFD-3}
 \label{CFD-3 Results}
-\begin{tabular}{ |p{1cm}||p{2.7cm}|p{2.9cm}|p{3cm}|}
+\begin{tabular}{ |p{1cm}||p{2.9cm}|p{3.3cm}|p{3.3cm}|}
  \hline
   \multicolumn{4}{|c|}{$\Delta t = 0.01 \hspace{2mm} \theta = 0.5$} \\
    \hline
 nel & ndof & Drag  & Lift \\
 \hline
- 1438    & 6881 (P3-P2)   & 414.86      $\pm$  5.6282 & -7.458      $\pm$  444.07  \\
- 2899    & 13648 (P3-P2)  & 432.86      $\pm$  5.5025 & -9.686      $\pm$  431.28  \\
- 7501    & 34657 (P3-P2)  & 438.20      $\pm$  5.5994 & -11.595      $\pm$  438.00 \\
- 19365   & 88520 (P3-P2) & 438.80      $\pm$  5.6290 & -11.158      $\pm$  439.23 \\
+ 1438    & 6881  (P2-P1)   & 417.23       +/-  0.0217 & -249.21       +/-  0.32  \\
+   & 16474 (P3-P2)   & 414.86      $\pm$  5.6282 & -7.458      $\pm$  444.07  \\
  \hline
-  \multicolumn{4}{|c|}{$\Delta t = 0.005 \theta = 0.5$} \\
+ 2899    & 13648  (P2-P1) & 408.50  $\pm$   4.3029 & -19.731  $\pm$   373.45 \\  
+     &  32853 (P3-P2)  & 432.86      $\pm$  5.5025 & -9.686      $\pm$  431.28  \\
+  \hline
+  7501    & 34657 (P2-P1) & 431.57  $\pm$   5.2627 & -12.497  $\pm$   429.76 \\    
+    &  83955 (P3-P2)  & 438.20      $\pm$  5.5994 & -11.595      $\pm$  438.00 \\
+    \hline
+    19365   & 88520 (P2-P1) & 435.43  $\pm$   5.4133 & -11.545  $\pm$   438.89 \\
+   &   215219 (P3-P2) & 438.80      $\pm$  5.6290 & -11.158      $\pm$  439.23 \\
+\hline
+ \multicolumn{2}{|c|}{Reference}  & 439.95 $\pm$ 5.6183 & -11.893 $\pm$ 437.81\\
+ \hline
+  \multicolumn{2}{|c|}{Error}  & 0.002 \% $\pm$ 0.001 \% & 0.061 \% $\pm$ 0.003\% \\
+  \hline
+  \end{tabular}
+  \vspace{2cm}
+ \begin{tabular}{ |p{1cm}||p{2.9cm}|p{3.3cm}|p{3.3cm}|}
+  \hline
+  \multicolumn{4}{|c|}{$\Delta t = 0.005 \hspace{2mm} \theta = 0.5$} \\
    \hline
 nel & ndof & Drag  & Lift \\
 \hline
- 1438    & 6881  (P3-P2) & 414.90     $\pm$  5.7319 & -8.467 $\pm$  443.45  \\
- 2899    & 13648(P3-P2)  & 432.90      $\pm$  5.5333 & -11.382      $\pm$  430.60 \\
- 7501    & 34657(P3-P2)  & 438.23      $\pm$  5.6393 & -12.917 $\pm$  437.78 \\
- 19365   & 88520(P3-P2)  & 438.84      $\pm$  5.6576 & -12.786      $\pm$  438.36 \\
+ 1438    & 6881  (P2-P1)   &  417.24  $\pm$  0.0084 & -249.386   $\pm$ 0.1345  \\
+ 1438    & 16474 (P3-P2)   & 414.90     $\pm$  5.7319 & -8.467 $\pm$  443.45  \\
 \hline
- \multicolumn{2}{|c|}{Reference}  & 439.95 $\pm$5.6183 & -11.893 $\pm$ 437.81\\
+ 1438    &13648  (P2-P1)   & 408.27   $\pm$ 4.0192 & -18.981   $\pm$ 363.84 \\
+ 2899    &  32853 (P3-P2)   & 432.90      $\pm$  5.5333 & -11.382      $\pm$  430.60 \\
  \hline
+ 1438    & 34657  (P2-P1)   & 431.59 $\pm$5.2979 & -13.644   $\pm$ 429.68 \\
+ 7501    & 83955 (P3-P2)  & 438.23      $\pm$  5.6393 & -12.917 $\pm$  437.78 \\
+ \hline
+ 1438    & 88520  (P2-P1)   & 435.46  $\pm$ 5.4579 & -13.190   $\pm$ 438.05 \\
+ 19365   & 215219 (P3-P2)  & 438.84    $\pm$  5.6576 & -12.786      $\pm$  438.36 \\
+\hline
+ \multicolumn{2}{|c|}{Reference}  & 439.95 $\pm$ 5.6183 & -11.893 $\pm$ 437.81\\
+ \hline
+  \multicolumn{2}{|c|}{Error}  & 0.002 \% $\pm$ 0.006 \% & 0.075 \% $\pm$ 0.001\% \\
+  \hline
 \end{tabular}
 \end{table}
 
-
-\begin{figure}[h!]
-  \centering
-    \includegraphics[scale=0.2]{./Fig/cfd3.png}
-      \caption{CFD-3 simulation at time t = 9s}
-\end{figure}
-
+\newpage \newpage \newpage \newpage \newpage
 \subsection{Discussion of results}
-The numerical results in good 
+The numerical results for CFD1, CFD2 and CFD3 are all within reasonable range of the reference solutions presented in \cite{Hron2006}. 
+For CFD1 and CFD2, the choice of P2-P1 elements together with a fully implicit schene $\theta = 1$ gained sufficient accuracy in comparison with the reference solution. The second order cranc-nicholoson scheme  $\theta = 0.5$ was investigated for both problems, however only improving the results of order $10^{-6}$ for both lift and drag. For the periodic problem CFD-3, the choice of  P2-P1 elements with a implicit time-stepping scheme proved unsuficcient for capturing the expected periodic solution. Only a steady-state flow profile was observed for both $/Delta t = [0.01, 0.005]$, which are the same time-steps used in the original paper. Using P3-P2 elements with cranc-nicolson time-stepping scheme, the periodic solution was attained. Since the choice of finite-elemt pair is not reported in the original paper, a fundament for arguing compared to the original work is not possible.
 
 The evaluation of drag and lift forces have proven to be troublesome
 \newpage
@@ -197,7 +226,10 @@ The first validation
 
 \newpage
 \subsection{Validation of fluid structure interaction solver}
-The validation of the FSI solver constist of three sub-cases which will be referred to FSI1, FS2 and FSI3. For all sub-cases
+The validation of the FSI solver constist of three sub-cases which will be referred to FSI-1, FSI-2 and FSI-3. The FSI-1 environment yields a steady state solution for the system, inducing small deformations to the elastic flag. This environment is exelent to ensure the overall coupling of the FSI-problem is exectuted properly. The FSI-2 and FSI-3 environment results in a periodic solution, where the elastic flag oscilates behind the sylinder.
+
+
+ For all sub-cases
 a parabolic velocity profile on the form,
 \begin{align*}
 v_f(0, y) = 1.5 U\frac{(H -y)y}{(\frac{H}{2})^2}
@@ -214,8 +246,7 @@ From chapter ?,  (1.1) is enforced strongly due to the continious velocity field
 
 
 
-The main purpose of the validation of the fluid solver twofold:
-Apart from the accuracy of the reported values, the purpose of the fsi validation can be divided into two parts. Firstly, it is of great importance to ensure that the overall coupling of the fluid-structure interaction problem are executed correctly. Second, a good choice of mesh extrapolation modle is essential to ensure mesh entanglement in the fluid mesh.
+Apart from the accuracy of the reported values, the main purpose of the validation of the fluid solver is twofold. Firstly, it is of great importance to ensure that the overall coupling of the fluid-structure interaction problem are executed correctly. Second, a good choice of mesh extrapolation model is essential to ensure that mesh entanglement is not present. 
 
 
 \begin{table}[h!]
@@ -245,7 +276,7 @@ Re                     & 20   & 100  & 200 \\
 
 \newpage
 \subsubsection{FSI1}
-The first environment yields a steady state solution for the system, inducing small deformations to the elastic flag. This environment is exelent to ensure the overall coupling of the FSI-problem is exectuted properly. In Tabel 1, simulations with different mesh extrapolation operators are presented.
+
 
 \begin{table}[h!]
 \centering
@@ -327,16 +358,15 @@ nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
 \end{table}
 
 
-However, due to the small deformations of order $10^{-6}$, FSI1 doesn't provide a rigorous test of the chosen mesh extrapolation model. By omitting mesh extrapolation from the variatonal formulation,  reasonable results are still obtained. This proves that the FSI-1 validation case can be misguiding, in terms of choice of mesh extrapolation model is not essential.
 
 
 \newpage \newpage
 \subsubsection{FSI2}
-The second environment results in a periodic solution, where the elastic flag oscilates behind the sylinder.
-The FSI2 case proved to be one of the most demanding tests, due to the large deformation of the elastic flag. leading to the risk of entangled mesh cells. Therefore a high quality extrapolation of the solid deformation into the fluid is needed.
+
+
 
 \subsubsection{FSI3}
-The final environment does not induce deformation to the extent of the FSI2 benchmark. However a critical phase in the transition to the periodic solution was discovered, where the pressure oscillation induces a large deformation to the system.
+
 
 \begin{table}[h!]
 \centering
@@ -450,5 +480,67 @@ nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
 \end{table}
 
 
-\section{Mesh movement}
-The final enviroment
+\subsection{Discussion of results}
+
+However, due to the small deformations of order $10^{-6}$, FSI1 doesn't provide a rigorous test of the chosen mesh extrapolation model. By omitting mesh extrapolation from the variatonal formulation,  reasonable results are still obtained. This proves that the FSI-1 validation case can be misguiding, in terms of choice of mesh extrapolation model is not essential.
+
+The FSI2 case proved to be one of the most demanding tests, due to the large deformation of the elastic flag. leading to the risk of entangled mesh cells. Therefore a high quality extrapolation of the solid deformation into the fluid is needed.
+
+The final environment does not induce deformation to the extent of the FSI2 benchmark. However a critical phase in the transition to the periodic solution was discovered, where the pressure oscillation induces a large deformation to the system.AZ
+
+\newpage
+\section{Optimization of Newtonsolver}
+The expression \textit{bottleneck} esxpress a phenomen where the total performance of a complete implementation is limited to small code fragments, accounting for the primary consumption of computer resources.
+
+As for many other applications, within computational science one can often assume the consummation of resources follows the \textit{The Pareto principle}. Meaning that for different types of events, roughly 80\% of the effects come from 20\% of the causes. An analogy to computational sciences it that 80\% of the computational demanding operations comes from 20\% of the code. In our case, the bottleneck is the newtonsolver. The two main reasons for this is 
+
+\begin{itemize}
+\item \textbf{Jacobian assembly} \\
+The construction of the Jacobian matrix for the total residue of the system, is the most time demanding operations within the whole computation. 
+\item \textbf{Solver}. \\ 
+As iterative solvers are limited for the solving of fluid-structure interaction problems, direct solvers was implemented for this thesis. As such, the operation of solving a linear problem at each iteration is computational demanding, leading to  less computational efficient operations. Mention order of iterations?
+\end{itemize}
+
+Facing these problems, several attempts was made to speed-up the implementation. The FEniCS project consist of several nonlinear solver backends, were fully user-customization option are available. However one main problem which we met was the fact that FEniCS assembles the matrix of the different variables over the whole mesh, even though the variable is only defined in one to the sub-domains of the system.In our case the pressure is only defined within the fluid domain, and therefore the matrix for the total residual consisted of several zero columns within the structure region. FEniCS provides a solution for such problems, but therefore we were forced to construct our own solver and not make use of the built-in nonlinear solvers. \\
+
+The main effort of speed-up were explored around the Jacobian assembly, as this was within our control.  
+
+Of the speed-ups methods explored in this thesis we will specify that some of them were \textit{consistent} while others were \textit{nonconsistent}. Consistent methods are methods that always will work, involving smarter use of properties regarding the linear system to be solved. The non-consistent method presented involves altering the equation to be solved by some simplification of the system. As these simplifications will alter the expected convergence of the solver, one must take account for additional Newton iterations against cheaper Jacobi assembly. Therefore one also risk breakdown of the solver as the Newton iterations may not converge.   
+
+
+\section{Consistent methods}
+\subsection{Jacobi buffering}
+By inspection of the Jacobi matrix, some terms of the total residue is linear terms, and remain constant within each time step. By assembling these terms only in the first Newton iteration will save some assembly time for the additional iterations needed each time step. As consequence the convergence of the Newton method should be unaffected as we do not alter the system.  
+
+\section{Non-consisten methods}    
+\subsection{Reuse of Jacobian}
+As the assembly of the Jacobian at each iteration is costly, one approach of reusing the Jacobian for the linear system was proposed. In other words, the LU-factorization of the system is reused until the Jacobi is re-assembled. This method greatly reduced the computational time for each time step. By a user defined parameter, the number of iterations before a new assembly of the Jacobian matrix can be controlled. 
+
+\subsection{Quadrature reduce}
+The assemble time of the Jacobian greatly depends on the degree of polynomials used in the discretisation of the total residual. Within FEniCS this parameter can be controlled, and as such we can specify the order of polynomials representing the Jacobian. The use of lower order polynomials reduces assemble time of the matrix at each newton-iteration, however it leads to an inexact Jacobian which may results to additional iterations. 
+
+
+\begin{figure}[h!]
+\hspace*{-2.2cm}   
+ \includegraphics[scale=0.36]{./Fig/itercompare.png}
+ \caption{Computational domain of the validation benchmark}
+\end{figure}
+
+\begin{table}[h]
+\centering
+\caption{Comparison of speedup techniques }
+\label{my-label}
+\begin{tabular}{ |p{2.8cm}|p{2.4cm}||p{2.4cm}|p{2.4cm}|p{2.4cm}|  }
+ %\hline
+ %\multicolumn{4}{|c|}{Solid parameters} \\
+ \hline
+Implementation &Naive  & Reducequad. & Reusejacobi & Combined \\
+ \hline
+ Mean time/timestep &   104.5 &  125.5 & 48.3  & 6.8   \\
+ \hline
+ Speedup & 1.0 &  1.20  & 0.46  & 0.06   \\
+ \hline
+ Mean iteration &  4.49 &  30.59 & 10.29  & 10.29   \\
+ \hline
+\end{tabular}
+\end{table}

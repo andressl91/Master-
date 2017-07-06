@@ -1,23 +1,9 @@
 \begin{thebibliography}{1}
 
-\bibitem{Geuzaine}
-Philippe Geuzaine.
-\newblock {Numerical Simulations of Fluid-Structure Interaction Problems using
-  MpCCI}.
-\newblock (1):1--5.
-
-\bibitem{Wolf2007}
-Klaus Wolf, Schloss Birlinghoven, Code~Coupling Interface, Open~Programming
-  Interface, and Distributed Simulation.
-\newblock {Mpcci – the Generl Code Coupling Interface}.
-\newblock {\em 6. LS-DYNA Anwenderforum, Frankenthal 2007 IT}, pages 1--8,
-  2007.
-
-\bibitem{Zhang2003}
-Hou Zhang, Xiaoli Zhang, Shanhong Ji, Yanhu Guo, Gustavo Ledezma, Nagi
-  Elabbasi, and Hugues DeCougny.
-\newblock {Recent development of fluid-structure interaction capabilities in
-  the ADINA system}.
-\newblock {\em Computers and Structures}, 81(8-11):1071--1085, 2003.
+\bibitem{Hron2006}
+Jaroslav Hron and Stefan Turek.
+\newblock {Proposal for numerical benchmarking of fluid-structure interaction
+  between an elastic object and laminar incompressible flow}.
+\newblock {\em Fluid-Structure Interaction}, 53:371--385, 2006.
 
 \end{thebibliography}

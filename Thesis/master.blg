@@ -9,48 +9,44 @@ Database file #4: ./Cite/NavierStokes.bib
 Database file #5: ./Cite/Verification.bib
 Database file #6: ./Cite/EulerianFormulation.bib
 Database file #7: ./Cite/Meshupdate.bib
-Warning--empty journal in Geuzaine
-Warning--there's a number but no volume in Geuzaine
-Warning--empty year in Geuzaine
-You've used 3 entries,
+You've used 1 entry,
             2118 wiz_defined-function locations,
-            524 strings with 4732 characters,
-and the built_in function-call counts, 1230 in all, are:
-= -- 116
-> -- 73
-< -- 1
-+ -- 29
-- -- 26
-* -- 104
-:= -- 212
-add.period$ -- 9
-call.type$ -- 3
-change.case$ -- 22
+            511 strings with 4326 characters,
+and the built_in function-call counts, 348 in all, are:
+= -- 35
+> -- 13
+< -- 0
++ -- 5
+- -- 4
+* -- 25
+:= -- 64
+add.period$ -- 3
+call.type$ -- 1
+change.case$ -- 5
 chr.to.int$ -- 0
-cite$ -- 6
-duplicate$ -- 38
-empty$ -- 79
-format.name$ -- 26
-if$ -- 241
+cite$ -- 1
+duplicate$ -- 11
+empty$ -- 27
+format.name$ -- 4
+if$ -- 68
 int.to.chr$ -- 0
-int.to.str$ -- 3
-missing$ -- 3
-newline$ -- 18
-num.names$ -- 6
-pop$ -- 23
+int.to.str$ -- 1
+missing$ -- 1
+newline$ -- 8
+num.names$ -- 2
+pop$ -- 3
 preamble$ -- 1
-purify$ -- 19
+purify$ -- 4
 quote$ -- 0
-skip$ -- 24
+skip$ -- 8
 stack$ -- 0
-substring$ -- 75
-swap$ -- 7
-text.length$ -- 1
+substring$ -- 30
+swap$ -- 1
+text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 12
-warning$ -- 3
-while$ -- 13
-width$ -- 4
-write$ -- 33
-(There were 3 warnings)
+type$ -- 4
+warning$ -- 0
+while$ -- 4
+width$ -- 2
+write$ -- 13
