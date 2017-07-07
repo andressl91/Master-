@@ -475,12 +475,12 @@ The FSI2 case proved to be one of the most demanding tests, due to the large def
 The FSI3 environment does not induce deformation to the extent of the FSI2. However a critical phase in the transition to the periodic solution was discovered, where the pressure oscillation induces a large deformation to the system.
 
 \subsection{Investigation of temporal stability}
-It is known that the Crank-Nicolson scheme can suffer from temporal stability, for long-term simulations \cite{Wick2013a}.
 
 Preliminary work regarding discretization and numerical analysis of Crank-Nicholson time stepping schemes for fluid structure interaction can be found in cite WIck papers. Two main properties of interest of higher-order methods have proven to be the stability of long-time simulation, and obtaining the expected physics for the problem of interest.
 
-The authors of \cite{Richter2015}, investigated temporal stability of the Crank-Nicolson scheme for the validation benchmark found in \cite{Hron2006}.  
-The critera for the numerical experiements was to obatin a stable solution in the time interval [0, 10] minutes, by temporal and spatial refinement studies. The fully monolithic FSI problem discretized with second-order Crank-Nicolson, proved to give general stability problems for long-term simulation. 
+It is known that the Crank-Nicolson scheme can suffer from temporal stability, for long-term simulations \cite{Wick2013a}. Therefore,
+the authors of \cite{Richter2015}, investigated temporal stability of the Crank-Nicolson scheme for the validation benchmark found in \cite{Hron2006}.  
+The critera for the numerical experiements was to obatin a stable solution in the time interval [0, 10] minutes, by temporal and spatial refinement studies. The fully monolithic FSI problem discretized with second-order Crank-Nicolson, proved to give general stability problems for long-term simulation for certain time-steps \textit{k}. 
 
 Following the ideas of \cite{Richter2015},, a second order scheme based on the Cranck-Nicholson yields two possibilities.
 \begin{discr}
@@ -504,9 +504,19 @@ Following the ideas of \cite{Richter2015},, a second order scheme based on the C
 
 The numerical experiments showed very similar performance for Discretization 1.1 and 1.2 , and significant differences of temporal accuracy was not found. \\
 Two options to coupe with the presented unstabilities are the \textit{shifted Crank-Nicolson} \cite{Richter2015}, \cite{Wicka}, \cite{Wick2013a},   and the \textit{frac-step method}. Both of these methods are defined as A-stable time-stepping schemes meaning..  In this thesis the shifted Crank-Nocolson scheme will be considered. \\
-The shifted Crank-Nicolson scheme introduce further stability to the overall system, by shifting the $\theta$ paramter slightly to the implicit side. If the shift is dependent of the time-step \textit{k} such that $\theta \leq \frac{1}{2} + k$, the scheme will be of second order \cite{Richter2015}.
+The shifted Crank-Nicolson scheme introduce further stability to the overall system, by shifting the $\theta$ paramter slightly to the implicit side. If the shift is dependent of the time-step \textit{k} such that $\frac{1}{2} \leq \theta \leq \frac{1}{2} + k$, the scheme will be of second order \cite{Richter2015}.
 
+\newpage
 
+\begin{figure}[h!]
+ 	\centering
+    \includegraphics[scale=0.6]{./Fig/thetacheck.png} \\
+    \vspace{2cm}
+    \includegraphics[scale=0.6]{./Fig/besttheta.png}
+      \caption{Investigation of temporal stability for the FSI3 benchbark in the time interval $t \in [0, 10]$, comparing the shifted crank nicolson to the original cranc nicolson scheme. }
+\end{figure}
+
+A numerical investigation of temporal stability in shown in Table 1.7, where the shifted crank-nicolson scheme $\theta = 0.5 + k$, is compared the original crank-nicolson $\theta = 0.5$. The shifted version clearly show stability properties surpassing the original crank-nicolson scheme, for all numerical experiments. However, for $\Delta t \in [0.2, 0.1, 0.05, 0.02]$ the scheme clearly lacks the ability to capture the overall physics of the validation problem. Long-time stability and expected physical beavior is obtained for $\Delta t = 0.01$. However, numerical experiments showed that for $\Delta t \leq 0.005$ numerical stability was achieved regardless of both methods. This result is important, reducing the overall computational time needed to achieve reasonable accuracy.
 
 
 \newpage
@@ -537,7 +547,7 @@ By inspection of the Jacobi matrix, some terms of the total residue is linear te
 As the assembly of the Jacobian at each iteration is costly, one approach of reusing the Jacobian for the linear system was proposed. In other words, the LU-factorization of the system is reused until the Jacobi is re-assembled. This method greatly reduced the computational time for each time step. By a user defined parameter, the number of iterations before a new assembly of the Jacobian matrix can be controlled. 
 
 \subsection{Quadrature reduce}
-The assemble time of the Jacobian greatly depends on the degree of polynomials used in the discretisation of the total residual. Within FEniCS this parameter can be controlled, and as such we can specify the order of polynomials representing the Jacobian. The use of lower order polynomials reduces assemble time of the matrix at each newton-iteration, however it leads to an inexact Jacobian which may results to additional iterations. 
+The assemble time of the Jacobian greatly depends on the degree of polynomials used in the discretisation of the total residual. Within FEniCS t he order of polynomials representing the Jacobian can be adjusted. The use of lower order polynomials reduces assemble time of the matrix at each newton-iteration, however it leads to an inexact Jacobian which may results to additional iterations. 
 
 
 \begin{figure}[h!]
@@ -545,6 +555,7 @@ The assemble time of the Jacobian greatly depends on the degree of polynomials u
  \includegraphics[scale=0.36]{./Fig/itercompare.png}
  \caption{Computational domain of the validation benchmark}
 \end{figure}
+
 
 \begin{table}[h]
 \centering
@@ -558,7 +569,7 @@ Implementation &Naive  & Reducequad. & Reusejacobi & Combined \\
  \hline
  Mean time/timestep &   104.5 &  125.5 & 48.3  & 6.8   \\
  \hline
- Speedup & 1.0 &  1.20  & 0.46  & 0.06   \\
+ Speedup \% & 1.0 &  -20\%  & 54 \%  & 94 \%   \\
  \hline
  Mean iteration &  4.49 &  30.59 & 10.29  & 10.29   \\
  \hline
