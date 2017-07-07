@@ -40,15 +40,15 @@ The following environments and their sub-problems presents both steady state and
 \end{align*}
 from the maximum and minimum value of the quantity of interest from the last period.  
 
- In \cite{Hron2006}, all steady state solutions seems to be calulated by solving a steady state equation such as the stokes equation for the fluid problem. The assumtion is based on simulation paramters regarding time-step are only reported for the periodic solutions. In this thesis all problems in \cite{Hron2006},will be calculated by time integration. The main motivation is based upon that any given numerical errors regarding time integration will be intercepted at an earlier stage for a simpler problem. 
+ In \cite{Hron2006}, all steady state solutions seems to be calulated by solving a steady state equation such as the stokes equation for the fluid problem. The assumtion is based on simulation paramters regarding time-step are only reported for the periodic solutions. In this thesis all problems in \cite{Hron2006},will be calculated by time integration. The main motivation is based upon that any given numerical errors regarding time integration will be intercepted at an earlier stage for a simpler problem. Therefore, the choice of timestep  is chosen such that reasonable accuracy of the reference solution is attained.
 
-In \cite{Hron2006}, details such as  finite-element spaces and newton iteration critera are not reported. Therefore, the following numerical results have been a process of trial and error. In the following section, an overview of each environment togheter with  the numerical results will be presented. A formal discussion of the results are given at the end of each simulation environment 
+In \cite{Hron2006}, details such as  finite-element spaces and newton iteration critera are not reported. Therefore, the following numerical results have been a process of trial and error. In the following section, an overview of each environment togheter with  the numerical results will be presented. A formal discussion of the results are given at the end of each simulation environment. For each table, the error of the finest spatial and temporal refinement compared to the reference solution is reported .
 
  Since the first two simulation environmens are presented mainly in support of the third and final environment, they where not reported in OTHER CITE. Therefore results in the first two subsections  will be compared with \cite{Hron2006}, while the third will consider both \cite{Hron2006} and OTHER CITE.
 
  \newpage
 \subsection{Validation of fluid solver}
-The first test environment conserns the fluid dynamics part of the total FSI problem, to ensure the solver can handle flows in low Reynold-numbers regime. Two approaches for the validation are given in \cite{Hron2006}. The first approach consideres setup as a fluid-structure interaction problem, by setting the elastic flag close to rigid given by the structure paramters. Second, the flag can be set fully rigid and considered a purly flow problem.  Hence, the fluid variation formulation can be reduced to
+The first test environment conserns the fluid dynamics part of the total FSI problem, to ensure the solver can handle flows in low Reynold-numbers regime. Two approaches for the validation are given in \cite{Hron2006}. The first approach consideres setup as a fluid-structure interaction problem, by setting the elastic flag close to rigid  by manipulation of the structure paramters. Second, the flag can be set fully rigid and considered a purly flow problem.  Hence, the fluid variation formulation can be reduced to
 
 
 Find $\bat{v}_f, \ha{p}_f $ such that
@@ -60,9 +60,7 @@ Find $\bat{v}_f, \ha{p}_f $ such that
 \femf{\nabla \cdot \bat{v})}{\gat{\psi}^p} = 0 
 \end{align*} 
 
-The latter approach is chosen for this thesis, as only the variational formulation for the fluid is tested and removes any influence of the strucutre and mesh extrapolation discretization. By this approach no deformation of the fluid domain is present.  Since $\hat{\Omega}_f = {\Omega}_f(t) \hspace{2mm} t \in T$, the mesh velocity of the fluid $ \pder{\ha{T}_W}{t} = 0$.
-
-
+The latter approach is chosen for this thesis, as only the variational formulation for the fluid is tested and removes any influence of the strucutre and mesh extrapolation discretization.  Since $\hat{\Omega}_f = {\Omega}_f(t) \hspace{2mm} t \in T$, the mesh velocity of the fluid $ \pder{\ha{T}_W}{t} = 0$  and no deformation of the fluid domain is present.
 
 The validation of the fluid solver is divided into the three sub-cases CFD1, CFD2 and CFD3.While  CFD1 and CFD2 yields steady state solutions, CFD3 is a periodic solution.
 
@@ -98,7 +96,7 @@ is set on the left channel inflow. H is the height of the channel, while the par
 
 At the right channel outflow, the pressure is set to $p = 0$. \
 No-slip boundary conditions for the fluid are enforced on the channel walls, and on the inner geometry consisting of the circle and the elastic flag.
-The validation is based on the evaluation of drag and lift forces on the inner geometry for each sub-case.  with comparison to \cite{Hron2006}. The following tables presents the numerical results for each sub-case.
+The validation is based on the evaluation of drag and lift forces on the inner geometry for each sub-case.  with comparison to \cite{Hron2006}. Each sub-case will be conducted on four different mesh, with increasing refinement.  The following tables presents the numerical results for each sub-case.
 
 \newpage
 
@@ -215,9 +213,9 @@ nel & ndof & Drag  & Lift \\
 \newpage \newpage \newpage \newpage \newpage
 \subsection{Discussion of results}
 The numerical results for CFD1, CFD2 and CFD3 are all within reasonable range of the reference solutions presented in \cite{Hron2006}. 
-For CFD1 and CFD2, the choice of P2-P1 elements together with a fully implicit schene $\theta = 1$ gained sufficient accuracy in comparison with the reference solution. The second order cranc-nicholoson scheme  $\theta = 0.5$ was investigated for both problems, however only improving the results of order $10^{-6}$ for both lift and drag. For the periodic problem CFD-3, the choice of  P2-P1 elements with a implicit time-stepping scheme proved unsuficcient for capturing the expected periodic solution. Only a steady-state flow profile was observed for both $/Delta t = [0.01, 0.005]$, which are the same time-steps used in the original paper. Using P3-P2 elements with cranc-nicolson time-stepping scheme, the periodic solution was attained. Since the choice of finite-elemt pair is not reported in the original paper, a fundament for arguing compared to the original work is not possible.
+For CFD1 and CFD2, the choice of P2-P1 elements together with a fully implicit schene $\theta = 1$ gained sufficient accuracy in comparison with the reference solution. The second order cranc-nicholoson scheme  $\theta = 0.5$ was investigated for CFD1 and CFD2, however only improving the results of order $10^{-6}$ for both lift and drag. For the periodic problem CFD-3, the choice of  P2-P1 elements with a fully implicit time-stepping scheme proved unsuficcient for capturing the expected periodic solution. Only a steady-state flow profile was observed.. By cranc-nicolson time-stepping scheme $\theta = 0.5$, the periodic solution was attained. Since the choice of finite-elemt pair is not reported in the original work, both P3-P2 and P2-P1 element pairs for fluid and pressure repsectivly was compared in combination with spatial mesh refinement. From Table 1.4, the choice P3-P2 element pair is eminent to achieve reasonable results for the first and second mesh regardless of timestep.  However, the third and fourth mesh shows close resemblance with the reference solution. \\
+On this basis, the choice of P2-P1 element pair is sufficient for the evaluation of drag and lift on the inner geometry with increasing mesh resolution. 
 
-The evaluation of drag and lift forces have proven to be troublesome
 \newpage
 \subsection{Validation of solid solver}
 The first validation
@@ -292,7 +290,7 @@ nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
  7307    & 63365  &       0.0227 &       0.7760 & 14.111 & 0.7517 \\
  11556   & 99810  &       0.0226 &      0.8220 & 14.201 & 0.7609 \\
   \hline
- REF     & REF    &       0.0227      &       0.8209      & 14.295  & 0.7638   \\
+ \multicolumn{2}{|c|}{Reference} &  0.0227      &       0.8209      & 14.295  & 0.7638   \\
  \hline
 \end{tabular}
 \begin{tabular}{ |p{1cm}||p{1cm}|p{2.5cm}|p{2.5cm}|p{2.7cm}|p{2.7cm}|p{1.2cm}|}
@@ -305,7 +303,7 @@ nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
  7307    & 63365  &       0.0227 &       0.7762 & 14.111 & 0.751  \\
  11556   & 99810  &       0.0226  &       0.8222 & 14.201 & 0.7609 \\
   \hline
- REF     & REF    &       0.0227      &       0.8209      & 14.295  & 0.7638   \\
+ \multicolumn{2}{|c|}{Reference} &  0.0227      &       0.8209      & 14.295  & 0.7638   \\
  \hline
 \end{tabular}
 \begin{tabular}{ |p{1cm}||p{1cm}|p{2.5cm}|p{2.5cm}|p{2.7cm}|p{2.7cm}|p{1.2cm}|}
@@ -318,7 +316,7 @@ nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
  7307    & 63365  &       0.0227  &       0.7761 & 14.111 & 0.7517 \\
  11556   & 99810  &       0.0227  &       0.8017 & 14.205 & 0.9248 \\
   \hline
- REF     & REF    &       0.0227      &       0.8209      & 14.295  & 0.7638   \\
+ \multicolumn{2}{|c|}{Reference} &  0.0227      &       0.8209      & 14.295  & 0.7638   \\
  \hline
 \end{tabular}
 \begin{tabular}{ |p{1cm}||p{1cm}|p{2.5cm}|p{2.5cm}|p{2.7cm}|p{2.7cm}|p{1.2cm}|}
@@ -331,7 +329,7 @@ nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
  7307    & 63365  &       0.0227 &       0.7761 & 14.111 & 0.7518 \\
  11556   & 99810  &       0.0227 &       0.8020 & 14.205 & 0.9249  \\
   \hline
- REF     & REF    &       0.0227      &       0.8209      & 14.295  & 0.7638   \\
+ \multicolumn{2}{|c|}{Reference} &  0.0227      &       0.8209      & 14.295  & 0.7638   \\
  \hline
 \end{tabular}
 \end{table}
@@ -362,19 +360,23 @@ nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
 
 \newpage \newpage
 \subsubsection{FSI2}
+FSI2
+\begin{figure}[h!]
+  \centering
+    \includegraphics[scale=0.2]{./Fig/fsi2flow.png}
+      \caption{FSI-2, visualization of fully developted flow with structure deformation at time t = 9s}
+\end{figure}
 
-
-
+\newpage
 \subsubsection{FSI3}
-
 
 \begin{table}[h!]
 \centering
-\caption{FSI 3 - Laplace}
+\caption{FSI 3 - Comparison of mesh extrapolation models}
 \label{my-label}
 \begin{tabular}{ |p{1cm}||p{1cm}|p{2.5cm}|p{2.5cm}|p{2.7cm}|p{2.7cm}|p{1.2cm}|}
  \hline
-  \multicolumn{6}{|c|}{$\Delta t = 0.01 \theta = 0.51$} \\
+  \multicolumn{6}{|c|}{Laplace \hspace{2mm} $\Delta t = 0.01 \theta = 0.51$} \\
    \hline
 nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
  \hline
@@ -385,33 +387,25 @@ nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
   \multicolumn{6}{|c|}{$\Delta t = 0.001 \theta = 0.501$} \\
    \hline
  nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
+    \hline
 1216 &5797& --2.17$\pm$  2.08 &     3.32     $\pm$  29.07 &439.98 $\pm$  14.08  &  1.91 $\pm$  151.71\\
 2295 &10730& -3.04 $\pm$  2.88 &  1.51  $\pm$  35.88 & 452.04  $\pm$  22.41 &  3.30      $\pm$  160.11 \\
 5963 &27486 & -3.03$\pm$  2.85 &  1.23 $\pm$  35.97  & 459.45  $\pm$  23.80 &  1.53  $\pm$  160.14 \\
-\hline
-\multicolumn{6}{|c|}{$\Delta t = 0.001 \theta = 0.5$} \\
+ \hline
+  \multicolumn{2}{|c|}{Reference}  & 136.7   & 10.53 & &\\
    \hline
- nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
-\hline
+    \multicolumn{2}{|c|}{Error}  & 0.007 \%   & 0.001 \% & &\\
+   \hline
 \end{tabular}
 \end{table}
 
-\newpage
-\begin{figure}
-    \includegraphics[scale=0.5]{./Fig/la_lift.png}
-      \caption{Harmonic extrapolation, lift around geometry}
-\end{figure}
-
-\newpage
-
-
 \begin{table}[h!]
 \centering
-\caption{FSI 3 - Biharmonic BC1}
+%\caption{FSI 3 - Biharmonic BC1}
 \label{my-label}
 \begin{tabular}{ |p{0.9cm}||p{0.9cm}|p{2.49cm}|p{2.49cm}|p{2.6cm}|p{2.8cm}|}
  \hline
-  \multicolumn{6}{|c|}{$\Delta t = 0.01 \theta = 0.51$} \\
+  \multicolumn{6}{|c|}{Biharmonic 1 \hspace{2mm}  $\Delta t = 0.01 \theta = 0.51$} \\
    \hline
 nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
  \hline
@@ -420,44 +414,27 @@ nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
  7307    & 63365  & 3.10  $\pm$ 3.06  & -1.90   $\pm$ 4.21 & 457.37  $\pm$ 15.24 & -51.77 $\pm$ 127.28 \\
  11556   & 99810  & -2.18  $\pm$ 9.65 & 1.31    $\pm$ 4.93  & 456.40 $\pm$ 17.45 &  0.45 $\pm$ 149.68  \\
  \hline
-  \multicolumn{6}{|c|}{$\Delta t = 0.001 \theta = 0.501$} \\
+  \multicolumn{6}{|c|}{$\Delta t = 0.001 \theta = 0.5$} \\
    \hline
  nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
 1216 &5797  & -2.18       $\pm$ 2.10 & 3.56   $\pm$ 2.90 & 435.19       $\pm$ 9.77  & -1.57       $\pm$ 151.43 \\
 7307    & 63365  & -1.42  $\pm$ 4.70 & 7.77   $\pm$ 2.85 & 454.38       $\pm$ 19.75 & 17.97       $\pm$ 155.08 \\
 11556   & 99810  & -2.23  $\pm$ 6.16 & 1.72   $\pm$ 4.48 & 459.12       $\pm$ 22.97 & -3.12       $\pm$ 171.22 \\
-\hline
-\multicolumn{6}{|c|}{$\Delta t = 0.001 \theta = 0.5$} \\
-   \hline
- nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
-\hline
-1216 &  5797  & -2.18       $\pm$ 2.10 & 3.56  $\pm$ 29.04  & 440.25       $\pm$ 14.42 & -1.81       $\pm$ 150.98  \\
-7307    & 63365  & para & para $\pm$ para & 455.25 $\pm$ 20.56 & -51.89  $\pm$ 136.59 \\
-11556   & 99810  & -2.23  $\pm$ para & para $\pm$ para & 459.13 $\pm$ 22.98 & -3.11 $\pm$ 171.23  \\
-\hline
-\hline
- REF     & REF    & -2.69 $\pm$ 2.56    & 1.48 $\pm$ 34.38   & 457.3 $\pm$ 22.66  & 2.22 $\pm$ 149.78   \\
-\hline
+ \hline
+ \multicolumn{2}{|c|}{Reference} & -2.69 $\pm$  2.56                    & 1.48  $\pm$  34.38                   & 457.3  $\pm$  22.66        & 2.22  $\pm$- 149.78           \\
+ \hline
+ \multicolumn{2}{|c|}{Error}  & 0.007 \%   & 0.001 \% & &\\
+ \hline
 \end{tabular}
 \end{table}
-\begin{figure}
-  \centering
-    \includegraphics[scale=0.5]{./Fig/bi_lift.png}
-      \caption{Biharmonic extrapolation, lift around geometry}
-\end{figure}
-
-\begin{figure}
-    \includegraphics[scale=0.5]{./Fig/compare.png}
-      \caption{Compare}
-\end{figure}
 
 \begin{table}[h!]
 \centering
-\caption{FSI 3 - Biharmonic BC2}
+%\caption{FSI 3 - Biharmonic BC2}
 \label{my-label}
 \begin{tabular}{ |p{1cm}||p{1cm}|p{2.5cm}|p{2.5cm}|p{2.7cm}|p{2.7cm}|p{1.2cm}|}
  \hline
-  \multicolumn{6}{|c|}{$\Delta t = 0.01 \theta = 0.51$} \\
+  \multicolumn{6}{|c|}{Biharmonic 2 \hspace{2mm}  $\Delta t = 0.01 \theta = 0.51$} \\
    \hline
 nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
  \hline
@@ -469,24 +446,35 @@ nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
  nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
  1216 &5797& -3.39   $\pm$  3.38 &   1.23   $\pm$  36.61 &   413.26 $\pm$  51.82  &   57.19  $\pm$  222.65\\
  2295 &10730& -4.70  $\pm$  4.71& 1.49       $\pm$  44.62& 427.91$\pm$  93.17 &  44.38  $\pm$  268.05 \\
-\hline
-\multicolumn{6}{|c|}{$\Delta t = 0.001 \theta = 0.5$} \\
-   \hline
- nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
-\hline
-1216 &5797&-2.17$\pm$  2.09 & 3.54  $\pm$  28.95 & 440.13  $\pm$  14.45  &  -1.38  $\pm$  150.96\\
-\hline
+ \hline
+ \multicolumn{2}{|c|}{Reference} & -2.69 $\pm$  2.56                    & 1.48  $\pm$  34.38                   & 457.3  $\pm$  22.66        & 2.22  $\pm$- 149.78           \\
+ \hline
+ \multicolumn{2}{|c|}{Error}  & 0.007 \%   & 0.001 \% & &\\
+ \hline
 \end{tabular}
 \end{table}
 
 
+\begin{figure}[h!]
+    \includegraphics[scale=0.75]{./Fig/fsi3liftcompare.png}
+      \caption{Comparing mesh extrapolation models}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+    \includegraphics[scale=0.2]{./Fig/fsi3flow.png}
+      \caption{FSI-3, visualization of fully developted flow with structure deformation at time t = 5.1s}
+\end{figure}
+
+\newpage
 \subsection{Discussion of results}
+Considering FSI1, all mesh extraplation models are of high accuracy compared to the reference solution.  However, due to the small deformations of order $10^{-6}$, FSI1 doesn't provide a rigorous test of the chosen mesh extrapolation model. By omitting mesh extrapolation from the variatonal formulation,  reasonable results are still obtained. This proves that the FSI-1 validation case can be misguiding, in terms of validating the chosen mesh extrapolation model. 
 
-However, due to the small deformations of order $10^{-6}$, FSI1 doesn't provide a rigorous test of the chosen mesh extrapolation model. By omitting mesh extrapolation from the variatonal formulation,  reasonable results are still obtained. This proves that the FSI-1 validation case can be misguiding, in terms of choice of mesh extrapolation model is not essential.
+The FSI2 case proved to be one of the most demanding tests, due to the large deformation of the elastic flag. leading to the risk of entangled mesh cells. Therefore a high quality extrapolation of the solid deformation into the fluid is needed. All mesh extrapolation models proved to
 
-The FSI2 case proved to be one of the most demanding tests, due to the large deformation of the elastic flag. leading to the risk of entangled mesh cells. Therefore a high quality extrapolation of the solid deformation into the fluid is needed.
+The FSI3 environment does not induce deformation to the extent of the FSI2. However a critical phase in the transition to the periodic solution was discovered, where the pressure oscillation induces a large deformation to the system.
 
-The final environment does not induce deformation to the extent of the FSI2 benchmark. However a critical phase in the transition to the periodic solution was discovered, where the pressure oscillation induces a large deformation to the system.AZ
+\subsection{Choice of extrapolation values}
 
 \newpage
 \section{Optimization of Newtonsolver}
@@ -503,9 +491,8 @@ As iterative solvers are limited for the solving of fluid-structure interaction 
 
 Facing these problems, several attempts was made to speed-up the implementation. The FEniCS project consist of several nonlinear solver backends, were fully user-customization option are available. However one main problem which we met was the fact that FEniCS assembles the matrix of the different variables over the whole mesh, even though the variable is only defined in one to the sub-domains of the system.In our case the pressure is only defined within the fluid domain, and therefore the matrix for the total residual consisted of several zero columns within the structure region. FEniCS provides a solution for such problems, but therefore we were forced to construct our own solver and not make use of the built-in nonlinear solvers. \\
 
-The main effort of speed-up were explored around the Jacobian assembly, as this was within our control.  
-
-Of the speed-ups methods explored in this thesis we will specify that some of them were \textit{consistent} while others were \textit{nonconsistent}. Consistent methods are methods that always will work, involving smarter use of properties regarding the linear system to be solved. The non-consistent method presented involves altering the equation to be solved by some simplification of the system. As these simplifications will alter the expected convergence of the solver, one must take account for additional Newton iterations against cheaper Jacobi assembly. Therefore one also risk breakdown of the solver as the Newton iterations may not converge.   
+The main effort of speed-up were explored around the Jacobian assembly.
+Of the speed-ups methods explored in this thesis, some are \textit{consistent} while others are \textit{nonconsistent}. Consistent methods are methods that always will work, involving smarter approaches regarding the linear system to be solved. The non-consistent method presented involves altering the equation to be solved by some simplification of the system. As these simplifications will alter the expected convergence of the solver, one must take account for additional Newton iterations against cheaper Jacobi assembly. Therefore one also risk breakdown of the solver as the Newton iterations may not converge.   
 
 
 \section{Consistent methods}
