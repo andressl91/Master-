@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.12.9)  7 JUL 2017 18:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.12.9)  7 JUL 2017 20:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1263,23 +1263,7 @@ File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
 \MFPtexty=\skip71
 \MFPtextlength=\skip72
 \MFPapollonx=\skip73
-) (./master.aux
-
-LaTeX Warning: Label `my-label' multiply defined.
-
-
-LaTeX Warning: Label `my-label' multiply defined.
-
-
-LaTeX Warning: Label `my-label' multiply defined.
-
-
-LaTeX Warning: Label `my-label' multiply defined.
-
-
-LaTeX Warning: Label `my-label' multiply defined.
-
-)
+) (./master.aux)
 \openout1 = `master.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
@@ -1298,7 +1282,8 @@ LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 8.
 LaTeX Font Info:    ... okay on input line 8.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 8.
 LaTeX Font Info:    ... okay on input line 8.
- (/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+
+(/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count157
 \scratchdimen=\dimen199
@@ -1438,7 +1423,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 11--12
 
  []
 
-<./Fig/turekflag.png, id=101, 890.32625pt x 340.27126pt>
+<./Fig/turekflag.png, id=41, 890.32625pt x 340.27126pt>
 File: ./Fig/turekflag.png Graphic file (type png)
 
 <use ./Fig/turekflag.png>
@@ -1483,13 +1468,13 @@ Overfull \hbox (0.91508pt too wide) in paragraph at lines 138--138
 []|\T1/cmr/m/n/12 19365| 
  []
 
-<./Fig/cfd3.png, id=143, 2007.5pt x 594.22pt>
+<./Fig/cfd3.png, id=85, 2007.5pt x 594.22pt>
 File: ./Fig/cfd3.png Graphic file (type png)
  <use ./Fig/cfd3.png>
 Package pdftex.def Info: ./Fig/cfd3.png used on input line 149.
 (pdftex.def)             Requested size: 401.49289pt x 118.84189pt.
 
-<./Fig/cfd3_liftdrag.png, id=144, 817.3737pt x 226.2051pt>
+<./Fig/cfd3_liftdrag.png, id=86, 817.3737pt x 226.2051pt>
 File: ./Fig/cfd3_liftdrag.png Graphic file (type png)
 
 <use ./Fig/cfd3_liftdrag.png>
@@ -1673,7 +1658,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[12] <./Fig/fsi2flow.png, id=185, 2005.4925pt x 816.04875pt>
+[12] <./Fig/fsi2flow.png, id=129, 2005.4925pt x 816.04875pt>
 File: ./Fig/fsi2flow.png Graphic file (type png)
 
 <use ./Fig/fsi2flow.png>
@@ -1771,7 +1756,7 @@ Overfull \hbox (5.95355pt too wide) in paragraph at lines 435--455
  [][] 
  []
 
-<./Fig/fsi3liftcompare.png, id=192, 641.7576pt x 351.9549pt>
+<./Fig/fsi3liftcompare.png, id=136, 641.7576pt x 351.9549pt>
 File: ./Fig/fsi3liftcompare.png Graphic file (type png)
 
 <use ./Fig/fsi3liftcompare.png>
@@ -1785,7 +1770,7 @@ Overfull \hbox (57.25668pt too wide) in paragraph at lines 459--460
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./Fig/fsi3flow.png, id=193, 2005.4925pt x 816.04875pt>
+<./Fig/fsi3flow.png, id=137, 2005.4925pt x 816.04875pt>
 File: ./Fig/fsi3flow.png Graphic file (type png)
 
 <use ./Fig/fsi3flow.png>
@@ -1810,13 +1795,40 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [15 <./Fig/fsi3liftcompare.png> <./Fig/fsi3flow.png (PNG copy)>]
 
+LaTeX Warning: Citation `Wick2013a' on page 16 undefined on input line 478.
+
+
+Overfull \hbox (2.84355pt too wide) in paragraph at lines 480--481
+[]\T1/cmr/m/n/12 Preliminary work re-gard-ing dis-cretiza-tion and nu-mer-i-cal
+ anal-y-sis of Crank-Nicholson
+ []
+
+
+LaTeX Warning: Citation `Richter2015' on page 16 undefined on input line 482.
+
+
+LaTeX Warning: Citation `Richter2015' on page 16 undefined on input line 485.
+
+
+LaTeX Warning: Citation `Richter2015' on page 16 undefined on input line 506.
+
+
+LaTeX Warning: Citation `Wicka' on page 16 undefined on input line 506.
+
+
+LaTeX Warning: Citation `Wick2013a' on page 16 undefined on input line 506.
+
+
+LaTeX Warning: Citation `Richter2015' on page 16 undefined on input line 507.
+
+
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 492--493
+Underfull \hbox (badness 10000) in paragraph at lines 525--526
 
  []
 
@@ -1827,19 +1839,19 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [17]
-Overfull \hbox (4.52342pt too wide) in paragraph at lines 504--505
+Overfull \hbox (4.52342pt too wide) in paragraph at lines 537--538
 \T1/cmr/m/n/12 the Ja-co-bian for the lin-ear sys-tem was pro-posed. In other w
 ords, the LU-factorization
  []
 
-<./Fig/itercompare.png, id=217, 1734.48pt x 947.4597pt>
+<./Fig/itercompare.png, id=170, 1734.48pt x 947.4597pt>
 File: ./Fig/itercompare.png Graphic file (type png)
 
 <use ./Fig/itercompare.png>
-Package pdftex.def Info: ./Fig/itercompare.png used on input line 512.
+Package pdftex.def Info: ./Fig/itercompare.png used on input line 545.
 (pdftex.def)             Requested size: 624.41234pt x 341.08524pt.
 
-Overfull \hbox (140.36653pt too wide) in paragraph at lines 511--513
+Overfull \hbox (140.36653pt too wide) in paragraph at lines 544--546
 []|  [] 
  []
 
@@ -1847,12 +1859,12 @@ Overfull \hbox (140.36653pt too wide) in paragraph at lines 511--513
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Overfull \hbox (1.2527pt too wide) in paragraph at lines 524--524
+Overfull \hbox (1.2527pt too wide) in paragraph at lines 557--557
 []|\T1/cmr/m/n/12 Implementation| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 526--526
+Underfull \hbox (badness 10000) in paragraph at lines 559--559
 []|\T1/cmr/m/n/12 Mean time/-
  []
 
@@ -1885,44 +1897,56 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 35.
  (./master.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 35.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 35.
-Package rerunfilecheck Info: File `master.out' has not changed.
-(rerunfilecheck)             Checksum: DF7A52347941CE58DC3EB54C295EC2AD;1101.
 
 
-LaTeX Warning: There were multiply-defined labels.
+Package rerunfilecheck Warning: File `master.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `master.out':
+(rerunfilecheck)             Before: F90FFB9E4EDC7D2EFE3EACB1248854C4;229
+(rerunfilecheck)             After:  9D912E79943B1A709FDA14FAEC87071E;1106.
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 35.
  ) 
 Here is how much of TeX's memory you used:
- 22193 strings out of 493014
- 393353 string characters out of 6133351
- 484646 words of memory out of 5000000
- 25220 multiletter control sequences out of 15000+600000
+ 22188 strings out of 493014
+ 393229 string characters out of 6133351
+ 484316 words of memory out of 5000000
+ 25212 multiletter control sequences out of 15000+600000
  29019 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,12n,56p,1134b,387s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
-{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<
-/usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></
-usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></u
-sr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></us
-r/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/
-local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/lo
-cal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/lo
-cal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loca
-l/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/t
-exlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texl
-ive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texli
-ve/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive
-/2016/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2
-016/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/201
-6/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2016/
-texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2016/te
-xmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on master.pdf (22 pages, 1253423 bytes).
+pdfTeX warning (dest): name{subsection.1.1.1} has been referenced but does no
+t exist, replaced by a fixed one
+
+{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/
+usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</u
+sr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
+r/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr
+/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/
+local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/lo
+cal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/loca
+l/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/loca
+l/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/
+texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/tex
+live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texliv
+e/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
+/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2
+016/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/201
+6/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2016/
+texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2016/te
+xmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2016/texm
+f-dist/fonts/type1/public/cm-super/sfti1200.pfb>
+Output written on master.pdf (22 pages, 1257428 bytes).
 PDF statistics:
- 310 PDF objects out of 1000 (max. 8388607)
- 257 compressed objects within 3 object streams
- 63 named destinations out of 1000 (max. 500000)
- 168 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 266 PDF objects out of 1000 (max. 8388607)
+ 213 compressed objects within 3 object streams
+ 66 named destinations out of 1000 (max. 500000)
+ 72 words of extra memory for PDF output out of 10000 (max. 10000000)
 
