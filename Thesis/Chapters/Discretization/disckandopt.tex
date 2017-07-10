@@ -91,35 +91,3 @@ Find $\bat{u}_s, \bat{u}_f, \bat{v}_s, \bat{v}_f, \ha{p}_f $ such that}
 
 Deeper analysis in  \cite{Wicka}, specify to important properties of the one-step $theta$ scheme. Firstly, it is unconditionally stable regardless of time step for the interval $\theta = [\frac{1}{2}, 1]$. 
 
-\subsection{Temporal stability}
-It is known that the Crank-Nicolson scheme can suffer from temporal stability, for long-term simulations \cite{Wick2013a}.
-
-Preliminary work regarding discretization and numerical analysis of Crank-Nicholson time stepping schemes for fluid structure interaction can be found in cite WIck papers. Two main properties of interest of higher-order methods have proven to be the stability of long-time simulation, and obtaining the expected physics for the problem of interest.
-
-The authors of \cite{Richter2015}, investigated temporal stability of the Crank-Nicolson scheme for the validation benchmark found in \cite{Hron2006}.  
-The critera for the numerical experiements was to obatin a stable solution in the time interval [0, 10] minutes, by temporal and spatial refinement studies. The fully monolithic FSI problem discretized with second-order Crank-Nicolson, proved to give general stability problems for long-term simulation. 
-
-Following the ideas of Rick, whricter, a second order scheme based on the Cranck-Nicholson yields two possibilities.
-\begin{discr}
-\textit{Crank–Nicolson secant method }
-\begin{align*}
-\Big[\frac{\ha{J}(\bat{u}^{n}) \bat{\nabla} \bat{v}^{n} \bat{F}_W^{-1}}{2} 
-+ \frac{\ha{J}(\bat{u}^{n-1}) \bat{\nabla} \bat{}v^{n-1} \bat{F}_W^{-1}}{2} \Big] 
-\frac{\bat{u}^{n} - \bat{u}^{n-1}}{k}
-\end{align*} 
-\end{discr}
-
-\begin{discr}
-\textit{Crank–Nicolson midpoint-tangent method}
-\begin{align*}
-\Big[\frac{\ha{J}(\bat{u}_{cn}) \bat{\nabla} \bat{v}_{cn} \bat{F}_W^{-1}}{2} \Big] 
-\frac{\bat{u}^{n} - \bat{u}^{n-1}}{k} \hspace{4mm}
-\bat{u}_{cn} = \frac{\bat{u}^{n} + \bat{u}^{n-1}}{2} \hspace{2mm}
-\bat{v}_{cn} = \frac{\bat{v}^{n} + \bat{v}^{n-1}}{2}
-\end{align*} 
-\end{discr}
-
-The numerical experiments showed very similar performance for Discretization 1.1 and 1.2 , and significant differences of temporal accuracy was not found. \\
-Two options to coupe with the presented unstabilities are the \textit{shifted Crank-Nicolson} \cite{Richter2015}, \cite{Wicka}, \cite{Wick2013a},   and the \textit{frac-step method}. Both of these methods are defined as A-stable time-stepping schemes meaning..  In this thesis the shifted Crank-Nocolson scheme will be considered. \\
-The shifted Crank-Nicolson scheme introduce further stability to the overall system, by shifting the $\theta$ paramter slightly to the implicit side. If the shift is dependent of the time-step size, the scheme will be of second order \cite{Richter2015}.
-

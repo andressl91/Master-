@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.12.9)  8 JUL 2017 00:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.12.9)  10 JUL 2017 23:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1379,27 +1379,85 @@ LaTeX Info: Redefining \nameref on input line 8.
 \openout4 = `master.out'.
 
  ABD: EveryShipout initializing macros
-LaTeX Font Info:    Try loading font information for U+msa on input line 9.
+<masterfrontpage-images/masterfrontpage-background.pdf, id=71, 614.295pt x 845.
+0471pt>
+File: masterfrontpage-images/masterfrontpage-background.pdf Graphic file (type 
+pdf)
+ <use masterfrontpage-images/masterfrontpage-background.pdf>
+Package pdftex.def Info: masterfrontpage-images/masterfrontpage-background.pdf 
+used on input line 10.
+(pdftex.def)             Requested size: 614.29349pt x 845.04504pt.
+
+<masterfrontpage-images/masterfrontpage-apollon.pdf, id=72, 142.5325pt x 142.53
+25pt>
+File: masterfrontpage-images/masterfrontpage-apollon.pdf Graphic file (type pdf
+)
+ <use masterfrontpage-images/masterfrontpage-apollon.pdf>
+Package pdftex.def Info: masterfrontpage-images/masterfrontpage-apollon.pdf use
+d on input line 10.
+(pdftex.def)             Requested size: 76.82243pt x 76.82285pt.
+
+<masterfrontpage-images/masterfrontpage-logo-eng.pdf, id=73, 630.355pt x 74.277
+5pt>
+File: masterfrontpage-images/masterfrontpage-logo-eng.pdf Graphic file (type pd
+f)
+ <use masterfrontpage-images/masterfrontpage-logo-eng.pdf>
+Package pdftex.def Info: masterfrontpage-images/masterfrontpage-logo-eng.pdf us
+ed on input line 10.
+(pdftex.def)             Requested size: 378.21591pt x 44.56683pt.
+LaTeX Font Info:    Try loading font information for T1+phv on input line 10.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/t1phv.fd
+File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
+)
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <32> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 10.
+\MFP@titlelength=\skip74
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 \masterfrontpage
+                     
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <17> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 10.
+[1
+
+
+{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./maste
+rfrontpage-images/masterfrontpage-background.pdf> <./masterfrontpage-images/mas
+terfrontpage-apollon.pdf> <./masterfrontpage-images/masterfrontpage-logo-eng.pd
+f>]
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 10.
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/lm/t1lmr.fd
+File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 10.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 9.
+LaTeX Font Info:    Try loading font information for U+msb on input line 10.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+) [2
 
-
-{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./mast
-er.toc)
+]
+(./master.toc)
 \tf@toc=\write5
 \openout5 = `master.toc'.
 
 \c@theorem=\count165
-
-(./Chapters/Results/results.texpdfTeX warning (ext4): destination with the same
- identifier (name{page.1}) has been already used, duplicate ignored
+ (./Chapters/Results/results.texpdfTeX warning (ext4): destination with the sam
+e identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.1 \chapter
@@ -1412,7 +1470,12 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[2
+pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1 \chapter
+            {Numerical Results} [2
 
 ]
 Chapter 1.
@@ -1438,7 +1501,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 11--12
 
  []
 
-<./Fig/turekflag.png, id=101, 890.32625pt x 340.27126pt>
+<./Fig/turekflag.png, id=122, 890.32625pt x 340.27126pt>
 File: ./Fig/turekflag.png Graphic file (type png)
 
 <use ./Fig/turekflag.png>
@@ -1483,13 +1546,13 @@ Overfull \hbox (0.91508pt too wide) in paragraph at lines 138--138
 []|\T1/cmr/m/n/12 19365| 
  []
 
-<./Fig/cfd3.png, id=143, 2007.5pt x 594.22pt>
+<./Fig/cfd3.png, id=164, 2007.5pt x 594.22pt>
 File: ./Fig/cfd3.png Graphic file (type png)
  <use ./Fig/cfd3.png>
 Package pdftex.def Info: ./Fig/cfd3.png used on input line 149.
 (pdftex.def)             Requested size: 401.49289pt x 118.84189pt.
 
-<./Fig/cfd3_liftdrag.png, id=144, 817.3737pt x 226.2051pt>
+<./Fig/cfd3_liftdrag.png, id=165, 817.3737pt x 226.2051pt>
 File: ./Fig/cfd3_liftdrag.png Graphic file (type png)
 
 <use ./Fig/cfd3_liftdrag.png>
@@ -1530,12 +1593,34 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [9]
 
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<./Fig/csm3compare.png, id=188, 646.0938pt x 307.1475pt>
+File: ./Fig/csm3compare.png Graphic file (type png)
+
+<use ./Fig/csm3compare.png>
+Package pdftex.def Info: ./Fig/csm3compare.png used on input line 374.
+(pdftex.def)             Requested size: 387.65927pt x 184.28992pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
 [10]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -1543,127 +1628,141 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [11]
-Overfull \hbox (0.91508pt too wide) in paragraph at lines 289--289
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[12 <./Fig/csm3compare.png>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[13]
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 446--446
 []|\T1/cmr/m/n/12 21249| 
  []
 
 
-Overfull \hbox (0.91508pt too wide) in paragraph at lines 290--290
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 447--447
 []|\T1/cmr/m/n/12 63365| 
  []
 
 
-Overfull \hbox (0.91508pt too wide) in paragraph at lines 291--291
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 448--448
 []|\T1/cmr/m/n/12 11556| 
  []
 
 
-Overfull \hbox (0.91508pt too wide) in paragraph at lines 291--291
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 448--448
 []|\T1/cmr/m/n/12 99810| 
  []
 
 
-Overfull \hbox (0.91508pt too wide) in paragraph at lines 302--302
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 459--459
 []|\T1/cmr/m/n/12 21249| 
  []
 
 
-Overfull \hbox (0.91508pt too wide) in paragraph at lines 303--303
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 460--460
 []|\T1/cmr/m/n/12 63365| 
  []
 
 
-Overfull \hbox (0.91508pt too wide) in paragraph at lines 304--304
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 461--461
 []|\T1/cmr/m/n/12 11556| 
  []
 
 
-Overfull \hbox (0.91508pt too wide) in paragraph at lines 304--304
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 461--461
 []|\T1/cmr/m/n/12 99810| 
  []
 
 
-Overfull \hbox (0.91508pt too wide) in paragraph at lines 315--315
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 472--472
 []|\T1/cmr/m/n/12 21249| 
  []
 
 
-Overfull \hbox (0.91508pt too wide) in paragraph at lines 316--316
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 473--473
 []|\T1/cmr/m/n/12 63365| 
  []
 
 
-Overfull \hbox (0.91508pt too wide) in paragraph at lines 317--317
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 474--474
 []|\T1/cmr/m/n/12 11556| 
  []
 
 
-Overfull \hbox (0.91508pt too wide) in paragraph at lines 317--317
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 474--474
 []|\T1/cmr/m/n/12 99810| 
  []
 
 
-Overfull \hbox (0.91508pt too wide) in paragraph at lines 328--328
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 485--485
 []|\T1/cmr/m/n/12 21249| 
  []
 
 
-Overfull \hbox (0.91508pt too wide) in paragraph at lines 329--329
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 486--486
 []|\T1/cmr/m/n/12 63365| 
  []
 
 
-Overfull \hbox (0.91508pt too wide) in paragraph at lines 330--330
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 487--487
 []|\T1/cmr/m/n/12 11556| 
  []
 
 
-Overfull \hbox (0.91508pt too wide) in paragraph at lines 330--330
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 487--487
 []|\T1/cmr/m/n/12 99810| 
  []
 
 
-Overfull \hbox (5.95355pt too wide) in paragraph at lines 283--335
+Overfull \hbox (5.95355pt too wide) in paragraph at lines 440--492
  [][] 
  []
 
 
-Overfull \hbox (5.95355pt too wide) in paragraph at lines 283--335
+Overfull \hbox (5.95355pt too wide) in paragraph at lines 440--492
  [] 
  []
 
 
-Overfull \hbox (5.95355pt too wide) in paragraph at lines 283--335
+Overfull \hbox (5.95355pt too wide) in paragraph at lines 440--492
  [] 
  []
 
 
-Overfull \hbox (5.95355pt too wide) in paragraph at lines 283--335
+Overfull \hbox (5.95355pt too wide) in paragraph at lines 440--492
  [] 
  []
 
 
-Overfull \hbox (0.91508pt too wide) in paragraph at lines 348--348
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 505--505
 []|\T1/cmr/m/n/12 21249| 
  []
 
 
-Overfull \hbox (0.91508pt too wide) in paragraph at lines 349--349
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 506--506
 []|\T1/cmr/m/n/12 63365| 
  []
 
 
-Overfull \hbox (0.91508pt too wide) in paragraph at lines 350--350
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 507--507
 []|\T1/cmr/m/n/12 11556| 
  []
 
 
-Overfull \hbox (0.91508pt too wide) in paragraph at lines 350--350
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 507--507
 []|\T1/cmr/m/n/12 99810| 
  []
 
 
-Overfull \hbox (5.95355pt too wide) in paragraph at lines 342--355
+Overfull \hbox (5.95355pt too wide) in paragraph at lines 499--512
  [][] 
  []
 
@@ -1673,11 +1772,11 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[12] <./Fig/fsi2flow.png, id=185, 2005.4925pt x 816.04875pt>
+[14] <./Fig/fsi2flow.png, id=223, 2005.4925pt x 816.04875pt>
 File: ./Fig/fsi2flow.png Graphic file (type png)
 
 <use ./Fig/fsi2flow.png>
-Package pdftex.def Info: ./Fig/fsi2flow.png used on input line 366.
+Package pdftex.def Info: ./Fig/fsi2flow.png used on input line 523.
 (pdftex.def)             Requested size: 401.0914pt x 163.20685pt.
 
 
@@ -1686,110 +1785,110 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[13 <./Fig/fsi2flow.png (PNG copy)>]
-Overfull \hbox (0.91508pt too wide) in paragraph at lines 383--383
+[15 <./Fig/fsi2flow.png (PNG copy)>]
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 540--540
 []|\T1/cmr/m/n/12 21249| 
  []
 
 
-Overfull \hbox (0.91508pt too wide) in paragraph at lines 384--384
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 541--541
 []|\T1/cmr/m/n/12 63365| 
  []
 
 
-Overfull \hbox (0.91508pt too wide) in paragraph at lines 385--385
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 542--542
 []|\T1/cmr/m/n/12 11556| 
  []
 
 
-Overfull \hbox (0.91508pt too wide) in paragraph at lines 385--385
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 542--542
 []|\T1/cmr/m/n/12 99810| 
  []
 
 
-Overfull \hbox (0.91508pt too wide) in paragraph at lines 392--392
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 549--549
 []|\T1/cmr/m/n/12 10730| 
  []
 
 
-Overfull \hbox (0.91508pt too wide) in paragraph at lines 393--393
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 550--550
 []|\T1/cmr/m/n/12 27486| 
  []
 
 
-Overfull \hbox (5.95355pt too wide) in paragraph at lines 377--400
+Overfull \hbox (5.95355pt too wide) in paragraph at lines 534--557
  [][] 
  []
 
 
-Overfull \hbox (3.76053pt too wide) in paragraph at lines 413--413
+Overfull \hbox (3.76053pt too wide) in paragraph at lines 570--570
 []|\T1/cmr/m/n/12 21249| 
  []
 
 
-Overfull \hbox (3.76053pt too wide) in paragraph at lines 414--414
+Overfull \hbox (3.76053pt too wide) in paragraph at lines 571--571
 []|\T1/cmr/m/n/12 63365| 
  []
 
 
-Overfull \hbox (3.76053pt too wide) in paragraph at lines 415--415
+Overfull \hbox (3.76053pt too wide) in paragraph at lines 572--572
 []|\T1/cmr/m/n/12 11556| 
  []
 
 
-Overfull \hbox (3.76053pt too wide) in paragraph at lines 415--415
+Overfull \hbox (3.76053pt too wide) in paragraph at lines 572--572
 []|\T1/cmr/m/n/12 99810| 
  []
 
 
-Overfull \hbox (3.76053pt too wide) in paragraph at lines 421--421
+Overfull \hbox (3.76053pt too wide) in paragraph at lines 578--578
 []|\T1/cmr/m/n/12 63365| 
  []
 
 
-Overfull \hbox (3.76053pt too wide) in paragraph at lines 422--422
+Overfull \hbox (3.76053pt too wide) in paragraph at lines 579--579
 []|\T1/cmr/m/n/12 11556| 
  []
 
 
-Overfull \hbox (3.76053pt too wide) in paragraph at lines 422--422
+Overfull \hbox (3.76053pt too wide) in paragraph at lines 579--579
 []|\T1/cmr/m/n/12 99810| 
  []
 
 
-Overfull \hbox (0.91508pt too wide) in paragraph at lines 442--442
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 599--599
 []|\T1/cmr/m/n/12 10730| 
  []
 
 
-Overfull \hbox (0.91508pt too wide) in paragraph at lines 448--448
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 605--605
 []|\T1/cmr/m/n/12 10730| 
  []
 
 
-Overfull \hbox (5.95355pt too wide) in paragraph at lines 435--455
+Overfull \hbox (5.95355pt too wide) in paragraph at lines 592--612
  [][] 
  []
 
-<./Fig/fsi3liftcompare.png, id=192, 641.7576pt x 351.9549pt>
+<./Fig/fsi3liftcompare.png, id=230, 641.7576pt x 351.9549pt>
 File: ./Fig/fsi3liftcompare.png Graphic file (type png)
 
 <use ./Fig/fsi3liftcompare.png>
-Package pdftex.def Info: ./Fig/fsi3liftcompare.png used on input line 459.
+Package pdftex.def Info: ./Fig/fsi3liftcompare.png used on input line 616.
 (pdftex.def)             Requested size: 481.31702pt x 263.96553pt.
 
-Overfull \hbox (57.25668pt too wide) in paragraph at lines 459--460
+Overfull \hbox (57.25668pt too wide) in paragraph at lines 616--617
 [][] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./Fig/fsi3flow.png, id=193, 2005.4925pt x 816.04875pt>
+<./Fig/fsi3flow.png, id=231, 2005.4925pt x 816.04875pt>
 File: ./Fig/fsi3flow.png Graphic file (type png)
 
 <use ./Fig/fsi3flow.png>
-Package pdftex.def Info: ./Fig/fsi3flow.png used on input line 465.
+Package pdftex.def Info: ./Fig/fsi3flow.png used on input line 622.
 (pdftex.def)             Requested size: 401.0914pt x 163.20685pt.
 
 
@@ -1801,62 +1900,41 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[14]
+[16]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[15 <./Fig/fsi3liftcompare.png> <./Fig/fsi3flow.png (PNG copy)>]
-Overfull \hbox (2.84355pt too wide) in paragraph at lines 479--480
+[17 <./Fig/fsi3liftcompare.png> <./Fig/fsi3flow.png (PNG copy)>]
+Overfull \hbox (2.84355pt too wide) in paragraph at lines 636--637
 \T1/cmr/m/n/12 Preliminary work re-gard-ing dis-cretiza-tion and nu-mer-i-cal a
 nal-y-sis of Crank-Nicholson
  []
 
 
-LaTeX Warning: Citation `Wick2013a' on page 16 undefined on input line 481.
-
-
-LaTeX Warning: Citation `Richter2015' on page 16 undefined on input line 482.
-
-
-LaTeX Warning: Citation `Richter2015' on page 16 undefined on input line 485.
-
-
-LaTeX Warning: Citation `Richter2015' on page 16 undefined on input line 506.
-
-
-LaTeX Warning: Citation `Wicka' on page 16 undefined on input line 506.
-
-
-LaTeX Warning: Citation `Wick2013a' on page 16 undefined on input line 506.
-
-
-LaTeX Warning: Citation `Richter2015' on page 16 undefined on input line 507.
-
-
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[16] <./Fig/thetacheck.png, id=216, 769.6755pt x 388.8126pt>
+[18] <./Fig/thetacheck.png, id=265, 769.6755pt x 388.8126pt>
 File: ./Fig/thetacheck.png Graphic file (type png)
 
 <use ./Fig/thetacheck.png>
-Package pdftex.def Info: ./Fig/thetacheck.png used on input line 513.
+Package pdftex.def Info: ./Fig/thetacheck.png used on input line 670.
 (pdftex.def)             Requested size: 461.80887pt x 233.28935pt.
 
-Overfull \hbox (37.74854pt too wide) in paragraph at lines 513--513
+Overfull \hbox (37.74854pt too wide) in paragraph at lines 670--670
  [][] 
  []
 
-<./Fig/besttheta.png, id=217, 567.3195pt x 233.4321pt>
+<./Fig/besttheta.png, id=266, 567.3195pt x 233.4321pt>
 File: ./Fig/besttheta.png Graphic file (type png)
 
 <use ./Fig/besttheta.png>
-Package pdftex.def Info: ./Fig/besttheta.png used on input line 515.
+Package pdftex.def Info: ./Fig/besttheta.png used on input line 672.
 (pdftex.def)             Requested size: 340.39432pt x 140.06033pt.
 
 
@@ -1865,8 +1943,8 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[17 <./Fig/thetacheck.png> <./Fig/besttheta.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 535--536
+[19 <./Fig/thetacheck.png> <./Fig/besttheta.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 692--693
 
  []
 
@@ -1876,20 +1954,20 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[18]
-Overfull \hbox (4.52342pt too wide) in paragraph at lines 547--548
+[20]
+Overfull \hbox (4.52342pt too wide) in paragraph at lines 704--705
 \T1/cmr/m/n/12 the Ja-co-bian for the lin-ear sys-tem was pro-posed. In other w
 ords, the LU-factorization
  []
 
-<./Fig/itercompare.png, id=230, 1734.48pt x 947.4597pt>
+<./Fig/itercompare.png, id=278, 1734.48pt x 947.4597pt>
 File: ./Fig/itercompare.png Graphic file (type png)
 
 <use ./Fig/itercompare.png>
-Package pdftex.def Info: ./Fig/itercompare.png used on input line 555.
+Package pdftex.def Info: ./Fig/itercompare.png used on input line 712.
 (pdftex.def)             Requested size: 624.41234pt x 341.08524pt.
 
-Overfull \hbox (140.36653pt too wide) in paragraph at lines 554--556
+Overfull \hbox (140.36653pt too wide) in paragraph at lines 711--713
 []|  [] 
  []
 
@@ -1897,78 +1975,100 @@ Overfull \hbox (140.36653pt too wide) in paragraph at lines 554--556
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Overfull \hbox (1.2527pt too wide) in paragraph at lines 568--568
+Overfull \hbox (1.2527pt too wide) in paragraph at lines 725--725
 []|\T1/cmr/m/n/12 Implementation| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 570--570
+Underfull \hbox (badness 10000) in paragraph at lines 727--727
 []|\T1/cmr/m/n/12 Mean time/-
  []
 
-)
+) (./master.bbl
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[19] (./master.bbl
+[21]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[20 <./Fig/itercompare.png>]) [21
+[22 <./Fig/itercompare.png>] [23
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 35.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 35.
+Underfull \hbox (badness 1137) in paragraph at lines 139--144
+[]\T1/cmr/m/n/12 T E Tez-du-yar, M Behr, S Mit-tal, and A A John-son.  COM-PU-T
+A-
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[24])
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[25]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 36.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 36.
  (./master.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 35.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 35.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 36.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 36.
 Package rerunfilecheck Info: File `master.out' has not changed.
-(rerunfilecheck)             Checksum: 9D912E79943B1A709FDA14FAEC87071E;1106.
-
-
-LaTeX Warning: There were undefined references.
+(rerunfilecheck)             Checksum: 1DB3B8B55CB0DD442B17517FB41552D8;1174.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 35.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 36.
  ) 
 Here is how much of TeX's memory you used:
- 22210 strings out of 493014
- 393647 string characters out of 6133351
- 484644 words of memory out of 5000000
- 25232 multiletter control sequences out of 15000+600000
- 29019 words of font info for 85 fonts, out of 8000000 for 9000
+ 22442 strings out of 493014
+ 398231 string characters out of 6133351
+ 495009 words of memory out of 5000000
+ 25396 multiletter control sequences out of 15000+600000
+ 45454 words of font info for 91 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,12n,56p,1134b,387s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,12n,56p,1134b,514s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
-{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<
-/usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></
-usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></u
-sr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></us
-r/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/
-local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/lo
-cal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/lo
-cal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loca
-l/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/t
-exlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texl
-ive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texli
-ve/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive
-/2016/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2
-016/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/201
-6/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2016/
-texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2016/te
-xmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on master.pdf (22 pages, 1395574 bytes).
+{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{
+/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/tex
+live/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2016/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2016/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2016/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2016/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2016/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2016/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2016/texmf-dist/font
+s/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2016/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/publ
+ic/lm/lmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmri1
+0.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfbx1200.
+pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pf
+b></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
+</usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></
+usr/local/texlive/2016/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/loc
+al/texlive/2016/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
+Output written on master.pdf (27 pages, 1617127 bytes).
 PDF statistics:
- 318 PDF objects out of 1000 (max. 8388607)
- 261 compressed objects within 3 object streams
- 66 named destinations out of 1000 (max. 500000)
- 178 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 432 PDF objects out of 1000 (max. 8388607)
+ 359 compressed objects within 4 object streams
+ 109 named destinations out of 1000 (max. 500000)
+ 206 words of extra memory for PDF output out of 10000 (max. 10000000)
 

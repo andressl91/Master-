@@ -7,7 +7,7 @@ consiting of particles,  continiously distributed throughout its own volume. The
 $t \geq t_0$ denote the \textit{current configuration}. \\ \\
 Central for the coordinate systems introduced in this chapter is the concept of \textit{material} and \textit{spatial} points. \textit{Material} points are simply the points defining the material, moving with it as it undergoes movement. \textit{Spatial} points on the other hand is the relative measure of movement of the \textit{material} points. (Godt nok ??). This concept will be further explained throughout the chapter.
 
-\subsection{Lagrangian}
+\subsection{Lagrangian coordinate system}
 As some medium is act upon by forces, one of the main properties of interest is the deformation of the medium. Hence we want to know the relative position of some particle from its initial configuration. \\
 Let \^{x} be a particle in the reference  $\ha{x} \in \ha{V}$. 
 Further let x(\^x, t) be the new location of a particle \^x for some time t such that $x \in V(t)$. We assume that no two particles $\ha{x}_a, \ha{x}_b \in \ha{V}$ occupy the same location for some time $V(t)$.
@@ -28,7 +28,7 @@ and the \textit{deformation velocity}
 
 When tracking each particle as it moves, the \textit{material} and \textit{spatial} points coincide
 
-\subsection{Eulerian}
+\subsection{Eulerian coordinate system}
 Considering a flow of fluid particles in a river, a \textit{Lagrangian} description of the particles would be tidious as the number of particles entring and leaving the domain quickly rise to a immense number. 
 Instead consider defining a view-point $V$ fixed in time, and monitor every fluid particle passing the coordinate $x \in V(t)$ as time elapses. Such a description is defined as the \textit{Eulerian framework.} 
 Therefore the Eulerian formulation is natural for describing fluid dynamics. \\
@@ -132,7 +132,7 @@ These strain measures are used to define models for \textit{stress}, which is re
 \section{Governing Equations}
 The fully Fluid-structure interaction problem is based on equations of balance laws, with auxiliary kinematic, dynamic and material relations. In this section, assumptions regarding these relations will be described briefly. A deeper review of the full FSI problem will be considered in the next chapter. 
 
-\subsection{Fluid}
+\subsection{The Fluid}
 We will throughout this thesis consider in-compressible fluids described by Navier-Stokes equations. We define the fluid density as $\rho_f$ and fluid viscosity $\nu_f$ to be constant in time. Our phsyical unknowns
 fluid velocity $v_f$ and pressure $p_f$ both live in the time-dependent fluid domain  $\hat{\Omega}_f(t)$, with an eulerian configuration. Together with the equations of momentum and continuum, the Navier-Stokes equation is defined as,
 

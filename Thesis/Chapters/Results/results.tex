@@ -218,8 +218,165 @@ On this basis, the choice of P2-P1 element pair is sufficient for the evaluation
 
 \newpage
 \subsection{Validation of solid solver}
-The first validation
+CSM SPECIFICS
 
+The validation of the solid solver are conducted on three refined mesh, where the number of elements are chosen in close resemblance with the original work in \cite{Hron2006}. A simple investigation of different finite-element pairs, suggest that P3-P3 elements where used for making the reference solution. In this study, lower order finite-element pair was included by the motivation of shorter simulation time while retaining solution accuracy. While computational time is not a major concern for the solid solver, the study is important in order to reduce the computational time for the FSI-solver in the next sub-section.
+
+\begin{table}[h!]
+\centering
+\caption{CSM 1 Results}
+\label{CSM 1 Results}
+\begin{tabular}{ |p{1cm}||p{2.7cm}|p{3.3cm}|p{3.3cm}|}
+\hline
+  \multicolumn{4}{|c|}{$\Delta t = 0.1 \hspace{2mm} \theta = 1.0$} \\
+\hline
+nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$] \\
+\hline
+ 319     & 832 P1-P1  & -5.278 &  -56.6 \\
+     & 2936 P2-P2 & -7.056 &  -65.4 \\
+      & 6316 P3-P3 &  -7.064 &   -65.5  \\
+ \hline
+  1365    & 3140 P1-P1  & -6.385 &  -62.2 \\
+     & 11736 P2-P2 & -7.075 &  -65.5 \\
+     & 25792 P3-P3 & -7.083 &  -65.5 \\
+ \hline
+  5143    & 11084 P1-P1 & -6.905 &  -64.7  \\
+     & 42736 P2-P2 & -7.083 &  -65.4\\
+     & 94960 P3-P3 & -7.085 &  -65.5  \\
+  \hline
+  \multicolumn{2}{|c|}{Reference}  &-7.187    & -66.1 \\
+   \hline
+    \multicolumn{2}{|c|}{Error}  & 1.41 \%   & 0.8 \%\\
+   \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\caption{CSM 2 Results}
+\label{CSM 2 Results}
+\begin{tabular}{ |p{1cm}||p{2.7cm}|p{3.3cm}|p{3.3cm}|}
+\hline
+  \multicolumn{4}{|c|}{$\Delta t = 0.05 \hspace{2mm} \theta = 1.0$} \\
+\hline
+nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$] \\
+\hline
+
+ 319     & 832 P1-P1  & -0.3401 &  -14.43  \\ 
+     & 2936 P2-P2 &  -0.460  &  -16.78  \\ 
+      & 6316 P3-P3 & -0.461 &  -16.79  \\
+        \hline
+  1365    & 3140 P1-P1  &  -0.414 &  -15.93\\
+     & 11736 P2-P2 &  -0.461 &  -16.81 \\
+     & 25792 P3-P3 & -0.461  &  -16.82 \\
+        \hline
+   5143    & 11084 P1-P1 & -0.449 &  -16.60  \\
+     & 42736 P2-P2 &-0.461 &  -16.82 \\
+     & 94960 P3-P3 & -0.462 &  -16.82 \\
+  \hline
+  \multicolumn{2}{|c|}{Reference}  & -0.469      & -16.97  \\
+   \hline
+    \multicolumn{2}{|c|}{Error}  & 1.49\%   & 0.88 \%\\
+   \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\caption{CSM 3 Results}
+\label{CSM 3 Results}
+\begin{tabular}{ |p{1cm}||p{2.7cm}|p{3.3cm}|p{3.3cm}|}
+\hline
+  \multicolumn{4}{|c|}{$\Delta t = 0.02 \hspace{2mm} \theta = 0.5$} \\
+\hline
+nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$] \\
+\hline
+ 319     & 832 P1-P1  & -10.790       +/-  10.797 & -55.184       +/-  56.682 \\
+     & 2936 P2-P2 & -14.380       +/-  14.387 & -63.198       +/-  65.147 \\
+      & 6316 P3-P3 & -14.409       +/-  14.417 & -63.288       +/-  65.225 \\
+  \hline
+   1365    & 3140 P1-P1 & -13.032       +/-  13.041 & -60.446       +/-  62.075 \\
+     & 11736 P2-P2 & -14.407       +/-  14.416 & -63.283       +/-  65.220 \\
+     & 25792 P3-P3 & -14.412       +/-  14.421 & -63.310       +/-  65.246 \\
+   \hline
+    5143    & 11084 P1-P1 & -14.059       +/-  14.071 & -62.591       +/-  64.473 \\
+     & 42736 P2-P2  & -14.412       +/-  14.421 & -63.313       +/-  65.249 \\
+     & 94960 P3-P3 & -14.416       +/-  14.425 & -63.328       +/-  65.263 \\
+    \hline
+  \multicolumn{2}{|c|}{Reference}  &-14.305 +- -14.305        & -63.607 +- 65.160    \\
+   \hline
+    \multicolumn{2}{|c|}{Error}  & \%   &  \%\\
+   \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+%\caption{CSM 3 Results 2}
+\label{CSM 3 Results 2}
+\begin{tabular}{ |p{1cm}||p{2.7cm}|p{3.3cm}|p{3.3cm}|}
+\hline
+  \multicolumn{4}{|c|}{$\Delta t = 0.01 \hspace{2mm} \theta = 0.5$} \\
+\hline
+nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$] \\
+\hline
+    319     & 832 P1-P1 & -10.835       +/-  10.836 & -55.197       +/-  56.845 \\
+     & 2936 P2-P2 & -14.390       +/-  14.392 & -63.303       +/-  65.149 \\
+      & 6316 P3-P3& -14.432       +/-  14.435 & -63.397       +/-  65.263 \\
+    \hline
+    1365    & 3140 P1-P1  & -13.053       +/-  13.054 & -60.367       +/-  62.241 \\
+     & 11736 P2-P2  & -14.428       +/-  14.432 & -63.388       +/-  65.256 \\
+     & 25792 P3-P3  & -14.444       +/-  14.446 & -63.432       +/-  65.287 \\
+     \hline
+     5143    & 11084 P1-P1 & -14.082       +/-  14.084 & -62.656       +/-  64.495 \\
+     & 42736 P2-P2 & -14.444       +/-  14.447 & -63.435       +/-  65.288 \\
+     & 94960 P3-P3& -14.449       +/-  14.452 & -63.449       +/-  65.296 \\
+ \hline
+  \multicolumn{2}{|c|}{Reference}  &-14.305 +- -14.305        & -63.607 +- 65.160    \\
+   \hline
+    \multicolumn{2}{|c|}{Error}  & \%   &  \%\\
+   \hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[h!]
+\centering
+%\caption{CSM 3 Results 3}
+\label{CSM 3 Results 3}
+\begin{tabular}{ |p{1cm}||p{2.7cm}|p{3.3cm}|p{3.3cm}|}
+\hline
+  \multicolumn{4}{|c|}{$\Delta t = 0.005 \hspace{2mm} \theta = 0.5$} \\
+\hline
+nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$] \\
+\hline
+    319     & 832 P1-P1 & -10.846       +/-  10.848 & -56.049       +/-  56.053 \\
+     & 2936 P2-P2  & -14.390       +/-  14.391 & -63.738       +/-  64.703 \\
+      & 6316 P3-P3 & -14.429       +/-  14.430 & -63.833       +/-  64.810 \\
+ \hline 
+    1365    & 3140 P1-P1 & -13.057       +/-  13.057 & -60.813       +/-  61.826 \\
+     & 11736 P2-P2& -14.426       +/-  14.427 & -63.827       +/-  64.801 \\
+     & 25792 P3-P3 & -14.440       +/-  14.441 & -63.854       +/-  64.845 \\
+ \hline
+      5143    & 11084 P1-P1 & -14.091       +/-  14.091 & -63.195       +/-  63.981 \\
+     & 42736 P2-P2 & -14.441       +/-  14.441 & -63.856       +/-  64.847 \\
+     & 94960 P3-P3 & -14.446       +/-  14.446 & -63.865       +/-  64.860 \\
+ \hline
+  \multicolumn{2}{|c|}{Reference}  &-14.305 +- -14.305        & -63.607 +- 65.160    \\
+   \hline
+    \multicolumn{2}{|c|}{Error}  & \%   &  \%\\
+   \hline
+\end{tabular}
+\end{table}
+
+\begin{figure}[h!]
+  \centering
+    \includegraphics[scale=0.6]{./Fig/csm3compare.png}
+      \caption{CSM-3, deformation components of A(t) for two different time intervals. Time interval $t \in [0, 6]$ shows the P3-P3 element pair, while$t \in [6, 8]$ compares all finite elemet pair chosen for the experiment}
+\end{figure}
+
+\subsection{Discussion of results}
+The results for sub-problems CSM-1 and CSM-2 each coincide with the reference solution. The study of lower-grade elements proved successful for both problems, justifying accurate results can be achieved for polynomials grade 1 and 2 for all mesh refinements. This obeservation is furhter justified in the CSM-3 reults. In table 1.4, the  displacement components of P3-P3 and P2-P2 elements can hardly be distinguished.
 
 
 \newpage
@@ -244,7 +401,7 @@ From chapter ?,  (1.1) is enforced strongly due to the continious velocity field
 
 
 
-Apart from the accuracy of the reported values, the main purpose of the validation of the fluid solver is twofold. Firstly, it is of great importance to ensure that the overall coupling of the fluid-structure interaction problem are executed correctly. Second, a good choice of mesh extrapolation model is essential to ensure that mesh entanglement is not present. 
+Apart from the accuracy of the reported values, the main purpose of the validation of the fluid solver is twofold. Firstly, it is of great importance to ensure that the overall coupling of the fluid-structure interaction problem are executed correctly. Second, a good choice of mesh extrapolation model is essential to ensure that mesh entanglement is not present. Based on the experience with the previous sub-problems, the finite element group of P2-P2-P1 is chosen for deformation, velocity and pressure respectivly. 
 
 
 \begin{table}[h!]
@@ -474,7 +631,7 @@ The FSI2 case proved to be one of the most demanding tests, due to the large def
 
 The FSI3 environment does not induce deformation to the extent of the FSI2. However a critical phase in the transition to the periodic solution was discovered, where the pressure oscillation induces a large deformation to the system.
 
-\subsection{Investigation of temporal stability}
+\section{Investigation of temporal stability}
 
 Preliminary work regarding discretization and numerical analysis of Crank-Nicholson time stepping schemes for fluid structure interaction can be found in cite WIck papers. Two main properties of interest of higher-order methods have proven to be the stability of long-time simulation, and obtaining the expected physics for the problem of interest.
 
