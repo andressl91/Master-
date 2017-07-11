@@ -1,18 +1,13 @@
 \chapter{Continuum Mechanics}
 %When studying the dynamics of a mediums with fluid or structure %properties under the influence of forces, we need in some sense a good description of how these forces act and alter the system itself.
 
-To study the influence of forces acting on a continuum, we need an accurate framework to describe the effects. By a continuum we define eller refer to a volume $V(t) \subset \mathbb{R}^3$ 
-consiting of particles, which we observe for some properties. One property of interest could be the veloctity $\textbf{v}(x,t)$ for some point $x \in V(t)$ in time $t \in (0, T]$, which would mean the average velocity of the particles occupying this point \textit{x} at time \textit{t}  
-The intension of this chapter is not to give a 
-thorough introduction of continuum mechanics, but rather present key concepts needed for the evaluation of fluid-strucutre interaction.  
-
-\section{Coordinate system}
-We assume that our medium is continiously distributed throughout its own volume, and we start our observation of this medium
-at som time $t_0$. As this choice is arbitary, we often choose to observe a medium in a stress free initial state. We call this state $V(t_0)$ of the medium as the \textit{reference configuration}. We let $V(t)$ for 
+To study the influence of forces acting on a continuum, we need an accurate framework to describe the effects. By a continuum we define  to a volume $V(t) \subset \mathbb{R}^d \ d \in (2, 3)$ 
+consiting of particles,  continiously distributed throughout its own volume. The initial configuration $V(t = t_0)$  is assumed to be stress free,  defined as the \textit{reference configuration}. A
+. We let $V(t)$ for 
 $t \geq t_0$ denote the \textit{current configuration}. \\ \\
 Central for the coordinate systems introduced in this chapter is the concept of \textit{material} and \textit{spatial} points. \textit{Material} points are simply the points defining the material, moving with it as it undergoes movement. \textit{Spatial} points on the other hand is the relative measure of movement of the \textit{material} points. (Godt nok ??). This concept will be further explained throughout the chapter.
 
-\subsection{Lagrangian}
+\subsection{Lagrangian coordinate system}
 As some medium is act upon by forces, one of the main properties of interest is the deformation of the medium. Hence we want to know the relative position of some particle from its initial configuration. \\
 Let \^{x} be a particle in the reference  $\ha{x} \in \ha{V}$. 
 Further let x(\^x, t) be the new location of a particle \^x for some time t such that $x \in V(t)$. We assume that no two particles $\ha{x}_a, \ha{x}_b \in \ha{V}$ occupy the same location for some time $V(t)$.
@@ -33,7 +28,7 @@ and the \textit{deformation velocity}
 
 When tracking each particle as it moves, the \textit{material} and \textit{spatial} points coincide
 
-\subsection{Eulerian}
+\subsection{Eulerian coordinate system}
 Considering a flow of fluid particles in a river, a \textit{Lagrangian} description of the particles would be tidious as the number of particles entring and leaving the domain quickly rise to a immense number. 
 Instead consider defining a view-point $V$ fixed in time, and monitor every fluid particle passing the coordinate $x \in V(t)$ as time elapses. Such a description is defined as the \textit{Eulerian framework.} 
 Therefore the Eulerian formulation is natural for describing fluid dynamics. \\
@@ -137,7 +132,7 @@ These strain measures are used to define models for \textit{stress}, which is re
 \section{Governing Equations}
 The fully Fluid-structure interaction problem is based on equations of balance laws, with auxiliary kinematic, dynamic and material relations. In this section, assumptions regarding these relations will be described briefly. A deeper review of the full FSI problem will be considered in the next chapter. 
 
-\subsection{Fluid}
+\subsection{The Fluid}
 We will throughout this thesis consider in-compressible fluids described by Navier-Stokes equations. We define the fluid density as $\rho_f$ and fluid viscosity $\nu_f$ to be constant in time. Our phsyical unknowns
 fluid velocity $v_f$ and pressure $p_f$ both live in the time-dependent fluid domain  $\hat{\Omega}_f(t)$, with an eulerian configuration. Together with the equations of momentum and continuum, the Navier-Stokes equation is defined as,
 
