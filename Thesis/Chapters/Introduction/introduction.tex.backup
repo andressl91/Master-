@@ -3,7 +3,7 @@
 Fluid-structure interaction(FSI) is an interdiciplinary field, appearing in many applications. In nature, FSI forms the basis of many physical phenomia. A fish swimming utpstream,
 generating thrust from the surrounding fluid by wave-like movements of its fin and body. Or a tree, bedning back and fourth due to strong winds of a storm passing by. Both examples are understandable, but points out two main instances of how FSI occur. When the fish swims, it deformes the fluid, altering the nearby flowfield. For the tree however, the swinging and bending is induced by the pressure of passing wind acting on the tree trunk and branches. Ultimatly, the origins of FSI occurs due to both initial effect of either fluid, structure or a combination. 
 
-Fluid-structure interaction moddeling has grown wast within engingeering in the recent years, and proved to be essential for design development and performance optimalizastion of many applications. Within aeronautics, FSI have proven to be crucial for advances within flight characteristics and fuel economy, due to the combination of flexible wing materials and wide range of flow profiles to studied.  Winglet, a replacement for the ordinary wing tip of an aircraft, have reduced the drag induced by wingtip vortices during flight, reducing ful 5  
+Fluid-structure interaction moddeling has grown wast within engingeering in the recent years, and proved to be essential for design development and performance optimalizastion of many applications. 
 
 
 Computational stuff, why now, refer to computational power etc
