@@ -1,20 +1,2 @@
 \select@language {english}
-\contentsline {chapter}{\numberline {1}Numerical Results}{3}{chapter.1}
-\contentsline {section}{\numberline {1.1}Verification}{3}{section.1.1}
-\contentsline {section}{\numberline {1.2}Validation of a One-step $\theta $ scheme}{3}{section.1.2}
-\contentsline {subsection}{\numberline {1.2.1}Validation of fluid solver}{6}{subsection.1.2.1}
-\contentsline {subsection}{\numberline {1.2.2}Discussion of results}{8}{subsection.1.2.2}
-\contentsline {subsection}{\numberline {1.2.3}Validation of solid solver}{10}{subsection.1.2.3}
-\contentsline {subsection}{\numberline {1.2.4}Discussion of results}{12}{subsection.1.2.4}
-\contentsline {subsection}{\numberline {1.2.5}Validation of fluid structure interaction solver}{13}{subsection.1.2.5}
-\contentsline {subsubsection}{FSI1}{14}{section*.16}
-\contentsline {subsubsection}{FSI2}{15}{section*.19}
-\contentsline {subsubsection}{FSI3}{16}{section*.21}
-\contentsline {subsection}{\numberline {1.2.6}Discussion of results}{17}{subsection.1.2.6}
-\contentsline {section}{\numberline {1.3}Investigation of temporal stability}{18}{section.1.3}
-\contentsline {section}{\numberline {1.4}Optimization of Newtonsolver}{20}{section.1.4}
-\contentsline {section}{\numberline {1.5}Consistent methods}{20}{section.1.5}
-\contentsline {subsection}{\numberline {1.5.1}Jacobi buffering}{20}{subsection.1.5.1}
-\contentsline {section}{\numberline {1.6}Non-consisten methods}{21}{section.1.6}
-\contentsline {subsection}{\numberline {1.6.1}Reuse of Jacobian}{21}{subsection.1.6.1}
-\contentsline {subsection}{\numberline {1.6.2}Quadrature reduce}{21}{subsection.1.6.2}
+\contentsline {chapter}{\numberline {1}A motivation for studying fluid-structure interaction}{3}{chapter.1}
