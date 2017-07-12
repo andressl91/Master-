@@ -8,79 +8,45 @@ Database file #3: ./Cite/Decoupled.bib
 Database file #4: ./Cite/NavierStokes.bib
 Database file #5: ./Cite/Verification.bib
 Database file #6: ./Cite/EulerianFormulation.bib
-Repeated entry---line 54 of file ./Cite/EulerianFormulation.bib
- : @article{Richter2010c
- :                      ,
-I'm skipping whatever remains of this entry
 Database file #7: ./Cite/Meshupdate.bib
-Repeated entry---line 6 of file ./Cite/Meshupdate.bib
- : @article{Wick
- :              ,
-I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "Frei2016"
-Warning--I didn't find a database entry for "Richter2010a"
-Warning--empty journal in Biedron
-Warning--empty year in Biedron
-Warning--empty journal in Donea2004
-Warning--there's a number but no volume in Donea2004
-Warning--there's a number but no volume in Dunne2006
-Warning--empty journal in Dwight
-Warning--empty year in Dwight
-Warning--empty journal in Fernandez2009
-Warning--empty journal in Geuzaine
-Warning--there's a number but no volume in Geuzaine
-Warning--empty year in Geuzaine
-Warning--empty journal in Hsu
-Warning--empty year in Hsu
-Warning--empty journal in Project2016
-Warning--empty journal in Richter2016
-Warning--empty booktitle in Richter2015
-Warning--empty publisher in Richter2015
-Warning--empty journal in Stein
-Warning--empty year in Stein
-Warning--empty year in Wicka
-Warning--empty journal in Wick
-Warning--empty year in Wick
-Warning--empty publisher in Wriggers2006
-You've used 33 entries,
+You've used 5 entries,
             2118 wiz_defined-function locations,
-            711 strings with 9713 characters,
-and the built_in function-call counts, 10115 in all, are:
-= -- 995
-> -- 465
-< -- 4
-+ -- 185
-- -- 152
-* -- 698
-:= -- 1730
-add.period$ -- 97
-call.type$ -- 33
-change.case$ -- 173
+            544 strings with 5155 characters,
+and the built_in function-call counts, 1765 in all, are:
+= -- 174
+> -- 84
+< -- 0
++ -- 33
+- -- 28
+* -- 155
+:= -- 303
+add.period$ -- 15
+call.type$ -- 5
+change.case$ -- 29
 chr.to.int$ -- 0
-cite$ -- 56
-duplicate$ -- 392
-empty$ -- 769
-format.name$ -- 152
-if$ -- 2052
+cite$ -- 5
+duplicate$ -- 55
+empty$ -- 132
+format.name$ -- 28
+if$ -- 349
 int.to.chr$ -- 0
-int.to.str$ -- 33
-missing$ -- 33
-newline$ -- 163
-num.names$ -- 66
-pop$ -- 197
+int.to.str$ -- 5
+missing$ -- 5
+newline$ -- 28
+num.names$ -- 10
+pop$ -- 19
 preamble$ -- 1
-purify$ -- 142
+purify$ -- 24
 quote$ -- 0
-skip$ -- 264
+skip$ -- 37
 stack$ -- 0
-substring$ -- 582
-swap$ -- 53
-text.length$ -- 4
+substring$ -- 134
+swap$ -- 5
+text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 128
-warning$ -- 23
-while$ -- 105
-width$ -- 35
-write$ -- 333
-(There were 2 error messages)
+type$ -- 20
+warning$ -- 0
+while$ -- 19
+width$ -- 6
+write$ -- 57

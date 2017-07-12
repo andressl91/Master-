@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.12.9)  12 JUL 2017 20:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.12.9)  13 JUL 2017 00:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1417,9 +1417,7 @@ Type  H <return>  for immediate help.
                                                   
 l.10 \masterfrontpage
                      
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
+? 
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <17> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 10.
 [1
@@ -1483,7 +1481,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--9
 
  []
 
-<./Fig/winglet.png, id=48, 221.32687pt x 385.44pt>
+<./Fig/winglet.png, id=53, 221.32687pt x 385.44pt>
 File: ./Fig/winglet.png Graphic file (type png)
  <use ./Fig/winglet.png>
 Package pdftex.def Info: ./Fig/winglet.png used on input line 13.
@@ -1520,28 +1518,15 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[4 <./Fig/winglet.png>] (./master.bbl [5
-
-]
-Underfull \hbox (badness 1137) in paragraph at lines 139--144
-[]\T1/cmr/m/n/12 T E Tez-du-yar, M Behr, S Mit-tal, and A A John-son.  COM-PU-T
-A-
+[4 <./Fig/winglet.png>] (./master.bbl
+Underfull \hbox (badness 6625) in paragraph at lines 16--21
+[]\T1/cmr/m/n/12 Keith Stein, Richard Ben-ney, Tay-fun Tez-du-yar, and Jean Pot
+vin.
  []
 
+) [5
 
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[6])
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[7]
+]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 36.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 36.
  (./master.aux)
@@ -1552,10 +1537,10 @@ Package rerunfilecheck Info: File `master.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 36.
  ) 
 Here is how much of TeX's memory you used:
- 22340 strings out of 493014
- 396473 string characters out of 6133351
- 469571 words of memory out of 5000000
- 25367 multiletter control sequences out of 15000+600000
+ 22282 strings out of 493014
+ 395775 string characters out of 6133351
+ 466683 words of memory out of 5000000
+ 25339 multiletter control sequences out of 15000+600000
  38037 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,12n,56p,681b,514s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1573,10 +1558,10 @@ uper/sfrm1200.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-sup
 er/sfti1200.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/helvetic/uh
 vb8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pf
 b>
-Output written on master.pdf (9 pages, 262431 bytes).
+Output written on master.pdf (7 pages, 247882 bytes).
 PDF statistics:
- 157 PDF objects out of 1000 (max. 8388607)
- 129 compressed objects within 2 object streams
- 45 named destinations out of 1000 (max. 500000)
+ 118 PDF objects out of 1000 (max. 8388607)
+ 93 compressed objects within 1 object stream
+ 15 named destinations out of 1000 (max. 500000)
  41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
