@@ -1,0 +1,226 @@
+\chapter{Governing equations}
+%When studying the dynamics of a mediums with fluid or structure %properties under the influence of forces, we need in some sense a good description of how these forces act and alter the system itself.
+
+Computational fluid-structure interaction is a multi-physics field of science, combining two separate fields of computational mechanics, computational fluid dynamics (CFD), and computational structure dynamics (CSM). While CFD and CSM traditionally have been considered as two distinct fields of science,  the goal of CFSI is to combine the separate fluid and structure problems ,and their interaction or \textit{coupling} to one another. Therefore, the study CFSI demands understanding of each separate field. This chapter presents the governing equations of the individual fluid and structure problem, and will form the basis for the next chapter.
+
+
+
+\section{Continuum Mechanics}
+To interpret nature, mathematical models are needed to describe how object around us reacts to external and/or internal stimuli. 
+The mathematical models forms a basis for establishing elementary conservation laws and partial differential equations (PDE's), making scientist and egineers not only able to physical phenomena  in nature, but also predict them. Within mechanics, the response of materials undergoing applied forces or external stimuli is a primary interest. 
+Fluid and solids are both materials built up by a sequence of atoms, meaning on a microscopic level, an observer will locate discontinuties and space within the material. Evaluating each atom, or \textit{material point}, is not impossible from a mathematical point of view. However, for mathematical moddeling and applications, the evaluation of each material point remains unpractical. In \textit{Continuum mechanics} (first formulated by Augustin-Louis Cauchy \cite{Merodio2011}), the microscopic structure of materials are  ignored, instead  asuming that the given material of interest is \textit{continously distributed} within the
+
+ A body in continuum mechanics is considered to be matter continuously distributed in space.  Hence, no attention is given to the microscopic (atomic) structure of real materials although non-classical generalized theories of continuum mechanics are able to deal with the mesoscopic structure of matter (i.e. defects, cracks, dispersive lengths, .
+
+To study the influence of forces acting on a continuum, we need an accurate framework to describe the effects. By a continuum we define  to a volume $V(t) \subset \mathbb{R}^d \ d \in (2, 3)$ 
+consiting of particles,  continiously distributed throughout its own volume. The initial configuration $V(t = t_0)$  is assumed to be stress free,  defined as the \textit{reference configuration}. A
+. We let $V(t)$ for 
+$t \geq t_0$ denote the \textit{current configuration}. \\ \\
+Central for the coordinate systems introduced in this chapter is the concept of \textit{material} and \textit{spatial} points. \textit{Material} points are simply the points defining the material, moving with it as it undergoes movement. \textit{Spatial} points on the other hand is the relative measure of movement of the \textit{material} points. (Godt nok ??). This concept will be further explained throughout the chapter.
+
+\subsection{The structure problem and agrangian coordinate system}
+As some medium is act upon by forces, one of the main properties of interest is the deformation of the medium. Hence we want to know the relative position of some particle from its initial configuration. \\
+Let \^{x} be a particle in the reference  $\ha{x} \in \ha{V}$. 
+Further let x(\^x, t) be the new location of a particle \^x for some time t such that $x \in V(t)$. We assume that no two particles $\ha{x}_a, \ha{x}_b \in \ha{V}$ occupy the same location for some time $V(t)$.
+Then the transformation $\ha{T}(\ha{x}, t) = x(\ha{x}, t)$ maps a particle \ha{x} from the \textit{reference configuration} $\ha{V}$ to the  \textit{current configuration} $V(t)$
+Assuming that the path for some \^{x} is continuous in time, we can define the inverse mapping $\ha{T}^{-1}(x, t) = \ha{x}(x, t)$, which maps $x(\ha{x}, t)$ back to its initial location at time $t = t_0$. \\
+These mappings lets us track each particle from some \textit{reference configuration} to some deformed state at time t. 
+Such a description of tracking each particle $\ha{x} \in \ha{V}$ is often denoted the \textit{Lagrangian Framework} and is a natural choice of describing structure mechanics. 
+
+We define the \textit{deformation} 
+\begin{align}
+\ha{T}(\ha{x}, t) = \hat{u}(\ha{x},t) = x(\ha{x},t) - \ha{x} 
+\end{align}
+
+and the \textit{deformation velocity}
+\begin{align}
+\pder{\ha{T}(\ha{x}, t)}{t} = \hat{v}(\ha{x},t) = d_t x(\ha{x},t) = d_t \hat{u}(\ha{x},t) 
+\end{align}
+
+When tracking each particle as it moves, the \textit{material} and \textit{spatial} points coincide
+
+\subsection{Eulerian coordinate system}
+Considering a flow of fluid particles in a river, a \textit{Lagrangian} description of the particles would be tidious as the number of particles entring and leaving the domain quickly rise to a immense number. 
+Instead consider defining a view-point $V$ fixed in time, and monitor every fluid particle passing the coordinate $x \in V(t)$ as time elapses. Such a description is defined as the \textit{Eulerian framework.} 
+Therefore the Eulerian formulation is natural for describing fluid dynamics. \\
+We can describe the particles occupying the \textit{current configuration} $V(t)$ for some time $t \geq t_0$ 
+\begin{align*}
+x = \ha{x} + \hat{u}(\ha{x}, t)	
+\end{align*}
+Since our domain is fixed we can define the deformation for a particle 
+occupying position $x = x(\ha{x},t)$ as
+\begin{align*}
+\textbf{u}(x, t) = \hat{u}(\ha{x}, t) = x - \ha{x}	\\
+\end{align*}
+and its velocity
+\begin{align*}
+\textbf{v}(x,t) = \partial_t u(x,t) = \partial_t \hat{u}(\ha{x},t) = \hat{v}(\ha{x},t)
+\end{align*}
+
+It is important to mention that the we are not interested in which particle is occupying a certain point in our domain, but only its properties. As such the \textit{material} and \textit{spatial} points doesn't coincide in the \textit{Eulerian formulation}
+
+
+\section{Deformation gradients}
+When studying continuum mechanics we observe continious mediums as they are deformed over time. These deformations
+results in relative changes of positions due to external and internal forces acting.. These relative changes of postition is called
+\textit{strain}, and is the primary property that causes \textit{stress} within a medium of interest \cite{Richter2016}. We define stress as the internal forces that particles within a continuous material exert on each other. \\
+
+The equations of mechanics can be derived with respect to either a deformed or undeformend configuration of our medium of interest. The choice of refering our equations to the current or reference configuration is indifferent from a theoretical point of view. In practice however this choice can have a severe impact on our strategy of solution methods and physical of modelling.   \cite{Wriggers2006}. We will therefore define the strain measures for both configurations of our medium.  
+
+\begin{defn}
+Deformation gradient. 
+\begin{align}
+\hat{F} = I + \hat{\nabla} \hat{u} 
+\end{align} 
+\end{defn}
+
+Mind that deformation gradient of $\hat{u}$ is which respect to the reference configuration. 
+From the assumption that no two particles $\ha{x}_a, \ha{x}_b \in \ha{V}$ occupy the same location for some time $V(t)$, the presented transformation must be linear. As a consequence from the invertible matrix theorem found in linear algebra, the linear operator \textbf{F} cannot be a singuar.  
+We define the  \textit{determinant of the deformation gradient} as \textit{J}, which denotes the local change of volume of our domain. 
+
+\begin{defn}
+Determinant of the deformation gradient
+\begin{align}
+J = det(\hat{F}) = det( I + \hat{\nabla} \hat{u} ) \neq 0
+\end{align} 
+\end{defn}
+
+
+By the assumption that the medium can't be selfpenetrated, we must limit  J to be greater than 0 \cite{Wriggers2006}
+
+\section{Measures of Strain and Stress}
+The equations describing forces on our domain can be derived in accordinance with the current or reference configuration. With this in mind, different measures of strain can be derived with respect to which configuration we are interested in. We will here by \cite{Richter2016} show the most common measures of strain. We will first introduce the right \textit{Cauchy-Green} tensor \textbf{C}, which is one of the most used strain measures \cite{Wriggers2006}. \\ Uttrykk 1.3 fra Godboka, LAG TEGNING \\ 
+
+Let $\ha{x}, \ha{y} \in \ha{V}$ be two points in our referemce configuration and let $\ha{a} = \ha{y} - \ha{x}$ denote the
+length of the line bewtween these two points. As our domain undergoes deformation let 
+$x = \ha{x} + \hat{u}( \ha{x} ) $ and $x = \ha{y} + \hat{u}( \ha{y} )  $ be the position of our points in the current configuration, and let $a = y - x$ be our new line segment. By \cite{Richter2016} we have by first order Taylor expansion
+
+\begin{align*}
+&y - x = \ha{y} + \hat{u}(\ha{y}) - \ha{x} - \hat{u}(\ha{x}) = \
+\ha{y} - \ha{x} + \hat{\nabla}\ha{u}(\ha{x}) (\ha{y} - \ha{x}) 
++ \mathcal{O}(|\ha{y} - \ha{x} |^2) \\
+&\frac{y - x}{|\ha{y} - \ha{x}|} = [I + \hat{\nabla}\hat{u}(\ha{x} ]  
+\frac{\ha{y} - \ha{x}}{|\ha{y} - \ha{x}|} + \mathcal{O}(|\ha{y} - \ha{x} |) 
+\end{align*}
+
+This detour from \cite{Richter2016}  we have that 
+\begin{align*}
+&a = y - x = \hat{F}(\ha{x})\ha{a} +  \mathcal{O}(|\ha{a} |^2) \\
+&|a| = \sqrt{ (\hat{F}\ha{a},\hat{F}\ha{a})+ \mathcal{O} (|\ha{a}^3|)  } = 
+ \sqrt{ (\ha{a}^T, \hat{F}^T\hat{F}\ha{a})} + \mathcal{O} (|\ha{a}^2|)  
+\end{align*}
+
+We let $\ha{C} = \ha{F}^T \ha{F}$ denote the right \textit{Cauchy-Green tensor}.
+By observation the Cauchy-Green tensor is not zero at the reference configuration 
+\begin{align*}
+\ha{C} =  \ha{F}^T \ha{F} = (I + \hat{\nabla} \ha{u})^T (I + \hat{\nabla} \ha{u}) = 1
+\end{align*}
+
+Hence it is convenient to introduce a tensor which is zero at the reference configuration. We define the \textit{Grenn-Lagrange strain tensor}, which arises from the squard rate of change of the linesegment \ha{a} and \textit{a}. By using the definition of the Cauchy-Green tensor we have the relation
+\begin{align*}
+&\frac{1}{2}(|a|^2 + |\ha{a}|^2) = \frac{1}{2}(\ha{a}^T\hat{C}\ha{a}
+ -\ha{a}^T \ha{a} ) + \mathcal{O}(|\ha{a}^3| = 
+ \ha{a}^T \big(\frac{1}{2} (\hat{F}^T \hat{F} - I) \big) \ha{a} 
+ + \mathcal{O}(\ha{a}^3) \\
+&\hat{E} = \frac{1}{2}(\hat{C} - I)
+\end{align*}
+
+Both the \textit{right Cauchy-Green tensor} $\hat{C}$ and the \textit{Green-Lagrange} $\hat{E}$ are refered to the Lagrangian coordinate system, hence the \textit{reference configuration}. \\
+Using similar arguments (see \cite{Richter2016}, compsda) Eulerian counterparts of the Lagrangian stress tensors can be derived.
+
+The \textit{left Cauchy-Green} strain tensor 
+\begin{align*}
+\mathbf{b} = \ha{F} \ha{F}^T = 
+\end{align*}
+and the \textit{Euler-Almansi} strain tensor
+\begin{align*}
+\mathbf{e} = \frac{1}{2} (I - \hat{F}^{-1}\hat{F}^{-T}) = \hat{F}^{-1}\hat{E}\hat{F}^{T}
+\end{align*}
+
+It is important to note that strain itself is nothing else than the measurement of line segments under deformation. Therefore strain alone is purely an observation, and it is not dependent on the material of interest. However one expects that a material undergoing strain, will give  forces within the material due to neighboring material interacting with one another. Therefore one derive materialspecific models to describe how a certain material will react to a certain amount of strain.\\
+These strain measures are used to define models for \textit{stress}, which is responsible for the deformation in materials (cite holzapfel). The dimention of stress is force per unit area.
+
+\section{Governing Equations}
+The fully Fluid-structure interaction problem is based on equations of balance laws, with auxiliary kinematic, dynamic and material relations. In this section, assumptions regarding these relations will be described briefly. A deeper review of the full FSI problem will be considered in the next chapter. 
+
+\subsection{The Fluid}
+We will throughout this thesis consider in-compressible fluids described by Navier-Stokes equations. We define the fluid density as $\rho_f$ and fluid viscosity $\nu_f$ to be constant in time. Our phsyical unknowns
+fluid velocity $v_f$ and pressure $p_f$ both live in the time-dependent fluid domain  $\hat{\Omega}_f(t)$, with an eulerian configuration. Together with the equations of momentum and continuum, the Navier-Stokes equation is defined as,
+
+\begin{equat}
+\textit{Navier-Stokes equation}
+\begin{align}
+&\rho \pder{\mathbf{v}_f}{t} + \rho \mathbf{v}_f \cdot \nabla \mathbf{v}_f =
+\nabla \cdot \sigma + \rho \mathbf{f}_f \hspace{4mm} \text{in} \hspace{2mm} \Omega_f \\
+&\nabla \cdot \mathbf{v}_f = 0 \hspace{4mm} \text{in} \hspace{2mm} \Omega_f 
+\end{align} 
+\end{equat}
+where $\mathbf{f}_s$ is some body force. 
+Assuming a newtonian fluid the \textit{Cauchy stress sensor} $\sigma$ takes the form \newline $\sigma = -p_f I + \mu_f (\nabla \mathbf{v}_f + (\nabla \mathbf{v}_f)^T$.
+
+Additional appropriate boundary conditions are supplemented to the equation for a given problem. The first type of of boundary conditions are Dirichlet boundary conditions, 
+\begin{align}
+\mathbf{v}_f = \mathbf{v}_f^D 
+\hspace{4mm} \text{on} \hspace{2mm} \Gamma_f^D \subset \partial \Omega_f 
+\end{align}
+The second type of boundary condition are Neumann boundary conditions
+\begin{align}
+\sigma_f \cdot \mathbf{n} = \mathbf{g} 
+\hspace{4mm} \text{on} \hspace{2mm} \Gamma_f^N \subset \partial \Omega_f 
+\end{align}
+
+\newpage
+\subsection{The solid}
+The governing equations for the solid mechanics are given by the blalance law,
+\begin{equat}
+\textit{Solid momentum}
+\begin{align}
+\rho_s \pder{\mathbf{v}_s}{t} = \nabla \cdot \bat{T} + \rho_s \mathbf{f}_s
+\hspace{4mm} \text{in} \hspace{2mm} \hat{\Omega}_s
+\end{align}
+\end{equat}
+defined in a Lagrangian coordinate system, with respect to an initial reference configuration $\hat{\Omega}_s$. The structure configuration is given by the displacement $\bat{u}_s$, with the relation
+ $\pder{\bat{v}}{t} = \bat{u}_s$ to the solid velocity. The density of the structure is given by $\rho_s$, and $\bat{f}_s$ express any exterior body forces acting. The tensor $\bat{T}$ denotes the first Piola-Kirchhoff stress tensor, with the relation $\bat{T}  = \bat{J} \sigma_s \bat{F}^{-T}$ to the cauchy stress tensor. By definition the cauchy stress tensor is symmetric, however the first Piola-Kirchhoff tensor does not exhibit this property. As constitute equations often assumes this behaviour of symmetry, the second Piola-Kirchhoff tensor $\bat{S}_s$ is convenient as it is symmetric.  It is given by the relation to the firt Piola-Kirchhoff stress tensor by, 
+ 
+ \begin{align*}
+ \bat{S}_s = \bat{F}^{-T} \bat{T} = \hat{J} \bat{F}^{-1} \sigma_s \bat{F}^{-T}
+ \end{align*}
+ 
+According to the material of interest, several material models exist to model the induced stress given by material deformation. Most famous is Hooke's law, describing a linear relation between strain and stress, limited to a small-deformation regime. As we may no longer be in the range of small-deformation approximation were a linear-elastic material can be used, a consitent way to describe large deformations is needed. As such, for describing large deformation it is widley common to use a stress-strain relation based of the introduced Green Lagrangian strain tensor $\bat{E}$ and the second Piola-Kirchhoff stress tensor $\bat{S}$ \cite{Razzaq2010}. Therefore the material is assumed to follow a hyperelastic model, specifically the Vernant-Kirchhoff(STVK) model. Though STVK can handle large deformations, it is limited of the calculation of large strain \cite{Razzaq2010}. However since the deformations considered in this thesis are small, it will remain our primary choice of strain-stress relation.  STVK describes materials of compressible nature,  but is should be mentioned that for large deformation models describing incompressible materials can be considered. Specially the Incompressible Neo-Hooke (INH) model is considered in several publications (see \cite{Wick2013}, \cite{Richter2010c}), sharing the same hyperelastic properties as the STVK model. As both models handles large deformations, the INH is superior compared to STVK in the sense that it is valid for large strains aswell \cite{Razzaq2010}. \newpage
+The STVK is one of the simplest hyperelastic model, as it only extend the famous Hooke's law into a non-linear regime by,
+
+\begin{align*}
+\sigma_s = \frac{1}{\hat{J}} \bat{F}(\lambda_s(Tr(\bat{E}) I + 2 \mu \bat{E})\bat{F}^{-T} \hspace{4mm}
+\bat{S}_s = \lambda_s(Tr(\bat{E}) I + 2 \mu \bat{E} \\
+\bat{E} = \frac{1}{2}(\bat{C} - I ) \hspace{4mm} \bat{C} = \bat{F}\bat{F}^{-T}
+\end{align*} 
+ where $\bat{C}$ is the right Cauchy-Green strain tensor mention in the last subchapter. 
+  
+ The solid is often characterized by the Possion ratio and Young modulus. Lamè coefficients  $\lambda_s$ and $\mu_s$ are then given by the relation.
+
+\begin{align*}
+&E_y = \frac{ \mu_s ( \lambda_s + 2 \mu_s) }{ ( \lambda_s + \mu_s ) } 
+\hspace{5mm} \nu_s = \frac{\lambda_s}{2(\lambda_s + \mu_s)} \\
+&\lambda_s = \frac{\nu E_y}{(1 + \nu_s)(1 - 2\nu_s)} \hspace{4mm} \mu_s = \frac{E_y}{2(1 + \nu_s)} 
+\end{align*}
+
+Since the solid deformation is a quantity of interest a kinematic condition must be defined for the system of the form
+\begin{align}
+\pder{\mathbf{v}_s}{t} = \mathbf{u_s} \hspace{4mm} \text{in} \hspace{2mm} \Omega_s
+\end{align} 
+One might ask the motivation of such an approach as the Lagrangian system could let us define the problem 
+\begin{align}
+\rho_s \ppder{\mathbf{u}_s}{t} = \nabla \cdot \mathbf{T} + \rho_s \mathbf{f}_s
+\hspace{4mm} \text{in} \hspace{2mm} \Omega_s
+\end{align}
+directly solving for the main quantity of interest namely deformation. However solving for $\mathbf{v}_s$ is more convenient, as it lets us handle constraints for the fluid-structure interaction problem easier. As for the fluid problem we define Dirichlet and Neumann boundary conditions on the form
+
+\begin{align*}
+\mathbf{v}_s = \mathbf{v}_s^D 
+\hspace{4mm} \text{on} \hspace{2mm} \Gamma_s^D \subset \partial \Omega_s  \\
+\sigma_s \cdot \mathbf{n} = \mathbf{g}  
+\hspace{4mm} \text{on} \hspace{2mm} \Gamma_s^N \subset \partial \Omega_s 
+\end{align*}
+
+
+
