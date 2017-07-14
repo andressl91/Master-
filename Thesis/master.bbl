@@ -1,35 +1,40 @@
 \begin{thebibliography}{1}
 
-\bibitem{Hsu2012}
-Ming-Chen Hsu and Yuri Bazilevs.
-\newblock {Fluid–structure interaction modeling of wind turbines: simulating
-  the full machine}.
-\newblock {\em Computational Mechanics}, 50(6):821--833, dec 2012.
+\bibitem{Merodio2011}
+Jos{\'{e}} Merodio and Giuseppe Saccomandi.
+\newblock {Continuum Mechanics - Volume I}.
+\newblock In {\em Volume 1}, chapter~3, pages 82--84. EOLSS, 2011.
 
-\bibitem{Kim2008}
-Jae-Hyun Kim and Hyung-Cheol Shin.
-\newblock {Application of the ALE technique for underwater explosion analysis
-  of a submarine liquefied oxygen tank}.
-\newblock {\em Ocean Engineering}, 35(8-9):812--822, jun 2008.
+\bibitem{Razzaq2010}
+M~Razzaq, Stefan Turek, Jaroslav Hron, J~F Acker, F~Weichert, I~Grunwald,
+  C~Roth, M~Wagner, and B~Romeike.
+\newblock {Numerical simulation and benchmarking of fluid-structure interaction
+  with application to Hemodynamics}.
+\newblock {\em Fundamental Trends in Fluid-Structure Interaction}, 1:171--199,
+  2010.
 
-\bibitem{Stein2001}
-Keith Stein, Richard Benney, Tayfun Tezduyar, and Jean Potvin.
-\newblock {Fluid–structure interactions of a cross parachute: numerical
-  simulation}.
+\bibitem{Richter2010c}
+T.~Richter and T.~Wick.
+\newblock {Finite elements for fluid-structure interaction in ALE and fully
+  Eulerian coordinates}.
 \newblock {\em Computer Methods in Applied Mechanics and Engineering},
-  191(6-7):673--687, dec 2001.
+  199(41-44):2633--2642, 2010.
 
-\bibitem{Torii2008}
-Ryo Torii, Marie Oshima, Toshio Kobayashi, Kiyoshi Takagi, and Tayfun~E.
-  Tezduyar.
-\newblock {Fluid–structure interaction modeling of a patient-specific
-  cerebral aneurysm: influence of structural modeling}.
-\newblock {\em Computational Mechanics}, 43(1):151--159, dec 2008.
+\bibitem{Richter2016}
+Thomas Richter.
+\newblock {Fluid Structure Interactions}.
+\newblock 2016.
 
-\bibitem{Vierendeels2007}
-Jan Vierendeels.
-\newblock {Comparison of the Hemodynamic and Thrombogenic Performance of Two
-  Bileaflet Mechanical Heart Valves Using a CFD/FSI Model}.
-\newblock {\em Journal of Biomechanical Engineering}, 129(4):558, jan 2007.
+\bibitem{Wick2013}
+Thomas Wick.
+\newblock {Fully Eulerian fluid-structure interaction for time-dependent
+  problems}.
+\newblock {\em Computer Methods in Applied Mechanics and Engineering},
+  255:14--26, 2013.
+
+\bibitem{Wriggers2006}
+P.~Wriggers.
+\newblock {\em {Computational contact mechanics, second ed., Springer}}.
+\newblock 2006.
 
 \end{thebibliography}
