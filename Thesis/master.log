@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.12.9)  15 JUL 2017 00:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.12.9)  19 JUL 2017 23:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1373,7 +1373,7 @@ LaTeX Info: Redefining \nameref on input line 8.
 \openout4 = `master.out'.
 
  ABD: EveryShipout initializing macros
-<masterfrontpage-images/masterfrontpage-background.pdf, id=35, 614.295pt x 845.
+<masterfrontpage-images/masterfrontpage-background.pdf, id=31, 614.295pt x 845.
 0471pt>
 File: masterfrontpage-images/masterfrontpage-background.pdf Graphic file (type 
 pdf)
@@ -1382,7 +1382,7 @@ Package pdftex.def Info: masterfrontpage-images/masterfrontpage-background.pdf
 used on input line 10.
 (pdftex.def)             Requested size: 614.29349pt x 845.04504pt.
 
-<masterfrontpage-images/masterfrontpage-apollon.pdf, id=36, 142.5325pt x 142.53
+<masterfrontpage-images/masterfrontpage-apollon.pdf, id=32, 142.5325pt x 142.53
 25pt>
 File: masterfrontpage-images/masterfrontpage-apollon.pdf Graphic file (type pdf
 )
@@ -1391,7 +1391,7 @@ Package pdftex.def Info: masterfrontpage-images/masterfrontpage-apollon.pdf use
 d on input line 10.
 (pdftex.def)             Requested size: 76.82243pt x 76.82285pt.
 
-<masterfrontpage-images/masterfrontpage-logo-eng.pdf, id=37, 630.355pt x 74.277
+<masterfrontpage-images/masterfrontpage-logo-eng.pdf, id=33, 630.355pt x 74.277
 5pt>
 File: masterfrontpage-images/masterfrontpage-logo-eng.pdf Graphic file (type pd
 f)
@@ -1473,7 +1473,7 @@ l.1 \chapter
 
 ]
 Chapter 1.
-[3] <./Fig/unitpotato.png, id=81, 671.50874pt x 314.17375pt>
+[3] <./Fig/unitpotato.png, id=76, 671.50874pt x 314.17375pt>
 File: ./Fig/unitpotato.png Graphic file (type png)
 
 <use ./Fig/unitpotato.png>
@@ -1494,11 +1494,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 23--24
 
  []
 
-<./Fig/lageul.png, id=82, 800.9925pt x 461.725pt>
+<./Fig/lageul.png, id=77, 346.29375pt x 199.74625pt>
 File: ./Fig/lageul.png Graphic file (type png)
  <use ./Fig/lageul.png>
 Package pdftex.def Info: ./Fig/lageul.png used on input line 33.
-(pdftex.def)             Requested size: 400.49527pt x 230.86194pt.
+(pdftex.def)             Requested size: 311.66148pt x 179.76996pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1517,7 +1517,21 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [5 <./Fig/lageul.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 70--72
+
+LaTeX Warning: Citation `Holzapfel2000' on page 6 undefined on input line 73.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 72--74
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 98--99
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 98--99
 
  []
 
@@ -1564,17 +1578,21 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 36.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 36.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 36.
 Package rerunfilecheck Info: File `master.out' has not changed.
-(rerunfilecheck)             Checksum: 1AA477512C583AF3E2D2F41D7E9C5FCE;472.
+(rerunfilecheck)             Checksum: CDEAE4E9EFB095C97D98EA36E26AA8A9;410.
+
+
+LaTeX Warning: There were undefined references.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 36.
  ) 
 Here is how much of TeX's memory you used:
- 22336 strings out of 493014
- 396465 string characters out of 6133351
- 470723 words of memory out of 5000000
+ 22345 strings out of 493014
+ 396524 string characters out of 6133351
+ 472725 words of memory out of 5000000
  25359 multiletter control sequences out of 15000+600000
- 44208 words of font info for 83 fonts, out of 8000000 for 9000
+ 44199 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,12n,56p,1609b,514s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,12n,56p,822b,514s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/te
 xlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2016/texm
@@ -1592,13 +1610,16 @@ e1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1
 lmri10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/symb
 ols/msbm10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/
 sfbx1200.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sf
-rm1200.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfti
-1200.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pf
-b></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on master.pdf (13 pages, 328911 bytes).
+rm0700.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm
+0800.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm10
+00.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1200
+.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfti1200.p
+fb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></us
+r/local/texlive/2016/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
+Output written on master.pdf (13 pages, 337822 bytes).
 PDF statistics:
- 231 PDF objects out of 1000 (max. 8388607)
- 191 compressed objects within 2 object streams
- 44 named destinations out of 1000 (max. 500000)
- 94 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 248 PDF objects out of 1000 (max. 8388607)
+ 204 compressed objects within 3 object streams
+ 51 named destinations out of 1000 (max. 500000)
+ 86 words of extra memory for PDF output out of 10000 (max. 10000000)
 

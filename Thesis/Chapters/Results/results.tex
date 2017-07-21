@@ -218,9 +218,25 @@ On this basis, the choice of P2-P1 element pair is sufficient for the evaluation
 
 \newpage
 \subsection{Validation of solid solver}
-CSM SPECIFICS
+\begin{table}[h!]
+\centering
+\caption{CSM validation environment}
+\label{my-label}
+\begin{tabular}{ |p{3cm}||p{2cm}|p{2cm}|p{2cm}|  }
+ \hline
+ \multicolumn{4}{|c|}{Fluid parameters} \\
+ \hline
+ parameter              & CSM 1 & CSM 2 & CSM 3 \\
+ \hline
+$\rho^s [10^{3}\frac{kg}{m^3}]$ & 1    & 1    & 1    \\
+$\nu^s $  & 0.4    & 0.4    & 0.4    \\
+$\mu^s  [10^{6}]$  & 0.5    & 2.0    & 0.5    \\
 
-The validation of the solid solver are conducted on three refined mesh, where the number of elements are chosen in close resemblance with the original work in \cite{Hron2006}. A simple investigation of different finite-element pairs, suggest that P3-P3 elements where used for making the reference solution. In this study, lower order finite-element pair was included by the motivation of shorter simulation time while retaining solution accuracy. While computational time is not a major concern for the solid solver, the study is important in order to reduce the computational time for the FSI-solver in the next sub-section.
+\hline
+\end{tabular}
+\end{table}
+
+The validation of the solid solver are conducted on three refined mesh, where the number of elements are chosen in close resemblance with the original work in \cite{Hron2006}. A simple investigation of different finite-element pairs, suggest that P3-P3 elements where used for making the reference solution. In this study, lower order finite-element pair was included by the motivation of shorter simulation time while retaining solution accuracy. While computational time is not a major concern for the solid solver, the study is important for potentially reducing the computational time for the FSI-solver.ß
 
 \begin{table}[h!]
 \centering
