@@ -1,40 +1,40 @@
 \begin{thebibliography}{1}
 
-\bibitem{Merodio2011}
-Jos{\'{e}} Merodio and Giuseppe Saccomandi.
-\newblock {Continuum Mechanics - Volume I}.
-\newblock In {\em Volume 1}, chapter~3, pages 82--84. EOLSS, 2011.
+\bibitem{Oberkampf2010}
+William~L. Oberkampf and Christopher~J. Roy.
+\newblock {\em {Verification and Validation in Scientific Computing}}.
+\newblock Cambridge University Press, Cambridge, 2010.
 
-\bibitem{Razzaq2010}
-M~Razzaq, Stefan Turek, Jaroslav Hron, J~F Acker, F~Weichert, I~Grunwald,
-  C~Roth, M~Wagner, and B~Romeike.
-\newblock {Numerical simulation and benchmarking of fluid-structure interaction
-  with application to Hemodynamics}.
-\newblock {\em Fundamental Trends in Fluid-Structure Interaction}, 1:171--199,
-  2010.
-
-\bibitem{Richter2010c}
-T.~Richter and T.~Wick.
-\newblock {Finite elements for fluid-structure interaction in ALE and fully
-  Eulerian coordinates}.
-\newblock {\em Computer Methods in Applied Mechanics and Engineering},
-  199(41-44):2633--2642, 2010.
-
-\bibitem{Richter2016}
-Thomas Richter.
-\newblock {Fluid Structure Interactions}.
+\bibitem{Project2016}
+Fenics Project.
+\newblock {Unified Form Language (UFL) Documentation}.
 \newblock 2016.
 
-\bibitem{Wick2013}
-Thomas Wick.
-\newblock {Fully Eulerian fluid-structure interaction for time-dependent
-  problems}.
-\newblock {\em Computer Methods in Applied Mechanics and Engineering},
-  255:14--26, 2013.
+\bibitem{Roache2002}
+Patrick~J. Roache.
+\newblock {Code Verification by the Method of Manufactured Solutions}.
+\newblock {\em Journal of Fluids Engineering}, 124(1):4, 2002.
 
-\bibitem{Wriggers2006}
-P.~Wriggers.
-\newblock {\em {Computational contact mechanics, second ed., Springer}}.
-\newblock 2006.
+\bibitem{Roache}
+P.J. Roache.
+\newblock {\em {Verification and Validation in Computational Science and
+  Engineering}}.
+\newblock Computing in Science Engineering, Hermosa Publishers, 1998, 8-9,
+  1998.
+
+\bibitem{Biggs}
+Kambiz Salari and Patrick Knupp.
+\newblock {Code Verification by the Method of Manufactured Solution.}
+\newblock Technical report, Sandia National Laboratories, 2000.
+
+\bibitem{Sommerville2006}
+Ian Sommerville.
+\newblock {Verification and Validation}.
+\newblock Technical Report February, 2006.
+
+\bibitem{Steinberg1985}
+Stanly Steinberg and Patrick~J. Roache.
+\newblock {Symbolic manipulation and computational fluid dynamics}.
+\newblock {\em Journal of Computational Physics}, 57(2):251--284, 1985.
 
 \end{thebibliography}

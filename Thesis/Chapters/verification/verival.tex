@@ -1,6 +1,22 @@
 \chapter{Verification and Validation}
- Computer simulations are in many engineering applications a cost-efficient way for conductiong design and performance optimalization of physical problems. However, thrusting blindly numbers generated from a computer code can prove to be naive. It doesn't take a lot of coding experience before one realizes the many things that can brake down and produce unwanted or unexpected results. 
-Therefore, \textit{credability} of computational results are essential, meaning the simulation is worthy of belief or confidence \cite{Oberkampf2010}. \textit{Verification and validation} (VV) is the main approach for assessing and the reliability of computational simulations \cite{Sommerville2006}. The terminology of (VV) have proven not to be consistent across differnt engineering disciplines due to the variety of views regarding the fundaments of the method. A thorough review considering the development of (VV) concepts and terminology during the last century are studied in \cite{Oberkampf2010}, where several attempts of definitions of \textit{verification} and \textit{validation} by different scientific communities are considered. In general, Roache \cite{Roache}, states \textit{verification} as ``solving the equations right'', and  \textit{validiation} as ``solving the right equations". 
+ Computer simulations are in many engineering applications a cost-efficient way for conducting design and performance optimalization of physical problems. However, thrusting blindly numbers generated from a computer code can prove to be naive. It doesn't take a lot of coding experience before one realizes the many things that can brake down and produce unwanted or unexpected results. 
+Therefore, \textit{credability} of computational results are essential, meaning the simulation is worthy of belief or confidence \cite{Oberkampf2010}.
+ \textit{Verification and validation} (VV) is the main approach for assessing and the reliability of computational simulations \cite{Sommerville2006}. The terminology of (VV) have proven unconsistent across differnt engineering disciplines due to the variety of views regarding the fundaments of the method. A thorough review considering the development of (VV) concepts and terminology during the last century are studied in \cite{Oberkampf2010}, where several attempts of definitions of \textit{verification} and \textit{validation} by different scientific communities are considered. In this thesis, the definitions provided by the \textit{American Society of Mechanical Engineers guide for Verification and Validation in Computational Solid Mechanics}  \cite{Schwer2006} are followed.
+
+\begin{defn}
+Verification: The process of determining that a computational model accurately represents
+the underlying mathematical model and its solution. 
+\end{defn}
+
+\begin{defn}
+Validation: The process of determining the degree to which a model is an accurate
+representation of the real world from the perspective of the intended uses of the model. 
+\end{defn}
+
+Simplified \textit{verification} considers if one solves the equations right, while \textit{validation} is checking if one solves the right equations for the given problem. \cite{Roache} 
+
+ To test a computational code for all possible parameters, conditions and applications are simply too time consuming.   Verification and validation are therefore ongoing processes, with no clear boundary of completeness unless additional requirements are specified \cite{Roache}.
+
 
 %With this in mind, computer scientists and engineers need some common ground to check if a computer code works as expected. And it is here the framework of verification and validation plays and important role. \\
 
@@ -13,16 +29,18 @@ The code author defines precisely what continuum partial differential equations 
 \end{flushright}
 \end{quote}
  
-Verification can be devided into \textit{verification of code} and \textit{verification of calculation} [\cite{Roache2002} \cite{\cite{Oberkampf2010}}]. Within computational mechanics, the a mathematical model is often the baseline for simulations of real world problems. Through verification of code, the ultimate goal is to ensure a computer program truly represents the mathematical model, forming a basis for the given problem. an  is seen as achieving the expected order of accuracy of the implementation, while verification of calculation is the measure of error against a known solution. Of these .. has proven to 
+
 
 The goal of this chapter is to verify our implementations using the method of manufactured solution  (MMS).
 
-\section{Verification of Code}
-For scientists exploring physical phenomena,systems of partial differential equations (PDE´s) are often encountered. For their application it is important that these equations are implemented and solved numerically the right way.  Therefore insurence of right implemention is crucial. \\
+\section{Verification of Code by the method of manufactured solutions}
+Within scientific computing a mathematical model is often the baseline for simulations of a particular problem of interest. For scientists exploring physical phenomena, the mathematical model is often on the form of systems of partial differential equations (PDE´s). A computer program therefore must evaluate  mathematical identities such a differential operators and functions in order to produce accurate solutions of the governing PDE´s. 
+Through verification of code, the ultimate goal is to ensure a computer program truly represents the mathematical model, forming a basis for the given problem. 
+To measure accuracy, an exact solution for the given problem is necessarily. However accurate solutions of PDE´s are often limited, and often simplifications of the original problem are needed in order to produce analytically solutions for comparison. \textit{The method of manufactured solutions} provides a simple yet robust way of making exact solutions for PDE´s. The problem is not attacked in a traditional way, by finding an analytic solution by retaining the overall physics defined by the model. Instead, an exact solution is manufactured forehand, taking to regard to the laws of physics. 
 
 Let a  partial differential equation of interest be on the form
 \begin{align*}
-\textbf{L}(\textbf{u}) = \textbf{f}\cite{Roache2002} \cite{\cite{Oberkampf2010}}
+\textbf{L}(\textbf{u}) = \textbf{f}
 \end{align*}
 
 Here \textbf{L} is a differential operator, \textbf{u} is variable the of interest, and \textbf{f} is some sourceterm.
@@ -33,6 +51,11 @@ The beauty of such an approach as mentioned by Roache \cite{Roache2002}, is that
 
 To deeply verify the robustness of the method of manufactured solution,  a report regarding code verification using this approach was published by Salari and Knupp \cite{Biggs}. This thorough work applied the method for both compressible and incompressible time-dependent Navier-Stokes equation. To prove its robustness the authors  delibritary implemented  code errors in a verified Navier-Stokes solver by MMS presented in the report. In total 21 blind testcases where implemented, where different approaches of verifcation frameworks were tested. 
 Of these 10 coding mistakes that reduces the observed order-of-accuracy was implemented. Here the method of manufactured solution captured all of them. \\
+
+Verification can be devided into \textit{verification of code} and \textit{verification of calculation} [\cite{Roache2002} \cite{Oberkampf2010}
+
+Several \textit{criteria} for evuationthe accuracy can be chosen for verification \cite{Biggs}.
+1,2,3,4,5. NEVN ALLE OF LEGG VEKT PÅ DE TO SISTE , KAP 5 boka
 
 For the purpose of verification of calculation we need to calculate the error of our numerical simulation. Let $\mathbf{u}_h$ denote our numerical solution and $\mathbf{u}$ be our exact solution. By letting $|| \cdot || $ be the  $L^2$ norm, we define the error as
 
