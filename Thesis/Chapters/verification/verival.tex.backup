@@ -1,10 +1,12 @@
 \chapter{Verification and Validation}
  Computer simulations are in many engineering applications a cost-efficient way for conductiong design and performance optimalization of physical problems. However, thrusting blindly numbers generated from a computer code can prove to be naive. It doesn't take a lot of coding experience before one realizes the many things that can brake down and produce unwanted or unexpected results. 
-Therefore, \textit{credability} of computational results are essential, meaning the simulation is worthy of belief or confidence \cite{Oberkampf2010}. \textit{Verification and validation} (VV) is the main approach for assessing and the reliability of computational simulations \cite{Sommerville2006}. The terminology of (VV) have proven not to be consistent across differnt engineering disciplines due to the variety of views regarding the fundaments of the method. A thorough review considering the development of (VV) concepts and terminology during the last century are studied in \cite{Oberkampf2010}, where several attempts of definitions of \textit{verification} and \textit{validation} by different scientific communities are considered. In general, Roache \cite{Roache}, states \textit{verification} as ``solving the equations right'', and  \textit{validiation} as ``solving the right equations". 
+Therefore, \textit{credability} of computational results are essential, meaning the simulation is worthy of belief or confidence \cite{Oberkampf2010}. \textit{Verification and validation} (V&V) is the main approach for assessing and the reliability of computational simulations \cite{Sommerville2006}. The terminology of (V&V) have proven not to be consistent across differnt engineering disciplines due to the variety of views regarding the fundaments of the method. A thorough review considering the development (V&V) concepts during the last century are studied in \cite{Oberkampf2010}.  of but several attempts of definitions of \textit{verification} and \textit{validation} have been proposed by 
 
 %With this in mind, computer scientists and engineers need some common ground to check if a computer code works as expected. And it is here the framework of verification and validation plays and important role. \\
 
-We will in this thesis use the more detailed  description found in \cite{Roache}.
+
+
+ An elegant and simple definition found throughout the litterature of verification and validation framwork, used  by Roache \cite{Roache}, states \textit{verification} as ``solving the equations right'', and  \textit{validiation} as ``solving the right equations". ``Solving the right equations"is rather vaguely, a measurement is needed. We will in this thesis use the more detailed  description found in \cite{Roache}.
 
 \begin{quote}
 The code author defines precisely what continuum partial differential equations and continuum boundary conditions are being solved, and convincingly demonstrates that they are solved correctly, i.e., usually with some order of accuracy, and always consistently, so that as some measure of discretization (e.g. the mesh increments) $\nabla \rightarrow 0$, the code produces a solution to the continuum equations; this is Verification.
@@ -13,6 +15,7 @@ The code author defines precisely what continuum partial differential equations 
 \end{flushright}
 \end{quote}
  
+
 Verification can be devided into \textit{verification of code} and \textit{verification of calculation} [\cite{Roache2002} \cite{\cite{Oberkampf2010}}]. Within computational mechanics, the a mathematical model is often the baseline for simulations of real world problems. Through verification of code, the ultimate goal is to ensure a computer program truly represents the mathematical model, forming a basis for the given problem. an  is seen as achieving the expected order of accuracy of the implementation, while verification of calculation is the measure of error against a known solution. Of these .. has proven to 
 
 The goal of this chapter is to verify our implementations using the method of manufactured solution  (MMS).
