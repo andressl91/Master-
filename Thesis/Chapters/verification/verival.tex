@@ -35,8 +35,15 @@ The goal of this chapter is to verify our implementations using the method of ma
 
 \section{Verification of Code by the method of manufactured solutions}
 Within scientific computing a mathematical model is often the baseline for simulations of a particular problem of interest. For scientists exploring physical phenomena, the mathematical model is often on the form of systems of partial differential equations (PDE´s). A computer program therefore must evaluate  mathematical identities such a differential operators and functions in order to produce accurate solutions of the governing PDE´s. 
-Through verification of code, the ultimate goal is to ensure a computer program truly represents the mathematical model, forming a basis for the given problem. 
-To measure accuracy, an exact solution for the given problem is necessarily. However accurate solutions of PDE´s are often limited, and often simplifications of the original problem are needed in order to produce analytically solutions for comparison. \textit{The method of manufactured solutions} provides a simple yet robust way of making exact solutions for PDE´s. The problem is not attacked in a traditional way, by finding an analytic solution by retaining the overall physics defined by the model. Instead, an exact solution is manufactured forehand, taking to regard to the laws of physics. 
+Through verification of code, the ultimate goal is to ensure a computer program truly represents the mathematical model, forming a basis for the given problem. \\
+To accumulate sufficient evidence that a mathematical model is solved correctly by a computer code,  it must excel within predefined criteria. 
+
+
+
+
+To measure accuracy, an exact solution for the given problem is necessarily. However accurate solutions of PDE´s are often limited, and often simplifications of the original problem are needed in order to produce analytically solutions for comparison. 
+
+\textit{The method of manufactured solutions} provides a simple yet robust way of making analytic solutions for PDE´s. The problem is not attacked in a traditional way, by finding an analytic solution by retaining the overall physics defined by the model. 
 
 Let a  partial differential equation of interest be on the form
 \begin{align*}
@@ -45,12 +52,20 @@ Let a  partial differential equation of interest be on the form
 
 Here \textbf{L} is a differential operator, \textbf{u} is variable the of interest, and \textbf{f} is some sourceterm.
 
-In the method of manufactured solution, one first manufactures a \textbf{u}, which is differentiated with \textbf{L} which yields a sourceterm  \textbf{f}. The sourceterm \textbf{f} with respect to the selected solution \textbf{u} is then used as input in the implementation, yielding a numerical solution. Verification of code and calculation is then performed on the numerical solution against the manifactured solution \textbf{u}.  \\ 
+In the method of manufactured solution one first manufactures a solution \textbf{u} for the given problem. In general, the choice of \textbf{u} will not satisfy the governing equations, producing a sourceterm  \textbf{f} after differentiation by \textbf{L}. The produced source term will cancel any imbalance formed by the manufactured solution \textbf{u} of the original problem. The beauty of such an approach is that the manufactured solution can be constructed without any physical reasoning, proving code verificaion as a purely a mathematical exercise were we are only interested if we are solving our equation right \cite{Roache2002}. Even though the manufactured solution \textbf{u} can be chosen independently, some guidelines have been proposed for rigirous verification( \cite{Etienne2006}, \cite{Biggs}, \cite{Roache2002}). 
 
-The beauty of such an approach as mentioned by Roache \cite{Roache2002}, is that our exact solution can be constructed without any physical reasoning. As such, code verificaion is purly a mathematical exercise were we are only interested if we are solving our equation right. These sentral ideas have existed for some time, but the  concept of combining manufactured exact solution in in partnership with refinement studies of of computational mesh has been absent.  One of the earliest was Steinberg and Roache \cite{Steinberg1985} using these principles deliberately for \textit{verification of code} ( estimate order of convergence)\\
+\begin{itemize}
+\item The manufactured solution (MS), should be composed of smooth analytic functions such as exponential, trigonometric or polynomials.
+\item The MS should exercise all terms and derivatives of the PDE´s. 
+\item The MS should have sufficient number of derivatives
+\end{itemize}
+The guidelines presented are not limitation for choosing a MS, but rather improvements for ensuring the representation of the mathematical model is thoroughly tested. 
 
-To deeply verify the robustness of the method of manufactured solution,  a report regarding code verification using this approach was published by Salari and Knupp \cite{Biggs}. This thorough work applied the method for both compressible and incompressible time-dependent Navier-Stokes equation. To prove its robustness the authors  delibritary implemented  code errors in a verified Navier-Stokes solver by MMS presented in the report. In total 21 blind testcases where implemented, where different approaches of verifcation frameworks were tested. 
-Of these 10 coding mistakes that reduces the observed order-of-accuracy was implemented. Here the method of manufactured solution captured all of them. \\
+ The sourceterm \textbf{f} with respect to the selected solution \textbf{u} is then used as input in the implementation, yielding a numerical solution. Verification of code and calculation is then performed on the numerical solution against the manifactured solution \textbf{u}.  \\ 
+
+
+To deeply verify the robustness of the method of manufactured solution,  a report regarding code verification by MMS for CFD was published by Salari and Knupp \cite{Biggs}. This thorough work applied the method for both compressible and incompressible time-dependent Navier-Stokes equation. To prove its robustness the authors deliberate implemented  code errors in a verified Navier-Stokes solver by MMS presented in the report. In total 21 blind testcases where implemented, where different approaches of verification frameworks were tested. 
+Of these, 10 coding mistakes that reduces the observed order-of-accuracy was implemented. Here the method of manufactured solution captured all of them. \\
 
 Verification can be devided into \textit{verification of code} and \textit{verification of calculation} [\cite{Roache2002} \cite{Oberkampf2010}
 
