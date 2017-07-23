@@ -4,6 +4,35 @@ In this chapter the numerical results for this thesis will be presented. The fir
 
 \section{Verification}
 
+\subsection{Fluid Problem}
+One question which arises during the construction of the manufactured solution is, which formulation of the Navier-Stokes equation do we want to calculate the sourceterm. From a numerical point of view constructing the sourceterm from the Eulerian formulation and then map the equation would be feasable. Such an apporach limits the evaluation of computational demanding routines such as the generation of the deformation gradient $\hat{F}$ and its Jacobian $\ha{J}$. Even though refinement studies of spatial and temporal discretizations are often computed on small problems, such speed-ups are important when running larger simulations. 
+Recall from Chapter ??? the ALE formulation of the Navier Stokes equation. 
+\begin{align*}
+&\rho_f \ha{J}\pder{\hat{u}}{t} + \ha{J} \hat{F}^{-1} (\hat{u} - \hat{w})\cdot \nabla \hat{u} 
+- \nabla \cdot \ha{J} \sigma \hat{F}^{-T} = f \\
+&\ha{div}(\ha{J}\hat{F}^{-1}\ha{u}) = 0
+\end{align*}
+
+
+%\begin{lstlisting}[style=python, frame=single, title=A Fibonaci example]
+\begin{lstlisting}[style=python, caption={Descriptive Caption Text}, label=DescriptiveLabel, frame=single]
+u_x = "cos(x[0])*sin(x[1])*cos(t_)"
+u_y = "-sin(x[0])*cos(x[1])*cos(t_)"
+p_c = "sin(x[0])*cos(x[1])*cos(t_)"
+
+f = rho*diff(u_vec, t_) + rho*dot(grad(u_vec), (u_vec - w_vec)) -
+div(sigma_f(p_c, u_vec, mu))
+\end{lstlisting}
+
+We will on the basis of the presented guidelines define the manufactured solution.
+
+\begin{align*}
+u = sin(x + y + t)^2 \\
+v = cos(x + y +  t)^2 \\
+p = cos(x + y + t)
+\end{align*}
+
+\newpage                                                                                                                                             
 
 \section{Validation of a One-step $\theta$ scheme}
 The numerical benchmark presented in \cite{Hron2006} has been chosen for validation of the \textit{One-step $\theta$} scheme presented in chapter. The benchmark has been widely accepted throughout the fluid-structure interaction community as a rigid validation benchmark. This is mainly due to the diversity of tests included, challenging all the main components of a fluid-structure interaction scheme. \\

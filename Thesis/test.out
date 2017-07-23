@@ -1,1 +1,16 @@
-\BOOKMARK [2][-]{subsection.0.0.1}{Deformation and deformation gradients next}{}% 1
+\BOOKMARK [0][-]{chapter.1}{Continuum Mechanics}{}% 1
+\BOOKMARK [1][-]{section.1.1}{Coordinate system}{chapter.1}% 2
+\BOOKMARK [2][-]{subsection.1.1.1}{Lagrangian}{section.1.1}% 3
+\BOOKMARK [2][-]{subsection.1.1.2}{Eulerian}{section.1.1}% 4
+\BOOKMARK [1][-]{section.1.2}{Deformation gradients}{chapter.1}% 5
+\BOOKMARK [1][-]{section.1.3}{Measures of Strain and Stress}{chapter.1}% 6
+\BOOKMARK [1][-]{section.1.4}{Governing Equations}{chapter.1}% 7
+\BOOKMARK [2][-]{subsection.1.4.1}{Fluid}{section.1.4}% 8
+\BOOKMARK [2][-]{subsection.1.4.2}{The solid}{section.1.4}% 9
+\BOOKMARK [0][-]{chapter.2}{Fluid Structure Interaction}{}% 10
+\BOOKMARK [1][-]{section.2.1}{Choice of coordinate system}{chapter.2}% 11
+\BOOKMARK [1][-]{section.2.2}{Fully Eulerian}{chapter.2}% 12
+\BOOKMARK [1][-]{section.2.3}{Arbitary Lagrangian Eulerian formulation}{chapter.2}% 13
+\BOOKMARK [1][-]{section.2.4}{Discretization of the FSI problem}{chapter.2}% 14
+\BOOKMARK [2][-]{subsection.2.4.1}{Finite Element method}{section.2.4}% 15
+\BOOKMARK [2][-]{subsection.2.4.2}{Variational Formulation}{section.2.4}% 16

@@ -1,5 +1,12 @@
 \begin{thebibliography}{1}
 
+\bibitem{Etienne2006}
+St{\'{e}}phane {\'{E}}tienne, D~Tremblay, and Dominique Pelletier.
+\newblock {Code Verification and the Method of Manufactured Solutions for
+  Fluid-Structure Interaction Problems}.
+\newblock {\em 36th AIAA Fluid Dynamics Conference and Exhibit}, (June):1--11,
+  2006.
+
 \bibitem{Oberkampf2010}
 William~L. Oberkampf and Christopher~J. Roy.
 \newblock {\em {Verification and Validation in Scientific Computing}}.
@@ -22,19 +29,26 @@ P.J. Roache.
 \newblock Computing in Science Engineering, Hermosa Publishers, 1998, 8-9,
   1998.
 
+\bibitem{Rykiel1996}
+Edward~J. Rykiel.
+\newblock {Testing ecological models: The meaning of validation}.
+\newblock {\em Ecological Modelling}, 90(3):229--244, 1996.
+
 \bibitem{Biggs}
 Kambiz Salari and Patrick Knupp.
 \newblock {Code Verification by the Method of Manufactured Solution.}
 \newblock Technical report, Sandia National Laboratories, 2000.
 
+\bibitem{Schwer2006}
+LE~Schwer.
+\newblock {Guide for verification and validation in computational solid
+  mechanics}.
+\newblock {\em American Society of Mechanical Engineers}, PTC 60(V{\&}V
+  10):1--15, 2006.
+
 \bibitem{Sommerville2006}
 Ian Sommerville.
 \newblock {Verification and Validation}.
 \newblock Technical Report February, 2006.
-
-\bibitem{Steinberg1985}
-Stanly Steinberg and Patrick~J. Roache.
-\newblock {Symbolic manipulation and computational fluid dynamics}.
-\newblock {\em Journal of Computational Physics}, 57(2):251--284, 1985.
 
 \end{thebibliography}
