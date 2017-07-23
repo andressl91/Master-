@@ -20,29 +20,55 @@ Simplified \textit{verification} considers if one solves the equations right, wh
 
 %With this in mind, computer scientists and engineers need some common ground to check if a computer code works as expected. And it is here the framework of verification and validation plays and important role. \\
 
-We will in this thesis use the more detailed  description found in \cite{Roache}.
-
-\begin{quote}
-The code author defines precisely what continuum partial differential equations and continuum boundary conditions are being solved, and convincingly demonstrates that they are solved correctly, i.e., usually with some order of accuracy, and always consistently, so that as some measure of discretization (e.g. the mesh increments) $\nabla \rightarrow 0$, the code produces a solution to the continuum equations; this is Verification.
-\begin{flushright}
-\textit{--- Roache, P.J.}
-\end{flushright}
-\end{quote}
- 
-
-
 The goal of this chapter is to verify our implementations using the method of manufactured solution  (MMS).
 
-\section{Verification of Code by the method of manufactured solutions}
+\section{Verification of Code}
+Verification can be devided into \textit{verification of code} and \textit{verification of calculation} [\cite{Roache2002} \cite{Oberkampf2010}
+
+
 Within scientific computing a mathematical model is often the baseline for simulations of a particular problem of interest. For scientists exploring physical phenomena, the mathematical model is often on the form of systems of partial differential equations (PDE´s). A computer program therefore must evaluate  mathematical identities such a differential operators and functions in order to produce accurate solutions of the governing PDE´s. 
 Through verification of code, the ultimate goal is to ensure a computer program truly represents the mathematical model, forming a basis for the given problem. \\
-To accumulate sufficient evidence that a mathematical model is solved correctly by a computer code,  it must excel within predefined criteria. 
+To accumulate sufficient evidence that a mathematical model is solved correctly by a computer code,  it must excel within predefined criteria. If the acceptance criterion is not satisfied, a coding mistake is suspected. Should the code pass the preset criteria, the code is considered verified. Different acceptance criteria with increasing rigor are found in \cite{Roache}.
 
+\begin{itemize}
+\item Simple tests
+\item Code-to-code comparisons
+\item Discretization error quantification
+\item Convergence test
+\item Order-of-accuracy tests
+\end{itemize} 
 
+The two first criteria have the advantage of complying  in the absence of exact solutions, however not as rigorous as the three final criteria. \textit{Simple tests} are applied directly on numerical solution, for example evaluating if the code preservers physical properties such as conservation laws. \textit{Code-to-code comparisons} involves comparing the numerical solution of the code to another "reference code".  However, the method proves useful only  if the same mathematical models are used and the reference code have undergone rigorous verification \cite{Roache}. \\
+The final three criteria \textit{Discretization error quantification}, \textit{Convergence test}, and \textit{Order-of-accuracy tests} are all related to the discretization error  $E$, defined as,
 
+\begin{align*}
+E = u_e - u_h
+\end{align*}
+ where $u_e$ is the exact solution and $u_h$ is the numerical solution at a given mesh and time step. 
+Hence, an exact solution for the given problem is necessarily in order to evaluate the accuracy of the discretization of the mathematical model. 
+ 
 
-To measure accuracy, an exact solution for the given problem is necessarily. However accurate solutions of PDE´s are often limited, and often simplifications of the original problem are needed in order to produce analytically solutions for comparison. 
+%\begin{quote}
+%The code author defines precisely what continuum partial differential equations and continuum boundary conditions are being solved, and convincingly demonstrates that they are solved correctly, i.e., usually with some order of accuracy, and always consistently, so that as some measure of discretization (e.g. the mesh increments) $\nabla \rightarrow 0$, the code produces a solution to the continuum equations; this is Verification.
+%\begin{flushright}
+%\textit{--- Roache, P.J.}
+%\end{flushright}
+%\end{quote} 
+ 
+ 
+\textit{Discretization error quantification} evaluates the quantitative error between the numerical solution and the exact solution, for a certain mesh and/or time step. Even though error quantification surpass the previous criteria presented, the approache pose two major difficulties. First, what degree of spatial and temporal resolution are needed in order to reduce the discretization error $E$. Second, is the subjective assessment of how small the error should be in order to give the code credability \cite{Roache}. Since the previous criteria is, to some degree, bounded by subjective considerations, it lacks independence from the person conducting verification. \\
 
+\textit{Convergence tests} assumes the discretization of a PDE to be consistent, if the spatial $\nabla x$ and/or temporal $\nabla x$ refinement decreases to zero, etc $\nabla x, \nabla t \rightarrow 0$., so does the discretization error $E  \rightarrow 0$ \cite{Biggs}. The method is  more consistent in comparison with discretization error quantification critera, as the choice of discretization parameters $\nabla x, \nabla t$ are not limited to one particular  resolution. Even though the choice of temporal and spatial refinements are subjective, a reduction of the discretization error is expected for increasing temporal and spatial refinement. The method is considered the minimum criterion for rigorous code verification \cite{Roache}. \\
+The final critera \textit{Order-of-accuracy}  is regarded as the most rigorous acceptance criterion for verification \cite{Biggs}, \cite{Roache}, \cite{Etienne2006}, which is employed in this thesis. In addition to error estimation and convergence of the numerical solution, the method ensure the discretization error $E$ is reduced in coordinance with the \textit{formal order of accuracy} expected from the numerical scheme. The formal order of accuracy is defined to be the theoretical rate at which the truncation error of a numerical scheme is expected to reduce. The \textit{observed order of accuracy} is the actual rate at which the dicretization error $E$ is reduced by temporal and spatial refinement, produced by our code. By monitoring the dicretization error $E$ by spatial and temporal refinements, one assumes the asymptotic behavior,
+
+\begin{align*}
+E = u_e - u_h = cH^p
+\end{align*} 
+where c is a constant, H is the mesh size or time step and p is the convergence rate of the numerical scheme. For convergence tests, the code is assumed verified and consistent if the discretization error is proportional to $H^p$
+
+\subsection{Method of manufactured solution}
+
+For conducting verification of code based on convergence tests, an exact solution of the mathematical model or PDE is needed in order to evaluate the discretization error $E$. However accurate solutions of PDE´s are limited, and often simplifications of the original problem are needed in order to produce analytically solutions for comparison. 
 \textit{The method of manufactured solutions} provides a simple yet robust way of making analytic solutions for PDE´s. The problem is not attacked in a traditional way, by finding an analytic solution by retaining the overall physics defined by the model. 
 
 Let a  partial differential equation of interest be on the form
@@ -52,7 +78,7 @@ Let a  partial differential equation of interest be on the form
 
 Here \textbf{L} is a differential operator, \textbf{u} is variable the of interest, and \textbf{f} is some sourceterm.
 
-In the method of manufactured solution one first manufactures a solution \textbf{u} for the given problem. In general, the choice of \textbf{u} will not satisfy the governing equations, producing a sourceterm  \textbf{f} after differentiation by \textbf{L}. The produced source term will cancel any imbalance formed by the manufactured solution \textbf{u} of the original problem. The beauty of such an approach is that the manufactured solution can be constructed without any physical reasoning, proving code verificaion as a purely a mathematical exercise were we are only interested if we are solving our equation right \cite{Roache2002}. Even though the manufactured solution \textbf{u} can be chosen independently, some guidelines have been proposed for rigirous verification( \cite{Etienne2006}, \cite{Biggs}, \cite{Roache2002}). 
+In the method of manufactured solution one first manufactures a solution \textbf{u} for the given problem. In general, the choice of \textbf{u} will not satisfy the governing equations, producing a sourceterm  \textbf{f} after differentiation by \textbf{L}. The produced source term will cancel any imbalance formed by the manufactured solution \textbf{u} of the original problem. Therefore, the manufactured solution can be constructed without any physical reasoning, proving code verificaion as a purely a mathematical exercise were we are only interested if we are solving our equation right \cite{Roache2002}. Even though the manufactured solution \textbf{u} can be chosen independently, some guidelines have been proposed for rigirous verification( \cite{Etienne2006}, \cite{Biggs}, \cite{Roache2002}). 
 
 \begin{itemize}
 \item The manufactured solution (MS), should be composed of smooth analytic functions such as exponential, trigonometric or polynomials.
@@ -61,16 +87,8 @@ In the method of manufactured solution one first manufactures a solution \textbf
 \end{itemize}
 The guidelines presented are not limitation for choosing a MS, but rather improvements for ensuring the representation of the mathematical model is thoroughly tested. 
 
- The sourceterm \textbf{f} with respect to the selected solution \textbf{u} is then used as input in the implementation, yielding a numerical solution. Verification of code and calculation is then performed on the numerical solution against the manifactured solution \textbf{u}.  \\ 
+\textit{Order-of-accuracy test} or \textit{order-of-convergence test} is the most rigorous code 
 
-
-To deeply verify the robustness of the method of manufactured solution,  a report regarding code verification by MMS for CFD was published by Salari and Knupp \cite{Biggs}. This thorough work applied the method for both compressible and incompressible time-dependent Navier-Stokes equation. To prove its robustness the authors deliberate implemented  code errors in a verified Navier-Stokes solver by MMS presented in the report. In total 21 blind testcases where implemented, where different approaches of verification frameworks were tested. 
-Of these, 10 coding mistakes that reduces the observed order-of-accuracy was implemented. Here the method of manufactured solution captured all of them. \\
-
-Verification can be devided into \textit{verification of code} and \textit{verification of calculation} [\cite{Roache2002} \cite{Oberkampf2010}
-
-Several \textit{criteria} for evuationthe accuracy can be chosen for verification \cite{Biggs}.
-1,2,3,4,5. NEVN ALLE OF LEGG VEKT PÅ DE TO SISTE , KAP 5 boka
 
 For the purpose of verification of calculation we need to calculate the error of our numerical simulation. Let $\mathbf{u}_h$ denote our numerical solution and $\mathbf{u}$ be our exact solution. By letting $|| \cdot || $ be the  $L^2$ norm, we define the error as
 
@@ -88,14 +106,13 @@ E = A \delta x^l + B \delta t^k
 
 Where A and B are constants, and l and k denote the expected convergencerate... FYLL INN REF FRA ANNET KAP OM EXPECTED CONVERGENCERATE \\. In order to evalute properties of either the spatial or temporal discretization, we must reduce the numerical error contribution of the discretization not of interest. Say we would like to evaluate the convergencerate of the spatial discretization, then the temporal error must be reduced in order to not poute.. 
 
-Even though the method of MMS a certain freedom in the construction of a manufactured solution, certain guidelines have been proposed  (\cite{Steinberg1985}, \cite{Biggs}, \cite{Roache2002} ). 
 
-\begin{itemize}
-\item To ensure theoretical order-of-accuracy, the manufactured solution should be constructed of polynomials, exponential or trigonometric functions to construct smooth solutions.
-\item The solution should be utilized by every term in the PDE of interest, such that no term yields zero.
-(få frem at en løsning må velges slik at ingen differentials blir 0
-\item Certain degree to be able to calculate expected order of convergence (Få frem at må ha "grad nok" til å kunne regne convergencerate) 
-\end{itemize}
+
+To deeply verify the robustness of the method of manufactured solution,  a report regarding code verification by MMS for CFD was published by Salari and Knupp \cite{Biggs}. This thorough work applied the method for both compressible and incompressible time-dependent Navier-Stokes equation. To prove its robustness the authors deliberate implemented  code errors in a verified Navier-Stokes solver by MMS presented in the report. In total 21 blind testcases where implemented, where different approaches of verification frameworks were tested. 
+Of these, 10 coding mistakes that reduces the observed order-of-accuracy was implemented. Here the method of manufactured solution captured all of them. \\
+
+
+
 
 Fluid structure interaction consists of several buildingblocks of fluid and structure equations describing forces exerted from one another. With this in mind a verification of the full FSI code can be tedious as implementation errors yielding non-desired results can be hard to find. We will therefore provide verification of each buildingblock until we reach the total system of equations. \\
 

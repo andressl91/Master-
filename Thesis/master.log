@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.12.9)  22 JUL 2017 14:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.12.9)  22 JUL 2017 19:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1405,9 +1405,13 @@ Chapter 1.
 
 LaTeX Warning: Citation `Schwer2006' on page 3 undefined on input line 4.
 
-[3]
 
-LaTeX Warning: Citation `Etienne2006' on page 4 undefined on input line 50.
+Underfull \vbox (badness 1917) has occurred while \output is active []
+
+ [3]
+Underfull \hbox (badness 10000) in paragraph at lines 59--60
+
+ []
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1416,12 +1420,25 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 59--60
+
+LaTeX Warning: Citation `Etienne2006' on page 5 undefined on input line 62.
+
+
+LaTeX Warning: Citation `Etienne2006' on page 5 undefined on input line 81.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 111--113
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 62--64
+Underfull \hbox (badness 10000) in paragraph at lines 117--118
 
  []
 
@@ -1431,15 +1448,10 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 95--96
-
- []
-
-(/usr/local/texlive/2016/texmf-dist/tex/latex/listings/lstlang1.sty
+[6] (/usr/local/texlive/2016/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
-Overfull \hbox (57.47684pt too wide) in paragraph at lines 117--118
+Overfull \hbox (57.47684pt too wide) in paragraph at lines 139--140
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
@@ -1449,15 +1461,8 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[6]
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 133--134
+Underfull \hbox (badness 10000) in paragraph at lines 155--156
 
  []
 
@@ -1476,22 +1481,28 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 36.
  (./master.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 36.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 36.
-Package rerunfilecheck Info: File `master.out' has not changed.
-(rerunfilecheck)             Checksum: EF73C990C8AC64E494E2F9BF2DBE7002;298.
 
+
+Package rerunfilecheck Warning: File `master.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `master.out':
+(rerunfilecheck)             Before: EF73C990C8AC64E494E2F9BF2DBE7002;298
+(rerunfilecheck)             After:  2B3264F5DB2C2B77E76E9D5DB9A5EBE7;342.
 
 LaTeX Warning: There were undefined references.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 36.
  ) 
 Here is how much of TeX's memory you used:
- 22605 strings out of 493014
- 396562 string characters out of 6133351
- 486525 words of memory out of 5000000
+ 22606 strings out of 493014
+ 396578 string characters out of 6133351
+ 486178 words of memory out of 5000000
  25663 multiletter control sequences out of 15000+600000
  22295 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,12n,56p,907b,1307s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,11n,56p,921b,1307s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<
 /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></
@@ -1505,10 +1516,10 @@ exlive/2016/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/tex
 live/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texli
 ve/2016/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive
 /2016/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on master.pdf (9 pages, 176604 bytes).
+Output written on master.pdf (9 pages, 184937 bytes).
 PDF statistics:
- 162 PDF objects out of 1000 (max. 8388607)
- 138 compressed objects within 2 object streams
- 33 named destinations out of 1000 (max. 500000)
+ 165 PDF objects out of 1000 (max. 8388607)
+ 141 compressed objects within 2 object streams
+ 34 named destinations out of 1000 (max. 500000)
  45 words of extra memory for PDF output out of 10000 (max. 10000000)
 
