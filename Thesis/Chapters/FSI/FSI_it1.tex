@@ -1,38 +1,44 @@
 \chapter{Computational Fluid Structure Interaction}
 
-The multi-disciplinary nature of computational fluid-structure interaction, involves addressing issues regarding computational fluid dynamics, computational structure dynamics, and their coupling. 
-
-Fluid-structure interaction problems are formally divided into the \textit{monolithic} and \textit{partitioned} frameworks.  In the monolithic framework all equations and interfaceconditions are solved simultaneously. If the \textit{kinematic} (1.1) and \textit{dynamic}(1.2) conditions are satisfied exactly at each timestep, the method denoted as a \textit{strongly coupled} which is typically for a monolithic approach. However this strong coupling yields contributes to a stronger nonlinear behaviour of the whole system \cite{Wick}. There are several nonlinear solution strategies for the monolithic approach..
-Further the monolithic framework provides less modular software since the implementation often \textit{ad hoc} for a certain monolithic approach. 
-
-In the \textit{partitioned} framework one solves the equations of fluid and structure subsequently. The strength of such an approach is the wast range of optimized solvers developed for both the fluid and solid. However one major problem is that the interface conditions are not naturally met, and as such certain sub-iterations is required to achieve these. 
-
-Independent of framework, one of the major aspects of Fluid-structure interaction is the coupling of the fluid and solid equations through (1.1) and (1.2) .  As the total system is exerted by external forces, the interface $\hat{\Gamma}$ must fulfill the physical equilibrium of forces given by the two domains. Therefore, it is critical that the transmission of forces from the two domains are fulfilled in a consistent way. However as the interface conditions are not naturally met such as in a \textit{partitioned} approach, we one must distinguish between \textit{strongly} and \textit{weakly} coupled schemes. \textit{Partitioned} solvers often enforce a weakly coupled schemes, meaning (1.1) and (1.2) are not strictly enforced in the calculation. Such an approach is often sufficient for some fields such as computations within aeroelasticity \cite{Fernandez2009}. However by sub-iterations at each time step, these conditions can be enforced with high accuracy.
-When these conditions are met exactly, we define the scheme as \textit{strongly} coupled.  
-
-\section{Choice of coordinate system}
-We define $\Omega$ in the \textit{reference configuration} be partitioned in a fluid domain $\hat{\Omega_f}$ and a structure domain $\hat{\Omega_s}$ such that
-$\Omega = \hat{\Omega_f} \cup \hat{\Omega_s}$. Further we define the interface $\hat{\Gamma}$ as the intersection between these domains such that $\Gamma_i = \hat{\partial \Omega_f} \cap \hat{\partial \Omega_s}$. 
-The fluid-structure interaction problem is then defined by the fluid and solid equations, and the transmission of the \textit{kinematic} and \textit{dynamic} conditions on the interface $\hat{\Gamma}$. 
+The multi-disciplinary nature of computational fluid-structure interaction , involves addressing issues regarding computational fluid dynamics and computational structure dynamics. In general, CFD and CSM are individually well-studied, in terms of numerical solution strategies. CFSI adds another layer of complexity to the solution process, (1) the \textit{coupling} of the fluid and solid equations , (2) the tracking of \textit{interface} separating the fluid and solid domains. The coupling pose two new conditions at the interface absent from the original fluid and solid conditions, which is \textit{continuity of velocity} and \textit{continuity of stress} at the interface.
 
 \begin{align}
 \mathbf{v}_f = \mathbf{v}_s \\
 \mathbf{\sigma}_f \cdot \mathbf{n} = \mathbf{\sigma}_s \cdot \mathbf{n}
 \end{align}
 
- A natural dilemma arises as the domain $\Omega$ undergoes deformation over time. Recall from chapter ?, that the solid equations are often described in the \textit{Lagrangian coordinate system}, while the fluid equations are on the contrary described in the \textit{Eularian coordinate system}. If the natural coordinate system are used for $\hat{\Omega_f}$ and $\hat{\Omega_s}$, the domains doesn't match and the interface $\hat{\Gamma}$ doesn't have a general description for both domains. As such only one of the domains can be described in its natural coordinate system, while the other domain needs to be defined in some transformed coordinate system. \\ \\
- 
+
+The tracking of the interface is a issue, due to the different description of motion used in the fluid and solid problem. If the natural coordinate system are used for the fluid problem and solid problem, namely the eulerian and lagrangian description of motion, the domains doesn't match and the interface. Tracking the interface is aslo essential for fulfilling the interface boundary conditions. As such only one of the domains can be described in its natural coordinate system, while the other domain needs to be defined in some transformed coordinate system. The enforcement of the interface coupling conditions, and the description of motion for tracking of the interface proves to be the main challenges to overcome when conduction CFSI  \\ 
+
+Fluid-structure interaction problems are formally divided into the \textit{monolithic} and \textit{partitioned} frameworks.  In the monolithic framework, the fluid and solid equations together with interface conditions are solved simultaneously. The monolithic approach has the advantage of fullfilling the \textit{kinematic} (1.1) and \textit{dynamic}(1.2) interface conditions with high accuracy. The method is then said to be \textit{strongly coupled}. However, the complexity of solving all the equations simuntainiously and the strong coupling contributes to a stronger nonlinear behaviour of the whole system \cite{Wick}. The complexity also makes monolithic implementations \textit{ad hoc} and less modular, and the nonlinearity makes solution time slow.
+
+In the \textit{partitioned} framework one solves the equations of fluid and structure subsequently. Sovling the fluid and solid problems individually is beneficial, in terms of the wide range of optimized solvers and solution strategies developed for each sub-problem. A major drawback is the methods ability to enfore the \textit{kinematic} (1.1) and \textit{dynamic}(1.2) conditions at each timestep. Therefore partitioned solution strategies are defined as  \textit{weakly} coupled. However, by sub-iterations between each sub-problem at each timestep, (1.1) and (1.2) can be enforced with high accuracy, at the cost of increased compuational time. For some applications, low-accuracy of the interface conditions are suffictient such as aeroelasticity \cite{Fernandez2009}. \\
+
+Capturing the interface is matter of its own, regardless of the the monolithic and partitioned frameworks.
+The scope of interface methods are divided into \textit{interface-tracking} and \textit{interface-capturing } methods.\cite{Frei2016}. In the \textit{Interface-tracking} method, the mesh moves to accommodate for the movement of the structure as it deformes the spatial domain occupied by the fluid. As such, the mesh itself "tracks" the fluid-structure interface as the domain undergoes deformation. Such an approach is feasable as it allows for better control of mesh resolution near the interface, which in turn yeilds better control of this critical area in terms of enforcing the interface conditions.
+However, moving the mesh-nodes pose potential problems for mesh-entanglements, restricting the possible extent of deformations.  
+
+In \textit{interface-capturing} methods one distinguish the fluid and solid domains by some phase variable over a fixed mesh, not resolved by the mesh iteself. This approach is in general not limitied in terms of deformations, but suffers from reduced accuracy at the interface. \cite{Frei2016}. 
+
+
+
+We define $\Omega$ in the \textit{reference configuration} be partitioned in a fluid domain $\hat{\Omega_f}$ and a structure domain $\hat{\Omega_s}$ such that
+$\Omega = \hat{\Omega_f} \cup \hat{\Omega_s}$. Further we define the interface $\hat{\Gamma}$ as the interface between these domains such that $\Gamma_i = \hat{\partial \Omega_f} \cap \hat{\partial \Omega_s}$. 
+The fluid-structure interaction problem is then defined by the fluid and solid equations, and the transmission of the \textit{kinematic} and \textit{dynamic} conditions on the interface $\hat{\Gamma}$. 
+
+
+%\section{Fully Eulerian}
+%This method keeps the fluid in its \textit{Eulerian coordinates}, and such can be seen as the natural counterpart of the ALE method \cite{Wick2013}. First proposed by , \cite{Dunne2006}. One motivation of such and approach is the handling of large-deformation, as the transformation to eulerian coordinates are purely natural.
+
+\section{Arbitary Lagrangian Eulerian formulation}
+Among the multiple approaches found in CFSI, the Arbitary Lagrangian-Eulerian formulation will be applied for this thesis.
  The scope of FSI methods can formally be divided into \textit{interface-tracking} and \textit{interface-capturing } methods.\cite{Frei2016}. In the \textit{Interface-tracking} method, the mesh moves to accommodate for the movement of the structure as it deformes the spatial domain occupied by the fluid. As such the mesh itself "tracks" the fluid-structure interface as the domain undergoes deformation. Such an approach is feasable as it allows for better control of mesh resolution near the interface, which in turn yeilds better control of this critical area. Among the  \textit{Interface-tracking} methods, the \textit{arbitary Lagrangian-Eulerian} formulation is the most well-known approach \cite{Richter2010a}, \cite{Frei2016}. In this approach the structure is given in its natural \textit{Lagrangian coordinate system}, while the fluid is transformed into an artificial \textit{Lagrangian} coordinate system. From this approach tracking of the interface $\hat{\Gamma}$ is more trivial, as it is fixed on a \textit{reference system} and can be tracked by mappings defined in Chapter 2. \\ \\
 
 In \textit{interface-capturing} methods one distinguish the fluid and solid domains by some phase variable over a fixed mesh. As such one captures the interface  $\hat{\Gamma}$ as it´s moving over the mesh element. This method is often emplyed in simulations of multiphase-flow. This ideas was extended in \cite{Dunne2006a} were the authors proposed to transform the Lagrangian formulated structure equations in an Eulerian formulation, solving the system of equations in a fully Eulerian formulation. 
 This approach was considered in this thesis, but implementation of tracking the interface in time was proven unsuccessful. Therefore ALE approach was finally chosen for this thesis. As such both the \textit{fully Eulerian} and \textit{ALE} concepts, strengths and weaknesses will be introduced following sub-chapters. \\
 
 
-\section{Fully Eulerian}
-This method keeps the fluid in its \textit{Eulerian coordinates}, and such can be seen as the natural counterpart of the ALE method \cite{Wick2013}. First proposed by , \cite{Dunne2006}. One motivation of such and approach is the handling of large-deformation, as the transformation to eulerian coordinates are purely natural.
-
-\section{Arbitary Lagrangian Eulerian formulation}
-MEANTION ALE CAN  BEHAVE EITHER EULERIAN AND LAGRANGIAN
+ 
 The ALE method was initially developed to combine the strengths of the \textit{Lagranngian} and \textit{Eulerian} coordinate systems. As pointed out in chapter 2, the \textit{Lagrangian} description is useful for tracking particles as they are act upon by forces. Hence its main contribution is the ability to track interfaces and materials with history dependent properties.
 In the ALE method one choose to keep the structure in its \textit{Lagrangian coordinate system}, while transforming the fluid domain into an artificial coordinate system similar to the \textit{Lagrangian coordinate system}. It is however important to note that there is no natural displacement in the fluid domain, hence this domain has no directly physical meaning \cite{Richter2010a}, \cite{Donea2004}. 
  

@@ -1,6 +1,6 @@
 \select@language {english}
-\contentsline {chapter}{\numberline {1}Verification and Validation}{3}{chapter.1}
-\contentsline {section}{\numberline {1.1}Verification of Code}{4}{section.1.1}
-\contentsline {subsection}{\numberline {1.1.1}Method of manufactured solution}{5}{subsection.1.1.1}
-\contentsline {subsection}{\numberline {1.1.2}Verification of the fluid-structure interaction solver by MMS}{7}{subsection.1.1.2}
-\contentsline {section}{\numberline {1.2}Validation}{7}{section.1.2}
+\contentsline {chapter}{\numberline {1}Computational Fluid Structure Interaction}{3}{chapter.1}
+\contentsline {section}{\numberline {1.1}Arbitary Lagrangian Eulerian formulation}{4}{section.1.1}
+\contentsline {section}{\numberline {1.2}Discretization of the FSI problem}{11}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}Finite Element method}{11}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {1.2.2}Variational Formulation}{12}{subsection.1.2.2}

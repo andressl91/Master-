@@ -1,54 +1,91 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
-\bibitem{Etienne2006}
-St{\'{e}}phane {\'{E}}tienne, D~Tremblay, and Dominique Pelletier.
-\newblock {Code Verification and the Method of Manufactured Solutions for
-  Fluid-Structure Interaction Problems}.
-\newblock {\em 36th AIAA Fluid Dynamics Conference and Exhibit}, (June):1--11,
-  2006.
+\bibitem{Biedron}
+Robert~T Biedron and Elizabeth~M Lee-Rausch.
+\newblock {Rotor Airloads Prediction Using Unstructured Meshes and Loose
+  CFD/CSD Coupling}.
 
-\bibitem{Oberkampf2010}
-William~L. Oberkampf and Christopher~J. Roy.
-\newblock {\em {Verification and Validation in Scientific Computing}}.
-\newblock Cambridge University Press, Cambridge, 2010.
+\bibitem{Donea2004}
+J~Donea, A~Huerta, J.-Ph Ponthot, and A~Rodr{\'{i}}guez-Ferran.
+\newblock {Arbitrary Lagrangian-Eulerian methods}.
+\newblock (1969):1--38, 2004.
 
-\bibitem{Project2016}
-Fenics Project.
-\newblock {Unified Form Language (UFL) Documentation}.
+\bibitem{Dunne2006a}
+Thomas Dunne and Rolf Rannacher.
+\newblock {Adaptive Finite Element Approximation of Fluid-Structure Interaction
+  Based on an Eulerian Variational Formulation}.
+\newblock {\em Fluid-Structure Interaction}, 53:110--145, 2006.
+
+\bibitem{Dwight}
+Richard~P Dwight.
+\newblock {Robust Mesh Deformation using the Linear Elasticity Equations}.
+
+\bibitem{Fernandez2009}
+Miguel~A Fern{\'{a}}ndez and Jean-Fr{\'{e}}d{\'{e}}ric Gerbeau.
+\newblock {Algorithms for fluid-structure interaction problems}.
+\newblock 2009.
+
+\bibitem{Helenbrook2003}
+Brian~T. Helenbrook.
+\newblock {Mesh deformation using the biharmonic operator}.
+\newblock {\em International Journal for Numerical Methods in Engineering},
+  2003.
+
+\bibitem{Hsu}
+Su-Yuen Hsu, Chau-Lyan Chang, and Jamshid Samareh.
+\newblock {A Simplified Mesh Deformation Method Using Commercial Structural
+  Analysis Software}.
+
+\bibitem{Jasak2006}
+Hrvoje Jasak and {\v{Z}}eljko Tukovi{\'{c}}.
+\newblock {Automatic mesh motion for the unstructured Finite Volume Method}.
+\newblock {\em Transactions of Famena}, 30(2):1--20, 2006.
+
+\bibitem{Meleshko1997}
+V~V Meleshko.
+\newblock {Bending of an Elastic Rectangular Clamped Plate: Exact Versus
+  'Engineering' Solutions}.
+\newblock {\em Journal of Elasticity}, 48(1):1--50, 1997.
+
+\bibitem{MM2016}
+Selim MM and Koomullil RP.
+\newblock {Mesh Deformation Approaches – A Survey}.
+\newblock {\em Journal of Physical Mathematics}, 7(2), 2016.
+
+\bibitem{Richter2016}
+Thomas Richter.
+\newblock {Fluid Structure Interactions}.
 \newblock 2016.
 
-\bibitem{Roache2002}
-Patrick~J. Roache.
-\newblock {Code Verification by the Method of Manufactured Solutions}.
-\newblock {\em Journal of Fluids Engineering}, 124(1):4, 2002.
+\bibitem{Stein}
+K~Stein, T~Tezduyar, and R~Benney.
+\newblock {Mesh Moving Techniques for Fluid-Structure Interactions With Large
+  Displacements}.
 
-\bibitem{Roache}
-P.J. Roache.
-\newblock {\em {Verification and Validation in Computational Science and
-  Engineering}}.
-\newblock Computing in Science Engineering, Hermosa Publishers, 1998, 8-9,
-  1998.
+\bibitem{Tezduyar1992}
+T~E Tezduyar, M~Behr, S~Mittal, and A~A Johnson.
+\newblock {COMPUTATION OF UNSTEADY INCOMPRESSIBLE FLOWS WITH THE STABILIZED
+  FINITE ELEMENT METHODS: SPACE-TIME FORMULATIONS, ITERATIVE STRATEGIES AND
+  MASSIVELY PARALLEL IMPLEMENTATIONSt}.
+\newblock {\em New Methods in Transient Analysis ASME}, 246(143), 1992.
 
-\bibitem{Rykiel1996}
-Edward~J. Rykiel.
-\newblock {Testing ecological models: The meaning of validation}.
-\newblock {\em Ecological Modelling}, 90(3):229--244, 1996.
+\bibitem{Wall12006}
+Wolfgang~A. Wall, Axel {, Gerstenberger}, Peter {, Gamnitzer}, Christiane {,
+  F{\"{o}}rster}, and Ekkehard {, Ramm}.
+\newblock {Large Deformation Fluid-Structure Interaction -- Advances in ALE
+  Methods and New Fixed Grid Approaches}.
+\newblock In {\em Fluid-Structure Interaction: Modelling, Simulation,
+  Optimisation}, pages 195----232. Springer Berlin Heidelberg, 2006.
 
-\bibitem{Biggs}
-Kambiz Salari and Patrick Knupp.
-\newblock {Code Verification by the Method of Manufactured Solution.}
-\newblock Technical report, Sandia National Laboratories, 2000.
+\bibitem{Wicka}
+Thomas Wick.
+\newblock {\em {Adaptive Finite Element Simulation of Fluid-Structure
+  Interaction with Application to Heart-Valve}}.
+\newblock PhD thesis, Heidelberg.
 
-\bibitem{Schwer2006}
-LE~Schwer.
-\newblock {Guide for verification and validation in computational solid
-  mechanics}.
-\newblock {\em American Society of Mechanical Engineers}, PTC 60(V{\&}V
-  10):1--15, 2006.
-
-\bibitem{Sommerville2006}
-Ian Sommerville.
-\newblock {Verification and Validation}.
-\newblock Technical Report February, 2006.
+\bibitem{Wick}
+Thomas Wick.
+\newblock {Solving Monolithic Fluid-Structure Interaction Problems in Arbitrary
+  Lagrangian Eulerian Coordinates with the deal.II Library}.
 
 \end{thebibliography}
