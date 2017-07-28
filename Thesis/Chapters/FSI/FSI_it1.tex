@@ -10,9 +10,12 @@ The multi-disciplinary nature of computational fluid-structure interaction , inv
 
 The tracking of the interface is a issue, due to the different description of motion used in the fluid and solid problem. If the natural coordinate system are used for the fluid problem and solid problem, namely the eulerian and lagrangian description of motion, the domains doesn't match and the interface. Tracking the interface is aslo essential for fulfilling the interface boundary conditions. As such only one of the domains can be described in its natural coordinate system, while the other domain needs to be defined in some transformed coordinate system.   \\ 
 
-Fluid-structure interaction problems are formally divided into the \textit{monolithic} and \textit{partitioned} frameworks.  In the monolithic framework, the fluid and solid equations together with interface conditions are solved simultaneously. The monolithic approach has the advantage of fullfilling the \textit{kinematic} (1.1) and \textit{dynamic}(1.2) interface conditions with high accuracy. The method is then said to be \textit{strongly coupled}. However, the complexity of solving all the equations simuntainiously and the strong coupling contributes to a stronger nonlinear behaviour of the whole system \cite{Wick}. The complexity also makes monolithic implementations \textit{ad hoc} and less modular, and the nonlinearity makes solution time slow.
+Fluid-structure interaction problems are formally divided into the \textit{monolithic} and \textit{partitioned} frameworks.  In the monolithic framework, the fluid and solid equations together with interface conditions are solved simultaneously. The monolithic approach is  \textit{strongly coupled}, meaning the \textit{kinematic} (1.1) and \textit{dynamic}(1.2) interface conditions are met with high accuracy. However, the complexity of solving all the equations simuntainiously and the strong coupling contributes to a stronger nonlinear behaviour of the whole system \cite{Wick}. The complexity also makes monolithic implementations \textit{ad hoc} and less modular, and the nonlinearity makes solution time slow.
 
-In the \textit{partitioned} framework one solves the equations of fluid and structure subsequently. Sovling the fluid and solid problems individually is beneficial, in terms of the wide range of optimized solvers and solution strategies developed for each sub-problem. A major drawback is the methods ability to enfore the \textit{kinematic} (1.1) and \textit{dynamic}(1.2) conditions at each timestep. Therefore partitioned solution strategies are defined as  \textit{weakly} coupled. However, by sub-iterations between each sub-problem at each timestep, (1.1) and (1.2) can be enforced with high accuracy, at the cost of increased compuational time. For some applications, low-accuracy of the interface conditions are suffictient such as aeroelasticity \cite{Fernandez2009}. \\
+In the \textit{partitioned} framework one solves the equations of fluid and structure subsequently. Sovling the fluid and solid problems individually is beneficial, in terms of the wide range of optimized solvers and solution strategies developed for each sub-problem. In fact, solving the fluid and solid separatly was used in the initial efforts in CFSI, due to existing solvers for one or both problems \cite{Gatzhammer2014}. Therefore, computational efficiency and code resue is one of the main reasons for choosing the partitioned approach. A major drawback is the methods ability to enfore the \textit{kinematic} (1.1) and \textit{dynamic}(1.2) conditions at each timestep. Therefore partitioned solution strategies are defined as  \textit{weakly} coupled. However, by sub-iterations between each sub-problem at each timestep, (1.1) and (1.2) can be enforced with high accuracy, at the cost of increased compuational time.  \\
+
+Regardless of framework, CFSI has to cope with a numerical artifact called the "added-mass effect" \cite{Fernandez2007}, \cite{Fernandez2009}, \cite{Forster2007}. The term is not to be confused with added mass found in fluid mechanics, were virtual mass is added to a system due to an accelerating or de-accelerating body moving through a surrounding fluid \cite{Newman1977}. Instead, the term is used to describe the numerical instabilities occurring for weakly coupled schemes, in conjunction with \textit{in compressible fluids} and slender structures \cite{Forster2007}, or where the density of the incompressible fluid is close to the structure. For partitioned solvers, sub-iterations are needed when the "added-mass effect" is strong, but for incompressible flow the restrictions  can lead to unconditional instabilities \cite{Gatzhammer2014}. The \textit{strong coupled} monolithic schemes have proven overcome "added-mass effect" preserving energy balance, at the prize of a highly non-linear system to be solved at each time step \cite{Fernandez2007}.
+
 
 Capturing the interface is matter of its own, regardless of the the monolithic and partitioned frameworks.
 The scope of interface methods are divided into \textit{interface-tracking} and \textit{interface-capturing } methods.\cite{Frei2016}. In the \textit{Interface-tracking} method, the mesh moves to accommodate for the movement of the structure as it deformes the spatial domain occupied by the fluid. As such, the mesh itself "tracks" the fluid-structure interface as the domain undergoes deformation. Interface-capturing yields better control of mesh resolution near the interface, which in turn yeilds better control of this critical area in terms of enforcing the interface conditions.
@@ -38,12 +41,15 @@ Among the multiple approaches within CFSI, the arbitary Lagrangia-Eulerian metho
 %\section{Fully Eulerian}
 %This method keeps the fluid in its \textit{Eulerian coordinates}, and such can be seen as the natural counterpart of the ALE method \cite{Wick2013}. First proposed by , \cite{Dunne2006}. One motivation of such and approach is the handling of large-deformation, as the transformation to eulerian coordinates are purely natural.
 
+\newpage
 \section{Arbitary Lagrangian Eulerian formulation}
-The \textit{arbitary Lagrangian-Eulerian} formulation is the most popular approach within \textit{Interface-tracking} \cite{Richter2010a}, \cite{Frei2016}, initially developed to combine the strengths of the \textit{Lagranngian} and \textit{Eulerian} coordinate systems. In this approach the structure is given in its natural \textit{Lagrangian coordinate system}, while transforming the fluid domain into an artificial coordinate system similar to the \textit{Lagrangian coordinate system}. Since no natural displacement occur in the fluid domain, the transformation has no directly physical meaning \cite{Richter2010a}, \cite{Donea2004}. 
+The \textit{arbitary Lagrangian-Eulerian} formulation is the most popular approach within \textit{Interface-tracking} \cite{Richter2010a}, \cite{Frei2016}. In this approach the structure is given in its natural \textit{Lagrangian coordinate system}, while the fluid problem is formulated in an artificial coordinate system similar to the \textit{Lagrangian coordinate system}, by an artificial fluid domain map from the underformed \textit{reference configuration} $\bat{T}_f (t): \hat{\Omega}_f (t) \rightarrow \Omega_f (t)$. The methods consistency is to a large extent dependent on the regularity of the artificial fluid domain map. Loss of regularity can occur for certain domain motions, were the structure makes contact with domain boundaries or self-conctact with other structure parts  [\cite{Wriggers2006}, \cite{Richter2016}].  Since no natural displacement occur in the fluid domain, the transformation $\bat{T}_f (t)$ has no directly physical meaning \cite{Richter2010a}, \cite{Donea2004}. Therefore, the construction of the transformation $\bat{T}_f (t)$ is a purely numerical exercise.
  
-With this in mind, we will derive these transformations with the help of a new arbitary fixed reference system \ha{W}, following the ideas and approaches found in \cite{Richter2016}. Further we denote its deformation gradient as $\hat{F}_w$ and its determinant $\ha{J}_w$. Following the ideas from chapter 2, we introduce the invertibale mapping $\ha{T}_w : \ha{W} \rightarrow V(t)$ , with the scalar $\ha{f}(\ha{x}_W, t) = f(x,t) $ and vector $\hat{w}(\ha{x}_W, t) = \mathbf{w}(x,t) $ counterparts.\\ 
+\subsection{ALE formulation of the fluid problem}
+ 
+Following the ideas and approaches found in \cite{Richter2016}, we will present the ALE  time and space derivative transformations, with help of a new arbitrary fixed reference system \ha{W}.  Further we denote its deformation gradient as $\hat{F}_w$ and its determinant $\ha{J}_w$. We introduce the invertable mapping $\ha{T}_w : \ha{W} \rightarrow V(t)$ , with the scalar $\ha{f}(\ha{x}_W, t) = f(x,t) $ and vector $\bat{w}(\ha{x}_W, t) = \mathbf{w}(x,t) $ counterparts.
 For $\ha{V} = \ha{W}$, $\ha{W}$ simply denotes the familiar Lagrangian description.
-In the case $\ha{V} \neq \ha{W}$, $\ha{W}$ as pointed out earlier have no direct physical meaning.  Hence it is important to notice that the physical velocity $\hat{v}$ and the velocity of arbitrary domain $\pder{\ha{W}_w}{t}$ doesn't necessary coincide. This observation is essential, as we will soon see. \\
+In the case $\ha{V} \neq \ha{W}$, $\ha{W}$ as pointed out earlier have no direct physical meaning.  Hence it is important to notice that the physical velocity $\bat{v}$ and the velocity of arbitrary domain $\pder{\ha{W}_w}{t}$ doesn't necessary coincide. \\
 
 We will first define the transformation of spatial and temporal derivatives from $V(t)$ to $\ha{W}$ found in \cite{Richter2016}\\
 
@@ -59,7 +65,7 @@ Transformation of scalar spatial derivatives \\
 Transformation of vector spatial derivatives \\
 \textit{Let \textbf{w} be a vector field such that} $\mathbf{w}: V(t) \rightarrow \mathbb{R}^d$, \textit{then} 
 \begin{align}
-\nabla \mathbf{w} = \hat{\nabla}\hat{w} \hat{F}_W^{-1} 
+\nabla \mathbf{w} = \bat{\nabla}\bat{w} \hat{F}_W^{-1} 
 \end{align} 
 \end{lem}
 
@@ -71,27 +77,14 @@ Transformation of scalar temporal derivatives \\
 \end{align} 
 \end{lem}
 
-In addition we need a consistent way to transform the induced stresses in the \textit{Eulerian} coordinate system to $\ha{W}$. Hence we introduce the \textit{Piloa transformation}, found in most introduction courses in structure mechanics.
-\\
-\begin{lem}
-T \\
-\textit{Let \textbf{w} be a vector field such that} $\mathbf{w}: V(t) \rightarrow \mathbb{R}^d$, \textit{then the Piola transformation of w is defined by} 
-\begin{align}
-\mathbf{w} = \ha{J}_W \hat{F}^{-1}_W \hat{w}
-\end{align} 
-\end{lem}
 
-The Piola transformation can be further extended to transform tensors, see \cite{Richter2016}, Orange book. This results is essential as it allows us to transform surface forces induced by the \textit{Cauchy stress tensor} on our arbitrary coordinate system $\ha{W}$. Lemma 1.4 brings us to \textit{the first Piola Kirchhoff stress tensor} $\hat{P} = \ha{J}_W \hat{\sigma}\hat{F}_W^{-T}$.
-
-\subsection{ALE formulation of the fluid problem}
-
-Recall the Navier-Stokes equation defined in the \textit{Eulerian coordinate system} V(t).
+Using our newly introduced transformations of derivatives we map the equation to the arbitrary reference system $\ha{W}$. Recall the Navier-Stokes equation defined in the \textit{Eulerian coordinate system} V(t).
 \begin{align*}
 &\rho \pder{\mathbf{v}}{t} + \rho \mathbf{v} \cdot \nabla \mathbf{v} =
 \nabla \cdot \sigma + \rho \mathbf{f} \\
 &\nabla \cdot \mathbf{v} = 0
 \end{align*}
-Using our newly introduced transformations of derivatives we map the equation to the arbitrary reference system $\ha{W}$. We will first consider the transformation of the\textit{material derivative}. By 
+By first considering the transformation of the \textit{material derivative},
 \begin{align*}
 \frac{d \mathbf{v}}{dt}(x,t) = \pder{\mathbf{v}}{t}(x,t) + \nabla \mathbf{v}(x,t) \cdot \pder{x}{t} \\
 \frac{d \mathbf{v}}{dt}(x,t) = \pder{\mathbf{v}}{t}(x,t) + \nabla \mathbf{v}(x,t) \cdot \mathbf{v}
@@ -99,18 +92,13 @@ Using our newly introduced transformations of derivatives we map the equation to
 Note $\pder{x}{t}$ is the velocity of particles and not the transformation velocity $\pder{\ha{T}_W}{t}$. By lemma(1.1, 1.2, 1.3) we have  
 
 \begin{align*}
-\frac{d \mathbf{v}}{dt}(x,t) = 
-\pder{\hat{v}}{t}(x,t) - (\hat{F}_W^{-1}\pder{\ha{T}_W}{t} \cdot \hat{\nabla})\hat{v}
-+ \hat{F}_W^{-T}\hat{\nabla}\hat{v} \cdot \hat{v} \\
-\mathbf{v} \cdot \nabla \mathbf{v} = \nabla \mathbf{v} \mathbf{v} = 
-\hat{\nabla}\hat{v}\hat{F}_W^{-1}\hat{v} = (\hat{F}_W^{-1}\hat{v} \cdot \hat{\nabla})\hat{v} \hspace{4mm} \textit{FINN KILDE}
-\end{align*}
-
-These results can be used to show that
-
-\begin{align*}
-\pder{\mathbf{v}}{t} + \mathbf{v} \cdot \nabla \mathbf{v} =
-\pder{\hat{v}}{t} + (\hat{F}_W^{-1}(\hat{v} - \pder{\ha{T}_W}{t}) \cdot \hat{\nabla}) \hat{v}
+&\frac{d \mathbf{v}}{dt}(x,t) = 
+\pder{\bat{v}}{t}(x,t) - (\hat{F}_W^{-1}\pder{\ha{T}_W}{t} \cdot \hat{\nabla})\bat{v}
++ \hat{F}_W^{-T}\hat{\nabla}\bat{v} \cdot \bat{v} \\
+&\mathbf{v} \cdot \nabla \mathbf{v} = \nabla \mathbf{v} \mathbf{v} = 
+\bat{\nabla}\bat{v}\hat{F}_W^{-1}\bat{v} = (\hat{F}_W^{-1}\bat{v} \cdot \hat{\nabla})\bat{v} 
+&\pder{\mathbf{v}}{t} + \mathbf{v} \cdot \nabla \mathbf{v} =
+\pder{\bat{v}}{t} + (\hat{F}_W^{-1}(\hat{v} - \pder{\ha{T}_W}{t}) \cdot \hat{\nabla}) \bat{v}
 \end{align*}
 
 By applying \textit{the first Piola Kirchhoff stress tensor} directly we transform the surface stress by 
@@ -122,37 +110,55 @@ In general, $\sigma$ is presumed on the form of a Newtonian fluid.
 However special care must be taken, as $\sigma \neq \hat{\sigma}$ due to spatial derivatives within the tensor. Hence 
 \begin{align*}
 \sigma = -p I + \mu_f(\nabla \mathbf{v} + (\nabla \mathbf{v})^T \\
-\hat{\sigma} = -\ha{p} I + \mu_f(\hat{\nabla}\hat{v}\hat{F}_W^{-1} +\hat{F}_W^{-T}\hat{\nabla}\hat{v}^T )
+\hat{\sigma} = -\ha{p} I + \mu_f(\hat{\nabla}\bat{v}\hat{F}_W^{-1} +\hat{F}_W^{-T}\hat{\nabla}\bat{v}^T )
 \end{align*} 
 
-For the conservation of continuum we apply the \textit{Piola Transformation} such that
+For the conservation of continuum we apply the \textit{Piola Transformation} \cite{Richter2016}such that
 
 \begin{align*}
-\nabla \cdot \mathbf{v} = \nabla \cdot (\ha{J} \hat{F}_W^{-1} \hat{v})
+\nabla \cdot \mathbf{v} = \nabla \cdot (\ha{J} \hat{F}_W^{-1} \bat{v})
 \end{align*}
+
+\begin{equat}
+\textit{ALE fluid problem}
+\begin{align}
+\ha{J} \pder{\bat{v}}{t} + \ha{J} (\hat{F}_W^{-1}(\bat{v} - \pder{\ha{T}_W}{t}) \cdot \hat{\nabla}) \bat{v}
+= \nabla \cdot (\ha{J}_W \hat{\sigma}\hat{F}_W^{-T}) + \rho_f \ha{J} \mathbf{f}_f
+\hspace{4mm} \text{in} \hspace{2mm} \hat{\Omega}_f f \\
+\nabla \cdot (\ha{J} \hat{F}_W^{-1} \hat{v}) \hspace{4mm} \text{in} \hspace{2mm} \hat{\Omega}_f 
+\end{align}
+\end{equat}
 
 \subsection{ALE formulation of the solid problem}
 
 With the introduced mapping identities we have the necessary tools to derive a full fluid-structure interaction problem defined of a fixed domain. Since the structure already is defined in its natural Lagrangian coordinate system, no further derivations are needed for defining the total problem.
 
 \begin{equat}
-\textit{ALE problem on a fixed domain}
+\textit{ALE solid problem}
 \begin{align}
-\ha{J} \pder{\hat{v}}{t} + \ha{J} (\hat{F}_W^{-1}(\hat{v} - \pder{\ha{T}_W}{t}) \cdot \hat{\nabla}) \hat{v}
-= \nabla \cdot (\ha{J}_W \hat{\sigma}\hat{F}_W^{-T}) + \rho_f \ha{J} \mathbf{f}_f
-\hspace{4mm} \text{in} \hspace{2mm} \Omega_f \\
-\nabla \cdot (\ha{J} \hat{F}_W^{-1} \hat{v}) \hspace{4mm} \text{in} \hspace{2mm} \Omega_f \\
-\rho_s \pder{\hat{v}_s}{t} = \nabla \cdot \mathbf{F}\mathbf{S} + \rho_s \mathbf{f}_s
+\rho_s \pder{\bat{v}_s}{t} = \nabla \cdot \mathbf{F}\mathbf{S} + \rho_s \mathbf{f}_s
 \hspace{4mm} \text{in} \hspace{2mm} \Omega_s \\
-\pder{\hat{v}_s}{t} = \hat{u}_s \hspace{4mm} \text{in} \hspace{2mm} \Omega_s \\
-\hat{v}_s = \hat{v}_f \hspace{4mm} \text{on} \hspace{2mm} \Gamma_i \\
-\ha{J}_W \hat{\sigma}\hat{F}_W^{-T} \cdot \mathbf{n} = 
-\mathbf{F}\mathbf{S} \cdot \mathbf{n}  \hspace{4mm} \text{on} \hspace{2mm} \Gamma_i 
 \end{align}
 \end{equat}
 
+%\begin{equat}
+%\textit{ALE problem on a fixed domain}
+%\begin{align}
+%\ha{J} \pder{\hat{v}}{t} + \ha{J} (\hat{F}_W^{-1}(\hat{v} - \pder{\ha{T}_W}{t}) \cdot \hat{\nabla}) \hat{v}
+%= \nabla \cdot (\ha{J}_W \hat{\sigma}\hat{F}_W^{-T}) + \rho_f \ha{J} \mathbf{f}_f
+%\hspace{4mm} \text{in} \hspace{2mm} \Omega_f \\
+%\nabla \cdot (\ha{J} \hat{F}_W^{-1} \hat{v}) \hspace{4mm} \text{in} \hspace{2mm} \Omega_f \\
+%\rho_s \pder{\hat{v}_s}{t} = \nabla \cdot \mathbf{F}\mathbf{S} + \rho_s \mathbf{f}_s
+%\hspace{4mm} \text{in} \hspace{2mm} \Omega_s \\
+%\pder{\hat{v}_s}{t} = \hat{u}_s \hspace{4mm} \text{in} \hspace{2mm} %\Omega_s \\
+%\hat{v}_s = \hat{v}_f \hspace{4mm} \text{on} \hspace{2mm} \Gamma_i \\
+%\ha{J}_W \hat{\sigma}\hat{F}_W^{-T} \cdot \mathbf{n} = 
+%\mathbf{F}\mathbf{S} \cdot \mathbf{n}  \hspace{4mm} \text{on} \hspace{2mm} \Gamma_i 
+%\end{align}
+%\end{equat}
 
-\subsection*{Fluid mesh movement}
+
+\subsection{Fluid mesh movement}
 In the ALE framwork one of the most limiting factors is the degeneration of the mesh due to large deformations. Even the most advanced ALE formulated schemes reaches a limit when only re-meshing is nesecarry \cite{Wall12006}. Consequently the choice of an appropriate mesh moving technique is essential to preserve a feasible mesh quality for the simulation of fluid flow. Let the total domain deformation $\ha{T}(\ha{x}, t)$ be divided into the solid and fluid deformation $T_s$, $T_f$, were the fluid deformation is mapped to the arbitrary fixed reference system $\ha{W}$ presented in the last subsection.  
 Then the ALE map $T_f$ on the form 
 \begin{align*}
