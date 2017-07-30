@@ -723,7 +723,7 @@ A numerical investigation of temporal stability in shown in Table 1.7, where the
 
 \newpage
 \section{Optimization of Newtonsolver}
-The expression \textit{bottleneck} esxpress a phenomen where the total performance of a complete implementation is limited to small code fragments, accounting for the primary consumption of computer resources.
+A \textit{bottleneck} express a phenomena where the total performance of a complete implementation is limited to small code fragments, accounting for the primary consumption of computer resources.
 
 As for many other applications, within computational science one can often assume the consummation of resources follows the \textit{The Pareto principle}. Meaning that for different types of events, roughly 80\% of the effects come from 20\% of the causes. An analogy to computational sciences it that 80\% of the computational demanding operations comes from 20\% of the code. In our case, the bottleneck is the newtonsolver. The two main reasons for this is 
 
@@ -753,27 +753,44 @@ The assemble time of the Jacobian greatly depends on the degree of polynomials u
 
 
 \begin{figure}[h!]
-\hspace*{-2.2cm}   
+
  \includegraphics[scale=0.36]{./Fig/itercompare.png}
- \caption{Computational domain of the validation benchmark}
+ \caption{Comparison of speed-up techniques for the laplace mesh model}
+\end{figure}
+
+\begin{figure}[h!]
+ \includegraphics[scale=0.4]{./Fig/bi_compareit.png}
+ \caption{Comparison of speed-up techniques for the biharmonic type 1 mesh model}
 \end{figure}
 
 
-\begin{table}[h]
+\begin{table}[h!]
 \centering
-\caption{Comparison of speedup techniques }
+\caption{Comparison of speedup techniques}
 \label{my-label}
-\begin{tabular}{ |p{2.8cm}|p{2.4cm}||p{2.4cm}|p{2.4cm}|p{2.4cm}|  }
- %\hline
- %\multicolumn{4}{|c|}{Solid parameters} \\
+\begin{tabular}{ |p{2.8cm}|p{2.2cm}|p{2.4cm}|p{2.4cm}|p{2.4cm}|p{2.4cm}| }
  \hline
-Implementation &Naive  & Reducequad. & Reusejacobi & Combined \\
+  \multicolumn{6}{|c|}{Laplace} \\
  \hline
- Mean time/timestep &   104.5 &  125.5 & 48.3  & 6.8   \\
+ Implementation &Naive  & Buffering & Reducequad. & Reusejacobi & Combined \\
  \hline
- Speedup \% & 1.0 &  -20\%  & 54 \%  & 94 \%   \\
+ Mean time/timestep &   104.5 &  &125.5 & 48.3  & 6.8   \\
  \hline
- Mean iteration &  4.49 &  30.59 & 10.29  & 10.29   \\
+ Speedup \% & 1.0 &  &-20\%  & 54 \%  & 94 \%   \\
+ \hline
+ Mean iteration &  4.49 &  &30.59 & 10.29  & 10.29   \\
+ \hline
+  \hline
+  \multicolumn{6}{|c|}{Biharmonic Type 1} \\
+ \hline
+ Implementation &Naive  & Buffering & Reducequad. & Reusejacobi & Combined \\
+ \hline
+ Mean time/timestep & 243.3 & 307.6  & 51.6 & 76.7  &  24.8 \\
+ \hline
+ Speedup \%    & 1.0     & -26\% & 78.7\%  & 68.4 \%  &  89.7\%   \\
+ \hline
+ Mean iteration & 4.1     &  6.2    &4.6&  7.1 &  6.8  \\
  \hline
 \end{tabular}
 \end{table}
+

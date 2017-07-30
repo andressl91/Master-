@@ -196,28 +196,25 @@ Therefore the fluid deformation $\bat{u}_f$ must have a continuous relation to t
 
 In accordance with conditions 2.17, 2.18, the fluid transformation $\ha{T}_f(\ha{x}, t) $ is constructed such that $\bat{u}_f$ is an extension of the solid deformation $\bat{u}_s$ into the fluid domain. The extension is constructed by a partial differential equation, called a \textit{mesh motion model}. 
 
+\subsection{Mesh motion models}
 
-In the ALE framwork one of the most limiting factors is the degeneration of the mesh due to large deformations. Even the most advanced mesh motion model  reaches a limit when only re-meshing is nesecarry to avoid mesh entaglement \cite{Wall12006}. Consequently, the choice of  mesh moving technique is essential to generate a smooth evolution of the fluid mesh.\\
+In the ALE framwork one of the most limiting factors is the degeneration of the mesh due to large deformations. Even the most advanced mesh motion model  reaches a limit when only re-meshing is nesecarry to avoid mesh entaglement \cite{Wall12006}. Consequently, the choice of  mesh moving technique is essential to generate a smooth evolution of the fluid mesh.Several mesh models have been proposed throughout the litterature, and for an overview the reader is refered to \cite{MM2016}, and the reference therein. 
+In this thesis, the 2nd order \textit{Laplacian} and \textit{pseudo-elasticity} mesh model, together with the 4th order biharmonic mesh model will be considered.  The 2nd order \textit{Laplacian} and \textit{pseudo-elasticity} mesh model are beneficial in terms of simplicity and computational efficiency, at the cost of the  regularity of the fluid cells  \cite{Wick2011}. Hence, the 2nd order models are only capable of handling moderate fluid mesh deformations. Using geometrical or mesh position dependent parameters, the models can be improved to handle a wider range of deformations, by increasing the stiffness of the cell close to the interface (\cite{Hsu}, \cite{Dwight}). \\
+A limitation of the 2nd order mesh models is that by Dirichlet and Neumann boundary conditions, only mesh position or normal spacing spacing can be specified respectfully, but not both  \cite{Helenbrook2003}. This limitation is overcome by 4th order biharmonic mesh model, since two boundary conditions can be specified at each boundary of the fluid domain \cite{Helenbrook2003}. The 4th order biharmonic mesh model is superior for  handling large  fluid mesh deformations, as the model generates a better evolution of the fluid cells. A better regularity of the fluid cells also have the potential of less Newton steps needed for convergence at each time-step \cite{Wick2011}, discussed in section 5.5. The model is however much more computational expensive compared to the 2nd order mesh models. 
 
-Several extentions have been proposed throughout the litterature, and for an overview the reader is refered to \cite{MM2016}, and the reference therein. 
-In this thesis, the 2nd order \textit{Laplacian} and \textit{pseudo-elasticity} mesh model, together with the 4th order biharmonic mesh model will be considered.  The 2nd order \textit{Laplacian} and \textit{pseudo-elasticity} mesh model are beneficial in terms of simplicity and computational efficiency, at the cost of the  regularity of the fluid cells  \cite{Wick2011}. Hence, the 2nd order models are only capable of handling moderate fluid mesh deformations. Using geometrical or mesh position dependent parameters, the models can be improved to handle a wider range of deformations, by increasing the stiffness of the cell close to the interface
 
+\subsubsection*{Mesh motion by a Laplacian model}
 
-If the parameters do not depend on mesh position and geometrical information, both approaches can only deal with moderate fluid mesh deformations. This prob- lem is resolved by using mesh-position dependent material param- eters that are used to increase the stiffness of cells near the interface [8].
-
- the 2nd order \textit{Laplacian} and \textit{pseudo-elasticity} mesh model
-
- One often want to ensure a desired mesh position and some regularity of mesh spacing on the boundary, but it is impossible for second order extensions to specify both \cite{Helenbrook2003}. Therefore the author of \cite{Helenbrook2003}, proposes a fourth-order PDE, the \textit{biharmonic} extensions, to improve the regularity of the mesh deformation. \\
-
-\subsubsection*{Laplacian model}
-
-The main motivation for a \textit{Laplacian} smoothing is due to its simplicity and due to its property of bounding the interior displacements to the boundary values. 
-
+\begin{equat}
+The Laplace equation model \\ \textit{Let} $\bat{u}_f$ \textit{be the fluid domain deformation,} $\bat{u}_s$ \textit{be the structure domain deformation, and let} $\alpha$ \textit{be diffusion parameter raised to the power of some constant} $q$. \textit{The Laplacian  mesh model is given by, }   
 \begin{align*}
-&- \hat{\nabla} \cdot (\alpha^q \hat{\nabla} \hat{u}) = 0 \\
-&\hat{u}_f = \hat{u}_s \hspace{2mm} \text{on} \hspace{2mm}  \Gamma \\
-&\hat{u}_f = 0 \hspace{2mm} \text{on} \hspace{2mm} \partial \hat{\Omega}_f / \Gamma 
+&- \hat{\nabla} \cdot (\alpha^q \hat{\nabla} \bat{u}) = 0 \\
+&\bat{u}_f = \bat{u}_s \hspace{2mm} \text{on} \hspace{2mm}  \Gamma \\
+&\bat{u}_f = 0 \hspace{2mm} \text{on} \hspace{2mm} \partial \hat{\Omega}_f / \Gamma 
 \end{align*}
+\end{equat}
+
+The 
 
 Most favourable, the largest mesh deformation occuring should be confined to the interal part of the mesh as it causes the least distortion \cite{Jasak2006}. Therefore the introduced diffusion parameter $\alpha$, often raised to some power q, is introduced to manipulate this behaviour. The form of this paramter is often problem specific,  as selective treatment of the elements may vary from different mesh deformation problems. A jacobian based method was introduced in \cite{Stein}. In \cite{Jasak2006}, the authors reviewed several distance based options, where $\alpha$ was some function of the distance to the closest moving boundary. This method was adopted in this thesis on the form
 
@@ -227,7 +224,7 @@ Most favourable, the largest mesh deformation occuring should be confined to the
 
 However as pointed out by \cite{Hsu}, one of the main disadvantages of using the linear Laplace equation is that the equation solves the mesh deformation components independently of one another. Say one have deformation only in the x-coordinate direction, the interior mesh points will only be moved along this deformation. Such a behavior restricts the use to the Laplace equation of mesh extrapolation purposes.
 
-\subsubsection*{Linear elastic model}
+\subsubsection*{Mesh motion by a Linear elastic model}
 Considering a linear elastic model for mesh moving was first introduced in \cite{Tezduyar1992}.  
 Both \cite{Dwight}
 \begin{align*}
@@ -250,7 +247,7 @@ In \cite{Wicka} the author proposed a negative possion ratio, which makes the mo
 One of the most common approach is to set $\nu$ as a constant in the range $\nu \in [0, 0.5)$ and let $E$ be the inverse of the distance of an interior node to the nearest boundary surface \cite{MM2016}. 
 The authors of \cite{Biedron} used this property and also argued that the Young's modulus also could be chosen as the inversely proportional to the cell volume. They also pointed out that both approaches would give the desired result that the small cells around the solid surface would modeled rigid, moving with the surface of the solid as it undergoes deformation. On the other hand cells further away will deform to counter the effects close to the solid surface.
 
-\subsubsection*{Biharmonic model}
+\subsubsection*{Mesh motion by a Biharmonic model}
 Using a biharmonic mesh deformation model provides further freedom in terms of boundary conditions, and the reader is encoured to consult \cite{Helenbrook2003} for a deeper review. We will in combination with \cite{Wicka} present two main approaches the biharmonic model is defined as 
 \begin{align*}
 \hat{\nabla}^2 \ha{u} = 0 \hspace{4mm} \text{on} \hspace{2mm} \hat{\Omega}_f 

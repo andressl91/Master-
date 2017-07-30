@@ -1,5 +1,5 @@
 This is BibTeX, Version 0.99d (TeX Live 2016)
-Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: master.aux
 The style file: plain.bst
 Database file #1: ./Cite/Books.bib
@@ -8,8 +8,12 @@ Database file #3: ./Cite/Decoupled.bib
 Database file #4: ./Cite/NavierStokes.bib
 Database file #5: ./Cite/Verification.bib
 Database file #6: ./Cite/EulerianFormulation.bib
+Repeated entry---line 15 of file ./Cite/EulerianFormulation.bib
+ : @article{Richter2010c
+ :                      ,
+I'm skipping whatever remains of this entry
 Database file #7: ./Cite/Meshupdate.bib
-Repeated entry---line 89 of file ./Cite/Meshupdate.bib
+Repeated entry---line 6 of file ./Cite/Meshupdate.bib
  : @article{Wick
  :              ,
 I'm skipping whatever remains of this entry
@@ -21,54 +25,66 @@ Warning--empty journal in Donea2004
 Warning--there's a number but no volume in Donea2004
 Warning--empty journal in Dwight
 Warning--empty year in Dwight
+Warning--there's a number but no volume in Etienne2006
 Warning--empty journal in Fernandez2009
+Warning--empty journal in Gatzhammer2014
+Warning--empty journal in Geuzaine
+Warning--there's a number but no volume in Geuzaine
+Warning--empty year in Geuzaine
+Warning--empty publisher in Holzapfel2000
 Warning--empty journal in Hsu
 Warning--empty year in Hsu
+Warning--empty publisher in Newman1977
+Warning--empty journal in Project2016
 Warning--empty journal in Richter2016
+Warning--empty booktitle in Richter2015
+Warning--empty publisher in Richter2015
+Warning--empty institution in Sommerville2006
 Warning--empty journal in Stein
 Warning--empty year in Stein
 Warning--empty year in Wicka
 Warning--empty journal in Wick
 Warning--empty year in Wick
-You've used 16 entries,
+Warning--empty publisher in Wriggers2006
+You've used 47 entries,
             2118 wiz_defined-function locations,
-            599 strings with 6749 characters,
-and the built_in function-call counts, 4433 in all, are:
-= -- 422
-> -- 217
-< -- 1
-+ -- 86
-- -- 70
-* -- 297
-:= -- 786
-add.period$ -- 44
-call.type$ -- 16
-change.case$ -- 82
+            808 strings with 11936 characters,
+and the built_in function-call counts, 14468 in all, are:
+= -- 1425
+> -- 645
+< -- 8
++ -- 257
+- -- 210
+* -- 1017
+:= -- 2455
+add.period$ -- 140
+call.type$ -- 47
+change.case$ -- 241
 chr.to.int$ -- 0
-cite$ -- 31
-duplicate$ -- 177
-empty$ -- 326
-format.name$ -- 70
-if$ -- 878
+cite$ -- 74
+duplicate$ -- 566
+empty$ -- 1122
+format.name$ -- 210
+if$ -- 2951
 int.to.chr$ -- 0
-int.to.str$ -- 16
-missing$ -- 15
-newline$ -- 78
-num.names$ -- 32
-pop$ -- 102
+int.to.str$ -- 47
+missing$ -- 49
+newline$ -- 233
+num.names$ -- 94
+pop$ -- 271
 preamble$ -- 1
-purify$ -- 67
+purify$ -- 199
 quote$ -- 0
-skip$ -- 120
+skip$ -- 375
 stack$ -- 0
-substring$ -- 189
-swap$ -- 17
-text.length$ -- 1
+substring$ -- 854
+swap$ -- 81
+text.length$ -- 8
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 64
-warning$ -- 15
-while$ -- 43
-width$ -- 18
-write$ -- 152
-(There was 1 error message)
+type$ -- 178
+warning$ -- 27
+while$ -- 152
+width$ -- 49
+write$ -- 482
+(There were 2 error messages)
