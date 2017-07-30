@@ -182,7 +182,7 @@ a consistent mapping from the \textit{reference configuration} to the \textit{cu
 \begin{align*}
 \ha{T}_f(\ha{x}, t) = \bat{x} + \bat{u}_f(\hat{x}, t)
 \end{align*}
-The construction of $\ha{T}_f(\ha{x}, t) $ remains a numerical exercise. However the interface shared by both the fluid and solid domain, require an accuracte transformation of the interface points by $\ha{T}_f$ \cite{Richter2016}, 
+The construction of $\ha{T}_f(\ha{x}, t) $ remains arbitary, however the interface shared by both the fluid and solid domain, require an accuracte transformation of the interface points by $\ha{T}_f$ \cite{Richter2016}, 
 \begin{align*}
 \ha{T}_f(\ha{x}, t) = \ha{T}_s(\ha{x}, t) \hspace{4mm}  \leftrightarrow  
 \hspace{4mm}\bat{x} + \bat{u}_f(\hat{x}, t) =  \bat{x} + \bat{u}_s(\hat{x}, t)
@@ -194,12 +194,20 @@ Therefore the fluid deformation $\bat{u}_f$ must have a continuous relation to t
 &\bat{u}_f(\hat{x}) \cdot \bat{n} = 0  \hspace{4mm}  \hat{x} \in \partial \hat{\Omega}_f \neq \hat{\Omega}_f \cup  \hat{\Omega}_s
 \end{align} 
 
-In accordinace with   $\ha{T}_f(\ha{x}, t) $ is constructed such that $\bat{u}_f$ is an extension of the solid deformation $\bat{u}_s$ from the interface to the fluid domain. 
+In accordance with conditions 2.17, 2.18, the fluid transformation $\ha{T}_f(\ha{x}, t) $ is constructed such that $\bat{u}_f$ is an extension of the solid deformation $\bat{u}_s$ into the fluid domain. The extension is constructed by a partial differential equation, called a \textit{mesh motion model}. 
 
 
-In the ALE framwork one of the most limiting factors is the degeneration of the mesh due to large deformations. Even the most advanced ALE formulated schemes reaches a limit when only re-meshing is nesecarry to avoid mesh entaglement \cite{Wall12006}. Consequently the choice of an appropriate mesh moving technique is essential to preserve a feasible mesh quality for the simulation of fluid flow.
+In the ALE framwork one of the most limiting factors is the degeneration of the mesh due to large deformations. Even the most advanced mesh motion model  reaches a limit when only re-meshing is nesecarry to avoid mesh entaglement \cite{Wall12006}. Consequently, the choice of  mesh moving technique is essential to generate a smooth evolution of the fluid mesh.\\
 
-Several extentions have been proposed throuhout the litterature, and for an overview the reader is refered to \cite{MM2016}, and the reference therein. The construction of such extensions often involves solving some auxiliary problem on a partial differential equation(PDE) form, mainly of second-order. The \textit{Laplacian} and \textit{pseudo-elasticity} extentions are examples, which will be considered in this thesis. These extensions are beneficial in terms of simplicity and computational efficiency, but comes with a cost of user mesh customization. One often want to ensure a desired mesh position and some regularity of mesh spacing on the boundary, but it is impossible for second order extensions to specify both \cite{Helenbrook2003}. Therefore the author of \cite{Helenbrook2003}, proposes a fourth-order PDE, the \textit{biharmonic} extensions, to improve the regularity of the mesh deformation. \\
+Several extentions have been proposed throughout the litterature, and for an overview the reader is refered to \cite{MM2016}, and the reference therein. 
+In this thesis, the 2nd order \textit{Laplacian} and \textit{pseudo-elasticity} mesh model, together with the 4th order biharmonic mesh model will be considered.  The 2nd order \textit{Laplacian} and \textit{pseudo-elasticity} mesh model are beneficial in terms of simplicity and computational efficiency, at the cost of the  regularity of the fluid cells  \cite{Wick2011}. Hence, the 2nd order models are only capable of handling moderate fluid mesh deformations. Using geometrical or mesh position dependent parameters, the models can be improved to handle a wider range of deformations, by increasing the stiffness of the cell close to the interface
+
+
+If the parameters do not depend on mesh position and geometrical information, both approaches can only deal with moderate fluid mesh deformations. This prob- lem is resolved by using mesh-position dependent material param- eters that are used to increase the stiffness of cells near the interface [8].
+
+ the 2nd order \textit{Laplacian} and \textit{pseudo-elasticity} mesh model
+
+ One often want to ensure a desired mesh position and some regularity of mesh spacing on the boundary, but it is impossible for second order extensions to specify both \cite{Helenbrook2003}. Therefore the author of \cite{Helenbrook2003}, proposes a fourth-order PDE, the \textit{biharmonic} extensions, to improve the regularity of the mesh deformation. \\
 
 \subsubsection*{Laplacian model}
 
