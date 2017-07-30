@@ -129,14 +129,20 @@ For the conservation of continuum we apply the \textit{Piola Transformation} \ci
 \nabla \cdot \mathbf{v} = \nabla \cdot (\ha{J} \hat{F}_W^{-1} \bat{v})
 \end{align}
 
+As the central concepts for transforming the fluid problem on an arbitrary reference domain are introduced, the notation $\hat{W}$ will no longer be used, instead replaced with the fluid domain $\hat{\Omega}_f$, inheriting all previous concepts presented in reference with $\hat{W}$.
+
+ Let $\ha{T}_f : \hat{\Omega}_f \rightarrow \Omega_f (t)$ be an  invertable mapping , with the scalar $\ha{f}(\ha{x}_f, t) = f(x,t) $ and $\bat{v_f}(\ha{x}_f, t) = \mathbf{v}_f (x,t) $ counterparts. Further let $\hat{F}_f$ be the deformation gradient and  $\ha{J}_w$ its determinant.
+
 \begin{equat}
-\textit{ALE fluid problem}
+ALE fluid problem \\ 
+\textit{Let } $\bat{v}_f$ \textit{be the fluid velocity}, $\rho_f$  \textit{the fluid density, and }  $\nu_f$  \textit{the fluid viscosity}.
 \begin{align}
-\ha{J} \pder{\bat{v}}{t} + \ha{J} (\hat{F}_W^{-1}(\bat{v} - \pder{\ha{T}_W}{t}) \cdot \hat{\nabla}) \bat{v}
+\ha{J}_f \pder{\bat{v}}{t} + \ha{J}_f (\hat{F}_f^{-1}(\bat{v} - \pder{\ha{T}_W}{t}) \cdot \hat{\nabla}) \bat{v}
 = \nabla \cdot (\ha{J}_W \hat{\sigma}\hat{F}_W^{-T}) + \rho_f \ha{J} \mathbf{f}_f
-\hspace{4mm} \text{in} \hspace{2mm} \hat{\Omega}_f f \\
-\nabla \cdot (\ha{J} \hat{F}_W^{-1} \hat{v}) \hspace{4mm} \text{in} \hspace{2mm} \hat{\Omega}_f 
+\hspace{4mm} \text{in} \hspace{2mm} \hat{\Omega}_f \\
+\nabla \cdot (\ha{J} \hat{F}_W^{-1} \hat{v}) = 0 \hspace{4mm} \text{in} \hspace{2mm} \hat{\Omega}_f 
 \end{align}
+\textit{were}  $\mathbf{f}_s$  \textit{represents any exterior body force.}
 \end{equat}
 
 Due to the arbitary nature of the reference system $\hat{W}$, the physical velocity $\bat{v}$ and the velocity of arbitrary domain $\pder{\ha{W}_w}{t}$ doesn't necessary coincide, as it deals with three different reference domains \cite{Richter2016}. The Lagrangian particle tracking $x \in \hat{\Omega}_f $, the Eulerian tracking $x \in \Omega_f $, and the arbitary tracking of the reference domain  $x \in \hat{W} $ \cite{Richter2016}. This concept can be further clairified by the introduction of \textit{material} and \textit{spatial} points. 
@@ -171,12 +177,29 @@ With the introduced mapping identities we have the necessary tools to derive a f
 
 
 \subsection{Fluid mesh movement}
-In the ALE framwork one of the most limiting factors is the degeneration of the mesh due to large deformations. Even the most advanced ALE formulated schemes reaches a limit when only re-meshing is nesecarry \cite{Wall12006}. Consequently the choice of an appropriate mesh moving technique is essential to preserve a feasible mesh quality for the simulation of fluid flow. Let the total domain deformation $\ha{T}(\ha{x}, t)$ be divided into the solid and fluid deformation $T_s$, $T_f$, were the fluid deformation is mapped to the arbitrary fixed reference system $\ha{W}$ presented in the last subsection.  
-Then the ALE map $T_f$ on the form 
+ Let the total domain deformation $\ha{T}(\ha{x}, t)$ be divided into the solid  $\hat{T}_s: \hat{\Omega}_s \rightarrow \Omega_s$, and fluid deformation $\hat{T}_f: \hat{\Omega}_f \rightarrow \Omega_f$. The physical motivated solid domain deformation, defined as $\hat{T}_s: \hat{x}_s + \bat{u}_s$ were $\bat{u}_s$ is the structure deformation, is 
+a consistent mapping from the \textit{reference configuration} to the \textit{current configuration} of the solid domain. As pointed out in section 2.2.2, the deformation of the fluid domain doesn't inherit any physical relation between the two configurations. Despite this fact, one still introduce a fluid deformation variable $\bat{u}_f$, letting the fluid domain transformation be given by 
 \begin{align*}
-\ha{T}_f(\ha{x}, t) = \hat{x} + \hat{u}_f(\hat{x}, t)
+\ha{T}_f(\ha{x}, t) = \bat{x} + \bat{u}_f(\hat{x}, t)
 \end{align*}
-is constructed such that $\hat{u}_f$ is an extension of the solid deformation $\hat{u}_s$ from the interface to the fluid domain. Several extentions have been proposed throuhout the litteratur, and for an overview the reader is refered to \cite{MM2016}, and the reference therein. The construction of such extensions often involves solving some auxiliary problem on a partial differential equation(PDE) form, mainly of second-order. The \textit{Laplacian} and \textit{pseudo-elasticity} extentions are examples, which will be considered in this thesis. These extensions are beneficial in terms of simplicity and computational efficiency, but comes with a cost of user mesh customization. One often want to ensure a desired mesh position and some regularity of mesh spacing on the boundary, but it is impossible for second order extensions to specify both \cite{Helenbrook2003}. Therefore the author of \cite{Helenbrook2003}, proposes a fourth-order PDE, the \textit{biharmonic} extensions, to improve the regularity of the mesh deformation. \\
+The construction of $\ha{T}_f(\ha{x}, t) $ remains a numerical exercise. However the interface shared by both the fluid and solid domain, require an accuracte transformation of the interface points by $\ha{T}_f$ \cite{Richter2016}, 
+\begin{align*}
+\ha{T}_f(\ha{x}, t) = \ha{T}_s(\ha{x}, t) \hspace{4mm}  \leftrightarrow  
+\hspace{4mm}\bat{x} + \bat{u}_f(\hat{x}, t) =  \bat{x} + \bat{u}_s(\hat{x}, t)
+\end{align*}
+Therefore the fluid deformation $\bat{u}_f$ must have a continuous relation to the structure deformation $\bat{u}_s$, enforced by $\bat{u}_f = \bat{u}_s$ on the interface.For the non-moving boundaries in the fluid domain, tangential deformation are allowed, however normal deformations in relation the the boundaries are not allowed \cite{Richter2010c}. The fluid domain deformation $\bat{u}_f$ must therefore fulfill the boundary conditions 
+
+\begin{align}
+&\bat{u}_f(\hat{x}) = \bat{u}_s \hspace{4mm} \hat{x} \in \hat{\Omega}_f \cup  \hat{\Omega}_s \\
+&\bat{u}_f(\hat{x}) \cdot \bat{n} = 0  \hspace{4mm}  \hat{x} \in \partial \hat{\Omega}_f \neq \hat{\Omega}_f \cup  \hat{\Omega}_s
+\end{align} 
+
+In accordinace with   $\ha{T}_f(\ha{x}, t) $ is constructed such that $\bat{u}_f$ is an extension of the solid deformation $\bat{u}_s$ from the interface to the fluid domain. 
+
+
+In the ALE framwork one of the most limiting factors is the degeneration of the mesh due to large deformations. Even the most advanced ALE formulated schemes reaches a limit when only re-meshing is nesecarry to avoid mesh entaglement \cite{Wall12006}. Consequently the choice of an appropriate mesh moving technique is essential to preserve a feasible mesh quality for the simulation of fluid flow.
+
+Several extentions have been proposed throuhout the litterature, and for an overview the reader is refered to \cite{MM2016}, and the reference therein. The construction of such extensions often involves solving some auxiliary problem on a partial differential equation(PDE) form, mainly of second-order. The \textit{Laplacian} and \textit{pseudo-elasticity} extentions are examples, which will be considered in this thesis. These extensions are beneficial in terms of simplicity and computational efficiency, but comes with a cost of user mesh customization. One often want to ensure a desired mesh position and some regularity of mesh spacing on the boundary, but it is impossible for second order extensions to specify both \cite{Helenbrook2003}. Therefore the author of \cite{Helenbrook2003}, proposes a fourth-order PDE, the \textit{biharmonic} extensions, to improve the regularity of the mesh deformation. \\
 
 \subsubsection*{Laplacian model}
 
