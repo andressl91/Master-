@@ -208,44 +208,39 @@ A limitation of the 2nd order mesh models is that by Dirichlet and Neumann bound
 \begin{equat}
 The Laplace equation model \\ \textit{Let} $\bat{u}_f$ \textit{be the fluid domain deformation,} $\bat{u}_s$ \textit{be the structure domain deformation, and let} $\alpha$ \textit{be diffusion parameter raised to the power of some constant} $q$. \textit{The Laplacian  mesh model is given by, }   
 \begin{align*}
-&- \hat{\nabla} \cdot (\alpha^q \hat{\nabla} \bat{u}) = 0 \\
+&- \hat{\nabla} \cdot (\alpha^q \hat{\nabla} \bat{u}) = 0 \hspace{2mm} \hat{\Omega}_f\\
 &\bat{u}_f = \bat{u}_s \hspace{2mm} \text{on} \hspace{2mm}  \Gamma \\
 &\bat{u}_f = 0 \hspace{2mm} \text{on} \hspace{2mm} \partial \hat{\Omega}_f / \Gamma 
 \end{align*}
 \end{equat}
 
-The 
-
-Most favourable, the largest mesh deformation occuring should be confined to the interal part of the mesh as it causes the least distortion \cite{Jasak2006}. Therefore the introduced diffusion parameter $\alpha$, often raised to some power q, is introduced to manipulate this behaviour. The form of this paramter is often problem specific,  as selective treatment of the elements may vary from different mesh deformation problems. A jacobian based method was introduced in \cite{Stein}. In \cite{Jasak2006}, the authors reviewed several distance based options, where $\alpha$ was some function of the distance to the closest moving boundary. This method was adopted in this thesis on the form
+The choice of diffusion parameter  is often problem specific, as selective treatment of the fluid cells may vary from different mesh deformation problems. For small deformations, the diffusion-parameter $\alpha$ can be set to a small constant [\cite{Wick2013}, \cite{Richter2010c}]. To accommodate for larger deformations, a diffusion-parameter dependent of mesh parameters, such as fluid cell volume \cite{Crumpton1995} or the jacobian of the deformation gradient \cite{Stein} have proven beneficial. In \cite{Jasak2006}, the authors reviewed several options based on the distance to the closest moving boundary. This approach will be used in this thesis, using a diffusion-parameter inversely proportional to the distance to the closest moving boundary,
 
 \begin{align*}
 \alpha(x) = \frac{1}{x^q}  \hspace{4mm} q = -1
 \end{align*}
 
-However as pointed out by \cite{Hsu}, one of the main disadvantages of using the linear Laplace equation is that the equation solves the mesh deformation components independently of one another. Say one have deformation only in the x-coordinate direction, the interior mesh points will only be moved along this deformation. Such a behavior restricts the use to the Laplace equation of mesh extrapolation purposes.
 
 \subsubsection*{Mesh motion by a Linear elastic model}
 Considering a linear elastic model for mesh moving was first introduced in \cite{Tezduyar1992}.  
 Both \cite{Dwight}
+\begin{equat}
+The linear elastic model \\ \textit{Let} $\bat{u}_f$ \textit{be the fluid domain deformation,} $\bat{u}_s$ \textit{be the structure domain deformation, and let} $\sigma$ \textit{be the Cauchy stress tensor.} $q$. \textit{The linear elastic mesh model is given by, }   
 \begin{align*}
-&\nabla \cdot \sigma = 0 \\
-&\sigma = \lambda Tr(\epsilon(u)) I + 2 \mu \epsilon(u) \\
+&\nabla \cdot \sigma = 0 \hspace{2mm} \hat{\Omega}_f\\
+&\bat{u}_f = \bat{u}_s \hspace{2mm} \text{on} \hspace{2mm}  \Gamma \\
+&\bat{u}_f = 0 \hspace{2mm} \text{on} \hspace{2mm} \partial \hat{\Omega}_f / \Gamma \\
+&\sigma = \lambda Tr(\epsilon(\bat{u}_f)) I + 2 \mu \epsilon(\bat{u}_f) \hspace{2mm}
 &\epsilon(u) = \frac{1}{2}(\nabla u + \nabla  u^T)
 \end{align*}
-
-Where Lamé constants $\lambda$ and $\nu$ are given as
-
+\textit{Where} $\lambda$, $\mu$ \textit{are Lamés constants given by Young's modulus}  $E$, and \textit{Poisson´s ratio } $\nu$.
 \begin{align*}
 \lambda = \frac{\nu E}{(1 + \nu)(1 - 2\nu)} \hspace{2mm} \mu = \frac{E}{2(1 + \nu)}
 \end{align*}
+\end{equat}
 
-One of the main motivations for introducing such a model is the manipulation of Young's modulus $E$, and the poisson´s ration $\nu$. Recall that Young's modulus is the measurement of the a materials stiffness, while the poission's ratio describe the materials stretching in the transverse direction under extension in the axial direction. Manipulating these parameters one can influence the mesh deformation,
-however the choice of these parameters have proven not to be consistent,  and to be dependent of the given problem.  \\
-
-In \cite{Wicka} the author proposed a negative possion ratio, which makes the model mimic an auxetic material. Such materials becomes thinner in the perpendicular direction when they are submitted to compression, and this property is feasible for mesh under deformation. 
-
-One of the most common approach is to set $\nu$ as a constant in the range $\nu \in [0, 0.5)$ and let $E$ be the inverse of the distance of an interior node to the nearest boundary surface \cite{MM2016}. 
-The authors of \cite{Biedron} used this property and also argued that the Young's modulus also could be chosen as the inversely proportional to the cell volume. They also pointed out that both approaches would give the desired result that the small cells around the solid surface would modeled rigid, moving with the surface of the solid as it undergoes deformation. On the other hand cells further away will deform to counter the effects close to the solid surface.
+The fluid mesh deformation characteristics are in direct relation which the choice of the material specific parameters, Young's modulus $E$ and Poisson´s ratio $\mu$.  Young's modulus $E$ describes the stiffness of the material, while the Poission's ratio relates how a materials shrinks in the transverse direction, while under extension in the axial direction.However the choice of these parameters have proven not to be consistent, and to be dependent of the given problem.
+In \cite{Wicka} the author proposed a negative possion ratio, which makes the model mimic an auxetic material, which becomes thinner in the perpendicular direction when submitted to compression. Another approach is to set  $\nu \in [0, 0.5)$ and let $E$ be the inverse of the distance of an interior node to the nearest boundary surface \cite{MM2016}, or   inversely proportional to the cell volume \cite{Biedron}. 
 
 \subsubsection*{Mesh motion by a Biharmonic model}
 Using a biharmonic mesh deformation model provides further freedom in terms of boundary conditions, and the reader is encoured to consult \cite{Helenbrook2003} for a deeper review. We will in combination with \cite{Wicka} present two main approaches the biharmonic model is defined as 

@@ -8,83 +8,49 @@ Database file #3: ./Cite/Decoupled.bib
 Database file #4: ./Cite/NavierStokes.bib
 Database file #5: ./Cite/Verification.bib
 Database file #6: ./Cite/EulerianFormulation.bib
-Repeated entry---line 15 of file ./Cite/EulerianFormulation.bib
- : @article{Richter2010c
- :                      ,
-I'm skipping whatever remains of this entry
 Database file #7: ./Cite/Meshupdate.bib
-Repeated entry---line 6 of file ./Cite/Meshupdate.bib
- : @article{Wick
- :              ,
-I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "Frei2016"
-Warning--I didn't find a database entry for "Richter2010a"
-Warning--empty journal in Biedron
-Warning--empty year in Biedron
-Warning--empty journal in Donea2004
-Warning--there's a number but no volume in Donea2004
-Warning--empty journal in Dwight
-Warning--empty year in Dwight
-Warning--there's a number but no volume in Etienne2006
-Warning--empty journal in Fernandez2009
-Warning--empty journal in Gatzhammer2014
-Warning--empty journal in Geuzaine
-Warning--there's a number but no volume in Geuzaine
-Warning--empty year in Geuzaine
-Warning--empty publisher in Holzapfel2000
-Warning--empty journal in Hsu
-Warning--empty year in Hsu
-Warning--empty publisher in Newman1977
-Warning--empty journal in Project2016
-Warning--empty journal in Richter2016
 Warning--empty booktitle in Richter2015
 Warning--empty publisher in Richter2015
-Warning--empty institution in Sommerville2006
-Warning--empty journal in Stein
-Warning--empty year in Stein
 Warning--empty year in Wicka
-Warning--empty journal in Wick
-Warning--empty year in Wick
-Warning--empty publisher in Wriggers2006
-You've used 47 entries,
+You've used 4 entries,
             2118 wiz_defined-function locations,
-            808 strings with 11936 characters,
-and the built_in function-call counts, 14468 in all, are:
-= -- 1425
-> -- 645
-< -- 8
-+ -- 257
-- -- 210
-* -- 1017
-:= -- 2455
-add.period$ -- 140
-call.type$ -- 47
-change.case$ -- 241
+            531 strings with 4831 characters,
+and the built_in function-call counts, 1439 in all, are:
+= -- 155
+> -- 40
+< -- 2
++ -- 16
+- -- 12
+* -- 84
+:= -- 226
+add.period$ -- 14
+call.type$ -- 4
+change.case$ -- 17
 chr.to.int$ -- 0
-cite$ -- 74
-duplicate$ -- 566
-empty$ -- 1122
-format.name$ -- 210
-if$ -- 2951
+cite$ -- 7
+duplicate$ -- 67
+empty$ -- 121
+format.name$ -- 12
+if$ -- 317
 int.to.chr$ -- 0
-int.to.str$ -- 47
-missing$ -- 49
-newline$ -- 233
-num.names$ -- 94
-pop$ -- 271
+int.to.str$ -- 4
+missing$ -- 3
+newline$ -- 23
+num.names$ -- 8
+pop$ -- 24
 preamble$ -- 1
-purify$ -- 199
+purify$ -- 14
 quote$ -- 0
-skip$ -- 375
+skip$ -- 50
 stack$ -- 0
-substring$ -- 854
-swap$ -- 81
-text.length$ -- 8
+substring$ -- 109
+swap$ -- 21
+text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 178
-warning$ -- 27
-while$ -- 152
-width$ -- 49
-write$ -- 482
-(There were 2 error messages)
+type$ -- 16
+warning$ -- 3
+while$ -- 16
+width$ -- 5
+write$ -- 46
+(There were 3 warnings)

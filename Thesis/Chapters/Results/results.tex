@@ -740,20 +740,21 @@ The main effort of speed-up were explored around the Jacobian assembly.
 Of the speed-ups methods explored in this thesis, some are \textit{consistent} while others are \textit{nonconsistent}. Consistent methods are methods that always will work, involving smarter approaches regarding the linear system to be solved. The non-consistent method presented involves altering the equation to be solved by some simplification of the system. As these simplifications will alter the expected convergence of the solver, one must take account for additional Newton iterations against cheaper Jacobi assembly. Therefore one also risk breakdown of the solver as the Newton iterations may not converge.   
 
 
-\section{Consistent methods}
-\subsection{Jacobi buffering}
+\subsection{Consistent methods}
+\subsubsection{Jacobi buffering}
 By inspection of the Jacobi matrix, some terms of the total residue is linear terms, and remain constant within each time step. By assembling these terms only in the first Newton iteration will save some assembly time for the additional iterations needed each time step. As consequence the convergence of the Newton method should be unaffected as we do not alter the system.  
 
-\section{Non-consisten methods}    
-\subsection{Reuse of Jacobian}
+\subsection{Non-consisten methods}    
+\subsubsection{Reuse of Jacobian}
 As the assembly of the Jacobian at each iteration is costly, one approach of reusing the Jacobian for the linear system was proposed. In other words, the LU-factorization of the system is reused until the Jacobi is re-assembled. This method greatly reduced the computational time for each time step. By a user defined parameter, the number of iterations before a new assembly of the Jacobian matrix can be controlled. 
 
-\subsection{Quadrature reduce}
+\subsubsection{Quadrature reduce}
 The assemble time of the Jacobian greatly depends on the degree of polynomials used in the discretisation of the total residual. Within FEniCS t he order of polynomials representing the Jacobian can be adjusted. The use of lower order polynomials reduces assemble time of the matrix at each newton-iteration, however it leads to an inexact Jacobian which may results to additional iterations. 
 
 
-\begin{figure}[h!]
+\subsection{Comparison of speedup methods}
 
+\begin{figure}[h!]
  \includegraphics[scale=0.36]{./Fig/itercompare.png}
  \caption{Comparison of speed-up techniques for the laplace mesh model}
 \end{figure}
@@ -772,14 +773,14 @@ The assemble time of the Jacobian greatly depends on the degree of polynomials u
  \hline
   \multicolumn{6}{|c|}{Laplace} \\
  \hline
- Implementation &Naive  & Buffering & Reducequad. & Reusejacobi & Combined \\
+ Implementation       &Naive  & Buffering & Reducequad. & Reusejacobi & Combined \\
  \hline
- Mean time/timestep &   104.5 &  &125.5 & 48.3  & 6.8   \\
+ Mean time/timestep &  123.1    &  &  31.4 & 61.3  &  11.1 \\
  \hline
- Speedup \% & 1.0 &  &-20\%  & 54 \%  & 94 \%   \\
- \hline
- Mean iteration &  4.49 &  &30.59 & 10.29  & 10.29   \\
- \hline
+ Speedup \%            &  1.0         &  & 74.46\%     &  50.19\%     & 90.97 \%   \\
+ \hline 
+ Mean iteration         &  4.49       &  & 10.1  &  10.2  &  10.2 \\
+ \hline 
   \hline
   \multicolumn{6}{|c|}{Biharmonic Type 1} \\
  \hline
@@ -791,6 +792,17 @@ The assemble time of the Jacobian greatly depends on the degree of polynomials u
  \hline
  Mean iteration & 4.1     &  6.2    &4.6&  7.1 &  6.8  \\
  \hline
+  \hline
+  \multicolumn{6}{|c|}{Biharmonic Type 2} \\
+ \hline
+ Implementation &Naive  & Buffering & Reducequad. & Reusejacobi & Combined \\
+ \hline
+ Mean time/timestep &        &            &   60.5   &   95.3     &  20.7  \\
+ \hline
+ Speedup \%             & 1.0  & \%     & \%          &  \%         &  \%   \\
+ \hline
+ Mean iteration           & 4.1 &           &  6.29     &   6.9        &  6.9  \\
+ \hline 
 \end{tabular}
 \end{table}
 
