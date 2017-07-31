@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.12.9)  31 JUL 2017 15:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.12.9)  31 JUL 2017 19:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -902,7 +902,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip59
 )
-LaTeX Font Info:    Try loading font information for T1+txtt on input line 58.
+LaTeX Font Info:    Try loading font information for T1+txtt on input line 59.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/txfonts/t1txtt.fd
 File: t1txtt.fd 2000/12/15 v3.1
@@ -1085,7 +1085,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 \c@theorem=\count145
 
-(./Chapters/FSI/FSI_it1.tex [1
+(./Chapters/verification/verival_it1.tex [1
 
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
@@ -1100,58 +1100,47 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 ]
 Chapter 1.
 
-Underfull \hbox (badness 10000) in paragraph at lines 11--12
-
- []
+LaTeX Warning: Citation `Oberkampf2010' on page 3 undefined on input line 3.
 
 
-LaTeX Warning: Citation `Wick' on page 3 undefined on input line 13.
+LaTeX Warning: Citation `Sommerville2006' on page 3 undefined on input line 3.
 
 
-LaTeX Warning: Citation `Gatzhammer2014' on page 3 undefined on input line 15.
+LaTeX Warning: Citation `Oberkampf2010' on page 3 undefined on input line 3.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 15--16
+LaTeX Warning: Citation `Schwer2006' on page 3 undefined on input line 3.
 
- []
+
+LaTeX Warning: Citation `Roache' on page 3 undefined on input line 15.
+
+
+LaTeX Warning: Citation `Roache' on page 3 undefined on input line 17.
+
+
+LaTeX Warning: Citation `Roache' on page 3 undefined on input line 21.
+
+
+LaTeX Warning: Citation `Biggs' on page 3 undefined on input line 21.
+
+
+LaTeX Warning: Citation `Roache' on page 3 undefined on input line 21.
+
+
+LaTeX Warning: Citation `Etienne2006' on page 3 undefined on input line 21.
 
 [3]
 
-LaTeX Warning: Citation `Fernandez2007' on page 4 undefined on input line 17.
+LaTeX Warning: Citation `Roache2002' on page 4 undefined on input line 37.
 
 
-LaTeX Warning: Citation `Fernandez2009' on page 4 undefined on input line 17.
+LaTeX Warning: Citation `Etienne2006' on page 4 undefined on input line 37.
 
 
-LaTeX Warning: Citation `Forster2007' on page 4 undefined on input line 17.
+LaTeX Warning: Citation `Biggs' on page 4 undefined on input line 37.
 
 
-LaTeX Warning: Citation `Newman1977' on page 4 undefined on input line 17.
-
-
-LaTeX Warning: Citation `Forster2007' on page 4 undefined on input line 17.
-
-
-LaTeX Warning: Citation `Gatzhammer2014' on page 4 undefined on input line 17.
-
-
-LaTeX Warning: Citation `Fernandez2007' on page 4 undefined on input line 17.
-
-
-LaTeX Warning: Citation `Frei2016' on page 4 undefined on input line 21.
-
-
-LaTeX Warning: Citation `Frei2016' on page 4 undefined on input line 24.
-
-<./Fig/interface.png, id=74, 651.43375pt x 368.37625pt>
-File: ./Fig/interface.png Graphic file (type png)
-
-<use ./Fig/interface.png>
-Package pdftex.def Info: ./Fig/interface.png used on input line 28.
-(pdftex.def)             Requested size: 325.71606pt x 184.18767pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+LaTeX Warning: Citation `Roache2002' on page 4 undefined on input line 37.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1161,152 +1150,15 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [4]
 
-LaTeX Warning: Citation `Richter2010a' on page 5 undefined on input line 46.
+LaTeX Warning: Citation `Biggs' on page 5 undefined on input line 44.
 
 
-LaTeX Warning: Citation `Frei2016' on page 5 undefined on input line 46.
-
-
-LaTeX Warning: Citation `Wriggers2006' on page 5 undefined on input line 46.
-
-
-LaTeX Warning: Citation `Richter2016' on page 5 undefined on input line 46.
-
-
-LaTeX Warning: Citation `Richter2010a' on page 5 undefined on input line 46.
-
-
-LaTeX Warning: Citation `Donea2004' on page 5 undefined on input line 46.
-
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[5 <./Fig/interface.png>]
-
-LaTeX Warning: Citation `Richter2016' on page 6 undefined on input line 50.
-
-<./Fig/wdom.png, id=85, 551.05875pt x 374.39874pt>
-File: ./Fig/wdom.png Graphic file (type png)
- <use ./Fig/wdom.png>
-Package pdftex.def Info: ./Fig/wdom.png used on input line 54.
-(pdftex.def)             Requested size: 275.52869pt x 187.19891pt.
-
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[6 <./Fig/wdom.png>]
-
-LaTeX Warning: Citation `Richter2016' on page 7 undefined on input line 115.
-
-
-LaTeX Warning: Citation `Richter2016' on page 7 undefined on input line 126.
-
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[7]
-
-LaTeX Warning: Citation `Richter2016' on page 8 undefined on input line 148.
-
-
-LaTeX Warning: Citation `Richter2016' on page 8 undefined on input line 148.
-
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[8]
-
-LaTeX Warning: Citation `Richter2016' on page 9 undefined on input line 185.
-
-
-LaTeX Warning: Citation `Richter2010c' on page 9 undefined on input line 190.
-
-
-LaTeX Warning: Citation `Wall12006' on page 9 undefined on input line 201.
-
-
-LaTeX Warning: Citation `MM2016' on page 9 undefined on input line 201.
-
-
-LaTeX Warning: Citation `Wick2011' on page 9 undefined on input line 202.
-
-
-LaTeX Warning: Citation `Hsu' on page 9 undefined on input line 202.
-
-
-LaTeX Warning: Citation `Dwight' on page 9 undefined on input line 202.
-
-
-LaTeX Warning: Citation `Helenbrook2003' on page 9 undefined on input line 203.
-
-
-
-LaTeX Warning: Citation `Helenbrook2003' on page 9 undefined on input line 203.
-
-
-
-LaTeX Warning: Citation `Wick2011' on page 9 undefined on input line 203.
-
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[9]
-
-LaTeX Warning: Citation `Wick2013' on page 10 undefined on input line 217.
-
-
-LaTeX Warning: Citation `Richter2010c' on page 10 undefined on input line 217.
-
-
-LaTeX Warning: Citation `Crumpton1995' on page 10 undefined on input line 217.
-
-
-LaTeX Warning: Citation `Stein' on page 10 undefined on input line 217.
-
-
-LaTeX Warning: Citation `Jasak2006' on page 10 undefined on input line 217.
-
-
-LaTeX Warning: Citation `Tezduyar1992' on page 10 undefined on input line 225.
-
-
-LaTeX Warning: Citation `Dwight' on page 10 undefined on input line 226.
-
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[10]
-Underfull \hbox (badness 10000) in paragraph at lines 242--244
+Underfull \hbox (badness 10000) in paragraph at lines 44--46
 
  []
 
 
-LaTeX Warning: Citation `MM2016' on page 11 undefined on input line 247.
-
-
-LaTeX Warning: Citation `Biedron' on page 11 undefined on input line 248.
-
-
-LaTeX Warning: Citation `Helenbrook2003' on page 11 undefined on input line 251
-.
+LaTeX Warning: Citation `Project2016' on page 5 undefined on input line 48.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1314,47 +1166,13 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[11]
+[5]
 
-LaTeX Warning: Citation `Meleshko1997' on page 12 undefined on input line 274.
-
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[12]
-Underfull \hbox (badness 10000) in paragraph at lines 286--287
-
- []
+LaTeX Warning: Citation `Rykiel1996' on page 6 undefined on input line 67.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 286--287
+LaTeX Warning: Citation `Sommerville2006' on page 6 undefined on input line 68.
 
- []
-
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[13]
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[14]
-
-LaTeX Warning: Citation `Wick' on page 15 undefined on input line 369.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 368--370
-
- []
 
 ) (./master.bbl
 
@@ -1363,24 +1181,24 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[15]
+[6] [7
+
+])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 35.
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[16
-
-])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 35.
- [17]
+[8]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 35.
  (./master.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 35.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 35.
 Package rerunfilecheck Info: File `master.out' has not changed.
-(rerunfilecheck)             Checksum: 1F45F495BC8855C7AAEA92275718FEA2;712.
+(rerunfilecheck)             Checksum: 243D8B29E40110BD13CE81CADA0B0C08;382.
 
 
 LaTeX Warning: There were undefined references.
@@ -1388,40 +1206,30 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 35.
  ) 
 Here is how much of TeX's memory you used:
- 12513 strings out of 493014
- 180508 string characters out of 6133351
- 297368 words of memory out of 5000000
- 15750 multiletter control sequences out of 15000+600000
- 24065 words of font info for 60 fonts, out of 8000000 for 9000
+ 12462 strings out of 493014
+ 179920 string characters out of 6133351
+ 286980 words of memory out of 5000000
+ 15729 multiletter control sequences out of 15000+600000
+ 21993 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 44i,12n,45p,1148b,445s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
-}{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}<
+ 44i,11n,45p,1275b,471s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
+{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<
 /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></
-usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></us
-r/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr
-/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/
-local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/lo
-cal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/loca
-l/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/loca
-l/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></usr/
-local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/lo
-cal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local
-/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/
-texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/te
-xlive/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/loca
-l/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfbi1200.pfb></usr/local/
-texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/te
-xlive/2016/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texl
-ive/2016/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texliv
-e/2016/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/
-2016/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/20
-16/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2016
-/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on master.pdf (17 pages, 320028 bytes).
+usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></u
+sr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr
+/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/l
+ocal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/lo
+cal/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/loca
+l/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/
+texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/te
+xlive/2016/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texl
+ive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texliv
+e/2016/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
+Output written on master.pdf (8 pages, 166320 bytes).
 PDF statistics:
- 274 PDF objects out of 1000 (max. 8388607)
- 229 compressed objects within 3 object streams
- 66 named destinations out of 1000 (max. 500000)
- 83 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 157 PDF objects out of 1000 (max. 8388607)
+ 134 compressed objects within 2 object streams
+ 43 named destinations out of 1000 (max. 500000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

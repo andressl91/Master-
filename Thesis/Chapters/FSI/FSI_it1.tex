@@ -8,7 +8,7 @@ The multi-disciplinary nature of computational fluid-structure interaction , inv
 \end{align}
 
 
-The tracking of the interface is a issue, due to the different description of motion used in the fluid and solid problem. If the natural coordinate system are used for the fluid problem and solid problem, namely the eulerian and lagrangian description of motion, the domains doesn't match and the interface. Tracking the interface is aslo essential for fulfilling the interface boundary conditions. As such only one of the domains can be described in its natural coordinate system, while the other domain needs to be defined in some transformed coordinate system.   \\ 
+The tracking of the interface is a issue, due to the different description of motion used in the fluid and solid problem. If the natural coordinate system are used for the fluid problem and solid problem, namely the eulerian and lagrangian description of motion, the domains doesn't match and the interface. Tracking the interface is aslo essential for fulfilling the interface boundary conditions. As such only one of the domains can be described in its natural coordinate system, while the other domain needs to be defined in some transformed coordinate system.    
 
 Fluid-structure interaction problems are formally divided into the \textit{monolithic} and \textit{partitioned} frameworks.  In the monolithic framework, the fluid and solid equations together with interface conditions are solved simultaneously. The monolithic approach is  \textit{strongly coupled}, meaning the \textit{kinematic} (1.1) and \textit{dynamic}(1.2) interface conditions are met with high accuracy. However, the complexity of solving all the equations simuntainiously and the strong coupling contributes to a stronger nonlinear behaviour of the whole system \cite{Wick}. The complexity also makes monolithic implementations \textit{ad hoc} and less modular, and the nonlinearity makes solution time slow.
 
@@ -200,7 +200,7 @@ In accordance with conditions 2.17, 2.18, the fluid transformation $\ha{T}_f(\ha
 
 In the ALE framwork one of the most limiting factors is the degeneration of the mesh due to large deformations. Even the most advanced mesh motion model  reaches a limit when only re-meshing is nesecarry to avoid mesh entaglement \cite{Wall12006}. Consequently, the choice of  mesh moving technique is essential to generate a smooth evolution of the fluid mesh.Several mesh models have been proposed throughout the litterature, and for an overview the reader is refered to \cite{MM2016}, and the reference therein. 
 In this thesis, the 2nd order \textit{Laplacian} and \textit{pseudo-elasticity} mesh model, together with the 4th order biharmonic mesh model will be considered.  The 2nd order \textit{Laplacian} and \textit{pseudo-elasticity} mesh model are beneficial in terms of simplicity and computational efficiency, at the cost of the  regularity of the fluid cells  \cite{Wick2011}. Hence, the 2nd order models are only capable of handling moderate fluid mesh deformations. Using geometrical or mesh position dependent parameters, the models can be improved to handle a wider range of deformations, by increasing the stiffness of the cell close to the interface (\cite{Hsu}, \cite{Dwight}). \\
-A limitation of the 2nd order mesh models is that by Dirichlet and Neumann boundary conditions, only mesh position or normal spacing spacing can be specified respectfully, but not both  \cite{Helenbrook2003}. This limitation is overcome by 4th order biharmonic mesh model, since two boundary conditions can be specified at each boundary of the fluid domain \cite{Helenbrook2003}. The 4th order biharmonic mesh model is superior for  handling large  fluid mesh deformations, as the model generates a better evolution of the fluid cells. A better regularity of the fluid cells also have the potential of less Newton steps needed for convergence at each time-step \cite{Wick2011}, discussed in section 5.5. The model is however much more computational expensive compared to the 2nd order mesh models. 
+A limitation of the 2nd order mesh models is that by Dirichlet and Neumann boundary conditions, only mesh position or normal mesh spacing can be specified respectfully, but not both  \cite{Helenbrook2003}. This limitation is overcome by 4th order biharmonic mesh model, since two boundary conditions can be specified at each boundary of the fluid domain \cite{Helenbrook2003}. The 4th order biharmonic mesh model is superior for  handling large  fluid mesh deformations, as the model generates a better evolution of the fluid cells. A better regularity of the fluid cells also have the potential of less Newton steps needed for convergence at each time-step \cite{Wick2011}, discussed in section 5.5. The model is however much more computational expensive compared to the 2nd order mesh models. 
 
 
 \subsubsection*{Mesh motion by a Laplacian model}
@@ -214,16 +214,13 @@ The Laplace equation model \\ \textit{Let} $\bat{u}_f$ \textit{be the fluid doma
 \end{align*}
 \end{equat}
 
-The choice of diffusion parameter  is often problem specific, as selective treatment of the fluid cells may vary from different mesh deformation problems. For small deformations, the diffusion-parameter $\alpha$ can be set to a small constant [\cite{Wick2013}, \cite{Richter2010c}]. To accommodate for larger deformations, a diffusion-parameter dependent of mesh parameters, such as fluid cell volume \cite{Crumpton1995} or the jacobian of the deformation gradient \cite{Stein} have proven beneficial. In \cite{Jasak2006}, the authors reviewed several options based on the distance to the closest moving boundary. This approach will be used in this thesis, using a diffusion-parameter inversely proportional to the distance to the closest moving boundary,
-
+The choice of diffusion parameter  is often problem specific, as selective treatment of the fluid cells may vary from different mesh deformation problems. For small deformations, the diffusion-parameter $\alpha$ can be set to a small constant [\cite{Wick2013}, \cite{Richter2010c}]. To accommodate for larger deformations, a diffusion-parameter dependent of mesh parameters, such as fluid cell volume \cite{Crumpton1995} or the jacobian of the deformation gradient \cite{Stein} have proven beneficial. In \cite{Jasak2006}, the authors reviewed several options based on the distance to the closest moving boundary. This approach will be used in this thesis, using a diffusion-parameter inversely proportional to the magnitudeof the distance $x$, to the closest moving boundary,
 \begin{align*}
 \alpha(x) = \frac{1}{x^q}  \hspace{4mm} q = -1
 \end{align*}
 
 
 \subsubsection*{Mesh motion by a Linear elastic model}
-Considering a linear elastic model for mesh moving was first introduced in \cite{Tezduyar1992}.  
-Both \cite{Dwight}
 \begin{equat}
 The linear elastic model \\ \textit{Let} $\bat{u}_f$ \textit{be the fluid domain deformation,} $\bat{u}_s$ \textit{be the structure domain deformation, and let} $\sigma$ \textit{be the Cauchy stress tensor.} $q$. \textit{The linear elastic mesh model is given by, }   
 \begin{align*}
@@ -240,22 +237,26 @@ The linear elastic model \\ \textit{Let} $\bat{u}_f$ \textit{be the fluid domain
 \end{equat}
 
 The fluid mesh deformation characteristics are in direct relation which the choice of the material specific parameters, Young's modulus $E$ and Poisson´s ratio $\mu$.  Young's modulus $E$ describes the stiffness of the material, while the Poission's ratio relates how a materials shrinks in the transverse direction, while under extension in the axial direction.However the choice of these parameters have proven not to be consistent, and to be dependent of the given problem.
-In \cite{Wicka} the author proposed a negative possion ratio, which makes the model mimic an auxetic material, which becomes thinner in the perpendicular direction when submitted to compression. Another approach is to set  $\nu \in [0, 0.5)$ and let $E$ be the inverse of the distance of an interior node to the nearest boundary surface \cite{MM2016}, or   inversely proportional to the cell volume \cite{Biedron}. 
+In \cite{Wicka} the author proposed a negative possion ratio, which makes the model mimic an auxetic material, which becomes thinner in the perpendicular direction when submitted to compression. Another approach is to set  $\nu \in [0, 0.5)$ and let $E$ be inversely proportional to the cell volume \cite{Biedron}, or inverse of the distance of an interior node to the nearest deforming boundary surface \cite{MM2016}. In this thesis, the latter is chosen merely for the purpose of code reuse from the Laplace mesh model. The Young's modulus $E$ and Poisson´s ratio $\mu$ is then  defined as,
+\begin{align*}
+\nu = 0.1 \hspace{4mm} E(x) = \frac{1}{x^q}  \hspace{4mm} q = -1
+\end{align*}
 
 \subsubsection*{Mesh motion by a Biharmonic model}
-Using a biharmonic mesh deformation model provides further freedom in terms of boundary conditions, and the reader is encoured to consult \cite{Helenbrook2003} for a deeper review. We will in combination with \cite{Wicka} present two main approaches the biharmonic model is defined as 
+\begin{equat}
+The bi-harmonic mesh model \\ \textit{Let} $\bat{u}_f$ \textit{be the fluid domain deformation,} $\bat{u}_s$ \textit{be the structure domain deformation}. \textit{The biharmonic mesh model is given by, }   
 \begin{align*}
-\hat{\nabla}^2 \ha{u} = 0 \hspace{4mm} \text{on} \hspace{2mm} \hat{\Omega}_f 
+\hat{\nabla}^4 \bat{u}_f = 0 \hspace{4mm} \text{on} \hspace{2mm} \hat{\Omega}_f 
 \end{align*}
+\end{equat}
+
 By introducing a second variable on the form $\ha{w} = - \hat{\nabla} \ha{u}$, we get the following system defined by 
 \begin{align*}
 &\hat{w} = -\hat{\nabla}^2\hat{u} \\
 &- \hat{\nabla} \hat{w} = 0
 \end{align*}
 
-This model is defined in a mixed formulation, and as such the prize for quality and control of mesh deformation comes with the cost of more computational demanding problem. 
-
-For the boundary conditions two types has been proposed in \cite{Wicka}. Let 
+In combination with \cite{Wicka}, two types of boundary conditions are proposed. Let 
 $\hat{u}_f$ be decomposed by the components $\hat{u}_f = (\ha{u}_f^{(1)}. \ha{u}_f^{(2)})$. Then we have
 
 \begin{align*}
@@ -266,19 +267,18 @@ $\hat{u}_f$ be decomposed by the components $\hat{u}_f = (\ha{u}_f^{(1)}. \ha{u}
 \hspace{2mm} \text{and} \hspace{2mm} \ha{w}_f^{(2)} = \pder{\ha{w}_f^{(2)}}{n} = 0 \hspace{4mm} \text{on} \hspace{1mm}  \hat{\Omega}_f^{wall}
 \end{align*}
 
-With the first type of boundary condition the model can interpreted as the bending of a thin plate, clamped along its boundaries. The form of this problem has been known since 1811, and its derivation has been connected with names like  French scientists Lagrange, Sophie Germain, Navier and Poisson \cite{Meleshko1997}.  
+The first type of boundary condition the model can interpreted as the bending of a thin plate, clamped along its boundaries. In addition to prescirbed mesh position as the  Laplacian and linear-elastic model, an additional constraint to the mesh spacing is prescribed at the fluid domain boundary. The form of this problem has been known since 1811, and its derivation has been connected with names like  French scientists Lagrange, Sophie Germain, Navier and Poisson \cite{Meleshko1997}.  
 
-The main motivation for second type of boundary condition is for a rectangular domain where the coordinate axes match the Cartesian coordinate system \cite{Wicka}. In such a configuration, the mesh movement is only constrained in the perpendicular direction of the fluid boundary, leading to mesh movement in the tangential direction. This special case reduces the effect of distortion of the cells.  
+The second type of boundary condition is advantageous when the \textit{reference domain} $\hat{\Omega}_f$ is rectangular, constraining mesh motion only in the perpendicular direction of the fluid boundary. This constrain allows  mesh movement in the tangential direction of the domain boundary, further reducing distortion of the fluid cells  \cite{Wicka}.  
 
 \newpage
 
 \newpage
 \section{Discretization of the FSI problem}
-Say something general of FSI discretization.. FEM, FVM, ...
 In this thesis, the finite element method will be used to discretize the coupled fluid-structure interaction problem. It is beyound of scope  of this thesis, to thorough dive into the analysis of the finite element method regarding fluid-structure interaction problems. Only the basics of the method, which is nesecarry in order to define a foundation for problem solving will be introduced. 
 
 \subsection{Finite Element method}
-Let the domain $\Omega(t) \subset \mathbb{R}^d \ (d = 1, 2, 3) $  be a time dependent domain discretized a by finite number of d-dimentional simplexes.  Each simplex is denoted as a finite element, and the union of these elements forms a mesh. Further, let the domain be divided by two time dependent subdomains $\Omega_f$ and $\Omega_s$, with the interface $\Gamma = \partial \Omega_f \cap \partial \Omega_s$. The initial configuration $\Omega(t), t = 0 $ is defined as $\hat{\Omega}$, defined in the same manner as the time-dependent domain. $\hat{\Omega}$ is  known as the \textit{reference configuration}, and hat symbol will refer any property or variable to this domain unless specified. The outer boundary is set by $\partial \hat{\Omega}$ , with $\partial \hat{\Omega}^D$ and $\partial \hat{\Omega}^N$ as the Dirichelt and Neumann boundaries respectively. \\ \\
+Let the domain $\Omega(t) \subset \mathbb{R}^d \ (d = 1, 2, 3) $  be a time dependent domain discretized a by finite number of d-dimentional simplexes.  Each simplex is denoted as a finite element, and the union of these elements forms a mesh. Further, let the domain be divided by two time dependent subdomains $\Omega_f$ and $\Omega_s$, with the interface $\Gamma = \partial \Omega_f \cap \partial \Omega_s$. The initial configuration $\Omega(t), t = 0 $ is defined as $\hat{\Omega}$, defined in the same manner as the time-dependent domain. $\hat{\Omega}$ is  known as the \textit{reference configuration}, and hat symbol will refer any property or variable to this domain unless specified. The outer boundary is set by $\partial \hat{\Omega}$ , with $\partial \hat{\Omega}^D$ and $\partial \hat{\Omega}^N$ as the Dirichlet and Neumann boundaries respectively. \\ \\
 
 The family of Lagrangian finite elements are chosen, with the function space notation,
 \begin{align*}
@@ -286,8 +286,8 @@ The family of Lagrangian finite elements are chosen, with the function space not
 \hat{V}_{\Omega}^0 := H_0^1(\Omega)  
 \end{align*}
 where $H^n$ is the Hilbert space of degree n. \\
-Let Problem 2.1 denote the strong formulation. By the introduction of appropiate trial and test spaces of our variables of interest, the weak formulation can be deduced by multiplying the strong form with a test function and taking integration by parts over the domain.  This reduces the differential equation of interest down to a system of linear equations. (skriv bedre..) \\
-The velocity variable is continous through the solid and fluid domain
+Let Problem 2.1 denote the strong formulation. By the introduction of appropriate trial and test spaces of our variables of interest, the weak formulation can be deduced by multiplying the strong form with a test function and taking integration by parts over the domain.  This reduces the differential equation of interest down to a system of linear equations. (skriv bedre..) \\
+The velocity variable is continuous through the solid and fluid domain
 \begin{align*}
 \hat{V}_{\Omega, \gat{v}} := \gat{v} \in H_0^1(\Omega), \hspace{2mm} 
 \gat{v}_f = \gat{v}_s \ \text{on} \ \hat{\Gamma}_i \\
@@ -309,27 +309,27 @@ For simplification of notation the inner product is defined as
  
 
 \subsection{Variational Formulation}
-With the primaries set, we can finally define the discretization of the monolithic coupled fluid-structure interaction problem. For full transparency, variation formulation of all previous suggested mesh motion models will be shown. For brevity, the laplacian and linear elastic model will be shorted such that 
+With the primaries set, we can finally define the discretization of the monolithic coupled fluid-structure interaction problem. For full transparency, variation formulation of all previous suggested mesh motion models will be shown. For brevity, the Laplace and linear elastic model will be shorted such that 
 \begin{align*}
-&\hat{\sigma}_{\text{mesh}} = \alpha \nabla \mathbf{u} \hspace{2mm} \text{Laplace} \\
-&\hat{\sigma}_{\text{mesh}} =  \lambda Tr(\epsilon(\mathbf{u})) I + 2 \mu \epsilon(\mathbf{u}) \hspace{2mm} \text{Linear Elasticity} 
+&\hat{\sigma}_{\text{mesh}} = \alpha \nabla \bat{u}_f \hspace{2mm} \text{Laplace} \\
+&\hat{\sigma}_{\text{mesh}} =  \lambda Tr(\epsilon(\bat{u}_f)) I + 2 \mu \epsilon(\bat{u}_f) \hspace{2mm} \text{Linear Elasticity} 
 \end{align*}
 Further, only the biharmonic model for the first type of boundary condition will be introduced as the second boundary condition is on a similar form.
   By the concepts of the Finite-element method, the weak variation problem yields.
 
 \begin{prob}
-\textit{Coupled fluid structure interaction problem for laplace and elastic mesh moving model.
+\textit{Coupled fluid structure interaction problem for Laplace and elastic mesh moving model.
 Find $\bat{u}_s, \bat{u}_f, \bat{v}_s, \bat{v}_f, \ha{p}_f $ such that}
 \begin{align*}
-\big(\ha{J} \pder{\bat{v}}{t}, \ \gat{\psi}^u \big)_{\hat{\Omega}_f} +
-\femf{\ha{J} (\hat{F}_W^{-1}(\bat{v} - \pder{\ha{T}_W}{t}) \cdot \hat{\nabla}) \bat{v}}{\gat{\psi}^u}
-+ \femi{\ha{J}_W \hat{\sigma}\hat{F}_W^{-T} \bat{n}_f}{\gat{\psi}^u} \\
-- \femf{\ha{J}_W \hat{\sigma}\hat{F}_W^{-T}}{\hat{\nabla}\gat{\psi}^u} -
-\femf{\rho_f \ha{J} \mathbf{f}_f}{{\gat{\psi}^u}} = 0 \\
+\big(\ha{J}_f \pder{\bat{v}_f}{t}, \ \gat{\psi}^u \big)_{\hat{\Omega}_f} +
+\femf{\ha{J}_f (\hat{F}_f^{-1}(\bat{v}_f - \pder{\ha{T}_f}{t}) \cdot \hat{\nabla}) \bat{v}_f}{\gat{\psi}^u}
++ \femi{\ha{J}_f \hat{\sigma}\hat{F}_f^{-T} \bat{n}_f}{\gat{\psi}^u} \\
+- \femf{\ha{J}_f \hat{\sigma}\hat{F}_f^{-T}}{\hat{\nabla}\gat{\psi}^u} -
+\femf{\rho_f \ha{J}_f \mathbf{f}_f}{{\gat{\psi}^u}} = 0 \\
 \fems{\rho_s \pder{\bat{v}_s}{t}}{\gat{\psi}^u} + \femi{\bat{F}\bat{S}\bat{n}_f}{\gat{\psi}^u}
 - \fems{\bat{F}\bat{S}}{\nabla \gat{\psi}^u} - \fems{\rho_s \bat{f}_s}{\gat{\psi}^u} = 0 \\
 \fems{\pder{\bat{v}_s - \bat{u}_s}{t}}{\gat{\psi}^v}  = 0\\
-\femf{\nabla \cdot (\ha{J} \hat{F}_W^{-1} \bat{v})}{\gat{\psi}^p} = 0 \\
+\femf{\nabla \cdot (\ha{J}_f \hat{F}_f^{-1} \bat{v}_f)}{\gat{\psi}^p} = 0 \\
 \femf{\hat{\sigma}_{\text{mesh}}}{\hat{\nabla}\gat{\psi}^u} = 0
 \end{align*} 
 \end{prob}
@@ -338,16 +338,15 @@ Find $\bat{u}_s, \bat{u}_f, \bat{v}_s, \bat{v}_f, \ha{p}_f $ such that}
 \textit{Coupled fluid structure interaction problem for biharmonic mesh moving model.
 Find $\bat{u}_s, \bat{u}_f, \bat{v}_s, \bat{v}_f, \ha{p}_f $ such that}
 \begin{align*}
-\big(\ha{J} \pder{\bat{v}}{t}, \ \gat{\psi}^u \big)_{\hat{\Omega}_f} +
-\femf{\ha{J} (\hat{F}_W^{-1}(\bat{v} - \pder{\ha{T}_W}{t}) \cdot \hat{\nabla}) \bat{v}}
-{\gat{\psi}^u}
-+ \femi{\ha{J}_W \hat{\sigma}\hat{F}_W^{-T} \bat{n}_f}{\gat{\psi}^u} \\
-- \femf{\ha{J}_W \hat{\sigma}\hat{F}_W^{-T}}{\hat{\nabla}\gat{\psi}^u} -
-\femf{\rho_f \ha{J} \mathbf{f}_f}{{\gat{\psi}^u}} = 0 \\
+\big(\ha{J}_f \pder{\bat{v}_f}{t}, \ \gat{\psi}^u \big)_{\hat{\Omega}_f} +
+\femf{\ha{J}_f (\hat{F}_f^{-1}(\bat{v}_f - \pder{\ha{T}_f}{t}) \cdot \hat{\nabla}) \bat{v}_f}{\gat{\psi}^u}
++ \femi{\ha{J}_f \hat{\sigma}\hat{F}_f^{-T} \bat{n}_f}{\gat{\psi}^u} \\
+- \femf{\ha{J}_f \hat{\sigma}\hat{F}_f^{-T}}{\hat{\nabla}\gat{\psi}^u} -
+\femf{\rho_f \ha{J}_f \mathbf{f}_f}{{\gat{\psi}^u}} = 0 \\
 \fems{\rho_s \pder{\bat{v}_s}{t}}{\gat{\psi}^u} + \femi{\bat{F}\bat{S}\bat{n}_f}{\gat{\psi}^u}
 - \fems{\bat{F}\bat{S}}{\nabla \gat{\psi}^u} - \fems{\rho_s \bat{f}_s}{\gat{\psi}^u} = 0 \\
 \fems{\pder{\bat{v}_s - \bat{u}_s}{t}}{\gat{\psi}^v}  = 0\\
-\femf{\nabla \cdot (\ha{J} \hat{F}_W^{-1} \bat{v})}{\gat{\psi}^p} = 0 \\
+\femf{\nabla \cdot (\ha{J}_f \hat{F}_f^{-1} \bat{v}_f)}{\gat{\psi}^p} = 0 \\
 \femf{\hat{\nabla}\bat{u}}{\hat{\nabla}\gat{\psi}^{\eta}} - 
 \femf{\bat{w}}{\hat{\nabla}\gat{\psi}^u} = 0 \\
 \femf{\hat{\nabla}\bat{w}}{\hat{\nabla}\gat{\psi}^{v}} = 0
@@ -355,11 +354,16 @@ Find $\bat{u}_s, \bat{u}_f, \bat{v}_s, \bat{v}_f, \ha{p}_f $ such that}
 \text{for the first type of boundary conditions introduced. } 
 \end{prob}
 
-Both problems introduced must handle the \textit{kinematic} and \textit{dynamic} boundary conditions in a consistent way. By a continuous velocity field on the whole domain, the \textit{kinematic} condition is strongly enforces on the interface $\hat{\Gamma}_i$
-The continuity of normal stresses on the interface are defined as
+\subsubsection*{Coupling conditions}
+
+\begin{equat}
+Interface coupling conditions
 \begin{align*}
- \femf{\ha{J}_W \hat{\sigma}\hat{F}_W^{-T} \bat{n}_f}{\gat{\psi}^u} = 
-  \fems{\bat{F}\bat{S} \bat{n}_s}{\gat{\psi}^u}
-\end{align*}
-This condition is weakly imposed by omitting the boundary integral from the variational formulation \cite{Wick}, and it becomes an implicit condition for the system. \\
+&\mathbf{v}_f = \mathbf{v}_s  \hspace{5.9cm} \textit{kinematic boundary condition} \\
+& \femf{\ha{J}_W \hat{\sigma}\hat{F}_W^{-T} \bat{n}_f}{\gat{\psi}^u} = 
+ \fems{\bat{F}\bat{S} \bat{n}_s}{\gat{\psi}^u}  \hspace{4mm} \textit{dynamic boundary condition} 
+\end{align*} 
+\end{equat}
+By a continuous velocity field on the whole domain, the \textit{kinematic} condition is strongly enforced on the interface $\hat{\Gamma}_i$.
+The \textit{dynamic} boundary condition is  weakly imposed by omitting the boundary integral from the variational formulation, becoming an implicit condition for the system  \cite{Wick}. \\
 

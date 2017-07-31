@@ -8,49 +8,76 @@ Database file #3: ./Cite/Decoupled.bib
 Database file #4: ./Cite/NavierStokes.bib
 Database file #5: ./Cite/Verification.bib
 Database file #6: ./Cite/EulerianFormulation.bib
+Repeated entry---line 27 of file ./Cite/EulerianFormulation.bib
+ : @article{Richter2010c
+ :                      ,
+I'm skipping whatever remains of this entry
 Database file #7: ./Cite/Meshupdate.bib
-Warning--empty booktitle in Richter2015
-Warning--empty publisher in Richter2015
+Repeated entry---line 15 of file ./Cite/Meshupdate.bib
+ : @article{Wick
+ :              ,
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "Frei2016"
+Warning--I didn't find a database entry for "Richter2010a"
+Warning--empty journal in Biedron
+Warning--empty year in Biedron
+Warning--empty journal in Crumpton1995
+Warning--there's a number but no volume in Crumpton1995
+Warning--empty journal in Donea2004
+Warning--there's a number but no volume in Donea2004
+Warning--empty journal in Dwight
+Warning--empty year in Dwight
+Warning--empty journal in Fernandez2009
+Warning--empty journal in Gatzhammer2014
+Warning--empty journal in Hsu
+Warning--empty year in Hsu
+Warning--empty publisher in Newman1977
+Warning--empty journal in Richter2016
+Warning--empty journal in Stein
+Warning--empty year in Stein
 Warning--empty year in Wicka
-You've used 4 entries,
+Warning--empty journal in Wick
+Warning--empty year in Wick
+Warning--empty publisher in Wriggers2006
+You've used 23 entries,
             2118 wiz_defined-function locations,
-            531 strings with 4831 characters,
-and the built_in function-call counts, 1439 in all, are:
-= -- 155
-> -- 40
+            646 strings with 7564 characters,
+and the built_in function-call counts, 6471 in all, are:
+= -- 629
+> -- 272
 < -- 2
-+ -- 16
-- -- 12
-* -- 84
-:= -- 226
-add.period$ -- 14
-call.type$ -- 4
-change.case$ -- 17
++ -- 109
+- -- 86
+* -- 433
+:= -- 1115
+add.period$ -- 65
+call.type$ -- 23
+change.case$ -- 109
 chr.to.int$ -- 0
-cite$ -- 7
-duplicate$ -- 67
-empty$ -- 121
-format.name$ -- 12
-if$ -- 317
+cite$ -- 43
+duplicate$ -- 264
+empty$ -- 511
+format.name$ -- 86
+if$ -- 1304
 int.to.chr$ -- 0
-int.to.str$ -- 4
-missing$ -- 3
-newline$ -- 23
-num.names$ -- 8
-pop$ -- 24
+int.to.str$ -- 23
+missing$ -- 24
+newline$ -- 113
+num.names$ -- 46
+pop$ -- 139
 preamble$ -- 1
-purify$ -- 14
+purify$ -- 89
 quote$ -- 0
-skip$ -- 50
+skip$ -- 172
 stack$ -- 0
-substring$ -- 109
-swap$ -- 21
+substring$ -- 358
+swap$ -- 29
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 16
-warning$ -- 3
-while$ -- 16
-width$ -- 5
-write$ -- 46
-(There were 3 warnings)
+type$ -- 88
+warning$ -- 20
+while$ -- 68
+width$ -- 25
+write$ -- 223
+(There were 2 error messages)

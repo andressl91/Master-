@@ -1,7 +1,7 @@
 \chapter{Verification and Validation}
  Computer simulations are in many engineering applications a cost-efficient way for conducting design and performance optimalization of physical problems. However, thrusting blindly numbers generated from a computer code can prove to be naive. It doesn't take a lot of coding experience before one realizes the many things that can brake down and produce unwanted or unexpected results. 
 Therefore, \textit{credability} of computational results are essential, meaning the simulation is worthy of belief or confidence \cite{Oberkampf2010}.
- \textit{Verification and validation} (VV) is the main approach for assessing and the reliability of computational simulations \cite{Sommerville2006}. The terminology of (VV) have proven unconsistent across differnt engineering disciplines due to the variety of views regarding the fundaments of the method. A thorough review considering the development of (VV) concepts and terminology during the last century are studied in \cite{Oberkampf2010}, where several attempts of definitions of \textit{verification} and \textit{validation} by different scientific communities are considered. In this thesis, the definitions provided by the \textit{American Society of Mechanical Engineers guide for Verification and Validation in Computational Solid Mechanics}  \cite{Schwer2006} are followed.
+ \textit{Verification and validation} (V&V) is the main approach for assessing and the reliability of computational simulations \cite{Sommerville2006}.  A thorough discussion  of (VV) concepts and terminology during the last century can be found in \cite{Oberkampf2010}. In this thesis, the definitions provided by the \textit{American Society of Mechanical Engineers guide for Verification and Validation in Computational Solid Mechanics}  \cite{Schwer2006} are followed.
 
 \begin{defn}
 Verification: The process of determining that a computational model accurately represents
@@ -13,7 +13,7 @@ Validation: The process of determining the degree to which a model is an accurat
 representation of the real world from the perspective of the intended uses of the model. 
 \end{defn}
 
-Simplified \textit{verification} considers if one solves the equations right, while \textit{validation} is checking if one solves the right equations for the given problem. \cite{Roache} 
+Simplified \textit{verification} considers if one solves the equations right, while \textit{validation} is checking if one solves the right equations for the given problem \cite{Roache}.
 
  To test a computational code for all possible parameters, conditions and applications are simply too time consuming.   Verification and validation are therefore ongoing processes, with no clear boundary of completeness unless additional requirements are specified \cite{Roache}.
 
@@ -23,9 +23,6 @@ Simplified \textit{verification} considers if one solves the equations right, wh
 The goal of this chapter is to verify our implementations using the method of manufactured solution  (MMS).
 
 \section{Verification of Code}
-Verification can be devided into \textit{verification of code} and \textit{verification of calculation} [\cite{Roache2002} \cite{Oberkampf2010}
-
-
 Within scientific computing a mathematical model is often the baseline for simulations of a particular problem of interest. For scientists exploring physical phenomena, the mathematical model is often on the form of systems of partial differential equations (PDE´s). A computer program therefore must evaluate  mathematical identities such a differential operators and functions in order to produce accurate solutions of the governing PDE´s. 
 Through verification of code, the ultimate goal is to ensure a computer program truly represents the mathematical model, forming a basis for the given problem. \\
 To accumulate sufficient evidence that a mathematical model is solved correctly by a computer code,  it must excel within predefined criteria. If the acceptance criterion is not satisfied, a coding mistake is suspected. Should the code pass the preset criteria, the code is considered verified. Different acceptance criteria with increasing rigor are found in \cite{Roache}.
@@ -64,7 +61,7 @@ The final critera \textit{Order-of-accuracy}  is regarded as the most rigorous a
 By monitoring the dicretization error $E$ by spatial and temporal refinements, one assumes the asymptotic behavior,
 
 \begin{align*}
-&E = E_x + E_t = u_e - u_h = C hx^p \\
+&E = E_x + E_t = u_e - u_h = C hx^p \\
 \end{align*} 
 where C is a constant, h represents the spatial or temporal resolution, and p is the convergence rate of the numerical sche
 me. The error $E$ is assumed to be a sum of the discretization error of space and time. \\ 
