@@ -56,16 +56,16 @@ In general the MMS does not need to match any physical capabilities. However, wh
 The choice of a MMS is therefore not trivial, as it must fulfill condition 1 and 2, in addition to the divergence-free condition in the fluid, and avoiding cancellation of the ALE-convective term $/pder{\hat{T}_f}{t}$.  The struggle is reflected of the abscence of research, regarding MMS for coupled FSI solvers in the litterature. The challenge are often disregarded, such as \cite{Sheldon2014}, where the verification process is conducted on the fluid and structure solver separately. Instead, the correctness of the coupling is evaluated by the code validation. The approach clearly ease the process, assuming verification of each codeblock is "sufficient" to declare the code verified. It must be stressed that solving each problem individually is not true verification, in reference to a monolithic approach where the problems are solved at the same time.\\The construction of a MMS for a monolithic FSI problem is therefore out of the scope of this thesis. Conducting verification on the fluid and structure separatly is not , but considered "good enough" to show the mathematical model is discretized accuratly.
 
 \section{Validation}
-Through \textit{verification}, one can assure that a scientific code implements a mathematical model correctly. However, correctness is unnecessarly if the model fails to serve as an accurate representation of the physical problem of interest. 
-By definition 1.2, \textit{Validation} is the act of demonstrating that a mathematical model is applicable for its intended use with a certain degree of accuracy. That is, a mathematical model is validated if it meets some predefined criteria within a specific context. Validation is therefore not intended to portray the model as an absolute truth, nor the best model available \cite{Rykiel1996}. In computational science, validation is conducted by comparing numerical results against existing experimental data. The design of validation experiments vary by the motivation of the of their creators, where validated experiments for computational science can be divided into three groups\cite{Sommerville2006} (1)To improve fundamental understanding of a physical process, (2) Discovery or enhancement of mathematical models of well known physical processes, (3) to conclude the reliability and performance of systems. The assessment of comparison between numerical results and experimental data,makes \textit{validation} assess a wide range of issuses \cite{Sommerville2006} . Is the experiment relevant, and  conducted correctly in accordinance with prescribed parameters? What about the measurement uncertainty of reference experimental data? These issuses must be adressed in order to raise sufficient confindence that the mathematical model is credible for its intended use, and that the validation has been conducted ...
+Through \textit{verification}, one can assure that a scientific code implements a mathematical model correctly. However, correctness is unnecessary if the model fails to serve as an accurate representation of the physical problem of interest. 
+By definition 1.2, \textit{Validation} is the act of demonstrating that a mathematical model is applicable for its intended use with a certain degree of accuracy. That is, a mathematical model is validated if it meets some predefined criteria within a specific context. Validation is therefore not intended to portray the model as an absolute truth, nor the best model available \cite{Rykiel1996}. In computational science, validation is conducted by comparing numerical results against existing experimental data. The design of validation experiments vary by the motivation of the of their creators, where validated experiments for computational science can be divided into three groups\cite{Sommerville2006} (1)To improve fundamental understanding of a physical process, (2) Discovery or enhancement of mathematical models of well known physical processes, (3) to conclude the reliability and performance of systems. The assessment of comparison between numerical results and experimental data,makes \textit{validation} assess a wide range of issuses \cite{Sommerville2006} . Is the experiment relevant, and  conducted correctly in accordinance with prescribed parameters? What about the measurement uncertainty of reference experimental data? These issuses must be adressed in order to raise sufficient confindence that the mathematical model is credible for its intended use.
 
-Validation of CFSI is demanding due to the number of building blocks composing the full problem. For \textit{interface-tracking} methods such as the ALE-method, validation is not only related to the physical aspcets of the model. Even though the fluid and strucutre models excel well within predefined criteria, the non-physical nature of mesh moving models have proven to affect the numerical solution \cite{Wickb}. At first glance, this effect is surprising as mesh moving models simplpy descrive the evolution of fluid mesh cells from the interface. However, each mesh model distributes the fluid cells differently, which may have an important effect when conducting mathematical operations such as gradients. 
+Validation of CFSI is demanding due to the number of building blocks composing the full problem. For \textit{interface-tracking} methods such as the ALE-method, validation is not only related to the physical aspcets of the model. Even if the fluid and strucutre models excel well within predefined criteria, the non-physical nature of mesh moving models have proven to affect the numerical solution \cite{Wickb}. At first glance, this effect is surprising as mesh moving models simply describe the evolution of fluid mesh cells from the interface. However, each mesh model distributes the fluid cells differently, which may have an important effect when conducting mathematical operations such as gradients. 
 
 
 \subsection{Validation of the one-step $\theta$ scheme}
-The numerical benchmark presented in \cite{Hron2006} has been chosen for validation of the \textit{One-step $\theta$} scheme presented in chapter. The benchmark has been widely accepted throughout the fluid-structure interaction community as a rigid validation benchmark. This is mainly due to the diversity of tests included, challenging all the main components of a fluid-structure interaction scheme. \\
+The numerical benchmark presented in \cite{Hron2006} has been chosen for validation of the \textit{One-step $\theta$} scheme from chapter 3. The benchmark has been widely accepted throughout the fluid-structure interaction community as a rigid validation benchmark. This is mainly due to the diversity of tests included, challenging all the main components of a fluid-structure interaction scheme. 
 
-The computational domain is based on the \textit{von Kármán vortex street} se (cite), where a cylinder is intentionally placed off center in a pipe. This configuration initiates a periodic shedding of vortices, as some fluid moves past the cylinder. In \cite{Hron2006}, an elastic flag is placed behind the cylinder. \\
+The computational domain is based on the \textit{von Kármán vortex street} se (cite), where a cylinder is intentionally placed off center in a pipe. In \cite{Hron2006}, an elastic flag is placed behind the cylinder, see Figure ? 
 
 \begin{figure}[h!]
   \centering
@@ -76,11 +76,9 @@ The computational domain is based on the \textit{von Kármán vortex street} se 
 
 
 The benchmark is divided into three main test environments.
-In the first environment the fluid solver is tested for a series of different flow profiles. \\
-The second environment regards the structure implementation, regarding bending of the elastic flag. The third environment the full fluid-structure interaction problem.
-The test environments are further divided into three different problems with increasing difficulty, posing different challenges to the implementation.
+In the first environment the fluid solver is tested for a series of different flow profiles. The second environment regards the structure implementation, regarding bending of the elastic flag. And the final environment concerns validation the full fluid-structure interaction problem. The test environments are further divided into three different problems with increasing difficulty, posing different challenges to the implementation.
 
- Several quantites for comparion are presented in \cite{Hron2006} for validation purposes. The evaluation of these quantities are considered for fully developed flow,
+ Several quantites for comparion are presented in \cite{Hron2006} for validation purposes. 
 
 \begin{itemize}
 \item The position (x,y) of point A(t) as the elastic flag undergoes deformation.
@@ -90,22 +88,20 @@ The test environments are further divided into three different problems with inc
 \end{align*}
 \end{itemize}
 
-The following environments and their sub-problems presents both steady state and periodic solutions. For the steady state solutions, the quantity of interest will be calculated for the last timestep. For the periodic solutions, the amplitude and mean values for the time dependent quantity are calculated from the last period of oscillations.The mean value and amplitude is given by,
+The following environments and their sub-problems presents both steady state and periodic solutions. For the steady state solutions, the quantity of interest will be calculated for the last time step. For the periodic solutions, the amplitude and mean values for the time dependent quantity are calculated from the last period of oscillations.The mean value and amplitude is given by,
 \begin{align*}
 \text{mean} = \frac{1}{2} \text{max + min} \\
 \text{amplitude} = \frac{1}{2} \text{max . min}
 \end{align*}
 from the maximum and minimum value of the quantity of interest from the last period.  
 
- In \cite{Hron2006}, all steady state solutions seems to be calulated by solving a steady state equation such as the stokes equation for the fluid problem. The assumtion is based on simulation paramters regarding time-step are only reported for the periodic solutions. In this thesis all problems in \cite{Hron2006},will be calculated by time integration. The main motivation is based upon that any given numerical errors regarding time integration will be intercepted at an earlier stage for a simpler problem. Therefore, the choice of timestep  is chosen such that reasonable accuracy of the reference solution is attained.
+ In \cite{Hron2006}, all steady state solutions seems to be calulated by solving a steady state equation since time-step are only reported for the periodic solutions. In this thesis, all problems in \cite{Hron2006} are calculated by time integration. The main motivation is based upon that any given numerical errors regarding time integration will be intercepted at an earlier stage for a simpler problem. Therefore, the choice of time step  is chosen such that reasonable accuracy of the reference solution is attained.
 
-In \cite{Hron2006}, details such as  finite-element spaces and newton iteration critera are not reported. Therefore, the following numerical results have been a process of trial and error. In the following section, an overview of each environment togheter with  the numerical results will be presented. A formal discussion of the results are given at the end of each simulation environment. For each table, the error of the finest spatial and temporal refinement compared to the reference solution is reported .
-
- Since the first two simulation environmens are presented mainly in support of the third and final environment, they where not reported in OTHER CITE. Therefore results in the first two subsections  will be compared with \cite{Hron2006}, while the third will consider both \cite{Hron2006} and OTHER CITE.
+ In the following section, an overview of each environment together with numerical results will be presented. A formal discussion of the results are given at the end of each simulation environment. For each table, the error of the finest spatial and temporal refinement compared to the reference solution is reported jn \cite{Hron2006} OTHER CITE.
 
  \newpage
 \subsection{Validation of fluid solver}
-The first test environment conserns the fluid dynamics part of the total FSI problem, to ensure the solver can handle flows in low Reynold-numbers regime. Two approaches for the validation are given in \cite{Hron2006}. The first approach consideres setup as a fluid-structure interaction problem, by setting the elastic flag close to rigid  by manipulation of the structure paramters. Second, the flag can be set fully rigid and considered a purly flow problem.  Hence, the fluid variation formulation can be reduced to
+The first test environment conserns the fluid dynamics part of the total FSI problem, to ensure the solver can handle flows in low Reynold-numbers regime. Two approaches for the validation are given in \cite{Hron2006}. The first approach considers setup as a fluid-structure interaction problem, by setting the elastic flag close to rigid  by manipulation of the structure parameters. In the second approach, the flag is set fully rigid and considered a purely flow problem.  Hence, the fluid variation formulation can be reduced to
 
 
 Find $\bat{v}_f, \ha{p}_f $ such that
@@ -117,9 +113,9 @@ Find $\bat{v}_f, \ha{p}_f $ such that
 \femf{\nabla \cdot \bat{v})}{\gat{\psi}^p} = 0 
 \end{align*} 
 
-The latter approach is chosen for this thesis, as only the variational formulation for the fluid is tested and removes any influence of the strucutre and mesh extrapolation discretization.  Since $\hat{\Omega}_f = {\Omega}_f(t) \hspace{2mm} t \in T$, the mesh velocity of the fluid $ \pder{\ha{T}_W}{t} = 0$  and no deformation of the fluid domain is present.
+The latter approach is chosen for this thesis, as only the variational formulation for the fluid is tested and removes any influence of the structure and mesh extrapolation discretization.  Since $\hat{\Omega}_f = {\Omega}_f(t) \hspace{2mm} t \in T$, the mesh velocity of the fluid $ \pder{\ha{T}_W}{t} = 0$  and no deformation of the fluid domain is present.
 
-The validation of the fluid solver is divided into the three sub-cases CFD1, CFD2 and CFD3.While  CFD1 and CFD2 yields steady state solutions, CFD3 is a periodic solution.
+The validation of the fluid solver is divided into the three sub-cases; CFD1, CFD2, and CFD3. While  CFD1 and CFD2 yields steady state solutions, CFD3 is a periodic solution.
 
 %\begin{figure}[h!]
   %\centering
@@ -149,11 +145,7 @@ A parabolic velocity profile on the form,
 \begin{align*}
 v_f(0, y) = 1.5 U\frac{(H -y)y}{(\frac{H}{2})^2}
 \end{align*}
-is set on the left channel inflow. H is the height of the channel, while the parameter U is set differently to each problem to induce different flow profiles. \
-
-At the right channel outflow, the pressure is set to $p = 0$. \
-No-slip boundary conditions for the fluid are enforced on the channel walls, and on the inner geometry consisting of the circle and the elastic flag.
-The validation is based on the evaluation of drag and lift forces on the inner geometry for each sub-case.  with comparison to \cite{Hron2006}. Each sub-case will be conducted on four different mesh, with increasing refinement.  The following tables presents the numerical results for each sub-case.
+is set on the left channel inflow. H is the height of the channel, while the parameter U is set differently to each problem to induce different inlet flow profiles. At the right channel outflow, the pressure is set to $p = 0$. No-slip boundary conditions for the fluid are enforced on the channel walls, and on the inner geometry consisting of the circle and the elastic flag. The validation is based on the evaluation of drag and lift forces on the inner geometry for each sub-case. Each sub-case will be conducted on four different mesh, with increasing refinement.  The following tables presents the numerical results for each sub-case.
 
 \newpage
 
@@ -269,9 +261,7 @@ nel & ndof & Drag  & Lift \\
 
 \newpage \newpage \newpage \newpage \newpage
 \subsection{Discussion of results}
-The numerical results for CFD1, CFD2 and CFD3 are all within reasonable range of the reference solutions presented in \cite{Hron2006}. 
-For CFD1 and CFD2, the choice of P2-P1 elements together with a fully implicit schene $\theta = 1$ gained sufficient accuracy in comparison with the reference solution. The second order cranc-nicholoson scheme  $\theta = 0.5$ was investigated for CFD1 and CFD2, however only improving the results of order $10^{-6}$ for both lift and drag. For the periodic problem CFD-3, the choice of  P2-P1 elements with a fully implicit time-stepping scheme proved unsuficcient for capturing the expected periodic solution. Only a steady-state flow profile was observed.. By cranc-nicolson time-stepping scheme $\theta = 0.5$, the periodic solution was attained. Since the choice of finite-elemt pair is not reported in the original work, both P3-P2 and P2-P1 element pairs for fluid and pressure repsectivly was compared in combination with spatial mesh refinement. From Table 1.4, the choice P3-P2 element pair is eminent to achieve reasonable results for the first and second mesh regardless of timestep.  However, the third and fourth mesh shows close resemblance with the reference solution. \\
-On this basis, the choice of P2-P1 element pair is sufficient for the evaluation of drag and lift on the inner geometry with increasing mesh resolution. 
+The numerical results for CFD1, CFD2 and CFD3 are all within reasonable range of the reference solutions presented in \cite{Hron2006}. For CFD1 and CFD2, the choice of P2-P1 elements together with a fully implicit schene $\theta = 1$ gained sufficient accuracy in comparison with the reference solution. The second order cranc-nicholoson scheme  $\theta = 0.5$ was investigated for CFD1 and CFD2, however only improving the results of order $10^{-6}$ for both lift and drag. For the periodic problem CFD-3, the choice of  P2-P1 elements with a fully implicit time-stepping scheme proved unsufficient for capturing the expected periodic solution.  By cranc-nicolson time-stepping scheme $\theta = 0.5$, the periodic solution was attained. Since the choice of finite-elemt pair is not reported in the original work, both P3-P2 and P2-P1 element pairs for fluid and pressure respectively was compared in combination with spatial mesh refinement. From Table 1.4, the choice P3-P2 element pair is eminent to achieve reasonable results for the first and second mesh regardless of timestep.  However, the third and fourth mesh shows close resemblance with the reference solution. On this basis, the choice of P2-P1 element pair is sufficient for the evaluation of drag and lift on the inner geometry with increasing mesh resolution. 
 
 \newpage
 \subsection{Validation of solid solver}
@@ -288,12 +278,12 @@ On this basis, the choice of P2-P1 element pair is sufficient for the evaluation
 $\rho^s [10^{3}\frac{kg}{m^3}]$ & 1    & 1    & 1    \\
 $\nu^s $  & 0.4    & 0.4    & 0.4    \\
 $\mu^s  [10^{6}]$  & 0.5    & 2.0    & 0.5    \\
-
+$g  \frac{m}{s^2}]$  & 2.0    & 2.0    & 2.0    \\
 \hline
 \end{tabular}
 \end{table}
 
-The validation of the solid solver are conducted on three refined mesh, where the number of elements are chosen in close resemblance with the original work in \cite{Hron2006}. A simple investigation of different finite-element pairs, suggest that P3-P3 elements where used for making the reference solution. In this study, lower order finite-element pair was included by the motivation of shorter simulation time while retaining solution accuracy. While computational time is not a major concern for the solid solver, the study is important for potentially reducing the computational time for the FSI-solver.ß
+The validation of the solid solver is conducted on a rectangular domain, representing the elastic structure behind the circle in Figure ?.  The structure is submitted to a gravitational for $\mathbf{g} = (0, g)$, while beeing fixed to a fictional wall on the left side of the domain. The validation of the solid solver is based on comparison of the deflection of point $A(t) = [A_x(t), A_y(t)]$,  conducted on three refined mesh, where the number of finite elements are chosen in close resemblance with the original work in \cite{Hron2006}. A simple investigation of different finite-element pairs, suggest that P3-P3 elements where used for making the reference solution. In this study, lower order finite-element pair was included by the motivation of shorter simulation time while retaining solution accuracy. While computational time is not a major concern for the solid solver, the study is important for potentially reducing the computational time for the final validation environment.
 
 \begin{table}[h!]
 \centering
@@ -449,12 +439,12 @@ nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$] \\
 \end{figure}
 
 \subsection{Discussion of results}
-The results for sub-problems CSM-1 and CSM-2 each coincide with the reference solution. The study of lower-grade elements proved successful for both problems, justifying accurate results can be achieved for polynomials grade 1 and 2 for all mesh refinements. This obeservation is furhter justified in the CSM-3 reults. In table 1.4, the  displacement components of P3-P3 and P2-P2 elements can hardly be distinguished.
+The results for sub-problems CSM-1 and CSM-2 each coincide with the reference solution. The study of lower-grade elements proved successful for both problems, justifying accurate results can be achieved for polynomials grade 1 and 2 for all mesh refinements. This observation is further justified in the CSM-3 results. In table 1.4, the  displacement components of P3-P3 and P2-P2 elements can hardly be distinguished.
 
 
 \newpage
 \subsection{Validation of fluid structure interaction solver}
-The validation of the FSI solver constist of three sub-cases which will be referred to FSI-1, FSI-2 and FSI-3. The FSI-1 environment yields a steady state solution for the system, inducing small deformations to the elastic flag. This environment is exelent to ensure the overall coupling of the FSI-problem is exectuted properly. The FSI-2 and FSI-3 environment results in a periodic solution, where the elastic flag oscilates behind the sylinder.
+The validation of the FSI solver constist of three sub-cases which will be referred to FSI-1, FSI-2 and FSI-3. The FSI-1 environment yields a steady state solution for the system, inducing small deformations to the elastic flag. This environment is excellent to ensure the overall coupling of the FSI-problem is executed properly. The FSI-2 and FSI-3 environment results in a periodic solution, where the elastic flag oscilates behind the sylinder.
 
 
  For all sub-cases
@@ -474,7 +464,7 @@ From chapter ?,  (1.1) is enforced strongly due to the continious velocity field
 
 
 
-Apart from the accuracy of the reported values, the main purpose of the validation of the fluid solver is twofold. Firstly, it is of great importance to ensure that the overall coupling of the fluid-structure interaction problem are executed correctly. Second, a good choice of mesh extrapolation model is essential to ensure that mesh entanglement is not present. Based on the experience with the previous sub-problems, the finite element group of P2-P2-P1 is chosen for deformation, velocity and pressure respectivly. 
+Apart from the accuracy of the reported values, the main purpose of the validation of the fluid solver is twofold. Firstly, it is of great importance to ensure that the overall coupling of the fluid-structure interaction problem are executed correctly. Second, a good choice of mesh extrapolation model is essential to ensure that mesh entanglement is not present. Based on the experience with the previous sub-problems, the finite element group of P2-P2-P1 is chosen for deformation, velocity and pressure  . 
 
 
 \begin{table}[h!]
