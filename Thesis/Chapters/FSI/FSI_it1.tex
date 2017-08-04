@@ -367,3 +367,74 @@ Interface coupling conditions
 By a continuous velocity field on the whole domain, the \textit{kinematic} condition is strongly enforced on the interface $\hat{\Gamma}_i$.
 The \textit{dynamic} boundary condition is  weakly imposed by omitting the boundary integral from the variational formulation, becoming an implicit condition for the system  \cite{Wick}. \\
 
+\section{One-step $\theta$ scheme} 
+For both the fluid problem and the structure problem, we will base our implementation of a $\theta$-scheme.  A $\theta$-scheme is favourable, making implementation of classical time-steppings schemes simple. For the structure problem,  $\theta$-scheme takes the form
+
+\begin{align*}
+\rho_s \pder{\bat{v}_s}{t} 
+- \theta \nabla \cdot \bat{F}\bat{S}   - (1 - \theta) \nabla \cdot \bat{F}\bat{S}  
+- \theta \rho_s \bat{f}_s 
+- (1 - \theta) \rho_s \bat{f}_s = 0 \\
+\pder{\bat{v}_s}{t} - \theta \bat{u}_s - (1 - \theta)\bat{u}_s  = 0&\\
+\end{align*} 
+
+
+For $\theta \in [0, 1]$ classical time-stepping schemes are obtained such as the first-order forward Euler scheme $\theta = 0$, backward-Euler scheme $\theta = 1$, and the second-order Crank-Nicholson scheme $\theta = \frac{1}{2}$. Studying the fluid problem, it is initially simpler to consider the Navier-Stokes equation in an Eulerian formulation rather the ALE-formulation Following \cite{Simo1994}, a general time stepping algorithm for the coupled Navier-Stokes equation can be written as
+
+
+\begin{align*}
+\frac{1}{\Delta}(\mathbf{u}^{n+1} - \mathbf{u}^{n}) + 
+B(\mathbf{u}^{*})\mathbf{u}^{n+\alpha}
+- \nu \nabla^2 \mathbf{u}^{n + \alpha} = - \nabla p + \mathbf{u}^{n+\alpha} \\
+\nabla \cdot \mathbf{u}^{n+\alpha} = 0 
+\end{align*} 
+
+
+Here $\mathbf{u}^{n+\alpha}$ is an "intermediate" velocity defined by,
+\begin{align*}
+\mathbf{u}^{n+\alpha} = \alpha\mathbf{u}^{n+1} + (1 - \alpha)\mathbf{u}^{n} 
+\hspace{4mm} \alpha \in [0, 1]
+\end{align*}
+while $\mathbf{u}^{*}$ is on the form
+
+\begin{align*}
+\mathbf{u}^{*} =   \mathbf{u}^{n+ \vartheta} =
+\begin{cases} 
+   &\vartheta \mathbf{u}^{n+1} + (1 - \vartheta)\mathbf{u}^{n} \hspace{4mm} \vartheta \geq 0 \\ 
+   &\vartheta \mathbf{u}^{n-1} + (1 - \vartheta)\mathbf{u}^{n} \hspace{4mm} \vartheta \leq 0
+   \end{cases}
+\end{align*}
+At first glance, defining an additional parameter $\vartheta$ for the fluid problem seems unessecary. A general mid-point rule by  $\alpha = \vartheta = \frac{1}{2}$, a second order scheme in time would easily be acchieved. However, in \cite{Simo1994} an additional second order scheme is obtained by choosing e $\alpha = \frac{1}{2}$,  $\vartheta =-1$, where  $\mathbf{u}^{*}$ is approximated with an Adam-Bashforth linear method. Making the initial fluid problem linear while maintaining second order convergence is an important result, which have not yet been investigated thorough in literature of fluid-structure interaction.  However, in the monolithic  ALE method presented in this thesis, the fluid problem will still remain non-linear due to the ALE-mapping of the convective term, but making the overall problem "more linear" in contrary with a second order crank-nicholson scheme. The idea was initially pursued in this thesis but left aside, as discretization of the fluid convective term was not intuitive. 
+
+
+
+In light of By letting $\alpha = \vartheta \hspace{2mm} \alpha, \vartheta \in [0, 1] $ for the fluid problem, and generalising the consepts in an ALE context, we derive the one-stepl $\theta$ scheme found in \cite{Wicka}.
+
+\begin{prob}
+The one-step $\theta$ scheme 
+\textit{Find $\bat{u}_s, \bat{u}_f, \bat{v}_s, \bat{v}_f, \ha{p}_f $ such that}
+\begin{align*}
+\big(\ha{J}^{n, \theta} \pder{\bat{v}}{t}, \ \gat{\psi}^u \big)_{\hat{\Omega}_f} + \\
+\theta \femf{\ha{J} \hat{F}_W^{-1}(\bat{v} \cdot \hat{\nabla}) \bat{v}}
+{\gat{\psi}^u} + 
+(1 - \theta) \femf{\ha{J} \hat{F}_W^{-1}(\bat{v} \cdot \hat{\nabla}) \bat{v}}
+{\gat{\psi}^u} \\
+- \femf{\ha{J}  \pder{\ha{T}_W}{t} \cdot \hat{\nabla}) \bat{v}}
+{\gat{\psi}^u}
+-\theta \femf{\ha{J}_W \hat{\sigma}\hat{F}_W^{-T}}{\hat{\nabla}\gat{\psi}^u} -
+- (1 - \theta) \femf{\ha{J}_W \hat{\sigma}\hat{F}_W^{-T}}{\hat{\nabla}\gat{\psi}^u} \\
+- \theta \femf{\rho_f \ha{J} \mathbf{f}_f}{{\gat{\psi}^u}} - 
+(1 - \theta) \femf{\rho_f \ha{J} \mathbf{f}_f}{{\gat{\psi}^u}}= 0& \\
+\fems{\rho_s \pder{\bat{v}_s}{t}}{\gat{\psi}^u} + 
+- \theta\fems{\bat{F}\bat{S}}{\nabla \gat{\psi}^u}  + 
+- (1 - \theta) \fems{\bat{F}\bat{S}}{\nabla \gat{\psi}^u} \\
+- \theta \fems{\rho_s \bat{f}_s}{\gat{\psi}^u} 
+- (1 - \theta) \fems{\rho_s \bat{f}_s}{\gat{\psi}^u} = 0 \\
+\fems{\pder{\bat{v}_s}{t} - \theta \bat{u}_s - (1 - \theta)\bat{u}_s}{\gat{\psi}^v}  = 0&\\
+\femf{\nabla \cdot (\ha{J} \hat{F}_W^{-1} \bat{v})}{\gat{\psi}^p} = 0& \\
+\femf{\hat{\sigma}_{\text{mesh}}}{\hat{\nabla}\gat{\psi}^u} = 0&
+\end{align*} 
+\end{prob}
+
+Deeper analysis in  \cite{Wicka}, specify to important properties of the one-step $theta$ scheme. Firstly, it is unconditionally stable regardless of time step for the interval $\theta = [\frac{1}{2}, 1]$. 
+
