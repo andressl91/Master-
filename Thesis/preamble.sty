@@ -18,6 +18,12 @@
 
 \setlength\parindent{0pt}
 
+% REMOVE CHAPTER FROM HEADLINE
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+  {\normalfont\bfseries}{}{0pt}{\Huge}
+
+
 
 
 %\usepackage[hidelinks]{hyperref} % make links black
@@ -36,6 +42,7 @@
 % PAGESTYLE
 \pagestyle{fancy}
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+%\renewcommand{\sectionmark}[1]{\markright{ #1}}
 \renewcommand{\sectionmark}[1]{\markright{\arabic{section}.\ #1}}
 \fancyhf{}
 \fancyfoot[CO,CE]{\thepage}
