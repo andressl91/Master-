@@ -8,89 +8,60 @@ Database file #3: ./Cite/Decoupled.bib
 Database file #4: ./Cite/NavierStokes.bib
 Database file #5: ./Cite/Verification.bib
 Database file #6: ./Cite/EulerianFormulation.bib
-Repeated entry---line 91 of file ./Cite/EulerianFormulation.bib
- : @article{Richter2010c
- :                      ,
-I'm skipping whatever remains of this entry
 Database file #7: ./Cite/Meshupdate.bib
 Repeated entry---line 13 of file ./Cite/Meshupdate.bib
  : @article{Wick
  :              ,
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "Frei2016"
-Warning--I didn't find a database entry for "Richter2010a"
 Warning--I didn't find a database entry for "Alnes2015"
-Warning--empty journal in Biedron
-Warning--empty year in Biedron
-Warning--empty journal in Crumpton1995
-Warning--there's a number but no volume in Crumpton1995
-Warning--empty journal in Donea2004
-Warning--there's a number but no volume in Donea2004
-Warning--empty journal in Dwight
-Warning--empty year in Dwight
 Warning--there's a number but no volume in Etienne2006
-Warning--empty journal in Fernandez2009
 Warning--empty journal in Gatzhammer2014
-Warning--empty journal in Geuzaine
-Warning--there's a number but no volume in Geuzaine
-Warning--empty year in Geuzaine
-Warning--empty publisher in Holzapfel2000
-Warning--empty journal in Hsu
-Warning--empty year in Hsu
-Warning--empty publisher in Newman1977
-Warning--empty journal in Richter2016
-Warning--empty booktitle in Richter2015
-Warning--empty publisher in Richter2015
 Warning--empty institution in Sommerville2006
-Warning--empty journal in Stein
-Warning--empty year in Stein
 Warning--empty journal in V2013
 Warning--empty year in White
 Warning--empty journal in Wickb
 Warning--empty year in Wickb
-Warning--empty year in Wicka
 Warning--empty journal in Wick
 Warning--empty year in Wick
-Warning--empty publisher in Wriggers2006
-You've used 52 entries,
+You've used 15 entries,
             2118 wiz_defined-function locations,
-            841 strings with 12818 characters,
-and the built_in function-call counts, 16077 in all, are:
-= -- 1583
-> -- 719
-< -- 8
-+ -- 286
-- -- 234
-* -- 1143
-:= -- 2723
-add.period$ -- 154
-call.type$ -- 52
-change.case$ -- 268
+            599 strings with 6636 characters,
+and the built_in function-call counts, 4046 in all, are:
+= -- 389
+> -- 177
+< -- 2
++ -- 71
+- -- 56
+* -- 260
+:= -- 716
+add.period$ -- 43
+call.type$ -- 15
+change.case$ -- 72
 chr.to.int$ -- 0
-cite$ -- 84
-duplicate$ -- 622
-empty$ -- 1248
-format.name$ -- 234
-if$ -- 3273
+cite$ -- 24
+duplicate$ -- 167
+empty$ -- 318
+format.name$ -- 56
+if$ -- 815
 int.to.chr$ -- 0
-int.to.str$ -- 52
-missing$ -- 55
-newline$ -- 257
-num.names$ -- 104
-pop$ -- 304
+int.to.str$ -- 15
+missing$ -- 16
+newline$ -- 76
+num.names$ -- 30
+pop$ -- 86
 preamble$ -- 1
-purify$ -- 221
+purify$ -- 58
 quote$ -- 0
-skip$ -- 407
+skip$ -- 104
 stack$ -- 0
-substring$ -- 970
-swap$ -- 84
-text.length$ -- 8
+substring$ -- 185
+swap$ -- 17
+text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 196
-warning$ -- 32
-while$ -- 170
-width$ -- 54
-write$ -- 531
-(There were 2 error messages)
+type$ -- 54
+warning$ -- 9
+while$ -- 42
+width$ -- 17
+write$ -- 153
+(There was 1 error message)

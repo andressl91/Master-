@@ -15,7 +15,10 @@
 \usepackage[margin=1.2in]{geometry}
 \usepackage{bm}
 \usepackage{wrapfig}
+
 \setlength\parindent{0pt}
+
+
 
 %\usepackage[hidelinks]{hyperref} % make links black
 \usepackage{hyperref}
@@ -30,13 +33,27 @@
   % linktocpage,
 %}
 
+% PAGESTYLE
 \pagestyle{fancy}
-\fancyhead{}
-\fancyfoot{}
-\renewcommand{\headrulewidth}{0.0pt}
-\renewcommand{\footrulewidth}{0.0pt}
-\fancyhead[R]{\thepage}
-\fancyhead[L]{\emph{}}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\arabic{section}.\ #1}}
+\fancyhf{}
+\fancyfoot[CO,CE]{\thepage}
+\fancyhead[ER]{\rightmark}
+\fancyhead[OL]{\leftmark} 
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+
+
+%ORIGINAL
+%\pagestyle{fancy}
+%\fancyhead{}
+%\fancyfoot{}
+%\renewcommand{\headrulewidth}{0.0pt}
+%\renewcommand{\footrulewidth}{0.0pt}
+%\fancyhead[R]{\thepage}
+%\fancyhead[L]{\emph{}}
+
 
 \renewcommand{\vec}[1]{\mathbf{#1}}    % vektorer i bf fremfor pil
 %\let\oldhat\hat

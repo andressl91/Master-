@@ -2,15 +2,14 @@
 
 \section{Investigation of temporal stability}
 
-Preliminary work regarding discretization and numerical analysis of Crank-Nicholson time stepping schemes for fluid structure interaction can be found in \cite{Wickb}. Two main properties of interest 
+Preliminary work regarding discretization and numerical analysis of the second order Crank-Nicholson time stepping scheme for fluid structure interaction can be found in \cite{Wickb}. Two main properties of interest 
  have proven to be the stability of long-time simulation, and obtaining the expected physics for the problem of interest. One of the main challenges for constructing time-stepping schemes for ALE-methods, is the additional non-linearity introduced by the domain-velocity term in the fluid problem. 
 
 \begin{align}
 \ha{J} (\hat{F}_f^{-1}(\bat{v} - \pder{\ha{T}_f}{t}) \cdot \hat{\nabla}) \bat{v}
 \end{align} 
 
-It has been reported in \cite{Formaggia2004, Formaggia1991}, that the stability of first and second-order time stepping schemes are affected by the ALE-convection term, but to what extent remains unclear.
-Closer inspection of the convection term reviles spatial and temporal differential operators depending non-linearly on one another. Within computational science, these operators often appear separated. Therefore the discretization of a general time-stepping scheme is not directly intuitive, and often based on the experience of similar equations such as the Navier-Stokes equations. \\
+The stability of first and second-order time stepping schemes for ALE-methods have proven to be affected by the ALE-convection term  \cite{Formaggia2004, Formaggia1991}, but to what extent remains unclear. Closer inspection of the convection term reviles spatial and temporal differential operators depending non-linearly on one another. These differential operators often appear separated, making discretization of a general time-stepping scheme is not directly intuitive, and often based on the experience of similar equations such as the Navier-Stokes equations. \\
 
 The Crank-Nicolson scheme can suffer from temporal stability for long-term simulations \cite{Wick2013a}. Therefore,the authors of \cite{Richter2015}, investigated temporal stability of the Crank-Nicolson scheme for the validation benchmark found in \cite{Hron2006}.  
 The criteria for the numerical experiments was to obtain a stable solution in the time interval [0, 10] minutes, by temporal and spatial refinement studies. The fully monolithic FSI problem discretized with second-order Crank-Nicolson, proved to give general stability problems for long-term simulation for certain time-steps \textit{k}.  Following the ideas of \cite{Richter2015},, a second order scheme based on the Cranck-Nicholson yields two possibilities.
@@ -52,7 +51,7 @@ The numerical experiments showed very similar performance for Discretization 1.1
       \caption{Investigation of temporal stability for the FSI3 benchbark in the time interval $t \in [0, 10]$, comparing the shifted crank nicolson to the original cranc nicolson scheme. }
 \end{figure}
 
-A numerical investigation of temporal stability in shown in Table 1.7, where the shifted crank-nicolson scheme $\theta = 0.5 + k$, is compared the original crank-nicolson $\theta = 0.5$. The shifted version clearly show stability properties surpassing the original crank-nicolson scheme, for all numerical experiments. However, for $\Delta t \in [0.2, 0.1, 0.05, 0.02]$ the scheme clearly lacks the ability to capture the overall physics of the validation problem. Long-time stability and expected physical beavior is obtained for $\Delta t = 0.01$. However, numerical experiments showed that for $\Delta t \leq 0.005$ numerical stability was achieved regardless of both methods. This result is important, reducing the overall computational time needed to achieve reasonable accuracy.
+A numerical investigation of temporal stability in shown in Figure 6.1-2, where the shifted crank-nicolson scheme $\theta = 0.5 + k$, is compared the original crank-nicolson $\theta = 0.5$. The shifted version clearly show stability properties surpassing the original crank-nicolson scheme, for all numerical experiments. However, for $\Delta t \in [0.2, 0.1, 0.05, 0.02]$ the scheme clearly lacks the ability to capture the overall physics of the validation problem. Long-time stability and expected physical beavior is obtained for $\Delta t = 0.01$. However, numerical experiments showed that for $\Delta t \leq 0.005$ numerical stability was achieved regardless of both methods. This result is important, reducing the overall computational time needed to achieve reasonable accuracy.
 
 
 \newpage
