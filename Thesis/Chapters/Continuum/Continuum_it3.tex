@@ -20,8 +20,8 @@ In continuum mechanics, one makes use if two classical description of motion, th
 
 
 \subsubsection*{Lagrangian}
-In the Lagrangian description of motion, the material and spatial points coincide, meaning the reference point of which motion is measured, follows the material as it diverts from its initial position. The initial position of all material points in a continuum extend a region, called the \textit{reference configuration} $\hat{V}$. From now on, all identities in the \textit{reference configuration} will be denoted with the notation "$\wedge$". As the continuum undergoes deformation from its reference configuration, a material point $\bat{x}(x, y, z ,t)$ may no longer be at its initial position, but moved to a new position $\mathbf{x}(x, y, z, t)$ at time $t$.  The new positions of all material points extend a new region, called the \textit{current configuration} $V(t)$. 
-
+In the Lagrangian description of motion, the material and spatial points coincide, meaning the reference point of which motion is measured, follows the material as it diverts from its initial position. The initial position of all material points in a continuum extend a region, called the \textit{reference configuration} $\hat{V}$. From now on, all identities in the \textit{reference configuration} will be denoted with the notation "$\wedge$". If a continuum deviates from its reference configuration, a material point $\bat{x}(x, y, z ,t)$ may no longer be at its initial position, but moved to a new position $\mathbf{x}(x, y, z, t)$ at time $t$.  The new positions of all material points extend a new region, called the \textit{current configuration} $V(t)$. 
+\newpage
 
 \begin{figure}[h!]
   \centering
@@ -29,24 +29,21 @@ In the Lagrangian description of motion, the material and spatial points coincid
       \caption{Unitpotato}
 \end{figure}
 
-Within structure mechanics, deformation of a continuum due to internal/external forces are of primary interest. When the continuum undergoes deformation, it will deviate from is \textit{reference configuration} $\hat{V}$. To measure the deformation, one must know the relative position of some particle $x(t) \in V(t)$, from its original configuration $\bat{x} \in \hat{V}$. \\
+To measure the displacement of a material point $\mathbf{x} \in V(t)$ for time $t$, from its initial point $\bat{x} \in \hat{V}$, one defines a \textit{deformation vector field} 
 
- Let \^{x} be a particle in the reference  $\ha{x} \in \ha{V}$.  Further let x(\^x, t) be the new location of a particle \^x for some time t such that $x \in V(t)$. Assume no two particles $\ha{x}_a, \ha{x}_b \in \ha{V}$ occupy the same location for some time $V(t)$.
-Then the transformation $\ha{T}(\ha{x}, t) = x(\ha{x}, t)$ maps a particle \ha{x} from the \textit{reference configuration} $\ha{V}$, to the  \textit{current configuration} $V(t)$
-Assuming that the path for some \^{x} is continuous in time, the inverse mapping $\ha{T}^{-1}(x, t) = \ha{x}(x, t)$, maps $x(\ha{x}, t)$ back to its initial location at time $t = t_0$. \\
-These mappings lets us track each particle from some \textit{reference configuration} to some deformed state at time t. 
-
-
-By some particle $/bat{x} \in \bat{V}$, the \textit{deformation} $\bat{u}(\ha{x},t)$ is given by the relation
 \begin{align}
 \bat{u}(\ha{x},t) = x(\bat{x},t) - \bat{x} = \ha{T}(\bat{x}, t) 
 \end{align}
 
-and the \textit{deformation velocity} is given by the time derivative of \textit{deformation} such that
+Mathematically, deformation is a 1:1 mapping  $\ha{T}(\bat{x}, t)$, transforming material points from the   \textit{reference configuration} $\hat{V}$, to the  \textit{current configuration} $V(t)$. Visually, the deformation resembles the shape of continuum for some time $t$. To describe the continuums motion, one defines the \textit{velocity vector field} given by the time derivative of the deformation field,
 \begin{align}
 \bat{v}(\ha{x},t) = d_t x(\bat{x},t) = d_t \bat{u}(\bat{x},t) = \pder{\ha{T}(\ha{x}, t)}{t} 
 \end{align}
 
+The Lagrangian description of motion is the natural choice when tracking particles and surfaces are of main interest. Therefore, it is mainly used within structure mechanics. 
+
+%http://www.brown.edu/Departments/Engineering/Courses/En221/Notes/Kinematics/Kinematics.htm
+%Arbitrary Lagrangian-Eulerian methods J. Donea1
 \subsubsection*{Eulerian}
  In the Eulerian description, the reference point is kept fixed while the material is deformed.
 
