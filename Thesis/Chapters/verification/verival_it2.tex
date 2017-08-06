@@ -246,7 +246,7 @@ nel & ndof & Drag  & Lift \\
 The numerical solutions of CFD-1 in Figure 4.2 shows convergence against the reference solution. Choosing P2-P1 elements together with a fully implicit scheme $\theta = 1$, a relative error of $0.006 \%$ for lift, and $0\%$ for drag is attained. For the numerical solution of CFD-2 presented in Figure 4.3, the same observations apply. The second order crank-nicolson scheme  $\theta = 0.5$ was investigated for CFD1 and CFD2, however only improving the results of order $10^{-6}$ for both lift and drag. For the periodic problem CFD-3, the choice of  P2-P1 elements with a fully implicit time-stepping scheme proved insufficient for capturing the expected periodic solution.  By crank-nicolson time-stepping scheme $\theta = 0.5$, the periodic solution was attained. Since the choice of finite-element pair is not reported in the original work, both P3-P2 and P2-P1 element pairs for fluid and pressure respectively was compared in combination with spatial mesh refinement. From Table 4.3, a relative error $ < 0.08\%$ of the mean and amplitude for lift and drag is attained. The choice P3-P2 element pair is eminent to achieve reasonable results for the first and second mesh regardless of time step.  However, the third and fourth mesh resolution shows close resemblance with the reference solution, independent of finite-element pair. On basis of the presented results, the fluid solver is validated in accordance with the proposed benchmark. 
 
 \subsection{Validation of solid solver}
-The validation of the solid solver is conducted on a rectangular domain, representing the elastic structure behind the circle in Figure ?.  The structure is submitted to a gravitational for $\mathbf{g} = (0, g)$, while beeing fixed to a fictional wall on the left side of the domain. The validation of the solid solver is based on comparison of the deflection of point $A(t) = [A_x(t), A_y(t)]$,  conducted on three refined mesh, where the number of finite elements are chosen in close resemblance with the original work in \cite{Hron2006}. A simple investigation of different finite-element pairs, suggest that P3-P3 elements where used for making the reference solution. In this study, lower order finite-element pair was included by the motivation of shorter simulation time while retaining solution accuracy. While computational time is not a major concern for the solid solver, the study is important for potentially reducing the computational time for the final validation environment.
+The validation of the solid solver is conducted on a rectangular domain, representing the elastic structure in Figure 4.1.  The structure is submitted to a gravitational for $\mathbf{g} = (0, g)$, while beeing fixed to a fictional wall on the left side of the domain. The validation of the solid solver is based on comparison of the deflection of point $A(t) = [A_x(t), A_y(t)]$,  conducted on three refined mesh, where the number of finite elements are chosen in close resemblance with the original work in \cite{Hron2006}. A simple investigation of different finite-element pairs, suggest that P3-P3 elements where used for making the reference solution. In this study, lower order finite-element pair was included by the motivation of shorter simulation time while retaining solution accuracy. While computational time is not a major concern for the solid solver, the study is important for potentially reducing the computational time for the final validation environment.
 
 \begin{table}[h!]
 \centering
@@ -265,6 +265,9 @@ $g  \frac{m}{s^2}]$  & 2.0    & 2.0    & 2.0    \\
 \end{table}
 
 \newpage
+
+\subsubsection*{Results}
+The numerical results for CSM-1, CSM-2, and CSM-3 are presented in table Table 4.6, 4.7, and 4.8. For the steady state sub-problems CSM-1 and CSM-2, a spatial convergence study is conducted by mesh refinement with three different finite-element pairs . For the periodic CSM-3 problem, an additional temporal study was conducted for two different time steps. in Figure 4.4, a visualization of CSM-3 is provided for three different time steps. Finally, Figure 4.5 shows the displacement vector components, comparing all finite-element pairs for the finest mesh resolution.
 
 \begin{table}[h!]
 \centering
@@ -329,34 +332,6 @@ nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$] \\
 
 \begin{table}[h!]
 \centering
-\label{CSM 3 Results}
-\begin{tabular}{ |p{1cm}||p{2.7cm}|p{3.3cm}|p{3.3cm}|}
-\hline
-  \multicolumn{4}{|c|}{$\Delta t = 0.02 \hspace{2mm} \theta = 0.5$} \\
-\hline
-nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$] \\
-\hline
- 319     & 832 P1-P1  & -10.790       +/-  10.797 & -55.184       +/-  56.682 \\
-     & 2936 P2-P2 & -14.380       +/-  14.387 & -63.198       +/-  65.147 \\
-      & 6316 P3-P3 & -14.409       +/-  14.417 & -63.288       +/-  65.225 \\
-  \hline
-   1365    & 3140 P1-P1 & -13.032       +/-  13.041 & -60.446       +/-  62.075 \\
-     & 11736 P2-P2 & -14.407       +/-  14.416 & -63.283       +/-  65.220 \\
-     & 25792 P3-P3 & -14.412       +/-  14.421 & -63.310       +/-  65.246 \\
-   \hline
-    5143    & 11084 P1-P1 & -14.059       +/-  14.071 & -62.591       +/-  64.473 \\
-     & 42736 P2-P2  & -14.412       +/-  14.421 & -63.313       +/-  65.249 \\
-     & 94960 P3-P3 & -14.416       +/-  14.425 & -63.328       +/-  65.263 \\
-    \hline
-  \multicolumn{2}{|c|}{Reference}  &-14.305 +- -14.305        & -63.607 +- 65.160    \\
-   \hline
-    \multicolumn{2}{|c|}{Error}  & \%   &  \%\\
-   \hline
-\end{tabular}
-\end{table}
-
-\begin{table}[h!]
-\centering
 \label{CSM 3 Results 2}
 \begin{tabular}{ |p{1cm}||p{2.7cm}|p{3.3cm}|p{3.3cm}|}
 \hline
@@ -378,12 +353,10 @@ nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$] \\
  \hline
   \multicolumn{2}{|c|}{Reference}  &-14.305 +- -14.305        & -63.607 +- 65.160    \\
    \hline
-    \multicolumn{2}{|c|}{Error}  & \%   &  \%\\
+    \multicolumn{2}{|c|}{Error}  & 1\% $\pm$ 1\%   & 0.24\% $\pm$ 0.24\%\\
    \hline
 \end{tabular}
 \end{table}
-
-\newpage
 
 \begin{table}[h!]
 \centering
@@ -408,45 +381,63 @@ nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$] \\
  \hline
   \multicolumn{2}{|c|}{Reference}  &-14.305 +- -14.305        & -63.607 +- 65.160    \\
    \hline
-    \multicolumn{2}{|c|}{Error}  & \%   &  \%\\
+    \multicolumn{2}{|c|}{Error}  & 1\% $\pm$ 1\% &  0.4\% $\pm$ 0.4\%  \\
    \hline
 \end{tabular}
 \caption{CSM-3, deformation components of A(t) for  increasing temporal and spatial refinement. The error is computed as the relative error from the highest mesh resolution for each choice of time step.}
 \end{table}
 
-\begin{figure}[h!]
-  \centering
-    \includegraphics[scale=0.6]{./Fig/csm3compare.png}
-      \caption{CSM-3, deformation components of A(t) for two different time intervals. Time interval $t \in [0, 6]$ shows the P3-P3 element pair, while$t \in [6, 8]$ compares all finite elemet pair chosen for the experiment}
+\newpage
+\begin{figure}
+    \centering
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{./Fig/csm3_1.png}
+       \caption{$t = 0$}
+        \label{fig:gull}
+    \end{subfigure}
+    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+      %(or a blank line to force the subfigure onto a new line)
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{./Fig/csm3_2.png}
+               \caption{$t = 0.22$}
+        \label{fig:tiger}
+    \end{subfigure}
+    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+    %(or a blank line to force the subfigure onto a new line)
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{./Fig/csm3_3.png}
+        \caption{$t = 0.45$}
+        \label{fig:mouse}
+    \end{subfigure}
+    \caption{CSM-3, visualization of deformation of the elastic flag for three time steps: (a) initial configuration, (b) half way extenstion, (c) full extension }\label{fig:animals}
 \end{figure}
 
+\begin{figure}[h!]
+  \centering
+    \includegraphics[scale=0.34]{./Fig/csm3compare.png}
+      \caption{CSM-3 $\Delta t = 0.01$, deformation components of A(t) with finest mesh resolution, comparing all finite element pairs for time interval $t \in [0, 6]$  and $t \in [6, 8]$.}
+\end{figure}
+
+
 \subsubsection*{Discussion of results}
-The results for sub-problems CSM-1 and CSM-2 each coincide with the reference solution. The study of lower-grade elements proved successful for both problems, justifying accurate results can be achieved for polynomials grade 1 and 2 for all mesh refinements. This observation is further justified in the CSM-3 results. In table 1.4, the  displacement components of P3-P3 and P2-P2 elements can hardly be distinguished.
+ For CSM-1, the relative error of deformation found in Table 4.6, is $1.41 \%$ and $0.8\%$ for the x and y coordinate respectively. In Table 4.7, a relative error of   $1.49 \%$ and $0.88\%$ for the x,y components can be found for CSM-2, proving both steady state problems coincide with the reference solution. In Table 4.8, the numerical solutions CSM-3 for time steps $\Delta t = 0.01$ and $\Delta t = 0.005$, are in close resemblance with the reference solution. The study of lower-grade elements proved successful for all problems, justifying accurate results can be achieved by P2-P2 elements for deformation and velocity, even for mesh resolution. Comparing all finite-element pairs for CSM-3, visualized in figure 4.5, shows P2-P2 and P3-P3 elements hardly can be distinguished from each other. By the previous mentioned results and observations, the solid solver is assumed validated.
+ 
 
 
 \newpage
 \subsection{Validation of fluid structure interaction solver}
-The validation of the FSI solver constist of three sub-cases which will be referred to FSI-1, FSI-2 and FSI-3. The FSI-1 environment yields a steady state solution for the system, inducing small deformations to the elastic flag. This environment is excellent to ensure the overall coupling of the FSI-problem is executed properly. The FSI-2 and FSI-3 environment results in a periodic solution, where the elastic flag oscilates behind the sylinder.
-
-
- For all sub-cases
-a parabolic velocity profile on the form,
+The validation of the FSI solver consist of three sub-cases which will be referred to FSI-1, FSI-2 and FSI-3. The FSI-1 environment yields a steady state solution for the system, inducing small deformations to the elastic flag. The FSI-2 and FSI-3 environment results in a periodic solution, where the elastic flag oscillates behind the cylinder.For all sub-cases a parabolic velocity profile on the form,
 \begin{align*}
 v_f(0, y) = 1.5 U\frac{(H -y)y}{(\frac{H}{2})^2}
 \end{align*}
-is set on the left channel inflow. H is the height of the channel, while the parameter U is set differently to each problem to induce different flow profiles. \
-At the right channel outflow, the pressure is set to $p = 0$. \
+is set on the left channel inflow. H is the height of the channel, while the parameter U is set differently to each problem to induce different flow profiles. At the right channel outflow, the pressure is set to $p = 0$. \
 No-slip boundary conditions for the fluid are enforced on the channel walls, and on the circle of the inner geometry.
-The structure deformation and velocity is set to zero on the left side of the flag, where the flag is ancored to the circle. On the fluid-structure interface $\Gamma$, we enfore the kinematic and dynamic boundary condition
+The structure deformation and velocity is set to zero on the left side of the flag, where the flag is anchored to the circle. On the fluid-structure interface $\Gamma$, we enforce the kinematic and dynamic boundary condition
 \begin{align}
 \mathbf{v}_f = \mathbf{v}_s \\
 \mathbf{\sigma}_f \cdot \mathbf{n} = \mathbf{\sigma}_s \cdot \mathbf{n}
 \end{align}
-From chapter ?,  (1.1) is enforced strongly due to the continious velocity field, while (1.2) is enforced weakly by omtitting form the weak formulation by.
-
-
-
-Apart from the accuracy of the reported values, the main purpose of the validation of the fluid solver is twofold. Firstly, it is of great importance to ensure that the overall coupling of the fluid-structure interaction problem are executed correctly. Second, a good choice of mesh extrapolation model is essential to ensure that mesh entanglement is not present. Based on the experience with the previous sub-problems, the finite element group of P2-P2-P1 is chosen for deformation, velocity and pressure  . 
+Apart from the accuracy of the reported values, the main purpose of the validation of the solver is twofold. Firstly, it is of great importance to ensure that the overall coupling of the fluid-structure interaction problem are executed correctly. Second, a good choice of mesh extrapolation model is essential to ensure that mesh entanglement is not present. Based on experience in section, 4.2.1-2, the finite element pair P2-P1 for the fluid solver, and P2-P2 for the solid solver proved successful. Therefore the finite-elements P2-P2-P1 for deformation, velocity, and pressure are chosen for the numerical experiments. Higher order elements will not be examined, mainly due to long computational time, even for optimized solver approaches.
 
 
 \begin{table}[h!]
@@ -562,7 +553,96 @@ nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
 
 \newpage \newpage
 \subsubsection{FSI2}
-FSI2
+
+\begin{table}[h!]
+\centering
+\caption{FSI 2 - Comparison of mesh extrapolation models}
+\label{my-label}
+\begin{tabular}{ |p{1cm}||p{1cm}|p{2.7cm}|p{2.5cm}|p{2.7cm}|p{2.7cm}|p{1.2cm}|}
+ \hline
+  \multicolumn{6}{|c|}{Laplace \hspace{2mm} $\Delta t = 0.01 \theta = 0.51$} \\
+   \hline
+nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
+ \hline
+ 2474    & 21249  & -15.27  $\pm$ 13.45 & 1.34  $\pm$  82.4 & 157.00  $\pm$14.85 & -1.09  $\pm$258.47 \\
+ 7307    & 63365  &   -14.23  $\pm$13.37 & 1.31   $\pm$ 82.2 & 159,3 $\pm$ 15.43 & 0.92$\pm$ 254.53  \\
+ 11556   & 99810  & -14.96 $\pm$ 13.24 & 1.28  $\pm$ 81.9 & 161.07 $\pm$  17.81 & 0.02  $\pm$ 256.04  \\
+ \hline
+  \multicolumn{6}{|c|}{$\Delta t = 0.001 \theta = 0.5$} \\
+   \hline
+ nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
+    \hline
+ 2474    & 21249  & -15.61$\pm$  13.21 & 1.34  $\pm$ 83.6 & 155.38   $\pm$   13.98 & -3.00  $\pm$   289.06 \\
+ 7307    & 63365  & -15.31  $\pm$ 13.07 & 1.02    $\pm$  82.8 & 156.81  $\pm$  14.95 & -2.00   $\pm$   276.24 \\
+ 11556   & 99810  & -15.28   $\pm$  13.04 & 1.28 $\pm$ 82.9 & 158.45  $\pm$  16.09 & -2.53   $\pm$  276.13 \\
+ \hline
+  \multicolumn{2}{|c|}{Reference} & -14.58 $\pm$ 12.44   & 1.23 $\pm$80.6    & 208.83 $\pm$ 73.75 & 0.88 $\pm$ 234.2 \\
+   \hline
+    \multicolumn{2}{|c|}{Error}  & 0.007 \%   & 0.001 \% & &\\
+   \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+%\caption{FSI 2 - Biharmonic BC1}
+\label{my-label}
+\begin{tabular}{ |p{0.9cm}||p{0.9cm}|p{2.7cm}|p{2.49cm}|p{2.9cm}|p{2.9cm}|}
+ \hline
+  \multicolumn{6}{|c|}{Biharmonic 1 \hspace{2mm}  $\Delta t = 0.01 \theta = 0.51$} \\
+   \hline
+nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
+ \hline
+ 2474    & 21249  & -15.44 $\pm$  13.24 & -1.38 $\pm$  82.3   & 157.67  $\pm$  15.02 & -0.89$\pm$ 258.87 \\
+ 7307    & 63365  & -15.04 $\pm$ 12.96  & 0.99  $\pm$ 81.9 & 159.83$\pm$  16.83 & 0.98 $\pm$  245.40  \\
+ 11556   & 99810  & -15.29$\pm$ 13.17   & 1.29 $\pm$ 82.5 &  161.69 $\pm$   18.73 & -1.86 $\pm$ 251.30 \\
+
+ \hline
+  \multicolumn{6}{|c|}{$\Delta t = 0.001 \theta = 0.5$} \\
+   \hline
+ nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
+\hline
+ 2474    & 21249  & -15.36 $\pm$ 13.12 &  1.35 $\pm$ 83.1& 155.38   $\pm$   13.74 & -2.55 $\pm$ 285.19 \\ 
+ 7307    & 63365  & -15.23 $\pm$ 12.97 & 1.03$\pm$ 82.4 & 157.14  $\pm$  15.18 & -8.62   $\pm$  263.87 \\
+ 11556   & 99810  &-15.27 $\pm$ 12.99 & 1.31 $\pm$ 82.7 & 157.72  $\pm$ 15.58 & 3.34    $\pm$ 258.76  \\
+ \hline
+\multicolumn{2}{|c|}{Reference} & -14.58 $\pm$ 12.44   & 1.23 $\pm$80.6    & 208.83 $\pm$ 73.75 & 0.88 $\pm$ 234.2 \\
+ \hline
+ \multicolumn{2}{|c|}{Error}  & 0.007 \%   & 0.001 \% & &\\
+ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+%\caption{FSI 2 - Biharmonic BC2}
+\label{my-label}
+\begin{tabular}{ |p{1cm}||p{1cm}|p{2.6cm}|p{2.5cm}|p{2.7cm}|p{2.7cm}|p{1.2cm}|}
+ \hline
+  \multicolumn{6}{|c|}{Biharmonic 2 \hspace{2mm}  $\Delta t = 0.01 \theta = 0.51$} \\
+   \hline
+nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
+ \hline
+ 2474    & 21249  & -14.93 $\pm$ 13.22 & 1.35 $\pm$ 81.5 & 157.76  $\pm$ 15.04 & -0.49  $\pm$  254.13 \\
+ 7307    & 63365  & -14.67$\pm$ 13.05 & 1.00$\pm$ 80.9& 159.59 $\pm$  16.77 & 2.22 $\pm$  248.11  \\
+ 11556   & 99810  & 1.58 $\pm$ 12.86 & 1.23$\pm$ 81.5& 161.85   $\pm$18.84 & -1.64  $\pm$  247.04 \\
+ \hline
+  \multicolumn{6}{|c|}{$\Delta t = 0.001 \theta = 0.501$} \\
+   \hline
+ nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
+\hline
+ 2474    & 21249  & -15.63  $\pm$ 12.7 & 1.31 $\pm$ 82.9 & 155.55      $\pm$ 13.82 & -2.45   $\pm$ 281.18 \\
+ 7307    & 63365  &  -14,99 $\pm$ 12.81& 0.99$\pm$ 82.14& 156.86    $\pm$  15.05 & -1.65   $\pm$ 269.84 \\
+ 11556   & 99810  &  -15.26 $\pm$ 12.91 & 1.27  $\pm$ 81.8 & 156.86   $\pm$ 15.05 & -1.65 $\pm$ 269.84 \\
+ \hline
+\multicolumn{2}{|c|}{Reference} & -14.58 $\pm$ 12.44   & 1.23 $\pm$80.6    & 208.83 $\pm$ 73.75 & 0.88 $\pm$ 234.2 \\
+ \hline
+ \multicolumn{2}{|c|}{Error}  & 0.007 \%   & 0.001 \% & &\\
+ \hline
+\end{tabular}
+\end{table}
+
+
 \begin{figure}[h!]
   \centering
     \includegraphics[scale=0.2]{./Fig/fsi2flow.png}
@@ -582,20 +662,20 @@ FSI2
    \hline
 nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
  \hline
- 2474    & 21249  & -2.41      $\pm$ 2.41 & 1.49       $\pm$ 3.22 & 449.40       $\pm$ 14.70 & 0.55       $\pm$ 155.80  \\
- 7307    & 63365  & -2.32       $\pm$ 2.30 & 1.34       $\pm$ 3.17 & 451.78       $\pm$ 16.08 & 1.13       $\pm$ 151.22  \\
- 11556   & 99810  & -2.34       $\pm$ 2.34 & 1.57       $\pm$ 3.19 & 455.92       $\pm$ 17.32 & -0.10       $\pm$ 151.03 \\
+ 2474    & 21249  & -2.41 $\pm$   2.41 & 1.49     $\pm$   32.21 & 449.39       $\pm$   14.72 & 0.55 $\pm$   155.80  \\
+ 7307    & 63365  & -2.32    $\pm$   2.31 & 1.32 $\pm$    31.80 & 451.76  $\pm$   16.10 & 1.04      $\pm$   151.51  \\
+ 11556   & 99810  & -2.34  $\pm$   2.34  & 1.59   $\pm$  31.91 & 455.94       $\pm$ 17.34 & -0.01   $\pm$   151.36 \\
  \hline
-  \multicolumn{6}{|c|}{$\Delta t = 0.001 \theta = 0.501$} \\
+  \multicolumn{6}{|c|}{$\Delta t = 0.001 \theta = 0.5$} \\
    \hline
  nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
     \hline
-1216 &5797& --2.17$\pm$  2.08 &     3.32     $\pm$  29.07 &439.98 $\pm$  14.08  &  1.91 $\pm$  151.71\\
-2295 &10730& -3.04 $\pm$  2.88 &  1.51  $\pm$  35.88 & 452.04  $\pm$  22.41 &  3.30      $\pm$  160.11 \\
-5963 &27486 & -3.03$\pm$  2.85 &  1.23 $\pm$  35.97  & 459.45  $\pm$  23.80 &  1.53  $\pm$  160.14 \\
+ 2474    & 21249  & -2.91     $\pm$   2.74 & 1.28   $\pm$   35.01 & 450.90      $\pm$  18.11 & 2.28       $\pm$161.13 \\
+ 7307    & 63365  & -2.82    $\pm$   2.66& 1.24     $\pm$   34.69 & 453.56       $\pm$ 19.80 & 2.94     $\pm$ 158.67 \\
+ 11556   & 99810  & -2.88     $\pm$   2.72 & 1.49   $\pm$ 34.97 & 458.60   $\pm$ 22.12 & 2.23    $\pm$ 158.95 \\
  \hline
-  \multicolumn{2}{|c|}{Reference}  & 136.7   & 10.53 & &\\
-   \hline
+  \multicolumn{2}{|c|}{Reference} & -2.69 $\pm$  2.56                    & 1.48  $\pm$  34.38                   & 457.3  $\pm$  22.66        & 2.22  $\pm$- 149.78           \\
+  \hline
     \multicolumn{2}{|c|}{Error}  & 0.007 \%   & 0.001 \% & &\\
    \hline
 \end{tabular}
@@ -611,17 +691,16 @@ nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
    \hline
 nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
  \hline
- %2474    & 21249 & 7.96  $\pm$ 8.10  & -3.84   $\pm$ 1.02 & 450.16  $\pm$ 15.11 & $-20.09 \pm 148.17 $\\
- 2474     &21249  &7.96  $\pm$ 8.10  &  -3.84   $\pm$ 1.02 & 450.16  $\pm$ 15.11  & -20.09 $\pm$ 148.17 \\
- 7307    & 63365  & 3.10  $\pm$ 3.06  & -1.90   $\pm$ 4.21 & 457.37  $\pm$ 15.24 & -51.77 $\pm$ 127.28 \\
- 11556   & 99810  & -2.18  $\pm$ 9.65 & 1.31    $\pm$ 4.93  & 456.40 $\pm$ 17.45 &  0.45 $\pm$ 149.68  \\
+ 2474     &21249  & -2.40 $\pm$ 2.38  & 1.58 $\pm$ 32.07  & 450.16  $\pm$ 15.11  & -20.09 $\pm$ 148.17 \\
+ 7307    & 63365  &  -2.26 $\pm$ 2.14  & 1.70  $\pm$ 31.3 & 457.37  $\pm$ 15.24 & -51.77 $\pm$ 127.28 \\
+ 11556   & 99810  &   -2.33 $\pm$ 2.32 &  1.93   $\pm$ 31.5  & 456.40 $\pm$ 17.45 &  0.45 $\pm$ 149.68  \\
  \hline
   \multicolumn{6}{|c|}{$\Delta t = 0.001 \theta = 0.5$} \\
    \hline
  nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
-1216 &5797  & -2.18       $\pm$ 2.10 & 3.56   $\pm$ 2.90 & 435.19       $\pm$ 9.77  & -1.57       $\pm$ 151.43 \\
-7307    & 63365  & -1.42  $\pm$ 4.70 & 7.77   $\pm$ 2.85 & 454.38       $\pm$ 19.75 & 17.97       $\pm$ 155.08 \\
-11556   & 99810  & -2.23  $\pm$ 6.16 & 1.72   $\pm$ 4.48 & 459.12       $\pm$ 22.97 & -3.12       $\pm$ 171.22 \\
+ 2474    & 21249  & -2.18 $\pm$ 2.10& 3.52 $\pm$ 2.90 & 435.19   $\pm$   9.77  & -1.59$\pm$   151.45 \\
+ 7307    & 63365  & -2.80 $\pm$ 2.64 & 1.25 $\pm$ 3.45 & 454.38   $\pm$   19.76 & 17.97  $\pm$  155.08 \\
+ 11556   & 99810  & -2.84 $\pm$ 2.68  & 1.50 $\pm$ 3.47 & 459.12    $\pm$   22.97 & -3.12     $\pm$ 171.22 \\
  \hline
  \multicolumn{2}{|c|}{Reference} & -2.69 $\pm$  2.56                    & 1.48  $\pm$  34.38                   & 457.3  $\pm$  22.66        & 2.22  $\pm$- 149.78           \\
  \hline
