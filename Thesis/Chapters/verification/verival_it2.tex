@@ -439,6 +439,7 @@ The structure deformation and velocity is set to zero on the left side of the fl
 \end{align}
 Apart from the accuracy of the reported values, the main purpose of the validation of the solver is twofold. Firstly, it is of great importance to ensure that the overall coupling of the fluid-structure interaction problem are executed correctly. Second, a good choice of mesh extrapolation model is essential to ensure that mesh entanglement is not present. Based on experience in section, 4.2.1-2, the finite element pair P2-P1 for the fluid solver, and P2-P2 for the solid solver proved successful. Therefore the finite-elements P2-P2-P1 for deformation, velocity, and pressure are chosen for the numerical experiments. Higher order elements will not be examined, mainly due to long computational time, even for optimized solver approaches.
 
+\newpage
 
 \begin{table}[h!]
 \centering
@@ -448,7 +449,7 @@ Apart from the accuracy of the reported values, the main purpose of the validati
  \hline
  \multicolumn{4}{|c|}{Solid parameters} \\
  \hline
- parameter              & FSI1 & FSI2 & FSI3 \\
+ parameter              & FSI-1 & FSI-2 & FSI-3 \\
  \hline
  $\rho^s [10^{3} \frac{kg}{m^3}]$ & 1    & 10   & 1    \\
 $\nu^s$ & 0.4  & 0.4  & 0.4  \\
@@ -459,20 +460,22 @@ $\mu^s  [10^{6}\frac{kg}{ms^2}]$  & 0.5  & 0.5  & 2.0  \\
 $\rho^f [10^{3}\frac{kg}{m^3}]$ & 1    & 1    & 1    \\
 $\nu^f  [10^{-3}\frac{m^2}{s}]$  & 1    & 1    & 1    \\
 U                      & 0.2  & 1    & 2    \\
-parameter              & FSI1 & FSI2 & FSI3 \\
+parameter              & FSI-1 & FSI-2 & FSI-3 \\
 Re                     & 20   & 100  & 200 \\
 \hline
 \end{tabular}
 \end{table}
 
-\newpage
-\subsubsection{FSI1}
-
+\subsubsection*{Results}
+The numerical results for FSI-1, FSI-2, and FSI-3  are shown in Table 4.10-12. For all sub-problems, a spatial convergence study has been conducted on three different mesh with increasing resolution, with the relative error of the finest spatial and temporal resolution For FSI-1 in Table 4.10, an additional option is proposed, omitting mesh moving models from the monolithic variational form from section 3.2.2. For FSI-2 and FSI-3, a implicit \textit{shifted Crank-Nicholson} scheme $\theta = 0.51$, and a ordinary Crank-Nicholson scheme $\theta = 0.5$ have been explored. A comparison of the validation parameters lift, drag, and displacement with different mesh moving models can be found in Figure 4.2-3. Finally, Figure 4.7 and 4.9 visualize the flow field and deformation of the elastic flag for a given time,
+ 
+ \newpage
+\subsubsection{FSI-1}
 
 \begin{table}[h!]
 \centering
 \caption{FSI 1 Results}
-\label{FSI1 Results}
+\label{FSI-1 Results}
 \begin{tabular}{ |p{1cm}||p{1cm}|p{2.5cm}|p{2.5cm}|p{2.7cm}|p{2.7cm}|p{1.2cm}|}
  \hline
   \multicolumn{6}{|c|}{Laplace} \\
@@ -553,7 +556,7 @@ nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
 \end{table}
 
 \newpage
-\subsubsection{FSI2}
+\subsubsection{FSI-2}
 
 \begin{table}[h!]
 \centering
@@ -658,7 +661,7 @@ nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
 \end{figure}
 
 \newpage
-\subsubsection{FSI3}
+\subsubsection{FSI-3}
 
 \begin{table}[h!]
 \centering
@@ -760,11 +763,12 @@ nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
 
 \newpage
 \subsubsection*{Discussion of results}
-Considering FSI1, all mesh extraplation models are of high accuracy compared to the reference solution.  However, due to the small deformations of order $10^{-6}$, FSI1 doesn't provide a rigorous test for testing mesh extrapolation models. By omitting mesh extrapolation from the variatonal formulation,  reasonable results are still obtained. Therefore, the  FSI-1 validation case can be misguiding, in terms of validating the chosen mesh extrapolation model. 
+For FSI-1, all mesh moving models excel well in comparison with the reference solution, even at course mesh resolution. Due too low reynolds number flow the induced deformation of the elastic flag is very small, FSI-1 proves to be  excellent for initial validation of fluid-structure interaction solvers. However, due the small deformations of the elastic flag of order $10^{-5}$,  FSI-1 doesn't provide a rigorous test environment for mesh extrapolation models.  By omitting mesh extrapolation from the variatonal formulation in section 3.3.2,  reasonable results are still obtained. This fact proves FSI-1 to be misguiding in terms of  mesh extrapolation model, but remains excellent for initial validation of fluid-structure interaction solvers and the overall coupling of the fluid and solid equations. \\
 
-The FSI2 case proved to be one of the most demanding tests, due to the large deformation of the elastic flag. leading to the risk of entangled mesh cells. Therefore a high quality extrapolation of the solid deformation into the fluid is needed. All mesh extrapolation models proved to
+The FSI-2 problem proved to be one of the most demanding tests, due to the large deformation of the elastic flag. By the large deformation, the risk of fluid mesh entanglement was considerably high, stressing the mesh moving models extensively. The linear elastic model form chapter 3 proved to fail for both time-steps, but not due to mesh entanglement but early failure of the newton-solver. This finding is comparable with the investigation conducted in \cite{Richter2015}, where early failure of the newton-solver is in context with long-term simulation of the implicit Crank-Nicholson scheme. In their study, a shifted implicit Crank-Nicholson scheme proved to further improve stability for the newton-solver, making the numerical scheme stable for course time-step. In my study, both implicit schemes was applicable for all mesh moving models, except the linear elastic model. I argue that due to the wast number of possible parameters 
+\\
 
-The FSI3 environment does not induce deformation to the extent of the FSI2. However a critical phase in the transition to the periodic solution was discovered, where the pressure oscillation induces a large deformation to the system.
+The FSI-3 environment does not induce deformation to the extent of the FSI-2. However a critical phase in the transition to the periodic solution was discovered, where the pressure oscillation induces a large deformation to the system.
 
 
 

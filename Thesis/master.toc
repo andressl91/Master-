@@ -1,12 +1,45 @@
 \select@language {english}
-\contentsline {chapter}{\numberline {1}Verification and Validation}{3}{chapter.1}
-\contentsline {section}{\numberline {1.1}Verification of Code}{3}{section.1.1}
-\contentsline {subsection}{\numberline {1.1.1}Method of manufactured solution}{4}{subsection.1.1.1}
-\contentsline {subsection}{\numberline {1.1.2}Comment on verification of the fluid-structure interaction solver by MMS}{5}{subsection.1.1.2}
-\contentsline {section}{\numberline {1.2}Validation of Code}{6}{section.1.2}
-\contentsline {subsection}{\numberline {1.2.1}Validation of fluid solver}{8}{subsection.1.2.1}
-\contentsline {subsection}{\numberline {1.2.2}Validation of solid solver}{12}{subsection.1.2.2}
-\contentsline {subsection}{\numberline {1.2.3}Validation of fluid structure interaction solver}{16}{subsection.1.2.3}
-\contentsline {subsubsection}{FSI1}{17}{subsubsection*.17}
-\contentsline {subsubsection}{FSI2}{18}{subsubsection*.19}
-\contentsline {subsubsection}{FSI3}{20}{subsubsection*.25}
+\contentsline {chapter}{\numberline {1}A motivation for studying fluid-structure interaction}{3}{chapter.1}
+\contentsline {chapter}{\numberline {2}Governing equations}{5}{chapter.2}
+\contentsline {section}{\numberline {2.1}Continuum Mechanics}{5}{section.2.1}
+\contentsline {section}{\numberline {2.2}The Lagrangian and Eulerian description of motion}{6}{section.2.2}
+\contentsline {section}{\numberline {2.3}The deformation gradient}{8}{section.2.3}
+\contentsline {section}{\numberline {2.4}The solid problem}{9}{section.2.4}
+\contentsline {section}{\numberline {2.5}The Fluid problem}{12}{section.2.5}
+\contentsline {chapter}{\numberline {3}Computational Fluid Structure Interaction}{13}{chapter.3}
+\contentsline {section}{\numberline {3.1}Arbitary Lagrangian Eulerian formulation}{15}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}ALE formulation of the fluid problem}{16}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}ALE formulation of the solid problem}{18}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}Fluid mesh movement}{18}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.4}Mesh motion models}{19}{subsection.3.1.4}
+\contentsline {section}{\numberline {3.2}Discretization of the FSI problem}{22}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Finite Element method}{22}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Variational Formulation}{23}{subsection.3.2.2}
+\contentsline {section}{\numberline {3.3}One-step $\theta $ scheme}{24}{section.3.3}
+\contentsline {chapter}{\numberline {4}Verification and Validation}{27}{chapter.4}
+\contentsline {section}{\numberline {4.1}Verification of Code}{27}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Method of manufactured solution}{28}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Comment on verification of the fluid-structure interaction solver by MMS}{29}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}Validation of Code}{30}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Validation of fluid solver}{32}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Validation of solid solver}{36}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Validation of fluid structure interaction solver}{40}{subsection.4.2.3}
+\contentsline {subsubsection}{FSI-1}{42}{subsubsection*.22}
+\contentsline {subsubsection}{FSI-2}{43}{subsubsection*.24}
+\contentsline {subsubsection}{FSI-3}{45}{subsubsection*.30}
+\contentsline {chapter}{\numberline {5}Implementation of a Fluid-Structure Interaction solver}{49}{chapter.5}
+\contentsline {section}{\numberline {5.1}Black-box solvers versus a self-made implementation}{49}{section.5.1}
+\contentsline {section}{\numberline {5.2}FEniCS}{50}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}DOLFIN}{50}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Poission Equation, hello world}{51}{subsection.5.2.2}
+\contentsline {section}{\numberline {5.3}implemented code}{52}{section.5.3}
+\contentsline {chapter}{\numberline {6}Numerical Experiments}{55}{chapter.6}
+\contentsline {section}{\numberline {6.1}Investigation of temporal stability}{55}{section.6.1}
+\contentsline {section}{\numberline {6.2}Optimization of Newtonsolver}{58}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Consistent methods}{58}{subsection.6.2.1}
+\contentsline {subsubsection}{Jacobi buffering}{58}{subsubsection*.40}
+\contentsline {subsection}{\numberline {6.2.2}Non-consisten methods}{59}{subsection.6.2.2}
+\contentsline {subsubsection}{Reuse of Jacobian}{59}{subsubsection*.41}
+\contentsline {subsubsection}{Quadrature reduce}{59}{subsubsection*.42}
+\contentsline {subsection}{\numberline {6.2.3}Comparison of speedup methods}{59}{subsection.6.2.3}
+\contentsline {chapter}{\numberline {7}Conclusion and further research}{61}{chapter.7}
