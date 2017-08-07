@@ -420,7 +420,7 @@ nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$] \\
 
 
 \subsubsection*{Discussion of results}
- For CSM-1, the relative error of deformation found in Table 4.6, is $1.41 \%$ and $0.8\%$ for the x and y coordinate respectively. In Table 4.7, a relative error of   $1.49 \%$ and $0.88\%$ for the x,y components can be found for CSM-2, proving both steady state problems coincide with the reference solution. In Table 4.8, the numerical solutions CSM-3 for time steps $\Delta t = 0.01$ and $\Delta t = 0.005$, are in close resemblance with the reference solution. The study of lower-grade elements proved successful for all problems, justifying accurate results can be achieved by P2-P2 elements for deformation and velocity, even for mesh resolution. Comparing all finite-element pairs for CSM-3, visualized in figure 4.5, shows P2-P2 and P3-P3 elements hardly can be distinguished from each other. By the previous mentioned results and observations, the solid solver is assumed validated.
+ For CSM-1, the relative error of deformation found in Table 4.6, is $1.41 \%$ and $0.8\%$ for the x and y coordinate respectively. In Table 4.7, a relative error of   $1.49 \%$ and $0.88\%$ for the x,y components can be found for CSM-2, proving both steady state problems coincide with the reference solution. In Table 4.8, the numerical solutions CSM-3 for time steps $\Delta t = 0.01$ and $\Delta t = 0.005$, are in close resemblance with the reference solution. The study of lower-grade elements proved successful for all problems, justifying accurate results can be achieved by P2-P2 elements for deformation and velocity, even for course mesh resolution. Comparing all finite-element pairs for CSM-3, visualized in figure 4.5, shows P2-P2 and P3-P3 elements hardly can be distinguished from each other. By the previous mentioned results and observations, the solid solver is assumed validated.
  
 
 
@@ -485,6 +485,8 @@ nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
   \hline
  \multicolumn{2}{|c|}{Reference} &  0.0227      &       0.8209      & 14.295  & 0.7638   \\
  \hline
+     \multicolumn{2}{|c|}{Error}  &0.0 \% & 0.0 \% & 0.66 \% & 0.38 \% \\
+   \hline
 \end{tabular}
 \begin{tabular}{ |p{1cm}||p{1cm}|p{2.5cm}|p{2.5cm}|p{2.7cm}|p{2.7cm}|p{1.2cm}|}
  \hline
@@ -497,6 +499,8 @@ nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
  11556   & 99810  &       0.0226  &       0.8222 & 14.201 & 0.7609 \\
   \hline
  \multicolumn{2}{|c|}{Reference} &  0.0227      &       0.8209      & 14.295  & 0.7638   \\
+ \hline
+    \multicolumn{2}{|c|}{Error}  &0.0 \% & 0.0 \% & 0.66 \% & 0.38 \% \\
  \hline
 \end{tabular}
 \begin{tabular}{ |p{1cm}||p{1cm}|p{2.5cm}|p{2.5cm}|p{2.7cm}|p{2.7cm}|p{1.2cm}|}
@@ -511,6 +515,8 @@ nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
   \hline
  \multicolumn{2}{|c|}{Reference} &  0.0227      &       0.8209      & 14.295  & 0.7638   \\
  \hline
+    \multicolumn{2}{|c|}{Error}  & 0.0 \% & 0.0 \% & 0.63 \% & 21.08 \% \\
+ \hline
 \end{tabular}
 \begin{tabular}{ |p{1cm}||p{1cm}|p{2.5cm}|p{2.5cm}|p{2.7cm}|p{2.7cm}|p{1.2cm}|}
  \hline
@@ -524,14 +530,10 @@ nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
   \hline
  \multicolumn{2}{|c|}{Reference} &  0.0227      &       0.8209      & 14.295  & 0.7638   \\
  \hline
+    \multicolumn{2}{|c|}{Error}  & 0.0 \% & 0.0 \% & 0.63 \% & 21.09 \% \\
+ \hline
 \end{tabular}
-\end{table}
 
-
-\begin{table}[h!]
-\centering
-\caption{FSI 1 - No extrapolation}
-\label{FSI1- No extrapolation}
 \begin{tabular}{ |p{1cm}||p{1cm}|p{2.5cm}|p{2.5cm}|p{2.7cm}|p{2.7cm}|p{1.2cm}|}
  \hline
   \multicolumn{6}{|c|}{No extrapolation} \\
@@ -541,24 +543,23 @@ nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
  2474    & 21249  &       0.0224 &       0.9008 & 14.064 & 0.7713 \\
  7307    & 63365  &       0.0226  &       0.8221 & 14.117 & 0.7660 \\
  11556   & 99810  &       0.0225 &       0.8787 & 14.212 & 0.7837 \\
-  \hline
- REF     & REF    &       0.0227      &       0.8209      & 14.295  & 0.7638   \\
+   \hline
+ \multicolumn{2}{|c|}{Reference} &  0.0227      &       0.8209      & 14.295  & 0.7638   \\
+ \hline
+    \multicolumn{2}{|c|}{Error}  &  0.0 \% & 0.0 \% & 0.58 \% & 2.61 \%  \\
  \hline
 \end{tabular}
 
 \end{table}
 
-
-
-
-\newpage \newpage
+\newpage
 \subsubsection{FSI2}
 
 \begin{table}[h!]
 \centering
 \caption{FSI 2 - Comparison of mesh extrapolation models}
 \label{my-label}
-\begin{tabular}{ |p{1cm}||p{1cm}|p{2.7cm}|p{2.5cm}|p{2.7cm}|p{2.7cm}|p{1.2cm}|}
+\begin{tabular}{ |p{1cm}||p{1cm}|p{2.7cm}|p{2.7cm}|p{2.9cm}|p{3.1cm}|p{1.2cm}|}
  \hline
   \multicolumn{6}{|c|}{Laplace \hspace{2mm} $\Delta t = 0.01 \theta = 0.51$} \\
    \hline
@@ -578,7 +579,7 @@ nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
  \hline
   \multicolumn{2}{|c|}{Reference} & -14.58 $\pm$ 12.44   & 1.23 $\pm$80.6    & 208.83 $\pm$ 73.75 & 0.88 $\pm$ 234.2 \\
    \hline
-    \multicolumn{2}{|c|}{Error}  & 0.007 \%   & 0.001 \% & &\\
+    \multicolumn{2}{|c|}{Error}  & 0.0\% $\pm$ 0.0 \% & 0.0 \% $\pm$ 0.0 \% & 24.1 \% $\pm$ 78.1 \% & 387.5 \% $\pm$ 17.9 \%   \\
    \hline
 \end{tabular}
 \end{table}
@@ -587,7 +588,7 @@ nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
 \centering
 %\caption{FSI 2 - Biharmonic BC1}
 \label{my-label}
-\begin{tabular}{ |p{0.9cm}||p{0.9cm}|p{2.7cm}|p{2.49cm}|p{2.9cm}|p{2.9cm}|}
+\begin{tabular}{ |p{1cm}||p{1cm}|p{2.7cm}|p{2.7cm}|p{2.9cm}|p{3.1cm}|p{1.2cm}|}
  \hline
   \multicolumn{6}{|c|}{Biharmonic 1 \hspace{2mm}  $\Delta t = 0.01 \theta = 0.51$} \\
    \hline
@@ -608,7 +609,7 @@ nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
  \hline
 \multicolumn{2}{|c|}{Reference} & -14.58 $\pm$ 12.44   & 1.23 $\pm$80.6    & 208.83 $\pm$ 73.75 & 0.88 $\pm$ 234.2 \\
  \hline
- \multicolumn{2}{|c|}{Error}  & 0.007 \%   & 0.001 \% & &\\
+\multicolumn{2}{|c|}{Error}  &0.0\% $\pm$ 0.0 \% & 0.0 \% $\pm$ 0.0 \% & 24.4\% $\pm$ 78.8 \% & 279.5 \% $\pm$ 10.4 \% \\
  \hline
 \end{tabular}
 \end{table}
@@ -617,7 +618,7 @@ nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
 \centering
 %\caption{FSI 2 - Biharmonic BC2}
 \label{my-label}
-\begin{tabular}{ |p{1cm}||p{1cm}|p{2.6cm}|p{2.5cm}|p{2.7cm}|p{2.7cm}|p{1.2cm}|}
+\begin{tabular}{ |p{1cm}||p{1cm}|p{2.7cm}|p{2.7cm}|p{2.9cm}|p{3.1cm}|p{1.2cm}|}
  \hline
   \multicolumn{6}{|c|}{Biharmonic 2 \hspace{2mm}  $\Delta t = 0.01 \theta = 0.51$} \\
    \hline
@@ -637,11 +638,18 @@ nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
  \hline
 \multicolumn{2}{|c|}{Reference} & -14.58 $\pm$ 12.44   & 1.23 $\pm$80.6    & 208.83 $\pm$ 73.75 & 0.88 $\pm$ 234.2 \\
  \hline
- \multicolumn{2}{|c|}{Error}  & 0.007 \%   & 0.001 \% & &\\
+\multicolumn{2}{|c|}{Error}  & 0.0 \% $\pm$ 0.0 \% & 0.0 \% $\pm$ 0.0 \% & 24.8 \% $\pm$ 79.5 \% & 287.5 \% $\pm$ 15.2 \% \\
  \hline
 \end{tabular}
 \end{table}
 
+\newpage
+
+\begin{figure}[h!]
+  \centering
+    \includegraphics[scale=0.64]{./Fig/fsi2compare.png}
+      \caption{FSI-2, visualization of fully developted flow with structure deformation at time t = 9s}
+\end{figure}
 
 \begin{figure}[h!]
   \centering
@@ -656,7 +664,7 @@ nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
 \centering
 \caption{FSI 3 - Comparison of mesh extrapolation models}
 \label{my-label}
-\begin{tabular}{ |p{1cm}||p{1cm}|p{2.5cm}|p{2.5cm}|p{2.7cm}|p{2.7cm}|p{1.2cm}|}
+\begin{tabular}{ |p{1cm}||p{1cm}|p{2.7cm}|p{2.7cm}|p{2.9cm}|p{3.1cm}|p{1.2cm}|}
  \hline
   \multicolumn{6}{|c|}{Laplace \hspace{2mm} $\Delta t = 0.01 \theta = 0.51$} \\
    \hline
@@ -674,9 +682,9 @@ nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
  7307    & 63365  & -2.82    $\pm$   2.66& 1.24     $\pm$   34.69 & 453.56       $\pm$ 19.80 & 2.94     $\pm$ 158.67 \\
  11556   & 99810  & -2.88     $\pm$   2.72 & 1.49   $\pm$ 34.97 & 458.60   $\pm$ 22.12 & 2.23    $\pm$ 158.95 \\
  \hline
-  \multicolumn{2}{|c|}{Reference} & -2.69 $\pm$  2.56                    & 1.48  $\pm$  34.38                   & 457.3  $\pm$  22.66        & 2.22  $\pm$- 149.78           \\
+  \multicolumn{2}{|c|}{Reference} & -2.69 $\pm$  2.56                    & 1.48  $\pm$  34.38                   & 457.3  $\pm$  22.66        & 2.22  $\pm$ 149.78           \\
   \hline
-    \multicolumn{2}{|c|}{Error}  & 0.007 \%   & 0.001 \% & &\\
+    \multicolumn{2}{|c|}{Error}  & 0.0\% $\pm$ 0.0 \% & 0.0 \% $\pm$ 0.0 \% & 0.28 \% $\pm$ 2.38 \% & 0.45 \% $\pm$ 6.12 \%\\
    \hline
 \end{tabular}
 \end{table}
@@ -685,7 +693,7 @@ nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
 \centering
 %\caption{FSI 3 - Biharmonic BC1}
 \label{my-label}
-\begin{tabular}{ |p{0.9cm}||p{0.9cm}|p{2.49cm}|p{2.49cm}|p{2.6cm}|p{2.8cm}|}
+\begin{tabular}{ |p{1cm}||p{1cm}|p{2.7cm}|p{2.7cm}|p{2.9cm}|p{3.2cm}|p{1.2cm}|}
  \hline
   \multicolumn{6}{|c|}{Biharmonic 1 \hspace{2mm}  $\Delta t = 0.01 \theta = 0.51$} \\
    \hline
@@ -704,7 +712,7 @@ nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
  \hline
  \multicolumn{2}{|c|}{Reference} & -2.69 $\pm$  2.56                    & 1.48  $\pm$  34.38                   & 457.3  $\pm$  22.66        & 2.22  $\pm$- 149.78           \\
  \hline
- \multicolumn{2}{|c|}{Error}  & 0.007 \%   & 0.001 \% & &\\
+ \multicolumn{2}{|c|}{Error}  & 0.0 \% $\pm$ 0.0 \% & 0.0 \% $\pm$ 0.0 \% & 0.40 \% $\pm$ 1.37 \% & 240.5 \% $\pm$ 14.3 \%\\
  \hline
 \end{tabular}
 \end{table}
@@ -713,32 +721,35 @@ nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
 \centering
 %\caption{FSI 3 - Biharmonic BC2}
 \label{my-label}
-\begin{tabular}{ |p{1cm}||p{1cm}|p{2.5cm}|p{2.5cm}|p{2.7cm}|p{2.7cm}|p{1.2cm}|}
+\begin{tabular}{ |p{1cm}||p{1cm}|p{2.7cm}|p{2.7cm}|p{2.9cm}|p{3.1cm}|p{1.2cm}|}
  \hline
   \multicolumn{6}{|c|}{Biharmonic 2 \hspace{2mm}  $\Delta t = 0.01 \theta = 0.51$} \\
    \hline
 nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
  \hline
-1216 &5797& -1.74  $\pm$  1.76 & 3.56 $\pm$  26.01 & 439.41$\pm$ 12.21  & -1.35    $\pm$  138.74\\
-2295 &10730 & -2.39   $\pm$  2.40 &  1.76  $\pm$  32.27 & 449.71$\pm$ 18.16 &  3.71   $\pm$  149.97\\
+ 2474    & 21249  &-2.33 $\pm$ 2.33 & 1.57 $\pm$ 31.6    & 449.44  $\pm$ 14.82 & 0.80  $\pm$152.03  \\
+ 7307    & 63365  & -2.25 $\pm$ 2.23 &  1.35 $\pm$ 31.3  & 452.63     $\pm$16.29 & 17.11     $\pm$  146.05 \\
+ 11556   & 99810  & -2.25  $\pm$ 2.29 & 1.59  $\pm$ 31.4 & 457.89   $\pm$ 17.26 & 57.83      $\pm$  141.69 \\
  \hline
-  \multicolumn{6}{|c|}{$\Delta t = 0.001 \theta = 0.501$} \\
+  \multicolumn{6}{|c|}{$\Delta t = 0.001 \theta = 0.5$} \\
    \hline
  nel & ndof & ux of A [x $10^{3}$]  &uy of A [x $10^{3}$]& Drag  & Lift \\
- 1216 &5797& -3.39   $\pm$  3.38 &   1.23   $\pm$  36.61 &   413.26 $\pm$  51.82  &   57.19  $\pm$  222.65\\
- 2295 &10730& -4.70  $\pm$  4.71& 1.49       $\pm$  44.62& 427.91$\pm$  93.17 &  44.38  $\pm$  268.05 \\
+ 2474    & 21249  & -2.83 $\pm$ 2.66   & 1.31 $\pm$ 34.5  &  450.24    $\pm$  18.25 & 2.57  $\pm$   175.42  \\
+ 7307    & 63365  & -2.77 $\pm$ 2.61    & 0.98$\pm$  34.6 & 453.53    $\pm$ 20.01 & 2.60   $\pm$ 159.13  \\
+ 11556   & 99810  & -2.80  $\pm$ 2.65 & 1.37 $\pm$ 34.7 & 458.41  $\pm$ 22.23 & 15.56   $\pm$  157.78 \\
  \hline
  \multicolumn{2}{|c|}{Reference} & -2.69 $\pm$  2.56                    & 1.48  $\pm$  34.38                   & 457.3  $\pm$  22.66        & 2.22  $\pm$- 149.78           \\
  \hline
- \multicolumn{2}{|c|}{Error}  & 0.007 \%   & 0.001 \% & &\\
+ \multicolumn{2}{|c|}{Error}  &0.0\% $\pm$ 0.0 \% & 0.0\% $\pm$ 0.0\% & 0.24 \% $\pm$ 1.90 \% & 600.9 \% $\pm$ 5.34 \% \\
  \hline
 \end{tabular}
 \end{table}
 
+\newpage
 
 \begin{figure}[h!]
-    \includegraphics[scale=0.75]{./Fig/fsi3liftcompare.png}
-      \caption{Comparing mesh extrapolation models}
+    \includegraphics[scale=0.5]{./Fig/fsi3compare.png}
+      \caption{Comparison of mesh motion models for FSI-3, in time interval t $t \in [5.5, 6]$}
 \end{figure}
 
 \begin{figure}[h!]
