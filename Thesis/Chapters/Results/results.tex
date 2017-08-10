@@ -1,5 +1,21 @@
  \chapter{Numerical Experiments}
 
+\section{Comparison of mesh moving models}
+Mesh moving models are essential for numerical stability of fluid-structure interaction solvers. If the fluid mesh doesn't conform with the solid deformation, the risk of mesh entanglement increases with the possibility of instabilities or breakdown of the solver. In general, mesh models have shown to be either robust concerning mesh entanglements at the cost of computational time, or computational efficient with less robustness \cite{MM2016}. However, computational efficiency has proven not only to be dependent of the complexity of model, but also the regularity of the fluid mesh, reducing Newton iterations needed per time step \cite{Wickb}. \\ In this section we compare the mesh moving models from section 3.1.4. for the FSI-3 benchmark. As the linear elastic model was found not applicable in section 4.2.3, the laplace and biharmonic model will be considered. 
+We will compare vertical displacement of the elastic flag, regularity of the fluid mesh, and number of Newton iterations per time step for all mesh moving models. A serial naive Newton solver is used, avoiding any effects of speed-up techniques which may effect Newton iterations (see section 6.3.3). 
+
+\newpage
+\begin{figure}[h!]
+ 	\centering
+    \includegraphics[scale=0.4]{./Fig/minjcompare.png} \\
+      \caption{Investigation of mesh moving models for the FSI3 benchbark in the time interval $t \in [0, 5]$, comparing number of Newton iterations, mesh regularity, and vertical displacement of elastic flag }
+      \label{fig:minjcomp}
+\end{figure}
+
+All mesh models seems to  in Table \ref{fig:minjcomp}
+
+\newpage
+
 \section{Investigation of temporal stability}
 
 Preliminary work regarding discretization and numerical analysis of the second order Crank-Nicholson time stepping scheme for fluid structure interaction can be found in \cite{Wickb}. Two main properties of interest 
