@@ -1,3 +1,5 @@
+
+
  \chapter{Numerical Experiments}
 
 \section{Comparison of mesh moving models}
@@ -54,12 +56,11 @@ The temporal stability for the implicit Crank-Nicolson scheme, for the validatio
 \label{eq:cn2}
 \end{discr}
 
-The numerical experiments showed very similar performance for Discretization  ~\ref{eq:cn1} and ~\ref{eq:cn2} , and significant differences of temporal accuracy was not found \cite{Richter2015}. However, spatial and temporal refinement showed the implicit Crank-Nicolson scheme gave stability problems for certain time-steps \textit{k}. Choosing $k = [0.005, 0.003]$, the FSI-3 problem (Section  ~\ref{subsec:fsi3}) suffered from numerical instabilities. Interestingly, the instabilities occurred earlier in simulation time for increasing mesh refinement. A similar experiment in  \cite{Wicka}, showed reducing the time step $k = 0.001$ was necessary to yield stable long-time simulation for both  Discretization  ~\ref{eq:cn1} and ~\ref{eq:cn2}    \\
+\newpage
+
+The numerical experiments showed very similar performance for Discretization  ~\ref{eq:cn1} and ~\ref{eq:cn2} , and significant differences of temporal accuracy was not found \cite{Richter2015}. However, spatial and temporal refinement showed the implicit Crank-Nicolson scheme gave stability problems for certain time-steps \textit{k}. Choosing $k = [0.005, 0.003]$, the FSI-3 problem (Section  ~\ref{subsec:fsi3}) suffered from numerical instabilities. Interestingly, the instabilities occurred earlier in simulation time for increasing mesh refinement. A similar experiment in  \cite{Wicka}, showed reducing the time step $k = 0.001$  yield stable long-time simulation for both  Discretization  ~\ref{eq:cn1} and ~\ref{eq:cn2}    \\
 
 To coupe with the numerical unstabilities two approaches have been suggested in the litterature,  the \textit{shifted Crank-Nicolson}  and the \textit{frac-step method}  \cite{Richter2015, Wicka, Wick2013a},.  In this thesis the shifted Crank-Nicolson scheme was considered, introducing stability to the overall system by shifting the $\theta$ parameter slightly to the implicit side. If the shift is dependent of the time-step \textit{k} such that $\frac{1}{2} \leq \theta \leq \frac{1}{2} + k$, the scheme will be of second order \cite{Richter2015}. In the following section, we compare both Crank-Nicolson schemes suggested. \\
-
-
-
 
 \begin{figure}[h!]
  	\centering
@@ -79,19 +80,26 @@ To coupe with the numerical unstabilities two approaches have been suggested in 
 
 \subsubsection*{Discussion}
 
-A numerical investigation of temporal stability in shown in Figure ~\ref{fig:cncomp1}, ~\ref{fig:cncomp1},, where the shifted Crank-Nicolson  scheme $\theta = 0.5 + k$, is compared the original Crank-Nicolson $\theta = 0.5$. The shifted version clearly show stability properties surpassing the original Crank-Nicolson  scheme, for all numerical experiments. However, for $\Delta t \in [0.2, 0.1]$ the scheme clearly lacks the ability to capture the overall physics of the validation problem, resulting in a steady-state solution. I believe this observation can be explained by influence the solid problem (Section \label{sec:solprob}), discretized with a $\theta$ scheme. A centered Crank-Nicholson scheme $\theta= \frac{1}{2}$ is energy conservative, meaning little or no energy is dissipated. While a backward-Euler scheme $\theta = 1$  has little or no conservation of energy, meaning energy is easily dissipated from the system. By the 
+A numerical investigation of temporal stability in shown in Figure ~\ref{fig:cncomp1}, ~\ref{fig:cncomp2}, where the shifted Crank-Nicolson scheme $\theta = 0.5 + \Delta t$, is compared the original Crank-Nicolson $\theta = 0.5$. The shifted version clearly show stability properties surpassing the original Crank-Nicolson  scheme, for all numerical experiments. Choosing $\Delta t = 0.01$, the shifted Crank-Nicholson scheme retain long-time temporal stability, while capturing the physics of the benchmark. While for the ordinary Crank-Nicholson scheme, numerical experiments showed choosing $\Delta t = 0.001$ was necessarily to ensure stability, confirming the results found in \cite{Wicka}. Thus, reducing the time steps needed by a factor of ten. \\
 
+Figure ~\ref{fig:cncomp1} shows choosing $\Delta t \in [0.2, 0.1]$, the scheme lacks the ability to capture the overall physics of the validation problem, resulting in a steady-state solution. I believe this observation can be explained by influence the solid problem (Section \label{sec:solprob}). A centered Crank-Nicholson scheme $\theta= \frac{1}{2}$ is energy conservative, meaning little or no energy is dissipated. While a backward-Euler scheme $\theta = 1$  has little or no conservation of energy, meaning energy is easily dissipated from the system. The shifted Crank-Nicolson scheme dissipate more energy from the structure, if the choice of time step is sufficiently high, such as $\Delta t \in [0.2, 0.1] \rightarrow \theta = [0.7, 0.6]$. 
 
-Choosing $\Delta t \in [0.2, 0.1]$ leads to $\theta = [0.7, 0.6]$, meaning the scheme is no longer centred a have \cite{Formaggia2004} explained by the structure equation influence  implicit  
+\newpage
+ 
+ Therefore, no periodic oscillation of the elastic flag is obtained. The validation of the solid solver shows this property, for the sub-problems CSM-1 and CSM-3. Given the same solid parameters, a steady-state solution is obtained for CSM-1 ($\theta = 1.0 $), while CSM-3 yields a periodic solution CSM-3 ($\theta = 0.5$ ), shown in Figure ~\ref{fig:csm1scm3} .
 
+\begin{figure}[h!]
+ 	\centering
+    \includegraphics[scale=0.4]{./Fig/thetacompare.png}
+      \caption{A comparison of a centered Crank-Nicholson scheme and backward Euler scheme}
+\label{fig:csm1scm3}
+\end{figure}
 
- Figure ~\ref{fig:cncomp2} showes long-time stability and expected physical behavior is obtained for $\Delta t = 0.01$. However, numerical experiments confirmed that  $\Delta t \leq 0.001$ numerical stability was achieved regardless of both methods. \\
-
- This result is important, reducing the overall computational time needed to achieve reasonable accuracy.
+For  $\Delta t \in [0.05, 0.02]$,  the numerical scheme is close to centered, and conservation of energy is nearly preserved. However, spatial refinement by keeping a constant mesh resolution, initiates breakdown of the Newton-solver at an earlier time step. The breakdown is not due to mesh entanglement of the ALE-mapping, but divergence of Newton method \cite{Richter2015}. It is assumed that the divergence is linked to the influence of the domain velocity, by the research found in \cite{Formaggia2004}, but no clear time step restriction is obvious. Indeed, several works indicates choosing time step for a shifted Crank-Nicholson scheme is based on trial and error \cite{Wicka, Wick2013a}. 
 
 
 \newpage
-\section{Optimization of Newtonsolver}
+\section{Optimization of the Newtonsolver}
 A \textit{bottleneck} express a phenomena where the total performance of a complete implementation is limited to small code fragments, accounting for the primary consumption of computer resources.
 
 As for many other applications, within computational science one can often assume the consummation of resources follows the \textit{The Pareto principle}. Meaning that for different types of events, roughly 80\% of the effects come from 20\% of the causes. An analogy to computational sciences it that 80\% of the computational demanding operations comes from 20\% of the code. In our case, the bottleneck is the newtonsolver. The two main reasons for this is 
