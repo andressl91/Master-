@@ -1,0 +1,196 @@
+
+
+ \chapter{Numerical Experiments}
+
+\section{Comparison of mesh moving models}
+Mesh moving models are essential for numerical stability of fluid-structure interaction solvers. If the fluid mesh doesn't conform with the solid deformation, the risk of mesh entanglement increases with the possibility of instabilities or breakdown of the solver. In general, mesh models have shown to be either robust concerning mesh entanglements at the cost of computational time, or computational efficient with less robustness \cite{MM2016}. However, computational efficiency has proven not only to be dependent of the complexity of model, but also the regularity of the fluid mesh, reducing Newton iterations needed per time step \cite{Wickb}. \\ In this section we compare the mesh moving models from section 3.1.4. for the FSI-3 benchmark. The linear elastic model was found not applicable in section 4.2.3. Therefore, only the llaplace and biharmonic model will be considered. We will compare vertical displacement of the elastic flag, regularity of the fluid mesh, and number of Newton iterations per time step. To evaluate the regularity of the fluid mesh, the minimum value of the jacobian of the deformation gradient have been considered in \cite{Wickb}. 
+
+\begin{align*}
+{J}_f = det(\bat{F}_f) =  det(I + \hat{\nabla} \bat{u}_f)
+\end{align*}
+where $I$ is the identity matrix and $ \bat{u}_f$ is the fluid mesh deformation. The jacobian serves as a measure of mesh entanglement, meaning if $J_f \geq 0$, there are no crossing cells in the fluid mesh.  A serial naive Newton solver is used, avoiding any effects of speed-up techniques which may effect Newton iterations (see section 6.3.3). 
+
+\newpage
+\begin{figure}[h!]
+ 	\centering
+    \includegraphics[scale=0.4]{./Fig/minjcompare.png} \\
+      \caption{Investigation of mesh moving models for the FSI3 benchbark in the time interval $t \in [0, 5]$, comparing number of Newton iterations, mesh regularity, and vertical displacement of elastic flag. }
+      \label{fig:minjcomp}
+\end{figure}
+
+\subsection*{Results}
+Figure \ref{fig:minjcomp} compares the mesh moving models in the time interval  $t = [0, 5]$, when a stable periodic solution is obtained. All models shows a minima of mesh regularity at $3.8s < t < 4.2$, which is expected due to the largest deformation of the elastic flag. Both models shows a larger number of Newton-iterations are needed at each time step, when the elastic flag starts oscillating for $t > 3s$. The biharmonic models is superior in terms of number of iterations need per time step, and mesh regularity in comparison with the Laplace model. Further, the biharmonic 2 model shows better mesh regularity than biharmonic 1, but shows equal behavior in terms of Newton-iterations. For all models, no distinct difference in deformation of the y-component is found.
+
+\subsection*{Discussion}
+The numerical results confirms biharmonic models produce a better regularity of the fluid mesh cells, which in turn reduces the number of Newton-iterations needed per time step. However,  better evolution of mesh cells is by no means necessary for solving the FSI-3 problem. Therefore, the Laplace model remains a good choice, and its simplicity is preferable in terms of computational time (a topic to be discussed in section ~\ref{fig:cncomp1}). 
+~\ref{sec:opti} 
+
+
+\newpage
+
+\section{Investigation of temporal stability}
+One of the main challenges for constructing time-stepping schemes for ALE-methods, is the additional non-linearity introduced by the domain-velocity term in the fluid problem \cite{Formaggia2004}, 
+
+\begin{align}
+\ha{J}_f (\hat{F}_f^{-1}(\bat{v}_f - \pder{\ha{T}_f}{t}) \cdot \hat{\nabla}) \bat{v}_f
+\end{align} 
+Closer inspection of the convection term reviles spatial and temporal differential operators depending non-linearly on one another. These differential operators often appear separated, making discretization of a general time-stepping scheme not directly intuitive. The domain-velocity $ \pder{\ha{T}_f}{t}$ have proven to effect the stability of first and second-order time stepping schemes on fixed grids, but to what extent remains unclear  \cite{Formaggia2004, Formaggia1991}. The second order Crank-Nicolson used in this thesis, have also shown to suffer from temporal stability for long-term simulations of fluid problems, on fixed-grids \cite{Wick2013a}.
+The  unconditionally stable Crank-Nicolson scheme is restricted by the condition \cite{Wick2013a},
+\begin{align}
+k \leq ch^{\frac{2}{3}} 
+\end{align}
+\textit{Where c is a costant, while k and h is the time-step and a mesh-size parameter } \\
+
+while for the stability of the time derivative of the ALE-mapping, no accurate restriction is obtained (but thorough explored in \cite{Formaggia2004}). As a result, time step restriction is necessary to ensure that numerical stability  \cite{Formaggia2004}.  \\
+
+The temporal stability for the implicit Crank-Nicolson scheme, for the validation benchmark chosen in this thesis, was studied in  \cite{Richter2015}. The criteria for the numerical experiments was to obtain a stable solution in the time interval of 10 seconds, by temporal and spatial refinement studies.  Following the ideas of \cite{Richter2015}, a second order scheme based on the Crank-Nicolson yields two possibilities.
+
+\begin{discr}
+\textit{Crank–Nicolson secant method }
+\begin{align*}
+\Big[\frac{\ha{J}(\bat{u}^{n}) \bat{\nabla} \bat{v}^{n} \bat{F}_W^{-1}}{2} 
++ \frac{\ha{J}(\bat{u}^{n-1}) \bat{\nabla} \bat{}v^{n-1} \bat{F}_W^{-1}}{2} \Big] 
+\frac{\bat{u}^{n} - \bat{u}^{n-1}}{k}
+\end{align*} 
+\label{eq:cn1}
+\end{discr}
+
+\begin{discr}
+\textit{Crank–Nicolson midpoint-tangent method}
+\begin{align*}
+\Big[\frac{\ha{J}(\bat{u}_{cn}) \bat{\nabla} \bat{v}_{cn} \bat{F}_W^{-1}}{2} \Big] 
+\frac{\bat{u}^{n} - \bat{u}^{n-1}}{k} \hspace{4mm}
+\bat{u}_{cn} = \frac{\bat{u}^{n} + \bat{u}^{n-1}}{2} \hspace{2mm}
+\bat{v}_{cn} = \frac{\bat{v}^{n} + \bat{v}^{n-1}}{2}
+\end{align*} 
+\label{eq:cn2}
+\end{discr}
+
+\newpage
+
+The numerical experiments showed very similar performance for Discretization  ~\ref{eq:cn1} and ~\ref{eq:cn2} , and significant differences of temporal accuracy was not found \cite{Richter2015}. However, spatial and temporal refinement showed the implicit Crank-Nicolson scheme gave stability problems for certain time-steps \textit{k}. Choosing $k = [0.005, 0.003]$, the FSI-3 problem (Section  ~\ref{subsec:fsi3}) suffered from numerical instabilities. Interestingly, the instabilities occurred earlier in simulation time for increasing mesh refinement. A similar experiment in  \cite{Wicka}, showed reducing the time step $k = 0.001$  yield stable long-time simulation for both  Discretization  ~\ref{eq:cn1} and ~\ref{eq:cn2}    \\
+
+To coupe with the numerical unstabilities two approaches have been suggested in the litterature,  the \textit{shifted Crank-Nicolson}  and the \textit{frac-step method}  \cite{Richter2015, Wicka, Wick2013a},.  In this thesis the shifted Crank-Nicolson scheme was considered, introducing stability to the overall system by shifting the $\theta$ parameter slightly to the implicit side. If the shift is dependent of the time-step \textit{k} such that $\frac{1}{2} \leq \theta \leq \frac{1}{2} + k$, the scheme will be of second order \cite{Richter2015}. \\
+
+\subsection{Results}
+A numerical investigation of temporal stability in shown in Figure ~\ref{fig:cncomp1}, ~\ref{fig:cncomp2}, where the shifted Crank-Nicolson scheme $\theta = 0.5 + \Delta t$, is compared the original Crank-Nicolson $\theta = 0.5$. The shifted version clearly show stability properties surpassing the original Crank-Nicolson  scheme, for all numerical experiments. Choosing $\Delta t = 0.01$, the shifted Crank-Nicholson scheme retain long-time temporal stability, while capturing the physics of the benchmark. While for the ordinary Crank-Nicholson scheme, numerical experiments showed choosing $\Delta t = 0.001$ was necessarily to ensure stability, confirming the results found in \cite{Wicka}. Thus, reducing the time steps needed by a factor of ten. \\
+
+Figure ~\ref{fig:cncomp1} shows choosing $\Delta t \in [0.2, 0.1]$ results in a steady-state solution.I believe this observation can be explained by influence the solid problem (Section \label{sec:solprob}). A centered Crank-Nicolson scheme $\theta= \frac{1}{2}$ is energy conservative, meaning little or no energy is dissipated. While a backward-Euler scheme $\theta = 1$  has little or no conservation of energy, meaning energy is easily dissipated from the system. The shifted Crank-Nicolson scheme dissipate more energy from the structure, if the choice of time step is sufficiently high, such as $\Delta t \in [0.2, 0.1] \rightarrow \theta = [0.7, 0.6]$.  Therefore, no periodic oscillation of the elastic flag is obtained. The validation of the solid solver shows this property, for the sub-problems CSM-1 and CSM-3. Given the same solid parameters, a steady-state solution is obtained for CSM-1 ($\theta = 1.0 $), while CSM-3 yields a periodic solution CSM-3 ($\theta = 0.5$ ), shown in Figure ~\ref{fig:csm1scm3} .\\
+
+For  $\Delta t \in [0.05, 0.02]$,  the numerical scheme is close to centered, and conservation of energy is nearly preserved. However, spatial refinement by keeping a constant mesh resolution, initiates breakdown of the Newton-solver at an earlier time step. The breakdown is not due to mesh entanglement of the ALE-mapping, but divergence of Newton method \cite{Richter2015}. It is assumed that the divergence is linked to the influence of the domain velocity, by the research found in \cite{Formaggia2004}, but no clear time step restriction is obvious. Indeed, several works indicates choosing time step for a shifted Crank-Nicolson scheme is based on trial and error \cite{Wicka, Wick2013a}. 
+
+\begin{figure}[h!]
+ 	\centering
+    \includegraphics[scale=0.6]{./Fig/thetacheck.png} \\
+      \caption{Investigation of temporal stability for the FSI3 benchbark in the time interval $t \in [0, 10]$, comparing the shifted and centered Crank-Nicolson scheme. }
+\label{fig:cncomp1}
+\end{figure}
+
+\begin{figure}[h!]
+ 	\centering
+    \includegraphics[scale=0.6]{./Fig/besttheta.png}
+      \caption{Investigation of temporal stability for the FSI3 benchbark in the time interval $t \in [0, 10]$,  comparing the shifted and centered Crank-Nicolson scheme. }
+\label{fig:cncomp2}
+\end{figure}
+
+\newpage
+
+\begin{figure}[h!]
+ 	\centering
+    \includegraphics[scale=0.4]{./Fig/thetacompare.png}
+      \caption{A comparison of a centered Crank-Nicolson scheme and backward Euler scheme}
+\label{fig:csm1scm3}
+\end{figure}
+
+
+\newpage
+\section{Optimization of the Newtonsolver}
+\label{sec:opti}
+A \textit{bottleneck} express a phenomena where the total performance of a complete implementation is limited to small code fragments, accounting for the primary consumption of computer resources.
+
+As for many other applications, within computational science one can often assume the consummation of resources follows the \textit{The Pareto principle}. Meaning that for different types of events, roughly 80\% of the effects come from 20\% of the causes. An analogy to computational sciences it that 80\% of the computational demanding operations comes from 20\% of the code. In our case, the bottleneck is the newtonsolver. The two main reasons for this is 
+
+\begin{itemize}
+\item \textbf{Jacobian assembly} \\
+The construction of the Jacobian matrix for the total residue of the system, is the most time demanding operations within the whole computation. 
+\item \textbf{Solver}. \\ 
+As iterative solvers are limited for the solving of fluid-structure interaction problems, direct solvers was implemented for this thesis. As such, the operation of solving a linear problem at each iteration is computational demanding, leading to  less computational efficient operations. Mention order of iterations?
+\end{itemize}
+
+Facing these problems, several attempts was made to speed-up the implementation. The FEniCS project consist of several nonlinear solver backends, were fully user-customization option are available. However one main problem which we met was the fact that FEniCS assembles the matrix of the different variables over the whole mesh, even though the variable is only defined in one to the sub-domains of the system.In our case the pressure is only defined within the fluid domain, and therefore the matrix for the total residual consisted of several zero columns within the structure region. FEniCS provides a solution for such problems, but therefore we were forced to construct our own solver and not make use of the built-in nonlinear solvers. \\
+
+Newtons method can be written as,
+\begin{align*}
+\mathbf{F}(\mathbf{x}_n) + \nabla \mathbf{F}(\mathbf{x}_n)(\mathbf{x}_n - \mathbf{x}_0) = 0
+\label{eq:newton}
+\end{align*}
+\textit{where $\mathbf{F}$ is the residue, $\mathbf{x}_n$, $\mathbf{x}_0$ is vector, and $ \nabla \mathbf{F}$ is the Jacobian of the residue} \\
+
+Assembly of the Jacobian at each iteration is CPU-intensive, hence the main speed-up effort were centered around  Jacobian assembly. Of the speed-ups methods explored in this thesis, some some are \textit{consistent} methods while others are \textit{nonconsistent}. Consistent methods are methods that always will work, involving smarter assembly methods of the linear system ~\ref{eq:newton}. The non-consistent method presented involves simplifications of the linear system ~\ref{eq:newton}, which in turn affects the convergence of Newtons method. Hence, by cheaper Jacobi assembly,  additional Newton iterations are often necessary for convergence. Therefore one also risk breakdown of the solver as the Newton iterations may not converge.   
+
+
+\subsection{Consistent methods}
+\subsubsection{Jacobi buffering}
+By inspection of the Jacobi matrix, linear terms remain constant within each time step. By assembling linear terms only in the first Newton iteration, reduces the assembly time at each time step. Jacobi buffering is not a simplification of the original problem, meaning convergence of Newton method is unaffected .  
+
+\subsection{Non-consisten methods}    
+\subsubsection{Reuse of Jacobian}
+ If  one approach of reusing the Jacobian for the linear system was proposed. In other words, the LU-factorization of the system is reused until the Jacobi is re-assembled. This method greatly reduced the computational time for each time step. 
+
+\subsubsection{Quadrature reduce}
+The assemble time of the Jacobian greatly depends on the degree of polynomials used in the discretisation of the total residual. Within FEniCS the order of polynomials representing the Jacobian can be adjusted. The use of lower order polynomials reduces assemble time of the Jacobian at each newton-iteration, however it leads to an inexact Jacobian which may results to additional iterations. 
+
+\subsubsection{Combining quadrature reduce and Jacobian reuse}
+Combining the previous non-consistent methods, reducing the degree of polynomials of the first Jacobian assembly may further speed up the solution process. 
+
+
+\subsection{Comparison of speedup methods}
+% All methods show an increasing number of iterations for $t > 3$,  with a maximum value  at $ 3.8 < t <4.2$.
+In Figure ~\ref{fig:lap_it}, all speed-up techniques are compared on the time interval $t = [0, 5]$, for the Laplacian model. Numerical simulations shows how all non-consistent methods increase the number of iterations needed for convergence at each time step, contrary to a consistent naive method. However, the non-consistent methods clearly dominate the time used for a full Newton-iteration at each time step, in comparison with the naive approach. The fastest method proved to be the combined method, using $1.5$ hours for solving the full time interval. The naive approach used $17.1$ hours, meaning the combined method resulted in a $98 \%$ speedup. \\
+
+The biharmonic mesh model results in Figure ~\ref{fig:bi_it}, shows  similar observation compared to the Laplacian model. However, the benefit of a better evolution of mesh cells is reflected in the reduced number of iterations needed at each times step, for all methods. The quadrature reduce method even compares to the naive method in terms of iterations. The naive approach computed the whole time interval in $33.87$ hours, while the combined method  $3.46$ hours, a speedup of $89\%$.
+
+\newpage
+
+\begin{figure}[h!]
+ \includegraphics[scale=0.38]{./Fig/itercompare.png}
+ \caption{Comparison of speed-up techniques for the laplace mesh model}
+ \label{fig:lap_it}
+\end{figure}
+
+\begin{figure}[h!]
+ \includegraphics[scale=0.38]{./Fig/bi_compareit.png}
+ \caption{Comparison of speed-up techniques for the biharmonic type 1 mesh model}
+  \label{fig:bi_it}
+\end{figure}
+
+
+\begin{table}[h!]
+\centering
+\caption{Comparison of speedup techniques}
+\label{my-label}
+\begin{tabular}{ |p{2.8cm}|p{2.2cm}|p{2.4cm}|p{2.4cm}|p{2.4cm}|p{2.4cm}| }
+ \hline
+  \multicolumn{6}{|c|}{Laplace} \\
+ \hline
+Implementation & Naive&Buffering&Reusejacobi&Reducequadrature&Combined \\
+\hline
+ Mean time pr timestep &123.10  & 159.85  & 61.31  & 31.43  & 11.11  \\
+\hline
+Mean iteration &4.50  & 7.79  & 10.22  & 10.08  & 10.22  \\
+\hline
+Speedup ratio& -  & 0.12  & 0.50  & 0.74  & 0.91  \\
+  \hline
+  \multicolumn{6}{|c|}{Biharmonic Type 1} \\
+ \hline
+Implementation & Naive & Buffering & Reusejacobi & Reducequad &Combined \\
+\hline
+ Mean time pr timestep &243.39  & 307.67  & 76.77  & 51.64  & 24.87  \\
+\hline
+Mean iteration &4.14  & 6.21  & 7.19  & 4.67  & 6.81  \\
+\hline
+Speedup ration& -  & -0.26  & 0.68  & 0.79  & 0.90  \\
+\hline
+\end{tabular}
+\end{table}
+
