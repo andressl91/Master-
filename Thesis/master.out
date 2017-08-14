@@ -1,10 +1,9 @@
-\BOOKMARK [0][-]{chapter.1}{A motivation for studying fluid-structure interaction}{}% 1
-\BOOKMARK [0][-]{chapter.2}{Governing equations}{}% 2
-\BOOKMARK [0][-]{chapter.3}{Computational Fluid Structure Interaction}{}% 3
-\BOOKMARK [0][-]{chapter.4}{Verification and Validation}{}% 4
-\BOOKMARK [0][-]{chapter.5}{Implementation of a Fluid-Structure Interaction solver}{}% 5
-\BOOKMARK [0][-]{chapter.6}{Numerical Experiments}{}% 6
-\BOOKMARK [0][-]{chapter.7}{Conclusion and further research}{}% 7
-\BOOKMARK [0][-]{section*.49}{Appendices}{}% 8
-\BOOKMARK [0][-]{Appendix.a.A}{The deformation gradient}{}% 9
-\BOOKMARK [0][-]{Appendix.a.B}{Strain tensor}{}% 10
+\BOOKMARK [0][-]{chapter.1}{Verification and Validation}{}% 1
+\BOOKMARK [1][-]{section.1.1}{Verification of Code}{chapter.1}% 2
+\BOOKMARK [2][-]{subsection.1.1.1}{Method of manufactured solution}{section.1.1}% 3
+\BOOKMARK [2][-]{subsection.1.1.2}{Comment on verification of the fluid-structure interaction solver by MMS}{section.1.1}% 4
+\BOOKMARK [1][-]{section.1.2}{Validation}{chapter.1}% 5
+\BOOKMARK [1][-]{section.1.3}{Validation benchmark}{chapter.1}% 6
+\BOOKMARK [2][-]{subsection.1.3.1}{Validation of fluid solver}{section.1.3}% 7
+\BOOKMARK [2][-]{subsection.1.3.2}{Validation of solid solver}{section.1.3}% 8
+\BOOKMARK [2][-]{subsection.1.3.3}{Validation of fluid structure interaction solver}{section.1.3}% 9
