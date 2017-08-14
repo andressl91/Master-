@@ -405,11 +405,9 @@ while $\mathbf{u}^{*}$ is on the form
    &\vartheta \mathbf{u}^{n-1} + (1 - \vartheta)\mathbf{u}^{n} \hspace{4mm} \vartheta \leq 0
    \end{cases}
 \end{align*}
-At first glance, defining an additional parameter $\vartheta$ for the fluid problem seems unessecary. A general mid-point rule by  $\alpha = \vartheta = \frac{1}{2}$, a second order scheme in time would easily be acchieved. However, in \cite{Simo1994} an additional second order scheme is obtained by choosing e $\alpha = \frac{1}{2}$,  $\vartheta =-1$, where  $\mathbf{u}^{*}$ is approximated with an Adam-Bashforth linear method. Making the initial fluid problem linear while maintaining second order convergence is an important result, which have not yet been investigated thorough in literature of fluid-structure interaction.  However, in the monolithic  ALE method presented in this thesis, the fluid problem will still remain non-linear due to the ALE-mapping of the convective term, but making the overall problem "more linear" in contrary with a second order crank-nicholson scheme. The idea was initially pursued in this thesis but left aside, as discretization of the fluid convective term was not intuitive. 
+At first glance, defining an additional parameter $\vartheta$ for the fluid problem seems unessecary. A general mid-point rule by  $\alpha = \vartheta = \frac{1}{2}$, a second order scheme in time would easily be acchieved. However, in \cite{Simo1994} an additional second order scheme is obtained by choosing e $\alpha = \frac{1}{2}$,  $\vartheta =-1$, where  $\mathbf{u}^{*}$ is approximated with an Adam-Bashforth linear method. Making the initial fluid problem linear while maintaining second order convergence is an important result, which have not yet been investigated thorough in literature of fluid-structure interaction.  However, in the monolithic  ALE method presented in this thesis, the fluid problem will still remain non-linear due to the ALE-mapping of the convective term, but making the overall problem "more linear" in contrary with a second order crank-nicholson scheme. The idea was initially pursued in this thesis but left aside, as discretization of the fluid convective term was not intuitive.  \\
 
-
-
-In light of By letting $\alpha = \vartheta \hspace{2mm} \alpha, \vartheta \in [0, 1] $ for the fluid problem, and generalising the consepts in an ALE context, we derive the one-stepl $\theta$ scheme found in \cite{Wicka}.
+By letting $\alpha = \vartheta \hspace{2mm} \alpha, \vartheta \in [0, 1] $ for the fluid problem, and generalising the consepts in an ALE context, we derive the one-stepl $\theta$ scheme found in \cite{Wicka}.
 
 \begin{prob}
 The one-step $\theta$ scheme 

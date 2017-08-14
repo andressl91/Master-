@@ -434,7 +434,7 @@ nel & ndof & ux of A [x $10^{-3}$]  &uy of A [x $10^{-3}$] \\
  
 
 \subsection{Validation of fluid structure interaction solver}
-\label{subsec:fsi3}
+\label{sec:fsi3}
 The validation of the FSI solver consist of three sub-problems which will be referred to FSI-1, FSI-2 and FSI-3. The FSI-1 problem yields a steady state solution for the system, inducing small deformations to the elastic flag. The FSI-2 and FSI-3 problems results in a periodic solution, where the elastic flag oscillates behind the cylinder. All sub-problems inherit the conditions from the previous validation branches, with the exception of no gravitational force on the elastic flag. On the fluid-structure interface $\Gamma$, we enforce the kinematic and dynamic boundary condition
 \begin{align}
 \mathbf{v}_f = \mathbf{v}_s \\

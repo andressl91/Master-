@@ -3,12 +3,16 @@
 \usepackage[english]{babel}
 \usepackage{preamble}
 
-%\usepackage[MEK,60]{masterfrontpage}
+\usepackage[MEK, 60]{masterfrontpage}
+\title{A comparison of }
+\subtitle{Valgfri underoverskrift}
+\author{Andreas Slyngstad}
 %\setlength\parindent{0pt}
 
 \begin{document}                                                                                                                          
 %\maketitle
-%\masterfrontpage
+\masterfrontpage
+\input{./Chapters/Acknowledgement/acknowledgement}
 \pagenumbering{roman}
 \tableofcontents
 \newtheorem{theorem}{Theorem}[section]
@@ -16,19 +20,18 @@
 \pagenumbering{arabic}
 
 \input{./Chapters/introduction/introduction}
-%\newpage
-%\input{./Chapters/Continuum/Continuum_it3}
-%\newpage
-%\input{./Chapters/FSI/FSI_it1}
-%\newpage
-%\input{./Chapters/verification/verival_it4}
-%\newpage
-%\input{./Chapters/Implementation/implementation}
-%\newpage
-%\input{./Chapters/Results/results_it2}
-%\newpage
-%\input{./Chapters/Conclusion/conclusion}
-%\input{./Chapters/Appendix/appendix}
+\input{./Chapters/Continuum/Continuum_it3}
+\newpage
+\input{./Chapters/FSI/FSI_it1}\newpage
+\input{./Chapters/verification/verival_it4}
+\newpage
+\input{./Chapters/Implementation/implementation}
+\newpage
+\input{./Chapters/Results/results_it2}
+\newpage
+\input{./Chapters/Conclusion/conclusion}
+\newpage
+\input{./Chapters/Appendix/appendix}
 
 
 \bibliographystyle{plain}

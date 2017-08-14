@@ -1,1 +1,10 @@
 \BOOKMARK [0][-]{chapter.1}{A motivation for studying fluid-structure interaction}{}% 1
+\BOOKMARK [0][-]{chapter.2}{Governing equations}{}% 2
+\BOOKMARK [0][-]{chapter.3}{Computational Fluid Structure Interaction}{}% 3
+\BOOKMARK [0][-]{chapter.4}{Verification and Validation}{}% 4
+\BOOKMARK [0][-]{chapter.5}{Implementation of a Fluid-Structure Interaction solver}{}% 5
+\BOOKMARK [0][-]{chapter.6}{Numerical Experiments}{}% 6
+\BOOKMARK [0][-]{chapter.7}{Conclusion and further research}{}% 7
+\BOOKMARK [0][-]{section*.49}{Appendices}{}% 8
+\BOOKMARK [0][-]{Appendix.a.A}{The deformation gradient}{}% 9
+\BOOKMARK [0][-]{Appendix.a.B}{Strain tensor}{}% 10
