@@ -19,13 +19,6 @@ J~Donea, A~Huerta, J.-Ph Ponthot, and A~Rodr{\'{i}}guez-Ferran.
 Richard~P Dwight.
 \newblock {Robust Mesh Deformation using the Linear Elasticity Equations}.
 
-\bibitem{Etienne2006}
-St{\'{e}}phane {\'{E}}tienne, D~Tremblay, and Dominique Pelletier.
-\newblock {Code Verification and the Method of Manufactured Solutions for
-  Fluid-Structure Interaction Problems}.
-\newblock {\em 36th AIAA Fluid Dynamics Conference and Exhibit}, (June):1--11,
-  2006.
-
 \bibitem{Fernandez2009}
 Miguel~A Fern{\'{a}}ndez and Jean-Fr{\'{e}}d{\'{e}}ric Gerbeau.
 \newblock {Algorithms for fluid-structure interaction problems}.
@@ -38,26 +31,18 @@ Miguel~A. Fern{\'{a}}ndez, Jean~Frederic Gerbeau, and Ceremade Grandmont.
 \newblock {\em International Journal for Numerical Methods in Engineering},
   69(4):794--821, 2007.
 
-\bibitem{Formaggia1991}
-L~Formaggia and F~Nobile.
-\newblock {A stability analysis for the arbitrary Lagrangian Eulerian
-  formulation with finite elements}.
-\newblock {\em East-west journal of numerical mathematics}, Vol. 7(No.
-  2):105--131, 1991.
-
-\bibitem{Formaggia2004}
-Luca Formaggia and Fabio Nobile.
-\newblock {Stability analysis of second-order time accurate schemes for
-  ALE-FEM}.
-\newblock {\em Computer Methods in Applied Mechanics and Engineering},
-  193(39-41 SPEC. ISS.):4097--4116, 2004.
-
 \bibitem{Forster2007}
 Christiane F{\"{o}}rster, Wolfgang~A. Wall, and Ekkehard Ramm.
 \newblock {Artificial added mass instabilities in sequential staggered coupling
   of nonlinear structures and incompressible viscous flows}.
 \newblock {\em Computer Methods in Applied Mechanics and Engineering},
   196(7):1278--1293, 2007.
+
+\bibitem{Frei2016a}
+S.~Frei, T.~Richter, and T.~Wick.
+\newblock {Long-term simulation of large deformation, mechano-chemical
+  fluid-structure interactions in ALE and fully Eulerian coordinates}.
+\newblock {\em Journal of Computational Physics}, 321:874--891, 2016.
 
 \bibitem{Gatzhammer2014}
 Bernhard Gatzhammer.
@@ -71,27 +56,10 @@ Brian~T. Helenbrook.
 \newblock {\em International Journal for Numerical Methods in Engineering},
   2003.
 
-\bibitem{Holzapfel2000}
-Gerhard~A. Holzapfel.
-\newblock {\em {Nonlinear Solid Mechanics: A Continuum Approach for
-  Engineering}}.
-\newblock 2000.
-
-\bibitem{Hron2006}
-Jaroslav Hron and Stefan Turek.
-\newblock {Proposal for numerical benchmarking of fluid-structure interaction
-  between an elastic object and laminar incompressible flow}.
-\newblock {\em Fluid-Structure Interaction}, 53:371--385, 2006.
-
 \bibitem{Hsu}
 Su-Yuen Hsu, Chau-Lyan Chang, and Jamshid Samareh.
 \newblock {A Simplified Mesh Deformation Method Using Commercial Structural
   Analysis Software}.
-
-\bibitem{Humphrey2002}
-Jay~D. Humphrey.
-\newblock {\em {Cardiovascular Solid Mechanics}}.
-\newblock Springer New York, New York, NY, 2002.
 
 \bibitem{Jasak2006}
 Hrvoje Jasak and {\v{Z}}eljko Tukovi{\'{c}}.
@@ -104,11 +72,6 @@ V~V Meleshko.
   'Engineering' Solutions}.
 \newblock {\em Journal of Elasticity}, 48(1):1--50, 1997.
 
-\bibitem{Merodio2011}
-Jos{\'{e}} Merodio and Giuseppe Saccomandi.
-\newblock {Continuum Mechanics - Volume I}.
-\newblock In {\em Volume 1}, chapter~3, pages 82--84. EOLSS, 2011.
-
 \bibitem{MM2016}
 Selim MM and Koomullil RP.
 \newblock {Mesh Deformation Approaches – A Survey}.
@@ -119,18 +82,10 @@ J~Newman.
 \newblock {\em {Marine Hydrodynamics}}.
 \newblock 1977.
 
-\bibitem{Oberkampf2010}
-William~L. Oberkampf and Christopher~J. Roy.
-\newblock {\em {Verification and Validation in Scientific Computing}}.
-\newblock Cambridge University Press, Cambridge, 2010.
-
-\bibitem{Razzaq2010}
-M~Razzaq, Stefan Turek, Jaroslav Hron, J~F Acker, F~Weichert, I~Grunwald,
-  C~Roth, M~Wagner, and B~Romeike.
-\newblock {Numerical simulation and benchmarking of fluid-structure interaction
-  with application to Hemodynamics}.
-\newblock {\em Fundamental Trends in Fluid-Structure Interaction}, 1:171--199,
-  2010.
+\bibitem{Richter2010b}
+T~Richter.
+\newblock {Numerical Methods for Fluid-Structure Interaction Problems}.
+\newblock {\em Course of lectures}, 2010(August 2010), 2010.
 
 \bibitem{Richter2010c}
 T.~Richter and T.~Wick.
@@ -144,46 +99,6 @@ Thomas Richter.
 \newblock {Fluid Structure Interactions}.
 \newblock 2016.
 
-\bibitem{Richter2015}
-Thomas Richter and Thomas Wick.
-\newblock {On Time Discretizations of Fluid-Structure Interactions}.
-\newblock pages 377--400. 2015.
-
-\bibitem{Roache2002}
-Patrick~J. Roache.
-\newblock {Code Verification by the Method of Manufactured Solutions}.
-\newblock {\em Journal of Fluids Engineering}, 124(1):4, 2002.
-
-\bibitem{Roache}
-P.J. Roache.
-\newblock {\em {Verification and Validation in Computational Science and
-  Engineering}}.
-\newblock Computing in Science Engineering, Hermosa Publishers, 1998, 8-9,
-  1998.
-
-\bibitem{Rykiel1996}
-Edward~J. Rykiel.
-\newblock {Testing ecological models: The meaning of validation}.
-\newblock {\em Ecological Modelling}, 90(3):229--244, 1996.
-
-\bibitem{Biggs}
-Kambiz Salari and Patrick Knupp.
-\newblock {Code Verification by the Method of Manufactured Solution.}
-\newblock Technical report, Sandia National Laboratories, 2000.
-
-\bibitem{Schwer2006}
-LE~Schwer.
-\newblock {Guide for verification and validation in computational solid
-  mechanics}.
-\newblock {\em American Society of Mechanical Engineers}, PTC 60(V{\&}V
-  10):1--15, 2006.
-
-\bibitem{Sheldon2014}
-Jason~P Sheldon, Scott~T Miller, and Jonathan~S Pitt.
-\newblock {Methodology for Comparing Coupling Algorithms for Fluid-Structure
-  Interaction Problems}.
-\newblock {\em World Journal of Mechanics}, 4(February):54--70, 2014.
-
 \bibitem{Simo1994}
 J.C. Simo and F.~Armero.
 \newblock {Unconditional stability and long-term behavior of transient
@@ -191,28 +106,10 @@ J.C. Simo and F.~Armero.
 \newblock {\em Computer Methods in Applied Mechanics and Engineering},
   111(1-2):111--154, jan 1994.
 
-\bibitem{Sommerville2006}
-Ian Sommerville.
-\newblock {Verification and Validation}.
-\newblock Technical Report February, 2006.
-
 \bibitem{Stein}
 K~Stein, T~Tezduyar, and R~Benney.
 \newblock {Mesh Moving Techniques for Fluid-Structure Interactions With Large
   Displacements}.
-
-\bibitem{Turek}
-Stefan Turek, Jaroslav Hron, Mudassar Razzaq, and Hilmar Wobker.
-\newblock {Numerical Benchmarking of Fluid-Structure Interaction : A comparison
-  of different discretization and solution approaches}.
-
-\bibitem{V2013}
-A~V, T~Passerini, A~Quaini, U~Villa, A~Veneziani, and S~Canic.
-\newblock {Numerical Analysis and S cientific C omputing P reprint S eria
-  Validation of an open source framework for the simulation of blood flow in
-  rigid and deformable vessels P reprint {\#} 17 D epartment of Mathematics
-  University of Houston}.
-\newblock 2013.
 
 \bibitem{Wall12006}
 Wolfgang~A. Wall, Axel {, Gerstenberger}, Peter {, Gamnitzer}, Christiane {,
@@ -221,24 +118,6 @@ Wolfgang~A. Wall, Axel {, Gerstenberger}, Peter {, Gamnitzer}, Christiane {,
   Methods and New Fixed Grid Approaches}.
 \newblock In {\em Fluid-Structure Interaction: Modelling, Simulation,
   Optimisation}, pages 195----232. Springer Berlin Heidelberg, 2006.
-
-\bibitem{White}
-Frank White.
-\newblock {\em {Viscous fluid flow}}.
-\newblock McGraw-Hill, third edit edition.
-
-\bibitem{Wick2013a}
-T.~Wick.
-\newblock {Stability Estimates and Numerical Comparison of Second Order
-  Time-Stepping Schemes for Fluid-Structure Interactions}.
-\newblock In {\em Numerical Mathematics and Advanced Applications 2011}, pages
-  625--632. Springer Berlin Heidelberg, Berlin, Heidelberg, 2013.
-
-\bibitem{Wickb}
-T~Wick and Thomas Wick.
-\newblock {Variational-monolithic ALE fluid-structure interaction: Comparison
-  of computational cost and mesh regularity using different mesh motion
-  techniques}.
 
 \bibitem{Wicka}
 Thomas Wick.
@@ -263,10 +142,5 @@ Thomas Wick.
   problems}.
 \newblock {\em Computer Methods in Applied Mechanics and Engineering},
   255:14--26, 2013.
-
-\bibitem{Wriggers2006}
-P.~Wriggers.
-\newblock {\em {Computational contact mechanics, second ed., Springer}}.
-\newblock 2006.
 
 \end{thebibliography}

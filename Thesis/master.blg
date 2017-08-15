@@ -8,8 +8,16 @@ Database file #3: ./Cite/Decoupled.bib
 Database file #4: ./Cite/NavierStokes.bib
 Database file #5: ./Cite/Verification.bib
 Database file #6: ./Cite/EulerianFormulation.bib
+Repeated entry---line 21 of file ./Cite/EulerianFormulation.bib
+ : @article{Frei2016a
+ :                   ,
+I'm skipping whatever remains of this entry
 Repeated entry---line 57 of file ./Cite/EulerianFormulation.bib
  : @article{Richter2010c
+ :                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 84 of file ./Cite/EulerianFormulation.bib
+ : @article{Richter2010b
  :                      ,
 I'm skipping whatever remains of this entry
 Database file #7: ./Cite/Meshupdate.bib
@@ -17,9 +25,6 @@ Repeated entry---line 55 of file ./Cite/Meshupdate.bib
  : @article{Wick
  :              ,
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "Frei2016"
-Warning--I didn't find a database entry for "Richter2010a"
-Warning--I didn't find a database entry for "Alnes2015"
 Warning--empty journal in Biedron
 Warning--empty year in Biedron
 Warning--empty journal in Crumpton1995
@@ -28,68 +33,56 @@ Warning--empty journal in Donea2004
 Warning--there's a number but no volume in Donea2004
 Warning--empty journal in Dwight
 Warning--empty year in Dwight
-Warning--there's a number but no volume in Etienne2006
 Warning--empty journal in Fernandez2009
 Warning--empty journal in Gatzhammer2014
-Warning--empty publisher in Holzapfel2000
 Warning--empty journal in Hsu
 Warning--empty year in Hsu
 Warning--empty publisher in Newman1977
 Warning--empty journal in Richter2016
-Warning--empty booktitle in Richter2015
-Warning--empty publisher in Richter2015
-Warning--empty institution in Sommerville2006
 Warning--empty journal in Stein
 Warning--empty year in Stein
-Warning--empty journal in Turek
-Warning--empty year in Turek
-Warning--empty journal in V2013
-Warning--empty year in White
-Warning--empty journal in Wickb
-Warning--empty year in Wickb
 Warning--empty year in Wicka
 Warning--empty journal in Wick
 Warning--empty year in Wick
-Warning--empty publisher in Wriggers2006
-You've used 46 entries,
+You've used 25 entries,
             2118 wiz_defined-function locations,
-            795 strings with 11553 characters,
-and the built_in function-call counts, 13638 in all, are:
-= -- 1337
-> -- 592
-< -- 7
-+ -- 236
-- -- 190
-* -- 921
-:= -- 2319
-add.period$ -- 135
-call.type$ -- 46
-change.case$ -- 227
+            659 strings with 7970 characters,
+and the built_in function-call counts, 7162 in all, are:
+= -- 704
+> -- 303
+< -- 2
++ -- 121
+- -- 96
+* -- 491
+:= -- 1234
+add.period$ -- 71
+call.type$ -- 25
+change.case$ -- 121
 chr.to.int$ -- 0
-cite$ -- 77
-duplicate$ -- 551
-empty$ -- 1078
-format.name$ -- 190
-if$ -- 2787
+cite$ -- 44
+duplicate$ -- 284
+empty$ -- 560
+format.name$ -- 96
+if$ -- 1442
 int.to.chr$ -- 0
-int.to.str$ -- 46
-missing$ -- 50
-newline$ -- 226
-num.names$ -- 92
-pop$ -- 280
+int.to.str$ -- 25
+missing$ -- 25
+newline$ -- 123
+num.names$ -- 50
+pop$ -- 139
 preamble$ -- 1
-purify$ -- 187
+purify$ -- 98
 quote$ -- 0
-skip$ -- 358
+skip$ -- 189
 stack$ -- 0
-substring$ -- 771
-swap$ -- 73
-text.length$ -- 7
+substring$ -- 418
+swap$ -- 31
+text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 170
-warning$ -- 31
-while$ -- 142
-width$ -- 48
-write$ -- 463
-(There were 2 error messages)
+type$ -- 98
+warning$ -- 19
+while$ -- 76
+width$ -- 27
+write$ -- 247
+(There were 4 error messages)
