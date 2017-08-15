@@ -8,12 +8,12 @@ Database file #3: ./Cite/Decoupled.bib
 Database file #4: ./Cite/NavierStokes.bib
 Database file #5: ./Cite/Verification.bib
 Database file #6: ./Cite/EulerianFormulation.bib
-Repeated entry---line 43 of file ./Cite/EulerianFormulation.bib
+Repeated entry---line 57 of file ./Cite/EulerianFormulation.bib
  : @article{Richter2010c
  :                      ,
 I'm skipping whatever remains of this entry
 Database file #7: ./Cite/Meshupdate.bib
-Repeated entry---line 71 of file ./Cite/Meshupdate.bib
+Repeated entry---line 55 of file ./Cite/Meshupdate.bib
  : @article{Wick
  :              ,
 I'm skipping whatever remains of this entry

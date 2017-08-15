@@ -1,23 +1,16 @@
 \chapter{A motivation for studying fluid-structure interaction}
 The interaction between fluid and solids can be observed all around us in nature and has shown crucial in engineering. Examples in nature include swimming fish, flying birds, or trees bending in the wind. Man has learned from nature and has traditionally relied upon laboratory experiments to design windmills, aircrafts, and bridges. The importance of understanding fluid-structure (or solids) interaction (FSI) cannot be overstated, as the lack of such has demonstrated to be disastrous in the design of everything from bridges to airplanes. Let alone to emphasize our incapability to replicate the performance of nature; we're far away from designing a drone capable of flying like a hummingbird. However, laboratory experiments are inherently noisy, expensive, and results can be difficult to reproduce. A much cheaper and indeed smarter approach to studying FSI is using computers, or more specifically numerical simulations to gain fundamental insight to the interaction between fluids and solids. The latter has on the other hand shown to be difficult to realize, for a number of reasons related to both mathematical and computational reasons. Therefore, the goal of this thesis is to develop an open-source framework using standard techniques for solving FSI problems that can be used as a point of reference for future benchmarking of FEniCS-based FSI solvers. \\
 
-The aim of the thesis is as follows:
+The main goal of this thesis is to create a verified and validated monolithic fluid-structure interaction solver in FEniCS, which can handle large deformations. To achieve this, I have defined four subgoals: 
 
 \begin{itemize}
-\item Formulate a finite element variation formulation for a monolithic ALE fluid-structure interaction problem.
-\item Construct a finite element solver for the full FSI problem, by Newton's method.
-\item Compare different methods to avoid mesh degeneration.
-\item Improve computational efficiency for chosen validation benchmark.
+\item Formulate a weak variation for a monolithic arbitrary Lagrangian Eulerian fluid-structure interaction problem.
+\item Construct a finite element solver for the fluid-structure interaction problem.
+\item Verify and validate a finite element solver for the fluid-structure interaction problem.
+\item Compare the impact of discretization and mesh lifting operators on the final solution.
+\item Improve computational efficiency of the implementation.
 \end{itemize}
 
-\newpage
 
- The thesis is organized as follows: Balance of linear momentum for both solids and fluids are first introduced together with conservation of mass. The Eulerian, Lagrangian, and the arbitrary Lagrangian-Eulerian (ALE) frames of reference are briefly introduced to express the governing equations, before the equations describing FSI are derived. The numerical implementation is verified using the most rigorous convergence tests, before validation is performed against state-of-the-art benchmarks. Finally, computational speed-up is addressed together with long-term numerical stability of the coupled problem.
- and methods to overcome these challenges are addressed  
+Each of the following subgoals will be addressed in separate chapters organized as follows: Balance of linear momentum for both solids and fluids are first introduced together with conservation of mass. The Eulerian, Lagrangian, and the arbitrary Lagrangian-Eulerian (ALE) frames of reference are briefly introduced to express the governing equations, before the equations describing FSI are derived. The numerical implementation is verified using the most rigorous convergence tests, before validation is performed against state-of-the-art benchmarks. Finally, computational speed-up is addressed together with long-term numerical stability of the coupled problem, and methods to overcome these challenges.
  
-
-
-
-
-% In this thesis, I present a monolithic FSI solver based on the arbitary Langrangian-Eulerien(ALE) method \cite{Donea2004}, where the equations of fluid and structure are solved simultaneous by Newton's method. In general, the ALE method is favorable for connecting the physics of fluid and structure, which are fundamentally formulated different. However, a monolithic ALE approach lacks computational efficiency due to the overall size of the problem, and due to mesh degeneration by the structure deformation. It is my intention to investigate these limitations, and to give a comparison of methods considered to improve computational efficiency. \\
-

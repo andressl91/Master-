@@ -1,6 +1,6 @@
-\chapter{Computational Fluid Structure Interaction}
+\chapter{Fluid Structure Interaction}
 
-The multi-disciplinary nature of computational fluid-structure interaction , involves addressing issues regarding computational fluid dynamics and computational structure dynamics. In general, CFD and CSM are individually well-studied, in terms of numerical solution strategies. CFSI adds another layer of complexity to the solution process, (1) the \textit{coupling} of the fluid and solid equations , (2) the tracking of \textit{interface} separating the fluid and solid domains. The coupling pose two new conditions at the interface absent from the original fluid and solid conditions, which is \textit{continuity of velocity} and \textit{continuity of stress} at the interface.
+The multi-disciplinary nature of computational fluid-structure interaction, involves addressing issues regarding computational fluid dynamics and computational structure dynamics. In general, CFD and CSM are individually well-studied, in terms of numerical solution strategies. CFSI adds another layer of complexity to the solution process, (1) the \textit{coupling} of the fluid and solid equations , (2) the tracking of \textit{interface} separating the fluid and solid domains. The coupling pose two new conditions at the interface absent from the original fluid and solid conditions, which is \textit{continuity of velocity} and \textit{continuity of stress} at the interface.
 
 \begin{align}
 \mathbf{v}_f = \mathbf{v}_s \\
@@ -369,6 +369,7 @@ By a continuous velocity field on the whole domain, the \textit{kinematic} condi
 The \textit{dynamic} boundary condition is  weakly imposed by omitting the boundary integral from the variational formulation, becoming an implicit condition for the system  \cite{Wick}. \\
 
 \section{One-step $\theta$ scheme} 
+\label{sec:theta}
 For both the fluid problem and the structure problem, we will base our implementation of a $\theta$-scheme.  A $\theta$-scheme is favourable, making implementation of classical time-steppings schemes simple. For the structure problem,  $\theta$-scheme takes the form
 
 \begin{align*}
