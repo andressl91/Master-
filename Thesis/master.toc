@@ -1,1 +1,14 @@
 \select@language {english}
+\contentsline {chapter}{\numberline {1}Numerical Experiments}{3}{chapter.1}
+\contentsline {section}{\numberline {1.1}Comparison of mesh lifting operators}{3}{section.1.1}
+\contentsline {section}{\numberline {1.2}Investigation of long term temporal stability}{5}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}Results}{6}{subsection.1.2.1}
+\contentsline {section}{\numberline {1.3}Optimization of the Newton solver}{7}{section.1.3}
+\contentsline {subsection}{\numberline {1.3.1}Consistent methods}{9}{subsection.1.3.1}
+\contentsline {subsubsection}{Jacobi buffering}{9}{subsubsection*.6}
+\contentsline {subsection}{\numberline {1.3.2}Inconsistent methods}{9}{subsection.1.3.2}
+\contentsline {subsubsection}{Reuse of Jacobian}{9}{subsubsection*.7}
+\contentsline {subsubsection}{Quadrature reduce}{9}{subsubsection*.8}
+\contentsline {subsubsection}{Combining quadrature reduce and Jacobian reuse}{9}{subsubsection*.9}
+\contentsline {subsection}{\numberline {1.3.3}Comparison of speedup methods}{9}{subsection.1.3.3}
+\contentsline {subsubsection}{Discussion}{11}{subsubsection*.12}
