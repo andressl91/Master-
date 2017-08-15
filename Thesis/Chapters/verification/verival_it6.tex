@@ -60,6 +60,9 @@ For the 2D structure equation the manufactured solution is chosen as:
 &\mathbf{u} = [cos(y)sin(x)cos(t), cos(x)sin(y)cos(t)]
 \end{align*}
 Figure ~\ref{table:conv1} and ~\ref{table:conv2} shows order-of-accuracy test for the fluid and solid solver. The spatial refinement study is in agreement with the expected theoretical convergence rate for both solvers, while temporal refinement fails to achieve satisfying results. Both solvers went trough rigorous testing and debugging but no error was found which could explain the poor temporal convergence. An investigation of other manufactured solutions also proved unsuccessful in order to achieve expected convergence rates. In terms of the acceptance criteria, the code is not verified. On this basis, moving on to validation deserves skepticism from the reader, as the previous results indicate that the code misrepresents the mathematical model. However, the numerical results in the upcoming chapter with comparison to several sources within the FSI literature, imply that the mathematical code is implemented correctly. 
+
+\newpage
+
 \begin{table}[h!]
 \centering
  \begin{tabular}{|p{1.5cm}|p{0.8cm}|p{0.8cm}|p{0.8cm}|p{3.7cm}|p{3.7cm}|}
@@ -115,8 +118,7 @@ $\mathbf{5 \cdot 10^{-2}}$ & 64&1 &1 & 7.83 $\cdot 10^{-1}$ \hspace{5mm} $\mathb
 \newpage
 \section{Validation}
 Through \textit{verification}, one can assure that a scientific code evaluate mathematical model correctly. However, accuracy is unnecessary if the model fails to serve as an appropriate representation of the physical problem. By definition ~\ref{eq:intcond}, \textit{Validation} is the act of demonstrating that a mathematical model is applicable for its intended use with a certain degree of accuracy. That is, a mathematical model is validated if it meets some predefined criteria within a specific context. Validation is therefore not intended to portray the model as an absolute truth, nor the best model available \cite{Rykiel1996}. In scientific computing., validation is traditionally conducted by comparing numerical results against existing experimental data, considered to be ground truth. The design of validation experiments vary by the motivation of their creators. Validated experiments for computational science can be divided into three groups \cite{Sommerville2006}: (1) To improve fundamental understanding of a physical process, (2) Discovery or enhancement of mathematical models of well known physical processes, (3) To conclude the reliability and performance of systems. Comparing numerical results and experimental data, makes \textit{validation} assess a wide range of issues \cite{Sommerville2006}. Is the experiment relevant, and  conducted correctly in accordance with prescribed parameters? What about the measurement uncertainty of reference experimental data? These issues  must be addressed in order to raise sufficient confidence that the mathematical model is credible for its intended use. \\
- \newpage
- 
+
 \section{Validation benchmark}
 The numerical benchmark presented in \cite{Hron2006} has been chosen for validation of the \textit{One-step $\theta$} scheme from chapter 3. The benchmark has been widely accepted as a rigid validation benchmark  throughout the literature \cite{Wickb, Wick, V2013, Gatzhammer2014}. This is mainly due to the diversity of tests included, challenging all the main components of a fluid-structure interaction scheme. The benchmark is based on the a CFD benchmark \cite{White}, where a cylinder is placed off-center in a 2D channel. In \cite{Hron2006}, an additional elastic flag is placed behind the cylinder, see Figure 4.1
 \begin{figure}[h!]
@@ -141,6 +143,7 @@ All problems pose both steady state and periodic solutions. For the steady state
 \label{icond}
 \end{align}
  In \cite{Hron2006}, all steady state solutions seems to be calculated by solving a steady state equation since time-step are only reported for the periodic solutions. In this thesis, all problems in \cite{Hron2006} are calculated using time integration. The main reason for solving the problem transiently rather than steady state, is that numerical errors associated with initial transients are negligible with a sufficiently low time step size, without laborious changes to the numerical implementation. In the following section, an overview of each problem together with numerical results will be presented. A discussion of the results are given at the end of each simulation problem. For each table, the relative error of the finest spatial and temporal refinement compared to the reference solution is reported in \cite{Hron2006}.
+ \newpage
 \subsection{Validation of fluid solver}
 The validation test of the fluid solver addresses transient flow for a low Reynolds-number regime. We can take to different approaches to this problem \cite{Hron2006}. The first one considers the setup as a fluid-structure interaction problem, setting the material properties to mimic a stiff rod. In the second approach, the flag is excluded from the computational domain. Thus, any influence from the structure is eliminated. In this thesis, I choose to use second approach.  \\
 \textit{Let $\mathbf{v}_f$, ${p}_f$ be the fluid velocity and pressure, and let  $\sigma_f$ be the Cauchy stress tensor, and $\mathbf{f}_f$ denote any sourceterm,  Find $\mathbf{v}_f$, ${p}_f$ such that }:
@@ -151,7 +154,7 @@ The validation test of the fluid solver addresses transient flow for a low Reyno
 \feme{\rho_f  \mathbf{f}_f}{{\bm{\psi}^u}} = 0 \\
 \feme{\nabla \cdot \mathbf{v}_f)}{\bm{\psi}^p} = 0 
 \end{align*} 
-\newpage
+
 \begin{table}[h!]
 \centering
 \begin{tabular}{ |p{3cm}||p{2cm}|p{2cm}|p{2cm}|  }
@@ -172,6 +175,8 @@ The validation of the fluid solver is divided into three sub-problems; CFD-1, CF
 v_f(0, y) = 1.5 U\frac{(H -y)y}{(\frac{H}{2})^2}
 \end{align*}
 is set on the left channel inflow. H is the height of the channel, while the parameter U is set differently to each problem to induce different inlet flow profiles. At the channel outflow, the pressure is set to $p = 0$. No-slip boundary conditions for the fluid are enforced on the channel walls, and on the inner geometry consisting of the circle and the elastic flag. The validation of the fluid solver is based on the evaluation of drag and lift forces on the inner geometry, compared against a reference solution. A spatial and temporal convergence study is conducted on all sub-problems. 
+
+\newpage
 \subsubsection*{Results}
 Table ~\ref{table:cfd1}, ~\ref{table:cfd2}, and ~\ref{table:cfd32} below shows the numerical solution of each sub-problem, CFD-1, CFD-2, and CFD-3. Each sub-problem is evaluated on four different mesh with increasing resolution. For the numerical solution of CFD-3 in Table 4.4, additional temporal and spatial refinement studies are conducted. Figure 4.1 shows the evaluation of lift and drag for the finest spatial and temporal resolution, while Figure 4.3 shows a visual representation of the fluid flow through the channel. The numerical solutions of CFD-1 in Figure 4.2 shows convergence against the reference solution. Choosing P2-P1 elements together with a fully implicit scheme $\theta = 1$, a relative error of $0.006 \%$ for lift, and $0\%$ for drag is attained. For the numerical solution of CFD-2 presented in Figure 4.3, the same observations apply. The second order Crank?Nicolson scheme  $\theta = 0.5$ was investigated for CFD-1 and CFD-2, however only improving the results of order $10^{-6}$ for both lift and drag. For the periodic problem CFD-3, the choice of  P2-P1 elements with a fully implicit time-stepping scheme proved insufficient for capturing the expected periodic solution. Using Crank-Nicolson time-stepping scheme $\theta = 0.5$, the periodic solution was attained. 
 
@@ -196,7 +201,7 @@ nel & ndof & Drag  & Lift \\
 \caption{CFD-1 results, lift and drag evaluated at the inner geometry surface for increasing spatial refinement. The error is computed as the relative error from the highest mesh resolution against the reference solution.}
 \label{table:cfd1}
 \end{table}
-\newpage
+
 \begin{table}[h!]
 \centering
 \label{CFD-2 Results}
@@ -286,7 +291,6 @@ nel & ndof & Drag  & Lift \\
 \caption{CFD-3 results, lift and drag evaluated at the inner geometry surface. A spatial refinement study is conducted for increasing mesh resolution and two different finite element pairs. The relative error is computed from the solution of the highest mesh resolution, against the reference solution.}
 \label{table:cfd32}
 \end{table}
-\newpage
 
 \subsubsection*{Discussion}
 Since the choice of finite-element pair is not reported in the original work, both P3-P2 and P2-P1 element pairs for fluid and pressure respectively was compared in combination with spatial mesh refinement. From Table 4.3, a relative error $ < 0.08\%$ of the mean and amplitude for lift and drag is attained. The choice P3-P2 element pair is eminent to achieve reasonable results for the first and second mesh regardless of time step.  However, the third and fourth mesh resolution shows close resemblance with the reference solution, independent of finite-element pair. On basis of the presented results, the fluid solver is validated in accordance with the proposed benchmark. 
@@ -307,10 +311,12 @@ $g  \frac{m}{s^2}]$  & 2.0    & 2.0    & 2.0    \\
 \end{tabular}
 \caption{Parameters for the solid validation set-up.}
 \end{table}
-\newpage
+
 \subsubsection*{Results}
 The numerical results for CSM-1, CSM-2, and CSM-3 are presented in table  ~\ref{table:csm1}, ~\ref{table:csm2}, ~\ref{table:csm31}, and ~\ref{table:csm32}. For the steady state sub-problems CSM-1 and CSM-2, a spatial convergence study is conducted through mesh refinement with three different finite-element pairs. For the periodic CSM-3 problem, an additional temporal study was conducted for two different time steps. In Figure ~\ref{fig:bender}, a visualization of CSM-3 is provided for three different time steps. Finally, Figure ~\ref{fig:csm3c} shows the displacement vector components, comparing all finite-element pairs for the finest mesh resolution. \\
  For CSM-1, the relative error of deformation found in Table 4.6, is $1.41 \%$ and $0.8\%$ for the x and y coordinate respectively. In Table 4.7, a relative error of   $1.49 \%$ and $0.88\%$ for the x,y components can be found for CSM-2, proving both steady state problems coincide with the reference solution. In Table 4.8, the numerical solutions CSM-3 for time steps $\Delta t = 0.01$ and $\Delta t = 0.005$, are in close resemblance with the reference solution. The study of lower-order elements proved successful for all problems, justifying accurate results can be achieved using P2-P2 elements for deformation and velocity, even for coarse mesh resolution. 
+
+ 
 \begin{table}[h!]
 \centering
 \begin{tabular}{ |p{1cm}||p{2.7cm}|p{3.3cm}|p{3.3cm}|}
@@ -467,7 +473,9 @@ The validation of the FSI solver consist of three sub-problems which will be ref
 \mathbf{\sigma}_f \cdot \mathbf{n} = \mathbf{\sigma}_s \cdot \mathbf{n}
 \end{align}
 Apart from the accuracy of the reported values, the main purpose of the validation of the solver is twofold. First, it is of great importance to ensure that the overall coupling of the fluid-structure interaction problem is executed correctly. Second, a good choice of mesh extrapolation model is essential to avoid divergence of the numerical solution, due to mesh entanglement.  Based on experience in section, 4.2.1-2, the finite element pair P2-P1 for the fluid solver, and P2-P2 for the solid solver proved successful. Therefore the finite-elements P2-P2-P1 for deformation, velocity, and pressure are chosen for the numerical experiments. Higher order elements will not be examined, mainly due to long computational time, even for optimized solver approaches.
+
 \newpage
+
 \begin{table}[h!]
 \centering
 \label{my-label}

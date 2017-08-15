@@ -25,6 +25,7 @@ Repeated entry---line 55 of file ./Cite/Meshupdate.bib
  : @article{Wick
  :              ,
 I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "Alnes2015"
 Warning--empty journal in Biedron
 Warning--empty year in Biedron
 Warning--empty journal in Crumpton1995
@@ -33,56 +34,67 @@ Warning--empty journal in Donea2004
 Warning--there's a number but no volume in Donea2004
 Warning--empty journal in Dwight
 Warning--empty year in Dwight
+Warning--there's a number but no volume in Etienne2006
 Warning--empty journal in Fernandez2009
 Warning--empty journal in Gatzhammer2014
+Warning--empty publisher in Holzapfel2000
 Warning--empty journal in Hsu
 Warning--empty year in Hsu
 Warning--empty publisher in Newman1977
 Warning--empty journal in Richter2016
+Warning--empty booktitle in Richter2015
+Warning--empty publisher in Richter2015
+Warning--empty institution in Sommerville2006
 Warning--empty journal in Stein
 Warning--empty year in Stein
+Warning--empty journal in Turek
+Warning--empty year in Turek
+Warning--empty journal in V2013
+Warning--empty year in White
+Warning--empty journal in Wickb
+Warning--empty year in Wickb
 Warning--empty year in Wicka
 Warning--empty journal in Wick
 Warning--empty year in Wick
-You've used 25 entries,
+You've used 47 entries,
             2118 wiz_defined-function locations,
-            659 strings with 7970 characters,
-and the built_in function-call counts, 7162 in all, are:
-= -- 704
-> -- 303
-< -- 2
-+ -- 121
-- -- 96
-* -- 491
-:= -- 1234
-add.period$ -- 71
-call.type$ -- 25
-change.case$ -- 121
+            800 strings with 11771 characters,
+and the built_in function-call counts, 13994 in all, are:
+= -- 1377
+> -- 610
+< -- 7
++ -- 243
+- -- 196
+* -- 951
+:= -- 2383
+add.period$ -- 138
+call.type$ -- 47
+change.case$ -- 234
 chr.to.int$ -- 0
-cite$ -- 44
-duplicate$ -- 284
-empty$ -- 560
-format.name$ -- 96
-if$ -- 1442
+cite$ -- 77
+duplicate$ -- 560
+empty$ -- 1100
+format.name$ -- 196
+if$ -- 2857
 int.to.chr$ -- 0
-int.to.str$ -- 25
-missing$ -- 25
-newline$ -- 123
-num.names$ -- 50
-pop$ -- 139
+int.to.str$ -- 47
+missing$ -- 50
+newline$ -- 231
+num.names$ -- 94
+pop$ -- 277
 preamble$ -- 1
-purify$ -- 98
+purify$ -- 192
 quote$ -- 0
-skip$ -- 189
+skip$ -- 367
 stack$ -- 0
-substring$ -- 418
-swap$ -- 31
-text.length$ -- 2
+substring$ -- 801
+swap$ -- 74
+text.length$ -- 7
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 98
-warning$ -- 19
-while$ -- 76
-width$ -- 27
-write$ -- 247
+type$ -- 176
+warning$ -- 30
+while$ -- 146
+width$ -- 49
+write$ -- 476
 (There were 4 error messages)

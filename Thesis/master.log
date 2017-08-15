@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.12.9)  15 AUG 2017 06:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.12.9)  15 AUG 2017 08:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1294,7 +1294,29 @@ File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
 \MFPtexty=\skip73
 \MFPtextlength=\skip74
 \MFPapollonx=\skip75
-) (./master.aux)
+) (./master.aux
+
+LaTeX Warning: Label `my-label' multiply defined.
+
+
+LaTeX Warning: Label `my-label' multiply defined.
+
+
+LaTeX Warning: Label `my-label' multiply defined.
+
+
+LaTeX Warning: Label `my-label' multiply defined.
+
+
+LaTeX Warning: Label `my-label' multiply defined.
+
+
+LaTeX Warning: Label `my-label' multiply defined.
+
+
+LaTeX Warning: Label `my-label' multiply defined.
+
+)
 \openout1 = `master.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
@@ -1313,8 +1335,7 @@ LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 12.
 LaTeX Font Info:    ... okay on input line 12.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 12.
 LaTeX Font Info:    ... okay on input line 12.
-
-(/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+ (/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count163
 \scratchdimen=\dimen262
@@ -1396,7 +1417,7 @@ LaTeX Info: Redefining \nameref on input line 12.
 \openout4 = `master.out'.
 
  ABD: EveryShipout initializing macros
-<masterfrontpage-images/masterfrontpage-background.pdf, id=11, 614.295pt x 845.
+<masterfrontpage-images/masterfrontpage-background.pdf, id=35, 614.295pt x 845.
 0471pt>
 File: masterfrontpage-images/masterfrontpage-background.pdf Graphic file (type 
 pdf)
@@ -1405,7 +1426,7 @@ Package pdftex.def Info: masterfrontpage-images/masterfrontpage-background.pdf
 used on input line 14.
 (pdftex.def)             Requested size: 614.29349pt x 845.04504pt.
 
-<masterfrontpage-images/masterfrontpage-apollon.pdf, id=12, 142.5325pt x 142.53
+<masterfrontpage-images/masterfrontpage-apollon.pdf, id=36, 142.5325pt x 142.53
 25pt>
 File: masterfrontpage-images/masterfrontpage-apollon.pdf Graphic file (type pdf
 )
@@ -1414,7 +1435,7 @@ Package pdftex.def Info: masterfrontpage-images/masterfrontpage-apollon.pdf use
 d on input line 14.
 (pdftex.def)             Requested size: 76.82243pt x 76.82285pt.
 
-<masterfrontpage-images/masterfrontpage-logo-eng.pdf, id=13, 630.355pt x 74.277
+<masterfrontpage-images/masterfrontpage-logo-eng.pdf, id=37, 630.355pt x 74.277
 5pt>
 File: masterfrontpage-images/masterfrontpage-logo-eng.pdf Graphic file (type pd
 f)
@@ -1459,7 +1480,12 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [2
 
 ]
-(./Chapters/Acknowledgement/acknowledgement.tex)
+(./Chapters/Acknowledgement/acknowledgement.tex
+Underfull \hbox (badness 10000) in paragraph at lines 4--5
+
+ []
+
+)
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -1475,17 +1501,30 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [2
 
-] (./master.toc)
+] (./master.toc
+Overfull \hbox (9.01726pt too wide) in paragraph at lines 20--20
+ [][] [][]\T1/cmr/m/n/12 Comment on ver-i-fi-ca-tion of the fluid-structure in-
+ter-ac-tion solver 
+ []
+
+[3])
 \tf@toc=\write5
 \openout5 = `master.toc'.
 
 \c@theorem=\count171
- (./master.bblpdfTeX warning (ext4): destination with the same identifier (name
-{page.1}) has been already used, duplicate ignored
+ (./Chapters/introduction/introduction.tex
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1 \begin{thebibliography}{10}
-                                [1]
+l.1 \chapter
+            *{Fluid-structure interaction; what and why?} [1]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -1496,10 +1535,20 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1 \begin{thebibliography}{10}
-                                [2
+l.1 \chapter
+            *{Fluid-structure interaction; what and why?} [2
 
-] [3])
+]
+Overfull \hbox (25.7113pt too wide) in paragraph at lines 1--1
+|\T1/cmr/bx/n/24.88 Fluid-structure in-ter-ac-tion; what and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2--3
+
+ []
+
+[3]) (./Chapters/Continuum/Continuum_it4.tex
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -1507,49 +1556,1190 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [4]
+Chapter 1.
+[5
+
+] <./Fig/lagframe.png, id=168, 1028.84375pt x 442.65375pt>
+File: ./Fig/lagframe.png Graphic file (type png)
+
+<use ./Fig/lagframe.png>
+Package pdftex.def Info: ./Fig/lagframe.png used on input line 15.
+(pdftex.def)             Requested size: 411.53021pt x 177.05835pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[6 <./Fig/lagframe.png>]
+<./Fig/eulerian.png, id=175, 1189.44376pt x 793.96625pt>
+File: ./Fig/eulerian.png Graphic file (type png)
+
+<use ./Fig/eulerian.png>
+Package pdftex.def Info: ./Fig/eulerian.png used on input line 35.
+(pdftex.def)             Requested size: 356.83588pt x 238.19171pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[7 <./Fig/eulerian.png>] <./Fig/lageul.png, id=185, 1588.93625pt x 915.42pt>
+File: ./Fig/lageul.png Graphic file (type png)
+
+<use ./Fig/lageul.png>
+Package pdftex.def Info: ./Fig/lageul.png used on input line 55.
+(pdftex.def)             Requested size: 444.89912pt x 256.31586pt.
+
+Overfull \hbox (20.83879pt too wide) in paragraph at lines 55--56
+ [][] 
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[8 <./Fig/lageul.png>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[9]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[10]
+Overfull \hbox (1.60368pt too wide) in paragraph at lines 127--129
+\T1/cmr/m/n/12 As for the solid equa-tions, bound-ary con-di-tions are sup-ple-
+mented con-sid-er-ing Dirich-
+ []
+
+)
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[11] (./Chapters/FSI/FSI_it2.tex
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[12
+
+]
+Chapter 2.
+[13] <./Fig/interface.png, id=252, 651.43375pt x 368.37625pt>
+File: ./Fig/interface.png Graphic file (type png)
+
+<use ./Fig/interface.png>
+Package pdftex.def Info: ./Fig/interface.png used on input line 16.
+(pdftex.def)             Requested size: 325.71606pt x 184.18767pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[14 <./Fig/interface.png>] <./Fig/wdom.png, id=269, 551.05875pt x 374.39874pt>
+File: ./Fig/wdom.png Graphic file (type png)
+
+<use ./Fig/wdom.png>
+Package pdftex.def Info: ./Fig/wdom.png used on input line 33.
+(pdftex.def)             Requested size: 275.52869pt x 187.19891pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[15 <./Fig/wdom.png>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[16]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 150--152
+
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[18]
+Underfull \vbox (badness 2326) has occurred while \output is active []
+
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[19]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[20]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[21]
+Underfull \hbox (badness 10000) in paragraph at lines 214--216
+
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[22]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[23]
+Underfull \hbox (badness 10000) in paragraph at lines 292--294
+
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[24]) (./Chapters/verification/verival_it6.tex
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[25]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[26
+
+]
+Chapter 3.
+[27]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[28]
+
+LaTeX Warning: Citation `Alnes2015' on page 29 undefined on input line 41.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[29]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[30]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[31]
+Underfull \hbox (badness 10000) in paragraph at lines 120--121
+
+ []
+
+<./Fig/turekflag.png, id=476, 2109.8825pt x 796.9775pt>
+File: ./Fig/turekflag.png Graphic file (type png)
+
+<use ./Fig/turekflag.png>
+Package pdftex.def Info: ./Fig/turekflag.png used on input line 126.
+(pdftex.def)             Requested size: 421.96902pt x 159.39267pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[32]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[33 <./Fig/turekflag.png>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[34]
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 194--194
+[]|\T1/cmr/m/n/12 19365| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 217--217
+[]|\T1/cmr/m/n/12 19365| 
+ []
+
+<./Fig/cfd3_liftdrag.png, id=507, 890.3664pt x 284.0211pt>
+File: ./Fig/cfd3_liftdrag.png Graphic file (type png)
+
+<use ./Fig/cfd3_liftdrag.png>
+Package pdftex.def Info: ./Fig/cfd3_liftdrag.png used on input line 229.
+(pdftex.def)             Requested size: 445.18211pt x 142.0102pt.
+
+Overfull \hbox (21.12178pt too wide) in paragraph at lines 229--230
+ [][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<./Fig/cfd3.png, id=509, 2007.5pt x 594.22pt>
+File: ./Fig/cfd3.png Graphic file (type png)
+ <use ./Fig/cfd3.png>
+Package pdftex.def Info: ./Fig/cfd3.png used on input line 234.
+(pdftex.def)             Requested size: 401.49289pt x 118.84189pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[35]
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 256--256
+[]|\T1/cmr/m/n/12 19365| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 284--284
+[]|\T1/cmr/m/n/12 19365| 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[36 <./Fig/cfd3_liftdrag.png> <./Fig/cfd3.png (PNG copy)>]
+Underfull \vbox (badness 1859) has occurred while \output is active []
+
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[37]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[38]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[39] <./Fig/csm3_1.png, id=553, 2509.375pt x 1210.5225pt>
+File: ./Fig/csm3_1.png Graphic file (type png)
+
+<use ./Fig/csm3_1.png>
+Package pdftex.def Info: ./Fig/csm3_1.png used on input line 437.
+(pdftex.def)             Requested size: 127.21939pt x 61.36086pt.
+ <./Fig/csm3_2.png, id=554, 2509.375pt x 1210.5225pt>
+File: ./Fig/csm3_2.png Graphic file (type png)
+
+<use ./Fig/csm3_2.png>
+Package pdftex.def Info: ./Fig/csm3_2.png used on input line 444.
+(pdftex.def)             Requested size: 127.21939pt x 61.36086pt.
+ <./Fig/csm3_3.png, id=555, 2509.375pt x 1210.5225pt>
+File: ./Fig/csm3_3.png Graphic file (type png)
+
+<use ./Fig/csm3_3.png>
+Package pdftex.def Info: ./Fig/csm3_3.png used on input line 451.
+(pdftex.def)             Requested size: 127.21939pt x 61.36086pt.
+
+<./Fig/csm3compare.png, id=556, 1279.179pt x 554.3109pt>
+File: ./Fig/csm3compare.png Graphic file (type png)
+
+<use ./Fig/csm3compare.png>
+Package pdftex.def Info: ./Fig/csm3compare.png used on input line 460.
+(pdftex.def)             Requested size: 434.91512pt x 188.46321pt.
+
+Overfull \hbox (10.85478pt too wide) in paragraph at lines 460--461
+ [][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[40 <./Fig/csm3_1.png (PNG copy)> <./Fig/csm3_2.png (PNG copy)> <./Fig/csm3_3.p
+ng (PNG copy)> <./Fig/csm3compare.png>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[41]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[42]
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 517--517
+[]|\T1/cmr/m/n/12 21249| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 518--518
+[]|\T1/cmr/m/n/12 63365| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 519--519
+[]|\T1/cmr/m/n/12 11556| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 519--519
+[]|\T1/cmr/m/n/12 99810| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 532--532
+[]|\T1/cmr/m/n/12 21249| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 533--533
+[]|\T1/cmr/m/n/12 63365| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 534--534
+[]|\T1/cmr/m/n/12 11556| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 534--534
+[]|\T1/cmr/m/n/12 99810| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 547--547
+[]|\T1/cmr/m/n/12 21249| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 548--548
+[]|\T1/cmr/m/n/12 63365| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 549--549
+[]|\T1/cmr/m/n/12 11556| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 549--549
+[]|\T1/cmr/m/n/12 99810| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 562--562
+[]|\T1/cmr/m/n/12 21249| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 563--563
+[]|\T1/cmr/m/n/12 63365| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 564--564
+[]|\T1/cmr/m/n/12 11556| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 564--564
+[]|\T1/cmr/m/n/12 99810| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 577--577
+[]|\T1/cmr/m/n/12 21249| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 578--578
+[]|\T1/cmr/m/n/12 63365| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 579--579
+[]|\T1/cmr/m/n/12 11556| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 579--579
+[]|\T1/cmr/m/n/12 99810| 
+ []
+
+
+Overfull \hbox (23.02539pt too wide) in paragraph at lines 511--586
+ [][] 
+ []
+
+
+Overfull \hbox (23.02539pt too wide) in paragraph at lines 511--586
+ [] 
+ []
+
+
+Overfull \hbox (23.02539pt too wide) in paragraph at lines 511--586
+ [] 
+ []
+
+
+Overfull \hbox (23.02539pt too wide) in paragraph at lines 511--586
+ [] 
+ []
+
+
+Overfull \hbox (23.02539pt too wide) in paragraph at lines 511--586
+ [] 
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[43]
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 599--599
+[]|\T1/cmr/m/n/12 21249| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 600--600
+[]|\T1/cmr/m/n/12 63365| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 601--601
+[]|\T1/cmr/m/n/12 11556| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 601--601
+[]|\T1/cmr/m/n/12 99810| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 607--607
+[]|\T1/cmr/m/n/12 21249| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 608--608
+[]|\T1/cmr/m/n/12 63365| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 609--609
+[]|\T1/cmr/m/n/12 11556| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 609--609
+[]|\T1/cmr/m/n/12 99810| 
+ []
+
+
+Overfull \hbox (62.85907pt too wide) in paragraph at lines 593--616
+ [][] 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 627--627
+[]|\T1/cmr/m/n/12 21249| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 628--628
+[]|\T1/cmr/m/n/12 63365| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 629--629
+[]|\T1/cmr/m/n/12 11556| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 629--629
+[]|\T1/cmr/m/n/12 99810| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 635--635
+[]|\T1/cmr/m/n/12 21249| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 636--636
+[]|\T1/cmr/m/n/12 63365| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 637--637
+[]|\T1/cmr/m/n/12 11556| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 637--637
+[]|\T1/cmr/m/n/12 99810| 
+ []
+
+
+Overfull \hbox (62.85907pt too wide) in paragraph at lines 621--644
+ [][] 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 655--655
+[]|\T1/cmr/m/n/12 21249| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 656--656
+[]|\T1/cmr/m/n/12 63365| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 657--657
+[]|\T1/cmr/m/n/12 11556| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 657--657
+[]|\T1/cmr/m/n/12 99810| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 663--663
+[]|\T1/cmr/m/n/12 21249| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 664--664
+[]|\T1/cmr/m/n/12 63365| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 665--665
+[]|\T1/cmr/m/n/12 11556| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 665--665
+[]|\T1/cmr/m/n/12 99810| 
+ []
+
+
+Overfull \hbox (62.85907pt too wide) in paragraph at lines 649--672
+ [][] 
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[44] <./Fig/fsi2compare.png, id=590, 731.3724pt x 366.4089pt>
+File: ./Fig/fsi2compare.png Graphic file (type png)
+
+<use ./Fig/fsi2compare.png>
+Package pdftex.def Info: ./Fig/fsi2compare.png used on input line 677.
+(pdftex.def)             Requested size: 468.07674pt x 234.50089pt.
+
+Overfull \hbox (44.0164pt too wide) in paragraph at lines 677--678
+ [][] 
+ []
+
+<./Fig/fsi2flow.png, id=591, 2005.4925pt x 816.04875pt>
+File: ./Fig/fsi2flow.png Graphic file (type png)
+
+<use ./Fig/fsi2flow.png>
+Package pdftex.def Info: ./Fig/fsi2flow.png used on input line 682.
+(pdftex.def)             Requested size: 401.0914pt x 163.20685pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[45 <./Fig/fsi2compare.png> <./Fig/fsi2flow.png (PNG copy)>]
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 697--697
+[]|\T1/cmr/m/n/12 21249| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 698--698
+[]|\T1/cmr/m/n/12 63365| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 699--699
+[]|\T1/cmr/m/n/12 11556| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 699--699
+[]|\T1/cmr/m/n/12 99810| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 705--705
+[]|\T1/cmr/m/n/12 21249| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 706--706
+[]|\T1/cmr/m/n/12 63365| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 707--707
+[]|\T1/cmr/m/n/12 11556| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 707--707
+[]|\T1/cmr/m/n/12 99810| 
+ []
+
+
+Overfull \hbox (62.85907pt too wide) in paragraph at lines 691--714
+ [][] 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 725--725
+[]|\T1/cmr/m/n/12 21249| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 726--726
+[]|\T1/cmr/m/n/12 63365| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 727--727
+[]|\T1/cmr/m/n/12 11556| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 727--727
+[]|\T1/cmr/m/n/12 99810| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 732--732
+[]|\T1/cmr/m/n/12 21249| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 733--733
+[]|\T1/cmr/m/n/12 63365| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 734--734
+[]|\T1/cmr/m/n/12 11556| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 734--734
+[]|\T1/cmr/m/n/12 99810| 
+ []
+
+
+Overfull \hbox (62.85907pt too wide) in paragraph at lines 719--741
+ [][] 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 752--752
+[]|\T1/cmr/m/n/12 21249| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 753--753
+[]|\T1/cmr/m/n/12 63365| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 754--754
+[]|\T1/cmr/m/n/12 11556| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 754--754
+[]|\T1/cmr/m/n/12 99810| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 759--759
+[]|\T1/cmr/m/n/12 21249| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 760--760
+[]|\T1/cmr/m/n/12 63365| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 761--761
+[]|\T1/cmr/m/n/12 11556| 
+ []
+
+
+Overfull \hbox (0.91508pt too wide) in paragraph at lines 761--761
+[]|\T1/cmr/m/n/12 99810| 
+ []
+
+
+Overfull \hbox (62.85907pt too wide) in paragraph at lines 746--768
+ [][] 
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[46] <./Fig/fsi3compare.png, id=607, 970.5861pt x 466.1415pt>
+File: ./Fig/fsi3compare.png Graphic file (type png)
+
+<use ./Fig/fsi3compare.png>
+Package pdftex.def Info: ./Fig/fsi3compare.png used on input line 771.
+(pdftex.def)             Requested size: 485.29187pt x 233.07018pt.
+
+Overfull \hbox (61.23154pt too wide) in paragraph at lines 771--772
+[][] 
+ []
+
+<./Fig/fsi3flow.png, id=608, 2005.4925pt x 816.04875pt>
+File: ./Fig/fsi3flow.png Graphic file (type png)
+
+<use ./Fig/fsi3flow.png>
+Package pdftex.def Info: ./Fig/fsi3flow.png used on input line 776.
+(pdftex.def)             Requested size: 401.0914pt x 163.20685pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[47 <./Fig/fsi3compare.png> <./Fig/fsi3flow.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 781--784
+
+ []
+
+)
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[48] (./Chapters/Results/results_it3.tex
+Chapter 4.
+[49
+
+] <./Fig/minjcompare.png, id=636, 1009.6119pt x 650.43pt>
+File: ./Fig/minjcompare.png Graphic file (type png)
+
+<use ./Fig/minjcompare.png>
+Package pdftex.def Info: ./Fig/minjcompare.png used on input line 15.
+(pdftex.def)             Requested size: 403.8376pt x 260.16739pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[50 <./Fig/minjcompare.png>]
+Overfull \hbox (2.48273pt too wide) in paragraph at lines 25--26
+\T1/cmr/m/n/12 One of the main chal-lenges for con-struct-ing time-stepping sch
+emes for ALE-methods,
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[51]
+Underfull \hbox (badness 10000) in paragraph at lines 54--56
+
+ []
+
+<./Fig/thetacheck.png, id=686, 769.6755pt x 388.8126pt>
+File: ./Fig/thetacheck.png Graphic file (type png)
+
+<use ./Fig/thetacheck.png>
+Package pdftex.def Info: ./Fig/thetacheck.png used on input line 62.
+(pdftex.def)             Requested size: 461.80887pt x 233.28935pt.
+
+Overfull \hbox (37.74854pt too wide) in paragraph at lines 62--62
+ [][] 
+ []
+
+<./Fig/besttheta.png, id=687, 567.3195pt x 233.4321pt>
+File: ./Fig/besttheta.png Graphic file (type png)
+
+<use ./Fig/besttheta.png>
+Package pdftex.def Info: ./Fig/besttheta.png used on input line 68.
+(pdftex.def)             Requested size: 340.39432pt x 140.06033pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[52] <./Fig/thetacompare.png, id=694, 976.3677pt x 406.1574pt>
+File: ./Fig/thetacompare.png Graphic file (type png)
+
+<use ./Fig/thetacompare.png>
+Package pdftex.def Info: ./Fig/thetacompare.png used on input line 75.
+(pdftex.def)             Requested size: 390.54016pt x 162.46007pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[53 <./Fig/thetacheck.png> <./Fig/besttheta.png>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[54 <./Fig/thetacompare.png>]
+<./Fig/itercompare.png, id=716, 1187.3961pt x 441.5697pt>
+File: ./Fig/itercompare.png Graphic file (type png)
+
+<use ./Fig/itercompare.png>
+Package pdftex.def Info: ./Fig/itercompare.png used on input line 118.
+(pdftex.def)             Requested size: 451.21521pt x 167.79822pt.
+
+Overfull \hbox (1.2527pt too wide) in paragraph at lines 123--123
+[]|\T1/cmr/m/n/12 Implementation| 
+ []
+
+
+Overfull \hbox (25.52538pt too wide) in paragraph at lines 123--123
+[]|\T1/cmr/m/n/12 Reducequadrature| 
+ []
+
+
+Underfull \hbox (badness 1430) in paragraph at lines 125--125
+[]|\T1/cmr/m/n/12 Mean time pr
+ []
+
+
+Overfull \hbox (27.15488pt too wide) in paragraph at lines 118--132
+[][]
+ []
+
+
+Overfull \hbox (66.14914pt too wide) in paragraph at lines 118--132
+[] 
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[55]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[56 <./Fig/itercompare.png>]
+<./Fig/bi_compareit.png, id=733, 1269.7839pt x 444.4605pt>
+File: ./Fig/bi_compareit.png Graphic file (type png)
+
+<use ./Fig/bi_compareit.png>
+Package pdftex.def Info: ./Fig/bi_compareit.png used on input line 137.
+(pdftex.def)             Requested size: 482.5229pt x 168.89674pt.
+
+Overfull \hbox (1.2527pt too wide) in paragraph at lines 142--142
+[]|\T1/cmr/m/n/12 Implementation| 
+ []
+
+
+Underfull \hbox (badness 1430) in paragraph at lines 144--144
+[]|\T1/cmr/m/n/12 Mean time pr
+ []
+
+
+Overfull \hbox (58.46257pt too wide) in paragraph at lines 137--151
+[][]
+ []
+
+
+Overfull \hbox (66.14914pt too wide) in paragraph at lines 137--151
+[] 
+ []
+
+)
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[57 <./Fig/bi_compareit.png>] (./Chapters/Conclusion/conclusion.tex
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[58
+
+]
+Chapter 5.
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--4
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5--6
+
+ []
+
+[59]
+Underfull \hbox (badness 10000) in paragraph at lines 11--12
+
+ []
+
+)
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[60] (./Chapters/Appendix/appendix.tex [61
+
+
+] [62]
+Appendix A.
+[63
+
+]) (./master.bbl
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[64] [65
+
+]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[66]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[67])
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[68]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 37.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 37.
  (./master.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 37.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 37.
+Package rerunfilecheck Info: File `master.out' has not changed.
+(rerunfilecheck)             Checksum: DD9F7F957930D7C8D3FBC486890AE92A;430.
 
 
-Package rerunfilecheck Warning: File `master.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
+LaTeX Warning: There were undefined references.
 
-Package rerunfilecheck Info: Checksums for `master.out':
-(rerunfilecheck)             Before: 77E4701FB3BB585DC778D809A848F130;66
-(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 37.
  ) 
 Here is how much of TeX's memory you used:
- 22703 strings out of 493014
- 401441 string characters out of 6133351
- 475144 words of memory out of 5000000
- 25735 multiletter control sequences out of 15000+600000
- 38813 words of font info for 76 fonts, out of 8000000 for 9000
+ 23232 strings out of 493014
+ 409367 string characters out of 6133351
+ 501723 words of memory out of 5000000
+ 25960 multiletter control sequences out of 15000+600000
+ 53846 words of font info for 108 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,12n,56p,484b,507s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{chapter.1} has been referenced but does not exist
-, replaced by a fixed one
-
-{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/
-usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texl
-ive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2016/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2016/texmf-dist
-/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type
-1/public/lm/lmri10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/c
-m-super/sfbx1200.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-
-super/sfrm1200.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-su
-per/sfti1200.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/helvetic/u
-hvb8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.p
-fb>
-Output written on master.pdf (8 pages, 207162 bytes).
+ 62i,14n,56p,2054b,531s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
+{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{
+/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/tex
+live/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2016/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2016/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2016/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2016/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2016/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2016/texmf-dist/font
+s/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2016/texmf-dist/font
+s/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2016/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/l
+m/lmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmri10.pf
+b></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm1
+0.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfbi1200.
+pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pf
+b></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb>
+</usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></
+usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></us
+r/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/
+local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/lo
+cal/texlive/2016/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/tex
+live/2016/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
+Output written on master.pdf (73 pages, 2508520 bytes).
 PDF statistics:
- 131 PDF objects out of 1000 (max. 8388607)
- 107 compressed objects within 2 object streams
- 35 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 955 PDF objects out of 1000 (max. 8388607)
+ 809 compressed objects within 9 object streams
+ 277 named destinations out of 1000 (max. 500000)
+ 194 words of extra memory for PDF output out of 10000 (max. 10000000)
 
