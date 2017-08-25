@@ -1,0 +1,7 @@
+### NS
+\rho_f(\frac{\partial \mathbf{v}_f}{\partial t} + \mathbf{v}_f \cdot \nabla \mathbf{v}_f) &= \nabla \cdot \sigma_f + \rho_f \mathbf{f}_f \hspace{2mm}\in \Omega_f(t) \\
+\nabla \cdot \mathbf{v}_f &= 0 \hspace{20.5mm}\in \Omega_f(t)
+
+
+## Structure
+\rho_s\frac{\partial \mathbf{u}_s}{\partial t} &= \nabla \cdot \sigma_s + \rho_s \mathbf{f}_s \hspace{2mm}\in \Omega_s(t) \\

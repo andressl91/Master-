@@ -1,30 +1,22 @@
 \begin{thebibliography}{10}
 
 \bibitem{Biedron}
-Robert~T Biedron and Elizabeth~M Lee-Rausch.
+Robert Biedron and Elizabeth Lee-Rausch.
 \newblock {Rotor Airloads Prediction Using Unstructured Meshes and Loose
   CFD/CSD Coupling}.
+\newblock In {\em 26th AIAA Applied Aerodynamics Conference}, pages 2--3,
+  Reston, Virigina, aug 2008. American Institute of Aeronautics and
+  Astronautics.
 
 \bibitem{Crumpton1995}
-P~I Crumpton.
+P~Crumpton and M~Giles.
 \newblock {Implicit time accurate solutions on unstructured dynamic grids}.
-\newblock (95):1--23, 1995.
+\newblock {\em Numerical methods in Fluids}, 25(11):1285--1300, jun 1997.
 
 \bibitem{Donea2004}
 J~Donea, A~Huerta, J.-Ph Ponthot, and A~Rodr{\'{i}}guez-Ferran.
 \newblock {Arbitrary Lagrangian-Eulerian methods}.
 \newblock (1969):1--38, 2004.
-
-\bibitem{Dwight}
-Richard~P Dwight.
-\newblock {Robust Mesh Deformation using the Linear Elasticity Equations}.
-
-\bibitem{Etienne2006}
-St{\'{e}}phane {\'{E}}tienne, D~Tremblay, and Dominique Pelletier.
-\newblock {Code Verification and the Method of Manufactured Solutions for
-  Fluid-Structure Interaction Problems}.
-\newblock {\em 36th AIAA Fluid Dynamics Conference and Exhibit}, (June):1--11,
-  2006.
 
 \bibitem{Fernandez2009}
 Miguel~A Fern{\'{a}}ndez and Jean-Fr{\'{e}}d{\'{e}}ric Gerbeau.
@@ -67,9 +59,9 @@ S.~Frei, T.~Richter, and T.~Wick.
 
 \bibitem{Gatzhammer2014}
 Bernhard Gatzhammer.
-\newblock {Efficient and Flexible Partitioned Simulation of Fluid-Structure
-  Interactions}.
-\newblock page 261, 2014.
+\newblock {\em {Efficient and Flexible Partitioned Simulation of
+  Fluid-Structure Interactions}}.
+\newblock PhD thesis, Technische Universit¨at Munchen, 2014.
 
 \bibitem{Helenbrook2003}
 Brian~T. Helenbrook.
@@ -81,7 +73,7 @@ Brian~T. Helenbrook.
 Gerhard~A. Holzapfel.
 \newblock {\em {Nonlinear Solid Mechanics: A Continuum Approach for
   Engineering}}.
-\newblock 2000.
+\newblock John Wiley og Sons Ltd, 2000.
 
 \bibitem{Hron2006}
 Jaroslav Hron and Stefan Turek.
@@ -93,6 +85,9 @@ Jaroslav Hron and Stefan Turek.
 Su-Yuen Hsu, Chau-Lyan Chang, and Jamshid Samareh.
 \newblock {A Simplified Mesh Deformation Method Using Commercial Structural
   Analysis Software}.
+\newblock In {\em 10th AIAA/ISSMO Multidisciplinary Analysis and Optimization
+  Conference}, pages 2--5, Reston, Virigina, aug 2004. American Institute of
+  Aeronautics and Astronautics.
 
 \bibitem{Humphrey2002}
 Jay~D. Humphrey.
@@ -204,26 +199,27 @@ J.C. Simo and F.~Armero.
 
 \bibitem{Sommerville2006}
 Ian Sommerville.
-\newblock {Verification and Validation}.
-\newblock Technical Report February, 2006.
+\newblock {Verification and Validation Benchmarks}.
+\newblock Technical Report February, Sandia National Laboratories, 2006.
 
 \bibitem{Stein}
 K~Stein, T~Tezduyar, and R~Benney.
 \newblock {Mesh Moving Techniques for Fluid-Structure Interactions With Large
   Displacements}.
+\newblock {\em Journal of applied mechanics}, 70(1):58--63, 2003.
+
+\bibitem{Etienne2006}
+Dominique Tremblay, Stephane Etienne, and Dominique Pelletier.
+\newblock {Code Verification and the Method of Manufactured Solutions for
+  Fluid-Structure Interaction Problems}.
+\newblock In {\em 36th AIAA Fluid Dynamics Conference and Exhibit}, number
+  June, pages 1--11, Reston, Virigina, jun 2006. American Institute of
+  Aeronautics and Astronautics.
 
 \bibitem{Turek}
 Stefan Turek, Jaroslav Hron, Mudassar Razzaq, and Hilmar Wobker.
 \newblock {Numerical Benchmarking of Fluid-Structure Interaction : A comparison
   of different discretization and solution approaches}.
-
-\bibitem{V2013}
-A~V, T~Passerini, A~Quaini, U~Villa, A~Veneziani, and S~Canic.
-\newblock {Numerical Analysis and S cientific C omputing P reprint S eria
-  Validation of an open source framework for the simulation of blood flow in
-  rigid and deformable vessels P reprint {\#} 17 D epartment of Mathematics
-  University of Houston}.
-\newblock 2013.
 
 \bibitem{Wall12006}
 Wolfgang~A. Wall, Axel {, Gerstenberger}, Peter {, Gamnitzer}, Christiane {,
@@ -236,7 +232,7 @@ Wolfgang~A. Wall, Axel {, Gerstenberger}, Peter {, Gamnitzer}, Christiane {,
 \bibitem{White}
 Frank White.
 \newblock {\em {Viscous fluid flow}}.
-\newblock McGraw-Hill, third edit edition.
+\newblock McGraw-Hill, third edit edition, 2005.
 
 \bibitem{Wick2013a}
 T.~Wick.
@@ -250,17 +246,19 @@ T~Wick and Thomas Wick.
 \newblock {Variational-monolithic ALE fluid-structure interaction: Comparison
   of computational cost and mesh regularity using different mesh motion
   techniques}.
-
-\bibitem{Wicka}
-Thomas Wick.
-\newblock {\em {Adaptive Finite Element Simulation of Fluid-Structure
-  Interaction with Application to Heart-Valve}}.
-\newblock PhD thesis, Heidelberg.
+\newblock pages 2--12.
 
 \bibitem{Wick}
 Thomas Wick.
 \newblock {Solving Monolithic Fluid-Structure Interaction Problems in Arbitrary
   Lagrangian Eulerian Coordinates with the deal.II Library}.
+\newblock pages 25--30.
+
+\bibitem{Wicka}
+Thomas Wick.
+\newblock {\em {Adaptive Finite Element Simulation of Fluid-Structure
+  Interaction with Application to Heart-Valve}}.
+\newblock PhD thesis, Heidelberg, 2011.
 
 \bibitem{Wick2011}
 Thomas Wick.

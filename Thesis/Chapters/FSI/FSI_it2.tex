@@ -1,13 +1,12 @@
 \chapter{Fluid Structure Interaction}
-The multi-disciplinary nature of computational fluid-structure interaction, involves addressing issues regarding computational fluid dynamics and computational structure dynamics. In general, CFD and CSM are individually well-studied, in terms of numerical solution strategies. FSI adds another layer of complexity to the solution process, (1) the \textit{coupling} of the fluid and solid equations , (2) the tracking of \textit{interface} separating the fluid and solid domains. The coupling pose two new conditions at the interface absent from the original fluid and solid conditions, which is \textit{continuity of velocity} and \textit{continuity of stress} at the interface.
+The multi-disciplinary nature of computational fluid-structure interaction, involves addressing issues regarding computational fluid dynamics and computational structure dynamics. In general, CFD and CSM are individually well-studied in terms of numerical solution strategies. FSI adds another layer of complexity to the solution process by the \textit{coupling} of the fluid and solid equations, and the tracking of \textit{interface} separating the fluid and solid domains. The coupling pose two new conditions at the interface absent from the original fluid and solid conditions, which is \textit{continuity of velocity} and \textit{continuity of stress} at the interface.
 \begin{align}
 \mathbf{v}_f = \mathbf{v}_s \\
 \mathbf{\sigma}_f \cdot \mathbf{n} = \mathbf{\sigma}_s \cdot \mathbf{n}
 \label{sec:intcond}
 \end{align}
-The tracking of the interface is a issue, due to the different description of motion used in the fluid and solid problem. If the natural coordinate system are used for the fluid problem and solid problem, namely the Eulerian and Lagrangian description of motion, the domains doesn't match and the interface. Tracking the interface is also essential for fulfilling the interface boundary conditions. As such only one of the domains can be described in its natural coordinate system, while the other domain needs to be defined in some transformed coordinate system.    
-Fluid-structure interaction problems are formally divided into the \textit{monolithic} and \textit{partitioned} frameworks.  In the monolithic framework, the fluid and solid equations together with interface conditions are solved simultaneously. The monolithic approach is  \textit{strongly coupled}, meaning the \textit{kinematic} (1.1) and \textit{dynamic}(1.2) interface conditions are met with high accuracy. However, the complexity of solving all the equations simultaneously and the strong coupling contributes to a stronger nonlinear behavior of the whole system \cite{Wick}. The complexity also makes monolithic implementations \textit{ad hoc} and less modular, and the nonlinearity makes solution time slow.
-In the \textit{partitioned} framework one solves the equations of fluid and structure subsequently. Solving the fluid and solid problems individually is beneficial, in terms of the wide range of optimized solvers and solution strategies developed for each sub-problem. In fact, solving the fluid and solid separately was used in the initial efforts in FSI, due to existing solvers for one or both problems \cite{Gatzhammer2014}. Therefore, computational efficiency and code reuse is one of the main reasons for choosing the partitioned approach. A major drawback is the methods ability to enforce the \textit{kinematic} (1.1) and \textit{dynamic}(1.2) conditions at each timestep. Therefore partitioned solution strategies are defined as  \textit{weakly} coupled. However, by sub-iterations between each sub-problem at each timestep, (1.1) and (1.2) can be enforced with high accuracy, at the cost of increased computational time. Regardless of framework, FSI has to cope with a numerical artifact called the "added-mass effect" \cite{Fernandez2007}, \cite{Fernandez2009}, \cite{Forster2007}. The term is not to be confused with added mass found in fluid mechanics, were virtual mass is added to a system due to an accelerating or de-accelerating body moving through a surrounding fluid \cite{Newman1977}. Instead, the term is used to describe the numerical instabilities occurring for weakly coupled schemes, in conjunction with \textit{in compressible fluids} and slender structures \cite{Forster2007}, or where the density of the incompressible fluid is close to the structure. For partitioned solvers, sub-iterations are needed when the "added-mass effect" is strong, but for incompressible flow the restrictions  can lead to unconditional instabilities \cite{Gatzhammer2014}. The \textit{strong coupled} monolithic schemes have proven overcome "added-mass effect" preserving energy balance, at the prize of a highly non-linear system to be solved at each time step \cite{Fernandez2007}.
+The tracking of the interface is a issue, due to the different description of motion used in the fluid and solid problem. If the natural coordinate system are used for the fluid problem and solid problem, namely the Eulerian and Lagrangian description of motion, the domains doesn't match and the interface. Tracking the interface is also essential for fulfilling the interface boundary conditions. As such only one of the domains can be described in its natural coordinate system, while the other domain needs to be defined in some transformed coordinate system.   
+Fluid-structure interaction problems are formally divided into the \textit{monolithic} and \textit{partitioned} frameworks. In the monolithic framework, the fluid and solid equations together with interface conditions are solved simultaneously. The monolithic approach is \textit{strongly coupled}, meaning the \textit{kinematic} (1.1) and \textit{dynamic}(1.2) interface conditions are met with high accuracy. However, the complexity of solving all the equations simultaneously and the strong coupling contributes to a stronger nonlinear behavior of the whole system \cite{Wick}. The complexity also makes monolithic implementations \textit{ad hoc} and less modular, and the nonlinearity makes solution time slow. In the \textit{partitioned} framework one solves the equations of fluid and structure subsequently. Solving the fluid and solid problems individually is beneficial, in terms of the wide range of optimized solvers and solution strategies developed for each sub-problem. In fact, solving the fluid and solid separately was used in the initial efforts in FSI, due to existing solvers for one or both problems \cite{Gatzhammer2014}. Therefore, computational efficiency and code reuse is one of the main reasons for choosing the partitioned approach. A major drawback is the methods ability to enforce the \textit{kinematic} (1.1) and \textit{dynamic}(1.2) conditions at each timestep. Therefore partitioned solution strategies are defined as \textit{weakly} coupled. However, by sub-iterations between each sub-problem at each timestep, (1.1) and (1.2) can be enforced with high accuracy, at the cost of increased computational time. Regardless of framework, FSI has to cope with a numerical artifact called the "added-mass effect" \cite{Fernandez2007}, \cite{Fernandez2009}, \cite{Forster2007}. The term is not to be confused with added mass found in fluid mechanics, were virtual mass is added to a system due to an accelerating or de-accelerating body moving through a surrounding fluid \cite{Newman1977}. Instead, the term is used to describe the numerical instabilities occurring for weakly coupled schemes, in conjunction with \textit{in compressible fluids} and slender structures \cite{Forster2007}, or where the density of the incompressible fluid is close to the structure. For partitioned solvers, sub-iterations are needed when the "added-mass effect" is strong, but for incompressible flow the restrictions can lead to unconditional instabilities \cite{Gatzhammer2014}. The \textit{strong coupled} monolithic schemes have proven overcome "added-mass effect" preserving energy balance, at the prize of a highly non-linear system to be solved at each time step \cite{Fernandez2007}.
 Capturing the interface is matter of its own, regardless of the the monolithic and partitioned frameworks.
 The scope of interface methods are divided into \textit{interface-tracking} and \textit{interface-capturing } methods, visualized in figure ~\ref{fig:captrack}. 
 
@@ -26,17 +25,17 @@ However, moving the mesh-nodes pose potential problems for mesh-entanglements, r
 The \textit{arbitrary Lagrangian-Eulerian} formulation is the most popular approach within \textit{Interface-tracking} \cite{Richter2010c, Frei2016a}. In this approach the structure is given in its natural \textit{Lagrangian coordinate system}, while the fluid problem is formulated in an artificial coordinate system similar to the \textit{Lagrangian coordinate system}, by an artificial fluid domain map from the undeformed \textit{reference configuration} $\bat{T}_f (t): \hat{V}_f (t) \rightarrow V_f (t)$. The methods consistency is to a large extent dependent on the regularity of the artificial fluid domain map. Loss of regularity can occur for certain domain motions, were the structure makes contact with domain boundaries or self-contact with other structure parts \cite{Richter2010b}. Since no natural displacement occur in the fluid domain, the transformation $\bat{T}_f (t)$ has no directly physical meaning \cite{Richter2010c, Donea2004}. Therefore, the construction of the transformation $\bat{T}_f (t)$ is a purely numerical exercise.
 
 \subsection{ALE formulation of the fluid problem}
-The original fluid problem, defined by the incompressible Navier-Stokes equations (Equation 1.5.1). are defined in an \textit{Eulerian description of motion} $V_f (t)$. By changing the computational domain to an undeformed \textit{reference configuration} $V_f (t) \rightarrow \hat{V}_f (t)$, the original problem no longer comply with the change of coordinate system. Therefore,  the original Navier-Stokes equations needs to be transformed onto the  \textit{reference configuration} $\hat{V}_f $.
-Introducing the basic properties needed for mapping between the sub-system $\hat{V}_f (t)$ and $V_f (t)$, we will present the ALE  time and space derivative transformations found in \cite{Richter2016}, with help of a new arbitrary fixed reference system \ha{W}. 
+The original fluid problem, defined by the incompressible Navier-Stokes equations (Equation 1.5.1). are defined in an \textit{Eulerian description of motion} $V_f (t)$. By changing the computational domain to an undeformed \textit{reference configuration} $V_f (t) \rightarrow \hat{V}_f (t)$, the original problem no longer comply with the change of coordinate system. Therefore, the original Navier-Stokes equations needs to be transformed onto the \textit{reference configuration} $\hat{V}_f $.
+Introducing the basic properties needed for mapping between the sub-system $\hat{V}_f (t)$ and $V_f (t)$, we will present the ALE time and space derivative transformations found in \cite{Richter2016}, with help of a new arbitrary fixed reference system \ha{W}. 
 \begin{figure}[h!]
   \centering
     \includegraphics[scale=0.5]{./Fig/wdom.png}
       \caption{CFD-3, flow visualization of velocity time t = 9s}
 \end{figure}
-Let $\ha{T}_w : \ha{W} \rightarrow V(t)$ be an  invertible mapping, with the scalar $\ha{f}(\ha{x}_W, t) = f(x,t) $ and vector $\bat{w}(\ha{x}_W, t) = \mathbf{w}(x,t) $ counterparts. Further let the deformation gradient $\hat{F}_w$ and its determinant $\ha{J}_w$, be defined in accordance wit definition 1.1 and 1.2 in Chapter 1. Then the following relations between temporal and spatial derivatives apply, between the two domains $\hat{W} (t)$ and $V (t)$,
+Let $\ha{T}_w : \ha{W} \rightarrow V(t)$ be an invertible mapping, with the scalar $\ha{f}(\ha{x}_W, t) = f(x,t) $ and vector $\bat{w}(\ha{x}_W, t) = \mathbf{w}(x,t) $ counterparts. Further let the deformation gradient $\hat{F}_w$ and its determinant $\ha{J}_w$, be defined in accordance wit definition 1.1 and 1.2 in Chapter 1. Then the following relations between temporal and spatial derivatives apply, between the two domains $\hat{W} (t)$ and $V (t)$,
 \begin{lem}
 Local change of volume \\
-\textit{Let V(t) be the reference configuration} $V(t) \rightarrow \mathbb{R}^d$, \textit{and} $\hat{W}  \rightarrow \mathbb{R}^d$ \textit{be the arbitrary reference configuration}. \textit{By the determinant of the deformation gradient} $\hat{J}_w$, \textit{the the following relations holds,}
+\textit{Let V(t) be the reference configuration} $V(t) \rightarrow \mathbb{R}^d$, \textit{and} $\hat{W} \rightarrow \mathbb{R}^d$ \textit{be the arbitrary reference configuration}. \textit{By the determinant of the deformation gradient} $\hat{J}_w$, \textit{the the following relations holds,}
 \begin{align}
 |V(t)| = \int_{\hat{W}} \hat{J}_w d \hat{x}
 \end{align} 
@@ -44,27 +43,27 @@ Local change of volume \\
 \begin{lem}
 Transformation of scalar spatial derivatives \\
 \textit{Let f be a scalar function such that} $f: V(t) \rightarrow \mathbb{R}$, \textit{and} $\nabla f$ \textit{be its gradient.}
-\textit{Then its counterpart} $\nabla \hat{f}$, \textit{by the scalar function}  $\hat{f} \hat{W} \rightarrow \mathbb{R}$ \textit{is given by the relation.} 
+\textit{Then its counterpart} $\nabla \hat{f}$, \textit{by the scalar function} $\hat{f} \hat{W} \rightarrow \mathbb{R}$ \textit{is given by the relation.} 
 \begin{align}
 \nabla f = \hat{F}_W^{-T} \hat{\nabla}\ha{f}
 \end{align} 
 \end{lem}
 \begin{lem}
 \textit{Let \textbf{w} be a vector field such that} $\mathbf{w}: V(t) \rightarrow \mathbb{R}^d$, \textit{and} $\nabla \mathbf{w}$ \textit{be its gradient.}
-\textit{Then its counterpart} $\bat{\nabla}\bat{w}$, \textit{by the vector field}  $\bat{w}: \hat{W} \rightarrow \mathbb{R}^d$ \textit{is given by the relation.} 
+\textit{Then its counterpart} $\bat{\nabla}\bat{w}$, \textit{by the vector field} $\bat{w}: \hat{W} \rightarrow \mathbb{R}^d$ \textit{is given by the relation.} 
 \begin{align}
 \nabla \mathbf{w} = \bat{\nabla}\bat{w} \hat{F}_W^{-1} 
 \end{align} 
 \end{lem}
 \begin{lem}
 Transformation of scalar temporal derivatives \\
-\textit{Let f be a scalar function such that} $f: V(t) \rightarrow \mathbb{R}$, \textit{and} $\pder{f}{t}$ be its time derivative. \textit{Then its counterpart} $\pder{\hat{f}}{t}$ , \textit{by the scalar function}  $\hat{f} \hat{W} \rightarrow \mathbb{R}$ \textit{is given by the relation,} 
+\textit{Let f be a scalar function such that} $f: V(t) \rightarrow \mathbb{R}$, \textit{and} $\pder{f}{t}$ be its time derivative. \textit{Then its counterpart} $\pder{\hat{f}}{t}$ , \textit{by the scalar function} $\hat{f} \hat{W} \rightarrow \mathbb{R}$ \textit{is given by the relation,} 
 \begin{align}
 \pder{f}{t} = \pder{\ha{f} }{t} - (\hat{F}_W^{-1} \pder{\ha{T}_W}{t} \cdot \hat{\nabla}) \ha{f}
 \end{align}
- \textit{where} $\pder{\ha{T}_W}{t}$ \textit{the domain velocity of}  $\hat{W}$
+ \textit{where} $\pder{\ha{T}_W}{t}$ \textit{the domain velocity of} $\hat{W}$
 \end{lem}
-With the necessary preliminaries set, the original fluid problem (Equation 1.1) can be derived with respect to $\hat{W}$. By \textit{Lemma 2.2, 2.3}  the \textit{material derivative} $\pder{\mathbf{v}}{t} + \mathbf{v} \cdot \nabla \mathbf{v}$ is transformed by, 
+With the necessary preliminaries set, the original fluid problem (Equation 1.1) can be derived with respect to $\hat{W}$. By \textit{Lemma 2.2, 2.3} the \textit{material derivative} $\pder{\mathbf{v}}{t} + \mathbf{v} \cdot \nabla \mathbf{v}$ is transformed by, 
 \begin{align}
 &\frac{d \mathbf{v}}{\partial t} = 
 \pder{\bat{v}}{t} - (\hat{F}_W^{-1}\pder{\ha{T}_W}{t} \cdot \hat{\nabla})\bat{v} \\
@@ -92,19 +91,19 @@ For the conservation of continuum we apply the \textit{Piola Transformation} \ci
 \nabla \cdot \mathbf{v} = \nabla \cdot (\ha{J} \hat{F}_W^{-1} \bat{v})
 \end{align}
 As the central concepts for transforming the fluid problem on an arbitrary reference domain are introduced, the notation $\hat{W}$ will no longer be used, instead replaced with the fluid domain $\hat{\Omega}_f$, inheriting all previous concepts presented in reference with $\hat{W}$.
- Let $\ha{T}_f : \hat{\Omega}_f \rightarrow \Omega_f (t)$ be an invertible mapping, with the scalar $\ha{f}(\ha{x}_f, t) = f(x,t) $ and $\bat{v_f}(\ha{x}_f, t) = \mathbf{v}_f (x,t) $ counterparts. Further let $\hat{F}_f$ be the deformation gradient and  $\ha{J}_w$ its determinant.
+ Let $\ha{T}_f : \hat{\Omega}_f \rightarrow \Omega_f (t)$ be an invertible mapping, with the scalar $\ha{f}(\ha{x}_f, t) = f(x,t) $ and $\bat{v_f}(\ha{x}_f, t) = \mathbf{v}_f (x,t) $ counterparts. Further let $\hat{F}_f$ be the deformation gradient and $\ha{J}_w$ its determinant.
 \begin{equat}
 ALE fluid problem \\ 
-\textit{Let } $\bat{v}_f$ \textit{be the fluid velocity}, $\rho_f$  \textit{the fluid density, and }  $\nu_f$  \textit{the fluid viscosity}.
+\textit{Let } $\bat{v}_f$ \textit{be the fluid velocity}, $\rho_f$ \textit{the fluid density, and } $\nu_f$ \textit{the fluid viscosity}.
 \begin{align}
 \ha{J}_f \pder{\bat{v}}{t} + \ha{J}_f (\hat{F}_f^{-1}(\bat{v} - \pder{\ha{T}_W}{t}) \cdot \hat{\nabla}) \bat{v}
 = \nabla \cdot (\ha{J}_W \hat{\sigma}\hat{F}_W^{-T}) + \rho_f \ha{J} \mathbf{f}_f
 \hspace{4mm} \text{in} \hspace{2mm} \hat{\Omega}_f \\
 \nabla \cdot (\ha{J} \hat{F}_W^{-1} \hat{v}) = 0 \hspace{4mm} \text{in} \hspace{2mm} \hat{\Omega}_f 
 \end{align}
-where  $\mathbf{f}_s$  represents any exterior body force.
+where $\mathbf{f}_s$ represents any exterior body force.
 \end{equat}
-Due to the arbitrary nature of the reference system $\hat{W}$, the physical velocity $\bat{v}$ and the velocity of arbitrary domain $\pder{\ha{W}_w}{t}$ doesn't necessary coincide, as it deals with three different reference domains \cite{Richter2016}. The Lagrangian particle tracking $x \in \hat{\Omega}_f $, the Eulerian tracking $x \in \Omega_f $, and the arbitrary tracking of the reference domain  $x \in \hat{W} $ \cite{Richter2016}. This concept can be further clarified by the introduction of \textit{material} and \textit{spatial} points. 
+Due to the arbitrary nature of the reference system $\hat{W}$, the physical velocity $\bat{v}$ and the velocity of arbitrary domain $\pder{\ha{W}_w}{t}$ doesn't necessary coincide, as it deals with three different reference domains \cite{Richter2016}. The Lagrangian particle tracking $x \in \hat{\Omega}_f $, the Eulerian tracking $x \in \Omega_f $, and the arbitrary tracking of the reference domain $x \in \hat{W} $ \cite{Richter2016}. This concept can be further clarified by the introduction of \textit{material} and \textit{spatial} points. 
 \subsection{ALE formulation of the solid problem}
 With the introduced mapping identities we have the necessary tools to derive a full fluid-structure interaction problem defined of a fixed domain. Since the structure already is defined in its natural Lagrangian coordinate system, no further derivations are needed for defining the total problem.
 \begin{equat}
@@ -130,7 +129,7 @@ With the introduced mapping identities we have the necessary tools to derive a f
 %\end{align}
 %\end{equat}
 \subsection{Fluid mesh movement}
- Let the total domain deformation $\ha{T}(\ha{x}, t)$ be divided into the solid  $\hat{T}_s: \hat{\Omega}_s \rightarrow \Omega_s$, and fluid deformation $\hat{T}_f: \hat{\Omega}_f \rightarrow \Omega_f$. The physical motivated solid domain deformation, defined as $\hat{T}_s: \hat{x}_s + \bat{u}_s$ were $\bat{u}_s$ is the structure deformation, is 
+ Let the total domain deformation $\ha{T}(\ha{x}, t)$ be divided into the solid $\hat{T}_s: \hat{\Omega}_s \rightarrow \Omega_s$, and fluid deformation $\hat{T}_f: \hat{\Omega}_f \rightarrow \Omega_f$. The physical motivated solid domain deformation, defined as $\hat{T}_s: \hat{x}_s + \bat{u}_s$ were $\bat{u}_s$ is the structure deformation, is 
 a consistent mapping from the \textit{reference configuration} to the \textit{current configuration} of the solid domain. As pointed out in section 2.2.2, the deformation of the fluid domain doesn't inherit any physical relation between the two configurations. Despite this fact, one still introduce a fluid deformation variable $\bat{u}_f$, letting the fluid domain transformation be given by 
 \begin{align*}
 \ha{T}_f(\ha{x}, t) = \bat{x} + \bat{u}_f(\hat{x}, t)
@@ -147,29 +146,31 @@ Therefore the fluid deformation $\bat{u}_f$ must have a continuous relation to t
 \end{align} 
 In accordance with conditions 2.17, 2.18, the fluid transformation $\ha{T}_f(\ha{x}, t) $ is constructed such that $\bat{u}_f$ is an extension of the solid deformation $\bat{u}_s$ into the fluid domain. The extension is constructed by a partial differential equation, called a \textit{mesh lifting operator}. 
 \subsection{Mesh lifting operators}
-In the ALE framework one of the most limiting factors is the degeneration of the mesh due to large deformations. Even the most advanced mesh motion model  reaches a limit when only re-meshing is necessary to avoid mesh entanglement \cite{Wall12006}. Consequently, the choice of mesh lifting operator is essential to generate a smooth evolution of the fluid mesh. Several mesh models have been proposed throughout the literature, and for an overview the reader is referred to \cite{MM2016}, and the reference therein. 
-In this thesis, the 2nd order \textit{Laplacian} and \textit{pseudo-elasticity} mesh model, together with the 4th order biharmonic mesh model will be considered.  The 2nd order \textit{Laplacian} and \textit{pseudo-elasticity} mesh model are beneficial in terms of simplicity and computational efficiency, at the cost of the  regularity of the fluid cells  \cite{Wick2011}. Hence, the 2nd order models are only capable of handling moderate fluid mesh deformations. Using geometrical or mesh position dependent parameters, the models can be improved to handle a wider range of deformations, by increasing the stiffness of the cell close to the interface \cite{Hsu, Dwight}. \\
+In the ALE framework one of the most limiting factors is the degeneration of the mesh due to large deformations. Even the most advanced mesh motion model reaches a limit when only re-meshing is necessary to avoid mesh entanglement \cite{Wall12006}. Consequently, the choice of mesh lifting operator is essential to generate a smooth evolution of the fluid mesh. Several mesh models have been proposed throughout the literature, and for an overview the reader is referred to \cite{MM2016}, and the reference therein. 
+In this thesis, the 2nd order \textit{Laplacian} and \textit{pseudo-elasticity} mesh model, together with the 4th order biharmonic mesh model will be considered. The 2nd order \textit{Laplacian} and \textit{pseudo-elasticity} mesh model are beneficial in terms of simplicity and computational efficiency, at the cost of the regularity of the fluid cells \cite{Wick2011}. Hence, the 2nd order models are only capable of handling moderate fluid mesh deformations. Using geometrical or mesh position dependent parameters, the models can be improved to handle a wider range of deformations, by increasing the stiffness of the cell close to the interface \cite{Hsu}. \\
 
-A limitation of the 2nd order mesh models is that by Dirichlet and Neumann boundary conditions, only mesh position or normal mesh spacing can be specified respectfully, but not both  \cite{Helenbrook2003}. This limitation is overcome by 4th order biharmonic mesh model, since two boundary conditions can be specified at each boundary of the fluid domain \cite{Helenbrook2003}. The 4th order biharmonic mesh model is superior for  handling large fluid mesh deformations, as the model generates a better evolution of the fluid cells. A better regularity of the fluid cells also have the potential of less Newton iterations needed for convergence at each time-step \cite{Wick2011}, discussed in section 5.5. The model is however much more computational expensive compared to the 2nd order mesh models. 
+A limitation of the 2nd order mesh models is that by Dirichlet and Neumann boundary conditions, only mesh position or normal mesh spacing can be specified respectfully, but not both \cite{Helenbrook2003}. This limitation is overcome by 4th order biharmonic mesh model, since two boundary conditions can be specified at each boundary of the fluid domain \cite{Helenbrook2003}. The 4th order biharmonic mesh model is superior for handling large fluid mesh deformations, as the model generates a better evolution of the fluid cells. A better regularity of the fluid cells also have the potential of less Newton iterations needed for convergence at each time-step \cite{Wick2011}, discussed in section 5.5. The model is however much more computational expensive compared to the 2nd order mesh models. 
 \subsubsection*{Mesh motion by a Laplacian lifting operator}
 \begin{equat}
-The Laplace equation model \\ \textit{Let} $\bat{u}_f$ \textit{be the fluid domain deformation,} $\bat{u}_s$ \textit{be the structure domain deformation, and let} $\alpha$ \textit{be diffusion parameter raised to the power of some constant} $q$. \textit{The Laplacian  mesh model is given by, }   
+The Laplace equation model \\ \textit{Let} $\bat{u}_f$ \textit{be the fluid domain deformation,} $\bat{u}_s$ \textit{be the structure domain deformation, and let} $\alpha$ \textit{be diffusion parameter raised to the power of some constant} $q$. \textit{The Laplacian mesh model is given by, }  
 \begin{align*}
 &- \hat{\nabla} \cdot (\alpha^q \hat{\nabla} \bat{u}) = 0 \hspace{2mm} \hat{\Omega}_f\\
-&\bat{u}_f = \bat{u}_s \hspace{2mm} \text{on} \hspace{2mm}  \Gamma \\
+&\bat{u}_f = \bat{u}_s \hspace{2mm} \text{on} \hspace{2mm} \Gamma \\
 &\bat{u}_f = 0 \hspace{2mm} \text{on} \hspace{2mm} \partial \hat{\Omega}_f / \Gamma 
 \end{align*}
 \end{equat}
-The choice of diffusion parameter  is often problem specific, as selective treatment of the fluid cells may vary from different mesh deformation problems. For small deformations, the diffusion-parameter $\alpha$ can be set to a small constant \cite{Wick2013, Richter2010c}. To accommodate for larger deformations, a diffusion-parameter dependent of mesh parameters, such as fluid cell volume \cite{Crumpton1995} or the Jacobian of the deformation gradient \cite{Stein} have proven beneficial. In \cite{Jasak2006}, the authors reviewed several options based on the distance to the closest moving boundary. This approach will be used in this thesis, using a diffusion-parameter inversely proportional to the magnitude of the distance $x$, to the closest moving boundary,
+The choice of diffusion parameter is often problem specific, as selective treatment of the fluid cells may vary from different mesh deformation problems. For small deformations, the diffusion-parameter $\alpha$ can be set to a small constant \cite{Wick2013, Richter2010c}. To accommodate for larger deformations, a diffusion-parameter dependent of mesh parameters, such as fluid cell volume \cite{Crumpton1995} or the Jacobian of the deformation gradient \cite{Stein} have proven beneficial. In \cite{Jasak2006}, the authors reviewed several options based on the distance to the closest moving boundary. This approach will be used in this thesis, using a diffusion-parameter inversely proportional to the magnitude of the distance $x$, to the closest moving boundary,
 \begin{align*}
-\alpha(x) = \frac{1}{x^q}  \hspace{4mm} q = -1
+\alpha(x) = \frac{1}{x^q} \hspace{4mm} q = -1
 \end{align*}
+
+\newpage
 \subsubsection*{Mesh motion by a Linear elastic lifting operator}
 \begin{equat}
-The linear elastic model \\ \textit{Let} $\bat{u}_f$ \textit{be the fluid domain deformation,} $\bat{u}_s$ \textit{be the structure domain deformation, and let} $\sigma$ \textit{be the Cauchy stress tensor.} \textit{The linear elastic mesh model is given by, }   
+The linear elastic model \\ \textit{Let} $\bat{u}_f$ \textit{be the fluid domain deformation,} $\bat{u}_s$ \textit{be the structure domain deformation, and let} $\sigma$ \textit{be the Cauchy stress tensor.} \textit{The linear elastic mesh model is given by, }  
 \begin{align*}
 &\nabla \cdot \sigma = 0 \hspace{2mm} \hat{\Omega}_f\\
-&\bat{u}_f = \bat{u}_s \hspace{2mm} \text{on} \hspace{2mm}  \Gamma \\
+&\bat{u}_f = \bat{u}_s \hspace{2mm} \text{on} \hspace{2mm} \Gamma \\
 &\bat{u}_f = 0 \hspace{2mm} \text{on} \hspace{2mm} \partial \hat{\Omega}_f / \Gamma \\
 &\sigma = \lambda Tr(\epsilon(\bat{u}_f)) I + 2 \mu \epsilon(\bat{u}_f) \hspace{2mm}
 &\epsilon(u) = \frac{1}{2}(\nabla u + \nabla  u^T)
@@ -179,14 +180,15 @@ Where $\lambda$, $\mu$ are Lamés constants given by Young's modulus $E$, and Po
 \lambda = \frac{\nu E}{(1 + \nu)(1 - 2\nu)} \hspace{2mm} \mu = \frac{E}{2(1 + \nu)}
 \end{align*}
 \end{equat}
-The fluid mesh deformation characteristics are in direct relation which the choice of the material specific parameters, Young's modulus $E$ and Poisson's ratio $\mu$.  Young's modulus $E$ describes the stiffness of the material, while the Poisson's ratio relates how a materials shrinks in the transverse direction, while under extension in the axial direction. However the choice of these parameters have proven not to be consistent, and to be dependent of the given problem.
-In \cite{Wicka} the author proposed a negative Poisson ratio, which makes the model mimic an auxetic material, which becomes thinner in the perpendicular direction when submitted to compression. Another approach is to set  $\nu \in [0, 0.5)$ and let $E$ be inversely proportional to the cell volume \cite{Biedron}, or inverse of the distance of an interior node to the nearest deforming boundary surface \cite{MM2016}. In this thesis, the latter is chosen merely for the purpose of code reuse from the Laplace mesh model, defined as,
+The fluid mesh deformation characteristics are in direct relation which the choice of the material specific parameters, Young's modulus $E$ and Poisson's ratio $\mu$. Young's modulus $E$ describes the stiffness of the material, while the Poisson's ratio relates how a materials shrinks in the transverse direction, while under extension in the axial direction. However the choice of these parameters have proven not to be consistent, and to be dependent of the given problem.
+In \cite{Wicka} the author proposed a negative Poisson ratio, which makes the model mimic an auxetic material, which becomes thinner in the perpendicular direction when submitted to compression. Another approach is to set $\nu \in [0, 0.5)$ and let $E$ be inversely proportional to the cell volume \cite{Biedron}, or inverse of the distance of an interior node to the nearest deforming boundary surface \cite{MM2016}. In this thesis, the latter is chosen merely for the purpose of code reuse from the Laplace mesh model, defined as,
 \begin{align*}
-\nu = 0.1 \hspace{4mm} E(x) = \frac{1}{x^q}  \hspace{4mm} q = -1
+\nu = 0.1 \hspace{4mm} E(x) = \frac{1}{x^q} \hspace{4mm} q = -1
 \end{align*}
+\newpage
 \subsubsection*{Mesh motion by a Biharmonic lifting operator}
 \begin{equat}
-The biharmonic mesh model \\ \textit{Let} $\bat{u}_f$ \textit{be the fluid domain deformation,} $\bat{u}_s$ \textit{be the structure domain deformation}. \textit{The biharmonic mesh model is given by, }   
+The biharmonic mesh model \\ \textit{Let} $\bat{u}_f$ \textit{be the fluid domain deformation,} $\bat{u}_s$ \textit{be the structure domain deformation}. \textit{The biharmonic mesh model is given by, }  
 \begin{align*}
 \hat{\nabla}^4 \bat{u}_f = 0 \hspace{4mm} \text{on} \hspace{2mm} \hat{\Omega}_f 
 \end{align*}
@@ -205,13 +207,13 @@ $\hat{u}_f$ be decomposed by the components $\hat{u}_f = (\ha{u}_f^{(1)}. \ha{u}
 &\hspace{17mm}  \ha{u}_f^{(2)} = \pder{\ha{u}_f^{(2)}}{n} = 0 
 \hspace{2mm} \text{and} \hspace{2mm} \ha{w}_f^{(2)} = \pder{\ha{w}_f^{(2)}}{n} = 0 \hspace{4mm} \text{on} \hspace{1mm}  \hat{\Omega}_f^{wall}
 \end{align*}
-The first type of boundary condition the model can interpreted as the bending of a thin plate, clamped along its boundaries. In addition to prescribed mesh position as the  Laplacian and linear-elastic model, an additional constraint to the mesh spacing is prescribed at the fluid domain boundary. The form of this problem has been known since 1811, and its derivation has been connected with names like  French scientists Lagrange, Sophie Germain, Navier and Poisson \cite{Meleshko1997}. The second type of boundary condition is advantageous when the \textit{reference domain} $\hat{\Omega}_f$ is rectangular, constraining mesh motion only in the perpendicular direction of the fluid boundary. This constrain allows  mesh movement in the tangential direction of the domain boundary, further reducing distortion of the fluid cells  \cite{Wicka}.  
+The first type of boundary condition the model can interpreted as the bending of a thin plate, clamped along its boundaries. In addition to prescribed mesh position as the Laplacian and linear-elastic model, an additional constraint to the mesh spacing is prescribed at the fluid domain boundary. The form of this problem has been known since 1811, and its derivation has been connected with names like French scientists Lagrange, Sophie Germain, Navier and Poisson \cite{Meleshko1997}. The second type of boundary condition is advantageous when the \textit{reference domain} $\hat{\Omega}_f$ is rectangular, constraining mesh motion only in the perpendicular direction of the fluid boundary. This constrain allows mesh movement in the tangential direction of the domain boundary, further reducing distortion of the fluid cells \cite{Wicka}.  
 \newpage
 \newpage
 \section{Discretization of the FSI problem}
-In this thesis, the finite element method will be used to discretize the coupled fluid-structure interaction problem. It is beyond of scope  of this thesis, to thorough dive into the analysis of the finite element method regarding fluid-structure interaction problems. Only the basics of the method, which is necessary in order to define a foundation for problem solving will be introduced. 
+In this thesis, the finite element method will be used to discretize the coupled fluid-structure interaction problem. It is beyond of scope of this thesis, to thorough dive into the analysis of the finite element method regarding fluid-structure interaction problems. Only the basics of the method, which is necessary in order to define a foundation for problem solving will be introduced. 
 \subsection{Finite Element method}
-Let the domain $\Omega(t) \subset \mathbb{R}^d \ (d = 1, 2, 3) $  be a time dependent domain discretized a by finite number of d-dimensional simplexes.  Each simplex is denoted as a finite element, and the union of these elements forms a mesh. Further, let the domain be divided by two time dependent subdomains $\Omega_f$ and $\Omega_s$, with the interface $\Gamma = \partial \Omega_f \cap \partial \Omega_s$. The initial configuration $\Omega(t), t = 0 $ is defined as $\hat{\Omega}$, defined in the same manner as the time-dependent domain. $\hat{\Omega}$ is known as the \textit{reference configuration}, and hat symbol will refer any property or variable to this domain. The outer boundary is set by $\partial \hat{\Omega}$ , with $\partial \hat{\Omega}^D$ and $\partial \hat{\Omega}^N$ as the Dirichlet and Neumann boundaries respectively. \\ \\
+Let the domain $\Omega(t) \subset \mathbb{R}^d \ (d = 1, 2, 3) $ be a time dependent domain discretized a by finite number of d-dimensional simplexes. Each simplex is denoted as a finite element, and the union of these elements forms a mesh. Further, let the domain be divided by two time dependent subdomains $\Omega_f$ and $\Omega_s$, with the interface $\Gamma = \partial \Omega_f \cap \partial \Omega_s$. The initial configuration $\Omega(t), t = 0 $ is defined as $\hat{\Omega}$, defined in the same manner as the time-dependent domain. $\hat{\Omega}$ is known as the \textit{reference configuration}, and hat symbol will refer any property or variable to this domain. The outer boundary is set by $\partial \hat{\Omega}$ , with $\partial \hat{\Omega}^D$ and $\partial \hat{\Omega}^N$ as the Dirichlet and Neumann boundaries respectively. \\ \\
 The family of Lagrangian finite elements are chosen, with the function space notation,
 \begin{align*}
 \hat{V}_{\Omega} := H^1(\Omega) \hspace{4mm} 
@@ -244,7 +246,7 @@ With the primaries set, we can finally define the discretization of the monolith
 &\hat{\sigma}_{\text{mesh}} =  \lambda Tr(\epsilon(\bat{u}_f)) I + 2 \mu \epsilon(\bat{u}_f) \hspace{2mm} \text{Linear Elasticity} 
 \end{align*}
 Further, only the biharmonic model for the first type of boundary condition will be introduced as the second boundary condition is on a similar form.
-  By the concepts of the finite element method, the weak variation problem yields.
+ By the concepts of the finite element method, the weak variation problem yields.
 \begin{prob}
 \textit{Coupled fluid structure interaction problem for Laplace and elastic mesh lifting operator.
 Find $\bat{u}_s, \bat{u}_f, \bat{v}_s, \bat{v}_f, \ha{p}_f $ such that}
@@ -290,10 +292,10 @@ Interface coupling conditions
 \end{align*} 
 \end{equat}
 By a continuous velocity field on the whole domain, the \textit{kinematic} condition is strongly enforced on the interface $\hat{\Gamma}_i$.
-The \textit{dynamic} boundary condition is  weakly imposed by omitting the boundary integral from the variational formulation, becoming an implicit condition for the system  \cite{Wick}. \\
+The \textit{dynamic} boundary condition is weakly imposed by omitting the boundary integral from the variational formulation, becoming an implicit condition for the system \cite{Wick}. \\
 \section{One-step $\theta$ scheme} 
 \label{sec:theta}
-For both the fluid problem and the structure problem, we will base our implementation on a $\theta$-scheme.  A $\theta$-scheme is favorable, making implementation of classical time-stepping schemes simple. For the structure problem,  $\theta$-scheme takes the form
+For both the fluid problem and the structure problem, we will base our implementation on a $\theta$-scheme. A $\theta$-scheme is favorable, making implementation of classical time-stepping schemes simple. For the structure problem, $\theta$-scheme takes the form
 \begin{align*}
 \rho_s \pder{\bat{v}_s}{t} 
 - \theta \nabla \cdot \bat{F}\bat{S}   - (1 - \theta) \nabla \cdot \bat{F}\bat{S}  
@@ -321,7 +323,7 @@ while $\mathbf{u}^{*}$ is on the form
    &\vartheta \mathbf{u}^{n-1} + (1 - \vartheta)\mathbf{u}^{n} \hspace{4mm} \vartheta \leq 0
    \end{cases}
 \end{align*}
-At first glance, defining an additional parameter $\vartheta$ for the fluid problem seems unnecessary. A general mid-point rule by  $\alpha = \vartheta = \frac{1}{2}$, a second order scheme in time would easily be achieved. However, in \cite{Simo1994} an additional second order scheme is obtained by choosing e $\alpha = \frac{1}{2}$,  $\vartheta =-1$, where  $\mathbf{u}^{*}$ is approximated with an Adam-Bashforth linear method. Making the initial fluid problem linear while maintaining second order convergence is an important result, which have not yet been investigated thorough in literature of fluid-structure interaction.  However, in the monolithic  ALE method presented in this thesis, the fluid problem will still remain non-linear due to the ALE-mapping of the convective term, but making the overall problem "more linear" in contrary with a second order Crank-Nicolson scheme. The idea was initially pursued in this thesis but left aside, as discretization of the fluid convective term was not intuitive.  \\
+At first glance, defining an additional parameter $\vartheta$ for the fluid problem seems unnecessary. A general mid-point rule by $\alpha = \vartheta = \frac{1}{2}$, a second order scheme in time would easily be achieved. However, in \cite{Simo1994} an additional second order scheme is obtained by choosing e $\alpha = \frac{1}{2}$, $\vartheta =-1$, where $\mathbf{u}^{*}$ is approximated with an Adam-Bashforth linear method. Making the initial fluid problem linear while maintaining second order convergence is an important result, which have not yet been investigated thorough in literature of fluid-structure interaction. However, in the monolithic ALE method presented in this thesis, the fluid problem will still remain non-linear due to the ALE-mapping of the convective term, but making the overall problem "more linear" in contrary with a second order Crank-Nicolson scheme. The idea was initially pursued in this thesis but left aside, as discretization of the fluid convective term was not intuitive. \\
 By letting $\alpha = \vartheta \hspace{2mm} \alpha, \vartheta \in [0, 1] $ for the fluid problem, and generalizing the concepts in an ALE context, we derive the one-step $\theta$ scheme found in \cite{Wicka}.
 \begin{prob}
 The one-step $\theta$ scheme 

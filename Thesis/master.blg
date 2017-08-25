@@ -8,93 +8,76 @@ Database file #3: ./Cite/Decoupled.bib
 Database file #4: ./Cite/NavierStokes.bib
 Database file #5: ./Cite/Verification.bib
 Database file #6: ./Cite/EulerianFormulation.bib
-Repeated entry---line 21 of file ./Cite/EulerianFormulation.bib
+Repeated entry---line 6 of file ./Cite/EulerianFormulation.bib
  : @article{Frei2016a
  :                   ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 57 of file ./Cite/EulerianFormulation.bib
+Repeated entry---line 19 of file ./Cite/EulerianFormulation.bib
  : @article{Richter2010c
  :                      ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 84 of file ./Cite/EulerianFormulation.bib
+Repeated entry---line 86 of file ./Cite/EulerianFormulation.bib
  : @article{Richter2010b
  :                      ,
 I'm skipping whatever remains of this entry
 Database file #7: ./Cite/Meshupdate.bib
-Repeated entry---line 55 of file ./Cite/Meshupdate.bib
+Repeated entry---line 6 of file ./Cite/Meshupdate.bib
  : @article{Wick
  :              ,
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "Alnes2015"
-Warning--empty journal in Biedron
-Warning--empty year in Biedron
-Warning--empty journal in Crumpton1995
-Warning--there's a number but no volume in Crumpton1995
 Warning--empty journal in Donea2004
 Warning--there's a number but no volume in Donea2004
-Warning--empty journal in Dwight
-Warning--empty year in Dwight
-Warning--there's a number but no volume in Etienne2006
 Warning--empty journal in Fernandez2009
-Warning--empty journal in Gatzhammer2014
-Warning--empty publisher in Holzapfel2000
-Warning--empty journal in Hsu
-Warning--empty year in Hsu
 Warning--empty publisher in Newman1977
-Warning--empty journal in Richter2016
+Warning--empty note in Richter2016
 Warning--empty booktitle in Richter2015
 Warning--empty publisher in Richter2015
-Warning--empty institution in Sommerville2006
-Warning--empty journal in Stein
-Warning--empty year in Stein
+Warning--there's a number but no series in Etienne2006
 Warning--empty journal in Turek
 Warning--empty year in Turek
-Warning--empty journal in V2013
-Warning--empty year in White
 Warning--empty journal in Wickb
 Warning--empty year in Wickb
-Warning--empty year in Wicka
 Warning--empty journal in Wick
 Warning--empty year in Wick
-You've used 47 entries,
+You've used 45 entries,
             2118 wiz_defined-function locations,
-            800 strings with 11771 characters,
-and the built_in function-call counts, 13994 in all, are:
-= -- 1377
-> -- 610
-< -- 7
-+ -- 243
-- -- 196
-* -- 951
-:= -- 2383
-add.period$ -- 138
-call.type$ -- 47
-change.case$ -- 234
+            810 strings with 11709 characters,
+and the built_in function-call counts, 14139 in all, are:
+= -- 1437
+> -- 576
+< -- 12
++ -- 229
+- -- 184
+* -- 956
+:= -- 2367
+add.period$ -- 141
+call.type$ -- 45
+change.case$ -- 221
 chr.to.int$ -- 0
-cite$ -- 77
-duplicate$ -- 560
-empty$ -- 1100
-format.name$ -- 196
-if$ -- 2857
+cite$ -- 59
+duplicate$ -- 568
+empty$ -- 1128
+format.name$ -- 184
+if$ -- 2952
 int.to.chr$ -- 0
-int.to.str$ -- 47
-missing$ -- 50
-newline$ -- 231
-num.names$ -- 94
-pop$ -- 277
+int.to.str$ -- 45
+missing$ -- 46
+newline$ -- 227
+num.names$ -- 90
+pop$ -- 233
 preamble$ -- 1
-purify$ -- 192
+purify$ -- 182
 quote$ -- 0
-skip$ -- 367
+skip$ -- 383
 stack$ -- 0
-substring$ -- 801
-swap$ -- 74
-text.length$ -- 7
+substring$ -- 889
+swap$ -- 100
+text.length$ -- 12
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 176
-warning$ -- 30
-while$ -- 146
-width$ -- 49
-write$ -- 476
+type$ -- 168
+warning$ -- 14
+while$ -- 154
+width$ -- 47
+write$ -- 489
 (There were 4 error messages)
