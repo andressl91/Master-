@@ -47,5 +47,20 @@ Laplace  & -15.28   $\pm$  13.04 & 1.28 $\pm$ 82.9 & 158.45  $\pm$  16.09 & -2.5
 \end{tabular}
 
 
-###
+### FSI3
+\begin{tabular}{|p{2.2cm}|p{3.2cm}|p{3.2cm}|p{2.9cm}|p{3.1cm}|p{1.2cm}|}
+\hline
+\multicolumn{5}{|c|}{$\Delta t = 0.001$  \hspace{2mm}  $\theta = 0.5$} \\
+\hline
+Method & \ ux of A [x $10^{-3}$]  & uy of A [x $10^{-3}$]& Drag  & \ Lift \\
+ \hline
+Laplace       &-2.88     $\pm$   2.72 & 1.49   $\pm$ 34.97 & 458.6   $\pm$ 22.12 & \  2.23    $\pm$ 158.95 \\
+Biharmonic 1  & -2.84 $\pm$ 2.68  & 1.50 $\pm$ 34.72 & 459.1    $\pm$   22.97 & -3.12     $\pm$ 171.22  \\
+Biharmonic 2  & -2.80  $\pm$ 2.65 & 1.37 $\pm$ 34.73 & 458.4  $\pm$ 22.23 & 15.56   $\pm$  157.78
+\\
+\hline
+\multicolumn{1}{|l|}{\textbf{Reference}} & -2.69 $\pm$  2.56  & 1.48  $\pm$  34.38  & 457.3  $\pm$  22.66  & \ 2.22  $\pm$ 149.78    
+ \\
+\hline
+\end{tabular}
 
