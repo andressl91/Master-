@@ -12,3 +12,18 @@
 \hspace{4mm} \text{in} \hspace{2mm} \hat{\Omega}_f \\
 \nabla \cdot (\ha{J} \hat{F}^{-1} \bat{v}) &= 0 \hspace{36mm} \text{in} \hspace{2mm} \hat{\Omega}_f 
 
+#### Elastic
+&\nabla \cdot \sigma = 0 \hspace{8mm} \in \hat{\Omega}_f\\
+&\bat{u}_f = \bat{u}_s \hspace{2mm} \text{on} \hspace{8mm} \hat{\Gamma}_i \\
+ &\bat{u}_f = 0 \hspace{4mm} \text{on} \hspace{7mm} \partial \hat{\Omega}_f / \hat{\Gamma}_i \\
+ &\sigma = \lambda Tr(\epsilon(\bat{u}_f)) I + 2 \mu \epsilon(\bat{u}_f) \hspace{2mm} 
+&\epsilon(\bat{u}) = \frac{1}{2}(\nabla \bat{u} + \nabla  \bat{u}^T)
+
+
+
+##LAPLACE
+
+- &\hat{\nabla} \cdot (\alpha^q \hat{\nabla} \bat{u}) = 0 \hspace{2mm} \in \hat{\Omega}_f\\
+&\bat{u}_f = \bat{u}_s \hspace{5mm} \text{on} \hspace{9mm} \hat{\Gamma}_i \\
+&\bat{u}_f = 0 \hspace{7mm} \text{on} \hspace{8mm} \partial \hat{\Omega}_f / \hat{\Gamma}_i
+

@@ -1,0 +1,51 @@
+###FSI 1
+\begin{tabular}{ |p{1cm}|p{2.8cm}|p{2.8cm}|p{2.7cm}|p{2.7cm}|p{1.2cm}|}
+ \hline
+  \multicolumn{6}{|c|}{Laplace} \\
+   \hline
+nel & ndof & ux of A [x $10^{-3}$]  &uy of A [x $10^{-3}$]& Drag  & Lift \\
+ \hline
+ 2474    & 21249  &       0.0226 &       0.8200 & 14.061 & 0.7542 \\
+ 7307    & 63365  &       0.0227 &       0.7760 & 14.111 & 0.7517 \\
+ 11556   & 99810  &       0.0226 &      0.8220 & 14.201 & 0.7609 \\
+  \hline
+ \multicolumn{2}{|c|}{Reference} &  0.0227      &       0.8209      & 14.295  & 0.7638   \\
+ \hline
+     \multicolumn{2}{|c|}{Error}  & $ < 10^{-6}$  \% &  $ <10^{-6}$  \% & 0.66 \% & 0.38 \% \\
+   \hline
+\end{tabular}
+\begin{tabular}{ |p{1cm}||p{1cm}|p{2.8cm}|p{2.8cm}|p{2.7cm}|p{2.7cm}|p{1.2cm}|}
+ \hline
+  \multicolumn{6}{|c|}{Linear Elastic} \\
+   \hline
+nel & ndof & ux of A [x $10^{-3}$]  &uy of A [x $10^{-3}$]& Drag  & Lift \\
+ \hline
+ 2474    & 21249  &       0.0226 &       0.8198 & 14.061 & 0.7541 \\
+ 7307    & 63365  &       0.0227 &       0.7762 & 14.111 & 0.751  \\
+ 11556   & 99810  &       0.0226  &       0.8222 & 14.201 & 0.7609 \\
+  \hline
+ \multicolumn{2}{|c|}{Reference} &  0.0227      &       0.8209      & 14.295  & 0.7638   \\
+ \hline
+    \multicolumn{2}{|c|}{Error}  &$ < 10^{-6}$  \% &  $ <10^{-6}$  \%  & 0.66 \% & 0.38 \% \\
+ \hline
+\end{tabular}
+
+#FSI 2
+
+\begin{tabular}{|p{2.2cm}|p{3.2cm}|p{3.2cm}|p{2.9cm}|p{3.1cm}|p{1.2cm}|}
+ \hline
+  \multicolumn{5}{|c|}{$\Delta t = 0.001$  \hspace{2mm}  $\theta = 0.5$} \\
+   \hline
+ Method & \ ux of A [x $10^{-3}$]  & uy of A [x $10^{-3}$]& Drag  & \ Lift \\
+    \hline
+Laplace  & -15.28   $\pm$  13.04 & 1.28 $\pm$ 82.9 & 158.45  $\pm$  16.09 & -2.53   $\pm$  276.1 \\
+ Biharmonic 1  &-15.27 $\pm$ 12.99 & 1.31 $\pm$ 82.7 & 157.72  $\pm$ 15.58 & \ 3.34    $\pm$ 258.7 \\
+ Biharmonic 2  &-15.26 $\pm$ 12.91 & 1.27  $\pm$ 81.8 & 156.86   $\pm$ 15.05 & -1.65 $\pm$ 269.8 \\
+\hline
+  \multicolumn{1}{|l|}{\textbf{Reference}} & -14.58 $\pm$ 12.44   & 1.23 $\pm$ 80.6    & 208.83 $\pm$ 73.75 & \ 0.88 $\pm$ 234.2 \\
+   \hline
+\end{tabular}
+
+
+###
+
