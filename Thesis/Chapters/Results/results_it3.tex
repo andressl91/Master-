@@ -111,6 +111,7 @@ By using the previous inconsistent methods together, the first assembly of the J
 % All methods show an increasing number of iterations for $t > 3$, with a maximum value at $ 3.8 < t <4.2$.
 In Figure ~\ref{fig:lap_it}, all speed-up techniques are compared on the time interval $t = [0, 5]$, for the Laplacian model. Numerical simulations shows how all inconsistent methods increase the number of iterations needed for convergence at each time step, contrary to a consistent naive method. However, the inconsistent methods clearly dominate the time used for a full Newton iteration at each time step, in comparison with the naive approach. The fastest method proved to be the combined method, using $1.5$ hours for solving the full time interval. The naive approach used $17.1$ hours, meaning the combined method resulted in a $91 \%$ speedup. \\
 The biharmonic mesh model results in Figure ~\ref{fig:bi_it}, shows similar observation compared to the Laplacian model. However, the benefit of a better evolution of mesh cells is reflected in the reduced number of iterations needed at each times step, for all methods. The quadrature reduce method even compares to the naive method in terms of iterations. The naive approach computed the whole time interval in $33.87$ hours, while the combined method $3.46$ hours, a speedup of $89\%$.
+
 \begin{figure}[h!]
  \includegraphics[scale=0.38]{./Fig/itercompare.png}
  \begin{tabular}{ |p{2.8cm}|p{2.2cm}|p{2.4cm}|p{2.4cm}|p{2.4cm}|p{2.4cm}| }
@@ -129,6 +130,7 @@ Speedup ratio& -  & 0.12  & 0.50  & 0.74  & 0.91  \\
  \caption{Comparison of speed-up techniques for the Laplace mesh model.}
  \label{fig:lap_it}
 \end{figure}
+
 \newpage
 \begin{figure}[h!]
  \includegraphics[scale=0.38]{./Fig/bi_compareit.png}
