@@ -31,6 +31,19 @@ nel & ndof & ux of A [x $10^{-3}$]  &uy of A [x $10^{-3}$]& Drag  & Lift \\
 \end{tabular}
 
 #FSI 2
+ \begin{tabular}{|p{2.2cm}|p{3.2cm}|p{3.2cm}|p{2.9cm}|p{3.1cm}|p{1.2cm}|}
+   \hline
+    \multicolumn{5}{|c|}{$\Delta t = 0.01$  \hspace{2mm}  $\theta = 0.51$} \\
+     \hline
+   Method & \ ux of A [x $10^{-3}$]  & uy of A [x $10^{-3}$]& Drag  & \ Lift \\
+      \hline
+   Laplace  & -14.96 $\pm$ 13.24 & 1.28  $\pm$ 81.9 & 161.07 $\pm$  17.81 & \ 0.02  $\pm$ 256.04 \\
+   Biharmonic 1  &-15.29 $\pm$ 13.17   & 1.29 $\pm$ 82.5 &  161.69 $\pm$   18.73 & -1.86 $\pm$ 251.3 \\
+   Biharmonic 2  & -14.72 $\pm$ 12.86 & 1.23 $\pm$ 81.5& 161.85   $\pm$ 18.84 & -1.64  $\pm$  247.04 \\
+  \hline
+    \multicolumn{1}{|l|}{\textbf{Reference}} & -14.58 $\pm$ 12.44   & 1.23 $\pm$ 80.6    & 208.83 $\pm$ 73.75 & \ 0.88 $\pm$ 234.2 \\
+     \hline
+  \end{tabular}
 
 \begin{tabular}{|p{2.2cm}|p{3.2cm}|p{3.2cm}|p{2.9cm}|p{3.1cm}|p{1.2cm}|}
  \hline

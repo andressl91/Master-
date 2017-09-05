@@ -4,13 +4,13 @@
 
 
 ## Structure
-\rho_s\frac{\partial \mathbf{u}_s}{\partial t} &= \nabla \cdot \sigma_s + \rho_s \mathbf{f}_s \hspace{2mm}\in \Omega_s(t) \\
+\rho_s\frac{\partial^2 \mathbf{u}_s}{\partial^2 t} &= \nabla \cdot \sigma_s + \rho_s \mathbf{f}_s \hspace{2mm} \text{in} \hspace{2mm} \hat{\Omega}_s \\
 
 #ALE
-\rho_f \Big(\ha{J} \pder{\bat{v}}{t} + \ha{J} (\hat{F}^{-1}(\bat{v} - \pder{\bat{u}}{t}) \cdot \hat{\nabla}) \bat{v} \Big)
-&= \nabla \cdot (\ha{J} \hat{\sigma}_f \hat{F}^{-T}) + \rho_f \ha{J} \mathbf{f}_f
+\rho_f \Big(\ha{J}_f \pder{\bat{v}_f}{t} + \ha{J}_f (\hat{F}^{-1}_f(\bat{v}_f - \pder{\bat{u}_f}{t}) \cdot \hat{\nabla}) \bat{v}_f \Big)
+&= \nabla \cdot (\ha{J}_f \hat{\sigma}_f \hat{F}^{-T}_f) + \rho_f \ha{J}_f \mathbf{f}_f
 \hspace{4mm} \text{in} \hspace{2mm} \hat{\Omega}_f \\
-\nabla \cdot (\ha{J} \hat{F}^{-1} \bat{v}) &= 0 \hspace{36mm} \text{in} \hspace{2mm} \hat{\Omega}_f 
+\nabla \cdot (\ha{J}_f \hat{F}^{-1}_f \bat{v}_f) &= 0 \hspace{40mm} \text{in} \hspace{2mm} \hat{\Omega}_f
 
 #### Elastic
 &\nabla \cdot \sigma = 0 \hspace{8mm} \in \hat{\Omega}_f\\
