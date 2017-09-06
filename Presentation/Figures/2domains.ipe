@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70206" creator="Ipe 7.2.7">
-<info created="D:20170825141118" modified="D:20170825235302"/>
+<info created="D:20170825141118" modified="D:20170906180700"/>
 <ipestyle name="basic">
 <symbol name="arrow/arc(spx)">
 <path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
@@ -257,13 +257,6 @@ h
 <view layers="alpha beta" active="alpha"/>
 <text layer="alpha" transformations="translations" pos="416 768" stroke="black" type="label" width="18.104" height="9.842" depth="4.09" valign="baseline" size="Large" style="math">\mathbf{\Omega}_f</text>
 <text matrix="1 0 0 1 96.104 -0.213016" transformations="translations" pos="368.104 729.062" stroke="black" type="label" width="13.627" height="9.845" depth="2.15" valign="baseline" size="Large" style="math">\mathbf{\Gamma}_i</text>
-<path stroke="black" rarrow="normal/normal">
-302.022 735.945 m
-275.447 745.579
-246.483 747.244
-225.498 736.241
-225.498 736.241 c
-</path>
 <path stroke="black" fill="darkorange">
 512 720 m
 512 640 l
@@ -300,5 +293,18 @@ h
 </path>
 <text matrix="1 0 0 1 3.23059 -1.07513" transformations="translations" pos="96 688" stroke="black" type="label" width="16.824" height="13.631" depth="2.15" valign="baseline" size="Large" style="math">\hat{\mathbf{\Omega}}_s</text>
 <text matrix="1 0 0 1 17.1995 -12.3588" transformations="translations" pos="131.428 740.904" stroke="black" type="label" width="13.627" height="13.631" depth="2.15" valign="baseline" size="Large" style="math">\hat{\mathbf{\Gamma}}_i</text>
+<text matrix="1 0 0 1 -4.2486 8.99865" transformations="translations" pos="256 784" stroke="black" type="label" width="14.681" height="13.588" depth="4.09" valign="baseline" size="Large" style="math">\hat{T}_f</text>
+<text matrix="1 0 0 1 -6.70815 -48.1473" transformations="translations" pos="256 688" stroke="black" type="label" width="13.401" height="13.591" depth="2.15" valign="baseline" size="Large" style="math">\hat{T}_s</text>
+<path matrix="1 0 0 1 0 160" stroke="black" arrow="normal/normal">
+224 608 m
+256 624
+288 608 c
+</path>
+<path matrix="1 0 0 1 0 80" stroke="black" arrow="normal/normal">
+224 592 m
+256 576
+288 592 c
+</path>
+<text matrix="1 0 0 1 -4.2486 8.99865" transformations="translations" pos="256 784" stroke="black" type="label" width="14.681" height="13.588" depth="4.09" valign="baseline" size="Large" style="math">\hat{T}_f</text>
 </page>
 </ipe>
