@@ -27,3 +27,29 @@
 &\bat{u}_f = \bat{u}_s \hspace{5mm} \text{on} \hspace{9mm} \hat{\Gamma}_i \\
 &\bat{u}_f = 0 \hspace{7mm} \text{on} \hspace{8mm} \partial \hat{\Omega}_f / \hat{\Gamma}_i
 
+#FULL SYSTEM
+\big(\ha{J}_f \pder{\bat{v}_f}{t}, \ \gat{\psi}^u \big)_{\hat{\Omega}_f}  + \femf{\ha{J}_f (\hat{F}_f^{-1}(\bat{v}_f - \pder{\ha{T}_f}{t}) \cdot \hat{\nabla}) \bat{v}_f}{\gat{\psi}^u}& \\
++ \femi{\ha{J}_f \hat{\sigma}\hat{F}_f^{-T} \bat{n}_f}{\gat{\psi}^u} 
+- \femf{\ha{J}_f \hat{\sigma}\hat{F}_f^{-T}}{\hat{\nabla}\gat{\psi}^u} - \femf{\rho_f \ha{J}_f \mathbf{f}_f}{{\gat{\psi}^u}}& = 0 \\
+\fems{\rho_s \pder{\bat{v}_s}{t}}{\gat{\psi}^u} + \femi{\bat{F}\bat{S}\bat{n}_f}{\gat{\psi}^u}
+- \fems{\bat{F}\bat{S}}{\nabla \gat{\psi}^u} - \fems{\rho_s \bat{f}_s}{\gat{\psi}^u}& = 0 \\
+\fems{\pder{\bat{u}_s}{t} - \bat{v}_s}{\gat{\psi}^v}& = 0
+
+
+#### SOLID
+\begin{rcases*}
+\fems{\rho_s \pder{\bat{v}_s}{t}}{\gat{\psi}^u} + \femi{\bat{F}\bat{S}\bat{n}_f}{\gat{\psi}^u}
+- \fems{\bat{F}\bat{S}}{\nabla \gat{\psi}^u} - \fems{\rho_s \bat{f}_s}{\gat{\psi}^u}& = 0 \\
+ \fems{\pder{\bat{u}_s}{t} - \bat{v}_s}{\gat{\psi}^v}& = 0
+\end{rcases*} \hspace{4mm} Solid
+
+
+### FLUID
+\begin{rcases*}
+\big(\ha{J}_f \pder{\bat{v}_f}{t}, \ \gat{\psi}^u \big)_{\hat{\Omega}_f}  + \femf{\ha{J}_f (\hat{F}_f^{-1}(\bat{v}_f - \pder{\ha{T}_f}{t}) \cdot \hat{\nabla}) \bat{v}_f}{\gat{\psi}^u}& \\
+  + \femi{\ha{J}_f \hat{\sigma}\hat{F}_f^{-T} \bat{n}_f}{\gat{\psi}^u}
+ - \femf{\ha{J}_f \hat{\sigma}\hat{F}_f^{-T}}{\hat{\nabla}\gat{\psi}^u} - \femf{\rho_f \ha{J}_f \mathbf{f}_f}{{\gat{\psi}^u}}& = 0 \\
+\nabla \cdot (\ha{J}_f \hat{F}^{-1}_f \bat{v}_f)& = 0
+\end{rcases*} \hspace{4mm} Fluid
+
+
